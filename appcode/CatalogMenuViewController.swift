@@ -13,11 +13,12 @@ protocol CatalogMenuViewDelegate {
 }
 
 class CatalogMenuViewController: UIViewController,AddDismissButton {
-    var remoteAsset:RemoteAsset! // must be set 
+    var remoteAsset:RemoteAsset! // must be set
     var delegate: CatalogMenuViewDelegate?  // mig
     
     @IBAction func unwindToCatalogMenuViewController(_ segue: UIStoryboardSegue)  {
     }
+    @IBOutlet weak var outerView: UIView!
     
     private var isAnimated  = false
     fileprivate var changesMade: Bool = false
@@ -27,19 +28,20 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
     @IBOutlet weak var useasisnocaption: UIButton!
     @IBOutlet weak var addcaption: UIButton!
     
-    @IBOutlet weak var webViewOverlay: UIWebView!
-      //MARK:- MENU TAP ACTIONS 
+    
+    var webViewOverlay: UIWebView!
+    //MARK:- MENU TAP ACTIONS
     @IBAction func websitetapped(_ sender: AnyObject) {
         IOSSpecialOps.openwebsite(self)
         //dismiss(animated: true,completion:nil)
     }
-
+    
     @IBOutlet weak var animatedLabel: UILabel!
     @IBAction func useStickerAsIsPressed(_ sender: AnyObject) {
-    delegate?.useAsIs(remoteAsset:remoteAsset,keepCaption:true) // elsewhere
+        delegate?.useAsIs(remoteAsset:remoteAsset,keepCaption:true) // elsewhere
         dismiss(animated: true,completion:nil)
     }
-
+    
     @IBAction func useStickerNoCaptionPressed(_ sender: AnyObject) {
         delegate?.useAsIs(remoteAsset:remoteAsset,keepCaption:false) // elsewhere
         dismiss(animated: true,completion:nil)
@@ -54,8 +56,8 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
     func dismisstapped(_ s: AnyObject) {
         dismiss(animated: true, completion: nil)
     }
-  //MARK:- VC LIFECYLE
-
+    //MARK:- VC LIFECYLE
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -89,37 +91,34 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
             self.addcaption.removeFromSuperview()
             self.useasisnocaption.isEnabled = false
             self.useasisnocaption.removeFromSuperview()
-            UIView.animate(withDuration: 10.0, animations: {
-                  self.animatedLabel.alpha = 1
-            })
+            
+            let w = self.view.frame.width - 100
+            let offs = (self.view.frame.width - w) / 2
+            let frem = CGRect(x:offs,y:offs,width:w,height:w)
+            let imageurl = remoteAsset.localimagepath
+            let webViewOverlay = animatedViewOf(frame:frem, imageurl: imageurl)
+            self.view.addSubview(webViewOverlay)
+//            UIView.animate(withDuration: 10.0, animations: {
+                self.animatedLabel.alpha = 1
+//            })
         }
         addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
         
-//        let imageurl = remoteAsset.localimagepath
-//        let w = self.view.frame.width - 60
-//        let h = self.view.frame.height - 60
-//      
-//          let html = "<html5><body  style='padding:0px;margin:0px'><img src='\(imageurl)' width='\(w)' height='\(h)' alt='\(imageurl)' /></body></html5>"
-//        
-//
-//        webViewOverlay.contentMode = .scaleAspectFit
-//        webViewOverlay.loadHTMLString(html, baseURL: nil)
-//        webViewOverlay.isHidden = false
         
         
-
     }
- 
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
-
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-}
+        
+    }
 }
 
 

@@ -214,7 +214,13 @@ struct CaptionedSpace {
     }
 }
 // global funcs called fr4om multiple kind of view controllers
-
+func animatedViewOf(frame:CGRect, imageurl:String) -> UIWebView {    let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  src='\(imageurl)' height='\(frame.height)' width='\(frame.width)'  alt='\(imageurl)' /</body></html5>"
+    let webViewOverlay = UIWebView(frame:frame)
+    webViewOverlay.scalesPageToFit = true
+    webViewOverlay.contentMode = .scaleAspectFill
+    webViewOverlay.loadHTMLString(html, baseURL: nil)
+    return webViewOverlay
+}
 
 //dismissButtonAltImageName
 func addDismissButtonToViewController(_ v:UIViewController,named:String, _ sel:Selector){

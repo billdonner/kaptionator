@@ -65,10 +65,7 @@ class MessagesAppMenuViewController: UIViewController , AddDismissButton {
         
         imageCaption.textColor = .white
         imageCaption.backgroundColor = .clear
-        if isAnimated { 
-            
-        }
-        
+
         do {
             let data = try  Data(contentsOf: URL(string:captionedEntry.localimagepath )!)
             menuImage.image = UIImage(data:data)
@@ -81,6 +78,21 @@ class MessagesAppMenuViewController: UIViewController , AddDismissButton {
         imageCaption.text = captionedEntry.caption
         
         addDismissButtonToViewController(self , named:appTheme.dismissButtonImageName,#selector(dismisstapped))
+        
+        
+        if isAnimated {
+               animatedLabel.alpha = 1
+            
+            let w = self.view.frame.width - 100
+            let offs = (self.view.frame.width - w) / 2
+            let frem = CGRect(x:offs,y:offs,width:w,height:w)
+            let imageurl = captionedEntry.localimagepath
+            let webViewOverlay = animatedViewOf(frame:frem, imageurl: imageurl)
+            self.view.addSubview(webViewOverlay)
+            
+            
+        }
+        
     }
     func dismisstapped(_ s: AnyObject) {
         dismiss(animated: true, completion: nil)

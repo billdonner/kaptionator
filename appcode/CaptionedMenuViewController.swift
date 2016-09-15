@@ -95,6 +95,15 @@ class CaptionedMenuViewController: UIViewController, AddDismissButton {
           //  moveimessage.removeFromSuperview()
             editsticker.isEnabled = false
             editsticker.removeFromSuperview()
+            
+               animatedLabel.alpha = 1
+            
+            let w = self.view.frame.width - 100
+            let offs = (self.view.frame.width - w) / 2
+            let frem = CGRect(x:offs,y:offs,width:w,height:w)
+            let imageurl = captionedEntry.localimagepath
+            let webViewOverlay = animatedViewOf(frame:frem, imageurl: imageurl)
+            self.view.addSubview(webViewOverlay)
         }
         
         addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
