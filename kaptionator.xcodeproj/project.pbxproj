@@ -710,7 +710,6 @@
 					};
 					88AEA5A91D514B53006E5C70 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = X2PQYA6S48;
 						DevelopmentTeamName = "Bill Donner";
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -768,7 +767,6 @@
 					};
 					88AEA62E1D514C8D006E5C70 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = X2PQYA6S48;
 						DevelopmentTeamName = "Bill Donner";
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -1275,6 +1273,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = candidatez/candidatez.entitlements;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = candidatez/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.candidatez;
@@ -1289,6 +1288,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = candidatez/candidatez.entitlements;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = candidatez/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.candidatez;
@@ -1419,6 +1419,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_ENTITLEMENTS = candidatezMessagesExtension/candidatezMessagesExtension.entitlements;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = candidatezMessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.candidatez.MessagesExtension;
@@ -1433,6 +1434,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_ENTITLEMENTS = candidatezMessagesExtension/candidatezMessagesExtension.entitlements;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = candidatezMessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.candidatez.MessagesExtension;
