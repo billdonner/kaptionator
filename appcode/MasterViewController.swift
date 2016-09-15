@@ -83,9 +83,9 @@ get {
 //    } 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let catb = UIBarButtonItem(title: "catalog", style: .plain, target: self, action: #selector(catalogAction))
-        let stickerz = UIBarButtonItem(title: "stickerz", style: .plain, target: self, action: #selector(stickerzAction))
-        let imessage = UIBarButtonItem(title: "imessage", style: .plain, target: self, action: #selector(imsgAction))
+        let catb = UIBarButtonItem(title: "Candidatez", style: .plain, target: self, action: #selector(catalogAction))
+        let stickerz = UIBarButtonItem(title: "Stickerz", style: .plain, target: self, action: #selector(stickerzAction))
+        let imessage = UIBarButtonItem(title: "Messages", style: .plain, target: self, action: #selector(imsgAction))
         // start in the catalog
                 catb.tintColor = appTheme.catalogColor
                 stickerz.tintColor = offColor

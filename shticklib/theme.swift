@@ -21,10 +21,10 @@ struct Theme {
     var theme:BackTheme = .black  /// new
     
     let redColor = #colorLiteral(red: 0.7586702704, green: 0.2098190188, blue: 0.1745614707, alpha: 1)   // #b22222
-    let blueColor = #colorLiteral(red: 0.1607843137, green: 0.2470588235, blue: 0.4274509804, alpha: 1)
+    let blueColor = #colorLiteral(red: 0.2389388382, green: 0.5892125368, blue: 0.8818323016, alpha: 1)
     let catalogColor = UIColor.orange
     let stickerzColor = #colorLiteral(red: 0.7586702704, green: 0.2098190188, blue: 0.1745614707, alpha: 1)
-    let iMessageColor = #colorLiteral(red: 0.1607843137, green: 0.2470588235, blue: 0.4274509804, alpha: 1)
+    let iMessageColor = #colorLiteral(red: 0.2389388382, green: 0.5892125368, blue: 0.8818323016, alpha: 1)
     
     var backgroundColor:UIColor {
         switch theme {

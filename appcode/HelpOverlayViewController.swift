@@ -34,8 +34,9 @@ class HelpOverlayViewController: UIViewController, UIWebViewDelegate,AddDismissB
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.clear
+        let request = URLRequest(url:URL(string:"http://shtikerz.com/candidatez/apphelp.html")!)
         self.webView.delegate = self
-        self.webView.loadHTMLString(html, baseURL: nil)
+        self.webView.loadRequest(request)
         self.webView.isOpaque = false
         self.webView.backgroundColor = UIColor.clear
         addDismissButtonToViewController(self ,named:appTheme.dismissButtonAltImageName, #selector(self.dismisstapped))
@@ -44,5 +45,10 @@ class HelpOverlayViewController: UIViewController, UIWebViewDelegate,AddDismissB
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+      let x = error as NSError
+        
+            IOSSpecialOps.blurt(self,title: "Network error code = \(x.code)",mess: error.localizedDescription)
     }
 }

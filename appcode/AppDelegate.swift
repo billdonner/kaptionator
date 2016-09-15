@@ -42,10 +42,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 //    }
 
  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
-     // UIApplication.shared.statusBarStyle = appTheme.statusBarStyle
-    //UINavigationBar.appearance().barStyle = .black
+    UIApplication.shared.statusBarStyle = appTheme.altstatusBarStyle
+    UINavigationBar.appearance().barStyle = .black
     // Set navigation bar tint / background colour
-    UINavigationBar.appearance().barTintColor = appTheme.backgroundColor
+   UINavigationBar.appearance().barTintColor = appTheme.backgroundColor
     // Set Navigation bar Title colour
     UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:appTheme.textColor]
     
