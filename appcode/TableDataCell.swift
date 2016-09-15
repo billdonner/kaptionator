@@ -20,7 +20,7 @@ class TableDataCell: UITableViewCell {
     func colorFor(ce:CaptionedEntry) {
         let  isAnimated = ce.stickerOptions.contains(.generateasis)
         
-        nameLabel.textColor = isAnimated ? .red :appTheme.textColor
+        nameLabel.textColor = isAnimated ? appTheme.redColor :appTheme.textColor
     }
     func twinkle() {
             UIView.animate(withDuration: 2.5, animations: {

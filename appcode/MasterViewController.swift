@@ -78,9 +78,9 @@ get {
     }
     //Changing Status Bar
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return appTheme.statusBarStyle
-    } 
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return appTheme.statusBarStyle
+//    } 
     override func viewDidLoad() {
         super.viewDidLoad()
         let catb = UIBarButtonItem(title: "catalog", style: .plain, target: self, action: #selector(catalogAction))

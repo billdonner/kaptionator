@@ -61,6 +61,7 @@ class CaptionedMenuViewController: UIViewController, AddDismissButton {
  
     }
     
+    @IBOutlet weak var veryBottomButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,7 +70,7 @@ class CaptionedMenuViewController: UIViewController, AddDismissButton {
         addwithnewcap.setTitleColor( appTheme.buttonTextColor, for: .normal)
         moveimessage.setTitleColor( appTheme.buttonTextColor, for: .normal)
         editsticker.setTitleColor( appTheme.buttonTextColor, for: .normal)
-        
+         veryBottomButton.setTitleColor( appTheme.buttonTextColor, for: .normal)
         
         isAnimated = captionedEntry.stickerOptions.contains(.generateasis)
         
@@ -96,8 +97,8 @@ class CaptionedMenuViewController: UIViewController, AddDismissButton {
             editsticker.isEnabled = false
             editsticker.removeFromSuperview()
             
-               animatedLabel.alpha = 1
-            
+            animatedLabel.textColor = appTheme.redColor
+            animatedLabel.text = "animated"
             let w = self.view.frame.width - 100
             let offs = (self.view.frame.width - w) / 2
             let frem = CGRect(x:offs,y:offs,width:w,height:w)
@@ -106,18 +107,7 @@ class CaptionedMenuViewController: UIViewController, AddDismissButton {
             self.view.addSubview(webViewOverlay)
         }
         
-        addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
-//        let imageurl = captionedEntry.localimagepath
-//        
-//        let html = "<html5><body><center><img src='\(imageurl)' width=300 height=300 alt='foobar' />foobar</center></body></html5>"
-//        let offset = self.view.frame.width - 320
-//        let wvframe = CGRect(x:offset/2,y:offset/2,
-//                             width: 320 ,
-//                             height:320 )
-//        let wv = UIWebView(frame:wvframe)
-//        wv.loadHTMLString(html, baseURL: nil)
-//        self.view.addSubview(wv)
-        
+        addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped)) 
         
     }
     func dismisstapped(_ s: AnyObject) {

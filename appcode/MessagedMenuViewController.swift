@@ -34,8 +34,7 @@ class MessagesAppMenuViewController: UIViewController , AddDismissButton {
     
     
     @IBAction func websitetapped(_ sender: AnyObject) {
-        IOSSpecialOps.openwebsite(self)
-       // dismiss(animated: true,completion:nil)
+        IOSSpecialOps.openwebsite(self) 
     }
     @IBAction func removeimessagetapped(_ sender: AnyObject) {
         delegate?.removeFromIMessage(on: &captionedEntry!)
@@ -48,6 +47,7 @@ class MessagesAppMenuViewController: UIViewController , AddDismissButton {
     }
     
     
+    @IBOutlet weak var veryBottomButton: UIButton!
     //MARK:- VC LIFECYLE
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +56,7 @@ class MessagesAppMenuViewController: UIViewController , AddDismissButton {
         
         //openinimessage.setTitleColor( appTheme.buttonTextColor, for: .normal)
       //  removefromimessage.setTitleColor( appTheme.buttonTextColor, for: .normal)
+        veryBottomButton.setTitleColor( appTheme.buttonTextColor, for: .normal)
         
         isAnimated = captionedEntry.stickerOptions.contains(.generateasis)
         
@@ -77,12 +78,12 @@ class MessagesAppMenuViewController: UIViewController , AddDismissButton {
         
         imageCaption.text = captionedEntry.caption
         
-        addDismissButtonToViewController(self , named:appTheme.dismissButtonImageName,#selector(dismisstapped))
+        addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
         
         
         if isAnimated {
-               animatedLabel.alpha = 1
-            
+            animatedLabel.textColor = appTheme.redColor
+            animatedLabel.text = "animated"
             let w = self.view.frame.width - 100
             let offs = (self.view.frame.width - w) / 2
             let frem = CGRect(x:offs,y:offs,width:w,height:w)

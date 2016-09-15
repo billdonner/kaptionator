@@ -3,7 +3,7 @@
 //  kaptionator
 //
 //  Created by bill donner on 8/6/16.
-//  Copyright © 2016 midnightrambler. All rights reserved.
+//  Copyright © 2016 martoons. All rights reserved.
 //
 
 import UIKit
@@ -133,10 +133,15 @@ extension CatalogViewController : UICollectionViewDataSource {
 //MARK: UICollectionViewDelegateFlowLayout incorporates didSelect....
 extension CatalogViewController : UICollectionViewDelegateFlowLayout {
     
-    
+//    func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+//        return false
+//    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         theSelectedIndexPath = indexPath
         // todo: analyze safety of passing indexpath thru, sees to work for now
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.isSelected  = false
+         cell?.isHighlighted  = false 
         performSegue(withIdentifier: "CatalogCellTapMenuID", sender: self)
     }
     

@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.midnightrambler.candidatez</string>
+	<string>com.martoons.candidatez</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -19,7 +19,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>22</string>
+	<string>24</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -32,7 +32,7 @@
 	<key>REMOTE-WEBSITE-URL</key>
 	<string>http://shtikerz.com/candidatez</string>
 	<key>SHARED-INTERAPP-DATA</key>
-	<string>group.com.midnightrambler.candidatez</string>
+	<string>group.com.martoons.candidatez</string>
 	<key>SHOW-HIDDEN-FUNCTIONS</key>
 	<false/>
 	<key>UIFileSharingEnabled</key>
@@ -45,10 +45,6 @@
 	<array>
 		<string>armv7</string>
 	</array>
-	<key>UIStatusBarHidden</key>
-	<true/>
-	<key>UIStatusBarStyle</key>
-	<string>UIStatusBarStyleLightContent</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

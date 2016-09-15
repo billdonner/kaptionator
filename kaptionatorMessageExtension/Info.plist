@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.midnightrambler.kaptionator.MessageExtension</string>
+	<string>com.martoons.kaptionator.MessageExtension</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -28,6 +28,6 @@
 		<string>com.apple.message-payload-provider</string>
 	</dict>
 	<key>SHARED-INTERAPP-DATA</key>
-	<string>group.com.midnightrambler.kaptionator</string>
+	<string>group.com.martoons.kaptionator</string>
 </dict>
 </plist>

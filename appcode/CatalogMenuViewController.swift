@@ -20,6 +20,7 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
     }
     @IBOutlet weak var outerView: UIView!
     
+    @IBOutlet weak var veryBottomButton: UIButton!
     private var isAnimated  = false
     fileprivate var changesMade: Bool = false
     @IBOutlet weak var menuImage: UIImageView!
@@ -38,12 +39,12 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
     
     @IBOutlet weak var animatedLabel: UILabel!
     @IBAction func useStickerAsIsPressed(_ sender: AnyObject) {
-        delegate?.useAsIs(remoteAsset:remoteAsset,keepCaption:true) // elsewhere
-        dismiss(animated: true,completion:nil)
+     delegate?.useAsIs(remoteAsset:remoteAsset,keepCaption:true) // elsewhere
+     dismiss(animated: true,completion:nil)
     }
     
     @IBAction func useStickerNoCaptionPressed(_ sender: AnyObject) {
-        delegate?.useAsIs(remoteAsset:remoteAsset,keepCaption:false) // elsewhere
+    delegate?.useAsIs(remoteAsset:remoteAsset,keepCaption:false) // elsewhere
         dismiss(animated: true,completion:nil)
     }
     
@@ -60,6 +61,7 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        veryBottomButton.setTitleColor( appTheme.buttonTextColor, for: .normal)
         
         useasis.setTitleColor(appTheme.buttonTextColor, for: .normal)
         useasisnocaption.setTitleColor(appTheme.buttonTextColor, for: .normal)
@@ -85,22 +87,21 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
         imageCaption.backgroundColor = .clear
         
         imageCaption.keyboardAppearance = .dark
-        animatedLabel.alpha = 0
+     
         if isAnimated {
             self.addcaption.isEnabled = false
             self.addcaption.removeFromSuperview()
             self.useasisnocaption.isEnabled = false
             self.useasisnocaption.removeFromSuperview()
-            
+            animatedLabel.textColor = appTheme.redColor
+            animatedLabel.text = "animated"
             let w = self.view.frame.width - 100
             let offs = (self.view.frame.width - w) / 2
             let frem = CGRect(x:offs,y:offs,width:w,height:w)
             let imageurl = remoteAsset.localimagepath
             let webViewOverlay = animatedViewOf(frame:frem, imageurl: imageurl)
             self.view.addSubview(webViewOverlay)
-//            UIView.animate(withDuration: 10.0, animations: {
-                self.animatedLabel.alpha = 1
-//            })
+
         }
         addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
         

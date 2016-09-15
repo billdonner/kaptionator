@@ -3,7 +3,7 @@
 //  kaptionator
 //
 //  Created by bill donner on 8/6/16.
-//  Copyright © 2016 midnightrambler. All rights reserved.
+//  Copyright © 2016 martoons. All rights reserved.
 //
 
 import UIKit
@@ -16,7 +16,7 @@ final class MessagesAppViewController: UIViewController   {
     var stickerz:[CaptionedEntry] = []
     var theSelectedIndexPath:IndexPath?
     
-     @IBOutlet internal  var tableView: UITableView!
+    @IBOutlet internal  var tableView: UITableView!
     
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,7 +29,7 @@ final class MessagesAppViewController: UIViewController   {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
- 
+        
         print ("**********removed all cached images because MessagesAppViewController short on memory")
     }
     
@@ -37,15 +37,15 @@ final class MessagesAppViewController: UIViewController   {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier ==  "MessagesAppCellTapMenuID"{
-            if let indexPath = theSelectedIndexPath { 
-               if let avc =  segue.destination as? MessagesAppMenuViewController   {
+            if let indexPath = theSelectedIndexPath {
+                if let avc =  segue.destination as? MessagesAppMenuViewController   {
                     avc.delegate = self
                     avc.captionedEntry = stickerz [indexPath.row]
-        }
-    }}}
+                }
+            }}}
     override func viewDidLoad() {
         super.viewDidLoad()
-       tableView.delegate = self
+        tableView.delegate = self
         tableView.dataSource = self
         self.tableView.backgroundColor = appTheme.backgroundColor
         
@@ -57,14 +57,12 @@ final class MessagesAppViewController: UIViewController   {
         self.tableView?.reloadData()
     }
     
-   func displayTapMenu () {
+    func displayTapMenu () {
         // todo: analyze safety of passing indexpath thru, sees to work for now
         performSegue(withIdentifier: "MessagesAppCellTapMenuID", sender: self)
     }
     
 }
-// MARK: Delegates for actions from our associated menu
-
 // MARK: Delegates for actions from our associated menu
 extension  MessagesAppViewController:MessagesAppMenuViewDelegate {
     func openinIMessage(captionedEntry:CaptionedEntry) {
@@ -73,16 +71,14 @@ extension  MessagesAppViewController:MessagesAppMenuViewDelegate {
     }
     func removeFromIMessage(on captionedEntry:inout CaptionedEntry ){
         print("MessagesAppEntriesViewController removeFromIMessage")
-
-      //  let ce =  stickerz.remove(at: indexPath.row)
+        
+        //  let ce =  stickerz.remove(at: indexPath.row)
         let _ =  memSpace.remove(id:captionedEntry.id)
-      //  tableView.deleteRows(at: [indexPath], with: .fade)
+        //  tableView.deleteRows(at: [indexPath], with: .fade)
         memSpace.saveToDisk()
         
         captionedEntry.removeCEFromIMessage()
         self.tableView.reloadData()
-        
-        
     }
 }
 
@@ -103,31 +99,15 @@ extension MessagesAppViewController : UITableViewDataSource {
         memSpace.saveToDisk()
     }
     
-//    func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
-//    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath,to destinationIndexPath: IndexPath) {
-//        let srcrow = sourceIndexPath.row
-//        //let srcsec = sourceIndexPath.section
-//        let dstrow = destinationIndexPath.row
-//        //let dstsec = destinationIndexPath.section
-//        // swap thises guys around
-//        let stuff = stickerz [srcrow]
-//        stickerz [srcrow] = stickerz [dstrow]
-//        stickerz [dstrow] = stuff
-//        // too much here
-//        capSpace.saveToDisk()
-//    }
-
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-            if editingStyle == .delete {
-               let ce =  stickerz.remove(at: indexPath.row)
-               let _ =  memSpace.remove(id:ce.id)
-                tableView.deleteRows(at: [indexPath], with: .fade)
-                memSpace.saveToDisk()
-            } else if editingStyle == .insert {
-                // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-            }  
+        if editingStyle == .delete {
+            let ce =  stickerz.remove(at: indexPath.row)
+            let _ =  memSpace.remove(id:ce.id)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            memSpace.saveToDisk()
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        }
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -145,14 +125,14 @@ extension MessagesAppViewController : UITableViewDataSource {
         /// go get the image from our cache and then the net
         let path =  ce.localimagepath // ?????
         if path != "" {  // dont crash but dont paint
-//            let t = allImageData[path]
-//            guard let tp = t else {
-//                fatalError("missing data for url path \(path)")
-//            }
-//            
+            //            let t = allImageData[path]
+            //            guard let tp = t else {
+            //                fatalError("missing data for url path \(path)")
+            //            }
+            //
             // have the data onhand
             cell.paintImage(path:path)
-        } 
+        }
         cell.colorFor(ce: ce)
         return cell // Return the cell
     }
@@ -177,19 +157,18 @@ extension MessagesAppViewController : MEObserver {
 }
 extension MessagesAppViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-                theSelectedIndexPath = indexPath
-               displayTapMenu()
+        theSelectedIndexPath = indexPath
+        displayTapMenu()
     }
 }
 extension CaptionedEntry {
     
-   fileprivate func openinImessage() {
-        
+    fileprivate func openinImessage() {
     }
-   fileprivate mutating func removeCEFromIMessage() {
+    fileprivate mutating func removeCEFromIMessage() {
         
         // unhinge the entry
-    let _ =  memSpace.remove(id:self.id)
+        let _ =  memSpace.remove(id:self.id)
         memSpace.entries[self.id] = nil
         memSpace.saveToDisk()
     }

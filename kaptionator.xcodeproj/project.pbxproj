@@ -1277,7 +1277,7 @@
 				CODE_SIGN_ENTITLEMENTS = candidatez/candidatez.entitlements;
 				INFOPLIST_FILE = candidatez/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.candidatez;
+				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.candidatez;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1291,7 +1291,7 @@
 				CODE_SIGN_ENTITLEMENTS = candidatez/candidatez.entitlements;
 				INFOPLIST_FILE = candidatez/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.candidatez;
+				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.candidatez;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1421,7 +1421,7 @@
 				CODE_SIGN_ENTITLEMENTS = candidatezMessagesExtension/candidatezMessagesExtension.entitlements;
 				INFOPLIST_FILE = candidatezMessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.candidatez.MessagesExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.candidatez.MessagesExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -1435,7 +1435,7 @@
 				CODE_SIGN_ENTITLEMENTS = candidatezMessagesExtension/candidatezMessagesExtension.entitlements;
 				INFOPLIST_FILE = candidatezMessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.candidatez.MessagesExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.candidatez.MessagesExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;

@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.midnightrambler.candidatez.MessagesExtension</string>
+	<string>com.martoons.candidatez.MessagesExtension</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -19,7 +19,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>22</string>
+	<string>24</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionMainStoryboard</key>
@@ -28,6 +28,6 @@
 		<string>com.apple.message-payload-provider</string>
 	</dict>
 	<key>SHARED-INTERAPP-DATA</key>
-	<string>group.com.midnightrambler.candidatez</string>
+	<string>group.com.martoons.candidatez</string>
 </dict>
 </plist>
