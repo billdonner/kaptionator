@@ -1,5 +1,5 @@
 //
-//  CatalogViewController.swift
+//  ITunesViewController
 //  kaptionator
 //
 //  Created by bill donner on 8/6/16.
@@ -12,24 +12,16 @@ import UIKit
 // MARK: Show All Remote Catalog Entries in One Tab as Child ViewContoller
 //
 
-// if nil we'll just pull from documents directory inside the catalog controller
-var stickerPackListFileURL: URL? {
-get {
-    if let iDict = Bundle.main.infoDictionary ,
-        let w =  iDict["REMOTE-STICKERPACKLIST-URL"] as? String { return URL(string:w) }
-    return nil
-}
-}
-
-final class CatalogViewController: UIViewController  {
+final class ITunesViewController : UIViewController  {
     
-    //let refreshControl = UIRefreshControl()
-    @IBAction func unwindToCatalogViewController(_ segue: UIStoryboardSegue)  {
+    let refreshControl = UIRefreshControl()
+    @IBAction func unwindToITunesViewController(_ segue: UIStoryboardSegue)  {
     }
     
     var theSelectedIndexPath:IndexPath?
     
     @IBOutlet internal var collectionView: UICollectionView!
+    
     @IBOutlet fileprivate var flowLayout: UICollectionViewFlowLayout!
     
     required init?(coder aDecoder: NSCoder) {
@@ -38,6 +30,7 @@ final class CatalogViewController: UIViewController  {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        
         print ("**********removed all cached images because CatalogViewController short on memory")
     }
     
@@ -72,45 +65,88 @@ final class CatalogViewController: UIViewController  {
             flowLayout.invalidateLayout() // Called to update the cell sizes to fit the new collection view width
         }
     }
-    
-//    func refreshFromITunes() {
-//        print("    func refreshFromITunes() pulled ")
-//        masterViewController?.phase1() // run a full cycle here
-//        refreshControl.endRefreshing()
-//    }
-    override func viewDidLoad() {
-            self.collectionView.backgroundColor = appTheme.backgroundColor
-            super.viewDidLoad()
-            collectionView.delegate = self
-            collectionView.dataSource = self
+    /// load from shared documents in itune (must be on in info.plist)
+        private func loadFromITunesSharing( observer:MEObserver?, completion:GFRM?) {
+        //let iTunesBase = manifestFromDocumentsDirector
+        // store file locally into catalog
+        // var first = true
+        let apptitle = "-local-"
         
+        var allofme:ManifestItems = []
         
-        assert( stickerPackListFileURL != nil)
-            //  only read the catalog if we have to
-            do {
-                try remSpace.restoreFromDisk()
-                print("remSpace restored, \(remSpace.itemCount()) items")
-                phase2 ()
-            }  catch {
-                phase1()
+        observer?.newdocument([:], "-local-")
+        
+        observer?.newpack(apptitle,false)
+        do {
+            let dir = FileManager.default.urls (for:  .documentDirectory, in: .userDomainMask)
+            let documentsUrl =  dir.first!
+            
+            // Get the directory contents urls (including subfolders urls)
+            let directoryContents = try FileManager.default.contentsOfDirectory(at: documentsUrl, includingPropertiesForKeys: nil, options: [])
+            let _ =  try directoryContents.map {
+                let lastpatch = $0.lastPathComponent
+                if !lastpatch.hasPrefix(".") { // exclude wierd files
+                    let imagename = lastpatch
+                    // let part1 = image.components(separatedBy: ".")
+                    // let part2 = part1[0].components(separatedBy: "-")
+                    // let part3 = part2[0].components(separatedBy: "/")
+                    
+                    if (lastpatch as NSString).pathExtension.lowercased() == "json" {
+                        let data = try Data(contentsOf: $0) // read
+                        Manifest.parseData(data, baseURL: documentsUrl.absoluteString, completion: completion!)
+                    } else {
+                        // regular file, should be a compatible sticker file image
+                        // observer?.newentry(me: me)
+                        let localpath = $0
+                        let me = RemoteAsset(pack: "apptitle", title: imagename, remoteurl: "", localpath: localpath.absoluteString, options: .generateasis)
+                        allofme.append(me)
+                        observer?.newentry(me: me)
+                    }
+                }
+            }
+            if completion != nil  {
+                completion! (200, apptitle, allofme)
             }
         }
+        catch {
+            print("loadFromITunesSharing: cant get directory \(error)")
+        }
+    }
+    func refreshFromITunes() {
         
+        print("    func refreshFromITunes() pulled ")
         
-//            let spath = masterViewController?.stickerPackListFileURL
-//            if let _ = spath {
-//                // running remotely
-//            } else {
-//                refreshControl.tintColor = .blue
-//                refreshControl.attributedTitle = NSAttributedString(string:"pulling fresh content from Itunes file sharing")
-//                refreshControl.addTarget(self, action: #selector(self.refreshFromITunes), for: .valueChanged)
-//                collectionView.addSubview(refreshControl)
-//                collectionView.alwaysBounceVertical = true  // needed so always can pull to refresh
-       // }
-    //}
+        loadFromITunesSharing(observer:self,completion: { status, title, allofme in
+            print(" refreshed with \(allofme.count) items")
+            self.refreshControl.endRefreshing()
+        })
+    }
+    override func viewDidLoad() {
+        self.collectionView.backgroundColor = appTheme.backgroundColor
+        super.viewDidLoad()
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        refreshControl.tintColor = .blue
+        refreshControl.attributedTitle = NSAttributedString(string:"pulling fresh content from Itunes file sharing")
+        refreshControl.addTarget(self, action: #selector(self.refreshFromITunes), for: .valueChanged)
+        collectionView.addSubview(refreshControl)
+        collectionView.alwaysBounceVertical = true  // needed so always can pull to refresh
+        
+        //  only read the catalog if we have to
+        
+        assert( stickerPackListFileURL == nil)
+        do {
+            try remSpace.restoreFromDisk()
+            print("remSpace restored, \(remSpace.itemCount()) items")
+        }  catch {
+             print("could not restore remspace")
+        }
+       refreshFromITunes()
+    }
 }
 //MARK: UICollectionViewDataSource
-extension CatalogViewController : UICollectionViewDataSource {
+extension ITunesViewController : UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         // if self.refreshControl.isRefreshing { return 0 }
         return 1
@@ -137,7 +173,7 @@ extension CatalogViewController : UICollectionViewDataSource {
     
 }
 //MARK: UICollectionViewDelegateFlowLayout incorporates didSelect....
-extension CatalogViewController : UICollectionViewDelegateFlowLayout {
+extension ITunesViewController : UICollectionViewDelegateFlowLayout {
     
     //    func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
     //        return false
@@ -165,9 +201,9 @@ extension CatalogViewController : UICollectionViewDelegateFlowLayout {
     
 }
 // MARK: Delegates for actions from our associated menu
-extension CaptionedEntry {
+extension CaptionedEntry  {
     // not sure we want generate asis so changed back
-    fileprivate static func makeNewCaptionCat(   from ra:RemoteAsset, caption:String,id:String) {
+    fileprivate static func makeNewCaptionITunes(   from ra:RemoteAsset, caption:String,id:String) {
         // make captionated entry from remote asset
         
         let alreadyIn = capSpace.findMatchingAsset(path: ra.localimagepath, caption: ra.caption)
@@ -178,21 +214,21 @@ extension CaptionedEntry {
     }
 }
 
-extension CatalogViewController : CatalogMenuViewDelegate {
+extension ITunesViewController : CatalogMenuViewDelegate {
+    
     func useAsIs(remoteAsset:RemoteAsset,keepCaption:Bool) {
         // make un captionated entry from remote asset
         let caption = keepCaption ? remoteAsset.caption : ""
-        CaptionedEntry.makeNewCaptionCat(from: remoteAsset, caption: caption, id: "")
+        CaptionedEntry.makeNewCaptionITunes(from: remoteAsset, caption: caption, id: "")
     }
     func useWithCaption(remoteAsset:RemoteAsset,caption:String) {
         // make un captionated entry from remote asset
-        CaptionedEntry.makeNewCaptionCat( from: remoteAsset, caption: caption, id: "")
+        CaptionedEntry.makeNewCaptionITunes( from: remoteAsset, caption: caption, id: "")
     }
 }
 
 
-
-extension CatalogViewController : MEObserver {
+extension ITunesViewController : MEObserver {
     func newdocument(_ propsDict: JSONDict, _ title:String) {
         remSpace.reset()
         remSpace.catalogTitle = title
@@ -202,74 +238,13 @@ extension CatalogViewController : MEObserver {
         //remSpace.addhdr(s: pack) // adds new section
     }
     func newentry(me:RemoteAsset){
-        //remSpace.addasset(ra: me)
+        remSpace.addasset(ra: me)
     }
 }
-extension CatalogViewController {  //loading on first up - moved from masterview controller
-    
-    func phase1() {
-        
-        // only read remote if we have a list
-        
-        if stickerPackListFileURL != nil {
-            print(">>>>>>>>>> phase1 Manifest.loadFromRemoteJSON \(stickerPackListFileURL)")
-            Manifest.loadFromRemoteJSON (url: stickerPackListFileURL  , observer: self) { status, title, allofme in
-                
-                // at this point the observer callbacks have been called so the data is ready for redisplay on the main q
-                DispatchQueue.main.async  {
-                    guard status == 200 else {
-                        print("Put up alertview for status \(status)")
-                        
-                        IOSSpecialOps.blurt(self,title: "Network error code = \(status)",mess: "Please ensure you have an Internet Connection"){
-                            // on restart, run phase1 again
-                            self.phase1()
-                        }
-                        return
-                    }
-                    remSpace.saveToDisk()
-                    // if good, move on to phase 2 which happens in next view controller
-                    self.perform(#selector(self.phase2 ), with: nil, afterDelay: 2.0)
-                }
-            }
-        }
-    }
-    
-    /// phase2 isnt even started until after
-    func phase2() {
-        self.phase3()
-    }
-    func phase3() {
-        let vcid =  "ShowCatalogID"
-//        self.currentViewController = self.storyboard?.instantiateViewController(withIdentifier: vcid )
-//        self.currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false
-//        self.addChildViewController(self.currentViewController!)
-//        self.addSubview(subView: self.currentViewController!.view, toView: self.containerView)
-//        self.showCatalogViewController = self.currentViewController
-        
-       // self.activityIndicatorView.stopAnimating()
-        let x = remSpace.itemCount()
-        print(">>>>>>>>>> phase3 \(x) REMOTE ASSETS LOADED \(vcid) -- READY TO ROLL")
-//        
-//        coloredSpacer.backgroundColor = appTheme.catalogColor
-//        
-//        for bbi in self.navigationItem.leftBarButtonItems! {
-//            bbi.isEnabled = true
-//        }
-//        
-//        if logoNotRemoved {
-//            self.logoView.removeFromSuperview()
-//            logoNotRemoved = false
-//            
-//            //
-//            
-//            coloredSpacer.backgroundColor = appTheme.catalogColor
-//        }
-    }
-    
-}
-//
-//
 
+
+//
+//
 //
 
 //MARK: UIViewControllerPreviewingDelegate for touch

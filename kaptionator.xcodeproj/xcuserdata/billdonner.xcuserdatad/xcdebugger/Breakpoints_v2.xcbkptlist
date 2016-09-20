@@ -1205,38 +1205,6 @@
             endingLineNumber = "161"
             landmarkName = "processOnePack(pack:url:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static candidatez.Manifest.((processOnePack in _48CE41B4D84242848F29840F7C280A7F) (pack : Swift.String, url : Foundation.URL, completion : (Swift.Int, Swift.String, Swift.Array&lt;candidatez.RemoteAsset&gt;) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "candidatez"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/billdonner/Documents/kaptionator/shticklib/manifest.swift"
-                  timestampString = "496022496.484807"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "161"
-                  endingLineNumber = "161"
-                  offsetFromSymbolStart = "300">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static candidatez.Manifest.((processOnePack in _48CE41B4D84242848F29840F7C280A7F) (pack : Swift.String, url : Foundation.URL, completion : (Swift.Int, Swift.String, Swift.Array&lt;candidatez.RemoteAsset&gt;) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "candidatez"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/billdonner/Documents/kaptionator/shticklib/manifest.swift"
-                  timestampString = "496022496.485968"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "161"
-                  endingLineNumber = "161"
-                  offsetFromSymbolStart = "345">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

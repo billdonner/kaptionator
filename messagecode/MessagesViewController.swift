@@ -52,7 +52,7 @@ struct  StickerPool   {
             
             try memSpace.restoreFromDisk()
             
-            print ("memSpace restored,\(memSpace.itemCount()) items ")
+            print ("makeMSStickersFromMemspace memSpace restored,\(memSpace.itemCount()) items ")
             
             for ce in memSpace.items() {
                 let url = URL(string:ce.stickerimagepath)!

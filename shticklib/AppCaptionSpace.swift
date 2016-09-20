@@ -18,8 +18,7 @@ struct CaptionedEntry {
     let stickerOptions: StickerMakingOptions
     let catalogpack:String
     let catalogtitle:String
-    let localimagepath:String  // path of local copy of source for
-   // let stickerimagepath:String // path of the iMessages sticker ready to go into MSSticker call of the local image as copied in from remote site, the the MessagesApp space it is the path of a kaptionated, ready to go image
+    let localimagepath:String  // path of local copy of source for 
     
     /// these are the action functions that are called to move things between tabs
   
@@ -29,7 +28,6 @@ struct CaptionedEntry {
                 "caption":caption as AnyObject,
                 "id":id as AnyObject,
                 "local":localimagepath as AnyObject,
-               // "sticker":stickerimagepath as AnyObject,
                 "pack":catalogpack as AnyObject,
                 "title":catalogtitle as AnyObject,
                 "options":  stickerOptions.rawValue as AnyObject ]

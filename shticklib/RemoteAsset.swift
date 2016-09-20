@@ -27,6 +27,7 @@ class RemSpace {
     
     init() {
         raz = []
+        print("****sharedAppContainerDir ",sharedAppContainerDirectory())
     }
     
     var  filenum : Int  { return raz.count + 1001 }
