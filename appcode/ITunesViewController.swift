@@ -98,9 +98,15 @@ final class ITunesViewController : UIViewController  {
                         
                         
                         let localpath = $0
-                        let me = RemoteAsset(pack: "apptitle", title: imagename, remoteurl: "", localpath: localpath.absoluteString, options: .generateasis)
+                        let me = RemoteAsset(pack: "apptitle", title: imagename, remoteurl: "", localpath: localpath.absoluteString, options:
+                            // generateasis is a bit of a problem
+                            
+                            .generatemedium)
+                        
+                        
+                        remSpace.addasset(ra: me) // be sure to coun
                         allofme.append(me)
-                        observer?.newentry(me: me)
+                        //observer?.newentry(me: me)
                     }
                 }
             }
@@ -118,6 +124,7 @@ final class ITunesViewController : UIViewController  {
         
         loadFromITunesSharing(observer:self,completion: { status, title, allofme in
             print(" refreshed with \(allofme.count) items")
+            self.collectionView.reloadData()
             self.refreshControl.endRefreshing()
         })
     }
@@ -184,7 +191,7 @@ extension ITunesViewController : UICollectionViewDelegateFlowLayout {
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.isSelected  = false
         cell?.isHighlighted  = false
-        performSegue(withIdentifier: "CatalogCellTapMenuID", sender: self)
+        performSegue(withIdentifier: "ITunesCellTapMenuID", sender: self)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

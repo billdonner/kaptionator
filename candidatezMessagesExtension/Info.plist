@@ -2,8 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>EXTENSION-SCHEME</key>
-	<string>Candidatez</string>
+	<key>APP-TITLE</key>
+	<string>Candidatez by Martoons</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -19,9 +19,11 @@
 	<key>CFBundlePackageType</key>
 	<string>XPC!</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.01</string>
 	<key>CFBundleVersion</key>
-	<string>26</string>
+	<string>27</string>
+	<key>EXTENSION-SCHEME</key>
+	<string>Candidatez</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionMainStoryboard</key>
@@ -31,7 +33,5 @@
 	</dict>
 	<key>SHARED-INTERAPP-DATA</key>
 	<string>group.com.martoons.candidatez</string>
-	<key>APP-TITLE</key>
-	<string>Candidatez by Martoons</string>
 </dict>
 </plist>

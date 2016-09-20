@@ -176,7 +176,7 @@
                     <connections>
                         <outlet property="collectionView" destination="Kkh-gb-fWV" id="YXb-eL-stc"/>
                         <outlet property="flowLayout" destination="k7P-rg-D5Z" id="qZN-hk-5eh"/>
-                        <segue destination="8NT-q7-zWI" kind="presentation" identifier="ITunesCellTapMenuID" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="yrC-dO-qRx"/>
+                        <segue destination="bQh-9f-7xV" kind="presentation" identifier="ITunesCellTapMenuID" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="GVT-uE-zcz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jFN-kj-WA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -321,7 +321,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nue-Py-llb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2533" y="-4846"/>
+            <point key="canvasLocation" x="-2661" y="-5651"/>
         </scene>
         <!--Master View Controller-->
         <scene sceneID="iI4-Bh-VoZ">
@@ -678,7 +678,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDG-yE-ozP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-129" y="-3764"/>
+            <point key="canvasLocation" x="578" y="-4040"/>
         </scene>
         <!--Messaged Menu-->
         <scene sceneID="mcs-Nh-pSI">
@@ -793,7 +793,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DsP-IT-djv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-937" y="-3764"/>
+            <point key="canvasLocation" x="-2592" y="-5469"/>
         </scene>
         <!--Captioned Menu-->
         <scene sceneID="jCi-iC-0vi">
@@ -934,7 +934,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="riR-gB-pfI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1687" y="-3764"/>
+            <point key="canvasLocation" x="-2423" y="-3688"/>
         </scene>
         <!--Help Overlay View Controller-->
         <scene sceneID="dou-G2-wW1">
@@ -1007,7 +1007,4 @@
     <resources>
         <image name="shtikerzEyesLogoAni-618x485.gif" width="618" height="485"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="74j-mg-9PN"/>
-    </inferredMetricsTieBreakers>
 </document>

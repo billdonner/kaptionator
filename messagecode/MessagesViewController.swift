@@ -42,7 +42,7 @@ struct  StickerPool   {
             stickers.append(sticker)
         }
         catch   {
-            print("MSSticker creation \(error)")
+            print("******** MSSticker(\(url) creation \(error)")
             return
         }
     }
