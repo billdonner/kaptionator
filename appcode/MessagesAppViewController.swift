@@ -71,12 +71,6 @@ extension  MessagesAppViewController:MessagesAppMenuViewDelegate {
     }
     func removeFromIMessage(on captionedEntry:inout SharedCE ){
         print("MessagesAppEntriesViewController removeFromIMessage")
-        
-        //  let ce =  stickerz.remove(at: indexPath.row)
-        let _ =  memSpace.remove(id:captionedEntry.id)
-        //  tableView.deleteRows(at: [indexPath], with: .fade)
-        memSpace.saveToDisk()
-        
         captionedEntry.removeCEFromIMessage()
         self.tableView.reloadData()
     }
@@ -124,13 +118,7 @@ extension MessagesAppViewController : UITableViewDataSource {
         
         /// go get the image from our cache and then the net
         let path =  ce.localimagepath // ?????
-        if path != "" {  // dont crash but dont paint
-            //            let t = allImageData[path]
-            //            guard let tp = t else {
-            //                fatalError("missing data for url path \(path)")
-            //            }
-            //
-            // have the data onhand
+        if path != "" {  
             cell.paintImage(path:path)
         }
         cell.colorFor(options: ce.stickerOptions)
@@ -166,7 +154,8 @@ extension SharedCE {
     fileprivate func openinImessage() {
     }
     fileprivate mutating func removeCEFromIMessage() {
-        
+        let _ =  memSpace.remove(id:self.id)
+        memSpace.saveToDisk()
         SharedCaptionSpace.unhinge(id: self.id)
     
     }

@@ -43,15 +43,10 @@ struct StickerMakingOptions: OptionSet {
     static let generatemedium  = StickerMakingOptions(rawValue: 1 << 1)
     static let generatelarge   = StickerMakingOptions(rawValue: 1 << 2)
     static let generateasis   = StickerMakingOptions(rawValue: 1 << 3)
-    static let basic: StickerMakingOptions = [.generatesmall]
+    
+    static let generatenocaption   = StickerMakingOptions(rawValue: 1 << 4)
 }
 
-
-/// AppCaptionSpace is a singleton global struct that is persisted
-//  every instance of a user captioning a particular element is here
-//   note to self: DO NOT POLLUTE THIS STRUCT with class refs
-
-var capSpace  = AppCaptionSpace(AppPrivateDataSpace)
 
 
 var appTitle: String {

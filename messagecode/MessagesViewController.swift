@@ -100,14 +100,13 @@ struct  StickerPool   {
     
     @IBAction func theButtonTouch(_ sender: AnyObject) {
         openMainAppFromExtension(scheme: extensionScheme)
-        
     }
     @IBOutlet weak var theButton: UIButton!
     
  
     func openMainAppFromExtension (scheme:String) {
         
-        let p = "\(scheme):/home"
+        let p = "\(scheme)://home"
         let url = URL(string:p)!
         print("opening main app")
         self.extensionContext?.open(url, completionHandler: nil)

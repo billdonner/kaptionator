@@ -10,9 +10,7 @@
 		881A13E31D908F4B00D7A4EC /* ITunesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */; };
 		881A13E41D90ACB500D7A4EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD92D91D8872D400832564 /* Main.storyboard */; };
 		882EB2101D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
-		882EB2111D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
 		882EB2121D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
-		882EB2131D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
 		882EB2141D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
 		882EB2151D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
 		882EB2161D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
@@ -307,7 +305,6 @@
 		88DD92E61D88738200832564 /* MessagedMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagedMenuViewController.swift; sourceTree = "<group>"; };
 		88DD92E71D88738200832564 /* ModelDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelDataCell.swift; sourceTree = "<group>"; };
 		88DD92E81D88738200832564 /* TableDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableDataCell.swift; sourceTree = "<group>"; };
-		88E3B5D41D90BC480079E0CB /* aaa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aaa.swift; sourceTree = "<group>"; };
 		88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesMenuViewController.swift; sourceTree = "<group>"; };
 		88F25ADA1D5F5803004F4AB4 /* shtikerzEyesLogoAni-618x485.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "shtikerzEyesLogoAni-618x485.gif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -399,15 +396,15 @@
 			children = (
 				88DD92DE1D88738200832564 /* AppDelegate.swift */,
 				88DD92DF1D88738200832564 /* CatalogViewController.swift */,
-				881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */,
 				88DD92E01D88738200832564 /* CatalogMenuViewController.swift */,
+				881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */,
 				88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */,
-				88DD92E11D88738200832564 /* CaptionedMenuViewController.swift */,
 				88DD92E21D88738200832564 /* CapationatedViewController.swift */,
+				88DD92E11D88738200832564 /* CaptionedMenuViewController.swift */,
 				88DD92E41D88738200832564 /* HelpOverlayViewController.swift */,
 				88DD92E51D88738200832564 /* MasterViewController.swift */,
-				88DD92E61D88738200832564 /* MessagedMenuViewController.swift */,
 				88DD92E31D88738200832564 /* MessagesAppViewController.swift */,
+				88DD92E61D88738200832564 /* MessagedMenuViewController.swift */,
 				88DD92E71D88738200832564 /* ModelDataCell.swift */,
 				88DD92E81D88738200832564 /* TableDataCell.swift */,
 			);
@@ -427,7 +424,6 @@
 		88AEA5881D514B29006E5C70 = {
 			isa = PBXGroup;
 			children = (
-				88E3B5D41D90BC480079E0CB /* aaa.swift */,
 				88DD92D91D8872D400832564 /* Main.storyboard */,
 				88F25ADA1D5F5803004F4AB4 /* shtikerzEyesLogoAni-618x485.gif */,
 				88722EF51D52186400B2F85B /* shticklib */,
@@ -1066,7 +1062,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				88B54CFB1D8870A10076942D /* mlib.swift in Sources */,
-				882EB2131D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */,
 				88B54C9D1D886FBC0076942D /* MessagesViewController.swift in Sources */,
 				88B54CC51D8870060076942D /* common.swift in Sources */,
 				88B54CB51D8870060076942D /* theme.swift in Sources */,
@@ -1080,7 +1075,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				88B54CFA1D8870A00076942D /* mlib.swift in Sources */,
-				882EB2111D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */,
 				88B54C9C1D886FBC0076942D /* MessagesViewController.swift in Sources */,
 				88B54CC31D8870060076942D /* common.swift in Sources */,
 				88B54CB31D8870060076942D /* theme.swift in Sources */,

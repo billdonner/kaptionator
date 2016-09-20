@@ -68,11 +68,29 @@
         
         
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.stickerz = capSpace.items()
+    func refreshFromCapSpace(){
+        var items = capSpace.items()
+        
+        // group similar images together in reverse ti
+        items.sort(by: { a,b in  let aa = a as AppCE
+            let bb = b as AppCE
+            
+//            if aa.id < bb.id && aa.localimagepath != bb.localimagepath {
+//                return aa.id < bb.id
+//            }
+//            if aa.localimagepath == bb.localimagepath {
+                return aa.id > bb.id
+//            }
+//            return aa.localimagepath < bb.localimagepath
+            }
+       )
+        self.stickerz = items
         // 5 filter items down according to this tab's needs
         self.tableView?.reloadData()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+  refreshFromCapSpace()
         
     }
     
@@ -206,21 +224,22 @@
 
  extension AppCE {
     
-    fileprivate   mutating func changeCaption(to:String) {
-        //make a new ce, copying the id
-        
-        let _ = AppCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath, caption: to, options: self.stickerOptions, id: self.id)
-
-        
+    fileprivate   mutating func changeCaption(to caption:String) {
+           AppCaptionSpace.unhinge(id:self.id) //remove old
+        // make new with new caption but all else is similar
+        let _ = AppCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath, caption: caption, options: self.stickerOptions, id: self.id)
+     
         //
     }
     
     
     fileprivate func cloneWithNewCaption(_ caption:String){
-        let _ = AppCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath,  caption: caption,  options: self.stickerOptions, id:"")// self.id)
-        // users newce.id to CLONE, the old item will get unhinged
-       
         
+        let alreadyIn = capSpace.findMatchingAsset(path: self.localimagepath, caption: self.caption)
+        if !alreadyIn {
+        // keep old and make another
+        let _ = AppCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath,  caption: caption,  options: self.stickerOptions, id:"")
+        }
     }
     
     fileprivate mutating func moveToIMessage() { // only from capspace
@@ -236,7 +255,7 @@
                 print("made sticker file urls \(stickerurl)")
                 
                 // ce.localimagepath = url.absoluteString // dink with this
-                let _ = SharedCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: stickerurl.absoluteString ,  caption: self.caption,  options: self.stickerOptions, id:"")// self.id)
+                let _ = SharedCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath, stickerpath: stickerurl.absoluteString ,  caption: self.caption,  options: self.stickerOptions, id:"")// self.id)
                 // users newce.id to CLONE, the old item will get unhinged
               
             }

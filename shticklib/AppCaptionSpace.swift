@@ -51,7 +51,9 @@ struct AppCE {
             self.catalogpack = pack
             self.catalogtitle = title
             self.localimagepath = imagepath
-            self.caption = caption == "" ? title : caption
+            self.caption =
+               // caption == "" ? title :
+            caption
             self.stickerOptions = options
             self.id =  id == "" ? "\(AppCE.nicetime())" : id
         }
@@ -62,7 +64,11 @@ struct AppCE {
 struct AppCaptionSpace {
     private var entries : [String:AppCE] = [:]
     private var suite: String // partions nsuserdefaults
-    
+    static func unhinge(id:String) {
+        // unhinge the entry
+        let _ =  capSpace.remove(id:id)
+        capSpace.entries[id] = nil
+    }
     init(_ suite:String) {
         self.suite = suite
     }

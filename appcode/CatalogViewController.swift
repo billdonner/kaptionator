@@ -21,6 +21,7 @@ final class CatalogViewController: UIViewController  {
     
     var theSelectedIndexPath:IndexPath?
     
+    @IBOutlet weak var startupLogo: UIImageView!
     @IBOutlet internal var collectionView: UICollectionView!
     @IBOutlet fileprivate var flowLayout: UICollectionViewFlowLayout!
     
@@ -65,11 +66,6 @@ final class CatalogViewController: UIViewController  {
         }
     }
     
-//    func refreshFromITunes() {
-//        print("    func refreshFromITunes() pulled ")
-//        masterViewController?.phase1() // run a full cycle here
-//        refreshControl.endRefreshing()
-//    }
     override func viewDidLoad() {
             self.collectionView.backgroundColor = appTheme.backgroundColor
             super.viewDidLoad()
@@ -87,19 +83,7 @@ final class CatalogViewController: UIViewController  {
                 phase1()
             }
         }
-        
-        
-//            let spath = masterViewController?.stickerPackListFileURL
-//            if let _ = spath {
-//                // running remotely
-//            } else {
-//                refreshControl.tintColor = .blue
-//                refreshControl.attributedTitle = NSAttributedString(string:"pulling fresh content from Itunes file sharing")
-//                refreshControl.addTarget(self, action: #selector(self.refreshFromITunes), for: .valueChanged)
-//                collectionView.addSubview(refreshControl)
-//                collectionView.alwaysBounceVertical = true  // needed so always can pull to refresh
-       // }
-    //}
+ 
 }
 //MARK: UICollectionViewDataSource
 extension CatalogViewController : UICollectionViewDataSource {
@@ -126,7 +110,6 @@ extension CatalogViewController : UICollectionViewDataSource {
         cell.colorFor(ra:ra)
         return cell // Return the cell
     }
-    
 }
 //MARK: UICollectionViewDelegateFlowLayout incorporates didSelect....
 extension CatalogViewController : UICollectionViewDelegateFlowLayout {
@@ -162,19 +145,23 @@ extension AppCE {
     fileprivate static func makeNewCaptionCat(   from ra:RemoteAsset, caption:String,id:String) {
         // make captionated entry from remote asset
         
-        let alreadyIn = capSpace.findMatchingAsset(path: ra.localimagepath, caption: ra.caption)
+        let alreadyIn = capSpace.findMatchingAsset(path: ra.localimagepath, caption: caption)
         if !alreadyIn {
-            let _ = AppCaptionSpace.make (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: ra.options, id: id)
+            let options = ra.options
+          
+            let _ = AppCaptionSpace.make (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: options, id: id)
             
         }
     }
 }
 
 extension CatalogViewController : CatalogMenuViewDelegate {
-    func useAsIs(remoteAsset:RemoteAsset,keepCaption:Bool) {
+    func useAsIs(remoteAsset:RemoteAsset) {
+        AppCE.makeNewCaptionCat(from: remoteAsset, caption: remoteAsset.caption , id: "")
+    }
+    func useWithNoCaption(remoteAsset:RemoteAsset) {
         // make un captionated entry from remote asset
-        let caption = keepCaption ? remoteAsset.caption : ""
-        AppCE.makeNewCaptionCat(from: remoteAsset, caption: caption, id: "")
+        AppCE.makeNewCaptionCat( from: remoteAsset, caption: "", id: "")
     }
     func useWithCaption(remoteAsset:RemoteAsset,caption:String) {
         // make un captionated entry from remote asset
@@ -232,15 +219,11 @@ extension CatalogViewController {  //loading on first up - moved from masterview
     }
     func phase3() {
         let vcid =  "ShowCatalogID"
-//        self.currentViewController = self.storyboard?.instantiateViewController(withIdentifier: vcid )
-//        self.currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false
-//        self.addChildViewController(self.currentViewController!)
-//        self.addSubview(subView: self.currentViewController!.view, toView: self.containerView)
-//        self.showCatalogViewController = self.currentViewController
         
        // self.activityIndicatorView.stopAnimating()
         let x = remSpace.itemCount()
         print(">>>>>>>>>> phase3 \(x) REMOTE ASSETS LOADED \(vcid) -- READY TO ROLL")
+        startupLogo.removeFromSuperview()
         self.collectionView.reloadData()
 //        
 //        coloredSpacer.backgroundColor = appTheme.catalogColor
@@ -260,44 +243,5 @@ extension CatalogViewController {  //loading on first up - moved from masterview
     }
     
 }
-//
-//
 
-//
-
-//MARK: UIViewControllerPreviewingDelegate for touch
-//extension CatalogViewController : UIViewControllerPreviewingDelegate {
-//    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-//        guard let indexPath = collectionView.indexPathForItem(at: collectionView.convert(location, from: view)),
-//            let cell = collectionView.cellForItem(at: indexPath) else {
-//                return nil
-//        }
-//
-////        let t = remSpace.hdrz.count
-////        assert(remSpace.raz.count == t)
-////        assert(indexPath.section < t)
-//
-//        let ra = remSpace.raz [indexPath.row]
-//
-//        let dvc = storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
-//        dvc.item = DataItem(name: ra.caption, population: 0, latitude: 0.0, longitude: 0.0, url: URL(string:ra.imagepath)!)
-//        dvc.delegate = self
-//        dvc.preferredContentSize = CGSize(width: 0, height: 360)
-//        previewingContext.sourceRect = collectionView.convert(cell.frame, to: collectionView.superview!)
-//        return dvc
-//    }
-//
-//    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-//        let navigationController = UINavigationController(rootViewController: viewControllerToCommit)
-//        show(navigationController, sender: self)
-//        // history?.viewed(selectedCounty!)
-//    }
-//}
-//
-//MARK: DetailsViewControllerDelegate announces finish
-//extension CatalogViewController:DetailsViewControllerDelegate {
-//    func detailsViewControllerDidFinish(_ detailsViewController: DetailsViewController){
-//
-//    }
-//}
 

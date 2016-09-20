@@ -206,20 +206,22 @@ extension AppCE  {
     fileprivate static func makeNewCaptionITunes(   from ra:RemoteAsset, caption:String,id:String) {
         // make captionated entry from remote asset
         
-        let alreadyIn = capSpace.findMatchingAsset(path: ra.localimagepath, caption: ra.caption)
+        let alreadyIn = capSpace.findMatchingAsset(path: ra.localimagepath, caption: caption)
         if !alreadyIn {
             let _ = AppCaptionSpace.make (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: ra.options, id: id)
-            capSpace.saveToDisk()
         }
     }
 }
 
 extension ITunesViewController : ITunesMenuViewDelegate {
     
-    func useAsIs(remoteAsset:RemoteAsset,keepCaption:Bool) {
+    
+    func useAsIs(remoteAsset:RemoteAsset) {
+        AppCE.makeNewCaptionITunes(from: remoteAsset, caption: remoteAsset.caption , id: "")
+    }
+    func useWithNoCaption(remoteAsset:RemoteAsset) {
         // make un captionated entry from remote asset
-        let caption = keepCaption ? remoteAsset.caption : ""
-        AppCE.makeNewCaptionITunes(from: remoteAsset, caption: caption, id: "")
+        AppCE.makeNewCaptionITunes( from: remoteAsset, caption: "", id: "")
     }
     func useWithCaption(remoteAsset:RemoteAsset,caption:String) {
         // make un captionated entry from remote asset

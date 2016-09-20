@@ -47,15 +47,15 @@ struct SharedCE {
         return intWithLeadingZeros( intnow, digits: 20)
     }
     
-    init(pack:String,title:String,imagepath:String,
+    init(pack:String,title:String,imagepath:String,stickerpath:String,
          caption:String,
          options:StickerMakingOptions,
          id:String = ""  ) {
         self.catalogpack = pack
         self.catalogtitle = title
         self.localimagepath = imagepath
-        self.stickerimagepath = ""
-        self.caption = caption == "" ? title : caption
+        self.stickerimagepath = stickerpath
+        self.caption = caption // == "" ? title : caption
         self.stickerOptions = options
         self.id =  id == "" ? "\(SharedCE.nicetime())" : id
     }
@@ -74,7 +74,6 @@ struct SharedCaptionSpace {
         // unhinge the entry
         let _ =  memSpace.remove(id:id)
         memSpace.entries[id] = nil
-        memSpace.saveToDisk()
     }
     func itemCount () -> Int {
         return entries.count
@@ -134,11 +133,13 @@ struct SharedCaptionSpace {
     }
     //// core
     
-    static  func make( pack:String,title:String,imagepath:String,caption:String,
+    static  func make( pack:String,title:String,imagepath:String,stickerpath:String, caption:String,
                        options:StickerMakingOptions,
                        id:String  )->SharedCE {
         let newself = SharedCE( pack: pack, title: title,
                                             imagepath: imagepath,
+                                            stickerpath:stickerpath,
+                                        
                                             caption: caption,
                                             options: options,id:id)
         
@@ -159,6 +160,7 @@ struct SharedCaptionSpace {
                 if let  optionsvalue = acaption ["options"] as? Int,
                     let captiontext = acaption ["caption"] as? String,
                     let i = acaption["local"] as? String,
+                     let s = acaption["sticker"] as? String,
                     let p = acaption["pack"] as? String,
                     let d = acaption["id"] as? String
                 {
@@ -171,8 +173,9 @@ struct SharedCaptionSpace {
                     options.rawValue = optionsvalue
                     
                     let _ =      SharedCaptionSpace.make(pack:p,
-                                                           title:ti,imagepath:i ,
-                                                           caption:captiontext,
+                                                           title:ti,
+                                                           imagepath:i ,
+                                                           stickerpath: s,               caption:captiontext,
                                                            options:options,id:d)
                 }
             }

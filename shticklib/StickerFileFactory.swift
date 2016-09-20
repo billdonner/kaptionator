@@ -72,9 +72,9 @@ struct StickerFileFactory {
     
     
     do {
-            if options.contains(.generateasis) {
+            if options.contains(.generateasis) || captionedEntry.caption == "" {
                 // if asis, the size is just for decoration
-                let rul = try makeStickerAndURLfromData(imageData:imageData, label:label ,type:type, size:0.0)
+                let rul = try makeStickerAndURLfromData(imageData:imageData, label:label)
                 returls.append(rul)
                 
             } else
@@ -106,7 +106,7 @@ struct StickerFileFactory {
     
        private mutating func
         makeStickerAndURLfromData(imageData:Data,
-                                  label:String,type:String,size:CGFloat) throws -> URL {
+                                  label:String ) throws -> URL {
         
         /// now write this view to the local file system 
         
@@ -142,6 +142,8 @@ struct StickerFileFactory {
     }//createTextStickerFromDefaults
     
     private mutating func makeCaptionatedStickerFile(label:String,image:UIImage,type:String,size:CGFloat, proportion: CGFloat, fontSize:CGFloat ,caption: String) throws -> URL {
+        
+        // if caption is blank then just return the incoming
         let majik = CGFloat(0.7)
         
         let oframe = CGRect(x:0,y:0,width:size,height:size)

@@ -70,13 +70,18 @@
                                     <color key="backgroundColor" red="0.85043728350000003" green="0.21816034619999999" blue="0.15920260550000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </collectionReusableView>
                             </collectionView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shtikerzEyesLogoAni-618x485.gif" translatesAutoresizingMaskIntoConstraints="NO" id="jFi-NN-11Z"/>
                         </subviews>
                         <color key="backgroundColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="HmL-hN-xup" firstAttribute="top" secondItem="jFi-NN-11Z" secondAttribute="bottom" id="6sq-7L-cxb"/>
                             <constraint firstItem="6AQ-mN-dpX" firstAttribute="leading" secondItem="jGW-W9-YSM" secondAttribute="leadingMargin" constant="-20" id="IgV-Hx-iPq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jFi-NN-11Z" secondAttribute="trailing" constant="-16" id="ZD9-Or-bdz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6AQ-mN-dpX" secondAttribute="trailing" constant="-20" id="b9J-Ja-82Z"/>
                             <constraint firstItem="HmL-hN-xup" firstAttribute="top" secondItem="6AQ-mN-dpX" secondAttribute="bottom" id="qLY-RQ-coC"/>
+                            <constraint firstItem="jFi-NN-11Z" firstAttribute="top" secondItem="FiY-Aw-dRs" secondAttribute="bottom" id="qLf-Wf-qe6"/>
                             <constraint firstItem="6AQ-mN-dpX" firstAttribute="top" secondItem="FiY-Aw-dRs" secondAttribute="bottom" id="yC7-zS-d1E"/>
+                            <constraint firstItem="jFi-NN-11Z" firstAttribute="leading" secondItem="jGW-W9-YSM" secondAttribute="leadingMargin" constant="-16" id="yfs-Xm-Xfl"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -87,6 +92,7 @@
                     <connections>
                         <outlet property="collectionView" destination="6AQ-mN-dpX" id="i1P-vh-q4K"/>
                         <outlet property="flowLayout" destination="auC-ig-Lkt" id="Td3-l4-ThG"/>
+                        <outlet property="startupLogo" destination="jFi-NN-11Z" id="A3w-Ih-kKG"/>
                         <segue destination="8NT-q7-zWI" kind="presentation" identifier="CatalogCellTapMenuID" animates="NO" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="74j-mg-9PN"/>
                     </connections>
                 </viewController>
@@ -106,9 +112,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Kkh-gb-fWV">
-                                <frame key="frameInset" minX="-13" minY="83" width="400" height="500"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Kkh-gb-fWV">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="4" id="k7P-rg-D5Z">
                                     <size key="itemSize" width="100" height="120"/>
@@ -160,16 +164,24 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Kkh-gb-fWV" firstAttribute="top" secondItem="vRO-wB-iCE" secondAttribute="bottom" id="1Hl-z1-uks"/>
+                            <constraint firstItem="Kkh-gb-fWV" firstAttribute="leading" secondItem="WKc-aD-b95" secondAttribute="leadingMargin" constant="-20" id="NnU-pO-Kfw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kkh-gb-fWV" secondAttribute="trailing" constant="-20" id="YRJ-bx-IPe"/>
+                            <constraint firstItem="MVY-O8-FHJ" firstAttribute="top" secondItem="Kkh-gb-fWV" secondAttribute="bottom" id="iaH-W0-lDh"/>
+                        </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="collectionView" destination="Kkh-gb-fWV" id="YXb-eL-stc"/>
                         <outlet property="flowLayout" destination="k7P-rg-D5Z" id="qZN-hk-5eh"/>
-                        <segue destination="8NT-q7-zWI" kind="presentation" identifier="CatalogCellTapMenuID" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="yrC-dO-qRx"/>
+                        <segue destination="8NT-q7-zWI" kind="presentation" identifier="ITunesCellTapMenuID" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="yrC-dO-qRx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jFN-kj-WA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-649" y="-4927"/>
+            <point key="canvasLocation" x="-100" y="-4890"/>
         </scene>
         <!--Capationated View Controller-->
         <scene sceneID="ZsO-pm-cbr">
@@ -576,7 +588,7 @@
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="go"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPTIONS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xn4-B1-7Wn">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="itunes options" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xn4-B1-7Wn">
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>

@@ -9,6 +9,12 @@
 import UIKit
 
 
+/// AppCaptionSpace is a singleton global struct that is persisted
+//  every instance of a user captioning a particular element is here
+//   note to self: DO NOT POLLUTE THIS STRUCT with class refs
+
+var capSpace  = AppCaptionSpace(AppPrivateDataSpace)
+
 
 // global funcs called fr4om multiple kind of view controllers
 func animatedViewOf(frame:CGRect, imageurl:String) -> UIWebView {    let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  src='\(imageurl)' height='\(frame.height)' width='\(frame.width)'  alt='\(imageurl)' /</body></html5>"

@@ -8,8 +8,9 @@
 
 import UIKit
 protocol ITunesMenuViewDelegate {
-    func useAsIs(remoteAsset:RemoteAsset,keepCaption:Bool)
+    func useAsIs(remoteAsset:RemoteAsset)
     func useWithCaption(remoteAsset:RemoteAsset,caption:String)
+    func useWithNoCaption(remoteAsset:RemoteAsset)
 } 
 class ITunesMenuViewController: UIViewController,AddDismissButton {
     var remoteAsset:RemoteAsset! // must be set
@@ -38,12 +39,12 @@ class ITunesMenuViewController: UIViewController,AddDismissButton {
     
     @IBOutlet weak var animatedLabel: UILabel!
     @IBAction func useStickerAsIsPressed(_ sender: AnyObject) {
-     delegate?.useAsIs(remoteAsset:remoteAsset,keepCaption:true) // elsewhere
+     delegate?.useAsIs(remoteAsset:remoteAsset ) // elsewhere
      dismiss(animated: true,completion:nil)
     }
     
     @IBAction func useStickerNoCaptionPressed(_ sender: AnyObject) {
-    delegate?.useAsIs(remoteAsset:remoteAsset,keepCaption:false) // elsewhere
+    delegate?.useWithNoCaption(remoteAsset:remoteAsset ) // elsewhere
         dismiss(animated: true,completion:nil)
     }
     
