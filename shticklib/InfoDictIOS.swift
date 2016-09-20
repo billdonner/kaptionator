@@ -233,7 +233,7 @@ struct IO {
 
 
  
-typealias LAS = ((String,[CaptionedEntry])->())?
+typealias LAS = ((String,[AppCE])->())?
 
 extension UIColor {
     public convenience init(hexString: String) {

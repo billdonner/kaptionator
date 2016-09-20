@@ -12,15 +12,7 @@ import UIKit
 // MARK: Show All Remote Catalog Entries in One Tab as Child ViewContoller
 //
 
-// if nil we'll just pull from documents directory inside the catalog controller
-var stickerPackListFileURL: URL? {
-get {
-    if let iDict = Bundle.main.infoDictionary ,
-        let w =  iDict["REMOTE-STICKERPACKLIST-URL"] as? String { return URL(string:w) }
-    return nil
-}
-}
-
+ 
 final class CatalogViewController: UIViewController  {
     
     //let refreshControl = UIRefreshControl()
@@ -165,7 +157,7 @@ extension CatalogViewController : UICollectionViewDelegateFlowLayout {
     
 }
 // MARK: Delegates for actions from our associated menu
-extension CaptionedEntry {
+extension AppCE {
     // not sure we want generate asis so changed back
     fileprivate static func makeNewCaptionCat(   from ra:RemoteAsset, caption:String,id:String) {
         // make captionated entry from remote asset
@@ -173,7 +165,7 @@ extension CaptionedEntry {
         let alreadyIn = capSpace.findMatchingAsset(path: ra.localimagepath, caption: ra.caption)
         if !alreadyIn {
             let _ = AppCaptionSpace.make (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: ra.options, id: id)
-            capSpace.saveToDisk()
+            
         }
     }
 }
@@ -182,11 +174,11 @@ extension CatalogViewController : CatalogMenuViewDelegate {
     func useAsIs(remoteAsset:RemoteAsset,keepCaption:Bool) {
         // make un captionated entry from remote asset
         let caption = keepCaption ? remoteAsset.caption : ""
-        CaptionedEntry.makeNewCaptionCat(from: remoteAsset, caption: caption, id: "")
+        AppCE.makeNewCaptionCat(from: remoteAsset, caption: caption, id: "")
     }
     func useWithCaption(remoteAsset:RemoteAsset,caption:String) {
         // make un captionated entry from remote asset
-        CaptionedEntry.makeNewCaptionCat( from: remoteAsset, caption: caption, id: "")
+        AppCE.makeNewCaptionCat( from: remoteAsset, caption: caption, id: "")
     }
 }
 
@@ -249,6 +241,7 @@ extension CatalogViewController {  //loading on first up - moved from masterview
        // self.activityIndicatorView.stopAnimating()
         let x = remSpace.itemCount()
         print(">>>>>>>>>> phase3 \(x) REMOTE ASSETS LOADED \(vcid) -- READY TO ROLL")
+        self.collectionView.reloadData()
 //        
 //        coloredSpacer.backgroundColor = appTheme.catalogColor
 //        

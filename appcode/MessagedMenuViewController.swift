@@ -8,12 +8,12 @@
 
 import UIKit
 protocol MessagesAppMenuViewDelegate {
-    func openinIMessage(captionedEntry:SharedCaptionedEntry)
-    func removeFromIMessage(on captionedEntry:inout SharedCaptionedEntry )
+    func openinIMessage(captionedEntry:SharedCE)
+    func removeFromIMessage(on captionedEntry:inout SharedCE )
 }
 
 class MessagesAppMenuViewController: UIViewController , AddDismissButton {
-    var captionedEntry:SharedCaptionedEntry! // must be set
+    var captionedEntry:SharedCE! // must be set
     var delegate: MessagesAppMenuViewDelegate?  // mig
     @IBAction func unwindToMessagesAppMenuViewController(_ segue: UIStoryboardSegue)  {}
     

@@ -31,8 +31,35 @@ class RemSpace {
     }
     
     var  filenum : Int  { return raz.count + 1001 }
+    fileprivate func loadFromLocal(from localpath:String) -> String {
+        
+        do {
+            let ext = (localpath as NSString).pathExtension
+            let name = "\(filenum).\(ext)"
+            
+            let newfilename = sharedAppContainerDirectory().appendingPathComponent(name, isDirectory: false)
+            
+            if FileManager.default.fileExists(atPath: newfilename.absoluteString)
+            {
+                return newfilename.absoluteString
+            }
+            
+            // now copy, could be in done in back but why?
+            
+            let data = try Data(contentsOf: URL(string:localpath)!)
+            try data.write(to: newfilename, options: .atomicWrite)
+            
+            return newfilename.absoluteString
+        }
+        catch {
+            print("Could not load local \(localpath)")
+            // might as well die at this point
+            fatalError("could not load \(error)")
+        }
+    }
+    
 
-    fileprivate func loadFile(from remotepath:String) -> String {
+    fileprivate func loadFileRemote(from remotepath:String) -> String {
         
         do {
             let ext = (remotepath as NSString).pathExtension
@@ -133,11 +160,12 @@ struct RemoteAsset {
         self.options = options
         self.remoteurl = remoteurl
         if let lp = localpath { // if localpath supplied use that else
-            self.localimagepath = lp
+            let local  = remSpace.loadFromLocal(from:lp)
+            self.localimagepath = local
         }
         else {
             // load file from remote location
-            let local  = remSpace.loadFile(from:remoteurl)
+            let local  = remSpace.loadFileRemote(from:remoteurl)
             self.localimagepath = local
             print("**** RA.INIT(..IMAGEPATH) \(self.localimagepath)")
         }
@@ -152,8 +180,8 @@ struct RemoteAsset {
             "options":  options.rawValue as Int ]
         return x
     }
-    func  convertToCaptionedEntry( )  -> CaptionedEntry {
-        let ce = CaptionedEntry( pack:  pack, title:  caption, imagepath:  localimagepath,   caption: "",  options: options)
+    func  convertToAppCE( )  -> AppCE {
+        let ce = AppCE( pack:  pack, title:  caption, imagepath:  localimagepath,   caption: "",  options: options)
         return ce
     }
 }

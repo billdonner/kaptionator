@@ -8,13 +8,13 @@
 
 import UIKit
 protocol CaptionedMenuViewDelegate {
-    func movetoIMessage(captionedEntry:inout CaptionedEntry)
-    func changeCaption( on captionedEntry:inout CaptionedEntry, caption:String)
-    func cloneWithCaption( captionedEntry:CaptionedEntry, caption:String)
+    func movetoIMessage(captionedEntry:inout AppCE)
+    func changeCaption( on captionedEntry:inout AppCE, caption:String)
+    func cloneWithCaption( captionedEntry:AppCE, caption:String)
 }
 
 class CaptionedMenuViewController: UIViewController, AddDismissButton {
-    var captionedEntry:CaptionedEntry! // must be set
+    var captionedEntry:AppCE! // must be set
     var delegate: CaptionedMenuViewDelegate?  // mig
     
     

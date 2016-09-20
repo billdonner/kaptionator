@@ -9,9 +9,9 @@
 import UIKit
 
 
-//MARK: - CaptionedEntry represents a catalog entry modified the user
+//MARK: - AppCE represents a catalog entry as modified the user
 
-struct CaptionedEntry {
+struct AppCE {
     
     let id: String //stringified float millisecs since 1970
     let caption: String
@@ -51,18 +51,17 @@ struct CaptionedEntry {
             self.catalogpack = pack
             self.catalogtitle = title
             self.localimagepath = imagepath
-            //self.stickerimagepath = ""
             self.caption = caption == "" ? title : caption
             self.stickerOptions = options
-            self.id =  id == "" ? "\(CaptionedEntry.nicetime())" : id
+            self.id =  id == "" ? "\(AppCE.nicetime())" : id
         }
 }
 
-//MARK: AppCaptionSpace collects and persists CaptionedEntrys
+//MARK: AppCaptionSpace collects and persists AppCEs
 
 struct AppCaptionSpace {
-    var entries : [String:CaptionedEntry] = [:]
-    var suite: String // partions nsuserdefaults
+    private var entries : [String:AppCE] = [:]
+    private var suite: String // partions nsuserdefaults
     
     init(_ suite:String) {
         self.suite = suite
@@ -70,11 +69,11 @@ struct AppCaptionSpace {
     func itemCount () -> Int {
         return entries.count
     }
-    func itemAt(_ index:Int) -> CaptionedEntry {
+    func itemAt(_ index:Int) -> AppCE {
         let t = entries.map { key, value in return value }
         return t [index] // horrible 
     }
-    func items () -> [CaptionedEntry] {
+    func items () -> [AppCE] {
       return   entries.map { key, value in return value }
     } 
     func dump() {
@@ -86,36 +85,33 @@ struct AppCaptionSpace {
     
     static  func make(pack:String,  title:String,imagepath:String ,caption:String,
                                 options:StickerMakingOptions,
-                                id:String  )->CaptionedEntry {
-        let newself = CaptionedEntry( pack: pack, title: title,
+                                id:String  )->AppCE {
+        let newself = AppCE( pack: pack, title: title,
                                       imagepath: imagepath,
                                       caption: caption,
                                       options: options,id:id)
         
         // users newce.id to CLONE
-        capSpace.entries[id] = newself
-        //capSpace.saveToDisk()
+        capSpace.entries[newself.id] = newself
+        capSpace.saveToDisk()
         return newself
     }
     
 
-    mutating func addCaptionedEntry(_ ce :CaptionedEntry) {
-        self.entries[ce.id] = ce
-    }
     mutating func reset() {
         entries = [:]
         saveToDisk()
     }
-    mutating func remove(id:String) -> CaptionedEntry? {
+    mutating func remove(id:String) -> AppCE? {
         let t = entries[id]
         entries[id] = nil
         return t
         
     }
-    func  findCaptionedEntry(id:String) -> CaptionedEntry? {
+    func  findAppCE(id:String) -> AppCE? {
         return entries[id]
     }
-    func findMatchingEntry(ce:CaptionedEntry) -> Bool {
+    func findMatchingEntry(ce:AppCE) -> Bool {
         for (_,entry) in entries {
             if entry.catalogtitle == ce.catalogtitle &&
                 entry.caption == ce.caption

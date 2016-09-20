@@ -62,7 +62,7 @@ struct Snapsupport {
 /// only for use by extnesion
 struct StickerFileFactory {
 
-   mutating func createStickerFileFrom(imageData:Data,captionedEntry:CaptionedEntry) -> URL {
+   mutating func createStickerFileFrom(imageData:Data,captionedEntry:AppCE) -> URL {
         var returls:[URL] = []
         let options = captionedEntry.stickerOptions
         let assep = (captionedEntry.localimagepath as NSString).lastPathComponent
@@ -93,7 +93,7 @@ struct StickerFileFactory {
                     returls.append(rul)
                 }
             
-            print("processed labelled row from asset \(label)")
+            //print("processed labelled row from asset \(label)")
         }
         catch {
             print ("cant create labelled text sticker in row for \(label) \(error)")
@@ -134,7 +134,7 @@ struct StickerFileFactory {
         if let image = image {  // make sure not nil
             let ms =  try makeCaptionatedStickerFile(label:label, image: image,type:type,size:size, proportion: proportion, fontSize:fontSize, caption: caption  )
             
-            print ("Making sticker with url  \(ms) = \( caption)")
+            //print ("Making sticker with url  \(ms) = \( caption)")
             return ms
         }
         

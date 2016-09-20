@@ -13,7 +13,7 @@
  
  final class CapationatedViewController: UIViewController   {
     
-    var stickerz:[CaptionedEntry] = []
+    var stickerz:[AppCE] = []
     var theSelectedIndexPath:IndexPath?
     
     @IBOutlet internal  var tableView: UITableView!
@@ -85,17 +85,17 @@
  // MARK: Delegates for actions from our associated menu
  extension CapationatedViewController : CaptionedMenuViewDelegate {
     
-    func cloneWithCaption(captionedEntry:  CaptionedEntry, caption: String) {
+    func cloneWithCaption(captionedEntry:  AppCE, caption: String) {
         print("CapationatedEntriesViewController cloneWithCaption")
         captionedEntry.cloneWithNewCaption(  caption)
         tableView.reloadData()
     }
     
-    func movetoIMessage(captionedEntry:inout CaptionedEntry){
+    func movetoIMessage(captionedEntry:inout AppCE){
         print("CapationatedEntriesViewController movetoimessage")
         captionedEntry.moveToIMessage()
     }
-    func changeCaption( on captionedEntry:inout CaptionedEntry, caption:String){
+    func changeCaption( on captionedEntry:inout AppCE, caption:String){
         print("CapationatedEntriesViewController changeCaption")
         captionedEntry.changeCaption(to: caption)
         
@@ -191,7 +191,7 @@
     }
     func newentry(me:RemoteAsset){
         
-        let ce = me.convertToCaptionedEntry()
+        let ce = me.convertToAppCE()
         self.stickerz.append(ce) // append this
         
     }
@@ -204,29 +204,26 @@
  }
  ///
 
- extension CaptionedEntry {
+ extension AppCE {
     
     fileprivate   mutating func changeCaption(to:String) {
         //make a new ce, copying the id
         
-        let newself = AppCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath, caption: to, options: self.stickerOptions, id: self.id)
-        // uses self.id here to REPLACE
-        capSpace.addCaptionedEntry(newself)
-        capSpace.saveToDisk()
+        let _ = AppCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath, caption: to, options: self.stickerOptions, id: self.id)
+
         
         //
     }
     
     
     fileprivate func cloneWithNewCaption(_ caption:String){
-        let newself = AppCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath,  caption: caption,  options: self.stickerOptions, id:"")// self.id)
+        let _ = AppCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath,  caption: caption,  options: self.stickerOptions, id:"")// self.id)
         // users newce.id to CLONE, the old item will get unhinged
-        capSpace.addCaptionedEntry(newself)
-        capSpace.saveToDisk()
+       
         
     }
     
-    fileprivate      mutating func moveToIMessage() { // only from capspace
+    fileprivate mutating func moveToIMessage() { // only from capspace
         // duplicate and save to other space under same id, as is
         
         // if there is something in there with same file and caption then forget it
@@ -239,10 +236,9 @@
                 print("made sticker file urls \(stickerurl)")
                 
                 // ce.localimagepath = url.absoluteString // dink with this
-                let newself = SharedCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: stickerurl.absoluteString ,  caption: self.caption,  options: self.stickerOptions, id:"")// self.id)
+                let _ = SharedCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: stickerurl.absoluteString ,  caption: self.caption,  options: self.stickerOptions, id:"")// self.id)
                 // users newce.id to CLONE, the old item will get unhinged
-                memSpace.entries[ id] = newself
-                memSpace.saveToDisk()
+              
             }
             catch {
                 print("could not makemade sticker file urls \(localimagepath)")

@@ -527,6 +527,147 @@
             </objects>
             <point key="canvasLocation" x="-129" y="-3764"/>
         </scene>
+        <!--ITunes Menu-->
+        <scene sceneID="38t-AX-fg9">
+            <objects>
+                <viewController storyboardIdentifier="ITunesCellTapMenuID" id="bQh-9f-7xV" userLabel="ITunes Menu" customClass="ITunesMenuViewController" customModule="kaptionator" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ckR-34-UKK"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cy2-0q-OVn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="muI-Ps-p2g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0hL-qf-WeV">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="4Cx-cl-0tb">
+                                    <frame key="frameInset"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="add sticker to iMessage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Iw-Oz-1Cq">
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1cb-Uf-jD5">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="12b-XD-d3f">
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="hn1-3a-hhs">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="hn1-3a-hhs" secondAttribute="height" multiplier="1:1" id="3dR-fF-E4A"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="hn1-3a-hhs" secondAttribute="trailing" constant="30" id="Iql-HF-txM"/>
+                                            <constraint firstItem="hn1-3a-hhs" firstAttribute="leading" secondItem="12b-XD-d3f" secondAttribute="leading" constant="30" id="fOc-vO-ayJ"/>
+                                            <constraint firstItem="hn1-3a-hhs" firstAttribute="top" secondItem="12b-XD-d3f" secondAttribute="top" constant="30" id="phD-AF-7fK"/>
+                                            <constraint firstAttribute="bottom" secondItem="hn1-3a-hhs" secondAttribute="bottom" constant="30" id="xvq-pB-8sq"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XJz-mV-vhF">
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter caption" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="12" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OLy-dN-0oz">
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPTIONS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xn4-B1-7Wn">
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWw-BF-ESg">
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <state key="normal" title="Use Sticker, but Change Caption">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="addCaptionToSticker:" destination="bQh-9f-7xV" eventType="touchUpInside" id="tUe-iF-aNc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYF-KK-vF4">
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <state key="normal" title="Use Sticker with Existing Caption">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="useStickerAsIsPressed:" destination="bQh-9f-7xV" eventType="touchUpInside" id="jJv-3k-Zfm"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cbk-s4-wx9">
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <state key="normal" title="Use Sticker with No Caption">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="useStickerNoCaptionPressed:" destination="bQh-9f-7xV" eventType="touchUpInside" id="JBf-aL-0l7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BZX-I3-XcR">
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Candidatez Site ...">
+                                                            <attributes>
+                                                                <font key="NSFont" size="15" name="AmericanTypewriter"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </state>
+                                                <connections>
+                                                    <action selector="websitetapped:" destination="bQh-9f-7xV" eventType="touchUpInside" id="7H9-9j-6ZO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="OLy-dN-0oz" firstAttribute="leading" secondItem="XJz-mV-vhF" secondAttribute="leading" id="8rv-0W-cIJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="OLy-dN-0oz" secondAttribute="trailing" id="IWf-C9-KZR"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="12b-XD-d3f" firstAttribute="width" secondItem="xn4-B1-7Wn" secondAttribute="width" id="MGe-gk-U0P"/>
+                                    <constraint firstItem="OLy-dN-0oz" firstAttribute="width" secondItem="12b-XD-d3f" secondAttribute="width" id="fwq-uI-F3b"/>
+                                </constraints>
+                                <variation key="heightClass=compact" axis="horizontal"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="1cb-Uf-jD5" secondAttribute="trailing" id="3Ij-DT-DQJ"/>
+                            <constraint firstItem="0hL-qf-WeV" firstAttribute="top" secondItem="ckR-34-UKK" secondAttribute="bottom" constant="-20" id="7T4-l1-Uh1"/>
+                            <constraint firstItem="0Iw-Oz-1Cq" firstAttribute="top" secondItem="ckR-34-UKK" secondAttribute="bottom" constant="10" id="AqC-hU-ZzM"/>
+                            <constraint firstItem="1cb-Uf-jD5" firstAttribute="top" secondItem="ckR-34-UKK" secondAttribute="bottom" constant="20" id="BJc-Dp-pG9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0Iw-Oz-1Cq" secondAttribute="trailing" constant="28" id="Hbq-AB-Hnb"/>
+                            <constraint firstItem="1cb-Uf-jD5" firstAttribute="leading" secondItem="muI-Ps-p2g" secondAttribute="leadingMargin" id="XeF-rO-f6L"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0hL-qf-WeV" secondAttribute="trailing" constant="-20" id="evY-VT-xOX"/>
+                            <constraint firstItem="Cy2-0q-OVn" firstAttribute="top" secondItem="1cb-Uf-jD5" secondAttribute="bottom" constant="-10" id="oEn-rl-dX0"/>
+                            <constraint firstItem="0Iw-Oz-1Cq" firstAttribute="leading" secondItem="muI-Ps-p2g" secondAttribute="leadingMargin" constant="28" id="qPH-SK-YVV"/>
+                            <constraint firstItem="Cy2-0q-OVn" firstAttribute="top" secondItem="0hL-qf-WeV" secondAttribute="bottom" constant="-20" id="sZY-u6-7wz"/>
+                            <constraint firstItem="0hL-qf-WeV" firstAttribute="leading" secondItem="muI-Ps-p2g" secondAttribute="leadingMargin" constant="-20" id="u4d-mS-Ld2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Admin Only -- Private" id="JhX-CU-sv9"/>
+                    <connections>
+                        <outlet property="addcaption" destination="PWw-BF-ESg" id="2Ng-bA-95I"/>
+                        <outlet property="animatedLabel" destination="xn4-B1-7Wn" id="1Gg-Qs-2Pp"/>
+                        <outlet property="imageCaption" destination="OLy-dN-0oz" id="6KS-iE-Gqv"/>
+                        <outlet property="menuImage" destination="hn1-3a-hhs" id="7oi-y7-Yee"/>
+                        <outlet property="outerView" destination="12b-XD-d3f" id="kjR-Vv-YsR"/>
+                        <outlet property="useasis" destination="eYF-KK-vF4" id="QKS-QM-pup"/>
+                        <outlet property="useasisnocaption" destination="Cbk-s4-wx9" id="T27-1J-eNO"/>
+                        <outlet property="veryBottomButton" destination="BZX-I3-XcR" id="fYa-zf-zPh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aDG-yE-ozP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-129" y="-3764"/>
+        </scene>
         <!--Messaged Menu-->
         <scene sceneID="mcs-Nh-pSI">
             <objects>

@@ -112,7 +112,6 @@
 		88DD92EA1D88738200832564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92DE1D88738200832564 /* AppDelegate.swift */; };
 		88DD92EB1D88738200832564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92DE1D88738200832564 /* AppDelegate.swift */; };
 		88DD92EC1D88738200832564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92DE1D88738200832564 /* AppDelegate.swift */; };
-		88DD92ED1D88738200832564 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92DF1D88738200832564 /* CatalogViewController.swift */; };
 		88DD92EE1D88738200832564 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92DF1D88738200832564 /* CatalogViewController.swift */; };
 		88DD92EF1D88738200832564 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92DF1D88738200832564 /* CatalogViewController.swift */; };
 		88DD92F01D88738200832564 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92DF1D88738200832564 /* CatalogViewController.swift */; };
@@ -155,9 +154,7 @@
 		88E3B5D11D90B3CF0079E0CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD92D91D8872D400832564 /* Main.storyboard */; };
 		88E3B5D21D90B3D00079E0CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD92D91D8872D400832564 /* Main.storyboard */; };
 		88E3B5D31D90B3D10079E0CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD92D91D8872D400832564 /* Main.storyboard */; };
-		88E3B5D51D90BC480079E0CB /* aaa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E3B5D41D90BC480079E0CB /* aaa.swift */; };
-		88E3B5D61D90BC480079E0CB /* aaa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E3B5D41D90BC480079E0CB /* aaa.swift */; };
-		88E3B5D71D90BC480079E0CB /* aaa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E3B5D41D90BC480079E0CB /* aaa.swift */; };
+		88E3B5D91D9156B60079E0CB /* ITunesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */; };
 		88F25ADB1D5F5803004F4AB4 /* shtikerzEyesLogoAni-618x485.gif in Resources */ = {isa = PBXBuildFile; fileRef = 88F25ADA1D5F5803004F4AB4 /* shtikerzEyesLogoAni-618x485.gif */; };
 		88F25ADC1D5F5803004F4AB4 /* shtikerzEyesLogoAni-618x485.gif in Resources */ = {isa = PBXBuildFile; fileRef = 88F25ADA1D5F5803004F4AB4 /* shtikerzEyesLogoAni-618x485.gif */; };
 		88F25ADD1D5F5803004F4AB4 /* shtikerzEyesLogoAni-618x485.gif in Resources */ = {isa = PBXBuildFile; fileRef = 88F25ADA1D5F5803004F4AB4 /* shtikerzEyesLogoAni-618x485.gif */; };
@@ -311,6 +308,7 @@
 		88DD92E71D88738200832564 /* ModelDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelDataCell.swift; sourceTree = "<group>"; };
 		88DD92E81D88738200832564 /* TableDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableDataCell.swift; sourceTree = "<group>"; };
 		88E3B5D41D90BC480079E0CB /* aaa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aaa.swift; sourceTree = "<group>"; };
+		88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesMenuViewController.swift; sourceTree = "<group>"; };
 		88F25ADA1D5F5803004F4AB4 /* shtikerzEyesLogoAni-618x485.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "shtikerzEyesLogoAni-618x485.gif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -403,6 +401,7 @@
 				88DD92DF1D88738200832564 /* CatalogViewController.swift */,
 				881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */,
 				88DD92E01D88738200832564 /* CatalogMenuViewController.swift */,
+				88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */,
 				88DD92E11D88738200832564 /* CaptionedMenuViewController.swift */,
 				88DD92E21D88738200832564 /* CapationatedViewController.swift */,
 				88DD92E41D88738200832564 /* HelpOverlayViewController.swift */,
@@ -925,7 +924,6 @@
 				88DD93011D88738200832564 /* HelpOverlayViewController.swift in Sources */,
 				88DD92E91D88738200832564 /* AppDelegate.swift in Sources */,
 				88DD92F11D88738200832564 /* CatalogMenuViewController.swift in Sources */,
-				88DD92ED1D88738200832564 /* CatalogViewController.swift in Sources */,
 				88DD93111D88738200832564 /* TableDataCell.swift in Sources */,
 				88B54CE21D8870060076942D /* manifest.swift in Sources */,
 				88B54CAA1D8870060076942D /* mlib.swift in Sources */,
@@ -935,6 +933,7 @@
 				88B54CEA1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
 				88B54CF21D8870060076942D /* StickerFileFactory.swift in Sources */,
 				88B54CD21D8870060076942D /* SFViewController.swift in Sources */,
+				88E3B5D91D9156B60079E0CB /* ITunesMenuViewController.swift in Sources */,
 				88B54CCA1D8870060076942D /* IOSSpecialOps.swift in Sources */,
 				88DD930D1D88738200832564 /* ModelDataCell.swift in Sources */,
 				88B54CB21D8870060076942D /* theme.swift in Sources */,
@@ -953,7 +952,6 @@
 			files = (
 				88DD930A1D88738200832564 /* MessagedMenuViewController.swift in Sources */,
 				88DD93021D88738200832564 /* HelpOverlayViewController.swift in Sources */,
-				88E3B5D51D90BC480079E0CB /* aaa.swift in Sources */,
 				88DD92EA1D88738200832564 /* AppDelegate.swift in Sources */,
 				88DD92F21D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				88DD92EE1D88738200832564 /* CatalogViewController.swift in Sources */,
@@ -983,7 +981,6 @@
 			files = (
 				88DD930B1D88738200832564 /* MessagedMenuViewController.swift in Sources */,
 				88DD93031D88738200832564 /* HelpOverlayViewController.swift in Sources */,
-				88E3B5D61D90BC480079E0CB /* aaa.swift in Sources */,
 				88DD92EB1D88738200832564 /* AppDelegate.swift in Sources */,
 				88DD92F31D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				88DD92EF1D88738200832564 /* CatalogViewController.swift in Sources */,
@@ -1013,7 +1010,6 @@
 			files = (
 				88DD930C1D88738200832564 /* MessagedMenuViewController.swift in Sources */,
 				88DD93041D88738200832564 /* HelpOverlayViewController.swift in Sources */,
-				88E3B5D71D90BC480079E0CB /* aaa.swift in Sources */,
 				88DD92EC1D88738200832564 /* AppDelegate.swift in Sources */,
 				88DD92F41D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				88DD92F01D88738200832564 /* CatalogViewController.swift in Sources */,

@@ -37,10 +37,10 @@ final class ITunesViewController : UIViewController  {
     //MARK:- Dispatching to External ViewControllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier ==  "CatalogCellTapMenuID"{
+        if segue.identifier ==  "ITunesCellTapMenuID"{
             if let indexPath = theSelectedIndexPath {
                 let ra = remSpace.itemAt(indexPath.row)
-                let avc =  segue.destination as? CatalogMenuViewController
+                let avc =  segue.destination as? ITunesMenuViewController
                 if let avc = avc  {
                     avc.delegate = self
                     avc.remoteAsset = ra
@@ -48,7 +48,6 @@ final class ITunesViewController : UIViewController  {
             }
         }
     }
-    
     
     //MARK:- Lifecyle for ViewControllers
     
@@ -95,8 +94,9 @@ final class ITunesViewController : UIViewController  {
                         let data = try Data(contentsOf: $0) // read
                         Manifest.parseData(data, baseURL: documentsUrl.absoluteString, completion: completion!)
                     } else {
-                        // regular file, should be a compatible sticker file image
-                        // observer?.newentry(me: me)
+                 // copy from documents area into a regular local file
+                        
+                        
                         let localpath = $0
                         let me = RemoteAsset(pack: "apptitle", title: imagename, remoteurl: "", localpath: localpath.absoluteString, options: .generateasis)
                         allofme.append(me)
@@ -201,7 +201,7 @@ extension ITunesViewController : UICollectionViewDelegateFlowLayout {
     
 }
 // MARK: Delegates for actions from our associated menu
-extension CaptionedEntry  {
+extension AppCE  {
     // not sure we want generate asis so changed back
     fileprivate static func makeNewCaptionITunes(   from ra:RemoteAsset, caption:String,id:String) {
         // make captionated entry from remote asset
@@ -214,16 +214,16 @@ extension CaptionedEntry  {
     }
 }
 
-extension ITunesViewController : CatalogMenuViewDelegate {
+extension ITunesViewController : ITunesMenuViewDelegate {
     
     func useAsIs(remoteAsset:RemoteAsset,keepCaption:Bool) {
         // make un captionated entry from remote asset
         let caption = keepCaption ? remoteAsset.caption : ""
-        CaptionedEntry.makeNewCaptionITunes(from: remoteAsset, caption: caption, id: "")
+        AppCE.makeNewCaptionITunes(from: remoteAsset, caption: caption, id: "")
     }
     func useWithCaption(remoteAsset:RemoteAsset,caption:String) {
         // make un captionated entry from remote asset
-        CaptionedEntry.makeNewCaptionITunes( from: remoteAsset, caption: caption, id: "")
+        AppCE.makeNewCaptionITunes( from: remoteAsset, caption: caption, id: "")
     }
 }
 
@@ -241,45 +241,3 @@ extension ITunesViewController : MEObserver {
         remSpace.addasset(ra: me)
     }
 }
-
-
-//
-//
-//
-
-//MARK: UIViewControllerPreviewingDelegate for touch
-//extension CatalogViewController : UIViewControllerPreviewingDelegate {
-//    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-//        guard let indexPath = collectionView.indexPathForItem(at: collectionView.convert(location, from: view)),
-//            let cell = collectionView.cellForItem(at: indexPath) else {
-//                return nil
-//        }
-//
-////        let t = remSpace.hdrz.count
-////        assert(remSpace.raz.count == t)
-////        assert(indexPath.section < t)
-//
-//        let ra = remSpace.raz [indexPath.row]
-//
-//        let dvc = storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
-//        dvc.item = DataItem(name: ra.caption, population: 0, latitude: 0.0, longitude: 0.0, url: URL(string:ra.imagepath)!)
-//        dvc.delegate = self
-//        dvc.preferredContentSize = CGSize(width: 0, height: 360)
-//        previewingContext.sourceRect = collectionView.convert(cell.frame, to: collectionView.superview!)
-//        return dvc
-//    }
-//
-//    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-//        let navigationController = UINavigationController(rootViewController: viewControllerToCommit)
-//        show(navigationController, sender: self)
-//        // history?.viewed(selectedCounty!)
-//    }
-//}
-//
-//MARK: DetailsViewControllerDelegate announces finish
-//extension CatalogViewController:DetailsViewControllerDelegate {
-//    func detailsViewControllerDidFinish(_ detailsViewController: DetailsViewController){
-//
-//    }
-//}
-

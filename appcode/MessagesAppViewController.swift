@@ -13,7 +13,7 @@ import UIKit
 
 final class MessagesAppViewController: UIViewController   {
     
-    var stickerz:[SharedCaptionedEntry] = []
+    var stickerz:[SharedCE] = []
     var theSelectedIndexPath:IndexPath?
     
     @IBOutlet internal  var tableView: UITableView!
@@ -65,11 +65,11 @@ final class MessagesAppViewController: UIViewController   {
 }
 // MARK: Delegates for actions from our associated menu
 extension  MessagesAppViewController:MessagesAppMenuViewDelegate {
-    func openinIMessage(captionedEntry:SharedCaptionedEntry) {
+    func openinIMessage(captionedEntry:SharedCE) {
         print("MessagesAppEntriesViewController openinIMessage")
         captionedEntry.openinImessage()
     }
-    func removeFromIMessage(on captionedEntry:inout SharedCaptionedEntry ){
+    func removeFromIMessage(on captionedEntry:inout SharedCE ){
         print("MessagesAppEntriesViewController removeFromIMessage")
         
         //  let ce =  stickerz.remove(at: indexPath.row)
@@ -150,7 +150,7 @@ extension MessagesAppViewController : MEObserver {
     }
     func newentry(me:RemoteAsset){
         
-//        let ce = me.convertToCaptionedEntry()
+//        let ce = me.convertToAppCE()
 //        self.stickerz.append(ce) // append this
 //        
     }
@@ -161,15 +161,13 @@ extension MessagesAppViewController: UITableViewDelegate {
         displayTapMenu()
     }
 }
-extension SharedCaptionedEntry {
+extension SharedCE {
     
     fileprivate func openinImessage() {
     }
     fileprivate mutating func removeCEFromIMessage() {
         
-        // unhinge the entry
-        let _ =  memSpace.remove(id:self.id)
-        memSpace.entries[self.id] = nil
-        memSpace.saveToDisk()
+        SharedCaptionSpace.unhinge(id: self.id)
+    
     }
 }

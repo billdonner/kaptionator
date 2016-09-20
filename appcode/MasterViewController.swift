@@ -7,6 +7,14 @@
 //
 
 import UIKit
+// if nil we'll just pull from documents directory inside the catalog controller
+var stickerPackListFileURL: URL? {
+get {
+    if let iDict = Bundle.main.infoDictionary ,
+        let w =  iDict["REMOTE-STICKERPACKLIST-URL"] as? String { return URL(string:w) }
+    return nil
+}
+}
 
 class MasterViewController: UIViewController {
     

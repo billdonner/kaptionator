@@ -1,5 +1,5 @@
 //
-//  SharedCaptionedEntry.swift
+//  SharedCE.swift
 //  ub ori
 //
 //  Created by bill donner on 9/12/16.
@@ -9,19 +9,18 @@
 import UIKit
 
 
-//MARK: - CaptionedEntry represents a catalog entry modified the user
+//MARK: - AppCE represents a catalog entry modified the user
 
-struct SharedCaptionedEntry {
+struct SharedCE {
     
+    // write once
     let id: String //stringified float millisecs since 1970
     let caption: String
     let stickerOptions: StickerMakingOptions
     let catalogpack:String
     let catalogtitle:String
-    
-    //TODO:
     let localimagepath:String
-    let stickerimagepath:String // in the plain captions space this is the address of the local image as copied in from remote site, the the MessagesApp space it is the path of a kaptionated, ready to go image
+    let stickerimagepath:String // this is what the extension uses to make stickers
     
     /// these are the action functions that are called to move things between tabs
     
@@ -58,27 +57,33 @@ struct SharedCaptionedEntry {
         self.stickerimagepath = ""
         self.caption = caption == "" ? title : caption
         self.stickerOptions = options
-        self.id =  id == "" ? "\(SharedCaptionedEntry.nicetime())" : id
+        self.id =  id == "" ? "\(SharedCE.nicetime())" : id
     }
 }
 
-//MARK: AppCaptionSpace collects and persists CaptionedEntrys
+//MARK: AppCaptionSpace collects and persists AppCEs
 
 struct SharedCaptionSpace {
-    var entries : [String:SharedCaptionedEntry] = [:]
-    var suite: String // partions nsuserdefaults
-    
+    private var entries : [String:SharedCE] = [:]
+    private  var suite: String // partions nsuserdefaults
+ 
     init(_ suite:String) {
         self.suite = suite
+    }
+    static func unhinge(id:String) {
+        // unhinge the entry
+        let _ =  memSpace.remove(id:id)
+        memSpace.entries[id] = nil
+        memSpace.saveToDisk()
     }
     func itemCount () -> Int {
         return entries.count
     }
-    func itemAt(_ index:Int) -> SharedCaptionedEntry {
+    func itemAt(_ index:Int) -> SharedCE {
         let t = entries.map { key, value in return value }
         return t [index] // horrible
     }
-    func items () -> [SharedCaptionedEntry] {
+    func items () -> [SharedCE] {
         return   entries.map { key, value in return value }
     }
     func dump() {
@@ -87,22 +92,22 @@ struct SharedCaptionSpace {
             print("\(key):\(val),")
         }
     }
-    //    mutating func addSharedCaptionedEntry(_ ce :SharedCaptionedEntry) {
+    //    mutating func addSharedCE(_ ce :SharedCE) {
     //        self.entries[ce.id] = ce
     //    }
     mutating func reset() {
         entries = [:]
         saveToDisk()
     }
-    mutating func remove(id:String) -> SharedCaptionedEntry? {
+    mutating func remove(id:String) -> SharedCE? {
         let t = entries[id]
         entries[id] = nil
         return t
     }
-    func  findCaptionedEntry(id:String) -> SharedCaptionedEntry? {
+    func  findAppCE(id:String) -> SharedCE? {
         return entries[id]
     }
-    func findMatchingEntry(ce:SharedCaptionedEntry) -> Bool {
+    func findMatchingEntry(ce:SharedCE) -> Bool {
         for (_,entry) in entries {
             if entry.catalogtitle == ce.catalogtitle &&
                 entry.caption == ce.caption
@@ -131,15 +136,15 @@ struct SharedCaptionSpace {
     
     static  func make( pack:String,title:String,imagepath:String,caption:String,
                        options:StickerMakingOptions,
-                       id:String  )->SharedCaptionedEntry {
-        let newself = SharedCaptionedEntry( pack: pack, title: title,
+                       id:String  )->SharedCE {
+        let newself = SharedCE( pack: pack, title: title,
                                             imagepath: imagepath,
                                             caption: caption,
                                             options: options,id:id)
         
-        // users newce.id to CLONE
-        memSpace.entries[ id] = newself
-        //memSpace.saveToDisk()
+        // users newce.id to CLONE)
+        memSpace.entries[newself.id] = newself
+        memSpace.saveToDisk()
         return newself
     }
     
