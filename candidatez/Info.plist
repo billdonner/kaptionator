@@ -66,5 +66,11 @@
 	<false/>
 	<key>__IMPORTANT__</key>
 	<string>for safety: hidden functions is NO, no file sharing, manifest should be a single pack,app transport must move to ssl</string>
+	<key>APP-TITLE</key>
+	<string>Candidatez by Martoons</string>
+	<key>LEFT-BBI-NAME</key>
+	<string>Candidatez</string>
+	<key>EXTENSION-SCHEME</key>
+	<string>Candidatez</string>
 </dict>
 </plist>

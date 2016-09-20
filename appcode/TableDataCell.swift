@@ -17,10 +17,9 @@ class TableDataCell: UITableViewCell {
         detailsImageView.image = nil // clean this out
         nameLabel.text = "should not see this"
     }
-    func colorFor(ce:CaptionedEntry) {
-        let  isAnimated = ce.stickerOptions.contains(.generateasis)
-        
-        nameLabel.textColor = isAnimated ? appTheme.redColor :appTheme.textColor
+    func colorFor(options:StickerMakingOptions) {
+        let  isAnimated = options.contains(.generateasis)
+    nameLabel.textColor = isAnimated ? appTheme.redColor :appTheme.textColor
     }
     func twinkle() {
             UIView.animate(withDuration: 2.5, animations: {

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gUA-Sq-LFh">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gUA-Sq-LFh">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -11,7 +11,7 @@
         <!--Catalog Child View Controller-->
         <scene sceneID="U3k-6T-6a0">
             <objects>
-                <viewController storyboardIdentifier="ShowCatalogID" id="1gJ-ca-CtI" userLabel="Catalog Child View Controller" customClass="CatalogViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShowCatalogID" id="1gJ-ca-CtI" userLabel="Catalog Child View Controller" customClass="CatalogViewController" customModule="kaptionator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FiY-Aw-dRs"/>
                         <viewControllerLayoutGuide type="bottom" id="HmL-hN-xup"/>
@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="400" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6AQ-mN-dpX">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6AQ-mN-dpX">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="4" id="auC-ig-Lkt">
                                     <size key="itemSize" width="100" height="120"/>
@@ -29,7 +29,7 @@
                                     <inset key="sectionInset" minX="8" minY="4" maxX="8" maxY="4"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ModelDataCell" id="jJl-X2-Rvx" customClass="ModelDataCell" customModule="candidatez" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ModelDataCell" id="jJl-X2-Rvx" customClass="ModelDataCell" customModule="kaptionator" customModuleProvider="target">
                                         <rect key="frame" x="8" y="4" width="100" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -94,10 +94,86 @@
             </objects>
             <point key="canvasLocation" x="-1157" y="-4806"/>
         </scene>
+        <!--iTunes View Controller-->
+        <scene sceneID="MPP-kd-ujy">
+            <objects>
+                <viewController storyboardIdentifier="ShowITunesID" id="0aS-Jh-VeQ" customClass="ITunesViewController" customModule="kaptionator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vRO-wB-iCE"/>
+                        <viewControllerLayoutGuide type="bottom" id="MVY-O8-FHJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WKc-aD-b95">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Kkh-gb-fWV">
+                                <frame key="frameInset" minX="-13" minY="83" width="400" height="500"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="4" id="k7P-rg-D5Z">
+                                    <size key="itemSize" width="100" height="120"/>
+                                    <size key="headerReferenceSize" width="100" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="8" minY="4" maxX="8" maxY="4"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ModelDataCell" id="8rv-pW-wmF" customClass="ModelDataCell" customModule="kaptionator" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="4" width="100" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I6k-WV-xFT">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="92" id="Kzg-pe-4vK"/>
+                                                        <constraint firstAttribute="height" constant="92" id="OxM-Mi-Xty"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="JSB-lT-snX">
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="I6k-WV-xFT" firstAttribute="top" secondItem="8rv-pW-wmF" secondAttribute="top" constant="4" id="CZB-BD-uql"/>
+                                            <constraint firstItem="JSB-lT-snX" firstAttribute="top" secondItem="I6k-WV-xFT" secondAttribute="bottom" id="Ol8-Ne-tk6"/>
+                                            <constraint firstItem="I6k-WV-xFT" firstAttribute="trailing" secondItem="JSB-lT-snX" secondAttribute="trailing" id="QCz-bo-FBh"/>
+                                            <constraint firstItem="I6k-WV-xFT" firstAttribute="leading" secondItem="8rv-pW-wmF" secondAttribute="leading" constant="4" id="aOq-zY-MXx"/>
+                                            <constraint firstItem="I6k-WV-xFT" firstAttribute="leading" secondItem="JSB-lT-snX" secondAttribute="leading" id="j66-jC-yye"/>
+                                        </constraints>
+                                        <size key="customSize" width="100" height="120"/>
+                                        <connections>
+                                            <outlet property="detailsImageView" destination="I6k-WV-xFT" id="TMd-Q7-uGl"/>
+                                            <outlet property="nameLabel" destination="JSB-lT-snX" id="1yX-aX-TFw"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionSectionHeaderID" id="YJ6-Yc-7xn">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="20"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" red="0.85043728350000003" green="0.21816034619999999" blue="0.15920260550000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </collectionReusableView>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Kkh-gb-fWV" id="YXb-eL-stc"/>
+                        <outlet property="flowLayout" destination="k7P-rg-D5Z" id="qZN-hk-5eh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jFN-kj-WA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-649" y="-4927"/>
+        </scene>
         <!--Capationated View Controller-->
         <scene sceneID="ZsO-pm-cbr">
             <objects>
-                <viewController storyboardIdentifier="CaptionedViewControllerID" id="CdQ-6l-2dP" customClass="CapationatedViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CaptionedViewControllerID" id="CdQ-6l-2dP" customClass="CapationatedViewController" customModule="kaptionator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SYn-g6-h9b"/>
                         <viewControllerLayoutGuide type="bottom" id="1BT-Ic-0oa"/>
@@ -109,11 +185,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Evp-s8-xrP">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableDataCell" id="JCj-Dg-Rge" customClass="TableDataCell" customModule="candidatez" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableDataCell" id="JCj-Dg-Rge" customClass="TableDataCell" customModule="kaptionator" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JCj-Dg-Rge" id="HLq-aY-Omi">
-                                            <frame key="frameInset" width="343" height="99"/>
+                                            <frame key="frameInset" width="343" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HNi-uV-tbt">
@@ -168,7 +244,7 @@
         <!--Messages App View Controller-->
         <scene sceneID="w6t-DA-Xo7">
             <objects>
-                <viewController storyboardIdentifier="MessageViewControllerID" id="cxh-X5-x1i" customClass="MessagesAppViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MessageViewControllerID" id="cxh-X5-x1i" customClass="MessagesAppViewController" customModule="kaptionator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c86-Gv-Gnk"/>
                         <viewControllerLayoutGuide type="bottom" id="yWk-gc-1Fi"/>
@@ -180,11 +256,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d7D-GC-Scz">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableDataCell" id="T4c-g1-0ka" customClass="TableDataCell" customModule="candidatez" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="1000" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableDataCell" id="T4c-g1-0ka" customClass="TableDataCell" customModule="kaptionator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T4c-g1-0ka" id="o4R-Qt-FEy">
-                                            <frame key="frameInset" width="1000" height="99"/>
+                                            <frame key="frameInset" width="343" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nPl-XJ-iJ6">
@@ -237,7 +313,7 @@
         <!--Master View Controller-->
         <scene sceneID="iI4-Bh-VoZ">
             <objects>
-                <viewController id="Tm1-Gg-mxO" customClass="MasterViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Tm1-Gg-mxO" customClass="MasterViewController" customModule="kaptionator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RDa-qn-fIJ"/>
                         <viewControllerLayoutGuide type="bottom" id="Mo6-3a-xLp"/>
@@ -312,7 +388,7 @@
         <!--Catalog Menu-->
         <scene sceneID="jYu-0a-m1Z">
             <objects>
-                <viewController storyboardIdentifier="CatalogCellTapMenuID" id="8NT-q7-zWI" userLabel="Catalog Menu" customClass="CatalogMenuViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CatalogCellTapMenuID" id="8NT-q7-zWI" userLabel="Catalog Menu" customClass="CatalogMenuViewController" customModule="kaptionator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dxW-lJ-Ifc"/>
                         <viewControllerLayoutGuide type="bottom" id="o6p-0W-fz3"/>
@@ -453,7 +529,7 @@
         <!--Messaged Menu-->
         <scene sceneID="mcs-Nh-pSI">
             <objects>
-                <viewController storyboardIdentifier="MessagesAppCellTapMenuID" id="2yc-jg-Aom" userLabel="Messaged Menu" customClass="MessagesAppMenuViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MessagesAppCellTapMenuID" id="2yc-jg-Aom" userLabel="Messaged Menu" customClass="MessagesAppMenuViewController" customModule="kaptionator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4pF-Kf-uf7"/>
                         <viewControllerLayoutGuide type="bottom" id="uvE-Sc-Cjz"/>
@@ -568,7 +644,7 @@
         <!--Captioned Menu-->
         <scene sceneID="jCi-iC-0vi">
             <objects>
-                <viewController storyboardIdentifier="CaptionedCellTapMenuID" id="P8v-au-Qtf" userLabel="Captioned Menu" customClass="CaptionedMenuViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CaptionedCellTapMenuID" id="P8v-au-Qtf" userLabel="Captioned Menu" customClass="CaptionedMenuViewController" customModule="kaptionator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1FH-tS-SFO"/>
                         <viewControllerLayoutGuide type="bottom" id="EC1-Q6-orJ"/>
@@ -709,7 +785,7 @@
         <!--Help Overlay View Controller-->
         <scene sceneID="dou-G2-wW1">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="bbi-GL-AyA" customClass="HelpOverlayViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="bbi-GL-AyA" customClass="HelpOverlayViewController" customModule="kaptionator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TZ7-63-wSY"/>
                         <viewControllerLayoutGuide type="bottom" id="4u4-Ys-5DH"/>
@@ -759,7 +835,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gd4-1O-VKQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gd4-1O-VKQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.69803921568627447" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>

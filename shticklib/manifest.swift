@@ -16,7 +16,7 @@ protocol MEObserver {
     func newpack(_ pack: String,_ showsectionhead:Bool)
     func newentry(me:RemoteAsset)
     
-
+    
 }
 
 typealias ManifestItems = [RemoteAsset]
@@ -28,7 +28,7 @@ typealias GFRM = ((_ status:Int,
 
 /// Manifest bundles static operations on groups of manifest entries
 struct Manifest {
-
+    
     private static func processAllPacks(url:URL,completion:@escaping UFRS) {
         IO.httpGET(url:url) { status,data in
             //print("status \(status)")
@@ -82,88 +82,94 @@ struct Manifest {
             }
         }// end of closure
     }
-    private static func processOnePack(pack: String, url:URL,  completion:@escaping GFRM) {
+    
+    
+    static func parseData(_ data:Data, baseURL: String,completion:@escaping GFRM) {
         var final : ManifestItems = []
+        do {
+            let json = try JSONSerialization.jsonObject(with: data, options: [])
+            if let jobj = json as? JSONDict,
+                let sites = jobj["images"] as? [AnyObject],
+                let pack = jobj["pack"] as? String {
+                for site in sites {
+                    if  let sit  = site as? JSONDict {
+                        if let imgpath = sit["image"] as? String {
+                            // animation must be present And true
+                            var animated: Bool = false
+                            if    let anima  = sit["animated"] as? Bool {
+                                if anima == true {
+                                    animated = true
+                                }
+                            }
+                            var title: String = ""
+                            if    let titl  = sit["title"] as? String {
+                                title = titl
+                            }
+                            
+                            let imagepath = baseURL + imgpath
+                            
+                            var sizes = "S"
+                            if let szes = sit["size"] as? String {
+                                sizes = szes
+                            }
+                            // actually need
+                            var options = StickerMakingOptions()
+                            if sizes.contains("S") {
+                                options.insert( .generatesmall)
+                            }
+                            if sizes.contains("M") {
+                                options.insert( .generatemedium)
+                            }
+                            if sizes.contains("L") {
+                                options.insert( .generatelarge)
+                            }
+                            if animated || title == "" {
+                                options.insert( .generateasis)
+                            }
+                            
+                            // setting up remote asset of nil will cause us to load the picture
+                            let remoteAsset = RemoteAsset(pack: pack,
+                                                          title: title,
+                                                          remoteurl: imagepath,
+                                                          
+                                                          localpath: nil,
+                                                          options: options)
+                            
+                            remSpace.addasset(ra: remoteAsset) // be sure to count
+                            final.append (remoteAsset)
+                        }
+                    }
+                }//for
+                completion(200,pack, final ) //}// made it
+                return
+            }
+        }// inner do
+        catch  {
+            print ("************ bad JSON parseData ********** ")
+            completion(503, "-err0r-", final ) //}// made it
+        }
+    }
+    private static func processOnePack(pack: String, url:URL,  completion:@escaping GFRM) {
+        
         IO.httpGET(url:url) { status,data in
             guard status == 200 else {
                 completion(status,"", [] )
                 return
             }
+            let baseURL = (url.absoluteString as NSString).deletingLastPathComponent.appending("/")
+            
             if let data = data {
-                do {
-                    let urldir =  url.deletingLastPathComponent()
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-                      if let jobj = json as? JSONDict,
-                     let sites = jobj["images"] as? [AnyObject],
-                        let pack2 = jobj["pack"] as? String {
-                        if pack != pack2 {
-                            print ("Warning - pack is labelled \(pack2) should be \(pack)")
-                        }
-                        for site in sites {
-                            if  let sit  = site as? JSONDict {
-                                if let imgpath = sit["image"] as? String {
-                                    // animation must be present And true
-                                    var animated: Bool = false
-                                    if    let anima  = sit["animated"] as? Bool {
-                                        if anima == true {
-                                            animated = true
-                                        }
-                                    }
-                                    var title: String = ""
-                                    if    let titl  = sit["title"] as? String {
-                                       title = titl
-                                    }
-                                    
-                                    let imagepath = urldir.absoluteString + imgpath
- 
-                                    var sizes = "S"
-                                    if let szes = sit["size"] as? String {
-                                        sizes = szes
-                                    }
-                                    // actually need
-                                    var options = StickerMakingOptions()
-                                    if sizes.contains("S") {
-                                        options.insert( .generatesmall)
-                                    }
-                                    if sizes.contains("M") {
-                                        options.insert( .generatemedium)
-                                    }
-                                    if sizes.contains("L") {
-                                        options.insert( .generatelarge)
-                                    }
-                                    if animated || title == "" {
-                                        options.insert( .generateasis)
-                                    }
-                                    
-                                    // setting up remote asset of nil will cause us to load the picture
-                                    let remoteAsset = RemoteAsset(pack: pack,
-                                                                  title: title,
-                                                                  remoteurl: imagepath,
-                                                                  
-                                                                  localpath: nil,
-                                                                                                                                    options: options)
-                                    
-                                    remSpace.addasset(ra: remoteAsset) // be sure to count
-                                    final.append (remoteAsset)
-                                }
-                            }
-                        }//for
-                        completion(200,pack, final ) //}// made it
-                        return
-                    }
-                }// inner do
-                catch  {
-                    print ("************ bad JSON parse on perform_get_requst url: \(url) ")
-                    completion(503,pack, final ) //}// made it
-                }
+                parseData(data, baseURL: baseURL, completion: completion)
             }
         }
     }
-     
-    
+
     /// load a bunch of manifests as listed in a super-manifest
     
-    static func loadFromRemoteJSON(url:URL,  observer:MEObserver?, completion:GFRM?) {
+    static func loadFromRemoteJSON(url:URL?,  observer:MEObserver?, completion:GFRM?) {
+        guard let url = url else {
+             fatalError("loadFromITunesSharing(observer: observer,completion:completion)")
+        }
         var allofme:ManifestItems = []
         processAllPacks(url:url) {status, colorsdict, apptitle, showsectionhead, shmurls in
             guard status == 200 else {

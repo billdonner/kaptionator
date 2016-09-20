@@ -10,8 +10,7 @@ import UIKit
 protocol CatalogMenuViewDelegate {
     func useAsIs(remoteAsset:RemoteAsset,keepCaption:Bool)
     func useWithCaption(remoteAsset:RemoteAsset,caption:String)
-}
-
+} 
 class CatalogMenuViewController: UIViewController,AddDismissButton {
     var remoteAsset:RemoteAsset! // must be set
     var delegate: CatalogMenuViewDelegate?  // mig

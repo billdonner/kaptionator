@@ -1,17 +1,17 @@
  //
-//  CapationatedViewController
-//  kaptionator
-//
-//  Created by bill donner on 8/6/16.
-//  Copyright © 2016 martoons. All rights reserved.
-//
-
-import UIKit
-//
-// MARK: Show All Captionated Entries in One Tab as Child ViewContoller
-//
-
-final class CapationatedViewController: UIViewController   {
+ //  CapationatedViewController
+ //  kaptionator
+ //
+ //  Created by bill donner on 8/6/16.
+ //  Copyright © 2016 martoons. All rights reserved.
+ //
+ 
+ import UIKit
+ //
+ // MARK: Show All Captionated Entries in One Tab as Child ViewContoller
+ //
+ 
+ final class CapationatedViewController: UIViewController   {
     
     var stickerz:[CaptionedEntry] = []
     var theSelectedIndexPath:IndexPath?
@@ -27,7 +27,7 @@ final class CapationatedViewController: UIViewController   {
     @IBAction func unwindToCapationatedViewController(_ segue: UIStoryboardSegue)  {
     }
     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning() 
+        super.didReceiveMemoryWarning()
         print ("**********removed all cached images because CapationatedEntriesViewController short on memory")
     }
     
@@ -36,12 +36,12 @@ final class CapationatedViewController: UIViewController   {
         let location = swipe.location(in: tableView)
         let indexPath = tableView.indexPathForRow(at: location)
         if let indexPath = indexPath {
-        theSelectedIndexPath = indexPath
-        var  captionedEntry = stickerz[indexPath.row]
-        captionedEntry.moveToIMessage()
-        let cell = tableView.cellForRow(at: indexPath) as! TableDataCell
-       cell.twinkle()
-        print ("cellwzswiped \(indexPath)")
+            theSelectedIndexPath = indexPath
+            var  captionedEntry = stickerz[indexPath.row]
+            captionedEntry.moveToIMessage()
+            let cell = tableView.cellForRow(at: indexPath) as! TableDataCell
+            cell.twinkle()
+            print ("cellwzswiped \(indexPath)")
         }
         
     }
@@ -53,7 +53,7 @@ final class CapationatedViewController: UIViewController   {
                 if let avc =  segue.destination as? CaptionedMenuViewController  {
                     avc.delegate = self
                     avc.captionedEntry = stickerz [indexPath.row]               // pull image from cache and pass
-                 
+                    
                 }
             }
         }
@@ -71,8 +71,8 @@ final class CapationatedViewController: UIViewController   {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.stickerz = capSpace.items()
-            // 5 filter items down according to this tab's needs
-            self.tableView?.reloadData()
+        // 5 filter items down according to this tab's needs
+        self.tableView?.reloadData()
         
     }
     
@@ -81,9 +81,9 @@ final class CapationatedViewController: UIViewController   {
         performSegue(withIdentifier: "CaptionedCellTapMenuID", sender: self)
     }
     
-}
-// MARK: Delegates for actions from our associated menu
-extension CapationatedViewController : CaptionedMenuViewDelegate {
+ }
+ // MARK: Delegates for actions from our associated menu
+ extension CapationatedViewController : CaptionedMenuViewDelegate {
     
     func cloneWithCaption(captionedEntry:  CaptionedEntry, caption: String) {
         print("CapationatedEntriesViewController cloneWithCaption")
@@ -101,10 +101,10 @@ extension CapationatedViewController : CaptionedMenuViewDelegate {
         
         tableView.reloadData()
     }
-
-}
-
-extension CapationatedViewController : UITableViewDataSource {
+    
+ }
+ 
+ extension CapationatedViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let ce =  stickerz.remove(at: indexPath.row)
@@ -115,20 +115,20 @@ extension CapationatedViewController : UITableViewDataSource {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
-//    @objc(tableView:editActionsForRowAtIndexPath:) func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-//        
-//        let moreRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "More", handler:{action, indexpath in
-//            print("MORE•ACTION");
-//        });
-//        moreRowAction.backgroundColor = UIColor(red: 0.298, green: 0.851, blue: 0.3922, alpha: 1.0);
-//        
-//        let deleteRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Delete", handler:{action, indexpath in
-//            print("DELETE•ACTION");
-//        });
-//        
-//        return [deleteRowAction, moreRowAction];
-//    }
-
+    //    @objc(tableView:editActionsForRowAtIndexPath:) func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    //
+    //        let moreRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "More", handler:{action, indexpath in
+    //            print("MORE•ACTION");
+    //        });
+    //        moreRowAction.backgroundColor = UIColor(red: 0.298, green: 0.851, blue: 0.3922, alpha: 1.0);
+    //
+    //        let deleteRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Delete", handler:{action, indexpath in
+    //            print("DELETE•ACTION");
+    //        });
+    //
+    //        return [deleteRowAction, moreRowAction];
+    //    }
+    
     
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -162,23 +162,23 @@ extension CapationatedViewController : UITableViewDataSource {
         /// go get the image from our cache and then the net
         let path =  ce.localimagepath // ?????
         if path != "" {  // dont crash but dont paint
-//        let t = allImageData[path]
-//        guard let tp = t else {
-//            fatalError("missing data for url path \(path)")
-//        }
-// 
+            //        let t = allImageData[path]
+            //        guard let tp = t else {
+            //            fatalError("missing data for url path \(path)")
+            //        }
+            //
             // have the data onhand
             cell.paintImage(path:path)
         }
         
-        cell.colorFor(ce: ce)
-    return cell // Return the cell
+        cell.colorFor(options: ce.stickerOptions)
+        return cell // Return the cell
     }
-}
-// MARK:  UICollectionViewDataSource runs in local space
+ }
+ // MARK:  UICollectionViewDataSource runs in local space
  
-// MARK: Observer for model adjustments
-extension CapationatedViewController : MEObserver {
+ // MARK: Observer for model adjustments
+ extension CapationatedViewController : MEObserver {
     
     func newdocument(_ propsDict: JSONDict, _ title:String) {
         
@@ -195,22 +195,21 @@ extension CapationatedViewController : MEObserver {
         self.stickerz.append(ce) // append this
         
     }
-}
-extension CapationatedViewController: UITableViewDelegate {
+ }
+ extension CapationatedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         theSelectedIndexPath = indexPath
         displayTapMenu()
     }
-}
-///
- 
- 
-extension CaptionedEntry {
+ }
+ ///
+
+ extension CaptionedEntry {
     
- fileprivate   mutating func changeCaption(to:String) {
+    fileprivate   mutating func changeCaption(to:String) {
         //make a new ce, copying the id
         
-        let newself = CaptionedEntry.makeinCapSpace( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath, caption: to, options: self.stickerOptions, id: self.id)
+        let newself = AppCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath, caption: to, options: self.stickerOptions, id: self.id)
         // uses self.id here to REPLACE
         capSpace.addCaptionedEntry(newself)
         capSpace.saveToDisk()
@@ -219,34 +218,35 @@ extension CaptionedEntry {
     }
     
     
- fileprivate func cloneWithNewCaption(_ caption:String){
-        let newself = CaptionedEntry.makeinCapSpace( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath,  caption: caption,  options: self.stickerOptions, id:"")// self.id)
+    fileprivate func cloneWithNewCaption(_ caption:String){
+        let newself = AppCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath,  caption: caption,  options: self.stickerOptions, id:"")// self.id)
         // users newce.id to CLONE, the old item will get unhinged
         capSpace.addCaptionedEntry(newself)
         capSpace.saveToDisk()
-   
+        
     }
     
-  fileprivate      mutating func moveToIMessage() { // only from capspace
+    fileprivate      mutating func moveToIMessage() { // only from capspace
         // duplicate and save to other space under same id, as is
-    
-        let alreadyIn = memSpace.findMatchingEntry(ce: self)
-    if !alreadyIn {
-        do {
-            let theData = try Data(contentsOf: URL(string:self.localimagepath)!)
-            let stickerurl =   stickerFileFactory.createStickerFileFrom (imageData: theData ,captionedEntry:self)
-            
-            print("made sticker file urls \(stickerurl)")
-            
-            // ce.localimagepath = url.absoluteString // dink with this
-            let newself = CaptionedEntry.makeinMemSpace( pack: self.catalogpack, title: self.catalogtitle, imagepath: stickerurl.absoluteString ,  caption: self.caption,  options: self.stickerOptions, id:"")// self.id)
-            // users newce.id to CLONE, the old item will get unhinged
-            memSpace.addCaptionedEntry(newself)
-            memSpace.saveToDisk()
-        }
-        catch {
-            print("could not makemade sticker file urls \(localimagepath)")
+        
+        // if there is something in there with same file and caption then forget it
+        let alreadyIn = memSpace.findMatchingAsset(path: self.localimagepath, caption: self.caption)
+        if !alreadyIn {
+            do {
+                let theData = try Data(contentsOf: URL(string:self.localimagepath)!)
+                let stickerurl =   stickerFileFactory.createStickerFileFrom (imageData: theData ,captionedEntry:self)
+                
+                print("made sticker file urls \(stickerurl)")
+                
+                // ce.localimagepath = url.absoluteString // dink with this
+                let newself = SharedCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: stickerurl.absoluteString ,  caption: self.caption,  options: self.stickerOptions, id:"")// self.id)
+                // users newce.id to CLONE, the old item will get unhinged
+                memSpace.entries[ id] = newself
+                memSpace.saveToDisk()
+            }
+            catch {
+                print("could not makemade sticker file urls \(localimagepath)")
+            }
         }
     }
- }
  }

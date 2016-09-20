@@ -13,64 +13,30 @@ import UIKit
 
 struct CaptionedEntry {
     
-    let space: CaptionedSpace
     let id: String //stringified float millisecs since 1970
     let caption: String
     let stickerOptions: StickerMakingOptions
     let catalogpack:String
     let catalogtitle:String
-    
-    //TODO:
-    let localimagepath:String
-    let stickerimagepath:String // in the plain captions space this is the address of the local image as copied in from remote site, the the MessagesApp space it is the path of a kaptionated, ready to go image
+    let localimagepath:String  // path of local copy of source for
+   // let stickerimagepath:String // path of the iMessages sticker ready to go into MSSticker call of the local image as copied in from remote site, the the MessagesApp space it is the path of a kaptionated, ready to go image
     
     /// these are the action functions that are called to move things between tabs
   
 
-
-      
-        
         fileprivate func serializeToJSONDict() -> JSONDict {
             let x : JSONDict = [//"params":params.query,
                 "caption":caption as AnyObject,
                 "id":id as AnyObject,
                 "local":localimagepath as AnyObject,
-                "sticker":stickerimagepath as AnyObject,
+               // "sticker":stickerimagepath as AnyObject,
                 "pack":catalogpack as AnyObject,
                 "title":catalogtitle as AnyObject,
                 "options":  stickerOptions.rawValue as AnyObject ]
             return x
         }
         //// core
-        static  func makeinCapSpace( pack:String,title:String,imagepath:String ,caption:String,
-                                                options:StickerMakingOptions,
-                                                id:String  )->CaptionedEntry {
-            let newself = CaptionedEntry(space:capSpace,pack: pack, title: title,
-                                         imagepath: imagepath,
-                                         caption: caption,
-                                         options: options,id:id)
-            
-            // users newce.id to CLONE
-            capSpace.addCaptionedEntry(newself)
-            //capSpace.saveToDisk()
-            return newself
-        }
-        static  func makeinMemSpace( pack:String,title:String,imagepath:String,caption:String,
-                                                options:StickerMakingOptions,
-                                                id:String  )->CaptionedEntry {
-            let newself = CaptionedEntry(space:memSpace,pack: pack, title: title,
-                                         imagepath: imagepath,
-                                         caption: caption,
-                                         options: options,id:id)
-            
-            // users newce.id to CLONE
-            memSpace.addCaptionedEntry(newself)
-            //memSpace.saveToDisk()
-            return newself
-        }
-        
-        
-        static private  func intWithLeadingZeros (_ thing:Int64,digits:Int) -> String  {
+          static private  func intWithLeadingZeros (_ thing:Int64,digits:Int) -> String  {
             return String(format:"%0\(digits)lu", (thing) )
         }
         
@@ -80,24 +46,23 @@ struct CaptionedEntry {
             return intWithLeadingZeros( intnow, digits: 20)
         }
         
-        init(space:CaptionedSpace, pack:String,title:String,imagepath:String,
+        init(  pack:String,title:String,imagepath:String,
              caption:String,
              options:StickerMakingOptions,
              id:String = ""  ) {
-            self.space = space
             self.catalogpack = pack
             self.catalogtitle = title
             self.localimagepath = imagepath
-            self.stickerimagepath = ""
+            //self.stickerimagepath = ""
             self.caption = caption == "" ? title : caption
             self.stickerOptions = options
             self.id =  id == "" ? "\(CaptionedEntry.nicetime())" : id
         }
 }
 
-//MARK: CaptionedSpace collects and persists CaptionedEntrys
+//MARK: AppCaptionSpace collects and persists CaptionedEntrys
 
-struct CaptionedSpace {
+struct AppCaptionSpace {
     var entries : [String:CaptionedEntry] = [:]
     var suite: String // partions nsuserdefaults
     
@@ -115,11 +80,27 @@ struct CaptionedSpace {
       return   entries.map { key, value in return value }
     } 
     func dump() {
-        print("CaptionedSpace - \(suite) >>>>>")
+        print("AppCaptionSpace - \(suite) >>>>>")
         for (key,val) in entries {
             print("\(key):\(val),")
         }
     }
+    
+    static  func make(pack:String,  title:String,imagepath:String ,caption:String,
+                                options:StickerMakingOptions,
+                                id:String  )->CaptionedEntry {
+        let newself = CaptionedEntry( pack: pack, title: title,
+                                      imagepath: imagepath,
+                                      caption: caption,
+                                      options: options,id:id)
+        
+        // users newce.id to CLONE
+        capSpace.entries[id] = newself
+        //capSpace.saveToDisk()
+        return newself
+    }
+    
+
     mutating func addCaptionedEntry(_ ce :CaptionedEntry) {
         self.entries[ce.id] = ce
     }
@@ -183,15 +164,10 @@ struct CaptionedSpace {
                     }
                     var options = StickerMakingOptions()
                     options.rawValue = optionsvalue
-                    let _ = self.suite == AppPrivateDataSpace ?
-                        
-                        CaptionedEntry.makeinCapSpace(pack:p,title:ti,imagepath:i ,
+                    
+                    let _ = AppCaptionSpace.make(pack:p,title:ti,imagepath:i ,
                                                       caption:captiontext,
-                                                      options:options,id:d) :
-                        
-                        CaptionedEntry.makeinMemSpace(pack:p,title:ti,imagepath:i ,
-                                                      caption:captiontext,
-                                                      options:options,id:d)
+                                                      options:options,id:d)  
                 }
             }
         }
@@ -213,24 +189,5 @@ struct CaptionedSpace {
         }
     }
 }
-// global funcs called fr4om multiple kind of view controllers
-func animatedViewOf(frame:CGRect, imageurl:String) -> UIWebView {    let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  src='\(imageurl)' height='\(frame.height)' width='\(frame.width)'  alt='\(imageurl)' /</body></html5>"
-    let webViewOverlay = UIWebView(frame:frame)
-    webViewOverlay.scalesPageToFit = true
-    webViewOverlay.contentMode = .scaleAspectFill
-    webViewOverlay.loadHTMLString(html, baseURL: nil)
-    return webViewOverlay
-}
 
-//dismissButtonAltImageName
-func addDismissButtonToViewController(_ v:UIViewController,named:String, _ sel:Selector){
-    let img = UIImage(named:named)
-    let iv = UIImageView(image:img)
-    iv.frame = CGRect(x:0,y:10,width:60,height:60)//// test
-    iv.isUserInteractionEnabled = true
-    iv.contentMode = .scaleAspectFit
-    let tgr = UITapGestureRecognizer(target: v, action: sel)
-    iv.addGestureRecognizer(tgr)
-    v.view.addSubview(iv)
-}
 

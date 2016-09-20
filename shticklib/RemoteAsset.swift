@@ -152,7 +152,7 @@ struct RemoteAsset {
         return x
     }
     func  convertToCaptionedEntry( )  -> CaptionedEntry {
-        let ce = CaptionedEntry(space:capSpace, pack:  pack, title:  caption, imagepath:  localimagepath,   caption: "",  options: options)
+        let ce = CaptionedEntry( pack:  pack, title:  caption, imagepath:  localimagepath,   caption: "",  options: options)
         return ce
     }
 }

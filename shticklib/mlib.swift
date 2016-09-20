@@ -18,7 +18,7 @@ import UIKit
 // this will be seen in both the main program and the extension, but a restorefromdisk needs doing
 
 
-var memSpace  = CaptionedSpace(SharedMemDataSpace)
+var memSpace  = SharedCaptionSpace(SharedMemDataSpace)
 
 /// "SHOW-HIDDEN-FUNCTIONS" adds extra admin entries to the urhc menu
 //    if not sent then only the website page is shown

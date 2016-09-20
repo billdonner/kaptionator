@@ -7,6 +7,30 @@
 //
 
 import UIKit
+
+
+
+// global funcs called fr4om multiple kind of view controllers
+func animatedViewOf(frame:CGRect, imageurl:String) -> UIWebView {    let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  src='\(imageurl)' height='\(frame.height)' width='\(frame.width)'  alt='\(imageurl)' /</body></html5>"
+    let webViewOverlay = UIWebView(frame:frame)
+    webViewOverlay.scalesPageToFit = true
+    webViewOverlay.contentMode = .scaleAspectFill
+    webViewOverlay.loadHTMLString(html, baseURL: nil)
+    return webViewOverlay
+}
+
+//dismissButtonAltImageName
+func addDismissButtonToViewController(_ v:UIViewController,named:String, _ sel:Selector){
+    let img = UIImage(named:named)
+    let iv = UIImageView(image:img)
+    iv.frame = CGRect(x:0,y:10,width:60,height:60)//// test
+    iv.isUserInteractionEnabled = true
+    iv.contentMode = .scaleAspectFit
+    let tgr = UITapGestureRecognizer(target: v, action: sel)
+    iv.addGestureRecognizer(tgr)
+    v.view.addSubview(iv)
+}
+
 struct IO {
     private static func xdataTask(with url: URL, completionHandler: @escaping DTSKR) -> URLSessionDataTask {
         let session = URLSession.shared

@@ -21,6 +21,7 @@
 
 
 import UIKit
+var masterViewController : MasterViewController?
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate
@@ -51,7 +52,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     
     
         //spotlightController.indexCounties(DataItem.allItems)
-        if let navigationController = window?.rootViewController as? UINavigationController, let _ = navigationController.topViewController as? MasterViewController {
+    
+        if let navigationController = window?.rootViewController as? UINavigationController, let m = navigationController.topViewController as? MasterViewController {
+            masterViewController = m
             //masterViewController.history = history
             //applicationShortcutHandler = ApplicationShortcutHandler(masterViewController: masterViewController)
         }

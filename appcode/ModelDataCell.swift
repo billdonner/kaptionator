@@ -52,8 +52,7 @@ class ModelDataCell: UICollectionViewCell {
         nameLabel.textColor = appTheme.textColor
     }
     func colorFor(ra:RemoteAsset) {
-       let  isAnimated = ra.options.contains(.generateasis)
-        
+       let  isAnimated = ra.options.contains(.generateasis)  
         nameLabel.textColor = isAnimated ?  appTheme.redColor :appTheme.textColor
     }
     func paintImage(path imgLocalPath: String) {

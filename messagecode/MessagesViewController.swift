@@ -13,6 +13,12 @@ import Messages
 
 //MARK:- Singleton StickerPool used by extension only
 
+//MARK:- Singleton StickerPool used by extension only
+
+
+/// StickerPool is a singleton global struct that is not persisted
+//  contains the actual MSStickers used by IOS10 - since these stickers are not movable between the
+//  app and the extension, they are generated as needed only in the extension
 
 /// StickerPool is a singleton global struct that is not persisted
 //  contains the actual MSStickers used by IOS10 - since these stickers are not movable between the
@@ -49,7 +55,7 @@ struct  StickerPool   {
             print ("memSpace restored,\(memSpace.itemCount()) items ")
             
             for ce in memSpace.items() {
-                let url = URL(string:ce.localimagepath)!
+                let url = URL(string:ce.stickerimagepath)!
                 let title =  "\(stickers.count)"
                 makeMSSticker(url:url,title:title)
             }
@@ -93,7 +99,7 @@ struct  StickerPool   {
     @IBOutlet weak var topLabel: UILabel!
     
     @IBAction func theButtonTouch(_ sender: AnyObject) {
-        openMainAppFromExtension(scheme: "candidatez")
+        openMainAppFromExtension(scheme: extensionScheme)
         
     }
     @IBOutlet weak var theButton: UIButton!
@@ -131,6 +137,8 @@ struct  StickerPool   {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.topLabel.text = appTitle
+        
         // Do any additional setup after loading the view.
         p("messagesviewcontroller viewdidload")
         
@@ -199,7 +207,7 @@ struct  StickerPool   {
         
         // Use this to clean up state related to the deleted message.
         
-        self.view.backgroundColor = .yellow 
+        self.view.backgroundColor = .yellow
         p("didCancelSending   with \(conversation)")
         
         noteToCloud(dict: ["op":"didCancelSending", "conversation":"\(conversation)"])

@@ -13,7 +13,7 @@ import UIKit
 
 final class MessagesAppViewController: UIViewController   {
     
-    var stickerz:[CaptionedEntry] = []
+    var stickerz:[SharedCaptionedEntry] = []
     var theSelectedIndexPath:IndexPath?
     
     @IBOutlet internal  var tableView: UITableView!
@@ -65,11 +65,11 @@ final class MessagesAppViewController: UIViewController   {
 }
 // MARK: Delegates for actions from our associated menu
 extension  MessagesAppViewController:MessagesAppMenuViewDelegate {
-    func openinIMessage(captionedEntry:CaptionedEntry) {
+    func openinIMessage(captionedEntry:SharedCaptionedEntry) {
         print("MessagesAppEntriesViewController openinIMessage")
         captionedEntry.openinImessage()
     }
-    func removeFromIMessage(on captionedEntry:inout CaptionedEntry ){
+    func removeFromIMessage(on captionedEntry:inout SharedCaptionedEntry ){
         print("MessagesAppEntriesViewController removeFromIMessage")
         
         //  let ce =  stickerz.remove(at: indexPath.row)
@@ -133,7 +133,7 @@ extension MessagesAppViewController : UITableViewDataSource {
             // have the data onhand
             cell.paintImage(path:path)
         }
-        cell.colorFor(ce: ce)
+        cell.colorFor(options: ce.stickerOptions)
         return cell // Return the cell
     }
 }// MARK: Observer for model adjustments
@@ -141,18 +141,18 @@ extension MessagesAppViewController : MEObserver {
     
     func newdocument(_ propsDict: JSONDict, _ title:String) {
         
-        self.stickerz.removeAll()
-        self.stickerz = [] // reset CAREFUL not [[]]
-        
+//        self.stickerz.removeAll()
+//        self.stickerz = [] // reset CAREFUL not [[]]
+//        
     }
     func newpack(_ pack: String,_ showsectionhead:Bool) {
         print("**** new pack \(pack)")
     }
     func newentry(me:RemoteAsset){
         
-        let ce = me.convertToCaptionedEntry()
-        self.stickerz.append(ce) // append this
-        
+//        let ce = me.convertToCaptionedEntry()
+//        self.stickerz.append(ce) // append this
+//        
     }
 }
 extension MessagesAppViewController: UITableViewDelegate {
@@ -161,7 +161,7 @@ extension MessagesAppViewController: UITableViewDelegate {
         displayTapMenu()
     }
 }
-extension CaptionedEntry {
+extension SharedCaptionedEntry {
     
     fileprivate func openinImessage() {
     }

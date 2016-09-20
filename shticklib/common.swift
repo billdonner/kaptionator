@@ -33,12 +33,6 @@ func sharedAppContainerDirectory() -> URL {
     return sharedContainerURL
 }
 
-//MARK:- Singleton StickerPool used by extension only
-
-
-/// StickerPool is a singleton global struct that is not persisted
-//  contains the actual MSStickers used by IOS10 - since these stickers are not movable between the
-//  app and the extension, they are generated as needed only in the extension
 
 
 //MARK: - StickerMakingOptions determine what the sticker looks like
@@ -53,11 +47,34 @@ struct StickerMakingOptions: OptionSet {
 }
 
 
-/// CaptionedSpace is a singleton global struct that is persisted
+/// AppCaptionSpace is a singleton global struct that is persisted
 //  every instance of a user captioning a particular element is here
 //   note to self: DO NOT POLLUTE THIS STRUCT with class refs
 
-var capSpace  = CaptionedSpace(AppPrivateDataSpace)
+var capSpace  = AppCaptionSpace(AppPrivateDataSpace)
 
 
-
+var appTitle: String {
+get {
+    if let iDict = Bundle.main.infoDictionary ,
+        let w =  iDict["APP-TITLE"] as? String { return w
+    }
+    return "no APP-TITLE"
+}
+}
+var extensionScheme: String {
+get {
+    if let iDict = Bundle.main.infoDictionary ,
+        let w =  iDict["EXTENSION-SCHEME"] as? String { return w
+    }
+    return "no EXTENSION-SCHEME"
+}
+}
+var nameForLeftBBI: String {
+get {
+    if let iDict = Bundle.main.infoDictionary ,
+        let w =  iDict["LEFT-BBI-NAME"] as? String { return w
+    }
+    return "no LEFT-BBI-NAME"
+}
+}

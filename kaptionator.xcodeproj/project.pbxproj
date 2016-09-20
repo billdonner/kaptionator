@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		881A13E31D908F4B00D7A4EC /* ITunesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */; };
+		881A13E41D90ACB500D7A4EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD92D91D8872D400832564 /* Main.storyboard */; };
+		882EB2101D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
+		882EB2111D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
+		882EB2121D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
+		882EB2131D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
+		882EB2141D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
+		882EB2151D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
+		882EB2161D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
+		882EB2171D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
 		88475BF71D51607000FA7EC4 /* candidatezMessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 88AEA62F1D514C8D006E5C70 /* candidatezMessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		88475BFB1D51609200FA7EC4 /* holidazeMessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 88AEA6021D514C1F006E5C70 /* holidazeMessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		88475BFF1D51609C00FA7EC4 /* emogeezMessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 88AEA61A1D514C5F006E5C70 /* emogeezMessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -78,14 +88,14 @@
 		88B54CE41D8870060076942D /* manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA71D8870060076942D /* manifest.swift */; };
 		88B54CE61D8870060076942D /* manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA71D8870060076942D /* manifest.swift */; };
 		88B54CE81D8870060076942D /* manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA71D8870060076942D /* manifest.swift */; };
-		88B54CEA1D8870060076942D /* Captionated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* Captionated.swift */; };
-		88B54CEB1D8870060076942D /* Captionated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* Captionated.swift */; };
-		88B54CEC1D8870060076942D /* Captionated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* Captionated.swift */; };
-		88B54CED1D8870060076942D /* Captionated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* Captionated.swift */; };
-		88B54CEE1D8870060076942D /* Captionated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* Captionated.swift */; };
-		88B54CEF1D8870060076942D /* Captionated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* Captionated.swift */; };
-		88B54CF01D8870060076942D /* Captionated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* Captionated.swift */; };
-		88B54CF11D8870060076942D /* Captionated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* Captionated.swift */; };
+		88B54CEA1D8870060076942D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* SharedCaptionSpace.swift */; };
+		88B54CEB1D8870060076942D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* SharedCaptionSpace.swift */; };
+		88B54CEC1D8870060076942D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* SharedCaptionSpace.swift */; };
+		88B54CED1D8870060076942D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* SharedCaptionSpace.swift */; };
+		88B54CEE1D8870060076942D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* SharedCaptionSpace.swift */; };
+		88B54CEF1D8870060076942D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* SharedCaptionSpace.swift */; };
+		88B54CF01D8870060076942D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* SharedCaptionSpace.swift */; };
+		88B54CF11D8870060076942D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* SharedCaptionSpace.swift */; };
 		88B54CF21D8870060076942D /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA91D8870060076942D /* StickerFileFactory.swift */; };
 		88B54CF41D8870060076942D /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA91D8870060076942D /* StickerFileFactory.swift */; };
 		88B54CF61D8870060076942D /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA91D8870060076942D /* StickerFileFactory.swift */; };
@@ -98,11 +108,6 @@
 		88B54D001D8870F10076942D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88B54CFE1D8870F10076942D /* MainInterface.storyboard */; };
 		88B54D011D8870F10076942D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88B54CFE1D8870F10076942D /* MainInterface.storyboard */; };
 		88B54D021D8870F10076942D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88B54CFE1D8870F10076942D /* MainInterface.storyboard */; };
-		88B54D031D8871A40076942D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88AEA5B31D514B53006E5C70 /* Assets.xcassets */; };
-		88DD92DA1D8872D400832564 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD92D91D8872D400832564 /* Main.storyboard */; };
-		88DD92DB1D8872D400832564 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD92D91D8872D400832564 /* Main.storyboard */; };
-		88DD92DC1D8872D400832564 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD92D91D8872D400832564 /* Main.storyboard */; };
-		88DD92DD1D8872D400832564 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD92D91D8872D400832564 /* Main.storyboard */; };
 		88DD92E91D88738200832564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92DE1D88738200832564 /* AppDelegate.swift */; };
 		88DD92EA1D88738200832564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92DE1D88738200832564 /* AppDelegate.swift */; };
 		88DD92EB1D88738200832564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92DE1D88738200832564 /* AppDelegate.swift */; };
@@ -147,6 +152,9 @@
 		88DD93121D88738200832564 /* TableDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E81D88738200832564 /* TableDataCell.swift */; };
 		88DD93131D88738200832564 /* TableDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E81D88738200832564 /* TableDataCell.swift */; };
 		88DD93141D88738200832564 /* TableDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E81D88738200832564 /* TableDataCell.swift */; };
+		88E3B5D11D90B3CF0079E0CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD92D91D8872D400832564 /* Main.storyboard */; };
+		88E3B5D21D90B3D00079E0CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD92D91D8872D400832564 /* Main.storyboard */; };
+		88E3B5D31D90B3D10079E0CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD92D91D8872D400832564 /* Main.storyboard */; };
 		88F25ADB1D5F5803004F4AB4 /* shtikerzEyesLogoAni-618x485.gif in Resources */ = {isa = PBXBuildFile; fileRef = 88F25ADA1D5F5803004F4AB4 /* shtikerzEyesLogoAni-618x485.gif */; };
 		88F25ADC1D5F5803004F4AB4 /* shtikerzEyesLogoAni-618x485.gif in Resources */ = {isa = PBXBuildFile; fileRef = 88F25ADA1D5F5803004F4AB4 /* shtikerzEyesLogoAni-618x485.gif */; };
 		88F25ADD1D5F5803004F4AB4 /* shtikerzEyesLogoAni-618x485.gif in Resources */ = {isa = PBXBuildFile; fileRef = 88F25ADA1D5F5803004F4AB4 /* shtikerzEyesLogoAni-618x485.gif */; };
@@ -240,6 +248,8 @@
 		8810D0001D53C4D2009BA9B3 /* candidatezMessagesExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = candidatezMessagesExtension.entitlements; sourceTree = "<group>"; };
 		8810D0011D53C510009BA9B3 /* kaptionator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kaptionator.entitlements; sourceTree = "<group>"; };
 		8810D0021D53C536009BA9B3 /* kaptionatorMessageExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kaptionatorMessageExtension.entitlements; sourceTree = "<group>"; };
+		881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesViewController.swift; sourceTree = "<group>"; };
+		882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCaptionSpace.swift; sourceTree = "<group>"; };
 		88AEA5911D514B29006E5C70 /* kaptionator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kaptionator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88AEA59B1D514B29006E5C70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88AEA59E1D514B29006E5C70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -282,7 +292,7 @@
 		88B54CA51D8870060076942D /* SFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFViewController.swift; sourceTree = "<group>"; };
 		88B54CA61D8870060076942D /* InfoDictIOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoDictIOS.swift; sourceTree = "<group>"; };
 		88B54CA71D8870060076942D /* manifest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = manifest.swift; sourceTree = "<group>"; };
-		88B54CA81D8870060076942D /* Captionated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Captionated.swift; sourceTree = "<group>"; };
+		88B54CA81D8870060076942D /* SharedCaptionSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedCaptionSpace.swift; sourceTree = "<group>"; };
 		88B54CA91D8870060076942D /* StickerFileFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerFileFactory.swift; sourceTree = "<group>"; };
 		88B54CFE1D8870F10076942D /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainInterface.storyboard; path = ../candidatezMessagesExtension/MainInterface.storyboard; sourceTree = "<group>"; };
 		88DD92D91D8872D400832564 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -375,7 +385,8 @@
 				88B54CA51D8870060076942D /* SFViewController.swift */,
 				88B54CA61D8870060076942D /* InfoDictIOS.swift */,
 				88B54CA71D8870060076942D /* manifest.swift */,
-				88B54CA81D8870060076942D /* Captionated.swift */,
+				88B54CA81D8870060076942D /* SharedCaptionSpace.swift */,
+				882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */,
 				88B54CA91D8870060076942D /* StickerFileFactory.swift */,
 			);
 			path = shticklib;
@@ -386,6 +397,7 @@
 			children = (
 				88DD92DE1D88738200832564 /* AppDelegate.swift */,
 				88DD92DF1D88738200832564 /* CatalogViewController.swift */,
+				881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */,
 				88DD92E01D88738200832564 /* CatalogMenuViewController.swift */,
 				88DD92E11D88738200832564 /* CaptionedMenuViewController.swift */,
 				88DD92E21D88738200832564 /* CapationatedViewController.swift */,
@@ -820,9 +832,8 @@
 			files = (
 				88AEA59F1D514B29006E5C70 /* LaunchScreen.storyboard in Resources */,
 				88F25ADB1D5F5803004F4AB4 /* shtikerzEyesLogoAni-618x485.gif in Resources */,
-				88DD92DA1D8872D400832564 /* Main.storyboard in Resources */,
 				88AEA59C1D514B29006E5C70 /* Assets.xcassets in Resources */,
-				88B54D031D8871A40076942D /* Assets.xcassets in Resources */,
+				881A13E41D90ACB500D7A4EC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -831,9 +842,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				88AEA5B71D514B53006E5C70 /* LaunchScreen.storyboard in Resources */,
-				88DD92DB1D8872D400832564 /* Main.storyboard in Resources */,
 				88F25ADC1D5F5803004F4AB4 /* shtikerzEyesLogoAni-618x485.gif in Resources */,
 				88AEA5B41D514B53006E5C70 /* Assets.xcassets in Resources */,
+				88E3B5D11D90B3CF0079E0CB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -842,9 +853,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				88AEA5CD1D514B6A006E5C70 /* LaunchScreen.storyboard in Resources */,
-				88DD92DC1D8872D400832564 /* Main.storyboard in Resources */,
 				88F25ADD1D5F5803004F4AB4 /* shtikerzEyesLogoAni-618x485.gif in Resources */,
 				88AEA5CA1D514B6A006E5C70 /* Assets.xcassets in Resources */,
+				88E3B5D21D90B3D00079E0CB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -853,9 +864,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				88AEA5F91D514BC3006E5C70 /* LaunchScreen.storyboard in Resources */,
-				88DD92DD1D8872D400832564 /* Main.storyboard in Resources */,
 				88F25ADE1D5F5803004F4AB4 /* shtikerzEyesLogoAni-618x485.gif in Resources */,
 				88AEA5F61D514BC3006E5C70 /* Assets.xcassets in Resources */,
+				88E3B5D31D90B3D10079E0CB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -915,7 +926,8 @@
 				88B54CAA1D8870060076942D /* mlib.swift in Sources */,
 				88DD92F91D88738200832564 /* CapationatedViewController.swift in Sources */,
 				88DD92F51D88738200832564 /* CaptionedMenuViewController.swift in Sources */,
-				88B54CEA1D8870060076942D /* Captionated.swift in Sources */,
+				882EB2101D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */,
+				88B54CEA1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
 				88B54CF21D8870060076942D /* StickerFileFactory.swift in Sources */,
 				88B54CD21D8870060076942D /* SFViewController.swift in Sources */,
 				88B54CCA1D8870060076942D /* IOSSpecialOps.swift in Sources */,
@@ -926,6 +938,7 @@
 				88B54CBA1D8870060076942D /* RemoteAsset.swift in Sources */,
 				88B54CDA1D8870060076942D /* InfoDictIOS.swift in Sources */,
 				88DD92FD1D88738200832564 /* MessagesAppViewController.swift in Sources */,
+				881A13E31D908F4B00D7A4EC /* ITunesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -943,7 +956,8 @@
 				88B54CAC1D8870060076942D /* mlib.swift in Sources */,
 				88DD92FA1D88738200832564 /* CapationatedViewController.swift in Sources */,
 				88DD92F61D88738200832564 /* CaptionedMenuViewController.swift in Sources */,
-				88B54CEC1D8870060076942D /* Captionated.swift in Sources */,
+				882EB2121D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */,
+				88B54CEC1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
 				88B54CF41D8870060076942D /* StickerFileFactory.swift in Sources */,
 				88B54CD41D8870060076942D /* SFViewController.swift in Sources */,
 				88B54CCC1D8870060076942D /* IOSSpecialOps.swift in Sources */,
@@ -971,7 +985,8 @@
 				88B54CAE1D8870060076942D /* mlib.swift in Sources */,
 				88DD92FB1D88738200832564 /* CapationatedViewController.swift in Sources */,
 				88DD92F71D88738200832564 /* CaptionedMenuViewController.swift in Sources */,
-				88B54CEE1D8870060076942D /* Captionated.swift in Sources */,
+				882EB2141D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */,
+				88B54CEE1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
 				88B54CF61D8870060076942D /* StickerFileFactory.swift in Sources */,
 				88B54CD61D8870060076942D /* SFViewController.swift in Sources */,
 				88B54CCE1D8870060076942D /* IOSSpecialOps.swift in Sources */,
@@ -999,7 +1014,8 @@
 				88B54CB01D8870060076942D /* mlib.swift in Sources */,
 				88DD92FC1D88738200832564 /* CapationatedViewController.swift in Sources */,
 				88DD92F81D88738200832564 /* CaptionedMenuViewController.swift in Sources */,
-				88B54CF01D8870060076942D /* Captionated.swift in Sources */,
+				882EB2161D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */,
+				88B54CF01D8870060076942D /* SharedCaptionSpace.swift in Sources */,
 				88B54CF81D8870060076942D /* StickerFileFactory.swift in Sources */,
 				88B54CD81D8870060076942D /* SFViewController.swift in Sources */,
 				88B54CD01D8870060076942D /* IOSSpecialOps.swift in Sources */,
@@ -1018,10 +1034,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				88B54CFD1D8870A30076942D /* mlib.swift in Sources */,
+				882EB2171D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */,
 				88B54C9F1D886FBC0076942D /* MessagesViewController.swift in Sources */,
 				88B54CC91D8870060076942D /* common.swift in Sources */,
 				88B54CB91D8870060076942D /* theme.swift in Sources */,
-				88B54CF11D8870060076942D /* Captionated.swift in Sources */,
+				88B54CF11D8870060076942D /* SharedCaptionSpace.swift in Sources */,
 				88B54C9B1D886FBC0076942D /* MartoonerBrowserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1031,10 +1048,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				88B54CFC1D8870A10076942D /* mlib.swift in Sources */,
+				882EB2151D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */,
 				88B54C9E1D886FBC0076942D /* MessagesViewController.swift in Sources */,
 				88B54CC71D8870060076942D /* common.swift in Sources */,
 				88B54CB71D8870060076942D /* theme.swift in Sources */,
-				88B54CEF1D8870060076942D /* Captionated.swift in Sources */,
+				88B54CEF1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
 				88B54C9A1D886FBC0076942D /* MartoonerBrowserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1044,10 +1062,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				88B54CFB1D8870A10076942D /* mlib.swift in Sources */,
+				882EB2131D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */,
 				88B54C9D1D886FBC0076942D /* MessagesViewController.swift in Sources */,
 				88B54CC51D8870060076942D /* common.swift in Sources */,
 				88B54CB51D8870060076942D /* theme.swift in Sources */,
-				88B54CED1D8870060076942D /* Captionated.swift in Sources */,
+				88B54CED1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
 				88B54C991D886FBC0076942D /* MartoonerBrowserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1057,10 +1076,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				88B54CFA1D8870A00076942D /* mlib.swift in Sources */,
+				882EB2111D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */,
 				88B54C9C1D886FBC0076942D /* MessagesViewController.swift in Sources */,
 				88B54CC31D8870060076942D /* common.swift in Sources */,
 				88B54CB31D8870060076942D /* theme.swift in Sources */,
-				88B54CEB1D8870060076942D /* Captionated.swift in Sources */,
+				88B54CEB1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
 				88B54C981D886FBC0076942D /* MartoonerBrowserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
