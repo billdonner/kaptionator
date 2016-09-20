@@ -13,6 +13,8 @@ class TableDataCell: UITableViewCell {
     @IBOutlet  fileprivate weak var detailsImageView: UIImageView!
     @IBOutlet  fileprivate weak var nameLabel: UILabel!
     
+    @IBOutlet  fileprivate weak var line2Label: UILabel!
+    
     override func prepareForReuse() {
         detailsImageView.image = nil // clean this out
         nameLabel.text = "should not see this"
@@ -31,9 +33,13 @@ class TableDataCell: UITableViewCell {
         )
     }
     // methods to adjust cell contents
-    func paint(name:String) {
+    func paint(name:String,line2:String ) {
+        
         nameLabel.text = name
         nameLabel.textColor = appTheme.textColor
+        
+        line2Label.text = line2
+        line2Label.textColor = appTheme.textColor
     }
     
     

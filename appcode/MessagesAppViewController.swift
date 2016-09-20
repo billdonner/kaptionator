@@ -114,10 +114,12 @@ extension MessagesAppViewController : UITableViewDataSource {
         
         let ce = stickerz [indexPath.row]
         //show the primitive title
-        cell.paint(name:ce.caption)
+        
+        let line2 = ce.stickerOptions.description()
+        cell.paint(name:ce.caption,line2:line2)
         
         /// go get the image from our cache and then the net
-        let path =  ce.localimagepath // ?????
+        let path =  ce.stickerimagepath // ?????
         if path != "" {  
             cell.paintImage(path:path)
         }

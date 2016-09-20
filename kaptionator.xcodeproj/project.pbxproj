@@ -431,7 +431,6 @@
 				88722F661D522AAB00B2F85B /* appcode */,
 				88AEA5931D514B29006E5C70 /* kaptionator */,
 				88AEA5AB1D514B53006E5C70 /* candidatez */,
-				88AEA5C11D514B6A006E5C70 /* emogeez */,
 				88AEA5ED1D514BC3006E5C70 /* holidayz */,
 				88AEA6061D514C1F006E5C70 /* holidazeMessagesExtension */,
 				88AEA61C1D514C5F006E5C70 /* emogeezMessagesExtension */,
@@ -463,6 +462,7 @@
 				8810D0011D53C510009BA9B3 /* kaptionator.entitlements */,
 				88AEA59B1D514B29006E5C70 /* Assets.xcassets */,
 				88AEA59D1D514B29006E5C70 /* LaunchScreen.storyboard */,
+				88AEA5C11D514B6A006E5C70 /* emogeez */,
 				88AEA5A01D514B29006E5C70 /* Info.plist */,
 			);
 			path = kaptionator;
@@ -487,7 +487,8 @@
 				88AEA5CB1D514B6A006E5C70 /* LaunchScreen.storyboard */,
 				88AEA5CE1D514B6A006E5C70 /* Info.plist */,
 			);
-			path = emogeez;
+			name = emogeez;
+			path = ../emogeez;
 			sourceTree = "<group>";
 		};
 		88AEA5ED1D514BC3006E5C70 /* holidayz */ = {

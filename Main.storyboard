@@ -202,7 +202,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JCj-Dg-Rge" id="HLq-aY-Omi">
-                                            <frame key="frameInset" width="343" height="99.5"/>
+                                            <frame key="frameInset" width="343" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HNi-uV-tbt">
@@ -210,27 +210,37 @@
                                                         <constraint firstAttribute="width" secondItem="HNi-uV-tbt" secondAttribute="height" multiplier="1:1" id="gQR-cc-0Av"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9Aq-yR-Evu">
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="hTI-xo-6gf">
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9Aq-yR-Evu">
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="47"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="line2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uG1-8h-eNq">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="HNi-uV-tbt" secondAttribute="bottom" constant="-4.5" id="0D9-jk-0At"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="hTI-xo-6gf" secondAttribute="trailing" constant="4" id="8g9-mc-VC8"/>
                                                 <constraint firstItem="HNi-uV-tbt" firstAttribute="top" secondItem="HLq-aY-Omi" secondAttribute="topMargin" constant="-4" id="Ekd-hK-xww"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="9Aq-yR-Evu" secondAttribute="bottom" constant="4" id="TaZ-Z8-AhR"/>
                                                 <constraint firstItem="HNi-uV-tbt" firstAttribute="leading" secondItem="HLq-aY-Omi" secondAttribute="leadingMargin" constant="-4" id="UhP-xd-plQ"/>
-                                                <constraint firstItem="9Aq-yR-Evu" firstAttribute="top" secondItem="HLq-aY-Omi" secondAttribute="topMargin" constant="4" id="lTK-WV-MX6"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="9Aq-yR-Evu" secondAttribute="trailing" constant="4" id="pcH-VC-auS"/>
-                                                <constraint firstItem="9Aq-yR-Evu" firstAttribute="leading" secondItem="HNi-uV-tbt" secondAttribute="trailing" constant="3.5" id="zdb-Dv-RIc"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="hTI-xo-6gf" secondAttribute="bottom" constant="4" id="bhu-xW-JwH"/>
+                                                <constraint firstItem="hTI-xo-6gf" firstAttribute="leading" secondItem="HNi-uV-tbt" secondAttribute="trailing" constant="4" id="pDw-oi-meK"/>
+                                                <constraint firstItem="hTI-xo-6gf" firstAttribute="top" secondItem="HLq-aY-Omi" secondAttribute="topMargin" constant="4" id="s1z-nM-093"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <gestureRecognizers/>
                                         <connections>
                                             <outlet property="detailsImageView" destination="HNi-uV-tbt" id="nyv-li-0oq"/>
+                                            <outlet property="line2Label" destination="uG1-8h-eNq" id="Nq2-hb-oAO"/>
                                             <outlet property="nameLabel" destination="9Aq-yR-Evu" id="aKF-1I-fOy"/>
                                         </connections>
                                     </tableViewCell>
@@ -273,7 +283,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T4c-g1-0ka" id="o4R-Qt-FEy">
-                                            <frame key="frameInset" width="343" height="99.5"/>
+                                            <frame key="frameInset" width="343" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nPl-XJ-iJ6">
@@ -281,25 +291,35 @@
                                                         <constraint firstAttribute="width" secondItem="nPl-XJ-iJ6" secondAttribute="height" multiplier="1:1" id="D1y-f4-XdO"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ivD-jo-ELj">
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Fb2-HT-rRi">
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ivD-jo-ELj">
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="47"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="line2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCe-Qu-rp9">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ivD-jo-ELj" firstAttribute="top" secondItem="o4R-Qt-FEy" secondAttribute="topMargin" constant="4" id="1z1-9M-6lV"/>
-                                                <constraint firstItem="ivD-jo-ELj" firstAttribute="leading" secondItem="nPl-XJ-iJ6" secondAttribute="trailing" constant="3.5" id="9Gn-MB-LPr"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="ivD-jo-ELj" secondAttribute="bottom" constant="4" id="BlM-Nh-Lrf"/>
+                                                <constraint firstItem="Fb2-HT-rRi" firstAttribute="top" secondItem="o4R-Qt-FEy" secondAttribute="topMargin" constant="4" id="09E-A9-Igf"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="nPl-XJ-iJ6" secondAttribute="bottom" constant="-4.5" id="aDz-OF-k8r"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="ivD-jo-ELj" secondAttribute="trailing" constant="4" id="ccQ-OZ-hfm"/>
                                                 <constraint firstItem="nPl-XJ-iJ6" firstAttribute="leading" secondItem="o4R-Qt-FEy" secondAttribute="leadingMargin" constant="-4" id="eog-TJ-lD2"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Fb2-HT-rRi" secondAttribute="bottom" constant="4" id="fLn-7f-xrp"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Fb2-HT-rRi" secondAttribute="trailing" constant="4" id="fxa-IA-gS7"/>
+                                                <constraint firstItem="Fb2-HT-rRi" firstAttribute="leading" secondItem="nPl-XJ-iJ6" secondAttribute="trailing" constant="4" id="kCT-2w-CjO"/>
                                                 <constraint firstItem="nPl-XJ-iJ6" firstAttribute="top" secondItem="o4R-Qt-FEy" secondAttribute="topMargin" constant="-4" id="z84-tb-cVx"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="detailsImageView" destination="nPl-XJ-iJ6" id="Suq-eO-0tk"/>
+                                            <outlet property="line2Label" destination="CCe-Qu-rp9" id="u7k-xi-pOo"/>
                                             <outlet property="nameLabel" destination="ivD-jo-ELj" id="6I5-IH-Azg"/>
                                         </connections>
                                     </tableViewCell>
@@ -321,7 +341,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nue-Py-llb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2661" y="-5651"/>
+            <point key="canvasLocation" x="-2661.5999999999999" y="-5651.4242878560726"/>
         </scene>
         <!--Master View Controller-->
         <scene sceneID="iI4-Bh-VoZ">
@@ -588,7 +608,7 @@
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="go"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="itunes options" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xn4-B1-7Wn">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPTIONS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xn4-B1-7Wn">
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -1001,7 +1021,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pJ0-J1-HsB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2388" y="-1529.6851574212894"/>
+            <point key="canvasLocation" x="-3389" y="-1978"/>
         </scene>
     </scenes>
     <resources>

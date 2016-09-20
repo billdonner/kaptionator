@@ -43,8 +43,28 @@ struct StickerMakingOptions: OptionSet {
     static let generatemedium  = StickerMakingOptions(rawValue: 1 << 1)
     static let generatelarge   = StickerMakingOptions(rawValue: 1 << 2)
     static let generateasis   = StickerMakingOptions(rawValue: 1 << 3)
-    
     static let generatenocaption   = StickerMakingOptions(rawValue: 1 << 4)
+    
+    func description()->String {
+        var buf = ""
+        if self.contains(.generatesmall) {
+            buf += "Small"
+        }
+        if self.contains(.generatemedium) {
+            buf += "Med"
+        }
+        if self.contains(.generatelarge) {
+            buf += "Large"
+        }
+        if self.contains(.generateasis) {
+            buf += "AsIs"
+        }
+        if self.contains(.generatenocaption) {
+            buf += "NoCap"
+        }
+        return buf
+    }
+    
 }
 
 

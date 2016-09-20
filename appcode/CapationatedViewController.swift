@@ -30,7 +30,9 @@
         super.didReceiveMemoryWarning()
         print ("**********removed all cached images because CapationatedEntriesViewController short on memory")
     }
-    
+    override func didMove(toParentViewController parent: UIViewController?) {
+        refreshFromCapSpace()
+    }
     @IBAction func cellwzswiped(_ swipe: UISwipeGestureRecognizer) {
         
         let location = swipe.location(in: tableView)
@@ -90,7 +92,7 @@
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-  refreshFromCapSpace()
+        refreshFromCapSpace()
         
     }
     
@@ -174,8 +176,9 @@
         
         let ce = stickerz [indexPath.row]
         //show the primitive title
-        let showname = ce.caption // + "!!!!"
-        cell.paint(name:showname)
+        let showname = ce.caption 
+        let line2 = ce.stickerOptions.description()
+        cell.paint(name:showname,line2:line2)
         
         /// go get the image from our cache and then the net
         let path =  ce.localimagepath // ?????
@@ -225,9 +228,13 @@
  extension AppCE {
     
     fileprivate   mutating func changeCaption(to caption:String) {
+        let alreadyIn = capSpace.findMatchingAsset(path: self.localimagepath, caption: caption)
+        if !alreadyIn {
+            // keep old and
            AppCaptionSpace.unhinge(id:self.id) //remove old
         // make new with new caption but all else is similar
         let _ = AppCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath, caption: caption, options: self.stickerOptions, id: self.id)
+        }
      
         //
     }
@@ -235,7 +242,7 @@
     
     fileprivate func cloneWithNewCaption(_ caption:String){
         
-        let alreadyIn = capSpace.findMatchingAsset(path: self.localimagepath, caption: self.caption)
+        let alreadyIn = capSpace.findMatchingAsset(path: self.localimagepath, caption: caption)
         if !alreadyIn {
         // keep old and make another
         let _ = AppCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath,  caption: caption,  options: self.stickerOptions, id:"")
