@@ -11,13 +11,15 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.martoons.candidatez</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
+	<key>SHOW-HIDDEN-FUNCTIONS</key>
+	<false/>
 	<key>CFBundleShortVersionString</key>
 	<string>1.01</string>
 	<key>CFBundleVersion</key>
@@ -38,9 +40,7 @@
 	<key>REMOTE-WEBSITE-URL</key>
 	<string>http://shtikerz.com/candidatez</string>
 	<key>SHARED-INTERAPP-DATA</key>
-	<string>group.com.martoons.candidatez</string>
-	<key>SHOW-HIDDEN-FUNCTIONS</key>
-	<false/>
+	<string>group.com.midnightrambler.candidatez</string>
 	<key>UIFileSharingEnabled</key>
 	<false/>
 	<key>UILaunchStoryboardName</key>

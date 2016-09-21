@@ -21,7 +21,9 @@ let AppPrivateDataSpace = "AppPrivateDataSpace"
 //    it looks something like group.xxx.yyy.zzz
 var SharedMemDataSpace: String  { get {
     if let iDict = Bundle.main.infoDictionary,
-        let w =  iDict["SHARED-INTERAPP-DATA"] as? String { return w }
+        let w =  iDict["SHARED-INTERAPP-DATA"] as? String {
+        return w
+    }
     return ""
 }
 }

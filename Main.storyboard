@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -202,7 +203,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JCj-Dg-Rge" id="HLq-aY-Omi">
-                                            <frame key="frameInset" width="343" height="99"/>
+                                            <frame key="frameInset" width="343" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HNi-uV-tbt">
@@ -283,7 +284,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T4c-g1-0ka" id="o4R-Qt-FEy">
-                                            <frame key="frameInset" width="343" height="99"/>
+                                            <frame key="frameInset" width="343" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nPl-XJ-iJ6">
@@ -396,12 +397,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" prompt="Candidatez by Martoons" id="nzt-vv-hvj">
-                        <barButtonItem key="rightBarButtonItem" title="help" id="0tw-hB-Ki7">
-                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="helpButtonPushed:" destination="Tm1-Gg-mxO" id="hgW-y0-sec"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="action" id="0tw-hB-Ki7">
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="helpButtonPushed:" destination="Tm1-Gg-mxO" id="H03-Cf-Sex"/>
+                                    <segue destination="CxQ-5a-VxP" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="bIb-Jy-ZEy"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="  ?  " id="lR2-4n-dHQ"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -409,14 +414,58 @@
                         <outlet property="activityIndicatorView" destination="pDJ-lU-8Rv" id="qfP-00-EgJ"/>
                         <outlet property="coloredSpacer" destination="dZ6-fO-zz0" id="Epd-wD-t5x"/>
                         <outlet property="containerView" destination="J51-cA-3yj" id="i5e-d7-Ujm"/>
-                        <outlet property="helpbbi" destination="0tw-hB-Ki7" id="EEf-S7-nlw"/>
+                        <outlet property="helpbbi" destination="lR2-4n-dHQ" id="MNm-YX-2Wu"/>
                         <outlet property="logoView" destination="Qsx-Ud-Mye" id="gJe-dS-hGw"/>
+                        <outlet property="morebbi" destination="0tw-hB-Ki7" id="3f0-Wx-xNY"/>
                         <segue destination="bbi-GL-AyA" kind="presentation" identifier="PresentHelpSegue" modalTransitionStyle="crossDissolve" id="dCI-Pf-Kks"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5m-nU-S6G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2713" y="-1803"/>
+        </scene>
+        <!--Modal Transparent View Controller-->
+        <scene sceneID="5Qe-bb-egK">
+            <objects>
+                <viewController id="CxQ-5a-VxP" customClass="ModalTransparentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lT1-Jf-hrZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="bZN-W5-bdE"/>
+                    </layoutGuides>
+                    <view key="view" alpha="0.84999999999999998" contentMode="scaleToFill" id="4AY-T3-zeb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="joQ-nb-0Im">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="9bD-1H-gUd">
+                                    <frame key="frameInset"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Context Sensitive Help Goes Here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="piF-Ls-yst" userLabel="Content here against blurred overlay">
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="joQ-nb-0Im" firstAttribute="top" secondItem="lT1-Jf-hrZ" secondAttribute="bottom" id="1Mq-OK-iYx"/>
+                            <constraint firstItem="bZN-W5-bdE" firstAttribute="top" secondItem="joQ-nb-0Im" secondAttribute="bottom" id="ILh-h6-tmf"/>
+                            <constraint firstItem="joQ-nb-0Im" firstAttribute="leading" secondItem="4AY-T3-zeb" secondAttribute="leadingMargin" id="N1y-Xs-d6z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="piF-Ls-yst" secondAttribute="trailing" constant="-16" id="UfM-vh-Eh8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="joQ-nb-0Im" secondAttribute="trailing" id="bFg-hi-N7o"/>
+                            <constraint firstItem="piF-Ls-yst" firstAttribute="top" secondItem="lT1-Jf-hrZ" secondAttribute="bottom" id="ojl-IJ-tYp"/>
+                            <constraint firstItem="piF-Ls-yst" firstAttribute="leading" secondItem="4AY-T3-zeb" secondAttribute="leadingMargin" constant="-16" id="psY-4f-kyQ"/>
+                            <constraint firstItem="bZN-W5-bdE" firstAttribute="top" secondItem="piF-Ls-yst" secondAttribute="bottom" id="t0a-fN-GZB"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J6t-98-Ybt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1800" y="-1932"/>
         </scene>
         <!--Catalog Menu-->
         <scene sceneID="jYu-0a-m1Z">
@@ -640,21 +689,6 @@
                                                     <action selector="useStickerNoCaptionPressed:" destination="bQh-9f-7xV" eventType="touchUpInside" id="JBf-aL-0l7"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BZX-I3-XcR">
-                                                <state key="normal">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="Candidatez Site ...">
-                                                            <attributes>
-                                                                <font key="NSFont" size="15" name="AmericanTypewriter"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                </state>
-                                                <connections>
-                                                    <action selector="websitetapped:" destination="bQh-9f-7xV" eventType="touchUpInside" id="7H9-9j-6ZO"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="OLy-dN-0oz" firstAttribute="leading" secondItem="XJz-mV-vhF" secondAttribute="leading" id="8rv-0W-cIJ"/>
@@ -693,7 +727,6 @@
                         <outlet property="outerView" destination="12b-XD-d3f" id="kjR-Vv-YsR"/>
                         <outlet property="useasis" destination="eYF-KK-vF4" id="QKS-QM-pup"/>
                         <outlet property="useasisnocaption" destination="Cbk-s4-wx9" id="T27-1J-eNO"/>
-                        <outlet property="veryBottomButton" destination="BZX-I3-XcR" id="fYa-zf-zPh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDG-yE-ozP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -759,21 +792,6 @@
                                                 <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7aa-9N-yWs">
-                                                <state key="normal">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="Candidatez Site ...">
-                                                            <attributes>
-                                                                <font key="NSFont" size="15" name="AmericanTypewriter"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                </state>
-                                                <connections>
-                                                    <action selector="websitetapped:" destination="2yc-jg-Aom" eventType="touchUpInside" id="C4G-pt-F5K"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="atg-ml-LAn" secondAttribute="trailing" id="WkR-aR-ZSy"/>
@@ -808,7 +826,6 @@
                         <outlet property="animatedLabel" destination="eXY-oE-MYw" id="ff5-vV-p0J"/>
                         <outlet property="imageCaption" destination="atg-ml-LAn" id="Qez-wf-7hC"/>
                         <outlet property="menuImage" destination="ek7-tb-bXc" id="LS6-R1-KLc"/>
-                        <outlet property="veryBottomButton" destination="7aa-9N-yWs" id="vvL-CM-LhU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DsP-IT-djv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -897,21 +914,6 @@
                                                     <action selector="moveToIMessage:" destination="P8v-au-Qtf" eventType="touchUpInside" id="Y54-7D-uMh"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ByK-1E-Pss">
-                                                <state key="normal">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="Candidatez Site ...">
-                                                            <attributes>
-                                                                <font key="NSFont" size="15" name="AmericanTypewriter"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                </state>
-                                                <connections>
-                                                    <action selector="websitetapped:" destination="P8v-au-Qtf" eventType="touchUpInside" id="XHn-k1-aB1"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="i3w-04-Qk9" secondAttribute="trailing" id="Vfn-pd-tBz"/>
@@ -949,12 +951,11 @@
                         <outlet property="imageCaption" destination="i3w-04-Qk9" id="IXr-lF-BLn"/>
                         <outlet property="menuImage" destination="FER-9S-tva" id="Ht4-eI-t4q"/>
                         <outlet property="moveimessage" destination="9rn-XU-0qq" id="QjL-hf-LdM"/>
-                        <outlet property="veryBottomButton" destination="ByK-1E-Pss" id="dqo-Eg-pRS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="riR-gB-pfI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2423" y="-3688"/>
+            <point key="canvasLocation" x="-1591" y="-3835"/>
         </scene>
         <!--Help Overlay View Controller-->
         <scene sceneID="dou-G2-wW1">

@@ -27,7 +27,10 @@ class MasterViewController: UIViewController {
     
     @IBOutlet weak var buttonChooser: UISegmentedControl!
     
+    @IBOutlet weak var morebbi: UIBarButtonItem!
+    
     @IBOutlet weak var helpbbi: UIBarButtonItem!
+    
     @IBAction func buttonAction(_ sender: AnyObject) {
     }
     @IBOutlet weak var logoView: UIImageView!
@@ -92,6 +95,8 @@ class MasterViewController: UIViewController {
         stickerz.tintColor = offColor
         imessage.tintColor = offColor
         helpbbi.tintColor = appTheme.textColor
+        morebbi.tintColor = appTheme.textColor
+        
         self.view.backgroundColor = appTheme.backgroundColor
         catb.isEnabled = false
         stickerz.isEnabled = false
