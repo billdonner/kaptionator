@@ -17,8 +17,24 @@ var capSpace  = AppCaptionSpace(AppPrivateDataSpace)
 
 
 // global funcs called fr4om multiple kind of view controllers
-func animatedViewOf(frame:CGRect, imageurl:String) -> UIWebView {    let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  src='\(imageurl)' height='\(frame.height)' width='\(frame.width)'  alt='\(imageurl)' /</body></html5>"
-    let webViewOverlay = UIWebView(frame:frame)
+func animatedViewOf(frame:CGRect, size:CGSize, imageurl:String) -> UIWebView {
+    let inset:CGFloat = 10
+    let actualsize = min(size.width,size.height)
+    let screensize = min( frame.width,frame.height)
+    
+    
+    let imagesize = min(actualsize , screensize)
+    let offs = (screensize - imagesize) / 2
+    let frem = CGRect(x:offs+inset,
+                      y:offs+inset,
+                      width:imagesize-2*inset,
+                      height:imagesize-2*inset)
+    
+    
+    
+    
+    let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  src='\(imageurl)' height='\(frem.height)' width='\(frem.width)'  alt='\(imageurl)' /</body></html5>"
+    let webViewOverlay = UIWebView(frame:frem)
     webViewOverlay.scalesPageToFit = true
     webViewOverlay.contentMode = .scaleAspectFill
     webViewOverlay.loadHTMLString(html, baseURL: nil)

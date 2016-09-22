@@ -94,20 +94,9 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
            // self.useasis.isHidden = true
             
             self.animatedLabel.isHidden = true
-            self.menuImage.isHidden = true
-            let imageurl = remoteAsset.localimagepath
+            self.menuImage.isHidden = true 
             
-            
-            
-            let maxbordersize = min(self.view.frame.width,self.view.frame.height)
-            let bordersize = maxbordersize - 40
-            let offs = (maxbordersize - bordersize) / 2
-            let frem = CGRect(x:offs,
-                              y:offs,
-                              width:bordersize,
-                              height:bordersize)
-            
-            webViewOverlay = animatedViewOf(frame:frem, imageurl: imageurl)
+            webViewOverlay = animatedViewOf(frame:self.view.frame, size:menuImage.image!.size, imageurl: remoteAsset.localimagepath)
             self.view.addSubview(webViewOverlay!)
 
             addDismissButtonToViewController(self , named:appTheme.dismissButtonImageName,#selector(dismisstapped))
