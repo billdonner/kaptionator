@@ -30,13 +30,9 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
     @IBOutlet weak var addcaption: UIButton!
     
     
-    var webViewOverlay: UIWebView!
+    var webViewOverlay: UIWebView?
     //MARK:- MENU TAP ACTIONS
-    @IBAction func websitetapped(_ sender: AnyObject) {
-        IOSSpecialOps.openwebsite(self)
-        //dismiss(animated: true,completion:nil)
-    }
-    
+
     @IBOutlet weak var animatedLabel: UILabel!
     @IBAction func useStickerAsIsPressed(_ sender: AnyObject) {
      delegate?.useAsIs(remoteAsset:remoteAsset) // elsewhere
@@ -89,25 +85,39 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
         imageCaption.backgroundColor = .clear
         
         imageCaption.keyboardAppearance = .dark
-     
+        
+        imageCaption.isHidden = imageCaption.text == ""
         if isAnimated {
-            self.addcaption.isEnabled = false
-            self.addcaption.removeFromSuperview()
-            self.useasisnocaption.isEnabled = false
-            self.useasisnocaption.removeFromSuperview()
-            animatedLabel.textColor = appTheme.redColor
-            animatedLabel.text = "animated"
-            let w = self.view.frame.width - 100
-            let offs = (self.view.frame.width - w) / 2
-            let frem = CGRect(x:offs,y:offs,width:w,height:w)
+            self.addcaption.isHidden = true
+            self.useasisnocaption.isHidden = true
+            
+           // self.useasis.isHidden = true
+            
+            self.animatedLabel.isHidden = true
+            self.menuImage.isHidden = true
             let imageurl = remoteAsset.localimagepath
-            let webViewOverlay = animatedViewOf(frame:frem, imageurl: imageurl)
-            self.view.addSubview(webViewOverlay)
+            
+            
+            
+            let maxbordersize = min(self.view.frame.width,self.view.frame.height)
+            let bordersize = maxbordersize - 40
+            let offs = (maxbordersize - bordersize) / 2
+            let frem = CGRect(x:offs,
+                              y:offs,
+                              width:bordersize,
+                              height:bordersize)
+            
+            webViewOverlay = animatedViewOf(frame:frem, imageurl: imageurl)
+            self.view.addSubview(webViewOverlay!)
 
+            addDismissButtonToViewController(self , named:appTheme.dismissButtonImageName,#selector(dismisstapped))
+            
+            return
         }
+        
         addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
+        
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -127,6 +137,8 @@ extension CatalogMenuViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         changesMade = true
         delegate?.useWithCaption(remoteAsset: remoteAsset, caption: imageCaption.text ?? "")
+        
+        imageCaption.isEnabled  = false
         textField.resignFirstResponder()
         dismiss(animated: true,completion:nil)
         return true

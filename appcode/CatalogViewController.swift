@@ -71,7 +71,7 @@ final class CatalogViewController: UIViewController  {
             super.viewDidLoad()
             collectionView.delegate = self
             collectionView.dataSource = self
-        
+        collectionView.alpha = 0 // start as invisible
         
         assert( stickerPackListFileURL != nil)
             //  only read the catalog if we have to
@@ -223,7 +223,6 @@ extension CatalogViewController {  //loading on first up - moved from masterview
        // self.activityIndicatorView.stopAnimating()
         let x = remSpace.itemCount()
         print(">>>>>>>>>> phase3 \(x) REMOTE ASSETS LOADED \(vcid) -- READY TO ROLL")
-        startupLogo.removeFromSuperview()
         self.collectionView.reloadData()
 //        
 //        coloredSpacer.backgroundColor = appTheme.catalogColor
@@ -240,8 +239,17 @@ extension CatalogViewController {  //loading on first up - moved from masterview
 //            
 //            coloredSpacer.backgroundColor = appTheme.catalogColor
 //        }
-    }
     
+    UIView.animate(withDuration: 2.5, animations: {
+    self.startupLogo.alpha =  0.0
+        self.collectionView.alpha = 1.0
+    }
+    , completion: { b in
+    self.startupLogo.removeFromSuperview()
+    }
+        )
+    }
 }
+
 
 

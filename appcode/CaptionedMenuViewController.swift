@@ -23,6 +23,7 @@ class CaptionedMenuViewController: UIViewController, AddDismissButton {
     private var isAnimated  = false
     fileprivate var changesMade: Bool = false
     
+    @IBOutlet weak var outerView: UIView!
     @IBOutlet weak var animatedLabel: UILabel!
     @IBOutlet weak var menuImage: UIImageView!
     @IBOutlet weak var imageCaption: UITextField!
@@ -30,12 +31,10 @@ class CaptionedMenuViewController: UIViewController, AddDismissButton {
     @IBOutlet weak var addwithnewcap: UIButton!
     @IBOutlet weak var editsticker: UIButton!
     @IBOutlet weak var moveimessage: UIButton!
-
+    
+    var webViewOverlay: UIWebView?
       //MARK:- MENU TAP ACTIONS 
-    @IBAction func websitetapped(_ sender: AnyObject) {
-        IOSSpecialOps.openwebsite(self)
-       // dismiss(animated: true,completion:nil)
-    }
+
     
     @IBAction func cloneWithNewCaptionTapped(_ sender: AnyObject) {
         imageCaption.text = ""
@@ -55,14 +54,8 @@ class CaptionedMenuViewController: UIViewController, AddDismissButton {
     }
     
     //MARK:- VC LIFECYLE
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        
- 
-    }
+
     
-    @IBOutlet weak var veryBottomButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -86,26 +79,32 @@ class CaptionedMenuViewController: UIViewController, AddDismissButton {
         
         imageCaption.text = captionedEntry.caption
         imageCaption.isEnabled  = false
+        imageCaption.isHidden = imageCaption.text == ""
         imageCaption.keyboardAppearance = .dark
         imageCaption.delegate = self
         imageCaption.textColor = .white
         imageCaption.backgroundColor = .clear
         if isAnimated {
-            addwithnewcap.isEnabled = false
-            addwithnewcap.removeFromSuperview()
-          //  moveimessage.isEnabled = false
-          //  moveimessage.removeFromSuperview()
-            editsticker.isEnabled = false
-            editsticker.removeFromSuperview()
+            menuImage.isHidden = true
+            addwithnewcap.isHidden = true
+            editsticker.isHidden = true
+            animatedLabel.isHidden = true // HACK
             
-            animatedLabel.textColor = appTheme.redColor
-            animatedLabel.text = "animated"
-            let w = self.view.frame.width - 100
-            let offs = (self.view.frame.width - w) / 2
-            let frem = CGRect(x:offs,y:offs,width:w,height:w)
             let imageurl = captionedEntry.localimagepath
-            let webViewOverlay = animatedViewOf(frame:frem, imageurl: imageurl)
-            self.view.addSubview(webViewOverlay)
+            
+            let maxbordersize = min(self.view.frame.width,self.view.frame.height)
+            let bordersize = maxbordersize - 40
+            let offs = (maxbordersize - bordersize) / 2
+            let frem = CGRect(x:offs,
+                              y:offs,
+                              width:bordersize,
+                              height:bordersize)
+            webViewOverlay = animatedViewOf(frame:frem, imageurl: imageurl)
+            self.view.addSubview(webViewOverlay!)
+            
+             addDismissButtonToViewController(self , named:appTheme.dismissButtonImageName,#selector(dismisstapped))
+            
+            return
         }
         
         addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped)) 
@@ -131,6 +130,7 @@ extension CaptionedMenuViewController : UITextFieldDelegate {
         
         textField.resignFirstResponder()
         
+        imageCaption.isEnabled  = false
         dismiss(animated: true,completion:nil)
         return true
     }

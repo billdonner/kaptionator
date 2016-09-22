@@ -85,32 +85,39 @@ class ITunesMenuViewController: UIViewController,AddDismissButton {
         imageCaption.text = remoteAsset.caption
         imageCaption.delegate = self
         
+        imageCaption.isHidden = imageCaption.text == ""
         imageCaption.textColor = .white
         imageCaption.backgroundColor = .clear
         
         imageCaption.keyboardAppearance = .dark
      
         if isAnimated {
-            self.addcaption.isEnabled = false
-            self.addcaption.removeFromSuperview()
-            self.useasisnocaption.isEnabled = false
-            self.useasisnocaption.removeFromSuperview()
-            animatedLabel.textColor = appTheme.redColor
-            animatedLabel.text = "animated"
-            let w = self.view.frame.width - 100
-            let offs = (self.view.frame.width - w) / 2
-            let frem = CGRect(x:offs,y:offs,width:w,height:w)
-            let imageurl = remoteAsset.localimagepath
-            let webViewOverlay = animatedViewOf(frame:frem, imageurl: imageurl)
-            self.view.addSubview(webViewOverlay)
+            self.menuImage.isHidden = true
+            self.addcaption.isHidden = true
+            
+            self.useasisnocaption.isHidden = true
+            self.animatedLabel.isHidden = true
 
+            let imageurl = remoteAsset.localimagepath
+            let maxbordersize = min(self.view.frame.width,self.view.frame.height)
+            let bordersize = maxbordersize - 40
+            let offs = (maxbordersize - bordersize) / 2
+            let frem = CGRect(x:offs,
+                              y:offs,
+                              width:bordersize,
+                              height:bordersize)
+            
+            
+             webViewOverlay = animatedViewOf(frame:frem, imageurl: imageurl)
+            self.view.addSubview(webViewOverlay!)
+            addDismissButtonToViewController(self , named:appTheme.dismissButtonImageName,#selector(dismisstapped))
+            
+            return
         }
+        
         addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
         
-        
-        
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -133,6 +140,8 @@ extension ITunesMenuViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         changesMade = true
         delegate?.useWithCaption(remoteAsset: remoteAsset, caption: imageCaption.text ?? "")
+        
+        imageCaption.isEnabled  = false
         textField.resignFirstResponder()
         dismiss(animated: true,completion:nil)
         return true

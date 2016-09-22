@@ -27,6 +27,7 @@ class MasterViewController: UIViewController {
     
 
     @IBOutlet weak var orgbbi: UIBarButtonItem!
+    
     @IBOutlet weak var morebbi: UIBarButtonItem!
     
     @IBOutlet weak var helpbbi: UIBarButtonItem!
