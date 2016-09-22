@@ -18,12 +18,10 @@
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
-	<key>SHOW-HIDDEN-FUNCTIONS</key>
-	<false/>
 	<key>CFBundleShortVersionString</key>
-	<string>1.01</string>
+	<string>1.02</string>
 	<key>CFBundleVersion</key>
-	<string>29</string>
+	<string>32</string>
 	<key>EXTENSION-SCHEME</key>
 	<string>Candidatez</string>
 	<key>LEFT-BBI-NAME</key>
@@ -41,6 +39,8 @@
 	<string>http://shtikerz.com/candidatez</string>
 	<key>SHARED-INTERAPP-DATA</key>
 	<string>group.com.midnightrambler.candidatez</string>
+	<key>SHOW-HIDDEN-FUNCTIONS</key>
+	<false/>
 	<key>UIFileSharingEnabled</key>
 	<false/>
 	<key>UILaunchStoryboardName</key>

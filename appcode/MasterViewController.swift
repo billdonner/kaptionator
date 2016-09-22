@@ -25,20 +25,14 @@ class MasterViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
-    @IBOutlet weak var buttonChooser: UISegmentedControl!
-    
+
+    @IBOutlet weak var orgbbi: UIBarButtonItem!
     @IBOutlet weak var morebbi: UIBarButtonItem!
     
     @IBOutlet weak var helpbbi: UIBarButtonItem!
     
     @IBOutlet weak var logoView: UIImageView!
-    
-    //  @IBOutlet weak var buttonCatalog: UIButton!
-    
-    //   @IBOutlet weak var buttonCaptioned: UIButton!
-    
-    //  @IBOutlet weak var buttonMessagesApp: UIButton!
-    
+
     @IBOutlet weak var coloredSpacer: UIView!
     
     var currentViewController: UIViewController?
@@ -94,6 +88,7 @@ class MasterViewController: UIViewController {
         imessage.tintColor = offColor
         helpbbi.tintColor = appTheme.textColor
         morebbi.tintColor = appTheme.textColor
+               orgbbi.tintColor = appTheme.textColor
         
         self.view.backgroundColor = appTheme.backgroundColor
         catb.isEnabled = false
@@ -163,7 +158,10 @@ class MasterViewController: UIViewController {
         
         performSegue(withIdentifier: "PerformMoreSegue", sender: nil)
     }
-
+    @IBAction func orgButtonPushed(_ sender: AnyObject) {
+        
+        performSegue(withIdentifier: "PerformMoreSegue", sender: nil)
+    }
 func testButtonPushed(_:AnyObject) {
     
     guard  currentViewController != testButtonViewController ||
