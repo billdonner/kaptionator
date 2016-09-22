@@ -56,7 +56,7 @@ class MessagesAppMenuViewController: UIViewController , AddDismissButton {
         
         //openinimessage.setTitleColor( appTheme.buttonTextColor, for: .normal)
       //  removefromimessage.setTitleColor( appTheme.buttonTextColor, for: .normal)
-        veryBottomButton.setTitleColor( appTheme.buttonTextColor, for: .normal)
+        //veryBottomButton.setTitleColor( appTheme.buttonTextColor, for: .normal)
         
         isAnimated = captionedEntry.stickerOptions.contains(.generateasis)
         

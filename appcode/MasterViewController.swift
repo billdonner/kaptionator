@@ -31,8 +31,6 @@ class MasterViewController: UIViewController {
     
     @IBOutlet weak var helpbbi: UIBarButtonItem!
     
-    @IBAction func buttonAction(_ sender: AnyObject) {
-    }
     @IBOutlet weak var logoView: UIImageView!
     
     //  @IBOutlet weak var buttonCatalog: UIButton!
@@ -155,9 +153,16 @@ class MasterViewController: UIViewController {
     }
 //MARK:- Button Tap Handlers
 @IBAction func helpButtonPushed(_ sender: AnyObject) {
+    if currentViewController == showCatalogViewController {    performSegue(withIdentifier: "HelpForCatalogSegue", sender: nil) }
+    else   if currentViewController == showCaptionedViewController {    performSegue(withIdentifier: "HelpForStickersSegue", sender: nil) }
+    else
+      if currentViewController == showMessagesAppViewController {    performSegue(withIdentifier: "HelpForMessagesSegue", sender: nil) }
     
-    performSegue(withIdentifier: "PresentHelpSegue", sender: nil)
 }
+    @IBAction func moreButtonPushed(_ sender: AnyObject) {
+        
+        performSegue(withIdentifier: "PerformMoreSegue", sender: nil)
+    }
 
 func testButtonPushed(_:AnyObject) {
     

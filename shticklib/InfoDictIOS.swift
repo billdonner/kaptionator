@@ -29,7 +29,7 @@ func animatedViewOf(frame:CGRect, imageurl:String) -> UIWebView {    let html = 
 func addDismissButtonToViewController(_ v:UIViewController,named:String, _ sel:Selector){
     let img = UIImage(named:named)
     let iv = UIImageView(image:img)
-    iv.frame = CGRect(x:0,y:10,width:60,height:60)//// test
+    iv.frame = CGRect(x:0,y:0,width:60,height:60)//// test
     iv.isUserInteractionEnabled = true
     iv.contentMode = .scaleAspectFit
     let tgr = UITapGestureRecognizer(target: v, action: sel)

@@ -46,6 +46,7 @@ class CaptionedMenuViewController: UIViewController, AddDismissButton {
         imageCaption.backgroundColor = appTheme.textFieldBackgroundColor
         imageCaption.isEnabled = true
         imageCaption.becomeFirstResponder()
+        imageCaption.isHidden = false
     }
     @IBAction func moveToIMessage(_ sender: AnyObject) {
         var newce = captionedEntry!
@@ -70,7 +71,7 @@ class CaptionedMenuViewController: UIViewController, AddDismissButton {
         addwithnewcap.setTitleColor( appTheme.buttonTextColor, for: .normal)
         moveimessage.setTitleColor( appTheme.buttonTextColor, for: .normal)
         editsticker.setTitleColor( appTheme.buttonTextColor, for: .normal)
-         veryBottomButton.setTitleColor( appTheme.buttonTextColor, for: .normal)
+       //  veryBottomButton.setTitleColor( appTheme.buttonTextColor, for: .normal)
         
         isAnimated = captionedEntry.stickerOptions.contains(.generateasis)
         

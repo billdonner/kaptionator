@@ -53,6 +53,8 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
         imageCaption.backgroundColor = .white
         imageCaption.isEnabled = true
         imageCaption.becomeFirstResponder()
+        
+        imageCaption.isHidden = false
     }
     func dismisstapped(_ s: AnyObject) {
         dismiss(animated: true, completion: nil)
@@ -61,7 +63,7 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        veryBottomButton.setTitleColor( appTheme.buttonTextColor, for: .normal)
+        //veryBottomButton.setTitleColor( appTheme.buttonTextColor, for: .normal)
         
         useasis.setTitleColor(appTheme.buttonTextColor, for: .normal)
         useasisnocaption.setTitleColor(appTheme.buttonTextColor, for: .normal)
