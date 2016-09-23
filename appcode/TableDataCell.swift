@@ -17,7 +17,7 @@ class TableDataCell: UITableViewCell {
     
     override func prepareForReuse() {
         detailsImageView.image = nil // clean this out
-        nameLabel.text = "should not see this"
+        nameLabel.text = ""
     }
     func colorFor(options:StickerMakingOptions) {
         let  isAnimated = options.contains(.generateasis)

@@ -77,7 +77,7 @@ class CaptionedMenuViewController: UIViewController, AddDismissButton {
             menuImage.image = nil
         }
         
-        imageCaption.text = captionedEntry.caption
+        imageCaption.text =   showVendorTitles ? captionedEntry.caption : ""
         imageCaption.isEnabled  = false
         imageCaption.isHidden = imageCaption.text == ""
         imageCaption.keyboardAppearance = .dark

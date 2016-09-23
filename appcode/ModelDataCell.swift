@@ -44,7 +44,7 @@ class ModelDataCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         detailsImageView.image = nil // clean this out
-        nameLabel.text = "should not see this"
+        nameLabel.text = ""
     }
     // methods to adjust cell contents
     func paint(name:String) {
@@ -109,10 +109,10 @@ extension ModelDataDisplayStyle {
             
             if traitCollection.verticalSizeClass != .regular ||
                 traitCollection.horizontalSizeClass != .regular {
-                return CGSize(width: 100, height: 120) //iphone
+                return CGSize(width: 150, height: 150) //iphone
             }
             
-            return CGSize(width: 100, height: 120)  // ipad
+            return CGSize(width: 150, height: 150)  // ipad
         }
     }
     

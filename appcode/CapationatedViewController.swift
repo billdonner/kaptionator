@@ -178,7 +178,9 @@
         //show the primitive title
         let showname = ce.caption 
         let line2 = ce.stickerOptions.description()
+            if showVendorTitles {
         cell.paint(name:showname,line2:line2)
+        }
         
         /// go get the image from our cache and then the net
         let path =  ce.localimagepath // ?????

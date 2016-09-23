@@ -82,7 +82,7 @@ class ITunesMenuViewController: UIViewController,AddDismissButton {
             menuImage.image = nil
         }
         imageCaption.isEnabled  = false
-        imageCaption.text = remoteAsset.caption
+        imageCaption.text = showVendorTitles ? remoteAsset.caption : ""
         imageCaption.delegate = self
         
         imageCaption.isHidden = imageCaption.text == ""

@@ -14,6 +14,7 @@ import UIKit
 
 //MARK: - Global Data Structs
 
+var showVendorTitles = false
 
 // this will be seen in both the main program and the extension, but a restorefromdisk needs doing
 

@@ -59,7 +59,8 @@ class MessagesAppMenuViewController: UIViewController , AddDismissButton {
         
         isAnimated = captionedEntry.stickerOptions.contains(.generateasis)
         
-        imageCaption.text = captionedEntry.caption
+        imageCaption.text = showVendorTitles ? captionedEntry.caption : ""
+        
         imageCaption.isEnabled  = false
         //     imageCaption.delegate = self
         
@@ -75,7 +76,7 @@ class MessagesAppMenuViewController: UIViewController , AddDismissButton {
             menuImage.image = nil
         }
         
-        imageCaption.text = captionedEntry.caption
+        imageCaption.text = showVendorTitles ? captionedEntry.caption : ""
         
        
         if isAnimated {

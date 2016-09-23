@@ -168,8 +168,9 @@ extension ITunesViewController : UICollectionViewDataSource {
         let ra = remSpace.itemAt(indexPath.row)
         
         //show the primitive title
-        
-        cell.paint(name:ra.caption)
+        if showVendorTitles {
+            cell.paint(name:ra.caption)
+        }
         if ra.localimagepath != "" {
             // have the data onhand
             cell.paintImage(path:ra.localimagepath)
