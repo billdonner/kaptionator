@@ -26,11 +26,11 @@ class MasterViewController: UIViewController {
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
 
-    @IBOutlet weak var orgbbi: UIBarButtonItem!
+   // @IBOutlet weak var orgbbi: UIBarButtonItem!
     
     @IBOutlet weak var morebbi: UIBarButtonItem!
     
-    @IBOutlet weak var helpbbi: UIBarButtonItem!
+   @IBOutlet weak var helpbbi: UIBarButtonItem!
     
     @IBOutlet weak var logoView: UIImageView!
 
@@ -87,9 +87,9 @@ class MasterViewController: UIViewController {
         catb.tintColor = appTheme.catalogColor
         stickerz.tintColor = offColor
         imessage.tintColor = offColor
-        helpbbi.tintColor = appTheme.textColor
+       helpbbi.tintColor = appTheme.textColor
         morebbi.tintColor = appTheme.textColor
-               orgbbi.tintColor = appTheme.textColor
+               //orgbbi.tintColor = appTheme.textColor
         
         self.view.backgroundColor = appTheme.backgroundColor
         catb.isEnabled = false

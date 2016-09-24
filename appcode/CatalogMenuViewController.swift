@@ -34,10 +34,10 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
     //MARK:- MENU TAP ACTIONS
 
     @IBOutlet weak var animatedLabel: UILabel!
-    @IBAction func useStickerAsIsPressed(_ sender: AnyObject) {
-     delegate?.useAsIs(remoteAsset:remoteAsset) // elsewhere
-     dismiss(animated: true,completion:nil)
-    }
+//    @IBAction func useStickerAsIsPressed(_ sender: AnyObject) {
+//     delegate?.useAsIs(remoteAsset:remoteAsset) // elsewhere
+//     dismiss(animated: true,completion:nil)
+//    }
     
     @IBAction func useStickerNoCaptionPressed(_ sender: AnyObject) {
     delegate?.useWithNoCaption (remoteAsset:remoteAsset) // elsewhere
@@ -61,7 +61,7 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
         super.viewDidLoad()
         //veryBottomButton.setTitleColor( appTheme.buttonTextColor, for: .normal)
         
-        useasis.setTitleColor(appTheme.buttonTextColor, for: .normal)
+      //  useasis.setTitleColor(appTheme.buttonTextColor, for: .normal)
         useasisnocaption.setTitleColor(appTheme.buttonTextColor, for: .normal)
         addcaption.setTitleColor(appTheme.buttonTextColor, for: .normal)
         
@@ -78,7 +78,7 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
             menuImage.image = nil
         }
         imageCaption.isEnabled  = false
-        imageCaption.text = showVendorTitles ? remoteAsset.caption : ""
+        imageCaption.text = showVendorTitles ? remoteAsset.caption : ""  // KEEP, its first
         imageCaption.delegate = self
         
         imageCaption.textColor = .white
@@ -86,10 +86,10 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
         
         imageCaption.keyboardAppearance = .dark
         
-        imageCaption.isHidden = imageCaption.text == ""
+       // imageCaption.isHidden = imageCaption.text == ""
         if isAnimated {
             self.addcaption.isHidden = true
-            self.useasisnocaption.isHidden = true
+            self.useasisnocaption.isHidden = false
             
            // self.useasis.isHidden = true
             

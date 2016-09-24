@@ -241,7 +241,7 @@ extension CatalogViewController {  //loading on first up - moved from masterview
 //            coloredSpacer.backgroundColor = appTheme.catalogColor
 //        }
     
-    UIView.animate(withDuration: 2.5, animations: {
+    UIView.animate(withDuration: 1.5, animations: {
     self.startupLogo.alpha =  0.0
         self.collectionView.alpha = 1.0
     }

@@ -59,7 +59,7 @@ class MessagesAppMenuViewController: UIViewController , AddDismissButton {
         
         isAnimated = captionedEntry.stickerOptions.contains(.generateasis)
         
-        imageCaption.text = showVendorTitles ? captionedEntry.caption : ""
+        imageCaption.text =  captionedEntry.caption 
         
         imageCaption.isEnabled  = false
         //     imageCaption.delegate = self
@@ -76,13 +76,13 @@ class MessagesAppMenuViewController: UIViewController , AddDismissButton {
             menuImage.image = nil
         }
         
-        imageCaption.text = showVendorTitles ? captionedEntry.caption : ""
+        imageCaption.text =  captionedEntry.caption 
         
        
         if isAnimated {
             
             self.menuImage.isHidden = true
-            self.animatedLabel.isHidden = true
+            self.animatedLabel.isHidden = false
         
             webViewOverlay = animatedViewOf(frame:self.view.frame, size:menuImage.image!.size, imageurl: captionedEntry.localimagepath)
             self.view.addSubview(webViewOverlay!)

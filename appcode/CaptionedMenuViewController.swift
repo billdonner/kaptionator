@@ -28,7 +28,7 @@ class CaptionedMenuViewController: UIViewController, AddDismissButton {
     @IBOutlet weak var menuImage: UIImageView!
     @IBOutlet weak var imageCaption: UITextField!
    
-    @IBOutlet weak var addwithnewcap: UIButton!
+   // @IBOutlet weak var addwithnewcap: UIButton!
     @IBOutlet weak var editsticker: UIButton!
     @IBOutlet weak var moveimessage: UIButton!
     
@@ -61,7 +61,7 @@ class CaptionedMenuViewController: UIViewController, AddDismissButton {
         
         // Do any additional setup after loadingthe view.
         
-        addwithnewcap.setTitleColor( appTheme.buttonTextColor, for: .normal)
+       // addwithnewcap.setTitleColor( appTheme.buttonTextColor, for: .normal)
         moveimessage.setTitleColor( appTheme.buttonTextColor, for: .normal)
         editsticker.setTitleColor( appTheme.buttonTextColor, for: .normal)
        //  veryBottomButton.setTitleColor( appTheme.buttonTextColor, for: .normal)
@@ -77,7 +77,7 @@ class CaptionedMenuViewController: UIViewController, AddDismissButton {
             menuImage.image = nil
         }
         
-        imageCaption.text =   showVendorTitles ? captionedEntry.caption : ""
+        imageCaption.text =     captionedEntry.caption  
         imageCaption.isEnabled  = false
         imageCaption.isHidden = imageCaption.text == ""
         imageCaption.keyboardAppearance = .dark
@@ -86,9 +86,9 @@ class CaptionedMenuViewController: UIViewController, AddDismissButton {
         imageCaption.backgroundColor = .clear
         if isAnimated {
             menuImage.isHidden = true
-            addwithnewcap.isHidden = true
+           // addwithnewcap.isHidden = true
             editsticker.isHidden = true
-            animatedLabel.isHidden = true // HACK
+            animatedLabel.isHidden = false // HACK
             
             
             webViewOverlay = animatedViewOf(frame:self.view.frame, size:menuImage.image!.size, imageurl: captionedEntry.localimagepath)
