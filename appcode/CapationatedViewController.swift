@@ -264,7 +264,9 @@
                 print("made sticker file urls \(stickerurl)")
                 
                 // ce.localimagepath = url.absoluteString // dink with this
-                let _ = SharedCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath, stickerpath: stickerurl.absoluteString ,  caption: self.caption,  options: self.stickerOptions, id:"")// self.id)
+                let _ = SharedCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath, //stickerpath: stickerurl.absoluteString ,
+                                                 
+                                                 caption: self.caption,  options: self.stickerOptions, id:"")// self.id)
                 // users newce.id to CLONE, the old item will get unhinged
               
             }

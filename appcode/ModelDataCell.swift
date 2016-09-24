@@ -49,7 +49,7 @@ class ModelDataCell: UICollectionViewCell {
     // methods to adjust cell contents
     func paint(name:String) {
         nameLabel.text = name
-        nameLabel.textColor = appTheme.textColor
+        nameLabel.textColor = appTheme.redColor
     }
     func colorFor(ra:RemoteAsset) {
        let  isAnimated = ra.options.contains(.generateasis)  
@@ -112,7 +112,7 @@ extension ModelDataDisplayStyle {
                 return CGSize(width: 150, height: 150) //iphone
             }
             
-            return CGSize(width: 150, height: 150)  // ipad
+            return CGSize(width: 200, height: 200)  // ipad
         }
     }
     
@@ -121,7 +121,7 @@ extension ModelDataDisplayStyle {
         case .table:
             return UIEdgeInsets.zero
         case .grid:
-            return UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
+            return UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
         }
     }
     

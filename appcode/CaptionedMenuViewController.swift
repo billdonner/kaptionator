@@ -117,7 +117,7 @@ extension CaptionedMenuViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         changesMade = true
         
-        delegate?.cloneWithCaption(captionedEntry:self.captionedEntry,  caption: imageCaption.text ?? "<!none!>")
+        delegate?.cloneWithCaption(captionedEntry:self.captionedEntry,  caption: textField.text ?? "<!none!>")
         
         
         textField.resignFirstResponder()

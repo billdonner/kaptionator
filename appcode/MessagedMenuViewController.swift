@@ -68,7 +68,7 @@ class MessagesAppMenuViewController: UIViewController , AddDismissButton {
         imageCaption.backgroundColor = .clear
 
         do {
-            let data = try  Data(contentsOf: URL(string:captionedEntry.stickerimagepath )!)
+            let data = try  Data(contentsOf: URL(string:captionedEntry.localimagepath)!)
             menuImage.image = UIImage(data:data)
             menuImage.contentMode = .scaleAspectFit
         }

@@ -103,7 +103,11 @@ extension CatalogViewController : UICollectionViewDataSource {
         //show the primitive title
         if showVendorTitles {
         cell.paint(name:ra.caption)
+        } else if ra.options.contains(.generateasis) {
+            cell.paint(name:"ANIMATED")
         }
+        
+        
         if ra.localimagepath != "" {
             // have the data onhand
             cell.paintImage(path:ra.localimagepath)
@@ -146,11 +150,15 @@ extension AppCE {
     fileprivate static func makeNewCaptionCat(   from ra:RemoteAsset, caption:String,id:String) {
         // make captionated entry from remote asset
         
-        let alreadyIn = capSpace.findMatchingAsset(path: ra.localimagepath, caption: caption)
+        let alreadyIn = memSpace.findMatchingAsset(path: ra.localimagepath, caption: caption)
         if !alreadyIn {
             let options = ra.options
           
+            if caption != "" {
             let _ = AppCaptionSpace.make (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: options, id: id)
+            }
+            
+            let _ = SharedCaptionSpace.make (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: options, id: id)
             
         }
     }

@@ -125,7 +125,7 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
 extension CatalogMenuViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         changesMade = true
-        delegate?.useWithCaption(remoteAsset: remoteAsset, caption: imageCaption.text ?? "")
+        delegate?.useWithCaption(remoteAsset: remoteAsset, caption: textField.text ?? "")
         
         imageCaption.isEnabled  = false
         textField.resignFirstResponder()

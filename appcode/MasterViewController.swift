@@ -81,8 +81,9 @@ class MasterViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.prompt = appTitle // global
         let catb = UIBarButtonItem(title: nameForLeftBBI, style: .plain, target: self, action: #selector(catalogAction))
-        let stickerz = UIBarButtonItem(title: "Stickerz", style: .plain, target: self, action: #selector(stickerzAction))
-        let imessage = UIBarButtonItem(title: "Messages", style: .plain, target: self, action: #selector(imsgAction))
+              let imessage = UIBarButtonItem(title: "Messages", style: .plain, target: self, action: #selector(imsgAction))
+        let stickerz = UIBarButtonItem(title: "History", style: .plain, target: self, action: #selector(stickerzAction))
+  
         // start in the catalog
         catb.tintColor = appTheme.catalogColor
         stickerz.tintColor = offColor
@@ -95,7 +96,7 @@ class MasterViewController: UIViewController {
         catb.isEnabled = false
         stickerz.isEnabled = false
         imessage.isEnabled = false
-        let lhbutts = [catb,stickerz,imessage]
+        let lhbutts = [catb,imessage,stickerz]
         self.navigationItem.leftBarButtonItems = lhbutts
         self.bbis = lhbutts
         let dir = FileManager.default.urls (for: .documentDirectory, in : .userDomainMask)

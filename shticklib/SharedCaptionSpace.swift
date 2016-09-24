@@ -20,7 +20,7 @@ struct SharedCE {
     let catalogpack:String
     let catalogtitle:String
     let localimagepath:String
-    let stickerimagepath:String // this is what the extension uses to make stickers
+ //   let stickerimagepath:String // this is what the extension uses to make stickers
     
     /// these are the action functions that are called to move things between tabs
     
@@ -29,7 +29,7 @@ struct SharedCE {
             "caption":caption as AnyObject,
             "id":id as AnyObject,
             "local":localimagepath as AnyObject,
-            "sticker":stickerimagepath as AnyObject,
+            //"sticker":stickerimagepath as AnyObject,
             "pack":catalogpack as AnyObject,
             "title":catalogtitle as AnyObject,
             "options":  stickerOptions.rawValue as AnyObject ]
@@ -47,14 +47,15 @@ struct SharedCE {
         return intWithLeadingZeros( intnow, digits: 20)
     }
     
-    init(pack:String,title:String,imagepath:String,stickerpath:String,
+    init(pack:String,title:String,imagepath:String,
+         //stickerpath:String,
          caption:String,
          options:StickerMakingOptions,
          id:String = ""  ) {
         self.catalogpack = pack
         self.catalogtitle = title
         self.localimagepath = imagepath
-        self.stickerimagepath = stickerpath
+       // self.stickerimagepath = stickerpath
         self.caption = caption // == "" ? title : caption
         self.stickerOptions = options
         self.id =  id == "" ? "\(SharedCE.nicetime())" : id
@@ -133,12 +134,13 @@ struct SharedCaptionSpace {
     }
     //// core
     
-    static  func make( pack:String,title:String,imagepath:String,stickerpath:String, caption:String,
+    static  func make( pack:String,title:String,imagepath:String,//stickerpath:String,
+                       caption:String,
                        options:StickerMakingOptions,
                        id:String  )->SharedCE {
         let newself = SharedCE( pack: pack, title: title,
                                             imagepath: imagepath,
-                                            stickerpath:stickerpath,
+                                            //stickerpath:stickerpath,
                                         
                                             caption: caption,
                                             options: options,id:id)
@@ -160,7 +162,7 @@ struct SharedCaptionSpace {
                 if let  optionsvalue = acaption ["options"] as? Int,
                     let captiontext = acaption ["caption"] as? String,
                     let i = acaption["local"] as? String,
-                     let s = acaption["sticker"] as? String,
+                    //let s = acaption["sticker"] as? String,
                     let p = acaption["pack"] as? String,
                     let d = acaption["id"] as? String
                 {
@@ -175,7 +177,8 @@ struct SharedCaptionSpace {
                     let _ =      SharedCaptionSpace.make(pack:p,
                                                            title:ti,
                                                            imagepath:i ,
-                                                           stickerpath: s,               caption:captiontext,
+                                                           //stickerpath: s, 
+                        caption:captiontext,
                                                            options:options,id:d)
                 }
             }
