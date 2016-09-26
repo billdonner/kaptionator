@@ -77,7 +77,9 @@ struct StickerFileFactory {
         let label = // captionedEntry.id + "_" +
             ( assep as NSString).deletingPathExtension
     do {
-            if options.contains(.generateasis) || caption == "" {
+            if options.contains(.generateasis)
+                //|| caption == "" 
+            {
                 // if asis, the size is just for decoration
                 let rul = try makeStickerAndURLfromData(imageData:imageData, label:label + "-A",type:type ).absoluteString
                 returls.append(rul)
@@ -114,7 +116,8 @@ struct StickerFileFactory {
         
         /// now write this view to the local file system 
         
-        let rul = sharedAppContainerDirectory().appendingPathComponent("\(label).\(type)")
+        let hashval = "AnImAtEd"
+        let rul = sharedAppContainerDirectory().appendingPathComponent("\(label)-\(hashval).\(type)")
         
         do {
             
@@ -133,10 +136,10 @@ struct StickerFileFactory {
     }
     
     private  static func createTextSticker(imageData:Data,caption:String, label:String,type:String,size:CGFloat, proportion: CGFloat, fontSize:CGFloat ) throws -> URL {
-        
+        let hashval = "-\(caption.hash)"
         let image = UIImage(data:imageData) // can scale here
         if let image = image {  // make sure not nil
-            let ms =  try makeCaptionatedStickerFile(label:label, image: image,type:type,size:size, proportion: proportion, fontSize:fontSize, caption: caption  )
+            let ms =  try makeCaptionatedStickerFile(label:label + hashval, image: image,type:type,size:size, proportion: proportion, fontSize:fontSize, caption: caption  )
              
             return ms
         }

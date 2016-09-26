@@ -58,8 +58,7 @@ struct StickerMakingOptions: OptionSet {
     static let generatesmall    = StickerMakingOptions(rawValue: 1 << 0)
     static let generatemedium  = StickerMakingOptions(rawValue: 1 << 1)
     static let generatelarge   = StickerMakingOptions(rawValue: 1 << 2)
-    static let generateasis   = StickerMakingOptions(rawValue: 1 << 3)
-    static let generatenocaption   = StickerMakingOptions(rawValue: 1 << 4)
+    static let generateasis   = StickerMakingOptions(rawValue: 1 << 3) 
     
     func description()->String {
         var buf = ""
@@ -73,11 +72,9 @@ struct StickerMakingOptions: OptionSet {
             buf += "Large"
         }
         if self.contains(.generateasis) {
-            buf += "AsIs"
+            buf += " AsIs"
         }
-        if self.contains(.generatenocaption) {
-            buf += "NoCap"
-        }
+     
         return buf
     }
     

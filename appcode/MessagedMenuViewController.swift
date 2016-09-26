@@ -37,13 +37,17 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
     @IBOutlet weak var mediumSwitch: UISwitch!
     
     @IBOutlet weak var largeSwitch: UISwitch!
-    func unprepareStickers(_ pe:String, _ size:String) {
+    private func unprepareStickers(_ ce:SharedCE , _ size:String) {
+        let id = ce.id
+        let pe = ce.localimagepath
+        let hashval = "\(ce.caption.hash)"
         let lpc = (pe as NSString).lastPathComponent
         let type = (pe as NSString).pathExtension
         let lsp = (lpc as NSString).deletingPathExtension
         let path = (pe as NSString).deletingLastPathComponent
-        let stickerpath = path + "/" + lsp + "-\(size)." + type
+        let stickerpath = path + "/" + lsp + "-\(size)-\(hashval)." + type
         StickerFileFactory.removeStickerFilesFrom([stickerpath])
+        let _ = memSpace.remove(id: id)
     }
     @IBAction func smallSwitchToggled(_ sender: AnyObject) {
         
@@ -58,7 +62,7 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
                 print("could not prepareStickers")
             }
         } else {  // delete the image
-            unprepareStickers(ce.localimagepath,"S")
+            unprepareStickers(ce,"S")
                  }
     }
     @IBAction func mediumSwitchToggled(_ sender: AnyObject) {
@@ -73,7 +77,7 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
                 print("could not prepareStickers")
             }
         } else {  // delete the image
-            unprepareStickers(ce.localimagepath,"M")
+            unprepareStickers(ce,"M")
         }    }
     
     @IBAction func largeSwithToggled(_ sender: AnyObject) {
@@ -88,7 +92,7 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
                 print("could not prepareStickers")
             }
         } else {  // delete the image
-            unprepareStickers(ce.localimagepath,"L")
+            unprepareStickers(ce,"L")
         }
     }
  
@@ -150,15 +154,15 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
             largeSwitch.isEnabled = false
        
             //if imgsize.width >= CGFloat(618) {
-                largeSwitch.isOn = checkForFileVariant(captionedEntry.localimagepath,"L")
+                largeSwitch.isOn = checkForFileVariant(captionedEntry,"L")
             //}
             
             //if imgsize.width >= CGFloat(408) {
-                mediumSwitch.isOn = checkForFileVariant(captionedEntry.localimagepath,"M")
+                mediumSwitch.isOn = checkForFileVariant(captionedEntry,"M")
             //}
             
             //if imgsize.width >= CGFloat(300) {
-                smallSwitch.isOn = checkForFileVariant(captionedEntry.localimagepath,"S")
+                smallSwitch.isOn = checkForFileVariant(captionedEntry,"S")
 //}
         
         if !isAnimated {

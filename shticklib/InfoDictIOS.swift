@@ -314,12 +314,14 @@ func prepareStickers( pack:String,title:String,imagepath:String,
     }
 }
 
-func checkForFileVariant(_ path:String,
+func checkForFileVariant(_ ce:SharedCE,
                          _ variant:String) -> Bool {
-    
+    let caption = ce.caption
+let path = ce.localimagepath   
+    let hashval = "\(caption.hash)"
     let assep = (path as NSString).lastPathComponent
     let type = (assep as NSString).pathExtension
-    let test = ( path as NSString).deletingPathExtension + "-\(variant)." + type
+    let test = ( path as NSString).deletingPathExtension + "-\(variant)-\(hashval)." + type
  
     
 let ent  = memSpace.findMatchingEntry(atPath:test)

@@ -123,7 +123,8 @@ struct Manifest {
                             if sizes.contains("L") {
                                 options.insert( .generatelarge)
                             }
-                            if animated || title == "" {
+                            if animated  //|| title == ""
+                            {
                                 options.insert( .generateasis)
                             }
                             
