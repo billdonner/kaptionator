@@ -283,3 +283,53 @@ extension UIColor {
         return
 }
 }
+
+
+func prepareStickers( pack:String,title:String,imagepath:String, 
+            caption:String,
+            options:StickerMakingOptions) throws -> SharedCE {
+    do {
+        let theData = try Data(contentsOf: URL(string: imagepath)!)
+        
+        
+        // adjust options based on size of image
+        
+        // first build the files
+        
+        let stickerPaths =   StickerFileFactory.createStickerFilesFrom (imageData: theData ,path: imagepath, caption:caption, options:options)
+        
+        print("made sticker file urls \(stickerPaths)")
+        
+        let t = SharedCE( pack: pack, title: title,
+                                imagepath: imagepath,
+                                stickerpaths:stickerPaths,
+                                caption: caption,
+                                options: options )
+        
+        let _ = memSpace.add(ce: t)
+        return t
+    }
+    catch {
+        throw error
+    }
+}
+
+func checkForFileVariant(_ path:String,
+                         _ variant:String) -> Bool {
+    
+    let assep = (path as NSString).lastPathComponent
+    let type = (assep as NSString).pathExtension
+    let test = ( path as NSString).deletingPathExtension + "-\(variant)." + type
+ 
+    
+let ent  = memSpace.findMatchingEntry(atPath:test)
+   let  t = ent != nil
+   //let t = FileManager.default.fileExists(atPath: test)
+    if t  {
+        print("\(test) exists")
+    } else {
+        print("\(test) does not exist")
+    }
+     return t
+    //return false
+}

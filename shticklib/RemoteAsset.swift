@@ -112,18 +112,18 @@ class RemSpace {
         }
     }
     
-    func restoreFromDisk () throws  {
+    func restoreRemspaceFromDisk () throws  {
         if  let defaults = UserDefaults(suiteName: nil),
             let flattened = defaults.object(forKey: "remspace") as? JSONArray,
             let version = defaults.object(forKey: "version") as? String,
             let catTitle = defaults.object(forKey: "catalogTitle") as? String {
             remSpace.raz = []
             for ra in flattened {
-                if let  optionsvalue = ra ["options"] as? Int,
-                    let captiontext = ra ["caption"] as? String,
-                    let pack = ra["pack"] as? String,
+                if let  optionsvalue = ra [kOptions] as? Int,
+                    let captiontext = ra [kCaption] as? String,
+                    let pack = ra[kPack] as? String,
                     let remoteurl = ra["remoteurl"] as? String,
-                    let localpath = ra["localpath"] as? String {
+                    let localpath = ra[kLocal] as? String {
                     var options = StickerMakingOptions()
                     options.rawValue = optionsvalue
                     //calling with an explicit local path will use existing file and wont re-read from remote site
@@ -173,11 +173,11 @@ struct RemoteAsset {
      
     func serializeToJSONDict() -> JSONDict {
         let x : JSONDict = [
-            "caption":caption as String,
-            "remoteurl":remoteurl as String  ,
-            "localpath":localimagepath as String  ,
-            "pack": pack as String,
-            "options":  options.rawValue as Int ]
+            kCaption:caption as String,
+            kRemoteURL:remoteurl as String  ,
+            kLocal:localimagepath as String  ,
+            kPack: pack as String,
+            kOptions:  options.rawValue as Int ]
         return x
     }
     func  convertToAppCE( )  -> AppCE {

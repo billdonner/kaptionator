@@ -144,7 +144,7 @@ final class ITunesViewController : UIViewController  {
         
         assert( stickerPackListFileURL == nil)
         do {
-            try remSpace.restoreFromDisk()
+            try remSpace.restoreRemspaceFromDisk()
             print("remSpace restored, \(remSpace.itemCount()) items")
         }  catch {
              print("could not restore remspace")
@@ -216,7 +216,7 @@ extension AppCE  {
         
         let alreadyIn = capSpace.findMatchingAsset(path: ra.localimagepath, caption: caption)
         if !alreadyIn {
-            let _ = AppCaptionSpace.make (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: ra.options, id: id)
+            let _ = AppCaptionSpace.make (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: ra.options)
         }
     }
 }

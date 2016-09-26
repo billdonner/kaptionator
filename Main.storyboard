@@ -198,43 +198,46 @@
                                             <frame key="frameInset" width="343" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HNi-uV-tbt">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="HNi-uV-tbt" secondAttribute="height" multiplier="1:1" id="gQR-cc-0Av"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="hTI-xo-6gf">
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Scx-pE-D4j">
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9Aq-yR-Evu">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E4r-uE-xoB">
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="E4r-uE-xoB" secondAttribute="height" multiplier="1:1" id="BNT-CE-XFo"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="Zxi-Rv-m1V">
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="47"/>
-                                                            <nil key="textColor"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="line2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uG1-8h-eNq">
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="line2" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SrN-3v-w1r">
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="44" id="OSZ-TG-Ymy"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="E4r-uE-xoB" firstAttribute="leading" secondItem="Scx-pE-D4j" secondAttribute="leading" id="6aY-eM-8Rh"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <gestureRecognizers/>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="HNi-uV-tbt" secondAttribute="bottom" constant="-4.5" id="0D9-jk-0At"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="hTI-xo-6gf" secondAttribute="trailing" constant="4" id="8g9-mc-VC8"/>
-                                                <constraint firstItem="HNi-uV-tbt" firstAttribute="top" secondItem="HLq-aY-Omi" secondAttribute="topMargin" constant="-4" id="Ekd-hK-xww"/>
-                                                <constraint firstItem="HNi-uV-tbt" firstAttribute="leading" secondItem="HLq-aY-Omi" secondAttribute="leadingMargin" constant="-4" id="UhP-xd-plQ"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="hTI-xo-6gf" secondAttribute="bottom" constant="4" id="bhu-xW-JwH"/>
-                                                <constraint firstItem="hTI-xo-6gf" firstAttribute="leading" secondItem="HNi-uV-tbt" secondAttribute="trailing" constant="4" id="pDw-oi-meK"/>
-                                                <constraint firstItem="hTI-xo-6gf" firstAttribute="top" secondItem="HLq-aY-Omi" secondAttribute="topMargin" constant="4" id="s1z-nM-093"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Scx-pE-D4j" secondAttribute="trailing" constant="4" id="AuD-ct-ylr"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Scx-pE-D4j" secondAttribute="bottom" constant="4" id="GC6-Cf-3Uz"/>
+                                                <constraint firstItem="Scx-pE-D4j" firstAttribute="top" secondItem="HLq-aY-Omi" secondAttribute="topMargin" constant="4" id="SA3-pi-Dww"/>
+                                                <constraint firstItem="Scx-pE-D4j" firstAttribute="leading" secondItem="HLq-aY-Omi" secondAttribute="leadingMargin" constant="4" id="hqX-jc-xca"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <gestureRecognizers/>
                                         <connections>
-                                            <outlet property="detailsImageView" destination="HNi-uV-tbt" id="nyv-li-0oq"/>
-                                            <outlet property="line2Label" destination="uG1-8h-eNq" id="Nq2-hb-oAO"/>
-                                            <outlet property="nameLabel" destination="9Aq-yR-Evu" id="aKF-1I-fOy"/>
+                                            <outlet property="detailsImageView" destination="E4r-uE-xoB" id="BUY-dr-vpo"/>
+                                            <outlet property="line2Label" destination="SrN-3v-w1r" id="pg0-4H-Bu5"/>
+                                            <outlet property="nameLabel" destination="Zxi-Rv-m1V" id="B23-d0-ya8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -279,35 +282,38 @@
                                             <frame key="frameInset" width="343" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nPl-XJ-iJ6">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="nPl-XJ-iJ6" secondAttribute="height" multiplier="1:1" id="D1y-f4-XdO"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Fb2-HT-rRi">
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Fb2-HT-rRi">
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ivD-jo-ELj">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nPl-XJ-iJ6">
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="nPl-XJ-iJ6" secondAttribute="height" multiplier="1:1" id="D1y-f4-XdO"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="ivD-jo-ELj">
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="47"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="line2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCe-Qu-rp9">
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="line2" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CCe-Qu-rp9">
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="44" id="eUN-G3-UKY"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="nPl-XJ-iJ6" firstAttribute="leading" secondItem="Fb2-HT-rRi" secondAttribute="leading" id="ON5-xC-6q7"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Fb2-HT-rRi" firstAttribute="top" secondItem="o4R-Qt-FEy" secondAttribute="topMargin" constant="4" id="09E-A9-Igf"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="nPl-XJ-iJ6" secondAttribute="bottom" constant="-4.5" id="aDz-OF-k8r"/>
-                                                <constraint firstItem="nPl-XJ-iJ6" firstAttribute="leading" secondItem="o4R-Qt-FEy" secondAttribute="leadingMargin" constant="-4" id="eog-TJ-lD2"/>
+                                                <constraint firstItem="Fb2-HT-rRi" firstAttribute="leading" secondItem="o4R-Qt-FEy" secondAttribute="leadingMargin" constant="4" id="UHz-E1-VYA"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Fb2-HT-rRi" secondAttribute="bottom" constant="4" id="fLn-7f-xrp"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Fb2-HT-rRi" secondAttribute="trailing" constant="4" id="fxa-IA-gS7"/>
-                                                <constraint firstItem="Fb2-HT-rRi" firstAttribute="leading" secondItem="nPl-XJ-iJ6" secondAttribute="trailing" constant="4" id="kCT-2w-CjO"/>
-                                                <constraint firstItem="nPl-XJ-iJ6" firstAttribute="top" secondItem="o4R-Qt-FEy" secondAttribute="topMargin" constant="-4" id="z84-tb-cVx"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -333,6 +339,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nue-Py-llb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="VKI-12-vb3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-3389" y="-4946"/>
         </scene>
@@ -383,14 +390,14 @@
                         </constraints>
                     </view>
                     <toolbarItems>
-                        <barButtonItem title="home" id="iwR-wJ-SqY">
+                        <barButtonItem image="Home" id="iwR-wJ-SqY">
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="LPi-ea-8Wa" kind="presentation" id="6bp-dS-sLd"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Bxw-SP-ttp"/>
-                        <barButtonItem title="  ?  " id="fEM-fJ-QL9">
+                        <barButtonItem image="Help" id="fEM-fJ-QL9">
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="bbi-GL-AyA" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="X63-RO-jMS"/>
@@ -456,17 +463,20 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On this tab you can see the full catalog of all the images that come with the app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zM9-tQ-eYW">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="On this tab you can see the full catalog of all the images that come with the app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zM9-tQ-eYW">
+                                        <frame key="frameInset" minY="130" width="343" height="43"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Choose an Image by tapping then make a Sticker for your Stickerz Collection, or move the Sticker into Messages" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="c8a-v7-4vc">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" ambiguous="YES" text="Choose an Image by tapping then make a Sticker for your Stickerz Collection, or move the Sticker into Messages" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="c8a-v7-4vc">
+                                        <frame key="frameInset" minY="178" width="343" height="454"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animated images can not be captioned." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOq-Ot-MJm">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Animated images can not be captioned." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOq-Ot-MJm">
+                                        <frame key="frameInset" minY="637" width="343"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -732,6 +742,9 @@
                                                 <state key="normal" title="Add Caption To Sticker">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="addCaptionToSticker:" destination="8NT-q7-zWI" eventType="touchUpInside" id="E1m-uC-Ve4"/>
                                                 </connections>
@@ -741,6 +754,9 @@
                                                 <state key="normal" title="Use Sticker with No Caption">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="useStickerNoCaptionPressed:" destination="8NT-q7-zWI" eventType="touchUpInside" id="3QB-MJ-Gve"/>
                                                 </connections>
@@ -855,18 +871,24 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWw-BF-ESg">
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                <state key="normal" title="Use Sticker, but Change Caption">
+                                                <state key="normal" title="Add Caption To Sticker">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="addCaptionToSticker:" destination="bQh-9f-7xV" eventType="touchUpInside" id="tUe-iF-aNc"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYF-KK-vF4">
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                <state key="normal" title="Use Sticker with Existing Caption">
+                                                <state key="normal" title="Use Sticker">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="useStickerAsIsPressed:" destination="bQh-9f-7xV" eventType="touchUpInside" id="jJv-3k-Zfm"/>
                                                 </connections>
@@ -876,6 +898,9 @@
                                                 <state key="normal" title="Use Sticker with No Caption">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="useStickerNoCaptionPressed:" destination="bQh-9f-7xV" eventType="touchUpInside" id="JBf-aL-0l7"/>
                                                 </connections>
@@ -966,11 +991,11 @@
                                             <constraint firstItem="ek7-tb-bXc" firstAttribute="top" secondItem="Ddf-uA-Ot8" secondAttribute="top" id="rwz-v0-zjt"/>
                                         </constraints>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LT7-el-4Qg">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="LT7-el-4Qg">
                                         <subviews>
-                                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="24" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="atg-ml-LAn">
+                                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="12" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="atg-ml-LAn">
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPACER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ib9-qr-r9l">
@@ -983,32 +1008,47 @@
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6aK-96-u1O">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="6aK-96-u1O">
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lE6-ja-fZU">
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Anj-Y5-KYV"/>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Anj-Y5-KYV">
+                                                        <connections>
+                                                            <action selector="smallSwitchToggled:" destination="2yc-jg-Aom" eventType="valueChanged" id="o6n-wP-XVn"/>
+                                                        </connections>
+                                                    </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLc-v1-lj6">
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nkN-gj-Cgd"/>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nkN-gj-Cgd">
+                                                        <connections>
+                                                            <action selector="mediumSwitchToggled:" destination="2yc-jg-Aom" eventType="valueChanged" id="ues-Ov-DQf"/>
+                                                        </connections>
+                                                    </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="L" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qY-Ec-ZxA">
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cO4-Ks-YR6"/>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cO4-Ks-YR6">
+                                                        <connections>
+                                                            <action selector="largeSwithToggled:" destination="2yc-jg-Aom" eventType="valueChanged" id="yKD-54-pJR"/>
+                                                        </connections>
+                                                    </switch>
                                                 </subviews>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sticker sizes in Messages App" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kON-FA-X3y">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sticker Sizes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kON-FA-X3y">
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPACER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aM3-Cf-zGR">
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1045,7 +1085,11 @@
                     <connections>
                         <outlet property="animatedLabel" destination="eXY-oE-MYw" id="ff5-vV-p0J"/>
                         <outlet property="imageCaption" destination="atg-ml-LAn" id="Qez-wf-7hC"/>
+                        <outlet property="largeSwitch" destination="cO4-Ks-YR6" id="ISq-lS-gwY"/>
+                        <outlet property="mediumSwitch" destination="nkN-gj-Cgd" id="MqL-7z-R0z"/>
                         <outlet property="menuImage" destination="ek7-tb-bXc" id="LS6-R1-KLc"/>
+                        <outlet property="smallSwitch" destination="Anj-Y5-KYV" id="cxu-dk-ces"/>
+                        <segue destination="VKI-12-vb3" kind="unwind" identifier="UnwindToMessagesAppVC" unwindAction="unwindToMessagesAppViewController:" id="Uhj-uV-FKF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DsP-IT-djv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1117,6 +1161,9 @@
                                                 <state key="normal" title="Change Caption on Sticker">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="editStickerCaption:" destination="P8v-au-Qtf" eventType="touchUpInside" id="utl-7o-llG"/>
                                                 </connections>
@@ -1126,6 +1173,9 @@
                                                 <state key="normal" title="Use Sticker As Is">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                </variation>
                                                 <connections>
                                                     <action selector="moveToIMessage:" destination="P8v-au-Qtf" eventType="touchUpInside" id="Y54-7D-uMh"/>
                                                 </connections>
@@ -1226,7 +1276,7 @@
         <!--Starts Here Nav -->
         <scene sceneID="LKI-ps-Ona">
             <objects>
-                <navigationController title="Starts Here Nav " automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" hidesBarsOnSwipe="YES" hidesBarsWhenVerticallyCompact="YES" id="gUA-Sq-LFh" sceneMemberID="viewController">
+                <navigationController title="Starts Here Nav " automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" hidesBarsWhenVerticallyCompact="YES" id="gUA-Sq-LFh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
@@ -1237,11 +1287,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Z1b-ox-Gez">
-                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </toolbar>
                     <connections>
                         <segue destination="Tm1-Gg-mxO" kind="relationship" relationship="rootViewController" id="dRA-SX-wnR"/>
                     </connections>
@@ -1289,12 +1334,14 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This tab shows which of your stickers are currently available in Messages." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AFf-e2-0hU">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" ambiguous="YES" text="This tab shows which of your stickers are currently available in Messages." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AFf-e2-0hU">
+                                        <frame key="frameInset" minY="158" width="343" height="489"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="You can reorder and delete entries to change the view in Messages " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7rq-PM-OAs">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" text="You can reorder and delete entries to change the view in Messages " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7rq-PM-OAs">
+                                        <frame key="frameInset" minY="667" width="343"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -1417,13 +1464,15 @@
     <resources>
         <image name="BackgroundImage" width="618" height="485"/>
         <image name="CandidatesForBlur.png" width="384" height="80"/>
+        <image name="Help" width="44" height="44"/>
+        <image name="Home" width="44" height="44"/>
         <image name="MessagesForBlur.png" width="382" height="78"/>
         <image name="StickerzForBlur.png" width="384" height="78"/>
         <image name="backforcatalog.png" width="957" height="957"/>
         <image name="backforportrait.png" width="840" height="840"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6bp-dS-sLd"/>
-        <segue reference="X63-RO-jMS"/>
+        <segue reference="wlE-A6-VUh"/>
+        <segue reference="Txi-IE-6DO"/>
     </inferredMetricsTieBreakers>
 </document>

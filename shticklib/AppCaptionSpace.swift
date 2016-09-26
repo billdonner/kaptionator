@@ -24,13 +24,13 @@ struct AppCE {
   
 
         fileprivate func serializeToJSONDict() -> JSONDict {
-            let x : JSONDict = [//"params":params.query,
-                "caption":caption as AnyObject,
-                "id":id as AnyObject,
-                "local":localimagepath as AnyObject,
-                "pack":catalogpack as AnyObject,
-                "title":catalogtitle as AnyObject,
-                "options":  stickerOptions.rawValue as AnyObject ]
+            let x : JSONDict = [
+                kID:id as AnyObject,
+                kCaption:caption  as AnyObject,
+                kLocal:localimagepath as AnyObject,
+                kPack:catalogpack as AnyObject,
+                kTitle:catalogtitle as AnyObject,
+                kOptions:stickerOptions.rawValue as AnyObject ]
             return x
         }
         //// core
@@ -44,18 +44,17 @@ struct AppCE {
             return intWithLeadingZeros( intnow, digits: 20)
         }
         
-        init(  pack:String,title:String,imagepath:String,
+        init(pack:String,
+             title:String,
+             imagepath:String,
              caption:String,
-             options:StickerMakingOptions,
-             id:String = ""  ) {
+             options:StickerMakingOptions  ) {
             self.catalogpack = pack
             self.catalogtitle = title
             self.localimagepath = imagepath
-            self.caption =
-               // caption == "" ? title :
-            caption
+            self.caption = caption
             self.stickerOptions = options
-            self.id =  id == "" ? "\(AppCE.nicetime())" : id
+            self.id =   "\(AppCE.nicetime())" //: id
         }
 }
 
@@ -89,13 +88,11 @@ struct AppCaptionSpace {
         }
     }
     
-    static  func make(pack:String,  title:String,imagepath:String ,caption:String,
-                                options:StickerMakingOptions,
-                                id:String  )->AppCE {
+    static  func make(pack:String,  title:String,imagepath:String ,caption:String,  options:StickerMakingOptions )->AppCE {
         let newself = AppCE( pack: pack, title: title,
                                       imagepath: imagepath,
                                       caption: caption,
-                                      options: options,id:id)
+                                      options: options )
         
         // users newce.id to CLONE
         capSpace.entries[newself.id] = newself
@@ -144,22 +141,22 @@ struct AppCaptionSpace {
     }
     
     //put in special NSUserDefaults which can be shared
-    func restoreFromDisk () throws  {
+    func restoreAppspaceFromDisk () throws  {
         if  let defaults = UserDefaults(suiteName: suite),
-            let allcaptions = defaults.object(forKey: "allcaptions") as? JSONArray,
+            let allcaptions = defaults.object(forKey: kAllCaptions) as? JSONArray,
             let version = defaults.object(forKey: "version") {
             print ("**** \(suite) restoreFromDisk version \(version) count \(allcaptions.count)")
             
             for acaption in allcaptions {
-                if let  optionsvalue = acaption ["options"] as? Int,
-                    let captiontext = acaption ["caption"] as? String,
-                    let i = acaption["local"] as? String,
-                    let p = acaption["pack"] as? String,
-                    let d = acaption["id"] as? String
+                if let  optionsvalue = acaption [kOptions] as? Int,
+                    let captiontext = acaption [kCaption] as? String,
+                    let i = acaption[kLocal] as? String,
+                    let p = acaption[kPack] as? String,
+                    let _ = acaption[kID] as? String
                 {
                     var ti = ""
                     if
-                        let capt  = acaption["title"] as? String {
+                        let capt  = acaption[kTitle] as? String {
                         ti = capt
                     }
                     var options = StickerMakingOptions()
@@ -167,7 +164,7 @@ struct AppCaptionSpace {
                     
                     let _ = AppCaptionSpace.make(pack:p,title:ti,imagepath:i ,
                                                       caption:captiontext,
-                                                      options:options,id:d)  
+                                                      options:options)
                 }
             }
         }

@@ -1,4 +1,4 @@
-//
+
 //  MessagesAppMenuViewController.swift
 //  ub ori
 //
@@ -12,7 +12,7 @@ protocol MessagesAppMenuViewDelegate {
     func removeFromIMessage(on captionedEntry:inout SharedCE )
 }
 
-class MessagesAppMenuViewController: UIViewController , AddDismissButton {
+class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
     var captionedEntry:SharedCE! // must be set
     var delegate: MessagesAppMenuViewDelegate?  // mig
     @IBAction func unwindToMessagesAppMenuViewController(_ segue: UIStoryboardSegue)  {}
@@ -32,7 +32,66 @@ class MessagesAppMenuViewController: UIViewController , AddDismissButton {
     
     //MARK:- MENU TAP ACTIONS
     
+    @IBOutlet weak var smallSwitch: UISwitch!
     
+    @IBOutlet weak var mediumSwitch: UISwitch!
+    
+    @IBOutlet weak var largeSwitch: UISwitch!
+    func unprepareStickers(_ pe:String, _ size:String) {
+        let lpc = (pe as NSString).lastPathComponent
+        let type = (pe as NSString).pathExtension
+        let lsp = (lpc as NSString).deletingPathExtension
+        let path = (pe as NSString).deletingLastPathComponent
+        let stickerpath = path + "/" + lsp + "-\(size)." + type
+        StickerFileFactory.removeStickerFilesFrom([stickerpath])
+    }
+    @IBAction func smallSwitchToggled(_ sender: AnyObject) {
+        
+        let ce = captionedEntry!
+        var options: StickerMakingOptions = StickerMakingOptions()
+        if smallSwitch.isOn {
+            do {  // make image of precise size for messages app
+            options.insert(.generatesmall)
+           let _  =  try prepareStickers(pack:ce.catalogpack, title:ce.catalogtitle, imagepath: ce.localimagepath, caption: ce.caption, options: options)
+            }
+            catch {
+                print("could not prepareStickers")
+            }
+        } else {  // delete the image
+            unprepareStickers(ce.localimagepath,"S")
+                 }
+    }
+    @IBAction func mediumSwitchToggled(_ sender: AnyObject) {
+        let ce = captionedEntry!
+        var options: StickerMakingOptions = StickerMakingOptions()
+        if mediumSwitch.isOn {
+            do {  // make image of precise size for messages app
+                options.insert(.generatemedium)
+                let _  =  try prepareStickers(pack:ce.catalogpack, title:ce.catalogtitle, imagepath: ce.localimagepath, caption: ce.caption, options: options)
+            }
+            catch {
+                print("could not prepareStickers")
+            }
+        } else {  // delete the image
+            unprepareStickers(ce.localimagepath,"M")
+        }    }
+    
+    @IBAction func largeSwithToggled(_ sender: AnyObject) {
+        let ce = captionedEntry!
+        var options: StickerMakingOptions = StickerMakingOptions()
+        if largeSwitch.isOn {
+            do {  // make image of precise size for messages app
+                options.insert(.generatelarge)
+                let _  =  try prepareStickers(pack:ce.catalogpack, title:ce.catalogtitle, imagepath: ce.localimagepath, caption: ce.caption, options: options)
+            }
+            catch {
+                print("could not prepareStickers")
+            }
+        } else {  // delete the image
+            unprepareStickers(ce.localimagepath,"L")
+        }
+    }
+ 
     var webViewOverlay: UIWebView?
     @IBAction func websitetapped(_ sender: AnyObject) {
         IOSSpecialOps.openwebsite(self) 
@@ -48,6 +107,11 @@ class MessagesAppMenuViewController: UIViewController , AddDismissButton {
     }
     
     //MARK:- VC LIFECYLE
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,13 +120,12 @@ class MessagesAppMenuViewController: UIViewController , AddDismissButton {
         //openinimessage.setTitleColor( appTheme.buttonTextColor, for: .normal)
       //  removefromimessage.setTitleColor( appTheme.buttonTextColor, for: .normal)
         //veryBottomButton.setTitleColor( appTheme.buttonTextColor, for: .normal)
+        let options = captionedEntry.stickerOptions
+        isAnimated = options.contains(.generateasis)
         
-        isAnimated = captionedEntry.stickerOptions.contains(.generateasis)
-        
-        imageCaption.text =  captionedEntry.caption 
+       
         
         imageCaption.isEnabled  = false
-        //     imageCaption.delegate = self
         
         imageCaption.textColor = .white
         imageCaption.backgroundColor = .clear
@@ -77,6 +140,41 @@ class MessagesAppMenuViewController: UIViewController , AddDismissButton {
         }
         
         imageCaption.text =  captionedEntry.caption 
+        
+        
+        
+        let imgsize = menuImage.image!.size
+        
+            smallSwitch.isEnabled = false
+            mediumSwitch.isEnabled = false
+            largeSwitch.isEnabled = false
+       
+            //if imgsize.width >= CGFloat(618) {
+                largeSwitch.isOn = checkForFileVariant(captionedEntry.localimagepath,"L")
+            //}
+            
+            //if imgsize.width >= CGFloat(408) {
+                mediumSwitch.isOn = checkForFileVariant(captionedEntry.localimagepath,"M")
+            //}
+            
+            //if imgsize.width >= CGFloat(300) {
+                smallSwitch.isOn = checkForFileVariant(captionedEntry.localimagepath,"S")
+//}
+        
+        if !isAnimated {
+            if imgsize.width >= CGFloat(618) {
+                largeSwitch.isEnabled = true
+            }
+            
+            if imgsize.width >= CGFloat(408) {
+                mediumSwitch.isEnabled = true
+            }
+            
+            if imgsize.width >= CGFloat(300) {
+                smallSwitch.isEnabled = true
+            }
+        }
+        
         
        
         if isAnimated {
@@ -96,7 +194,9 @@ class MessagesAppMenuViewController: UIViewController , AddDismissButton {
         
     }
     func dismisstapped(_ s: AnyObject) {
-        dismiss(animated: true, completion: nil)
+       //// dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "UnwindToMessagesAppVC", sender: s)
+    
     }
     
     override func didReceiveMemoryWarning() {

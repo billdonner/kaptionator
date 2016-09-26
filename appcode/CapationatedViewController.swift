@@ -33,20 +33,7 @@
     override func didMove(toParentViewController parent: UIViewController?) {
         refreshFromCapSpace()
     }
-    @IBAction func cellwzswiped(_ swipe: UISwipeGestureRecognizer) {
-        
-        let location = swipe.location(in: tableView)
-        let indexPath = tableView.indexPathForRow(at: location)
-        if let indexPath = indexPath {
-            theSelectedIndexPath = indexPath
-            var  captionedEntry = stickerz[indexPath.row]
-            captionedEntry.moveToIMessage()
-            let cell = tableView.cellForRow(at: indexPath) as! TableDataCell
-            cell.twinkle()
-            print ("cellwzswiped \(indexPath)")
-        }
-        
-    }
+ 
     //MARK:- Dispatching to External ViewControllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -70,24 +57,17 @@
         
         
     }
-    func refreshFromCapSpace(){
+  private  func refreshFromCapSpace(){
         var items = capSpace.items()
         
         // group similar images together in reverse ti
         items.sort(by: { a,b in  let aa = a as AppCE
             let bb = b as AppCE
             
-//            if aa.id < bb.id && aa.localimagepath != bb.localimagepath {
-//                return aa.id < bb.id
-//            }
-//            if aa.localimagepath == bb.localimagepath {
                 return aa.id > bb.id
-//            }
-//            return aa.localimagepath < bb.localimagepath
             }
        )
         self.stickerz = items
-        // 5 filter items down according to this tab's needs
         self.tableView?.reloadData()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -184,12 +164,8 @@
         
         /// go get the image from our cache and then the net
         let path =  ce.localimagepath // ?????
-        if path != "" {  // dont crash but dont paint
-            //        let t = allImageData[path]
-            //        guard let tp = t else {
-            //            fatalError("missing data for url path \(path)")
-            //        }
-            //
+        if path != "" {
+            // dont crash but dont paint
             // have the data onhand
             cell.paintImage(path:path)
         }
@@ -235,7 +211,7 @@
             // keep old and
            AppCaptionSpace.unhinge(id:self.id) //remove old
         // make new with new caption but all else is similar
-        let _ = AppCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath, caption: caption, options: self.stickerOptions, id: self.id)
+        let _ = AppCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath, caption: caption, options: self.stickerOptions)
         }
      
         //
@@ -247,7 +223,7 @@
         let alreadyIn = capSpace.findMatchingAsset(path: self.localimagepath, caption: caption)
         if !alreadyIn {
         // keep old and make another
-        let _ = AppCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath,  caption: caption,  options: self.stickerOptions, id:"")
+        let _ = AppCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath,  caption: caption,  options: self.stickerOptions )
         }
     }
     
@@ -258,17 +234,17 @@
         let alreadyIn = memSpace.findMatchingAsset(path: self.localimagepath, caption: self.caption)
         if !alreadyIn {
             do {
-                let theData = try Data(contentsOf: URL(string:self.localimagepath)!)
-                let stickerurl =   stickerFileFactory.createStickerFileFrom (imageData: theData ,captionedEntry:self)
+                //let theData = try Data(contentsOf: URL(string:self.localimagepath)!)
                 
-                print("made sticker file urls \(stickerurl)")
+                let options = self.stickerOptions
                 
+                // adjust options based on size of image
+                
+                
+                // now pass the filenames into the shared space
                 // ce.localimagepath = url.absoluteString // dink with this
-                let _ = SharedCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath, //stickerpath: stickerurl.absoluteString ,
-                                                 
-                                                 caption: self.caption,  options: self.stickerOptions, id:"")// self.id)
-                // users newce.id to CLONE, the old item will get unhinged
-              
+                let _ = try prepareStickers( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath,  caption: self.caption,  options: options)
+                
             }
             catch {
                 print("could not makemade sticker file urls \(localimagepath)")

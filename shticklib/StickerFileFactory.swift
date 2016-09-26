@@ -8,10 +8,7 @@
 
 import UIKit
 
-
-var stickerFileFactory = StickerFileFactory()
-
-struct Snapsupport {
+fileprivate struct Snapsupport {
     static let sz = 1200
     static func makewebview(html:String) -> UIView  {
         let wframe = CGRect(x:0,y:0,width:sz/2,height:sz)
@@ -61,57 +58,64 @@ struct Snapsupport {
 
 /// only for use by extnesion
 struct StickerFileFactory {
+    
 
-   mutating func createStickerFileFrom(imageData:Data,captionedEntry:AppCE) -> URL {
-        var returls:[URL] = []
-        let options = captionedEntry.stickerOptions
-        let assep = (captionedEntry.localimagepath as NSString).lastPathComponent
+   static  func removeStickerFilesFrom(_ urls:[String]) -> Swift.Void {
+        for url in urls {
+            do {
+                try FileManager.default.removeItem(at: URL(string:url)!)
+            }
+            catch  {
+                print("Could not delete \(url)")
+            }
+        }
+    }
+    static func createStickerFilesFrom(imageData:Data,path:String, caption:String,options:StickerMakingOptions) -> [String] {
+        var returls:[String] = []
+        let assep = (path as NSString).lastPathComponent
         let type = (assep as NSString).pathExtension
-        let label =  captionedEntry.id + "_" + assep
-    
-    
-    
+        let label = // captionedEntry.id + "_" +
+            ( assep as NSString).deletingPathExtension
     do {
-            if options.contains(.generateasis) || captionedEntry.caption == "" {
+            if options.contains(.generateasis) || caption == "" {
                 // if asis, the size is just for decoration
-                let rul = try makeStickerAndURLfromData(imageData:imageData, label:label)
+                let rul = try makeStickerAndURLfromData(imageData:imageData, label:label + "-A",type:type ).absoluteString
                 returls.append(rul)
-                
-            } else
                 // only one now
+                
+            } else {
+                // can return more than one
                 if options.contains(.generatesmall) {
-                    let rul =  try createTextSticker(imageData:imageData,caption:captionedEntry.caption,
-                                                     label:label ,type:type,size:CGFloat(300), proportion:0.8, fontSize:CGFloat(24))
-                    returls.append(rul)
-                } else
-                if options.contains(.generatemedium) {
-                    let rul =  try createTextSticker(imageData:imageData,caption:captionedEntry.caption,label:label ,type:type,size:CGFloat(408), proportion:0.8, fontSize:CGFloat(32) )
-                    returls.append(rul)
-                } else
-                if options.contains(.generatelarge) {
-                    let rul =  try createTextSticker(imageData:imageData,caption:captionedEntry.caption,label:label ,type:type,size:CGFloat(618), proportion:0.8, fontSize:CGFloat(40))
+                    let rul =  try createTextSticker(imageData:imageData,caption:caption,
+                                                     label:label + "-S" ,type:type,size:CGFloat(300), proportion:0.8, fontSize:CGFloat(24)).absoluteString
                     returls.append(rul)
                 }
-            
-            //print("processed labelled row from asset \(label)")
+                if options.contains(.generatemedium) {
+                    let rul =  try createTextSticker(imageData:imageData,caption:caption,label:label + "-M" ,type:type,size:CGFloat(408), proportion:0.8, fontSize:CGFloat(32) ).absoluteString
+                    returls.append(rul)
+                }
+                if options.contains(.generatelarge) {
+                    let rul =  try createTextSticker(imageData:imageData,caption:caption,label:label + "-L" ,type:type,size:CGFloat(618), proportion:0.8, fontSize:CGFloat(40)).absoluteString
+                    returls.append(rul)
+                }
+        }
         }
         catch {
             print ("cant create labelled text sticker in row for \(label) \(error)")
         }
-        //}// remoteasset = remotasset
-        return returls[0] // only take one
+        return returls
     }
     
     // generates 0 or more stickers
     
-       private mutating func
+       private static func
         makeStickerAndURLfromData(imageData:Data,
-                                  label:String ) throws -> URL {
+                                  label:String,type:String ) throws -> URL {
         
         /// now write this view to the local file system 
         
-        let rul = sharedAppContainerDirectory().appendingPathComponent("\(label)")
-        //let rul = URL(fileURLWithPath:newurl)
+        let rul = sharedAppContainerDirectory().appendingPathComponent("\(label).\(type)")
+        
         do {
             
             try imageData.write(to:rul)
@@ -128,20 +132,19 @@ struct StickerFileFactory {
         
     }
     
-    private  mutating func createTextSticker(imageData:Data,caption:String, label:String,type:String,size:CGFloat, proportion: CGFloat, fontSize:CGFloat ) throws -> URL {
+    private  static func createTextSticker(imageData:Data,caption:String, label:String,type:String,size:CGFloat, proportion: CGFloat, fontSize:CGFloat ) throws -> URL {
         
         let image = UIImage(data:imageData) // can scale here
         if let image = image {  // make sure not nil
             let ms =  try makeCaptionatedStickerFile(label:label, image: image,type:type,size:size, proportion: proportion, fontSize:fontSize, caption: caption  )
-            
-            //print ("Making sticker with url  \(ms) = \( caption)")
+             
             return ms
         }
         
         throw KaptionatorErrors.assetnotfound
     }//createTextStickerFromDefaults
     
-    private mutating func makeCaptionatedStickerFile(label:String,image:UIImage,type:String,size:CGFloat, proportion: CGFloat, fontSize:CGFloat ,caption: String) throws -> URL {
+    private static func makeCaptionatedStickerFile(label:String,image:UIImage,type:String,size:CGFloat, proportion: CGFloat, fontSize:CGFloat ,caption: String) throws -> URL {
         
         // if caption is blank then just return the incoming
         let majik = CGFloat(0.7)
@@ -177,7 +180,7 @@ struct StickerFileFactory {
         }
         /// now write this view to the local file system
         //let sz = Int(floor(size)) ?? 0
-        let rul = sharedAppContainerDirectory().appendingPathComponent   ("\(label)")/////// + type)
+        let rul = sharedAppContainerDirectory().appendingPathComponent   ("\(label).\(type)")
         
         do {
             let snapshotimage = try  Snapsupport.snap(view: oview)

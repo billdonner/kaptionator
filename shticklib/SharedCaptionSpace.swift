@@ -17,22 +17,23 @@ struct SharedCE {
     let id: String //stringified float millisecs since 1970
     let caption: String
     let stickerOptions: StickerMakingOptions
+    var stickerPaths:[String]
     let catalogpack:String
     let catalogtitle:String
     let localimagepath:String
- //   let stickerimagepath:String // this is what the extension uses to make stickers
+    //   let stickerimagepath:String // this is what the extension uses to make stickers
     
     /// these are the action functions that are called to move things between tabs
     
     fileprivate func serializeToJSONDict() -> JSONDict {
         let x : JSONDict = [//"params":params.query,
-            "caption":caption as AnyObject,
-            "id":id as AnyObject,
-            "local":localimagepath as AnyObject,
-            //"sticker":stickerimagepath as AnyObject,
-            "pack":catalogpack as AnyObject,
-            "title":catalogtitle as AnyObject,
-            "options":  stickerOptions.rawValue as AnyObject ]
+            kCaption:caption as AnyObject,
+            kID:id as AnyObject,
+            kLocal:localimagepath as AnyObject,
+            kStickers:stickerPaths as AnyObject,
+            kPack:catalogpack as AnyObject,
+            kTitle:catalogtitle as AnyObject,
+            kOptions:stickerOptions.rawValue as AnyObject ]
         return x
     }
     
@@ -48,67 +49,109 @@ struct SharedCE {
     }
     
     init(pack:String,title:String,imagepath:String,
-         //stickerpath:String,
+         stickerpaths:[String],
          caption:String,
-         options:StickerMakingOptions,
-         id:String = ""  ) {
+         options:StickerMakingOptions ) {
+        
         self.catalogpack = pack
         self.catalogtitle = title
         self.localimagepath = imagepath
-       // self.stickerimagepath = stickerpath
-        self.caption = caption // == "" ? title : caption
+        self.stickerPaths = stickerpaths
+        self.caption = caption
         self.stickerOptions = options
-        self.id =  id == "" ? "\(SharedCE.nicetime())" : id
+        self.id =  "\(SharedCE.nicetime())"
+        
+        
+        
     }
 }
 
 //MARK: AppCaptionSpace collects and persists AppCEs
 
 struct SharedCaptionSpace {
-    private var entries : [String:SharedCE] = [:]
+    fileprivate var entries : [SharedCE] = []
     private  var suite: String // partions nsuserdefaults
- 
+    
     init(_ suite:String) {
         self.suite = suite
     }
     static func unhinge(id:String) {
         // unhinge the entry
-        let _ =  memSpace.remove(id:id)
-        memSpace.entries[id] = nil
+        //        let match = memSpace.findAppCE(id: id)
+        //
+        //
+        //        let _ =  memSpace.remove(id:id)
+        //        memSpace.entries[id] = nil
     }
     func itemCount () -> Int {
         return entries.count
     }
     func itemAt(_ index:Int) -> SharedCE {
-        let t = entries.map { key, value in return value }
+        let t = entries //.map { key, value in return value }
         return t [index] // horrible
     }
     func items () -> [SharedCE] {
-        return   entries.map { key, value in return value }
+        return   entries //.map { key, value in return value }
     }
     func dump() {
-        print("AppCaptionSpace - \(suite) >>>>>")
-        for (key,val) in entries {
-            print("\(key):\(val),")
-        }
+        print("SharedCaptionSpace - \(suite) >>>>> \(entries)")
+        
     }
     //    mutating func addSharedCE(_ ce :SharedCE) {
     //        self.entries[ce.id] = ce
     //    }
     mutating func reset() {
-        entries = [:]
+        entries = []
         saveToDisk()
     }
+    
+    mutating func add(ce:SharedCE) {
+        
+        entries.append(ce)
+        saveToDisk()
+    }
+    func findIdx(id:String) -> Int {
+        var idx = 0
+        var found :SharedCE?
+        for ent in entries {
+            if ent.id == id { found = ent; break }
+            else { idx += 1 }
+        }
+        if found == nil {return -1}
+        return idx
+    }
     mutating func remove(id:String) -> SharedCE? {
-        let t = entries[id]
-        entries[id] = nil
-        return t
+        
+        let idx = findIdx(id:id)
+        if idx == -1 {
+            return nil
+        }
+        let found = entries[idx]
+        entries.remove(at:idx)
+        return found
     }
     func  findAppCE(id:String) -> SharedCE? {
-        return entries[id]
+        
+        let idx = findIdx(id:id)
+        if idx == -1 {
+            return nil
+        }
+        let found = entries[idx]
+        return found
+    }
+    func findMatchingEntry(atPath:String) -> SharedCE? {
+        let lpc = (atPath as NSString).lastPathComponent
+        for entry in entries {
+            for path in entry.stickerPaths {
+            if (path as NSString).lastPathComponent == lpc            {
+                return entry
+            }
+        }
+        }
+        return nil
     }
     func findMatchingEntry(ce:SharedCE) -> Bool {
-        for (_,entry) in entries {
+        for entry in entries {
             if entry.catalogtitle == ce.catalogtitle &&
                 entry.caption == ce.caption
                 // entry.localimagepath == ce.localimagepath
@@ -121,7 +164,7 @@ struct SharedCaptionSpace {
     }
     
     func findMatchingAsset(path:String,caption:String) -> Bool {
-        for (_,entry) in entries {
+        for entry in entries {
             if entry.localimagepath == path &&
                 entry.caption ==  caption
                 // entry.localimagepath == ce.localimagepath
@@ -133,73 +176,18 @@ struct SharedCaptionSpace {
         return false
     }
     //// core
-    
-    static  func make( pack:String,title:String,imagepath:String,//stickerpath:String,
-                       caption:String,
-                       options:StickerMakingOptions,
-                       id:String  )->SharedCE {
-        let newself = SharedCE( pack: pack, title: title,
-                                            imagepath: imagepath,
-                                            //stickerpath:stickerpath,
-                                        
-                                            caption: caption,
-                                            options: options,id:id)
-        
-        // users newce.id to CLONE)
-        memSpace.entries[newself.id] = newself
-        memSpace.saveToDisk()
-        return newself
-    }
-    
     //put in special NSUserDefaults which can be shared
-    func restoreFromDisk () throws  {
-        if  let defaults = UserDefaults(suiteName: suite),
-            let allcaptions = defaults.object(forKey: "allcaptions") as? JSONArray,
-            let version = defaults.object(forKey: "version") {
-            print ("**** \(suite) restoreFromDisk version \(version) count \(allcaptions.count)")
-            
-            for acaption in allcaptions {
-                if let  optionsvalue = acaption ["options"] as? Int,
-                    let captiontext = acaption ["caption"] as? String,
-                    let i = acaption["local"] as? String,
-                    //let s = acaption["sticker"] as? String,
-                    let p = acaption["pack"] as? String,
-                    let d = acaption["id"] as? String
-                {
-                    var ti = ""
-                    if
-                        let capt  = acaption["title"] as? String {
-                        ti = capt
-                    }
-                    var options = StickerMakingOptions()
-                    options.rawValue = optionsvalue
-                    
-                    let _ =      SharedCaptionSpace.make(pack:p,
-                                                           title:ti,
-                                                           imagepath:i ,
-                                                           //stickerpath: s, 
-                        caption:captiontext,
-                                                           options:options,id:d)
-                }
-            }
-        }
-        else {
-            print("**** \(suite) restoreFromDisk UserDefaults failure")
-            throw KaptionatorErrors.restoreFailure}
-    }// restore
     
     
     func saveToDisk() {
         var flattened:JSONArray = []
-        for (_,val) in entries {
+        for val in entries {
             flattened.append(val.serializeToJSONDict())
         }
         if let defaults  = UserDefaults(suiteName:suite) {
-            defaults.set( versionBig, forKey: "version")
-            defaults.set(   flattened, forKey: "allcaptions")
+            defaults.set( versionBig, forKey: kVersion)
+            defaults.set(   flattened, forKey: kAllCaptions)
             print("**** \(suite) saveToDisk version \(versionBig) count \(flattened.count)")
         }
     }
 }
-
-

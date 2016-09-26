@@ -11,6 +11,20 @@ import UIKit
 
 let versionBig = "0.0.8"
 
+let kVersion = "version"
+let kAllCaptions = "allcaptions"
+let kOptions = "options"
+let kCaption = "caption"
+let kLocal = "local"
+let kPack = "pack"
+let kStickers = "stickers"
+let kTitle = "title"
+let kID = "id"
+let kRemoteURL = "remoteurl"
+
+
+
+
 let RemoteAssetsDataSpace = "sharedRemspace"
 
 // captionated entries - are stashed in either of two places - in the app, or in the shared memory with iMessage
@@ -95,3 +109,46 @@ get {
     return "no LEFT-BBI-NAME"
 }
 }
+
+func restoreSharespaceFromDisk () throws  {
+    let suite = SharedMemDataSpace
+    
+    if  let defaults = UserDefaults(suiteName: suite),
+        let allcaptions = defaults.object(forKey: kAllCaptions) as? JSONArray,
+        let version = defaults.object(forKey: kVersion) {
+        print ("**** \(suite) restoreFromDisk version \(version) count \(allcaptions.count)")
+        
+        for acaption in allcaptions {
+            if let  optionsvalue = acaption [kOptions] as? Int,
+                let captiontext = acaption [kCaption] as? String,
+                let i = acaption[kLocal] as? String,
+                let s = acaption[kStickers] as? [String],
+                let p = acaption[kPack] as? String,
+                let _ = acaption[kID] as? String
+            {
+                var ti = ""
+                if
+                    let capt  = acaption[kTitle] as? String {
+                    ti = capt
+                }
+                var options = StickerMakingOptions()
+                options.rawValue = optionsvalue
+                /// figure the shared paths
+            
+                    
+                    let t = SharedCE( pack: p, title: ti,
+                                            imagepath: i,
+                                            stickerpaths:s,
+                                            caption:  captiontext,
+                                            options: options )
+                
+                let _ = memSpace.add(ce: t)
+              
+            }
+        }
+    }
+    else {
+        print("**** \(suite) restoreFromDisk UserDefaults failure")
+        throw KaptionatorErrors.restoreFailure}
+}// restore
+

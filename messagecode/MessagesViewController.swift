@@ -50,14 +50,16 @@ struct  StickerPool   {
     mutating func makeMSStickersFromMemspace() {
         do {
             
-            try memSpace.restoreFromDisk()
+            try restoreSharespaceFromDisk()
             
             print ("makeMSStickersFromMemspace memSpace restored,\(memSpace.itemCount()) items ")
             ///TODO: ajust to stkickerimages
             for ce in memSpace.items() {
-                let url = URL(string:ce.localimagepath)!
+                for stickerpath in ce.stickerPaths {
+                let url = URL(string:stickerpath)!
                 let title =  "\(stickers.count)"
                 makeMSSticker(url:url,title:title)
+                }
             }
             
             print ("Total stickers \(memSpace.itemCount())")

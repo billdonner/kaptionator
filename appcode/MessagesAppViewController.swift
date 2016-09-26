@@ -25,6 +25,7 @@ final class MessagesAppViewController: UIViewController   {
     }
     
     @IBAction func unwindToMessagesAppViewController(_ segue: UIStoryboardSegue)  {
+        refreshFromMemSpace()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -50,11 +51,23 @@ final class MessagesAppViewController: UIViewController   {
         self.tableView.backgroundColor = appTheme.backgroundColor
         
     }
+    fileprivate  func refreshFromMemSpace(){
+        var items = memSpace.items()
+        
+        // group similar images together in reverse ti
+        items.sort(by: { a,b in  let aa = a as SharedCE
+            let bb = b as SharedCE
+            
+            return aa.id > bb.id
+            }
+        )
+        self.stickerz = items
+        self.tableView?.reloadData()
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.stickerz = memSpace.items() //entries.map { key, value in return value }
-        self.tableView?.reloadData()
+       refreshFromMemSpace()
     }
     
     func displayTapMenu () {
@@ -72,7 +85,9 @@ extension  MessagesAppViewController:MessagesAppMenuViewDelegate {
     func removeFromIMessage(on captionedEntry:inout SharedCE ){
         print("MessagesAppEntriesViewController removeFromIMessage")
         captionedEntry.removeCEFromIMessage()
-        self.tableView.reloadData()
+
+    refreshFromMemSpace()
+    
     }
 }
 

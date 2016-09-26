@@ -12,9 +12,7 @@
 		882EB2101D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
 		882EB2121D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
 		882EB2141D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
-		882EB2151D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
 		882EB2161D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
-		882EB2171D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
 		88475BF71D51607000FA7EC4 /* candidatezMessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 88AEA62F1D514C8D006E5C70 /* candidatezMessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		88475BFB1D51609200FA7EC4 /* holidazeMessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 88AEA6021D514C1F006E5C70 /* holidazeMessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		88475BFF1D51609C00FA7EC4 /* emogeezMessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 88AEA61A1D514C5F006E5C70 /* emogeezMessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -125,6 +123,10 @@
 		88B54D021D8870F10076942D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88B54CFE1D8870F10076942D /* MainInterface.storyboard */; };
 		88C451D31D92E4E1003DC256 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88AEA5B51D514B53006E5C70 /* LaunchScreen.storyboard */; };
 		88C451D51D92E4FC003DC256 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88AEA5B51D514B53006E5C70 /* LaunchScreen.storyboard */; };
+		88C7AED51D98685D0050A6CD /* Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7AED41D98685D0050A6CD /* Versions.swift */; };
+		88C7AED61D98685D0050A6CD /* Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7AED41D98685D0050A6CD /* Versions.swift */; };
+		88C7AED71D98685D0050A6CD /* Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7AED41D98685D0050A6CD /* Versions.swift */; };
+		88C7AED81D98685D0050A6CD /* Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7AED41D98685D0050A6CD /* Versions.swift */; };
 		88CBBDDC1D9348090089DD9A /* backforcatalog.png in Resources */ = {isa = PBXBuildFile; fileRef = 88CBBDDB1D9348090089DD9A /* backforcatalog.png */; };
 		88CBBDDD1D9348090089DD9A /* backforcatalog.png in Resources */ = {isa = PBXBuildFile; fileRef = 88CBBDDB1D9348090089DD9A /* backforcatalog.png */; };
 		88CBBDDE1D9348090089DD9A /* backforcatalog.png in Resources */ = {isa = PBXBuildFile; fileRef = 88CBBDDB1D9348090089DD9A /* backforcatalog.png */; };
@@ -329,6 +331,7 @@
 		88B54CA91D8870060076942D /* StickerFileFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerFileFactory.swift; sourceTree = "<group>"; };
 		88B54CFE1D8870F10076942D /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainInterface.storyboard; path = ../candidatezMessagesExtension/MainInterface.storyboard; sourceTree = "<group>"; };
 		88C451D61D92EAD6003DC256 /* ModalBlurViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalBlurViewController.swift; sourceTree = "<group>"; };
+		88C7AED41D98685D0050A6CD /* Versions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Versions.swift; sourceTree = "<group>"; };
 		88CBBDDB1D9348090089DD9A /* backforcatalog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backforcatalog.png; sourceTree = "<group>"; };
 		88CE902E1D95E3860093795B /* homeIcon-40x40.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "homeIcon-40x40.jpg"; sourceTree = "<group>"; };
 		88DD92D91D8872D400832564 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -414,6 +417,7 @@
 		88722EF51D52186400B2F85B /* shticklib */ = {
 			isa = PBXGroup;
 			children = (
+				88C7AED41D98685D0050A6CD /* Versions.swift */,
 				88B54CA01D8870060076942D /* mlib.swift */,
 				88B54CA11D8870060076942D /* theme.swift */,
 				88B54CA21D8870060076942D /* RemoteAsset.swift */,
@@ -999,6 +1003,7 @@
 				88F2FC921D931A070055209C /* MoreMenuViewController.swift in Sources */,
 				882EB2101D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */,
 				88B54CEA1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
+				88C7AED51D98685D0050A6CD /* Versions.swift in Sources */,
 				88B54CF21D8870060076942D /* StickerFileFactory.swift in Sources */,
 				88B54CD21D8870060076942D /* SFViewController.swift in Sources */,
 				88F2FC8D1D92F69E0055209C /* ModalBlurViewController.swift in Sources */,
@@ -1042,6 +1047,7 @@
 				88B54CBC1D8870060076942D /* RemoteAsset.swift in Sources */,
 				88B54CDC1D8870060076942D /* InfoDictIOS.swift in Sources */,
 				88DD92FE1D88738200832564 /* MessagesAppViewController.swift in Sources */,
+				88C7AED61D98685D0050A6CD /* Versions.swift in Sources */,
 				88F2FC8E1D92F6A20055209C /* ModalBlurViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1073,6 +1079,7 @@
 				88B54CBE1D8870060076942D /* RemoteAsset.swift in Sources */,
 				88B54CDE1D8870060076942D /* InfoDictIOS.swift in Sources */,
 				88DD92FF1D88738200832564 /* MessagesAppViewController.swift in Sources */,
+				88C7AED71D98685D0050A6CD /* Versions.swift in Sources */,
 				88F2FC8F1D92F6A30055209C /* ModalBlurViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1104,6 +1111,7 @@
 				88B54CC01D8870060076942D /* RemoteAsset.swift in Sources */,
 				88B54CE01D8870060076942D /* InfoDictIOS.swift in Sources */,
 				88DD93001D88738200832564 /* MessagesAppViewController.swift in Sources */,
+				88C7AED81D98685D0050A6CD /* Versions.swift in Sources */,
 				88F2FC901D92F6A60055209C /* ModalBlurViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1113,7 +1121,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				88B54CFD1D8870A30076942D /* mlib.swift in Sources */,
-				882EB2171D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */,
 				88B54C9F1D886FBC0076942D /* MessagesViewController.swift in Sources */,
 				88B54CC91D8870060076942D /* common.swift in Sources */,
 				88B54CB91D8870060076942D /* theme.swift in Sources */,
@@ -1127,7 +1134,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				88B54CFC1D8870A10076942D /* mlib.swift in Sources */,
-				882EB2151D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */,
 				88B54C9E1D886FBC0076942D /* MessagesViewController.swift in Sources */,
 				88B54CC71D8870060076942D /* common.swift in Sources */,
 				88B54CB71D8870060076942D /* theme.swift in Sources */,

@@ -76,7 +76,7 @@ final class CatalogViewController: UIViewController  {
         assert( stickerPackListFileURL != nil)
             //  only read the catalog if we have to
             do {
-                try remSpace.restoreFromDisk()
+                try remSpace.restoreRemspaceFromDisk()
                 print("remSpace restored, \(remSpace.itemCount()) items")
                 phase2 ()
             }  catch {
@@ -147,34 +147,39 @@ extension CatalogViewController : UICollectionViewDelegateFlowLayout {
 // MARK: Delegates for actions from our associated menu
 extension AppCE {
     // not sure we want generate asis so changed back
-    fileprivate static func makeNewCaptionCat(   from ra:RemoteAsset, caption:String,id:String) {
+    fileprivate static func makeNewCaptionCat(   from ra:RemoteAsset, caption:String ) {
         // make captionated entry from remote asset
-        
+do {
         let alreadyIn = memSpace.findMatchingAsset(path: ra.localimagepath, caption: caption)
         if !alreadyIn {
             let options = ra.options
           
             if caption != "" {
-            let _ = AppCaptionSpace.make (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: options, id: id)
+            let _ = AppCaptionSpace.make (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: options)
             }
+            // here make the largest sticker possible and add to shared space
+            let _ = try prepareStickers (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: options )
             
-            let _ = SharedCaptionSpace.make (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: options, id: id)
-            
-        }
+        }else {
+            // already in, lets just mark new sizrs and caption
     }
+}
+catch {
+    print ("cant make sticker in makenewCaptioncat")
+    }
+}
 }
 
 extension CatalogViewController : CatalogMenuViewDelegate {
     func useAsIs(remoteAsset:RemoteAsset) {
-        AppCE.makeNewCaptionCat(from: remoteAsset, caption: remoteAsset.caption , id: "")
-    }
+        AppCE.makeNewCaptionCat(from: remoteAsset, caption: remoteAsset.caption )    }
     func useWithNoCaption(remoteAsset:RemoteAsset) {
         // make un captionated entry from remote asset
-        AppCE.makeNewCaptionCat( from: remoteAsset, caption: "", id: "")
+        AppCE.makeNewCaptionCat( from: remoteAsset, caption: "" )
     }
     func useWithCaption(remoteAsset:RemoteAsset,caption:String) {
         // make un captionated entry from remote asset
-        AppCE.makeNewCaptionCat( from: remoteAsset, caption: caption, id: "")
+        AppCE.makeNewCaptionCat( from: remoteAsset, caption: caption )
     }
 }
 

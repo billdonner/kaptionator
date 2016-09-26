@@ -10,7 +10,10 @@ import UIKit
 
 class TableDataCell: UITableViewCell {
     // @IBOutlet fileprivate weak var stackView: UIStackView!
+    
+    
     @IBOutlet  fileprivate weak var detailsImageView: UIImageView!
+    
     @IBOutlet  fileprivate weak var nameLabel: UILabel!
     
     @IBOutlet  fileprivate weak var line2Label: UILabel!
