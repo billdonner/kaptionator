@@ -21,7 +21,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.05</string>
 	<key>CFBundleVersion</key>
-	<string>47</string>
+	<string>49</string>
 	<key>EXTENSION-SCHEME</key>
 	<string>Candidatez</string>
 	<key>LEFT-BBI-NAME</key>
@@ -58,9 +58,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

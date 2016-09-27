@@ -20,17 +20,15 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
     }
     @IBOutlet weak var outerView: UIView!
     
-    @IBOutlet weak var veryBottomButton: UIButton!
+    @IBOutlet weak var webviewOverlay: UIWebView!
     private var isAnimated  = false
     fileprivate var changesMade: Bool = false
-    @IBOutlet weak var menuImage: UIImageView!
+    @IBOutlet weak var menuImageView: UIImageView!
     @IBOutlet weak var imageCaption: UITextField!
     @IBOutlet weak var useasis: UIButton!
     @IBOutlet weak var useasisnocaption: UIButton!
     @IBOutlet weak var addcaption: UIButton!
     
-    
-    var webViewOverlay: UIWebView?
     //MARK:- MENU TAP ACTIONS
 
     @IBOutlet weak var animatedLabel: UILabel!
@@ -71,11 +69,11 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
         isAnimated = remoteAsset.options.contains(.generateasis)
         do {
             let data = try  Data(contentsOf: URL(string:remoteAsset.localimagepath )!)
-            menuImage.image = UIImage(data:data)
-            menuImage.contentMode = .scaleAspectFit
+            menuImageView.image = UIImage(data:data)
+            menuImageView.contentMode = .scaleAspectFit
         }
         catch {
-            menuImage.image = nil
+            menuImageView.image = nil
         }
         imageCaption.isEnabled  = false
         imageCaption.text = showVendorTitles ? remoteAsset.caption : ""  // KEEP, its first
@@ -91,17 +89,27 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
             self.addcaption.isHidden = true
             self.useasisnocaption.isHidden = false
             
-           // self.useasis.isHidden = true
+            let scale : CGFloat = 1 / 1
             
-            self.animatedLabel.isHidden = true
-            self.menuImage.isHidden = true 
+            ///  put up animated preview
+            self.menuImageView.isHidden = true
+            self.animatedLabel.isHidden = false
+            webviewOverlay.isHidden  = false
+            let w = webviewOverlay.frame.width
             
-            webViewOverlay = animatedViewOf(frame:self.view.frame, size:menuImage.image!.size, imageurl: remoteAsset.localimagepath)
-            self.view.addSubview(webViewOverlay!)
+            let h = webviewOverlay.frame.height
+            let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  style='max-width: 100%; height: auto;' src='\(remoteAsset.localimagepath)' alt='\(remoteAsset.localimagepath) height='\(h * scale)' width='\(w * scale)' ></body></html5>"
+            
+            
+            webviewOverlay.scalesPageToFit = true
+            webviewOverlay.contentMode = .scaleAspectFit
+            webviewOverlay.loadHTMLString(html, baseURL: nil)
+            ///  end of animated preview overlay
+            
 
-            addDismissButtonToViewController(self , named:appTheme.dismissButtonImageName,#selector(dismisstapped))
-            
-            return
+//            addDismissButtonToViewController(self , named:appTheme.dismissButtonImageName,#selector(dismisstapped))
+//            
+//            return
         }
         
         addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))

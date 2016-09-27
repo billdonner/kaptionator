@@ -22,6 +22,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6AQ-mN-dpX">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="-1" maxX="0.0" maxY="0.0"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="auC-ig-Lkt">
                                     <size key="itemSize" width="0.0" height="0.0"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -211,14 +212,6 @@
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="line2" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SrN-3v-w1r">
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="44" id="OSZ-TG-Ymy"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="E4r-uE-xoB" firstAttribute="leading" secondItem="Scx-pE-D4j" secondAttribute="leading" id="6aY-eM-8Rh"/>
@@ -236,7 +229,6 @@
                                         <gestureRecognizers/>
                                         <connections>
                                             <outlet property="detailsImageView" destination="E4r-uE-xoB" id="BUY-dr-vpo"/>
-                                            <outlet property="line2Label" destination="SrN-3v-w1r" id="pg0-4H-Bu5"/>
                                             <outlet property="nameLabel" destination="Zxi-Rv-m1V" id="B23-d0-ya8"/>
                                         </connections>
                                     </tableViewCell>
@@ -257,6 +249,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KSs-8u-paQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="hAW-ok-kdU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-3390" y="-4093"/>
         </scene>
@@ -463,20 +456,17 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="On this tab you can see the full catalog of all the images that come with the app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zM9-tQ-eYW">
-                                        <frame key="frameInset" minY="130" width="343" height="43"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On this tab you can see the full catalog of all the images that come with the app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zM9-tQ-eYW">
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" ambiguous="YES" text="Choose an Image by tapping then make a Sticker for your Stickerz Collection, or move the Sticker into Messages" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="c8a-v7-4vc">
-                                        <frame key="frameInset" minY="178" width="343" height="454"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" text="Choose an Image by tapping then make a Sticker for your Stickerz Collection, or move the Sticker into Messages" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="c8a-v7-4vc">
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Animated images can not be captioned." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOq-Ot-MJm">
-                                        <frame key="frameInset" minY="637" width="343"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animated images can not be captioned." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOq-Ot-MJm">
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -549,7 +539,7 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="259" text="You can, (and should) add a caption to most images. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rhf-vi-7wQ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="259" verticalCompressionResistancePriority="749" text="You can, (and should) add a caption to most images. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rhf-vi-7wQ">
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -697,11 +687,6 @@
                                 </view>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="add sticker to iMessage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Tl-tS-AxC">
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NJC-Kk-Pcs">
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyh-fs-daL">
@@ -711,13 +696,22 @@
                                                     <constraint firstAttribute="width" secondItem="CnA-wW-HPt" secondAttribute="height" multiplier="1:1" id="pjD-tM-kbE"/>
                                                 </constraints>
                                             </imageView>
+                                            <webView hidden="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uMH-CP-lZu">
+                                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="uMH-CP-lZu" secondAttribute="height" multiplier="1:1" id="PAO-BN-bEd"/>
+                                                </constraints>
+                                            </webView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="CnA-wW-HPt" secondAttribute="bottom" constant="10" id="4mw-It-Ca1"/>
-                                            <constraint firstItem="CnA-wW-HPt" firstAttribute="leading" secondItem="zyh-fs-daL" secondAttribute="leading" id="5E7-MG-k2K"/>
-                                            <constraint firstAttribute="trailing" secondItem="CnA-wW-HPt" secondAttribute="trailing" constant="10" id="FLF-4S-AVt"/>
-                                            <constraint firstItem="CnA-wW-HPt" firstAttribute="top" secondItem="zyh-fs-daL" secondAttribute="top" id="GDL-jD-LCR"/>
+                                            <constraint firstAttribute="bottom" secondItem="CnA-wW-HPt" secondAttribute="bottom" constant="20" id="4mw-It-Ca1"/>
+                                            <constraint firstItem="CnA-wW-HPt" firstAttribute="leading" secondItem="zyh-fs-daL" secondAttribute="leading" constant="20" id="5E7-MG-k2K"/>
+                                            <constraint firstAttribute="trailing" secondItem="CnA-wW-HPt" secondAttribute="trailing" constant="20" id="FLF-4S-AVt"/>
+                                            <constraint firstItem="CnA-wW-HPt" firstAttribute="top" secondItem="zyh-fs-daL" secondAttribute="top" constant="20" id="GDL-jD-LCR"/>
+                                            <constraint firstItem="uMH-CP-lZu" firstAttribute="centerX" secondItem="CnA-wW-HPt" secondAttribute="centerX" id="HDW-XX-HSZ"/>
+                                            <constraint firstItem="uMH-CP-lZu" firstAttribute="centerY" secondItem="CnA-wW-HPt" secondAttribute="centerY" id="SbP-2d-Wmb"/>
+                                            <constraint firstItem="uMH-CP-lZu" firstAttribute="width" secondItem="CnA-wW-HPt" secondAttribute="height" multiplier="1:2" id="iOs-0Z-xtD"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1EL-Cb-Fe6">
@@ -727,9 +721,9 @@
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="go"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPACER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1EI-TK-4bd">
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a new sticker as-is or with a caption" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1EI-TK-4bd">
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPTIONS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wda-1J-Mgd">
@@ -739,11 +733,11 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uw2-Wb-c8h">
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                <state key="normal" title="Add Caption To Sticker">
+                                                <state key="normal" title="Add Caption">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="addCaptionToSticker:" destination="8NT-q7-zWI" eventType="touchUpInside" id="E1m-uC-Ve4"/>
@@ -751,11 +745,11 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SfP-iU-KS5">
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                <state key="normal" title="Use Sticker with No Caption">
+                                                <state key="normal" title="Use Sticker">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="useStickerNoCaptionPressed:" destination="8NT-q7-zWI" eventType="touchUpInside" id="3QB-MJ-Gve"/>
@@ -787,23 +781,20 @@
                             <constraint firstItem="dqk-YO-YES" firstAttribute="top" secondItem="dxW-lJ-Ifc" secondAttribute="bottom" constant="-20" id="Ddp-0R-2cJ"/>
                             <constraint firstItem="o6p-0W-fz3" firstAttribute="top" secondItem="dqk-YO-YES" secondAttribute="bottom" constant="-20" id="EEK-Lr-ubK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NJC-Kk-Pcs" secondAttribute="trailing" id="Qm8-ND-kWK"/>
-                            <constraint firstItem="9Tl-tS-AxC" firstAttribute="leading" secondItem="R4q-xY-iZy" secondAttribute="leadingMargin" constant="28" id="UPO-5Q-FTx"/>
-                            <constraint firstItem="9Tl-tS-AxC" firstAttribute="top" secondItem="dxW-lJ-Ifc" secondAttribute="bottom" constant="10" id="Xz6-Am-Fe1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9Tl-tS-AxC" secondAttribute="trailing" constant="28" id="hpm-PJ-1lf"/>
                             <constraint firstItem="NJC-Kk-Pcs" firstAttribute="top" secondItem="dxW-lJ-Ifc" secondAttribute="bottom" id="i7X-5f-qSI"/>
                             <constraint firstItem="dqk-YO-YES" firstAttribute="leading" secondItem="R4q-xY-iZy" secondAttribute="leadingMargin" constant="-20" id="rwg-r4-kkg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dqk-YO-YES" secondAttribute="trailing" constant="-20" id="wFa-Mf-h3p"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Admin Only -- Private" id="URi-sk-0gw"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="addcaption" destination="Uw2-Wb-c8h" id="WRA-Db-KNI"/>
                         <outlet property="animatedLabel" destination="Wda-1J-Mgd" id="dGR-ex-QZo"/>
                         <outlet property="imageCaption" destination="BMi-KU-eRj" id="QlT-Er-CHX"/>
-                        <outlet property="menuImage" destination="CnA-wW-HPt" id="Dx0-t7-d6z"/>
+                        <outlet property="menuImageView" destination="CnA-wW-HPt" id="Dx0-t7-d6z"/>
                         <outlet property="outerView" destination="zyh-fs-daL" id="Fce-GT-W94"/>
                         <outlet property="useasisnocaption" destination="SfP-iU-KS5" id="YIa-f7-u78"/>
+                        <outlet property="webviewOverlay" destination="uMH-CP-lZu" id="zcm-NI-7nF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ij-FW-62O" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -848,8 +839,8 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="hn1-3a-hhs" secondAttribute="trailing" id="Iql-HF-txM"/>
                                             <constraint firstItem="hn1-3a-hhs" firstAttribute="leading" secondItem="12b-XD-d3f" secondAttribute="leading" id="fOc-vO-ayJ"/>
-                                            <constraint firstItem="hn1-3a-hhs" firstAttribute="top" secondItem="12b-XD-d3f" secondAttribute="top" constant="-8" id="phD-AF-7fK"/>
-                                            <constraint firstAttribute="bottom" secondItem="hn1-3a-hhs" secondAttribute="bottom" constant="8" id="xvq-pB-8sq"/>
+                                            <constraint firstItem="hn1-3a-hhs" firstAttribute="top" secondItem="12b-XD-d3f" secondAttribute="top" id="phD-AF-7fK"/>
+                                            <constraint firstAttribute="bottom" secondItem="hn1-3a-hhs" secondAttribute="bottom" id="xvq-pB-8sq"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XJz-mV-vhF">
@@ -944,7 +935,7 @@
                         <outlet property="addcaption" destination="PWw-BF-ESg" id="2Ng-bA-95I"/>
                         <outlet property="animatedLabel" destination="xn4-B1-7Wn" id="1Gg-Qs-2Pp"/>
                         <outlet property="imageCaption" destination="OLy-dN-0oz" id="6KS-iE-Gqv"/>
-                        <outlet property="menuImage" destination="hn1-3a-hhs" id="7oi-y7-Yee"/>
+                        <outlet property="menuImageView" destination="hn1-3a-hhs" id="7oi-y7-Yee"/>
                         <outlet property="outerView" destination="12b-XD-d3f" id="kjR-Vv-YsR"/>
                         <outlet property="useasis" destination="eYF-KK-vF4" id="QKS-QM-pup"/>
                         <outlet property="useasisnocaption" destination="Cbk-s4-wx9" id="T27-1J-eNO"/>
@@ -975,21 +966,45 @@
                             </visualEffectView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ntc-hb-kVx">
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ddf-uA-Ot8">
+                                    <view contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ddf-uA-Ot8" userLabel="OuterView">
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ek7-tb-bXc">
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ek7-tb-bXc" secondAttribute="height" multiplier="1:1" id="IJd-tA-sOs"/>
                                                 </constraints>
                                             </imageView>
+                                            <webView hidden="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WLL-Dl-pFX">
+                                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="WLL-Dl-pFX" secondAttribute="height" multiplier="1:1" id="OU1-hn-AlF"/>
+                                                </constraints>
+                                            </webView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="ek7-tb-bXc" secondAttribute="trailing" id="7kL-jQ-0fI"/>
-                                            <constraint firstAttribute="bottom" secondItem="ek7-tb-bXc" secondAttribute="bottom" id="RQw-tG-QiL"/>
-                                            <constraint firstItem="ek7-tb-bXc" firstAttribute="leading" secondItem="Ddf-uA-Ot8" secondAttribute="leading" id="Y0L-WQ-ZnM"/>
-                                            <constraint firstItem="ek7-tb-bXc" firstAttribute="top" secondItem="Ddf-uA-Ot8" secondAttribute="top" id="rwz-v0-zjt"/>
+                                            <constraint firstAttribute="trailing" secondItem="ek7-tb-bXc" secondAttribute="trailing" constant="20" id="7kL-jQ-0fI"/>
+                                            <constraint firstItem="WLL-Dl-pFX" firstAttribute="centerX" secondItem="ek7-tb-bXc" secondAttribute="centerX" id="LVD-MR-DMP"/>
+                                            <constraint firstAttribute="bottom" secondItem="ek7-tb-bXc" secondAttribute="bottom" constant="20" id="RQw-tG-QiL"/>
+                                            <constraint firstItem="ek7-tb-bXc" firstAttribute="leading" secondItem="Ddf-uA-Ot8" secondAttribute="leading" constant="20" id="Y0L-WQ-ZnM"/>
+                                            <constraint firstItem="WLL-Dl-pFX" firstAttribute="width" secondItem="ek7-tb-bXc" secondAttribute="height" multiplier="1:2" id="iuL-Xm-V3S"/>
+                                            <constraint firstItem="WLL-Dl-pFX" firstAttribute="centerY" secondItem="ek7-tb-bXc" secondAttribute="centerY" id="jhA-HK-oO8"/>
+                                            <constraint firstItem="ek7-tb-bXc" firstAttribute="top" secondItem="Ddf-uA-Ot8" secondAttribute="top" constant="20" id="rwz-v0-zjt"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="iuL-Xm-V3S"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="iuL-Xm-V3S"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="iuL-Xm-V3S"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="LT7-el-4Qg">
                                         <subviews>
@@ -1003,9 +1018,9 @@
                                                 <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXY-oE-MYw">
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This sticker is in the Messages App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eXY-oE-MYw">
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="6aK-96-u1O">
@@ -1014,8 +1029,11 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        </variation>
                                                     </label>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Anj-Y5-KYV">
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Anj-Y5-KYV">
                                                         <connections>
                                                             <action selector="smallSwitchToggled:" destination="2yc-jg-Aom" eventType="valueChanged" id="o6n-wP-XVn"/>
                                                         </connections>
@@ -1024,8 +1042,11 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        </variation>
                                                     </label>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nkN-gj-Cgd">
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nkN-gj-Cgd">
                                                         <connections>
                                                             <action selector="mediumSwitchToggled:" destination="2yc-jg-Aom" eventType="valueChanged" id="ues-Ov-DQf"/>
                                                         </connections>
@@ -1034,8 +1055,11 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        </variation>
                                                     </label>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cO4-Ks-YR6">
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="cO4-Ks-YR6">
                                                         <connections>
                                                             <action selector="largeSwithToggled:" destination="2yc-jg-Aom" eventType="valueChanged" id="yKD-54-pJR"/>
                                                         </connections>
@@ -1047,7 +1071,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="heightClass=regular-widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPACER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aM3-Cf-zGR">
@@ -1087,8 +1111,9 @@
                         <outlet property="imageCaption" destination="atg-ml-LAn" id="Qez-wf-7hC"/>
                         <outlet property="largeSwitch" destination="cO4-Ks-YR6" id="ISq-lS-gwY"/>
                         <outlet property="mediumSwitch" destination="nkN-gj-Cgd" id="MqL-7z-R0z"/>
-                        <outlet property="menuImage" destination="ek7-tb-bXc" id="LS6-R1-KLc"/>
+                        <outlet property="menuImageView" destination="ek7-tb-bXc" id="LS6-R1-KLc"/>
                         <outlet property="smallSwitch" destination="Anj-Y5-KYV" id="cxu-dk-ces"/>
+                        <outlet property="webviewOverlay" destination="WLL-Dl-pFX" id="yBa-ha-K6v"/>
                         <segue destination="VKI-12-vb3" kind="unwind" identifier="UnwindToMessagesAppVC" unwindAction="unwindToMessagesAppViewController:" id="Uhj-uV-FKF"/>
                     </connections>
                 </viewController>
@@ -1115,11 +1140,6 @@
                                 </view>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="all the stickers you've made" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zm-Hh-2bq">
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mMZ-b0-pXb">
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="98c-BN-nth" userLabel="OuterView">
@@ -1129,13 +1149,22 @@
                                                     <constraint firstAttribute="width" secondItem="FER-9S-tva" secondAttribute="height" multiplier="1:1" id="KxL-gY-EgN"/>
                                                 </constraints>
                                             </imageView>
+                                            <webView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4cG-Sz-Eb9">
+                                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="4cG-Sz-Eb9" secondAttribute="height" multiplier="1:1" id="Vcd-wS-V0j"/>
+                                                </constraints>
+                                            </webView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="FER-9S-tva" firstAttribute="leading" secondItem="98c-BN-nth" secondAttribute="leading" id="9Bd-1F-5ze"/>
-                                            <constraint firstAttribute="trailing" secondItem="FER-9S-tva" secondAttribute="trailing" id="Gxa-al-0ZZ"/>
-                                            <constraint firstAttribute="bottom" secondItem="FER-9S-tva" secondAttribute="bottom" id="dcb-8d-6Kl"/>
-                                            <constraint firstItem="FER-9S-tva" firstAttribute="top" secondItem="98c-BN-nth" secondAttribute="top" id="eQm-J4-1Bo"/>
+                                            <constraint firstItem="FER-9S-tva" firstAttribute="leading" secondItem="98c-BN-nth" secondAttribute="leading" constant="20" id="9Bd-1F-5ze"/>
+                                            <constraint firstItem="4cG-Sz-Eb9" firstAttribute="centerY" secondItem="FER-9S-tva" secondAttribute="centerY" id="Bwa-vd-zpJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="FER-9S-tva" secondAttribute="trailing" constant="20" id="Gxa-al-0ZZ"/>
+                                            <constraint firstItem="4cG-Sz-Eb9" firstAttribute="centerX" secondItem="FER-9S-tva" secondAttribute="centerX" id="MeC-zY-OKi"/>
+                                            <constraint firstItem="4cG-Sz-Eb9" firstAttribute="width" secondItem="FER-9S-tva" secondAttribute="height" multiplier="1:2" id="TWA-5Q-17q"/>
+                                            <constraint firstAttribute="bottom" secondItem="FER-9S-tva" secondAttribute="bottom" constant="20" id="dcb-8d-6Kl"/>
+                                            <constraint firstItem="FER-9S-tva" firstAttribute="top" secondItem="98c-BN-nth" secondAttribute="top" constant="20" id="eQm-J4-1Bo"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UOO-5K-fJK">
@@ -1145,9 +1174,9 @@
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPACER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73l-Qx-yr1">
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resuse as-is or put back into Messages with a new caption" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="73l-Qx-yr1">
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPTIONS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9k-cC-CMY">
@@ -1158,11 +1187,11 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sV7-mU-wpq">
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                <state key="normal" title="Change Caption on Sticker">
+                                                <state key="normal" title="Change Caption">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="editStickerCaption:" destination="P8v-au-Qtf" eventType="touchUpInside" id="utl-7o-llG"/>
@@ -1174,7 +1203,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                 </variation>
                                                 <connections>
                                                     <action selector="moveToIMessage:" destination="P8v-au-Qtf" eventType="touchUpInside" id="Y54-7D-uMh"/>
@@ -1201,12 +1230,9 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1zm-Hh-2bq" firstAttribute="leading" secondItem="Gim-NM-HDk" secondAttribute="leadingMargin" constant="28" id="80j-zg-8Ka"/>
                             <constraint firstItem="mMZ-b0-pXb" firstAttribute="top" secondItem="1FH-tS-SFO" secondAttribute="bottom" id="DOI-I4-J80"/>
                             <constraint firstItem="EC1-Q6-orJ" firstAttribute="top" secondItem="mMZ-b0-pXb" secondAttribute="bottom" id="EaI-Lk-3FO"/>
-                            <constraint firstItem="1zm-Hh-2bq" firstAttribute="top" secondItem="1FH-tS-SFO" secondAttribute="bottom" id="G84-Xo-1uZ"/>
                             <constraint firstItem="EC1-Q6-orJ" firstAttribute="top" secondItem="VXW-Tz-aBF" secondAttribute="bottom" constant="-20" id="GbN-ja-ITl"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="1zm-Hh-2bq" secondAttribute="trailing" constant="28" id="Iiz-hQ-AFe"/>
                             <constraint firstItem="VXW-Tz-aBF" firstAttribute="top" secondItem="1FH-tS-SFO" secondAttribute="bottom" constant="-20" id="Ji8-rc-Gkw"/>
                             <constraint firstAttribute="leadingMargin" secondItem="mMZ-b0-pXb" secondAttribute="leading" id="OBr-cr-8zL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VXW-Tz-aBF" secondAttribute="trailing" constant="-20" id="hKM-gQ-L64"/>
@@ -1219,9 +1245,11 @@
                         <outlet property="animatedLabel" destination="R9k-cC-CMY" id="LbP-wC-xum"/>
                         <outlet property="editsticker" destination="sV7-mU-wpq" id="cLc-fx-WpY"/>
                         <outlet property="imageCaption" destination="i3w-04-Qk9" id="IXr-lF-BLn"/>
-                        <outlet property="menuImage" destination="FER-9S-tva" id="Ht4-eI-t4q"/>
+                        <outlet property="menuImageView" destination="FER-9S-tva" id="Ht4-eI-t4q"/>
                         <outlet property="moveimessage" destination="9rn-XU-0qq" id="QjL-hf-LdM"/>
                         <outlet property="outerView" destination="98c-BN-nth" id="Rkk-mE-Bl5"/>
+                        <outlet property="webviewOverlay" destination="4cG-Sz-Eb9" id="yry-BG-EgN"/>
+                        <segue destination="hAW-ok-kdU" kind="unwind" identifier="UnwindToCaptionedAppVC" unwindAction="unwindToCapationatedViewController:" id="o8L-Ds-xnp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="riR-gB-pfI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1345,14 +1373,12 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" ambiguous="YES" text="This tab shows which of your stickers are currently available in Messages." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AFf-e2-0hU">
-                                        <frame key="frameInset" minY="158" width="343" height="489"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="This tab shows which of your stickers are currently available in Messages." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AFf-e2-0hU">
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" text="You can reorder and delete entries to change the view in Messages " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7rq-PM-OAs">
-                                        <frame key="frameInset" minY="667" width="343"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="You can reorder and delete entries to change the view in Messages " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7rq-PM-OAs">
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -1473,7 +1499,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BackgroundImage" width="618" height="485"/>
+        <image name="BackgroundImage" width="341" height="256"/>
         <image name="CandidatesForBlur.png" width="384" height="80"/>
         <image name="Help" width="44" height="44"/>
         <image name="Home" width="44" height="44"/>
@@ -1483,7 +1509,7 @@
         <image name="backforportrait.png" width="840" height="840"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6bp-dS-sLd"/>
-        <segue reference="X63-RO-jMS"/>
+        <segue reference="wlE-A6-VUh"/>
+        <segue reference="Txi-IE-6DO"/>
     </inferredMetricsTieBreakers>
 </document>

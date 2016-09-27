@@ -19,6 +19,7 @@ get {
 class MasterViewController: UIViewController {
     
     let  offColor:UIColor  = UIColor.lightGray
+    
     @IBAction func unwindToMaster(_ segue: UIStoryboardSegue)  {
     }
     
@@ -104,11 +105,12 @@ class MasterViewController: UIViewController {
         print("-------Running from ",documentsUrl," ---------")
         super.viewDidLoad()
         
-        
-        let chnage = false//Versions().versionCheck()
-        if chnage {
-            capSpace.reset()
-        } else {
+//        
+//        let chnage = false//Versions().versionCheck()
+//        if chnage {
+//            capSpace.reset()
+//        } else {
+//            
             // restore or create captions db
             if let _ = try? capSpace.restoreAppspaceFromDisk() {
                 
@@ -116,7 +118,7 @@ class MasterViewController: UIViewController {
             } else { // nothing there
                 capSpace.reset()
             }
-        }
+        //}
         capSpace.saveToDisk()
         // restore or create shared memspace db for messages extension
         if let _ = try? restoreSharespaceFromDisk() {

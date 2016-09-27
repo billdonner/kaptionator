@@ -36,7 +36,7 @@ func animatedViewOf(frame:CGRect, size:CGSize, imageurl:String) -> UIWebView {
     let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  src='\(imageurl)' height='\(frem.height)' width='\(frem.width)'  alt='\(imageurl)' /</body></html5>"
     let webViewOverlay = UIWebView(frame:frem)
     webViewOverlay.scalesPageToFit = true
-    webViewOverlay.contentMode = .scaleAspectFill
+    webViewOverlay.contentMode = .scaleToFill
     webViewOverlay.loadHTMLString(html, baseURL: nil)
     return webViewOverlay
 }

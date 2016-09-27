@@ -18,10 +18,8 @@ final class MessagesAppViewController: UIViewController   {
     
     @IBOutlet internal  var tableView: UITableView!
     
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        // self.showAll = true
     }
     
     @IBAction func unwindToMessagesAppViewController(_ segue: UIStoryboardSegue)  {
@@ -33,10 +31,11 @@ final class MessagesAppViewController: UIViewController   {
         
         print ("**********removed all cached images because MessagesAppViewController short on memory")
     }
-    
+    override func didMove(toParentViewController parent: UIViewController?) {
+        refreshFromMemSpace()
+    }
     //MARK:- Dispatching to External ViewControllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier ==  "MessagesAppCellTapMenuID"{
             if let indexPath = theSelectedIndexPath {
                 if let avc =  segue.destination as? MessagesAppMenuViewController   {
@@ -44,12 +43,12 @@ final class MessagesAppViewController: UIViewController   {
                     avc.captionedEntry = stickerz [indexPath.row]
                 }
             }}}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.backgroundColor = appTheme.backgroundColor
-        
     }
     fileprivate  func refreshFromMemSpace(){
         var items = memSpace.items()
@@ -130,7 +129,7 @@ extension MessagesAppViewController : UITableViewDataSource {
         let ce = stickerz [indexPath.row]
         //show the primitive title
         let line2 = ce.stickerOptions.description()
-        cell.paint(name:ce.caption,line2:line2)
+        cell.paint2(name:ce.caption,line2:line2)
         
         /// go get the image from our cache and then the net
         let path =  ce.stickerPaths[0] // ?????

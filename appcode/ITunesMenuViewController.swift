@@ -23,7 +23,7 @@ class ITunesMenuViewController: UIViewController,AddDismissButton {
     @IBOutlet weak var veryBottomButton: UIButton!
     private var isAnimated  = false
     fileprivate var changesMade: Bool = false
-    @IBOutlet weak var menuImage: UIImageView!
+    @IBOutlet weak var menuImageView: UIImageView!
     @IBOutlet weak var imageCaption: UITextField!
     @IBOutlet weak var useasis: UIButton!
     @IBOutlet weak var useasisnocaption: UIButton!
@@ -75,11 +75,11 @@ class ITunesMenuViewController: UIViewController,AddDismissButton {
         isAnimated = remoteAsset.options.contains(.generateasis)
         do {
             let data = try  Data(contentsOf: URL(string:remoteAsset.localimagepath )!)
-            menuImage.image = UIImage(data:data)
-            menuImage.contentMode = .scaleAspectFit
+            menuImageView.image = UIImage(data:data)
+            menuImageView.contentMode = .scaleAspectFit
         }
         catch {
-            menuImage.image = nil
+            menuImageView.image = nil
         }
         imageCaption.isEnabled  = false
         imageCaption.text = showVendorTitles ? remoteAsset.caption : ""
@@ -92,14 +92,14 @@ class ITunesMenuViewController: UIViewController,AddDismissButton {
         imageCaption.keyboardAppearance = .dark
      
         if isAnimated {
-            self.menuImage.isHidden = true
+            self.menuImageView.isHidden = true
             self.addcaption.isHidden = true
             
             self.useasisnocaption.isHidden = true
             self.animatedLabel.isHidden = true
             
             
-            webViewOverlay = animatedViewOf(frame:self.view.frame, size:menuImage.image!.size, imageurl: remoteAsset.localimagepath)
+            webViewOverlay = animatedViewOf(frame:self.view.frame, size:menuImageView.image!.size, imageurl: remoteAsset.localimagepath)
             self.view.addSubview(webViewOverlay!)
             addDismissButtonToViewController(self , named:appTheme.dismissButtonImageName,#selector(dismisstapped))
             

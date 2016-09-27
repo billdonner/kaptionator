@@ -23,8 +23,9 @@
         super.init(coder: aDecoder)
         // self.showAll = true
     }
-    
     @IBAction func unwindToCapationatedViewController(_ segue: UIStoryboardSegue)  {
+        refreshFromCapSpace()
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -157,9 +158,9 @@
         let ce = stickerz [indexPath.row]
         //show the primitive title
         let showname = ce.caption 
-        let line2 = ce.stickerOptions.description()
+        //let line2 = ce.stickerOptions.description()
         
-        cell.paint(name:showname,line2:line2)
+        cell.paint(name:showname)
         
         
         /// go get the image from our cache and then the net
@@ -224,7 +225,10 @@
         if !alreadyIn {
         // keep old and make another
         let _ = AppCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath,  caption: caption,  options: self.stickerOptions )
-        }
+        
+           let _ = try? prepareStickers( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath,  caption: caption,  options: self.stickerOptions)
+            
+    }
     }
     
     fileprivate mutating func moveToIMessage() { // only from capspace

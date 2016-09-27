@@ -17,22 +17,19 @@ class CaptionedMenuViewController: UIViewController, AddDismissButton {
     var captionedEntry:AppCE! // must be set
     var delegate: CaptionedMenuViewDelegate?  // mig
     
-    
-    @IBAction func unwindToCaptionedMenuViewController(_ segue: UIStoryboardSegue)  {
-    }
+    @IBAction func unwindToCaptionedMenuViewController(_ segue: UIStoryboardSegue)  {}
     private var isAnimated  = false
     fileprivate var changesMade: Bool = false
     
     @IBOutlet weak var outerView: UIView!
     @IBOutlet weak var animatedLabel: UILabel!
-    @IBOutlet weak var menuImage: UIImageView!
+    @IBOutlet weak var menuImageView: UIImageView!
+    @IBOutlet weak var webviewOverlay: UIWebView!
     @IBOutlet weak var imageCaption: UITextField!
-   
-   // @IBOutlet weak var addwithnewcap: UIButton!
+    
     @IBOutlet weak var editsticker: UIButton!
     @IBOutlet weak var moveimessage: UIButton!
     
-    var webViewOverlay: UIWebView?
       //MARK:- MENU TAP ACTIONS 
 
     
@@ -61,20 +58,18 @@ class CaptionedMenuViewController: UIViewController, AddDismissButton {
         
         // Do any additional setup after loadingthe view.
         
-       // addwithnewcap.setTitleColor( appTheme.buttonTextColor, for: .normal)
         moveimessage.setTitleColor( appTheme.buttonTextColor, for: .normal)
         editsticker.setTitleColor( appTheme.buttonTextColor, for: .normal)
-       //  veryBottomButton.setTitleColor( appTheme.buttonTextColor, for: .normal)
         
         isAnimated = captionedEntry.stickerOptions.contains(.generateasis)
         
         do {
         let data = try  Data(contentsOf: URL(string:captionedEntry.localimagepath )!)
-            menuImage.image = UIImage(data:data)
-            menuImage.contentMode = .scaleAspectFit
+            menuImageView.image = UIImage(data:data)
+            menuImageView.contentMode = .scaleAspectFit
         }
         catch {
-            menuImage.image = nil
+            menuImageView.image = nil
         }
         
         imageCaption.text =     captionedEntry.caption  
@@ -85,25 +80,32 @@ class CaptionedMenuViewController: UIViewController, AddDismissButton {
         imageCaption.textColor = .white
         imageCaption.backgroundColor = .clear
         if isAnimated {
-            menuImage.isHidden = true
-           // addwithnewcap.isHidden = true
             editsticker.isHidden = true
-            animatedLabel.isHidden = false // HACK
             
+            let scale : CGFloat = 1 / 1
             
-            webViewOverlay = animatedViewOf(frame:self.view.frame, size:menuImage.image!.size, imageurl: captionedEntry.localimagepath)
-            self.view.addSubview(webViewOverlay!)
+            ///  put up animated preview
+            self.menuImageView.isHidden = true
+            self.animatedLabel.isHidden = false
+            webviewOverlay.isHidden  = false
+            let w = webviewOverlay.frame.width
             
-             addDismissButtonToViewController(self , named:appTheme.dismissButtonImageName,#selector(dismisstapped))
+            let h = webviewOverlay.frame.height
+            let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  style='max-width: 100%; height: auto;' src='\(captionedEntry.localimagepath)' alt='\(captionedEntry.localimagepath) height='\(h * scale)' width='\(w * scale)' ></body></html5>"
             
-            return
+            webviewOverlay.scalesPageToFit = true
+            webviewOverlay.contentMode = .scaleAspectFit
+            webviewOverlay.loadHTMLString(html, baseURL: nil)
+            ///  end of animated preview overlay
         }
         
         addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped)) 
         
     }
     func dismisstapped(_ s: AnyObject) {
-        dismiss(animated: true, completion: nil)
+        //// dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "UnwindToCaptionedAppVC", sender: s)
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -118,10 +120,7 @@ extension CaptionedMenuViewController : UITextFieldDelegate {
         changesMade = true
         
         delegate?.cloneWithCaption(captionedEntry:self.captionedEntry,  caption: textField.text ?? "<!none!>")
-        
-        
         textField.resignFirstResponder()
-        
         imageCaption.isEnabled  = false
         dismiss(animated: true,completion:nil)
         return true

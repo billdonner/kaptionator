@@ -107,12 +107,16 @@ extension ModelDataDisplayStyle {
             return CGSize(width: collectionView.bounds.width, height: 100)
         case .grid:
             
-            if traitCollection.verticalSizeClass != .regular ||
-                traitCollection.horizontalSizeClass != .regular {
-                return CGSize(width: 150, height: 150) //iphone
+            if traitCollection.verticalSizeClass == .regular &&
+                traitCollection.horizontalSizeClass == .regular {
+                return CGSize(width: 250, height: 250) //ipad
             }
-            
-            return CGSize(width: 200, height: 200)  // ipad
+            if traitCollection.verticalSizeClass == .compact &&
+                traitCollection.horizontalSizeClass == .regular {
+                return CGSize(width: 200, height: 200) //7plus
+            }
+            return CGSize(width: 150, height: 150) //iphone
+        
         }
     }
     
@@ -121,7 +125,7 @@ extension ModelDataDisplayStyle {
         case .table:
             return UIEdgeInsets.zero
         case .grid:
-            return UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+            return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         }
     }
     

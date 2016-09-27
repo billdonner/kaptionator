@@ -36,7 +36,7 @@ class TableDataCell: UITableViewCell {
         )
     }
     // methods to adjust cell contents
-    func paint(name:String,line2:String ) {
+    func paint2(name:String,line2:String ) {
         
         nameLabel.text = name
         nameLabel.textColor = appTheme.textColor
@@ -44,7 +44,12 @@ class TableDataCell: UITableViewCell {
         line2Label.text = line2
         line2Label.textColor = appTheme.textColor
     }
-    
+    func paint(name:String ) {
+        
+        nameLabel.text = name
+        nameLabel.textColor = appTheme.textColor
+        
+    }
     
     func paintImage(path: String) {
         do {

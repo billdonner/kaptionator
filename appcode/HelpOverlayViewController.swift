@@ -15,12 +15,12 @@ final class WebsiteOverlayViewController:InnerOverlayViewController {
         return URLRequest(url:URL(string:"http://shtikerz.com/candidatez/")!)
     }
 }
-final class AltHelpOverlayViewController:InnerOverlayViewController {
+final class HelpOverlayViewController:InnerOverlayViewController {
     override func getreq () -> URLRequest {
       return URLRequest(url:URL(string:"http://shtikerz.com/candidatez/apphelp.html")!)
     }
 }
-final class HelpOverlayViewController:InnerOverlayViewController {
+final class AltHelpOverlayViewController:InnerOverlayViewController {
     override func getreq () -> URLRequest {
         return URLRequest(url:URL(string:"http://shtikerz.com/candidatez/help.html")!)
     }

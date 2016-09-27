@@ -13,14 +13,18 @@ protocol MessagesAppMenuViewDelegate {
 }
 
 class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
+    
+
+    
     var captionedEntry:SharedCE! // must be set
     var delegate: MessagesAppMenuViewDelegate?  // mig
     @IBAction func unwindToMessagesAppMenuViewController(_ segue: UIStoryboardSegue)  {}
     
     private var isAnimated  = false
     fileprivate var changesMade: Bool = false
+    @IBOutlet weak var webviewOverlay: UIWebView!
     
-    @IBOutlet weak var menuImage: UIImageView!
+    @IBOutlet weak var menuImageView: UIImageView!
     
     @IBOutlet weak var imageCaption: UITextField!
     
@@ -96,7 +100,9 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
         }
     }
  
-    var webViewOverlay: UIWebView?
+    
+    
+    
     @IBAction func websitetapped(_ sender: AnyObject) {
         IOSSpecialOps.openwebsite(self) 
     }
@@ -121,14 +127,8 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
         
         // Do any additional setup after loading the view.
         
-        //openinimessage.setTitleColor( appTheme.buttonTextColor, for: .normal)
-      //  removefromimessage.setTitleColor( appTheme.buttonTextColor, for: .normal)
-        //veryBottomButton.setTitleColor( appTheme.buttonTextColor, for: .normal)
         let options = captionedEntry.stickerOptions
         isAnimated = options.contains(.generateasis)
-        
-       
-        
         imageCaption.isEnabled  = false
         
         imageCaption.textColor = .white
@@ -136,36 +136,49 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
 
         do {
             let data = try  Data(contentsOf: URL(string:captionedEntry.localimagepath)!)
-            menuImage.image = UIImage(data:data)
-            menuImage.contentMode = .scaleAspectFit
+            menuImageView.image = UIImage(data:data)
+            menuImageView.contentMode = .scaleAspectFit
         }
         catch {
-            menuImage.image = nil
+            menuImageView.image = nil
         }
         
         imageCaption.text =  captionedEntry.caption 
         
         
         
-        let imgsize = menuImage.image!.size
+        let imgsize = menuImageView.image!.size
         
             smallSwitch.isEnabled = false
             mediumSwitch.isEnabled = false
             largeSwitch.isEnabled = false
-       
-            //if imgsize.width >= CGFloat(618) {
-                largeSwitch.isOn = checkForFileVariant(captionedEntry,"L")
-            //}
-            
-            //if imgsize.width >= CGFloat(408) {
-                mediumSwitch.isOn = checkForFileVariant(captionedEntry,"M")
-            //}
-            
-            //if imgsize.width >= CGFloat(300) {
-                smallSwitch.isOn = checkForFileVariant(captionedEntry,"S")
-//}
         
-        if !isAnimated {
+     
+        if isAnimated {
+            
+            
+            smallSwitch.isOn = false
+            mediumSwitch.isOn = false
+            largeSwitch.isOn = false
+            
+            if imgsize.width >= CGFloat(618) {
+                largeSwitch.isOn = true
+            } else
+            
+            if imgsize.width >= CGFloat(408) {
+                mediumSwitch.isOn = true
+            } else 
+            
+            if imgsize.width >= CGFloat(300) {
+                smallSwitch.isOn = true
+            }
+            
+        } else {
+        
+            largeSwitch.isOn = checkForFileVariant(captionedEntry,"L")
+            mediumSwitch.isOn = checkForFileVariant(captionedEntry,"M")
+            smallSwitch.isOn = checkForFileVariant(captionedEntry,"S")
+            
             if imgsize.width >= CGFloat(618) {
                 largeSwitch.isEnabled = true
             }
@@ -182,15 +195,23 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
         
        
         if isAnimated {
+            //
+           let scale : CGFloat = 1 / 1
             
-            self.menuImage.isHidden = true
+            ///  put up animated preview
+            self.menuImageView.isHidden = true
             self.animatedLabel.isHidden = false
-        
-            webViewOverlay = animatedViewOf(frame:self.view.frame, size:menuImage.image!.size, imageurl: captionedEntry.localimagepath)
-            self.view.addSubview(webViewOverlay!)
-            addDismissButtonToViewController(self , named:appTheme.dismissButtonImageName,#selector(dismisstapped))
+            webviewOverlay.isHidden  = false
+            let w = webviewOverlay.frame.width
             
-            return
+            let h = webviewOverlay.frame.height
+            let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  style='max-width: 100%; height: auto;' src='\(captionedEntry.localimagepath)' alt='\(captionedEntry.localimagepath) height='\(h * scale)' width='\(w * scale)' ></body></html5>"
+           
+            webviewOverlay.scalesPageToFit = true
+            webviewOverlay.contentMode = .scaleAspectFit
+            webviewOverlay.loadHTMLString(html, baseURL: nil)
+           ///  end of animated preview overlay
+            
         }
         
         addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
