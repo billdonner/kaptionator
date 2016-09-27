@@ -159,7 +159,7 @@ do {
             }
             // here make the largest sticker possible and add to shared space
             let _ = try prepareStickers (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: options )
-            
+            memSpace.saveToDisk()   
         }else {
             // already in, lets just mark new sizrs and caption
     }

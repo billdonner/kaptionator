@@ -1006,7 +1006,7 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="LT7-el-4Qg">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LT7-el-4Qg">
                                         <subviews>
                                             <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="12" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="atg-ml-LAn">
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -1167,7 +1167,7 @@
                                             <constraint firstItem="FER-9S-tva" firstAttribute="top" secondItem="98c-BN-nth" secondAttribute="top" constant="20" id="eQm-J4-1Bo"/>
                                         </constraints>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UOO-5K-fJK">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="UOO-5K-fJK">
                                         <subviews>
                                             <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter caption" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="24" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="i3w-04-Qk9">
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -1509,7 +1509,7 @@
         <image name="backforportrait.png" width="840" height="840"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wlE-A6-VUh"/>
-        <segue reference="Txi-IE-6DO"/>
+        <segue reference="6bp-dS-sLd"/>
+        <segue reference="X63-RO-jMS"/>
     </inferredMetricsTieBreakers>
 </document>

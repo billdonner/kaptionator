@@ -68,6 +68,7 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
         } else {  // delete the image
             unprepareStickers(ce,"S")
                  }
+        memSpace.saveToDisk()
     }
     @IBAction func mediumSwitchToggled(_ sender: AnyObject) {
         let ce = captionedEntry!
@@ -82,7 +83,9 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
             }
         } else {  // delete the image
             unprepareStickers(ce,"M")
-        }    }
+        }
+        memSpace.saveToDisk()
+    }
     
     @IBAction func largeSwithToggled(_ sender: AnyObject) {
         let ce = captionedEntry!
@@ -98,6 +101,8 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
         } else {  // delete the image
             unprepareStickers(ce,"L")
         }
+        
+        memSpace.saveToDisk()
     }
  
     

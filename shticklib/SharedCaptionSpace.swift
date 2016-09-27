@@ -108,7 +108,7 @@ struct SharedCaptionSpace {
     mutating func add(ce:SharedCE) {
         
         entries.append(ce)
-        saveToDisk()
+       // saveToDisk()
     }
     func findIdx(id:String) -> Int {
         var idx = 0

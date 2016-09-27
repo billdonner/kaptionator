@@ -227,7 +227,7 @@
         let _ = AppCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath,  caption: caption,  options: self.stickerOptions )
         
            let _ = try? prepareStickers( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath,  caption: caption,  options: self.stickerOptions)
-            
+           memSpace.saveToDisk()
     }
     }
     
@@ -248,7 +248,7 @@
                 // now pass the filenames into the shared space
                 // ce.localimagepath = url.absoluteString // dink with this
                 let _ = try prepareStickers( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath,  caption: self.caption,  options: options)
-                
+                memSpace.saveToDisk()
             }
             catch {
                 print("could not makemade sticker file urls \(localimagepath)")

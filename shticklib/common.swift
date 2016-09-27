@@ -109,7 +109,7 @@ get {
 
 func restoreSharespaceFromDisk () throws  {
     let suite = SharedMemDataSpace
-    
+    memSpace.reset()
     if  let defaults = UserDefaults(suiteName: suite),
         let allcaptions = defaults.object(forKey: kAllCaptions) as? JSONArray,
         let version = defaults.object(forKey: kVersion) {
@@ -143,6 +143,7 @@ func restoreSharespaceFromDisk () throws  {
               
             }
         }
+        memSpace.saveToDisk()
     }
     else {
         print("**** \(suite) restoreFromDisk UserDefaults failure")
