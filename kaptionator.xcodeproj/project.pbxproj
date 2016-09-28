@@ -284,6 +284,8 @@
 		8810D0021D53C536009BA9B3 /* kaptionatorMessageExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kaptionatorMessageExtension.entitlements; sourceTree = "<group>"; };
 		881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesViewController.swift; sourceTree = "<group>"; };
 		882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCaptionSpace.swift; sourceTree = "<group>"; };
+		8876DE041D9C312200F211A5 /* candidatez copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "candidatez copy-Info.plist"; path = "/Users/billdonner/Documents/kaptionator/candidatez copy-Info.plist"; sourceTree = "<absolute>"; };
+		8876DE161D9C312800F211A5 /* candidatezMessagesExtension copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "candidatezMessagesExtension copy-Info.plist"; path = "/Users/billdonner/Documents/kaptionator/candidatezMessagesExtension copy-Info.plist"; sourceTree = "<absolute>"; };
 		889FB7091D93785B0064B4C9 /* CandidatesForBlur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CandidatesForBlur.png; sourceTree = "<group>"; };
 		889FB70A1D93785B0064B4C9 /* StickerzForBlur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StickerzForBlur.png; sourceTree = "<group>"; };
 		889FB70B1D93785B0064B4C9 /* MessagesForBlur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MessagesForBlur.png; sourceTree = "<group>"; };
@@ -529,6 +531,7 @@
 				88AEA5B31D514B53006E5C70 /* Assets.xcassets */,
 				88AEA5B51D514B53006E5C70 /* LaunchScreen.storyboard */,
 				88AEA5B81D514B54006E5C70 /* Info.plist */,
+				8876DE041D9C312200F211A5 /* candidatez copy-Info.plist */,
 			);
 			path = candidatez;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 		88AEA6311D514C8D006E5C70 /* candidatezMessagesExtension */ = {
 			isa = PBXGroup;
 			children = (
+				8876DE161D9C312800F211A5 /* candidatezMessagesExtension copy-Info.plist */,
 				8810D0001D53C4D2009BA9B3 /* candidatezMessagesExtension.entitlements */,
 				88AEA6371D514C8D006E5C70 /* Assets.xcassets */,
 				88AEA6391D514C8D006E5C70 /* Info.plist */,
@@ -777,7 +781,6 @@
 					};
 					88AEA5A91D514B53006E5C70 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = X2PQYA6S48;
 						DevelopmentTeamName = "Bill Donner";
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -835,7 +838,6 @@
 					};
 					88AEA62E1D514C8D006E5C70 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = X2PQYA6S48;
 						DevelopmentTeamName = "Bill Donner";
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -1388,10 +1390,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = candidatez/candidatez.entitlements;
-				DEVELOPMENT_TEAM = X2PQYA6S48;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = candidatez/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.candidatez;
+				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.candidatez;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1403,10 +1405,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = candidatez/candidatez.entitlements;
-				DEVELOPMENT_TEAM = X2PQYA6S48;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = candidatez/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.candidatez;
+				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.candidatez;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1534,10 +1536,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_ENTITLEMENTS = candidatezMessagesExtension/candidatezMessagesExtension.entitlements;
-				DEVELOPMENT_TEAM = X2PQYA6S48;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = candidatezMessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.candidatez.MessagesExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.candidatez.MessagesExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -1549,10 +1551,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_ENTITLEMENTS = candidatezMessagesExtension/candidatezMessagesExtension.entitlements;
-				DEVELOPMENT_TEAM = X2PQYA6S48;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = candidatezMessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.candidatez.MessagesExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.candidatez.MessagesExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;

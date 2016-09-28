@@ -19,9 +19,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.05</string>
+	<string>1.06</string>
 	<key>CFBundleVersion</key>
-	<string>53</string>
+	<string>55</string>
 	<key>EXTENSION-SCHEME</key>
 	<string>Candidatez</string>
 	<key>LEFT-BBI-NAME</key>
@@ -38,7 +38,7 @@
 	<key>REMOTE-WEBSITE-URL</key>
 	<string>http://shtikerz.com/candidatez</string>
 	<key>SHARED-INTERAPP-DATA</key>
-	<string>group.com.midnightrambler.candidatez</string>
+	<string>group.com.martoons.candidatez</string>
 	<key>SHOW-HIDDEN-FUNCTIONS</key>
 	<false/>
 	<key>UIFileSharingEnabled</key>

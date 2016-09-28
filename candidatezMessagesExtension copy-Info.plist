@@ -19,7 +19,7 @@
 	<key>CFBundlePackageType</key>
 	<string>XPC!</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.06</string>
+	<string>1.05</string>
 	<key>CFBundleVersion</key>
 	<string>55</string>
 	<key>EXTENSION-SCHEME</key>
@@ -32,6 +32,6 @@
 		<string>com.apple.message-payload-provider</string>
 	</dict>
 	<key>SHARED-INTERAPP-DATA</key>
-	<string>group.com.martoons.candidatez</string>
+	<string>group.com.midnightrambler.candidatez</string>
 </dict>
 </plist>

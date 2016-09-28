@@ -163,7 +163,7 @@ extension ITunesViewController : UICollectionViewDataSource {
     }
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "ModelDataCell", for: indexPath  ) as! ModelDataCell // Create the cell from the storyboard cell
+        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "CatalogDataCell", for: indexPath  ) as! CatalogDataCell // Create the cell from the storyboard cell
         
         let ra = remSpace.itemAt(indexPath.row)
         

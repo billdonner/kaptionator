@@ -54,30 +54,29 @@ final class CatalogViewController: UIViewController  {
     
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         super.willTransition(to: newCollection, with: coordinator)
-        if styleForTraitCollection(newCollection) != styleForTraitCollection(traitCollection) {
-            collectionView.reloadData() // Reload cells to adopt the new style
-        }
+//        if styleForTraitCollection(newCollection) != styleForTraitCollection(traitCollection) {
+//            collectionView.reloadData() // Reload cells to adopt the new style
+//        }
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        if styleForTraitCollection(traitCollection) == .table {
-            flowLayout.invalidateLayout() // Called to update the cell sizes to fit the new collection view width
-        }
+//        if styleForTraitCollection(traitCollection) == .table {
+//            flowLayout.invalidateLayout() // Called to update the cell sizes to fit the new collection view width
+//        }
     }
     
     override func viewDidLoad() {
-            self.collectionView.backgroundColor = appTheme.backgroundColor
             super.viewDidLoad()
             collectionView.delegate = self
             collectionView.dataSource = self
-        collectionView.alpha = 0 // start as invisible
-        
+            collectionView.alpha = 0 // start as invisible
+        print ("Collection view size \(collectionView.contentSize)")
         assert( stickerPackListFileURL != nil)
             //  only read the catalog if we have to
             do {
                 try RemSpace.restoreRemspaceFromDisk()
-                print("remSpace restored, \(RemSpace.itemCount()) items")
+                print("RemSpace restored, \(RemSpace.itemCount()) items")
                 phase2 ()
             }  catch {
                 phase1()
@@ -96,9 +95,10 @@ extension CatalogViewController : UICollectionViewDataSource {
     }
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "ModelDataCell", for: indexPath  ) as! ModelDataCell // Create the cell from the storyboard cell
+        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "CatalogDataCell", for: indexPath  ) as! CatalogDataCell // Create the cell from the storyboard cell
         
         let ra = RemSpace.itemAt(indexPath.row)
+        print("cell at \(indexPath.row) is sized \(cell.frame.size)")
         
         //show the primitive title
         if showVendorTitles {
@@ -118,7 +118,7 @@ extension CatalogViewController : UICollectionViewDataSource {
 }
 //MARK: UICollectionViewDelegateFlowLayout incorporates didSelect....
 extension CatalogViewController : UICollectionViewDelegateFlowLayout {
-    
+    //UICollectionViewDelegateFlowLayout
     //    func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
     //        return false
     //    }
@@ -132,16 +132,40 @@ extension CatalogViewController : UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return styleForTraitCollection(traitCollection).itemSizeInCollectionView(collectionView)
+        
+        
+        let traitCollection = collectionView.traitCollection
+        
+        if traitCollection.verticalSizeClass == .regular &&
+            traitCollection.horizontalSizeClass == .regular {
+            return CGSize(width: 250, height: 250) //ipad
+        }
+        if traitCollection.verticalSizeClass == .compact &&
+            traitCollection.horizontalSizeClass == .regular {
+            return CGSize(width: 200, height: 200) //7plus in landscape
+        }
+        return CGSize(width: 150, height: 150) //iphone vert
+    }
+// CGSize(width:4, height:4)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return CGFloat(4)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize.zero
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+         return CGSize.zero
+    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return styleForTraitCollection(traitCollection).collectionViewEdgeInsets
+        
+        return UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
     }
-    
+//
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return styleForTraitCollection(traitCollection).collectionViewLineSpacing
+        return 8
     }
+
     
 }
 // MARK: Delegates for actions from our associated menu

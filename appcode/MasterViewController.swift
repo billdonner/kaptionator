@@ -59,9 +59,9 @@ class MasterViewController: UIViewController {
         super.willTransition(to: newCollection, with: coordinator)
         
         //  topStackLine.isHidden = newCollection.verticalSizeClass == .compact
-        if styleForTraitCollection(newCollection) != styleForTraitCollection(traitCollection) {
+        //if styleForTraitCollection(newCollection) != styleForTraitCollection(traitCollection) {
             // // Reload cells to adopt the new style
-        }
+        //}
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -115,9 +115,14 @@ class MasterViewController: UIViewController {
         self.currentViewController = self.storyboard?.instantiateViewController(withIdentifier: vcid )
         self.currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false
         self.addChildViewController(self.currentViewController!)
+    
+    
+    
+    
         self.addSubview(subView: self.currentViewController!.view, toView: self.containerView)
         self.showCatalogViewController = self.currentViewController
-        
+    
+    self.currentViewController!.didMove(toParentViewController: self)
         self.activityIndicatorView.stopAnimating()
         
         coloredSpacer.backgroundColor = appTheme.catalogColor
