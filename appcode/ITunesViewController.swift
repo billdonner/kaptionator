@@ -214,7 +214,7 @@ extension AppCE  {
     fileprivate static func makeNewCaptionITunes(   from ra:RemoteAsset, caption:String,id:String) {
         // make captionated entry from remote asset
         
-        let alreadyIn = capSpace.findMatchingAsset(path: ra.localimagepath, caption: caption)
+        let alreadyIn = AppCaptionSpace.findMatchingAsset(path: ra.localimagepath, caption: caption)
         if !alreadyIn {
             let _ = AppCaptionSpace.make (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: ra.options)
         }

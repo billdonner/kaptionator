@@ -18,7 +18,7 @@ class SFViewController: SFSafariViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.done))
-        self.navigationItem.title = remSpace.catalogTitle
+       // self.navigationItem.title = remSpace.catalogTitle
     }
 }
 

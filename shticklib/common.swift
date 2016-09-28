@@ -22,10 +22,7 @@ let kTitle = "title"
 let kID = "id"
 let kRemoteURL = "remoteurl"
 
-
-
-
-let RemoteAssetsDataSpace = "sharedRemspace"
+let RemoteAssetsDataSpace = "SharedRemspace"
 
 // captionated entries - are stashed in either of two places - in the app, or in the shared memory with iMessage
 
@@ -109,7 +106,7 @@ get {
 
 func restoreSharespaceFromDisk () throws  {
     let suite = SharedMemDataSpace
-    memSpace.reset()
+    SharedCaptionSpace.reset()
     if  let defaults = UserDefaults(suiteName: suite),
         let allcaptions = defaults.object(forKey: kAllCaptions) as? JSONArray,
         let version = defaults.object(forKey: kVersion) {
@@ -139,11 +136,11 @@ func restoreSharespaceFromDisk () throws  {
                                             caption:  captiontext,
                                             options: options )
                 
-                let _ = memSpace.add(ce: t)
+                let _ = SharedCaptionSpace.add(ce: t)
               
             }
         }
-        memSpace.saveToDisk()
+        SharedCaptionSpace.saveData()  //add calls it over and; over
     }
     else {
         print("**** \(suite) restoreFromDisk UserDefaults failure")

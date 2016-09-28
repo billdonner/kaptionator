@@ -15,17 +15,13 @@ import Messages
 final class SchtickerzBrowserViewController : MSStickerBrowserViewController {
     var stickerPool:StickerPool = StickerPool()
     override func viewDidLoad() {
-        // put our version number in here
-         loadFromSharedMemSpace()
-        
-    }
+       
  
     /// for each JSON swatch in the extension space - expand to one ore more stickers
-    func loadFromSharedMemSpace() {//makeMSStickersFromMemspace makeMSStickersFromTempFiles
-        
+   
         stickerPool.stickers = []
         stickerPool.makeMSStickersFromMemspace()
-          print("loadFromSharedDataSpace via temp files"," got ",stickerPool.stickers.count) 
+        print("&&&&&&&&&& loadFromSharedDataSpace"," got ",stickerPool.stickers.count)
         self.stickerBrowserView.reloadData()
     }//loadstickers
     

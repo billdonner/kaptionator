@@ -8,6 +8,10 @@
 
 import UIKit
 
+// this will be seen in both the main program and the extension, but a restorefromdisk needs doing
+
+
+fileprivate var memSpace  = SharedCaptionSpace(SharedMemDataSpace)
 
 //MARK: - AppCE represents a catalog entry modified the user
 
@@ -60,9 +64,6 @@ struct SharedCE {
         self.caption = caption
         self.stickerOptions = options
         self.id =  "\(SharedCE.nicetime())"
-        
-        
-        
     }
 }
 
@@ -72,26 +73,19 @@ struct SharedCaptionSpace {
     fileprivate var entries : [SharedCE] = []
     private  var suite: String // partions nsuserdefaults
     
-    init(_ suite:String) {
+   fileprivate init(_ suite:String) {
         self.suite = suite
     }
-    static func unhinge(id:String) {
-        // unhinge the entry
-        //        let match = memSpace.findAppCE(id: id)
-        //
-        //
-        //        let _ =  memSpace.remove(id:id)
-        //        memSpace.entries[id] = nil
+  
+    static func itemCount () -> Int {
+        return memSpace.entries.count
     }
-    func itemCount () -> Int {
-        return entries.count
-    }
-    func itemAt(_ index:Int) -> SharedCE {
-        let t = entries //.map { key, value in return value }
-        return t [index] // horrible
-    }
-    func items () -> [SharedCE] {
-        return   entries //.map { key, value in return value }
+//    func itemAt(_ index:Int) -> SharedCE {
+//        let t = entries //.map { key, value in return value }
+//        return t [index] // horrible
+//    }
+    static func items () -> [SharedCE] {
+        return   memSpace.entries //.map { key, value in return value }
     }
     func dump() {
         print("SharedCaptionSpace - \(suite) >>>>> \(entries)")
@@ -100,48 +94,40 @@ struct SharedCaptionSpace {
     //    mutating func addSharedCE(_ ce :SharedCE) {
     //        self.entries[ce.id] = ce
     //    }
-    mutating func reset() {
-        entries = []
-        saveToDisk()
+    static func reset() {
+        memSpace.entries = []
+        //saveToDisk()
     }
     
-    mutating func add(ce:SharedCE) {
+    static func add(ce:SharedCE) {
         
-        entries.append(ce)
+        memSpace.entries.append(ce)
        // saveToDisk()
     }
-    func findIdx(id:String) -> Int {
+    static func findIdx(id:String) -> Int {
         var idx = 0
         var found :SharedCE?
-        for ent in entries {
+        for ent in memSpace.entries {
             if ent.id == id { found = ent; break }
             else { idx += 1 }
         }
         if found == nil {return -1}
         return idx
     }
-    mutating func remove(id:String) -> SharedCE? {
+    static func remove(id:String) -> SharedCE? {
         
         let idx = findIdx(id:id)
         if idx == -1 {
             return nil
         }
-        let found = entries[idx]
-        entries.remove(at:idx)
+        let found = memSpace.entries[idx]
+        memSpace.entries.remove(at:idx)
         return found
     }
-    func  findAppCE(id:String) -> SharedCE? {
-        
-        let idx = findIdx(id:id)
-        if idx == -1 {
-            return nil
-        }
-        let found = entries[idx]
-        return found
-    }
-    func findMatchingEntry(atPath:String) -> SharedCE? {
+
+   static  func findMatchingEntry(atPath:String) -> SharedCE? {
         let lpc = (atPath as NSString).lastPathComponent
-        for entry in entries {
+        for entry in memSpace.entries {
             for path in entry.stickerPaths {
             if (path as NSString).lastPathComponent == lpc            {
                 return entry
@@ -150,8 +136,8 @@ struct SharedCaptionSpace {
         }
         return nil
     }
-    func findMatchingEntry(ce:SharedCE) -> Bool {
-        for entry in entries {
+    static func findMatchingEntry(ce:SharedCE) -> Bool {
+        for entry in memSpace.entries {
             if entry.catalogtitle == ce.catalogtitle &&
                 entry.caption == ce.caption
                 // entry.localimagepath == ce.localimagepath
@@ -163,8 +149,8 @@ struct SharedCaptionSpace {
         return false
     }
     
-    func findMatchingAsset(path:String,caption:String) -> Bool {
-        for entry in entries {
+   static func findMatchingAsset(path:String,caption:String) -> Bool {
+        for entry in memSpace.entries {
             if entry.localimagepath == path &&
                 entry.caption ==  caption
                 // entry.localimagepath == ce.localimagepath
@@ -179,15 +165,15 @@ struct SharedCaptionSpace {
     //put in special NSUserDefaults which can be shared
     
     
-    func saveToDisk() {
+    static func saveData() {
         var flattened:JSONArray = []
-        for val in entries {
+        for val in memSpace.entries {
             flattened.append(val.serializeToJSONDict())
         }
-        if let defaults  = UserDefaults(suiteName:suite) {
+        if let defaults  = UserDefaults(suiteName:memSpace.suite) {
             defaults.set( versionBig, forKey: kVersion)
             defaults.set(   flattened, forKey: kAllCaptions)
-            print("**** \(suite) saveToDisk version \(versionBig) count \(flattened.count)")
+            print("**** \(memSpace.suite) saveToDisk version \(versionBig) count \(flattened.count)")
         }
     }
 }

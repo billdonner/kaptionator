@@ -34,7 +34,7 @@ struct  StickerPool   {
     }
     
     private  mutating func makeMSSticker(url:URL,title: String) {
-        print ("Making sticker with \(url) = \(title)")
+        print ("&&&&&&&&& Making sticker with \(url) = \(title)")
         let sticker:MSSticker
         do {
             
@@ -42,7 +42,7 @@ struct  StickerPool   {
             stickers.append(sticker)
         }
         catch   {
-            print("******** MSSticker(\(url) creation \(error)")
+            print("&&&&&&&&& MSSticker(\(url) creation \(error)")
             return
         }
     }
@@ -52,9 +52,9 @@ struct  StickerPool   {
             
             try restoreSharespaceFromDisk()
             
-            print ("makeMSStickersFromMemspace memSpace restored,\(memSpace.itemCount()) items ")
+            print ("&&&&&&&&& restoreSharespaceFromDisk restored,\(SharedCaptionSpace.itemCount()) items ")
             ///TODO: ajust to stkickerimages
-            for ce in memSpace.items() {
+            for ce in SharedCaptionSpace.items() {
                 for stickerpath in ce.stickerPaths {
                 let url = URL(string:stickerpath)!
                 let title =  "\(stickers.count)"
@@ -62,9 +62,9 @@ struct  StickerPool   {
                 }
             }
             
-            print ("Total stickers \(memSpace.itemCount())")
+            print ("&&&&&&&&& Total stickers \(SharedCaptionSpace.itemCount())")
         } catch {
-            print ("No stickers right now :(")
+            print ("&&&&&&&&& No stickers right now :(")
         }
     }
     mutating func makeMSStickersFromTempFiles() {
@@ -86,7 +86,7 @@ struct  StickerPool   {
             //print ("********** total \(stickers.count)")
         }
         catch {
-            print ("couldnt ge content of shared docs directory")
+            print ("&&&&&&&&& couldnt get content of shared docs directory")
         }
     }
     
@@ -110,7 +110,7 @@ struct  StickerPool   {
         
         let p = "\(scheme)://home"
         let url = URL(string:p)!
-        print("opening main app")
+        //print("opening main app")
         self.extensionContext?.open(url, completionHandler: nil)
         
     }
@@ -120,22 +120,9 @@ struct  StickerPool   {
             }
     
     func p(_ s:String) {
-        print("++++ ",s)
+        print("&&&&&&&&& ",s)
     }
-//    
-//    func setupBrowserViewController () {
-//        
-//        browserViewController = SchtickerzBrowserViewController(stickerSize: .regular)
-//        browserViewController.view.frame = self.view.frame
-//        
-//        self.addChildViewController(browserViewController)
-//        browserViewController.didMove(toParentViewController: self)
-//        self.view.addSubview(browserViewController.view)
-//        browserViewController.changeBrowserViewBackgroundColor(color:self.view.backgroundColor!)
-//        // browserViewController.loadStickers()
-//      
-//    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.topLabel.text = appTitle

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MasterViewController
 //  Re-Kaptionator
 //
 //  Created by Bill Donner on 15/12/2015.
@@ -105,34 +105,12 @@ class MasterViewController: UIViewController {
         print("-------Running from ",documentsUrl," ---------")
         super.viewDidLoad()
         
-//        
-//        let chnage = false//Versions().versionCheck()
-//        if chnage {
-//            capSpace.reset()
-//        } else {
-//            
-            // restore or create captions db
-            if let _ = try? capSpace.restoreAppspaceFromDisk() {
-                
-                print ("capSpace restored,\(capSpace.itemCount()) items ")
-            } else { // nothing there
-                capSpace.reset()
-            }
-        //}
-        capSpace.saveToDisk()
-        // restore or create shared memspace db for messages extension
-        if let _ = try? restoreSharespaceFromDisk() {
-            
-            print ("memSpace restored,\(memSpace.itemCount()) items ")
-        } else { // nothing there
-            memSpace.reset()
-        }
-        memSpace.saveToDisk()
+        databaseStuff()
         
         finishStartup()
         
-    }// direct access
-    func finishStartup() {
+    }// fall straight into it
+   private func finishStartup() {
         let vcid = (stickerPackListFileURL != nil) ? "ShowCatalogID" : "ShowITunesID"
         self.currentViewController = self.storyboard?.instantiateViewController(withIdentifier: vcid )
         self.currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false
@@ -257,9 +235,7 @@ class MasterViewController: UIViewController {
         
         showMessagesAppViewController = currentViewController
     }
-    // from segmented control
-    
-    
+  
     //MARK:- move between view controllers
     func cycleFromViewController(oldViewController: UIViewController, toViewController newViewController: UIViewController) {
         oldViewController.willMove(toParentViewController: nil)

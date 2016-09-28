@@ -16,22 +16,20 @@ typealias ERAC = ((RemoteAsset)->(Swift.Void))
 //  each separate catalog entry across all manifests is represented here
 //  it is always refreshed on a software updated, however the images are reloaded fresh on each startup
 
-var remSpace = RemSpace()
+fileprivate var remSpace = RemSpace()
 //MARK: - RemSpace collects all RemoteAssets
-class RemSpace {
-    var catalogTitle:String = "replace"
-    private var raz:[ RemoteAsset ]
+final class RemSpace {
+    static private var catalogTitle:String = "replace"
+    static private var raz:[ RemoteAsset ] = []
+   static  private var  filenum : Int  { return raz.count + 1001 }
     
     //  private var allImageData : [String:String] = [:]    // remote url of source image : local filepath url
     
     
-    init() {
-        raz = []
-        print("****sharedAppContainerDir ",sharedAppContainerDirectory())
+   fileprivate init() {
+    print("****sharedAppContainerDir init in ",sharedAppContainerDirectory())
     }
-    
-    var  filenum : Int  { return raz.count + 1001 }
-    fileprivate func loadFromLocal(from localpath:String) -> String {
+    fileprivate class func  loadFromLocal(from localpath:String) -> String {
         
         do {
             let ext = (localpath as NSString).pathExtension
@@ -59,7 +57,7 @@ class RemSpace {
     }
     
 
-    fileprivate func loadFileRemote(from remotepath:String) -> String {
+    fileprivate class func loadFileRemote(from remotepath:String) -> String {
         
         do {
             let ext = (remotepath as NSString).pathExtension
@@ -86,18 +84,19 @@ class RemSpace {
         }
     }
     
-    func reset () {
+    class func reset (title:String) {
         raz = []
+        catalogTitle = title
     }
-    func itemAt(_ idx:Int) -> RemoteAsset {
+    class func itemAt(_ idx:Int) -> RemoteAsset {
         return raz [idx]
     }
-    func itemCount() -> Int { return raz.count }
+    class func itemCount() -> Int { return raz.count }
     
-    func addasset(ra:RemoteAsset){
+    class func addasset(ra:RemoteAsset){
         raz.append(ra)
     }
-    func saveToDisk() {
+    class func saveToDisk() {
         var flattened:JSONArray = []
         for val in raz {
             flattened.append(val.serializeToJSONDict())
@@ -112,12 +111,12 @@ class RemSpace {
         }
     }
     
-    func restoreRemspaceFromDisk () throws  {
+   class  func restoreRemspaceFromDisk () throws  {
         if  let defaults = UserDefaults(suiteName: nil),
             let flattened = defaults.object(forKey: "remspace") as? JSONArray,
             let version = defaults.object(forKey: "version") as? String,
             let catTitle = defaults.object(forKey: "catalogTitle") as? String {
-            remSpace.raz = []
+            raz = []
             for ra in flattened {
                 if let  optionsvalue = ra [kOptions] as? Int,
                     let captiontext = ra [kCaption] as? String,
@@ -128,11 +127,11 @@ class RemSpace {
                     options.rawValue = optionsvalue
                     //calling with an explicit local path will use existing file and wont re-read from remote site
                     let ra = RemoteAsset(pack:  pack , title: captiontext, remoteurl:remoteurl, localpath:localpath , options: options)
-                    remSpace.raz.append(ra)
+                    raz.append(ra)
                 }
             } // for loop
-            remSpace.catalogTitle = catTitle
-            print ("**** \(RemoteAssetsDataSpace) restoreFromDisk version \(version) count \(flattened.count) = \(remSpace.raz.count)")
+            catalogTitle = catTitle
+            print ("**** \(RemoteAssetsDataSpace) restoreFromDisk version \(version) count \(flattened.count) = \(raz.count)")
         }
             
         else {
@@ -160,12 +159,12 @@ struct RemoteAsset {
         self.options = options
         self.remoteurl = remoteurl
         if let lp = localpath { // if localpath supplied use that else
-            let local  = remSpace.loadFromLocal(from:lp)
+            let local  = RemSpace.loadFromLocal(from:lp)
             self.localimagepath = local
         }
         else {
             // load file from remote location
-            let local  = remSpace.loadFileRemote(from:remoteurl)
+            let local  = RemSpace.loadFileRemote(from:remoteurl)
             self.localimagepath = local
             print("**** RA.INIT(..IMAGEPATH) \(self.localimagepath)")
         }

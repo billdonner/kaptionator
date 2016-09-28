@@ -136,7 +136,7 @@ struct Manifest {
                                                           localpath: nil,
                                                           options: options)
                             
-                            remSpace.addasset(ra: remoteAsset) // be sure to count
+                            RemSpace.addasset(ra: remoteAsset) // be sure to count
                             final.append (remoteAsset)
                         }
                     }

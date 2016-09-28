@@ -59,7 +59,7 @@
         
     }
   private  func refreshFromCapSpace(){
-        var items = capSpace.items()
+        var items = AppCaptionSpace.items()
         
         // group similar images together in reverse ti
         items.sort(by: { a,b in  let aa = a as AppCE
@@ -109,9 +109,9 @@
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let ce =  stickerz.remove(at: indexPath.row)
-            let _ =  capSpace.remove(id:ce.id)
+            let _ =  AppCaptionSpace.remove(id:ce.id)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            capSpace.saveToDisk()
+            AppCaptionSpace.saveToDisk()
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
@@ -143,7 +143,7 @@
         stickerz [srcrow] = stickerz [dstrow]
         stickerz [dstrow] = stuff
         // too much here
-        capSpace.saveToDisk()
+        AppCaptionSpace.saveToDisk()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -207,10 +207,10 @@
  extension AppCE {
     
     fileprivate   mutating func changeCaption(to caption:String) {
-        let alreadyIn = capSpace.findMatchingAsset(path: self.localimagepath, caption: caption)
+        let alreadyIn = AppCaptionSpace.findMatchingAsset(path: self.localimagepath, caption: caption)
         if !alreadyIn {
             // keep old and
-           AppCaptionSpace.unhinge(id:self.id) //remove old
+           //AppCaptionSpace.unhinge(id:self.id) //remove old
         // make new with new caption but all else is similar
         let _ = AppCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath, caption: caption, options: self.stickerOptions)
         }
@@ -221,13 +221,13 @@
     
     fileprivate func cloneWithNewCaption(_ caption:String){
         
-        let alreadyIn = capSpace.findMatchingAsset(path: self.localimagepath, caption: caption)
+        let alreadyIn = AppCaptionSpace.findMatchingAsset(path: self.localimagepath, caption: caption)
         if !alreadyIn {
         // keep old and make another
         let _ = AppCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath,  caption: caption,  options: self.stickerOptions )
         
            let _ = try? prepareStickers( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath,  caption: caption,  options: self.stickerOptions)
-           memSpace.saveToDisk()
+           SharedCaptionSpace.saveData()
     }
     }
     
@@ -235,7 +235,7 @@
         // duplicate and save to other space under same id, as is
         
         // if there is something in there with same file and caption then forget it
-        let alreadyIn = memSpace.findMatchingAsset(path: self.localimagepath, caption: self.caption)
+        let alreadyIn = SharedCaptionSpace.findMatchingAsset(path: self.localimagepath, caption: self.caption)
         if !alreadyIn {
             do {
                 //let theData = try Data(contentsOf: URL(string:self.localimagepath)!)
@@ -248,7 +248,7 @@
                 // now pass the filenames into the shared space
                 // ce.localimagepath = url.absoluteString // dink with this
                 let _ = try prepareStickers( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath,  caption: self.caption,  options: options)
-                memSpace.saveToDisk()
+                SharedCaptionSpace.saveData()
             }
             catch {
                 print("could not makemade sticker file urls \(localimagepath)")

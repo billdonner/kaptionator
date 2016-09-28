@@ -51,7 +51,7 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
         let path = (pe as NSString).deletingLastPathComponent
         let stickerpath = path + "/" + lsp + "-\(size)-\(hashval)." + type
         StickerFileFactory.removeStickerFilesFrom([stickerpath])
-        let _ = memSpace.remove(id: id)
+        let _ = SharedCaptionSpace.remove(id: id)
     }
     @IBAction func smallSwitchToggled(_ sender: AnyObject) {
         
@@ -61,6 +61,8 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
             do {  // make image of precise size for messages app
             options.insert(.generatesmall)
            let _  =  try prepareStickers(pack:ce.catalogpack, title:ce.catalogtitle, imagepath: ce.localimagepath, caption: ce.caption, options: options)
+                SharedCaptionSpace.saveData()
+
             }
             catch {
                 print("could not prepareStickers")
@@ -68,7 +70,7 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
         } else {  // delete the image
             unprepareStickers(ce,"S")
                  }
-        memSpace.saveToDisk()
+        SharedCaptionSpace.saveData()
     }
     @IBAction func mediumSwitchToggled(_ sender: AnyObject) {
         let ce = captionedEntry!
@@ -77,6 +79,8 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
             do {  // make image of precise size for messages app
                 options.insert(.generatemedium)
                 let _  =  try prepareStickers(pack:ce.catalogpack, title:ce.catalogtitle, imagepath: ce.localimagepath, caption: ce.caption, options: options)
+                SharedCaptionSpace.saveData()
+
             }
             catch {
                 print("could not prepareStickers")
@@ -84,7 +88,7 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
         } else {  // delete the image
             unprepareStickers(ce,"M")
         }
-        memSpace.saveToDisk()
+        SharedCaptionSpace.saveData()
     }
     
     @IBAction func largeSwithToggled(_ sender: AnyObject) {
@@ -94,6 +98,8 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
             do {  // make image of precise size for messages app
                 options.insert(.generatelarge)
                 let _  =  try prepareStickers(pack:ce.catalogpack, title:ce.catalogtitle, imagepath: ce.localimagepath, caption: ce.caption, options: options)
+                SharedCaptionSpace.saveData()
+
             }
             catch {
                 print("could not prepareStickers")
@@ -102,7 +108,7 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
             unprepareStickers(ce,"L")
         }
         
-        memSpace.saveToDisk()
+        SharedCaptionSpace.saveData()
     }
  
     

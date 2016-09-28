@@ -51,7 +51,7 @@ final class MessagesAppViewController: UIViewController   {
         self.tableView.backgroundColor = appTheme.backgroundColor
     }
     fileprivate  func refreshFromMemSpace(){
-        var items = memSpace.items()
+        var items = SharedCaptionSpace.items()
         
         // group similar images together in reverse ti
         items.sort(by: { a,b in  let aa = a as SharedCE
@@ -104,15 +104,15 @@ extension MessagesAppViewController : UITableViewDataSource {
         stickerz [srcrow] = stickerz [dstrow]
         stickerz [dstrow] = stuff
         // too much here
-        memSpace.saveToDisk()
+        SharedCaptionSpace.saveData()
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let ce =  stickerz.remove(at: indexPath.row)
-            let _ =  memSpace.remove(id:ce.id)
+            let _ =  SharedCaptionSpace.remove(id:ce.id)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            memSpace.saveToDisk()
+            SharedCaptionSpace.saveData()
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
@@ -169,9 +169,9 @@ extension SharedCE {
     fileprivate func openinImessage() {
     }
     fileprivate mutating func removeCEFromIMessage() {
-        let _ =  memSpace.remove(id:self.id)
-        memSpace.saveToDisk()
-        SharedCaptionSpace.unhinge(id: self.id)
+        let _ =  SharedCaptionSpace.remove(id:self.id)
+        SharedCaptionSpace.saveData()
+        //SharedCaptionSpace.unhinge(id: self.id)
     
     }
 }

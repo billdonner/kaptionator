@@ -39,7 +39,7 @@ final class CatalogViewController: UIViewController  {
         
         if segue.identifier ==  "CatalogCellTapMenuID"{
             if let indexPath = theSelectedIndexPath {
-                let ra = remSpace.itemAt(indexPath.row)
+                let ra = RemSpace.itemAt(indexPath.row)
                 let avc =  segue.destination as? CatalogMenuViewController
                 if let avc = avc  {
                     avc.delegate = self
@@ -76,8 +76,8 @@ final class CatalogViewController: UIViewController  {
         assert( stickerPackListFileURL != nil)
             //  only read the catalog if we have to
             do {
-                try remSpace.restoreRemspaceFromDisk()
-                print("remSpace restored, \(remSpace.itemCount()) items")
+                try RemSpace.restoreRemspaceFromDisk()
+                print("remSpace restored, \(RemSpace.itemCount()) items")
                 phase2 ()
             }  catch {
                 phase1()
@@ -92,13 +92,13 @@ extension CatalogViewController : UICollectionViewDataSource {
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return remSpace.itemCount()
+        return RemSpace.itemCount()
     }
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "ModelDataCell", for: indexPath  ) as! ModelDataCell // Create the cell from the storyboard cell
         
-        let ra = remSpace.itemAt(indexPath.row)
+        let ra = RemSpace.itemAt(indexPath.row)
         
         //show the primitive title
         if showVendorTitles {
@@ -150,7 +150,7 @@ extension AppCE {
     fileprivate static func makeNewCaptionCat(   from ra:RemoteAsset, caption:String ) {
         // make captionated entry from remote asset
 do {
-        let alreadyIn = memSpace.findMatchingAsset(path: ra.localimagepath, caption: caption)
+        let alreadyIn = SharedCaptionSpace.findMatchingAsset(path: ra.localimagepath, caption: caption)
         if !alreadyIn {
             let options = ra.options
           
@@ -158,8 +158,9 @@ do {
             let _ = AppCaptionSpace.make (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: options)
             }
             // here make the largest sticker possible and add to shared space
-            let _ = try prepareStickers (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: options )
-            memSpace.saveToDisk()   
+            let _ = try prepareStickers (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: options )  // cakks savetodisk N times - ugh
+            SharedCaptionSpace.saveData()
+
         }else {
             // already in, lets just mark new sizrs and caption
     }
@@ -187,8 +188,7 @@ extension CatalogViewController : CatalogMenuViewDelegate {
 
 extension CatalogViewController : MEObserver {
     func newdocument(_ propsDict: JSONDict, _ title:String) {
-        remSpace.reset()
-        remSpace.catalogTitle = title
+        RemSpace.reset(title:title)
     }
     func newpack(_ pack: String,_ showsectionhead:Bool) {
         //print("**** new pack \(pack)")
@@ -219,7 +219,7 @@ extension CatalogViewController {  //loading on first up - moved from masterview
                         }
                         return
                     }
-                    remSpace.saveToDisk()
+                    RemSpace.saveToDisk()
                     // if good, move on to phase 2 which happens in next view controller
                     self.perform(#selector(self.phase2 ), with: nil, afterDelay: 2.0)
                 }
@@ -235,7 +235,7 @@ extension CatalogViewController {  //loading on first up - moved from masterview
         let vcid =  "ShowCatalogID"
         
        // self.activityIndicatorView.stopAnimating()
-        let x = remSpace.itemCount()
+        let x = RemSpace.itemCount()
         print(">>>>>>>>>> phase3 \(x) REMOTE ASSETS LOADED \(vcid) -- READY TO ROLL")
         self.collectionView.reloadData()
 //        

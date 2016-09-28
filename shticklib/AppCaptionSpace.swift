@@ -9,6 +9,11 @@
 import UIKit
 
 
+/// AppCaptionSpace is a singleton global struct that is persisted
+//  every instance of a user captioning a particular element is here
+//   note to self: DO NOT POLLUTE THIS STRUCT with class refs
+
+fileprivate var capSpace  = AppCaptionSpace(AppPrivateDataSpace)
 //MARK: - AppCE represents a catalog entry as modified the user
 
 struct AppCE {
@@ -61,31 +66,29 @@ struct AppCE {
 //MARK: AppCaptionSpace collects and persists AppCEs
 
 struct AppCaptionSpace {
-    private var entries : [String:AppCE] = [:]
+    private var entries : [ AppCE] = []
     private var suite: String // partions nsuserdefaults
-    static func unhinge(id:String) {
-        // unhinge the entry
-        let _ =  capSpace.remove(id:id)
-        capSpace.entries[id] = nil
-    }
-    init(_ suite:String) {
+//    static func unhinge(id:String) {
+//        // unhinge the entry
+//        let _ =  capSpace.remove(id:id)
+//        capSpace.entries[id] = nil
+//    }
+   fileprivate init(_ suite:String) {
         self.suite = suite
     }
-    func itemCount () -> Int {
-        return entries.count
+  static  func itemCount () -> Int {
+        return capSpace.entries.count
     }
-    func itemAt(_ index:Int) -> AppCE {
-        let t = entries.map { key, value in return value }
-        return t [index] // horrible 
+ static    func itemAt(_ index:Int) -> AppCE {
+        let t = capSpace.entries
+        return t [index] // not horrible
     }
-    func items () -> [AppCE] {
-      return   entries.map { key, value in return value }
+ static    func items () -> [AppCE] {
+      return   capSpace.entries
     } 
-    func dump() {
-        print("AppCaptionSpace - \(suite) >>>>>")
-        for (key,val) in entries {
-            print("\(key):\(val),")
-        }
+  static   func dump() {
+        print("AppCaptionSpace - \(capSpace.suite) >>>>> \(capSpace.entries.count)")
+ 
     }
     
     static  func make(pack:String,  title:String,imagepath:String ,caption:String,  options:StickerMakingOptions )->AppCE {
@@ -95,31 +98,34 @@ struct AppCaptionSpace {
                                       options: options )
         
         // users newce.id to CLONE
-        capSpace.entries[newself.id] = newself
-        capSpace.saveToDisk()
+        capSpace.entries.append(newself)
+        saveToDisk()
         return newself
     }
     
 
-    mutating func reset() {
-        entries = [:]
+     static func reset() {
+        capSpace.entries = []
         saveToDisk()
     }
-    mutating func remove(id:String) -> AppCE? {
-        let t = entries[id]
-        entries[id] = nil
+     static func remove(id:String) -> AppCE? {
+        var idx = 0
+        for entry in capSpace.entries {
+            if entry.id == id {
+        let t = capSpace.entries[idx]
+        capSpace.entries.remove(at: idx)
         return t
+        }
+            idx += 1
+        }
+        return nil
         
     }
-    func  findAppCE(id:String) -> AppCE? {
-        return entries[id]
-    }
-    func findMatchingEntry(ce:AppCE) -> Bool {
-        for (_,entry) in entries {
+ 
+   static  func findMatchingEntry(ce:AppCE) -> Bool {
+        for entry in capSpace.entries {
             if entry.catalogtitle == ce.catalogtitle &&
                 entry.caption == ce.caption
-                // entry.localimagepath == ce.localimagepath
-                
             {
                 return true
             }
@@ -127,8 +133,8 @@ struct AppCaptionSpace {
         return false
     }
     
-    func findMatchingAsset(path:String,caption:String) -> Bool {
-        for (_,entry) in entries {
+    static func findMatchingAsset(path:String,caption:String) -> Bool {
+        for entry in capSpace.entries {
             if entry.localimagepath == path &&
                 entry.caption ==  caption
                // entry.localimagepath == ce.localimagepath
@@ -141,11 +147,11 @@ struct AppCaptionSpace {
     }
     
     //put in special NSUserDefaults which can be shared
-    func restoreAppspaceFromDisk () throws  {
-        if  let defaults = UserDefaults(suiteName: suite),
+   static  func restoreAppspaceFromDisk () throws  {
+        if  let defaults = UserDefaults(suiteName: capSpace.suite),
             let allcaptions = defaults.object(forKey: kAllCaptions) as? JSONArray,
             let version = defaults.object(forKey: "version") {
-            print ("**** \(suite) restoreFromDisk version \(version) count \(allcaptions.count)")
+            print ("**** \(capSpace.suite) restoreFromDisk version \(version) count \(allcaptions.count)")
             
             for acaption in allcaptions {
                 if let  optionsvalue = acaption [kOptions] as? Int,
@@ -162,27 +168,27 @@ struct AppCaptionSpace {
                     var options = StickerMakingOptions()
                     options.rawValue = optionsvalue
                     
-                    let _ = AppCaptionSpace.make(pack:p,title:ti,imagepath:i ,
+                    let _ =  make(pack:p,title:ti,imagepath:i ,
                                                       caption:captiontext,
                                                       options:options)
                 }
             }
         }
         else {
-            print("**** \(suite) restoreFromDisk UserDefaults failure")
+            print("**** \(capSpace.suite) restoreFromDisk UserDefaults failure")
             throw KaptionatorErrors.restoreFailure}
     }// restore
     
     
-    func saveToDisk() {
+  static   func saveToDisk() {
         var flattened:JSONArray = []
-        for (_,val) in entries {
+        for val in capSpace.entries {
             flattened.append(val.serializeToJSONDict())
         }
-        if let defaults  = UserDefaults(suiteName:suite) {
+        if let defaults  = UserDefaults(suiteName:capSpace.suite) {
             defaults.set( versionBig, forKey: "version")
             defaults.set(   flattened, forKey: "allcaptions")
-            print("**** \(suite) saveToDisk version \(versionBig) count \(flattened.count)")
+            print("**** \(capSpace.suite) saveToDisk version \(versionBig) count \(flattened.count)")
         }
     }
 }
