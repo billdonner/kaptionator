@@ -15,6 +15,10 @@
 		88475BF71D51607000FA7EC4 /* candidatezMessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 88AEA62F1D514C8D006E5C70 /* candidatezMessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		88475BFB1D51609200FA7EC4 /* holidazeMessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 88AEA6021D514C1F006E5C70 /* holidazeMessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		88475BFF1D51609C00FA7EC4 /* emogeezMessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 88AEA61A1D514C5F006E5C70 /* emogeezMessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		886B4AC31D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4AC21D9CA4CB00581C9B /* MessagesTableCell.swift */; };
+		886B4AC41D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4AC21D9CA4CB00581C9B /* MessagesTableCell.swift */; };
+		886B4AC51D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4AC21D9CA4CB00581C9B /* MessagesTableCell.swift */; };
+		886B4AC61D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4AC21D9CA4CB00581C9B /* MessagesTableCell.swift */; };
 		889FB70C1D93785B0064B4C9 /* CandidatesForBlur.png in Resources */ = {isa = PBXBuildFile; fileRef = 889FB7091D93785B0064B4C9 /* CandidatesForBlur.png */; };
 		889FB70D1D93785B0064B4C9 /* CandidatesForBlur.png in Resources */ = {isa = PBXBuildFile; fileRef = 889FB7091D93785B0064B4C9 /* CandidatesForBlur.png */; };
 		889FB70E1D93785B0064B4C9 /* CandidatesForBlur.png in Resources */ = {isa = PBXBuildFile; fileRef = 889FB7091D93785B0064B4C9 /* CandidatesForBlur.png */; };
@@ -169,14 +173,14 @@
 		88DD930A1D88738200832564 /* MessagedMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E61D88738200832564 /* MessagedMenuViewController.swift */; };
 		88DD930B1D88738200832564 /* MessagedMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E61D88738200832564 /* MessagedMenuViewController.swift */; };
 		88DD930C1D88738200832564 /* MessagedMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E61D88738200832564 /* MessagedMenuViewController.swift */; };
-		88DD930D1D88738200832564 /* ModelDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E71D88738200832564 /* ModelDataCell.swift */; };
-		88DD930E1D88738200832564 /* ModelDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E71D88738200832564 /* ModelDataCell.swift */; };
-		88DD930F1D88738200832564 /* ModelDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E71D88738200832564 /* ModelDataCell.swift */; };
-		88DD93101D88738200832564 /* ModelDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E71D88738200832564 /* ModelDataCell.swift */; };
-		88DD93111D88738200832564 /* TableDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E81D88738200832564 /* TableDataCell.swift */; };
-		88DD93121D88738200832564 /* TableDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E81D88738200832564 /* TableDataCell.swift */; };
-		88DD93131D88738200832564 /* TableDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E81D88738200832564 /* TableDataCell.swift */; };
-		88DD93141D88738200832564 /* TableDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E81D88738200832564 /* TableDataCell.swift */; };
+		88DD930D1D88738200832564 /* CatalogDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E71D88738200832564 /* CatalogDataCell.swift */; };
+		88DD930E1D88738200832564 /* CatalogDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E71D88738200832564 /* CatalogDataCell.swift */; };
+		88DD930F1D88738200832564 /* CatalogDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E71D88738200832564 /* CatalogDataCell.swift */; };
+		88DD93101D88738200832564 /* CatalogDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E71D88738200832564 /* CatalogDataCell.swift */; };
+		88DD93111D88738200832564 /* CaptionedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E81D88738200832564 /* CaptionedTableCell.swift */; };
+		88DD93121D88738200832564 /* CaptionedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E81D88738200832564 /* CaptionedTableCell.swift */; };
+		88DD93131D88738200832564 /* CaptionedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E81D88738200832564 /* CaptionedTableCell.swift */; };
+		88DD93141D88738200832564 /* CaptionedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E81D88738200832564 /* CaptionedTableCell.swift */; };
 		88E3B5D11D90B3CF0079E0CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD92D91D8872D400832564 /* Main.storyboard */; };
 		88E3B5D21D90B3D00079E0CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD92D91D8872D400832564 /* Main.storyboard */; };
 		88E3B5D31D90B3D10079E0CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD92D91D8872D400832564 /* Main.storyboard */; };
@@ -284,6 +288,7 @@
 		8810D0021D53C536009BA9B3 /* kaptionatorMessageExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kaptionatorMessageExtension.entitlements; sourceTree = "<group>"; };
 		881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesViewController.swift; sourceTree = "<group>"; };
 		882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCaptionSpace.swift; sourceTree = "<group>"; };
+		886B4AC21D9CA4CB00581C9B /* MessagesTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableCell.swift; sourceTree = "<group>"; };
 		8876DE041D9C312200F211A5 /* candidatez copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "candidatez copy-Info.plist"; path = "/Users/billdonner/Documents/kaptionator/candidatez copy-Info.plist"; sourceTree = "<absolute>"; };
 		8876DE161D9C312800F211A5 /* candidatezMessagesExtension copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "candidatezMessagesExtension copy-Info.plist"; path = "/Users/billdonner/Documents/kaptionator/candidatezMessagesExtension copy-Info.plist"; sourceTree = "<absolute>"; };
 		889FB7091D93785B0064B4C9 /* CandidatesForBlur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CandidatesForBlur.png; sourceTree = "<group>"; };
@@ -349,8 +354,8 @@
 		88DD92E41D88738200832564 /* HelpOverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpOverlayViewController.swift; sourceTree = "<group>"; };
 		88DD92E51D88738200832564 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		88DD92E61D88738200832564 /* MessagedMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagedMenuViewController.swift; sourceTree = "<group>"; };
-		88DD92E71D88738200832564 /* ModelDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelDataCell.swift; sourceTree = "<group>"; };
-		88DD92E81D88738200832564 /* TableDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableDataCell.swift; sourceTree = "<group>"; };
+		88DD92E71D88738200832564 /* CatalogDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogDataCell.swift; sourceTree = "<group>"; };
+		88DD92E81D88738200832564 /* CaptionedTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptionedTableCell.swift; sourceTree = "<group>"; };
 		88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesMenuViewController.swift; sourceTree = "<group>"; };
 		88EEC93A1D9C06CF00C188EF /* DatabaseStuff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseStuff.swift; sourceTree = "<group>"; };
 		88F2FC911D931A070055209C /* MoreMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreMenuViewController.swift; sourceTree = "<group>"; };
@@ -445,19 +450,20 @@
 				88DD92DE1D88738200832564 /* AppDelegate.swift */,
 				88DD92DF1D88738200832564 /* CatalogViewController.swift */,
 				88DD92E01D88738200832564 /* CatalogMenuViewController.swift */,
+				88DD92E71D88738200832564 /* CatalogDataCell.swift */,
 				88EEC93A1D9C06CF00C188EF /* DatabaseStuff.swift */,
 				881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */,
 				88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */,
 				88DD92E21D88738200832564 /* CapationatedViewController.swift */,
+				88DD92E81D88738200832564 /* CaptionedTableCell.swift */,
 				88DD92E11D88738200832564 /* CaptionedMenuViewController.swift */,
-				88C451D61D92EAD6003DC256 /* ModalBlurViewController.swift */,
 				88DD92E41D88738200832564 /* HelpOverlayViewController.swift */,
 				88DD92E51D88738200832564 /* MasterViewController.swift */,
 				88DD92E31D88738200832564 /* MessagesAppViewController.swift */,
+				886B4AC21D9CA4CB00581C9B /* MessagesTableCell.swift */,
 				88DD92E61D88738200832564 /* MessagedMenuViewController.swift */,
+				88C451D61D92EAD6003DC256 /* ModalBlurViewController.swift */,
 				88F2FC911D931A070055209C /* MoreMenuViewController.swift */,
-				88DD92E71D88738200832564 /* ModelDataCell.swift */,
-				88DD92E81D88738200832564 /* TableDataCell.swift */,
 			);
 			path = appcode;
 			sourceTree = "<group>";
@@ -1003,11 +1009,12 @@
 				88EEC93B1D9C06CF00C188EF /* DatabaseStuff.swift in Sources */,
 				88DD92E91D88738200832564 /* AppDelegate.swift in Sources */,
 				88DD92F11D88738200832564 /* CatalogMenuViewController.swift in Sources */,
-				88DD93111D88738200832564 /* TableDataCell.swift in Sources */,
+				88DD93111D88738200832564 /* CaptionedTableCell.swift in Sources */,
 				88B54CE21D8870060076942D /* manifest.swift in Sources */,
 				88B54CAA1D8870060076942D /* mlib.swift in Sources */,
 				88DD92F91D88738200832564 /* CapationatedViewController.swift in Sources */,
 				88DD92F51D88738200832564 /* CaptionedMenuViewController.swift in Sources */,
+				886B4AC31D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */,
 				88F2FC921D931A070055209C /* MoreMenuViewController.swift in Sources */,
 				882EB2101D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */,
 				88B54CEA1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
@@ -1017,7 +1024,7 @@
 				88F2FC8D1D92F69E0055209C /* ModalBlurViewController.swift in Sources */,
 				88E3B5D91D9156B60079E0CB /* ITunesMenuViewController.swift in Sources */,
 				88B54CCA1D8870060076942D /* IOSSpecialOps.swift in Sources */,
-				88DD930D1D88738200832564 /* ModelDataCell.swift in Sources */,
+				88DD930D1D88738200832564 /* CatalogDataCell.swift in Sources */,
 				88B54CB21D8870060076942D /* theme.swift in Sources */,
 				88B54CC21D8870060076942D /* common.swift in Sources */,
 				88DD93051D88738200832564 /* MasterViewController.swift in Sources */,
@@ -1036,7 +1043,7 @@
 				88DD92EA1D88738200832564 /* AppDelegate.swift in Sources */,
 				88DD92F21D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				88DD92EE1D88738200832564 /* CatalogViewController.swift in Sources */,
-				88DD93121D88738200832564 /* TableDataCell.swift in Sources */,
+				88DD93121D88738200832564 /* CaptionedTableCell.swift in Sources */,
 				88B54CE41D8870060076942D /* manifest.swift in Sources */,
 				88EEC93C1D9C06CF00C188EF /* DatabaseStuff.swift in Sources */,
 				88B54CAC1D8870060076942D /* mlib.swift in Sources */,
@@ -1048,13 +1055,14 @@
 				88B54CD41D8870060076942D /* SFViewController.swift in Sources */,
 				88F2FC931D931A070055209C /* MoreMenuViewController.swift in Sources */,
 				88B54CCC1D8870060076942D /* IOSSpecialOps.swift in Sources */,
-				88DD930E1D88738200832564 /* ModelDataCell.swift in Sources */,
+				88DD930E1D88738200832564 /* CatalogDataCell.swift in Sources */,
 				88B54CB41D8870060076942D /* theme.swift in Sources */,
 				88B54CC41D8870060076942D /* common.swift in Sources */,
 				88DD93061D88738200832564 /* MasterViewController.swift in Sources */,
 				88B54CBC1D8870060076942D /* RemoteAsset.swift in Sources */,
 				88B54CDC1D8870060076942D /* InfoDictIOS.swift in Sources */,
 				88DD92FE1D88738200832564 /* MessagesAppViewController.swift in Sources */,
+				886B4AC41D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */,
 				88C7AED61D98685D0050A6CD /* Versions.swift in Sources */,
 				88F2FC8E1D92F6A20055209C /* ModalBlurViewController.swift in Sources */,
 			);
@@ -1069,7 +1077,7 @@
 				88DD92EB1D88738200832564 /* AppDelegate.swift in Sources */,
 				88DD92F31D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				88DD92EF1D88738200832564 /* CatalogViewController.swift in Sources */,
-				88DD93131D88738200832564 /* TableDataCell.swift in Sources */,
+				88DD93131D88738200832564 /* CaptionedTableCell.swift in Sources */,
 				88B54CE61D8870060076942D /* manifest.swift in Sources */,
 				88EEC93D1D9C06CF00C188EF /* DatabaseStuff.swift in Sources */,
 				88B54CAE1D8870060076942D /* mlib.swift in Sources */,
@@ -1081,13 +1089,14 @@
 				88B54CD61D8870060076942D /* SFViewController.swift in Sources */,
 				88F2FC941D931A070055209C /* MoreMenuViewController.swift in Sources */,
 				88B54CCE1D8870060076942D /* IOSSpecialOps.swift in Sources */,
-				88DD930F1D88738200832564 /* ModelDataCell.swift in Sources */,
+				88DD930F1D88738200832564 /* CatalogDataCell.swift in Sources */,
 				88B54CB61D8870060076942D /* theme.swift in Sources */,
 				88B54CC61D8870060076942D /* common.swift in Sources */,
 				88DD93071D88738200832564 /* MasterViewController.swift in Sources */,
 				88B54CBE1D8870060076942D /* RemoteAsset.swift in Sources */,
 				88B54CDE1D8870060076942D /* InfoDictIOS.swift in Sources */,
 				88DD92FF1D88738200832564 /* MessagesAppViewController.swift in Sources */,
+				886B4AC51D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */,
 				88C7AED71D98685D0050A6CD /* Versions.swift in Sources */,
 				88F2FC8F1D92F6A30055209C /* ModalBlurViewController.swift in Sources */,
 			);
@@ -1102,7 +1111,7 @@
 				88DD92EC1D88738200832564 /* AppDelegate.swift in Sources */,
 				88DD92F41D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				88DD92F01D88738200832564 /* CatalogViewController.swift in Sources */,
-				88DD93141D88738200832564 /* TableDataCell.swift in Sources */,
+				88DD93141D88738200832564 /* CaptionedTableCell.swift in Sources */,
 				88B54CE81D8870060076942D /* manifest.swift in Sources */,
 				88EEC93E1D9C06CF00C188EF /* DatabaseStuff.swift in Sources */,
 				88B54CB01D8870060076942D /* mlib.swift in Sources */,
@@ -1114,13 +1123,14 @@
 				88B54CD81D8870060076942D /* SFViewController.swift in Sources */,
 				88F2FC951D931A070055209C /* MoreMenuViewController.swift in Sources */,
 				88B54CD01D8870060076942D /* IOSSpecialOps.swift in Sources */,
-				88DD93101D88738200832564 /* ModelDataCell.swift in Sources */,
+				88DD93101D88738200832564 /* CatalogDataCell.swift in Sources */,
 				88B54CB81D8870060076942D /* theme.swift in Sources */,
 				88B54CC81D8870060076942D /* common.swift in Sources */,
 				88DD93081D88738200832564 /* MasterViewController.swift in Sources */,
 				88B54CC01D8870060076942D /* RemoteAsset.swift in Sources */,
 				88B54CE01D8870060076942D /* InfoDictIOS.swift in Sources */,
 				88DD93001D88738200832564 /* MessagesAppViewController.swift in Sources */,
+				886B4AC61D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */,
 				88C7AED81D98685D0050A6CD /* Versions.swift in Sources */,
 				88F2FC901D92F6A60055209C /* ModalBlurViewController.swift in Sources */,
 			);

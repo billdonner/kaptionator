@@ -28,7 +28,8 @@ class CatalogDataCell: UICollectionViewCell {
     // methods to adjust cell contents
     func paint(name:String) {
         nameLabel.text = name
-        nameLabel.textColor = appTheme.redColor
+        nameLabel.textColor = //appTheme
+            .red
     }
     func colorFor(ra:RemoteAsset) {
        let  isAnimated = ra.options.contains(.generateasis)  
