@@ -11,7 +11,7 @@ protocol CaptionedMenuViewDelegate {
     func changeCaption( on captionedEntry:inout AppCE, caption:String)
     func cloneWithCaption( captionedEntry:AppCE, caption:String)
 }
-class CaptionedMenuViewController: UIViewController, AddDismissButton {
+final class CaptionedMenuViewController: UIViewController, AddDismissButton {
     var captionedEntry:AppCE! // must be set
     var delegate: CaptionedMenuViewDelegate?  // mig
     @IBAction func unwindToCaptionedMenuViewController(_ segue: UIStoryboardSegue)  {}

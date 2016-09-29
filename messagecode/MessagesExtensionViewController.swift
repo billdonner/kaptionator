@@ -1,5 +1,5 @@
 //
-//  MessagesViewController.swift
+//  MessagesExtensionViewController
 //  MessagesExtension
 //
 //  Created by bill donner on 6/22/16.
@@ -94,9 +94,9 @@ struct  StickerPool   {
     }
     
 }
+// MSMessagesAppViewController
 
-
- class MessagesViewController: MSMessagesAppViewController {
+ class MessagesExtensionViewController: MSMessagesAppViewController {
     
     @IBOutlet weak var topLabel: UILabel!
     

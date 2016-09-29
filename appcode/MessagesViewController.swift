@@ -1,5 +1,5 @@
 //
-//  MessagesAppViewController
+//  MessagesViewController
 //  kaptionator
 //
 //  Created by bill donner on 8/6/16.
@@ -9,18 +9,18 @@ import UIKit
 //
 // MARK: Show All Captionated Entries in One Tab as Child ViewContoller
 //
-final class MessagesAppViewController: UIViewController   {
+final class MessagesViewController: UIViewController   {
     fileprivate var stickerz:[SharedCE] = []
     fileprivate var theSelectedIndexPath:IndexPath?
     @IBOutlet internal  var tableView: UITableView!
  
-    @IBAction func unwindToMessagesAppViewController(_ segue: UIStoryboardSegue)  {
+    @IBAction func unwindToMessagesViewController(_ segue: UIStoryboardSegue)  {
         refreshFromMemSpace()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        print ("**********removed all cached images because MessagesAppViewController short on memory")
+        print ("**********removed all cached images because MessagesViewController short on memory")
     }
     override func didMove(toParentViewController parent: UIViewController?) {
         refreshFromMemSpace()
@@ -60,7 +60,7 @@ final class MessagesAppViewController: UIViewController   {
     }
 }
 // MARK: Delegates for actions from our associated menu
-extension  MessagesAppViewController:MessagesAppMenuViewDelegate {
+extension  MessagesViewController:MessagesAppMenuViewDelegate {
     func openinIMessage(captionedEntry:SharedCE) {
         print("MessagesAppEntriesViewController openinIMessage")
         captionedEntry.openinImessage()
@@ -71,7 +71,7 @@ extension  MessagesAppViewController:MessagesAppMenuViewDelegate {
         refreshFromMemSpace()
     }
 }
-extension MessagesAppViewController : UITableViewDataSource {
+extension MessagesViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -116,7 +116,7 @@ extension MessagesAppViewController : UITableViewDataSource {
         return cell // Return the cell
     }
 }// MARK: Observer for model adjustments
-extension MessagesAppViewController : MEObserver {
+extension MessagesViewController : MEObserver {
     func newdocument(_ propsDict: JSONDict, _ title:String) {
     }
     func newpack(_ pack: String,_ showsectionhead:Bool) {
@@ -125,7 +125,7 @@ extension MessagesAppViewController : MEObserver {
     func newentry(me:RemoteAsset){
     }
 }
-extension MessagesAppViewController: UITableViewDelegate {
+extension MessagesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         theSelectedIndexPath = indexPath
         displayTapMenu()

@@ -10,6 +10,7 @@ import UIKit
 protocol AddDismissButton {
 func dismisstapped(_ s:AnyObject)
 }
+ 
 final class WebsiteOverlayViewController:InnerOverlayViewController {
     override func getreq () -> URLRequest {
         return URLRequest(url:URL(string:"http://shtikerz.com/candidatez/")!)

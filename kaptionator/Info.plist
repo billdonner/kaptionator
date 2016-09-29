@@ -23,7 +23,7 @@
 	<key>EXTENSION-SCHEME</key>
 	<string>Stickerizer</string>
 	<key>LEFT-BBI-NAME</key>
-	<string>iTunes FS</string>
+	<string>incoming</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>

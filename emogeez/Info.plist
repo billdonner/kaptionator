@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>APP-TITLE</key>
+	<string>Emogeez by Martoons</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -15,9 +17,13 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.07</string>
 	<key>CFBundleVersion</key>
-	<string>15</string>
+	<string>63</string>
+	<key>EXTENSION-SCHEME</key>
+	<string>Emogeez</string>
+	<key>LEFT-BBI-NAME</key>
+	<string>Catalog</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>

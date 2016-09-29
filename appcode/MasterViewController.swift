@@ -14,7 +14,7 @@ get {
     return nil
 }
 }
-class MasterViewController: UIViewController {
+final class MasterViewController: UIViewController {
     let  offColor:UIColor  = UIColor.lightGray
     @IBAction func unwindToMaster(_ segue: UIStoryboardSegue)  {
     }
@@ -28,7 +28,7 @@ class MasterViewController: UIViewController {
     var currentViewController: UIViewController?
     private var showCatalogViewController: UIViewController?
     private var showCaptionedViewController: UIViewController?
-    private var showMessagesAppViewController: UIViewController?
+    private var showMessagesViewController: UIViewController?
     private var testButtonViewController: UIViewController?
     private var logoNotRemoved = true
     private var allBarButtonItems : [UIBarButtonItem] = []
@@ -67,6 +67,8 @@ class MasterViewController: UIViewController {
         
         
         self.view.backgroundColor = appTheme.backgroundColor
+        
+        self.navigationItem.title = extensionScheme
         self.navigationItem.leftBarButtonItems = [catb]
         self.navigationItem.rightBarButtonItems = [imessage,stickerz]
         let dir = FileManager.default.urls (for: .documentDirectory, in : .userDomainMask)
@@ -101,7 +103,7 @@ class MasterViewController: UIViewController {
         if currentViewController == showCatalogViewController {    performSegue(withIdentifier: "HelpForCatalogSegue", sender: nil) }
         else   if currentViewController == showCaptionedViewController {    performSegue(withIdentifier: "HelpForStickersSegue", sender: nil) }
         else
-            if currentViewController == showMessagesAppViewController {    performSegue(withIdentifier: "HelpForMessagesSegue", sender: nil) }
+            if currentViewController == showMessagesViewController {    performSegue(withIdentifier: "HelpForMessagesSegue", sender: nil) }
     }
     @IBAction func moreButtonPushed(_ sender: AnyObject) {
         performSegue(withIdentifier: "PerformMoreSegue", sender: nil)
@@ -154,16 +156,16 @@ class MasterViewController: UIViewController {
         self.navigationItem.title = "Caption History"
     }
     internal  func imsgAction(tis:UIBarButtonItem) {
-        guard  currentViewController != showMessagesAppViewController || showMessagesAppViewController == nil else  { return }
+        guard  currentViewController != showMessagesViewController || showMessagesViewController == nil else  { return }
         coloredSpacer.backgroundColor = appTheme.iMessageColor
         for bbi in allBarButtonItems {
             bbi.tintColor = bbi == tis ? coloredSpacer.backgroundColor : offColor
         }
-        let newViewController = showMessagesAppViewController ?? self.storyboard?.instantiateViewController(withIdentifier: "MessageViewControllerID")
+        let newViewController = showMessagesViewController ?? self.storyboard?.instantiateViewController(withIdentifier: "MessageViewControllerID")
         newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
         cycleFromViewController(oldViewController: currentViewController!, toViewController: newViewController!)
         currentViewController = newViewController
-        showMessagesAppViewController = currentViewController
+        showMessagesViewController = currentViewController
         
         self.navigationItem.title = "Messages App..."
     }

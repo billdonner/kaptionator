@@ -232,10 +232,10 @@
             </objects>
             <point key="canvasLocation" x="-3390" y="-4093"/>
         </scene>
-        <!--Messages App View Controller-->
+        <!--Messages View Controller-->
         <scene sceneID="w6t-DA-Xo7">
             <objects>
-                <viewController storyboardIdentifier="MessageViewControllerID" id="cxh-X5-x1i" customClass="MessagesAppViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MessageViewControllerID" id="cxh-X5-x1i" customClass="MessagesViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c86-Gv-Gnk"/>
                         <viewControllerLayoutGuide type="bottom" id="yWk-gc-1Fi"/>
@@ -1094,7 +1094,7 @@
                         <outlet property="menuImageView" destination="ek7-tb-bXc" id="LS6-R1-KLc"/>
                         <outlet property="smallSwitch" destination="Anj-Y5-KYV" id="cxu-dk-ces"/>
                         <outlet property="webviewOverlay" destination="WLL-Dl-pFX" id="yBa-ha-K6v"/>
-                        <segue destination="VKI-12-vb3" kind="unwind" identifier="UnwindToMessagesAppVC" unwindAction="unwindToMessagesAppViewController:" id="Uhj-uV-FKF"/>
+                        <segue destination="VKI-12-vb3" kind="unwind" identifier="UnwindToMessagesAppVC" unwindAction="unwindToMessagesViewController:" id="Uhj-uV-FKF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DsP-IT-djv" userLabel="First Responder" sceneMemberID="firstResponder"/>
