@@ -47,9 +47,10 @@ class MasterViewController: UIViewController {
         super.viewDidLoad()
         
         let catb = UIBarButtonItem(title: nameForLeftBBI, style: .plain, target: self, action: #selector(catalogAction))
-        let imessage = UIBarButtonItem(barButtonSystemItem:.organize , target: self, action: #selector(imsgAction))
+        let imessage = 
+        UIBarButtonItem(image: UIImage(named: "Msgs"), style: .plain, target: self,action: #selector(imsgAction))
     
-        let stickerz = UIBarButtonItem(barButtonSystemItem: .bookmarks,
+        let stickerz = UIBarButtonItem(image: UIImage(named: "History"), style: .plain,
                     target: self, action: #selector(stickerzAction))
         
         
