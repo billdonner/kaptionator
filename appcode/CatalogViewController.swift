@@ -49,6 +49,8 @@ final class CatalogViewController: UICollectionViewController {
         }
     }
 }
+/// secret message to gary
+
 extension CatalogViewController {  //loading on first up - moved from masterview controller
     func phase1() {
         // only read remote if we have a list
