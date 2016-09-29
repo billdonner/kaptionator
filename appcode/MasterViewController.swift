@@ -135,7 +135,8 @@ class MasterViewController: UIViewController {
             showCatalogViewController = newViewController
         }
         cycleFromViewController(oldViewController:  currentViewController!, toViewController: showCatalogViewController!)
-        currentViewController = showCatalogViewController
+    currentViewController = showCatalogViewController
+    self.navigationItem.title = "Candidatez"
     }
     internal  func stickerzAction(tis:UIBarButtonItem) {
         guard  currentViewController != showCaptionedViewController ||
@@ -149,6 +150,8 @@ class MasterViewController: UIViewController {
         cycleFromViewController(oldViewController:  currentViewController!, toViewController: newViewController!)
         currentViewController = newViewController
         showCaptionedViewController = currentViewController
+        
+        self.navigationItem.title = "Caption History"
     }
     internal  func imsgAction(tis:UIBarButtonItem) {
         guard  currentViewController != showMessagesAppViewController || showMessagesAppViewController == nil else  { return }
@@ -161,6 +164,8 @@ class MasterViewController: UIViewController {
         cycleFromViewController(oldViewController: currentViewController!, toViewController: newViewController!)
         currentViewController = newViewController
         showMessagesAppViewController = currentViewController
+        
+        self.navigationItem.title = "Messages App..."
     }
     //MARK:- move between view controllers
    fileprivate  func cycleFromViewController(oldViewController: UIViewController, toViewController newViewController: UIViewController) {
