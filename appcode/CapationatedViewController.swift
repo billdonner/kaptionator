@@ -115,8 +115,7 @@
         let cell  = tableView.dequeueReusableCell(withIdentifier: "CaptionedTableCell", for: indexPath  ) as! CaptionedTableCell // Create the cell from the storyboard cell
         let ce = stickerz [indexPath.row]
         //show the primitive title
-        let showname = ce.caption
-        //let line2 = ce.stickerOptions.description()
+        let showname = ce.caption 
         cell.paint(name:showname)
         /// go get the image from our cache and then the net
         let path =  ce.localimagepath // ?????
