@@ -14,27 +14,32 @@ get {
     return nil
 }
 }
+protocol ControlledByMasterViewController{
+     var mvc:MasterViewController!{get }
+}
 final class MasterViewController: UIViewController {
     let  offColor:UIColor  = UIColor.lightGray
     @IBAction func unwindToMaster(_ segue: UIStoryboardSegue)  {
     }
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
-    // @IBOutlet weak var orgbbi: UIBarButtonItem!
+     @IBOutlet weak var orgbbi: UIBarButtonItem!
+
+    
     @IBOutlet weak var morebbi: UIBarButtonItem!
     @IBOutlet weak var helpbbi: UIBarButtonItem!
     @IBOutlet weak var logoView: UIImageView!
     @IBOutlet weak var coloredSpacer: UIView!
     var currentViewController: UIViewController?
-    private var showCatalogViewController: UIViewController?
-    private var showCaptionedViewController: UIViewController?
-    private var showMessagesViewController: UIViewController?
+    private var showCatalogViewController: CatalogViewController?
+    private var showCaptionedViewController: CapationatedViewController?
+    private var showMessagesViewController: MessagesViewController?
     private var testButtonViewController: UIViewController?
     private var logoNotRemoved = true
     private var allBarButtonItems : [UIBarButtonItem] = []
     
     //MARK:- Lifecyle for ViewControllers
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if let _  = segue.destination as? HelpOverlayViewController {
@@ -81,11 +86,14 @@ final class MasterViewController: UIViewController {
     }// fall straight into it
     private func finishStartup() {
         let vcid = (stickerPackListFileURL != nil) ? "ShowCatalogID" : "ShowITunesID"
-        currentViewController = self.storyboard?.instantiateViewController(withIdentifier: vcid )
+        
+        showCatalogViewController = self.storyboard?.instantiateViewController(withIdentifier: vcid ) as? CatalogViewController
+        showCatalogViewController?.mvc = self
+        currentViewController = showCatalogViewController
+        
         currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false
         self.addChildViewController( currentViewController!)
         self.addSubview(subView: currentViewController!.view, toView: self.containerView)
-        showCatalogViewController =  currentViewController
         currentViewController!.didMove(toParentViewController: self)
         activityIndicatorView.stopAnimating()
         coloredSpacer.backgroundColor = appTheme.catalogColor
@@ -110,65 +118,71 @@ final class MasterViewController: UIViewController {
     }
     @IBAction func orgButtonPushed(_ sender: AnyObject) {
         performSegue(withIdentifier: "PerformMoreSegue", sender: nil)
-    }
-    private func testButtonPushed(_:AnyObject) {
-        guard  currentViewController != testButtonViewController ||
-            testButtonViewController == nil else  { return }
-   
-        coloredSpacer.backgroundColor = appTheme.catalogColor
-    
-        let newViewController = testButtonViewController ?? self.storyboard?.instantiateViewController(withIdentifier: "ShowTestID")
-        newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
-        cycleFromViewController(oldViewController:  currentViewController!, toViewController: newViewController!)
-        currentViewController = newViewController
-        testButtonViewController = currentViewController
-    }
+    } 
    internal func catalogAction(tis:UIBarButtonItem ) {
+    
+    orgbbi.isEnabled = false // always true on this tab
         guard  currentViewController != showCatalogViewController ||
             showCatalogViewController == nil else  {  return }
         coloredSpacer.backgroundColor = appTheme.catalogColor
         for bbi in allBarButtonItems {
             bbi.tintColor = bbi == tis ? coloredSpacer.backgroundColor : offColor
         }
+    
+    
         if showCatalogViewController == nil {
             let vcid = (stickerPackListFileURL != nil) ? "ShowCatalogID" : "ShowITunesID"
-            let newViewController =  self.storyboard?.instantiateViewController(withIdentifier: vcid )
-            newViewController?.view.translatesAutoresizingMaskIntoConstraints = false
-            showCatalogViewController = newViewController
+            
+            showCatalogViewController = self.storyboard?.instantiateViewController(withIdentifier: vcid ) as? CatalogViewController
+            showCatalogViewController?.mvc = self
+            
+            showCatalogViewController?.view.translatesAutoresizingMaskIntoConstraints = false
+            
         }
         cycleFromViewController(oldViewController:  currentViewController!, toViewController: showCatalogViewController!)
+    
     currentViewController = showCatalogViewController
-    self.navigationItem.title = "Candidatez"
+    self.navigationItem.title = extensionScheme
     }
     internal  func stickerzAction(tis:UIBarButtonItem) {
+        
+        orgbbi.isEnabled = false // always true on this tab
+    
         guard  currentViewController != showCaptionedViewController ||
             showCaptionedViewController == nil else  { return }
         coloredSpacer.backgroundColor = appTheme.stickerzColor
         for bbi in allBarButtonItems {
             bbi.tintColor = bbi == tis ? coloredSpacer.backgroundColor : offColor
         }
-        let newViewController = showCaptionedViewController ?? self.storyboard?.instantiateViewController(withIdentifier: "CaptionedViewControllerID")
-        newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
-        cycleFromViewController(oldViewController:  currentViewController!, toViewController: newViewController!)
-        currentViewController = newViewController
-        showCaptionedViewController = currentViewController
+        showCaptionedViewController = self.storyboard?.instantiateViewController(withIdentifier: "CaptionedViewControllerID" ) as? CapationatedViewController
+        showCaptionedViewController?.mvc = self
+        
+        showCaptionedViewController?.view.translatesAutoresizingMaskIntoConstraints = false
+        
+        cycleFromViewController(oldViewController:  currentViewController!, toViewController: showCaptionedViewController!)
+        currentViewController = showCaptionedViewController
         
         self.navigationItem.title = "Caption History"
     }
+    
     internal  func imsgAction(tis:UIBarButtonItem) {
+        
+        orgbbi.isEnabled = false // always true on this tab
         guard  currentViewController != showMessagesViewController || showMessagesViewController == nil else  { return }
         coloredSpacer.backgroundColor = appTheme.iMessageColor
         for bbi in allBarButtonItems {
             bbi.tintColor = bbi == tis ? coloredSpacer.backgroundColor : offColor
         }
-        let newViewController = showMessagesViewController ?? self.storyboard?.instantiateViewController(withIdentifier: "MessageViewControllerID")
-        newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
-        cycleFromViewController(oldViewController: currentViewController!, toViewController: newViewController!)
-        currentViewController = newViewController
-        showMessagesViewController = currentViewController
         
+        showMessagesViewController = self.storyboard?.instantiateViewController(withIdentifier: "MessageViewControllerID") as? MessagesViewController
+        
+        showMessagesViewController?.mvc = self
+        showMessagesViewController!.view.translatesAutoresizingMaskIntoConstraints = false
+        cycleFromViewController(oldViewController: currentViewController!, toViewController: showMessagesViewController!)
+        currentViewController = showMessagesViewController
         self.navigationItem.title = "Messages App..."
     }
+
     //MARK:- move between view controllers
    fileprivate  func cycleFromViewController(oldViewController: UIViewController, toViewController newViewController: UIViewController) {
         oldViewController.willMove(toParentViewController: nil)
@@ -186,7 +200,7 @@ final class MasterViewController: UIViewController {
                         newViewController.didMove(toParentViewController: self)
         })
     }
-    func addSubview(subView:UIView,toView parentView:UIView) {
+    fileprivate func addSubview(subView:UIView,toView parentView:UIView) {
         parentView.addSubview(subView)
         var viewBindingsDict = [String: AnyObject]()
         viewBindingsDict["subView"] = subView

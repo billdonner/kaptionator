@@ -19,6 +19,14 @@
 		886B4AC41D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4AC21D9CA4CB00581C9B /* MessagesTableCell.swift */; };
 		886B4AC51D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4AC21D9CA4CB00581C9B /* MessagesTableCell.swift */; };
 		886B4AC61D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4AC21D9CA4CB00581C9B /* MessagesTableCell.swift */; };
+		886B4AC81D9DDD5B00581C9B /* ReorderMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4AC71D9DDD5B00581C9B /* ReorderMessagesViewController.swift */; };
+		886B4AC91D9DDD5B00581C9B /* ReorderMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4AC71D9DDD5B00581C9B /* ReorderMessagesViewController.swift */; };
+		886B4ACA1D9DDD5B00581C9B /* ReorderMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4AC71D9DDD5B00581C9B /* ReorderMessagesViewController.swift */; };
+		886B4ACB1D9DDD5B00581C9B /* ReorderMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4AC71D9DDD5B00581C9B /* ReorderMessagesViewController.swift */; };
+		886B4ACD1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4ACC1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift */; };
+		886B4ACE1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4ACC1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift */; };
+		886B4ACF1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4ACC1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift */; };
+		886B4AD01D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4ACC1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift */; };
 		889FB70C1D93785B0064B4C9 /* CandidatesForBlur.png in Resources */ = {isa = PBXBuildFile; fileRef = 889FB7091D93785B0064B4C9 /* CandidatesForBlur.png */; };
 		889FB70D1D93785B0064B4C9 /* CandidatesForBlur.png in Resources */ = {isa = PBXBuildFile; fileRef = 889FB7091D93785B0064B4C9 /* CandidatesForBlur.png */; };
 		889FB70E1D93785B0064B4C9 /* CandidatesForBlur.png in Resources */ = {isa = PBXBuildFile; fileRef = 889FB7091D93785B0064B4C9 /* CandidatesForBlur.png */; };
@@ -285,6 +293,8 @@
 		881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesViewController.swift; sourceTree = "<group>"; };
 		882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCaptionSpace.swift; sourceTree = "<group>"; };
 		886B4AC21D9CA4CB00581C9B /* MessagesTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableCell.swift; sourceTree = "<group>"; };
+		886B4AC71D9DDD5B00581C9B /* ReorderMessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReorderMessagesViewController.swift; sourceTree = "<group>"; };
+		886B4ACC1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReorderCollectionViewCell.swift; sourceTree = "<group>"; };
 		8876DE041D9C312200F211A5 /* candidatez copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "candidatez copy-Info.plist"; path = "/Users/billdonner/Documents/kaptionator/candidatez copy-Info.plist"; sourceTree = "<absolute>"; };
 		8876DE161D9C312800F211A5 /* candidatezMessagesExtension copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "candidatezMessagesExtension copy-Info.plist"; path = "/Users/billdonner/Documents/kaptionator/candidatezMessagesExtension copy-Info.plist"; sourceTree = "<absolute>"; };
 		889FB7091D93785B0064B4C9 /* CandidatesForBlur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CandidatesForBlur.png; sourceTree = "<group>"; };
@@ -459,6 +469,8 @@
 				88DD92E61D88738200832564 /* MessagedMenuViewController.swift */,
 				88C451D61D92EAD6003DC256 /* ModalBlurViewController.swift */,
 				88F2FC911D931A070055209C /* MoreMenuViewController.swift */,
+				886B4ACC1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift */,
+				886B4AC71D9DDD5B00581C9B /* ReorderMessagesViewController.swift */,
 			);
 			path = appcode;
 			sourceTree = "<group>";
@@ -1001,6 +1013,7 @@
 				88DD92F11D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				88DD93111D88738200832564 /* CaptionedTableCell.swift in Sources */,
 				88B54CE21D8870060076942D /* manifest.swift in Sources */,
+				886B4ACD1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88B54CAA1D8870060076942D /* mlib.swift in Sources */,
 				88DD92F91D88738200832564 /* CapationatedViewController.swift in Sources */,
 				88DD92F51D88738200832564 /* CaptionedMenuViewController.swift in Sources */,
@@ -1016,6 +1029,7 @@
 				88B54CCA1D8870060076942D /* IOSSpecialOps.swift in Sources */,
 				88DD930D1D88738200832564 /* CatalogDataCell.swift in Sources */,
 				88B54CB21D8870060076942D /* theme.swift in Sources */,
+				886B4AC81D9DDD5B00581C9B /* ReorderMessagesViewController.swift in Sources */,
 				88B54CC21D8870060076942D /* common.swift in Sources */,
 				88DD93051D88738200832564 /* MasterViewController.swift in Sources */,
 				88B54CBA1D8870060076942D /* RemoteAsset.swift in Sources */,
@@ -1031,6 +1045,7 @@
 				88DD930A1D88738200832564 /* MessagedMenuViewController.swift in Sources */,
 				88DD93021D88738200832564 /* HelpOverlayViewController.swift in Sources */,
 				88DD92EA1D88738200832564 /* AppDelegate.swift in Sources */,
+				886B4ACE1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88DD92F21D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				88DD92EE1D88738200832564 /* CatalogViewController.swift in Sources */,
 				88DD93121D88738200832564 /* CaptionedTableCell.swift in Sources */,
@@ -1040,6 +1055,7 @@
 				88DD92FA1D88738200832564 /* CapationatedViewController.swift in Sources */,
 				88DD92F61D88738200832564 /* CaptionedMenuViewController.swift in Sources */,
 				882EB2121D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */,
+				886B4AC91D9DDD5B00581C9B /* ReorderMessagesViewController.swift in Sources */,
 				88B54CEC1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
 				88B54CF41D8870060076942D /* StickerFileFactory.swift in Sources */,
 				88B54CD41D8870060076942D /* SFViewController.swift in Sources */,
@@ -1065,6 +1081,7 @@
 				88DD930B1D88738200832564 /* MessagedMenuViewController.swift in Sources */,
 				88DD93031D88738200832564 /* HelpOverlayViewController.swift in Sources */,
 				88DD92EB1D88738200832564 /* AppDelegate.swift in Sources */,
+				886B4ACF1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88DD92F31D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				88DD92EF1D88738200832564 /* CatalogViewController.swift in Sources */,
 				88DD93131D88738200832564 /* CaptionedTableCell.swift in Sources */,
@@ -1074,6 +1091,7 @@
 				88DD92FB1D88738200832564 /* CapationatedViewController.swift in Sources */,
 				88DD92F71D88738200832564 /* CaptionedMenuViewController.swift in Sources */,
 				882EB2141D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */,
+				886B4ACA1D9DDD5B00581C9B /* ReorderMessagesViewController.swift in Sources */,
 				88B54CEE1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
 				88B54CF61D8870060076942D /* StickerFileFactory.swift in Sources */,
 				88B54CD61D8870060076942D /* SFViewController.swift in Sources */,
@@ -1099,6 +1117,7 @@
 				88DD930C1D88738200832564 /* MessagedMenuViewController.swift in Sources */,
 				88DD93041D88738200832564 /* HelpOverlayViewController.swift in Sources */,
 				88DD92EC1D88738200832564 /* AppDelegate.swift in Sources */,
+				886B4AD01D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88DD92F41D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				88DD92F01D88738200832564 /* CatalogViewController.swift in Sources */,
 				88DD93141D88738200832564 /* CaptionedTableCell.swift in Sources */,
@@ -1108,6 +1127,7 @@
 				88DD92FC1D88738200832564 /* CapationatedViewController.swift in Sources */,
 				88DD92F81D88738200832564 /* CaptionedMenuViewController.swift in Sources */,
 				882EB2161D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */,
+				886B4ACB1D9DDD5B00581C9B /* ReorderMessagesViewController.swift in Sources */,
 				88B54CF01D8870060076942D /* SharedCaptionSpace.swift in Sources */,
 				88B54CF81D8870060076942D /* StickerFileFactory.swift in Sources */,
 				88B54CD81D8870060076942D /* SFViewController.swift in Sources */,

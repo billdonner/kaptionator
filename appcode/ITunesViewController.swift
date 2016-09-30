@@ -12,7 +12,7 @@ import UIKit
 // MARK: Show All Remote Catalog Entries in One Tab as Child ViewContoller
 //
 
-final class ITunesViewController : UIViewController  {
+final class ITunesViewController : UIViewController,ControlledByMasterViewController  {
     
     let refreshControl = UIRefreshControl()
     @IBAction func unwindToITunesViewController(_ segue: UIStoryboardSegue)  {

@@ -87,6 +87,9 @@ struct SharedCaptionSpace {
     static func items () -> [SharedCE] {
         return   memSpace.entries //.map { key, value in return value }
     }
+    static func itemAt (_ x:Int) -> SharedCE {
+        return   memSpace.entries[x] //.map { key, value in return value }
+    }
     func dump() {
         print("SharedCaptionSpace - \(suite) >>>>> \(entries)")
         
@@ -103,6 +106,12 @@ struct SharedCaptionSpace {
         
         memSpace.entries.append(ce)
        // saveToDisk()
+    }
+    // reorder these entries - normally caller will save afterwards
+    static func swap(_ a: Int,_ b:Int) {
+        let t = memSpace.entries[a]
+        memSpace.entries[a] = memSpace.entries[b]
+        memSpace.entries[b] = t
     }
     static func findIdx(id:String) -> Int {
         var idx = 0

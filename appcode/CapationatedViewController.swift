@@ -9,7 +9,8 @@
  //
  // MARK: Show All Captionated Entries in One Tab as Child ViewContoller
  //
- final class CapationatedViewController: UIViewController   {
+ final class CapationatedViewController: UIViewController  ,ControlledByMasterViewController {
+    var mvc : MasterViewController!
     fileprivate  var stickerz:[AppCE] = []
     fileprivate var theSelectedIndexPath:IndexPath?
     @IBOutlet internal  var tableView: UITableView!

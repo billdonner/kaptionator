@@ -9,12 +9,20 @@ import UIKit
 //
 // MARK: Show All Captionated Entries in One Tab as Child ViewContoller
 //
-final class MessagesViewController: UIViewController   {
+final class MessagesViewController: UIViewController,ControlledByMasterViewController   {
     fileprivate var stickerz:[SharedCE] = []
     fileprivate var theSelectedIndexPath:IndexPath?
+    
+    var mvc:MasterViewController!
+    
+    
+    let refreshControl = UIRefreshControl()
+    
     @IBOutlet internal  var tableView: UITableView!
  
     @IBAction func unwindToMessagesViewController(_ segue: UIStoryboardSegue)  {
+        
+        self.refreshControl.endRefreshing()
         refreshFromMemSpace()
     }
     override func didReceiveMemoryWarning() {
@@ -22,9 +30,7 @@ final class MessagesViewController: UIViewController   {
         // Dispose of any resources that can be recreated.
         print ("**********removed all cached images because MessagesViewController short on memory")
     }
-    override func didMove(toParentViewController parent: UIViewController?) {
-        refreshFromMemSpace()
-    }
+ 
     //MARK:- Dispatching to External ViewControllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier ==  "MessagesAppCellTapMenuID"{
@@ -34,25 +40,48 @@ final class MessagesViewController: UIViewController   {
                     avc.captionedEntry = stickerz [indexPath.row]
                 }
             }}}
+    internal func refreshPulled(_ x:AnyObject) {
+        
+        if stickerz.count > 1 {
+        self.performSegue(withIdentifier: "PresentReorder", sender: nil)
+            // when controller returns the unwindTo func will call endrefreshing....
+        } else {
+            refreshControl.endRefreshing()
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = appTheme.backgroundColor
+        refreshControl.tintColor = .blue
+        refreshControl.attributedTitle = NSAttributedString(string:"your Stickers in Messages - swipe to delete or pull to reorder")
+        refreshControl.addTarget(self, action: #selector(self.refreshPulled), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+        tableView.alwaysBounceVertical = true  // needed so always can pull to refresh
     }
     fileprivate  func refreshFromMemSpace(){
-        var items = SharedCaptionSpace.items()
+        let items = SharedCaptionSpace.items()
         // group similar images together in reverse ti
-        items.sort(by: { a,b in  let aa = a as SharedCE
-            let bb = b as SharedCE
-            return aa.id > bb.id
-            })
+//        items.sort(by: { a,b in  let aa = a as SharedCE
+//            let bb = b as SharedCE
+//            return aa.id > bb.id
+//            })
          stickerz = items
          tableView?.reloadData()
+        // if two or more items, given user opportunity to sort
+        
+        //mvc.orgbbi.isEnabled =  items.count > 1
+    
+    }
+    override func didMove(toParentViewController parent: UIViewController?) {
+        refreshFromMemSpace()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         refreshFromMemSpace()
+        
     }
    fileprivate func displayTapMenu () {
         // todo: analyze safety of passing indexpath thru, sees to work for now
@@ -75,16 +104,16 @@ extension MessagesViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let srcrow = sourceIndexPath.row
-        let dstrow = destinationIndexPath.row
-        // swap thises guys around
-        let stuff = stickerz [srcrow]
-        stickerz [srcrow] = stickerz [dstrow]
-        stickerz [dstrow] = stuff
-        // too much here
-        SharedCaptionSpace.saveData()
-    }
+//    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+//        let srcrow = sourceIndexPath.row
+//        let dstrow = destinationIndexPath.row
+//        // swap thises guys around
+//        let stuff = stickerz [srcrow]
+//        stickerz [srcrow] = stickerz [dstrow]
+//        stickerz [dstrow] = stuff
+//        // too much here
+//        SharedCaptionSpace.saveData()
+//    }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let ce =  stickerz.remove(at: indexPath.row)

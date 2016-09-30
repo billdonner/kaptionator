@@ -248,10 +248,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MessagesTableCell" id="T4c-g1-0ka" customClass="MessagesTableCell" customModule="candidatez" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="100"/>
+                                        <rect key="frame" x="0.0" y="28" width="1000" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T4c-g1-0ka" id="o4R-Qt-FEy">
-                                            <frame key="frameInset" width="343" height="99"/>
+                                            <frame key="frameInset" width="1000" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Fb2-HT-rRi">
@@ -308,6 +308,7 @@
                     <connections>
                         <outlet property="tableView" destination="d7D-GC-Scz" id="niC-cJ-uMD"/>
                         <segue destination="2yc-jg-Aom" kind="presentation" identifier="MessagesAppCellTapMenuID" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="FMn-7c-SAG"/>
+                        <segue destination="vsv-jb-Nm1" kind="presentation" identifier="PresentReorder" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="Qd1-E3-nhy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nue-Py-llb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -315,10 +316,10 @@
             </objects>
             <point key="canvasLocation" x="-3389" y="-4946"/>
         </scene>
-        <!--Candidatez-->
+        <!--MASTER-->
         <scene sceneID="iI4-Bh-VoZ">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Tm1-Gg-mxO" customClass="MasterViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Tm1-Gg-mxO" userLabel="MASTER" customClass="MasterViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RDa-qn-fIJ"/>
                         <viewControllerLayoutGuide type="bottom" id="Mo6-3a-xLp"/>
@@ -387,6 +388,7 @@
                         <outlet property="helpbbi" destination="fEM-fJ-QL9" id="EdC-pC-jLK"/>
                         <outlet property="logoView" destination="Qsx-Ud-Mye" id="gJe-dS-hGw"/>
                         <outlet property="morebbi" destination="iwR-wJ-SqY" id="Oq7-Yb-Onc"/>
+                        <outlet property="orgbbi" destination="wCQ-X4-49y" id="6PL-sQ-A10"/>
                         <segue destination="CxQ-5a-VxP" kind="presentation" identifier="HelpForCatalogSegue" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="jaf-84-Rqq"/>
                         <segue destination="KKk-qV-NG5" kind="presentation" identifier="PerformMoreSegue" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="WUV-dI-6q1"/>
                         <segue destination="Hgk-9T-OVV" kind="presentation" identifier="HelpForStickersSegue" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="GrU-yW-rtD"/>
@@ -394,6 +396,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5m-nU-S6G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <barButtonItem enabled="NO" systemItem="organize" id="wCQ-X4-49y">
+                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <segue destination="vsv-jb-Nm1" kind="presentation" identifier="ReorderMessagesSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="6eH-7j-mO0"/>
+                    </connections>
+                </barButtonItem>
             </objects>
             <point key="canvasLocation" x="-3082" y="-2860"/>
         </scene>
@@ -1312,7 +1320,7 @@
                     </items>
                 </toolbar>
             </objects>
-            <point key="canvasLocation" x="-2908" y="-2301"/>
+            <point key="canvasLocation" x="-3092" y="-2836"/>
         </scene>
         <!--MessagesTabHelp-->
         <scene sceneID="9jB-Hw-SS1">
@@ -1477,6 +1485,92 @@
             </objects>
             <point key="canvasLocation" x="-1965" y="-538"/>
         </scene>
+        <!--Reorder Messages View Controller-->
+        <scene sceneID="qaM-we-gfF">
+            <objects>
+                <collectionViewController storyboardIdentifier="ReorderMessagesID" id="vsv-jb-Nm1" customClass="ReorderMessagesViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Tu9-ZF-rxs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gnD-R6-Zq2">
+                            <size key="itemSize" width="150" height="150"/>
+                            <size key="headerReferenceSize" width="375" height="150"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ReorderCollectionViewCell" id="xes-DZ-FuJ" customClass="ReorderCollectionViewCell" customModule="candidatez" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="150" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5nk-dW-n31"/>
+                                        <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="7ms-cd-Mgk" userLabel="CLEAR ">
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottomMargin" secondItem="7ms-cd-Mgk" secondAttribute="bottom" constant="24" id="CcH-2X-lZU"/>
+                                    <constraint firstItem="5nk-dW-n31" firstAttribute="top" secondItem="xes-DZ-FuJ" secondAttribute="topMargin" id="EaB-4H-hlY"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="5nk-dW-n31" secondAttribute="bottom" id="Is3-hb-SA7"/>
+                                    <constraint firstItem="5nk-dW-n31" firstAttribute="leading" secondItem="xes-DZ-FuJ" secondAttribute="leadingMargin" id="KF0-sm-lYu"/>
+                                    <constraint firstItem="7ms-cd-Mgk" firstAttribute="leading" secondItem="xes-DZ-FuJ" secondAttribute="leadingMargin" id="OxW-Cj-VYZ"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="5nk-dW-n31" secondAttribute="trailing" id="eE5-Iy-kkv"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="7ms-cd-Mgk" secondAttribute="trailing" id="mCR-Ff-bB1"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="detailsImageView" destination="5nk-dW-n31" id="xl4-RM-NPx"/>
+                                    <outlet property="nameLabel" destination="7ms-cd-Mgk" id="TQT-2n-wnk"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="headerforreordercollection" id="cSg-Cw-EpW" customClass="ReorderMessagesReusableView" customModule="candidatez" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="These are your stickers currently in Messages. Reorder the stickers here, or delete from the Messages List." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pxy-9e-c12">
+                                    <color key="backgroundColor" red="0.89484578371047974" green="0.90818864107131958" blue="0.3589709997177124" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailingMargin" secondItem="pxy-9e-c12" secondAttribute="trailing" id="4xw-mU-Pdd"/>
+                                <constraint firstItem="pxy-9e-c12" firstAttribute="top" secondItem="cSg-Cw-EpW" secondAttribute="topMargin" id="AKH-4w-TBK"/>
+                                <constraint firstItem="pxy-9e-c12" firstAttribute="leading" secondItem="cSg-Cw-EpW" secondAttribute="leadingMargin" id="R4n-6f-lKL"/>
+                                <constraint firstAttribute="bottomMargin" secondItem="pxy-9e-c12" secondAttribute="bottom" id="YMg-tu-yuT"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="headerLabel" destination="pxy-9e-c12" id="QJN-Fc-PvB"/>
+                            </connections>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="vsv-jb-Nm1" id="xEO-X5-GtS"/>
+                            <outlet property="delegate" destination="vsv-jb-Nm1" id="6W7-7f-Ycx"/>
+                        </connections>
+                    </collectionView>
+                    <connections>
+                        <segue destination="paF-Jo-U5k" kind="unwind" identifier="unwindToMessagesViewController" unwindAction="unwindToMessagesViewController:" id="cUC-pD-y3z"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UAF-gJ-kGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="paF-Jo-U5k" userLabel="Exit" sceneMemberID="exit"/>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" image="BackgroundImage" id="qCI-os-zMe">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="500"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                </imageView>
+            </objects>
+            <point key="canvasLocation" x="-3697" y="-5307"/>
+        </scene>
     </scenes>
     <resources>
         <image name="BackgroundImage" width="341" height="256"/>
@@ -1489,6 +1583,7 @@
         <image name="backforportrait.png" width="840" height="840"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="6eH-7j-mO0"/>
         <segue reference="X63-RO-jMS"/>
         <segue reference="6bp-dS-sLd"/>
     </inferredMetricsTieBreakers>

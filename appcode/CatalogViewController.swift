@@ -8,11 +8,16 @@
 import UIKit
 // MARK: Show All Remote Catalog Entries in One Tab as Child ViewContoller
 //
-final class CatalogViewController: UICollectionViewController {
+final class CatalogViewController: UICollectionViewController,ControlledByMasterViewController {
     @IBAction func unwindToCatalogItemsViewControlle(_ segue: UIStoryboardSegue)  {
     }
-    var theSelectedIndexPath:IndexPath?
-    @IBOutlet weak var startupLogo: UIImageView!
+    
+    var mvc : MasterViewController!
+    
+    
+    let refreshControl = UIRefreshControl()
+    fileprivate var theSelectedIndexPath:IndexPath?
+     @IBOutlet weak var startupLogo: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // put logo in there, we will fade it in
@@ -52,6 +57,12 @@ final class CatalogViewController: UICollectionViewController {
 /// secret message to gary
 
 extension CatalogViewController {  //loading on first up - moved from masterview controller
+    
+    func refreshPulled(_ x:AnyObject) {
+            refreshControl.endRefreshing()
+        }
+    
+    
     func phase1() {
         // only read remote if we have a list
         if stickerPackListFileURL != nil {
@@ -84,6 +95,14 @@ extension CatalogViewController {  //loading on first up - moved from masterview
         let x = RemSpace.itemCount()
         print(">>>>>>>>>> phase3 \(x) REMOTE ASSETS LOADED \(vcid) -- READY TO ROLL")
         self.collectionView?.reloadData()
+        
+        refreshControl.tintColor = .blue
+        refreshControl.attributedTitle = NSAttributedString(string:"These are the Sticker images in this pack")
+        refreshControl.addTarget(self, action: #selector(self.refreshPulled), for: .valueChanged)
+        
+        collectionView?.addSubview(refreshControl)
+        collectionView?.alwaysBounceVertical = true  // needed so always can pull to refresh
+        
         UIView.animate(withDuration: 1.5, animations: {
             self.startupLogo.alpha =  0.0
             self.collectionView?.alpha = 1.0
@@ -92,6 +111,8 @@ extension CatalogViewController {  //loading on first up - moved from masterview
                 self.startupLogo.removeFromSuperview()
             }
         )
+        
+       
     }
 
 //MARK: UICollectionViewDataSource
