@@ -132,8 +132,6 @@
 		88B54D001D8870F10076942D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88B54CFE1D8870F10076942D /* MainInterface.storyboard */; };
 		88B54D011D8870F10076942D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88B54CFE1D8870F10076942D /* MainInterface.storyboard */; };
 		88B54D021D8870F10076942D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88B54CFE1D8870F10076942D /* MainInterface.storyboard */; };
-		88C451D31D92E4E1003DC256 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88AEA5B51D514B53006E5C70 /* LaunchScreen.storyboard */; };
-		88C451D51D92E4FC003DC256 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88AEA5B51D514B53006E5C70 /* LaunchScreen.storyboard */; };
 		88C7AED51D98685D0050A6CD /* Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7AED41D98685D0050A6CD /* Versions.swift */; };
 		88C7AED61D98685D0050A6CD /* Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7AED41D98685D0050A6CD /* Versions.swift */; };
 		88C7AED71D98685D0050A6CD /* Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7AED41D98685D0050A6CD /* Versions.swift */; };
@@ -933,7 +931,6 @@
 				889FB70E1D93785B0064B4C9 /* CandidatesForBlur.png in Resources */,
 				889FB7201D93FC480064B4C9 /* backforportrait.png in Resources */,
 				88AEA5CA1D514B6A006E5C70 /* Assets.xcassets in Resources */,
-				88C451D31D92E4E1003DC256 /* LaunchScreen.storyboard in Resources */,
 				889FB7121D93785B0064B4C9 /* StickerzForBlur.png in Resources */,
 				88E3B5D21D90B3D00079E0CB /* Main.storyboard in Resources */,
 			);
@@ -949,7 +946,6 @@
 				889FB70F1D93785B0064B4C9 /* CandidatesForBlur.png in Resources */,
 				889FB7211D93FC480064B4C9 /* backforportrait.png in Resources */,
 				88AEA5F61D514BC3006E5C70 /* Assets.xcassets in Resources */,
-				88C451D51D92E4FC003DC256 /* LaunchScreen.storyboard in Resources */,
 				889FB7131D93785B0064B4C9 /* StickerzForBlur.png in Resources */,
 				88E3B5D31D90B3D10079E0CB /* Main.storyboard in Resources */,
 			);
