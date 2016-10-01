@@ -13,17 +13,21 @@ func dismisstapped(_ s:AnyObject)
  
 final class WebsiteOverlayViewController:InnerOverlayViewController {
     override func getreq () -> URLRequest {
-        return URLRequest(url:URL(string:"http://shtikerz.com/candidatez/")!)
+        let urlasstring = websitePath + extensionScheme.lowercased()
+        return URLRequest(url:URL(string: urlasstring )!)
     }
 }
 final class HelpOverlayViewController:InnerOverlayViewController {
     override func getreq () -> URLRequest {
-      return URLRequest(url:URL(string:"http://shtikerz.com/candidatez/apphelp.html")!)
+    let urlasstring = websitePath + extensionScheme.lowercased() +  "/apphelp.html"
+    return URLRequest(url:URL(string:urlasstring )!)
     }
 }
 final class AltHelpOverlayViewController:InnerOverlayViewController {
     override func getreq () -> URLRequest {
-        return URLRequest(url:URL(string:"http://shtikerz.com/candidatez/help.html")!)
+        let urlasstring = websitePath + extensionScheme.lowercased() +  "/ help.html"
+        return URLRequest(url:URL(string:urlasstring )!)
+        
     }
 }
 class InnerOverlayViewController: UIViewController, UIWebViewDelegate,AddDismissButton {

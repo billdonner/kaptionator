@@ -10,7 +10,7 @@ import UIKit
 
 
 /// "REMOTE-WEBSITE-URL" is the website page for this sticker pack
-var shtickerzWebsitePath: String? {
+var websitePath: String {
 get {
     if let iDict = Bundle.main.infoDictionary ,
         let w =  iDict["REMOTE-WEBSITE-URL"] as? String { return w
@@ -24,7 +24,7 @@ struct IOSSpecialOps { // only compiles in main app - ios bug?
     
     static func openwebsite(_ presentor:UIViewController) {
         
-        let url = URL(string:shtickerzWebsitePath!)!
+        let url = URL(string:websitePath)!
         let vc = SFViewController(url: url)
         let nav = UINavigationController(rootViewController: vc)
         vc.delegate =  vc
