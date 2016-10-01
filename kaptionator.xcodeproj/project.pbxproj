@@ -802,7 +802,6 @@
 					};
 					88AEA5BF1D514B6A006E5C70 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = X2PQYA6S48;
 						DevelopmentTeamName = "Bill Donner";
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -1440,9 +1439,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = emogeez/emogeez.entitlements;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = emogeez/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.emogeez;
+				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.emogees;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1454,9 +1454,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = emogeez/emogeez.entitlements;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = emogeez/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.emogeez;
+				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.emogees;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1530,7 +1531,7 @@
 				CODE_SIGN_ENTITLEMENTS = emogeezMessagesExtension/emogeezMessagesExtension.entitlements;
 				INFOPLIST_FILE = emogeezMessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.emogeez.MessagesExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.emogees.MessagesExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -1544,7 +1545,7 @@
 				CODE_SIGN_ENTITLEMENTS = emogeezMessagesExtension/emogeezMessagesExtension.entitlements;
 				INFOPLIST_FILE = emogeezMessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.emogeez.MessagesExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.emogees.MessagesExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
