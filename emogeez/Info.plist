@@ -19,9 +19,9 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>72</string>
+	<string>73</string>
 	<key>EXTENSION-SCHEME</key>
-	<string>Emogeez</string>
+	<string>EmoGeez</string>
 	<key>LEFT-BBI-NAME</key>
 	<string>Catalog</string>
 	<key>LSRequiresIPhoneOS</key>
