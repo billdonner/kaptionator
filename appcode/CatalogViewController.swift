@@ -30,7 +30,7 @@ final class CatalogViewController: UICollectionViewController,ControlledByMaster
     }
     private func disp() {
         print ("Collection view size \(collectionView!.contentSize)")
-        assert( stickerPackListFileURL != nil)
+        assert( stickerManifestURL != nil)
         //  only read the catalog if we have to
         do {
             try RemSpace.restoreRemspaceFromDisk()
@@ -65,9 +65,9 @@ extension CatalogViewController {  //loading on first up - moved from masterview
     
     func phase1() {
         // only read remote if we have a list
-        if stickerPackListFileURL != nil {
-            print(">>>>>>>>>> phase1 Manifest.loadFromRemoteJSON \(stickerPackListFileURL)")
-            Manifest.loadFromRemoteJSON (url: stickerPackListFileURL  , observer: self) { status, title, allofme in
+        if stickerManifestURL != nil {
+            print(">>>>>>>>>> phase1 Manifest.loadJSONFromURL \(stickerManifestURL)")
+            Manifest.loadJSONFromURL (url: stickerManifestURL  , observer: self) { status, title, allofme in
                 // at this point the observer callbacks have been called so the data is ready for redisplay on the main q
                 DispatchQueue.main.async  {
                     guard status == 200 else {
@@ -232,10 +232,7 @@ extension CatalogViewController : MEObserver {
     func newdocument(_ propsDict: JSONDict, _ title:String) {
         RemSpace.reset(title:title)
     }
-    func newpack(_ pack: String,_ showsectionhead:Bool) {
-        //print("**** new pack \(pack)")
-        //remSpace.addhdr(s: pack) // adds new section
-    }
+ 
     func newentry(me:RemoteAsset){
         //remSpace.addasset(ra: me)
     }

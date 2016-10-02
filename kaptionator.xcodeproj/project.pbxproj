@@ -186,7 +186,6 @@
 		88E3B5D11D90B3CF0079E0CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD92D91D8872D400832564 /* Main.storyboard */; };
 		88E3B5D21D90B3D00079E0CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD92D91D8872D400832564 /* Main.storyboard */; };
 		88E3B5D31D90B3D10079E0CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD92D91D8872D400832564 /* Main.storyboard */; };
-		88E3B5D91D9156B60079E0CB /* ITunesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */; };
 		88EEC93B1D9C06CF00C188EF /* DatabaseStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEC93A1D9C06CF00C188EF /* DatabaseStuff.swift */; };
 		88EEC93C1D9C06CF00C188EF /* DatabaseStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEC93A1D9C06CF00C188EF /* DatabaseStuff.swift */; };
 		88EEC93D1D9C06CF00C188EF /* DatabaseStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEC93A1D9C06CF00C188EF /* DatabaseStuff.swift */; };
@@ -199,6 +198,16 @@
 		88F2FC931D931A070055209C /* MoreMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F2FC911D931A070055209C /* MoreMenuViewController.swift */; };
 		88F2FC941D931A070055209C /* MoreMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F2FC911D931A070055209C /* MoreMenuViewController.swift */; };
 		88F2FC951D931A070055209C /* MoreMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F2FC911D931A070055209C /* MoreMenuViewController.swift */; };
+		AD20A5FA1DA1946600877ABF /* ITunesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */; };
+		AD20A5FB1DA1946A00877ABF /* ITunesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */; };
+		AD20A5FC1DA1950A00877ABF /* ITunesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */; };
+		AD20A5FD1DA1950B00877ABF /* ITunesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */; };
+		AD20A5FE1DA1950C00877ABF /* ITunesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */; };
+		AD20A5FF1DA1951000877ABF /* ITunesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */; };
+		AD20A6001DA1951100877ABF /* ITunesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */; };
+		AD20A6011DA1951200877ABF /* ITunesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */; };
+		AD6CAF2A1DA19CF80062919B /* candidatesIconsCans-1024x768.png in Resources */ = {isa = PBXBuildFile; fileRef = AD6CAF291DA19CF80062919B /* candidatesIconsCans-1024x768.png */; };
+		AD6CAF2C1DA19D270062919B /* emoGeeStickerIcons-1024x768.png in Resources */ = {isa = PBXBuildFile; fileRef = AD6CAF2B1DA19D270062919B /* emoGeeStickerIcons-1024x768.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -361,6 +370,8 @@
 		88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesMenuViewController.swift; sourceTree = "<group>"; };
 		88EEC93A1D9C06CF00C188EF /* DatabaseStuff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatabaseStuff.swift; path = ../appcode/DatabaseStuff.swift; sourceTree = "<group>"; };
 		88F2FC911D931A070055209C /* MoreMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreMenuViewController.swift; sourceTree = "<group>"; };
+		AD6CAF291DA19CF80062919B /* candidatesIconsCans-1024x768.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "candidatesIconsCans-1024x768.png"; path = "candidatezMessagesExtension/Assets.xcassets/iMessage App Icon.stickersiconset/candidatesIconsCans-1024x768.png"; sourceTree = "<group>"; };
+		AD6CAF2B1DA19D270062919B /* emoGeeStickerIcons-1024x768.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "emoGeeStickerIcons-1024x768.png"; path = "emogeezMessagesExtension/Assets.xcassets/iMessage App Icon.stickersiconset/emoGeeStickerIcons-1024x768.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -485,6 +496,8 @@
 		88AEA5881D514B29006E5C70 = {
 			isa = PBXGroup;
 			children = (
+				AD6CAF291DA19CF80062919B /* candidatesIconsCans-1024x768.png */,
+				AD6CAF2B1DA19D270062919B /* emoGeeStickerIcons-1024x768.png */,
 				886B4AEF1DA175F700581C9B /* Empty.xib */,
 				889FB71D1D93FC480064B4C9 /* backforportrait.png */,
 				889FB7091D93785B0064B4C9 /* CandidatesForBlur.png */,
@@ -788,6 +801,7 @@
 					};
 					88AEA5A91D514B53006E5C70 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 922D9E65C8;
 						DevelopmentTeamName = "Bill Donner";
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -845,7 +859,7 @@
 					};
 					88AEA62E1D514C8D006E5C70 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = X2PQYA6S48;
+						DevelopmentTeam = 922D9E65C8;
 						DevelopmentTeamName = "Bill Donner";
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -916,6 +930,7 @@
 				889FB7111D93785B0064B4C9 /* StickerzForBlur.png in Resources */,
 				88AEA5B41D514B53006E5C70 /* Assets.xcassets in Resources */,
 				889FB7151D93785B0064B4C9 /* MessagesForBlur.png in Resources */,
+				AD6CAF2A1DA19CF80062919B /* candidatesIconsCans-1024x768.png in Resources */,
 				88CBBDDD1D9348090089DD9A /* backforcatalog.png in Resources */,
 				889FB70D1D93785B0064B4C9 /* CandidatesForBlur.png in Resources */,
 				889FB71F1D93FC480064B4C9 /* backforportrait.png in Resources */,
@@ -931,6 +946,7 @@
 				88CBBDDE1D9348090089DD9A /* backforcatalog.png in Resources */,
 				889FB7161D93785B0064B4C9 /* MessagesForBlur.png in Resources */,
 				889FB70E1D93785B0064B4C9 /* CandidatesForBlur.png in Resources */,
+				AD6CAF2C1DA19D270062919B /* emoGeeStickerIcons-1024x768.png in Resources */,
 				889FB7201D93FC480064B4C9 /* backforportrait.png in Resources */,
 				88AEA5CA1D514B6A006E5C70 /* Assets.xcassets in Resources */,
 				889FB7121D93785B0064B4C9 /* StickerzForBlur.png in Resources */,
@@ -1004,6 +1020,7 @@
 				889FB7221D9438220064B4C9 /* CatalogViewController.swift in Sources */,
 				88EEC93B1D9C06CF00C188EF /* DatabaseStuff.swift in Sources */,
 				88DD92E91D88738200832564 /* AppDelegate.swift in Sources */,
+				AD20A5FA1DA1946600877ABF /* ITunesMenuViewController.swift in Sources */,
 				88DD92F11D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				88DD93111D88738200832564 /* CaptionedTableCell.swift in Sources */,
 				88B54CE21D8870060076942D /* manifest.swift in Sources */,
@@ -1013,13 +1030,13 @@
 				88DD92F51D88738200832564 /* CaptionedMenuViewController.swift in Sources */,
 				886B4AC31D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */,
 				88F2FC921D931A070055209C /* MoreMenuViewController.swift in Sources */,
+				AD20A5FB1DA1946A00877ABF /* ITunesViewController.swift in Sources */,
 				882EB2101D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */,
 				88B54CEA1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
 				88C7AED51D98685D0050A6CD /* Versions.swift in Sources */,
 				88B54CF21D8870060076942D /* StickerFileFactory.swift in Sources */,
 				88B54CD21D8870060076942D /* SFViewController.swift in Sources */,
 				88F2FC8D1D92F69E0055209C /* ModalBlurViewController.swift in Sources */,
-				88E3B5D91D9156B60079E0CB /* ITunesMenuViewController.swift in Sources */,
 				88B54CCA1D8870060076942D /* IOSSpecialOps.swift in Sources */,
 				88DD930D1D88738200832564 /* CatalogDataCell.swift in Sources */,
 				88B54CB21D8870060076942D /* theme.swift in Sources */,
@@ -1042,6 +1059,7 @@
 				886B4ACE1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88DD92F21D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				88DD92EE1D88738200832564 /* CatalogViewController.swift in Sources */,
+				AD20A5FF1DA1951000877ABF /* ITunesMenuViewController.swift in Sources */,
 				88DD93121D88738200832564 /* CaptionedTableCell.swift in Sources */,
 				88B54CE41D8870060076942D /* manifest.swift in Sources */,
 				88EEC93C1D9C06CF00C188EF /* DatabaseStuff.swift in Sources */,
@@ -1056,6 +1074,7 @@
 				88F2FC931D931A070055209C /* MoreMenuViewController.swift in Sources */,
 				88B54CCC1D8870060076942D /* IOSSpecialOps.swift in Sources */,
 				88DD930E1D88738200832564 /* CatalogDataCell.swift in Sources */,
+				AD20A5FC1DA1950A00877ABF /* ITunesViewController.swift in Sources */,
 				88B54CB41D8870060076942D /* theme.swift in Sources */,
 				88B54CC41D8870060076942D /* common.swift in Sources */,
 				88DD93061D88738200832564 /* MasterViewController.swift in Sources */,
@@ -1078,6 +1097,7 @@
 				886B4ACF1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88DD92F31D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				88DD92EF1D88738200832564 /* CatalogViewController.swift in Sources */,
+				AD20A6001DA1951100877ABF /* ITunesMenuViewController.swift in Sources */,
 				88DD93131D88738200832564 /* CaptionedTableCell.swift in Sources */,
 				88B54CE61D8870060076942D /* manifest.swift in Sources */,
 				88EEC93D1D9C06CF00C188EF /* DatabaseStuff.swift in Sources */,
@@ -1092,6 +1112,7 @@
 				88F2FC941D931A070055209C /* MoreMenuViewController.swift in Sources */,
 				88B54CCE1D8870060076942D /* IOSSpecialOps.swift in Sources */,
 				88DD930F1D88738200832564 /* CatalogDataCell.swift in Sources */,
+				AD20A5FD1DA1950B00877ABF /* ITunesViewController.swift in Sources */,
 				88B54CB61D8870060076942D /* theme.swift in Sources */,
 				88B54CC61D8870060076942D /* common.swift in Sources */,
 				88DD93071D88738200832564 /* MasterViewController.swift in Sources */,
@@ -1114,6 +1135,7 @@
 				886B4AD01D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88DD92F41D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				88DD92F01D88738200832564 /* CatalogViewController.swift in Sources */,
+				AD20A6011DA1951200877ABF /* ITunesMenuViewController.swift in Sources */,
 				88DD93141D88738200832564 /* CaptionedTableCell.swift in Sources */,
 				88B54CE81D8870060076942D /* manifest.swift in Sources */,
 				88EEC93E1D9C06CF00C188EF /* DatabaseStuff.swift in Sources */,
@@ -1128,6 +1150,7 @@
 				88F2FC951D931A070055209C /* MoreMenuViewController.swift in Sources */,
 				88B54CD01D8870060076942D /* IOSSpecialOps.swift in Sources */,
 				88DD93101D88738200832564 /* CatalogDataCell.swift in Sources */,
+				AD20A5FE1DA1950C00877ABF /* ITunesViewController.swift in Sources */,
 				88B54CB81D8870060076942D /* theme.swift in Sources */,
 				88B54CC81D8870060076942D /* common.swift in Sources */,
 				88DD93081D88738200832564 /* MasterViewController.swift in Sources */,
@@ -1404,7 +1427,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = candidatez/candidatez.entitlements;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 922D9E65C8;
 				INFOPLIST_FILE = candidatez/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.candidatez;
@@ -1419,7 +1442,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = candidatez/candidatez.entitlements;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 922D9E65C8;
 				INFOPLIST_FILE = candidatez/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.candidatez;
@@ -1554,7 +1577,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_ENTITLEMENTS = candidatezMessagesExtension/candidatezMessagesExtension.entitlements;
-				DEVELOPMENT_TEAM = X2PQYA6S48;
+				DEVELOPMENT_TEAM = 922D9E65C8;
 				INFOPLIST_FILE = candidatezMessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.candidatez.MessagesExtension;
@@ -1569,7 +1592,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_ENTITLEMENTS = candidatezMessagesExtension/candidatezMessagesExtension.entitlements;
-				DEVELOPMENT_TEAM = X2PQYA6S48;
+				DEVELOPMENT_TEAM = 922D9E65C8;
 				INFOPLIST_FILE = candidatezMessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.candidatez.MessagesExtension;

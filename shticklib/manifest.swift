@@ -13,7 +13,6 @@ import UIKit
 /// protocol to allow viewcontrollers to Observe data model changes
 protocol MEObserver {
     func newdocument(_ colors: JSONDict, _ title:String)
-    func newpack(_ pack: String,_ showsectionhead:Bool)
     func newentry(me:RemoteAsset)
     
     
@@ -150,7 +149,7 @@ struct Manifest {
             completion(error.code, "-err0r-", final ) //}// made it
         }
     }
-    private static func processOnePack(pack: String, url:URL,  completion:@escaping GFRM) {
+    private static func processOneURL(_ url:URL,  completion:@escaping GFRM) {
         
         IO.httpGET(url:url) { status,data in
             guard status == 200 else {
@@ -167,42 +166,39 @@ struct Manifest {
 
     /// load a bunch of manifests as listed in a super-manifest
     
-    static func loadFromRemoteJSON(url:URL?,  observer:MEObserver?, completion:GFRM?) {
+    static func loadJSONFromURL(url:URL?,  observer:MEObserver?, completion:GFRM?) {
         guard let url = url else {
              fatalError("loadFromITunesSharing(observer: observer,completion:completion)")
         }
         var allofme:ManifestItems = []
-        processAllPacks(url:url) {status, colorsdict, apptitle, showsectionhead, shmurls in
-            guard status == 200 else {
-                if let completion = completion  {
-                    completion (status, apptitle, [])
-                }
-                return
-            }
-            // now run thru and fill in the allImages local structure
-            //remSpace.rebuildImageData() // refills allImages Structure
-            var downcount = shmurls.count
-            observer?.newdocument(colorsdict, apptitle)
-            for shmurl in shmurls {
-                let url = shmurl.1
-                let pack = shmurl.0
-                processOnePack (pack:pack, url: url //try! url.appendingPathComponent("manifest.json")
-                    
-                ){ status, s, mes in
-                    observer?.newpack(pack,showsectionhead)
+//        processAllPacks(url:url) {status, colorsdict, apptitle, showsectionhead, shmurls in
+//            guard status == 200 else {
+//                if let completion = completion  {
+//                    completion (status, apptitle, [])
+//                }
+//                return
+//            }
+//            // now run thru and fill in the allImages local structure
+//            //remSpace.rebuildImageData() // refills allImages Structure
+//            var downcount = shmurls.count
+//            observer?.newdocument(colorsdict, apptitle)
+//            for shmurl in shmurls {
+//                let url = shmurl.1
+//                let pack = shmurl.0
+                processOneURL (  url ){ status, s, mes in
                     for me in mes {
                         allofme.append(me)
                         
                         observer?.newentry(me: me)
                     }
-                    // is this the very last
-                    downcount -= 1
-                    if downcount == 0 {
+//                    // is this the very last
+//                    downcount -= 1
+//                    if downcount == 0 {
                         // at this point we are full assembled and good to go
-                        if completion != nil  { completion! (status, apptitle, allofme) }
-                    }
-                }
-            }
+                        if completion != nil  { completion! (status, "sny", allofme) }
+                   // }
+               // }
+            //}
         }
     }
     

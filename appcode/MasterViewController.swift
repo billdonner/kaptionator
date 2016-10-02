@@ -7,10 +7,10 @@
 //
 import UIKit
 // if nil we'll just pull from documents directory inside the catalog controller
-var stickerPackListFileURL: URL? {
+var stickerManifestURL: URL? {
 get {
     if let iDict = Bundle.main.infoDictionary ,
-        let w =  iDict["REMOTE-STICKERPACKLIST-URL"] as? String { return URL(string:w) }
+        let w =  iDict["REMOTE-MANIFEST-URL"] as? String { return URL(string:w) }
     return nil
 }
 }
@@ -85,7 +85,7 @@ final class MasterViewController: UIViewController {
         
     }// fall straight into it
     private func finishStartup() {
-        let vcid = (stickerPackListFileURL != nil) ? "ShowCatalogID" : "ShowITunesID"
+        let vcid = (stickerManifestURL != nil) ? "ShowCatalogID" : "ShowITunesID"
         
         showCatalogViewController = self.storyboard?.instantiateViewController(withIdentifier: vcid ) as? CatalogViewController
         showCatalogViewController?.mvc = self
@@ -131,7 +131,7 @@ final class MasterViewController: UIViewController {
     
     
         if showCatalogViewController == nil {
-            let vcid = (stickerPackListFileURL != nil) ? "ShowCatalogID" : "ShowITunesID"
+            let vcid = (stickerManifestURL != nil) ? "ShowCatalogID" : "ShowITunesID"
             
             showCatalogViewController = self.storyboard?.instantiateViewController(withIdentifier: vcid ) as? CatalogViewController
             showCatalogViewController?.mvc = self

@@ -2,10 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "candidatesIconsCans-1024x768-2.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "candidatesIconsCans-1024x768-1.png",
       "scale" : "2x"
     },
     {

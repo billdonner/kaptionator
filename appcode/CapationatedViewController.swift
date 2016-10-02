@@ -136,9 +136,7 @@
         stickerz.removeAll()
         stickerz = [] // reset CAREFUL not [[]]
     }
-    func newpack(_ pack: String,_ showsectionhead:Bool) {
-        print("**** new pack \(pack)")
-    }
+ 
     func newentry(me:RemoteAsset){
         let ce = me.convertToAppCE()
         stickerz.append(ce) // append this
