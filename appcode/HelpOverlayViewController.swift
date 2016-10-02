@@ -13,19 +13,21 @@ func dismisstapped(_ s:AnyObject)
  
 final class WebsiteOverlayViewController:InnerOverlayViewController {
     override func getreq () -> URLRequest {
-        let urlasstring = websitePath + extensionScheme.lowercased()
+        let urlasstring = websitePath ///+ extensionScheme.lowercased()
         return URLRequest(url:URL(string: urlasstring )!)
     }
 }
 final class HelpOverlayViewController:InnerOverlayViewController {
     override func getreq () -> URLRequest {
-    let urlasstring = websitePath + extensionScheme.lowercased() +  "/apphelp.html"
+    let urlasstring = websitePath // + extensionScheme.lowercased()
+        +  "/apphelp.html"
     return URLRequest(url:URL(string:urlasstring )!)
     }
 }
 final class AltHelpOverlayViewController:InnerOverlayViewController {
     override func getreq () -> URLRequest {
-        let urlasstring = websitePath + extensionScheme.lowercased() +  "/ help.html"
+        let urlasstring = websitePath // + extensionScheme.lowercased()
+            +  "/ help.html"
         return URLRequest(url:URL(string:urlasstring )!)
         
     }
