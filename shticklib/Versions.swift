@@ -47,7 +47,7 @@ public class Versions {
 				versionSave()
 				print ("versionCheck changed :::: \(s) - will reset and may be slow to delete existing files")
 			} else {
-				print ("versionCheck stable :::: \(s)")
+				print ("versionCheck is stable :::: \(s)")
 			}
 			return s==v
 		}
