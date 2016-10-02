@@ -979,7 +979,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "192"
             endingLineNumber = "192"
-            landmarkName = "loadFromRemoteJSON(url:observer:completion:)"
+            landmarkName = "loadJSONFromURL(url:observer:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -995,7 +995,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "199"
             endingLineNumber = "199"
-            landmarkName = "loadFromRemoteJSON(url:observer:completion:)"
+            landmarkName = "loadJSONFromURL(url:observer:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1011,7 +1011,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "202"
             endingLineNumber = "202"
-            landmarkName = "loadFromRemoteJSON(url:observer:completion:)"
+            landmarkName = "loadJSONFromURL(url:observer:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1075,7 +1075,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "162"
             endingLineNumber = "162"
-            landmarkName = "processOnePack(pack:url:completion:)"
+            landmarkName = "processOneURL(_:completion:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -1622,7 +1622,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shticklib/manifest.swift"

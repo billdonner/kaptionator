@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Messages View Controller-->
+        <!--Messages Extension View Controller-->
         <scene sceneID="7MM-of-jgj">
             <objects>
-                <viewController id="ObA-dk-sSI" customClass="MessagesViewController" customModule="candidatezMessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ObA-dk-sSI" customClass="MessagesExtensionViewController" customModule="candidatezMessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qkL-Od-lgU"/>
                         <viewControllerLayoutGuide type="bottom" id="n38-gi-rB5"/>
@@ -53,7 +53,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="528"/>
                     <connections>
-                        <outlet property="theButton" destination="9h6-nu-Wu1" id="D0t-CH-iB0"/>
+                        <outlet property="theButton" destination="9h6-nu-Wu1" id="bwN-3c-Jr6"/>
                         <outlet property="topLabel" destination="d1e-fi-ked" id="VeQ-Fx-I3F"/>
                     </connections>
                 </viewController>
