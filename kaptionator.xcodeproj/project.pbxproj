@@ -293,6 +293,7 @@
 		886B4AC21D9CA4CB00581C9B /* MessagesTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableCell.swift; sourceTree = "<group>"; };
 		886B4AC71D9DDD5B00581C9B /* ReorderMessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReorderMessagesViewController.swift; sourceTree = "<group>"; };
 		886B4ACC1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReorderCollectionViewCell.swift; sourceTree = "<group>"; };
+		886B4AEF1DA175F700581C9B /* Empty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Empty.xib; sourceTree = "<group>"; };
 		889FB7091D93785B0064B4C9 /* CandidatesForBlur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CandidatesForBlur.png; sourceTree = "<group>"; };
 		889FB70A1D93785B0064B4C9 /* StickerzForBlur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StickerzForBlur.png; sourceTree = "<group>"; };
 		889FB70B1D93785B0064B4C9 /* MessagesForBlur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MessagesForBlur.png; sourceTree = "<group>"; };
@@ -484,6 +485,7 @@
 		88AEA5881D514B29006E5C70 = {
 			isa = PBXGroup;
 			children = (
+				886B4AEF1DA175F700581C9B /* Empty.xib */,
 				889FB71D1D93FC480064B4C9 /* backforportrait.png */,
 				889FB7091D93785B0064B4C9 /* CandidatesForBlur.png */,
 				889FB70A1D93785B0064B4C9 /* StickerzForBlur.png */,
