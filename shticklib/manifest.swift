@@ -39,6 +39,7 @@ struct Manifest {
             
             if let data = data {
                 do {
+                    
                     let json = try JSONSerialization.jsonObject(with: data , options: [])
                     var final : [(pack:String,url:URL)] = []
                     if let jobj = json as? JSONDict,
@@ -53,17 +54,17 @@ struct Manifest {
                                 print ("blank or bad line spec \(url)")
                             }
                         }//for
-                        var colors: JSONDict
-                        if let colordict = jobj ["motif"] as? JSONDict {
-                            colors = colordict
-                        } else {
-                            colors = ["bar-tint-color":"lightblue" as AnyObject,
-                                      "bar-text-color":"beige" as AnyObject,
-                                      "section-tint-color":"skyblue" as AnyObject,
-                                      "section-text-color":"beige" as AnyObject,
-                                      "background-color": "deepskyblue" as AnyObject]
-                        }
-                        completion (200, colors,apptitle,showsections, final)
+//                        var colors: JSONDict
+//                        if let colordict = jobj ["motif"] as? JSONDict {
+//                            colors = colordict
+//                        } else {
+//                            colors = ["bar-tint-color":"lightblue" as AnyObject,
+//                                      "bar-text-color":"beige" as AnyObject,
+//                                      "section-tint-color":"skyblue" as AnyObject,
+//                                      "section-text-color":"beige" as AnyObject,
+//                                      "background-color": "deepskyblue" as AnyObject]
+//                        }
+                        completion (200, [:],apptitle,showsections, final)
                         return
                     }
                     return  // made it
@@ -75,7 +76,6 @@ struct Manifest {
                     return
                 }
             } else {
-                
                 // good status but no data
                 completion ( 501, [:],"", false,[])
                 return
@@ -145,9 +145,9 @@ struct Manifest {
                 return
             }
         }// inner do
-        catch  {
-            print ("************ bad JSON parseData ********** ")
-            completion(503, "-err0r-", final ) //}// made it
+        catch let error as NSError {
+            print ("************* bad JSON parseData \(error) ********** ")
+            completion(error.code, "-err0r-", final ) //}// made it
         }
     }
     private static func processOnePack(pack: String, url:URL,  completion:@escaping GFRM) {
