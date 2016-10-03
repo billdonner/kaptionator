@@ -354,7 +354,7 @@
 		88C451D61D92EAD6003DC256 /* ModalBlurViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalBlurViewController.swift; sourceTree = "<group>"; };
 		88C7AED41D98685D0050A6CD /* Versions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Versions.swift; sourceTree = "<group>"; };
 		88CBBDDB1D9348090089DD9A /* backforcatalog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backforcatalog.png; sourceTree = "<group>"; };
-		88DD92D91D8872D400832564 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		88DD92D91D8872D400832564 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
 		88DD92DE1D88738200832564 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88DD92DF1D88738200832564 /* CatalogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 		88DD92E01D88738200832564 /* CatalogMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogMenuViewController.swift; sourceTree = "<group>"; };
@@ -460,6 +460,7 @@
 		88722F661D522AAB00B2F85B /* appcode */ = {
 			isa = PBXGroup;
 			children = (
+				88DD92D91D8872D400832564 /* Main.storyboard */,
 				88DD92DE1D88738200832564 /* AppDelegate.swift */,
 				88DD92DF1D88738200832564 /* CatalogViewController.swift */,
 				88DD92E01D88738200832564 /* CatalogMenuViewController.swift */,
@@ -495,14 +496,7 @@
 		88AEA5881D514B29006E5C70 = {
 			isa = PBXGroup;
 			children = (
-				AD6CAF291DA19CF80062919B /* candidatesIconsCans-1024x768.png */,
-				AD6CAF2B1DA19D270062919B /* emoGeeStickerIcons-1024x768.png */,
-				889FB71D1D93FC480064B4C9 /* backforportrait.png */,
-				889FB7091D93785B0064B4C9 /* CandidatesForBlur.png */,
-				889FB70A1D93785B0064B4C9 /* StickerzForBlur.png */,
-				889FB70B1D93785B0064B4C9 /* MessagesForBlur.png */,
-				88CBBDDB1D9348090089DD9A /* backforcatalog.png */,
-				88DD92D91D8872D400832564 /* Main.storyboard */,
+				88E95EA61DA27E9F007266CB /* app-images */,
 				88722EF51D52186400B2F85B /* shticklib */,
 				88722F9E1D522ADF00B2F85B /* messagecode */,
 				88722F661D522AAB00B2F85B /* appcode */,
@@ -627,6 +621,20 @@
 				88AEA64E1D514CC7006E5C70 /* Info.plist */,
 			);
 			path = kaptionatorMessageExtension;
+			sourceTree = "<group>";
+		};
+		88E95EA61DA27E9F007266CB /* app-images */ = {
+			isa = PBXGroup;
+			children = (
+				AD6CAF291DA19CF80062919B /* candidatesIconsCans-1024x768.png */,
+				AD6CAF2B1DA19D270062919B /* emoGeeStickerIcons-1024x768.png */,
+				889FB71D1D93FC480064B4C9 /* backforportrait.png */,
+				889FB7091D93785B0064B4C9 /* CandidatesForBlur.png */,
+				889FB70A1D93785B0064B4C9 /* StickerzForBlur.png */,
+				889FB70B1D93785B0064B4C9 /* MessagesForBlur.png */,
+				88CBBDDB1D9348090089DD9A /* backforcatalog.png */,
+			);
+			name = "app-images";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

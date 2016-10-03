@@ -10,13 +10,10 @@ import UIKit
 
 //MARK: - Manifest is only static funcs
 
-/// protocol to allow viewcontrollers to Observe data model changes
-protocol MEObserver {
-    func newdocument(_ colors: JSONDict, _ title:String)
-    func newentry(me:RemoteAsset)
-    
-    
-}
+///// protocol to allow viewcontrollers to Observe data model changes
+//protocol MEObserver {
+//    func newdocument(_ colors: JSONDict, _ title:String)
+//}
 
 typealias ManifestItems = [RemoteAsset]
 
@@ -52,17 +49,7 @@ struct Manifest {
                             } else {
                                 print ("blank or bad line spec \(url)")
                             }
-                        }//for
-//                        var colors: JSONDict
-//                        if let colordict = jobj ["motif"] as? JSONDict {
-//                            colors = colordict
-//                        } else {
-//                            colors = ["bar-tint-color":"lightblue" as AnyObject,
-//                                      "bar-text-color":"beige" as AnyObject,
-//                                      "section-tint-color":"skyblue" as AnyObject,
-//                                      "section-text-color":"beige" as AnyObject,
-//                                      "background-color": "deepskyblue" as AnyObject]
-//                        }
+                        }
                         completion (200, [:],apptitle,showsections, final)
                         return
                     }
@@ -166,36 +153,15 @@ struct Manifest {
 
     /// load a bunch of manifests as listed in a super-manifest
     
-    static func loadJSONFromURL(url:URL?,  observer:MEObserver?, completion:GFRM?) {
+    static func loadJSONFromURL(url:URL?,completion:GFRM?) {
         guard let url = url else {
              fatalError("loadFromITunesSharing(observer: observer,completion:completion)")
         }
-        var allofme:ManifestItems = []
-//        processAllPacks(url:url) {status, colorsdict, apptitle, showsectionhead, shmurls in
-//            guard status == 200 else {
-//                if let completion = completion  {
-//                    completion (status, apptitle, [])
-//                }
-//                return
-//            }
-//            // now run thru and fill in the allImages local structure
-//            //remSpace.rebuildImageData() // refills allImages Structure
-//            var downcount = shmurls.count
-//            observer?.newdocument(colorsdict, apptitle)
-//            for shmurl in shmurls {
-//                let url = shmurl.1
-//                let pack = shmurl.0
                 processOneURL (  url ){ status, s, mes in
-                    for me in mes {
-                        allofme.append(me)
-                        
-                        observer?.newentry(me: me)
+                    
+                        if completion != nil  {
+                            completion! (status, "sny", mes)
                     }
-//                    // is this the very last
-//                    downcount -= 1
-//                    if downcount == 0 {
-                        // at this point we are full assembled and good to go
-                        if completion != nil  { completion! (status, "sny", allofme) }
                    // }
                // }
             //}

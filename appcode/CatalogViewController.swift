@@ -8,6 +8,8 @@
 import UIKit
 // MARK: Show All Remote Catalog Entries in One Tab as Child ViewContoller
 //
+
+
 final class CatalogViewController: UICollectionViewController,ControlledByMasterViewController {
     @IBAction func unwindToCatalogItemsViewControlle(_ segue: UIStoryboardSegue)  {
     }
@@ -17,10 +19,14 @@ final class CatalogViewController: UICollectionViewController,ControlledByMaster
     
     let refreshControl = UIRefreshControl()
     fileprivate var theSelectedIndexPath:IndexPath?
-     @IBOutlet weak var startupLogo: UIImageView!
+    @IBOutlet weak var startupLogo: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        RemSpace.reset(title:extensionScheme)
+        
         // put logo in there, we will fade it in
+        startupLogo.image = UIImage(named:backgroundImagePath)
         startupLogo.frame = self.view.frame
         startupLogo.center = self.view.center
         self.view.insertSubview(startupLogo, aboveSubview: self.view)
@@ -67,7 +73,7 @@ extension CatalogViewController {  //loading on first up - moved from masterview
         // only read remote if we have a list
         if stickerManifestURL != nil {
             print(">>>>>>>>>> phase1 Manifest.loadJSONFromURL \(stickerManifestURL)")
-            Manifest.loadJSONFromURL (url: stickerManifestURL  , observer: self) { status, title, allofme in
+            Manifest.loadJSONFromURL (url: stickerManifestURL  ) { status, title, allofme in
                 // at this point the observer callbacks have been called so the data is ready for redisplay on the main q
                 DispatchQueue.main.async  {
                     guard status == 200 else {
@@ -228,12 +234,9 @@ extension CatalogViewController : CatalogMenuViewDelegate {
         AppCE.makeNewCaptionCat( from: remoteAsset, caption: caption )
     }
 }
-extension CatalogViewController : MEObserver {
-    func newdocument(_ propsDict: JSONDict, _ title:String) {
-        RemSpace.reset(title:title)
-    }
- 
-    func newentry(me:RemoteAsset){
-        //remSpace.addasset(ra: me)
-    }
-}
+//extension CatalogViewController : MEObserver {
+//    func newdocument(_ propsDict: JSONDict, _ title:String) {
+//        RemSpace.reset(title:title)
+//    }
+// 
+//}

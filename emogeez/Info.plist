@@ -4,6 +4,8 @@
 <dict>
 	<key>APP-TITLE</key>
 	<string>EmoGeez by Martoons</string>
+	<key>BACKGROUND-IMAGE</key>
+	<string>emoGeeStickerIcons-1024x768.png</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

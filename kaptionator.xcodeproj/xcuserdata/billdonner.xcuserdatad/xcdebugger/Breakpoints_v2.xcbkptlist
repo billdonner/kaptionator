@@ -974,12 +974,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shticklib/manifest.swift"
-            timestampString = "496614910.131793"
+            timestampString = "497199557.115276"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
-            landmarkName = "loadJSONFromURL(url:observer:completion:)"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "loadJSONFromURL(url:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -990,28 +990,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shticklib/manifest.swift"
-            timestampString = "496614910.131793"
+            timestampString = "497199557.115276"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
-            landmarkName = "loadJSONFromURL(url:observer:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "shticklib/manifest.swift"
-            timestampString = "496614910.131793"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
-            landmarkName = "loadJSONFromURL(url:observer:completion:)"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "loadJSONFromURL(url:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1022,11 +1006,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shticklib/IOSSpecialOps.swift"
-            timestampString = "495493898.125676"
+            timestampString = "497189468.615104"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "openwebsite(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1070,11 +1054,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shticklib/manifest.swift"
-            timestampString = "496614910.131793"
+            timestampString = "497199557.115276"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "processOneURL(_:completion:)"
             landmarkType = "7">
             <Locations>
@@ -1118,29 +1102,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/ITunesViewController.swift"
-            timestampString = "496330383.353672"
+            timestampString = "497199557.115276"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "224"
-            endingLineNumber = "224"
-            landmarkName = "ITunesViewController"
-            landmarkType = "4">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "appcode/ITunesViewController.swift"
-            timestampString = "496016198.200374"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "ITunesViewController"
-            landmarkType = "3">
+            startingLineNumber = "18"
+            endingLineNumber = "18">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -1182,13 +1148,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/ITunesViewController.swift"
-            timestampString = "496087220.037914"
+            timestampString = "497199557.115276"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
+            startingLineNumber = "126"
+            endingLineNumber = "126">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1198,13 +1162,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/ITunesViewController.swift"
-            timestampString = "496064616.396763"
+            timestampString = "497199557.115276"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "loadFromITunesSharing(observer:completion:)"
-            landmarkType = "7">
+            startingLineNumber = "77"
+            endingLineNumber = "77">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1214,13 +1176,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/ITunesViewController.swift"
-            timestampString = "496087220.037914"
+            timestampString = "497199557.115276"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "refreshFromITunes()"
-            landmarkType = "7">
+            startingLineNumber = "117"
+            endingLineNumber = "117">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1230,13 +1190,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/ITunesViewController.swift"
-            timestampString = "496087220.037914"
+            timestampString = "497199557.115276"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "loadFromITunesSharing(observer:completion:)"
-            landmarkType = "7">
+            startingLineNumber = "108"
+            endingLineNumber = "108">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1246,13 +1204,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/ITunesViewController.swift"
-            timestampString = "496087220.037914"
+            timestampString = "497199557.115276"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "refreshFromITunes()"
-            landmarkType = "7">
+            startingLineNumber = "122"
+            endingLineNumber = "122">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1262,13 +1218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/ITunesViewController.swift"
-            timestampString = "496087220.037914"
+            timestampString = "497199557.115276"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "loadFromITunesSharing(observer:completion:)"
-            landmarkType = "7">
+            startingLineNumber = "101"
+            endingLineNumber = "101">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1626,11 +1580,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shticklib/manifest.swift"
-            timestampString = "497118936.071297"
+            timestampString = "497199557.115276"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "parseData(_:baseURL:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1642,11 +1596,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shticklib/manifest.swift"
-            timestampString = "497122087.872764"
+            timestampString = "497199557.115276"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "processAllPacks(url:completion:)"
             landmarkType = "7">
          </BreakpointContent>

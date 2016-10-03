@@ -145,15 +145,12 @@ extension MessagesViewController : UITableViewDataSource {
         return cell // Return the cell
     }
 }// MARK: Observer for model adjustments
-extension MessagesViewController : MEObserver {
-    func newdocument(_ propsDict: JSONDict, _ title:String) {
-    }
-    func newpack(_ pack: String,_ showsectionhead:Bool) {
-        print("**** new pack \(pack)")
-    }
-    func newentry(me:RemoteAsset){
-    }
-}
+//extension MessagesViewController : MEObserver {
+//    func newdocument(_ propsDict: JSONDict, _ title:String) {
+//    }
+// 
+//  
+//}
 extension MessagesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         theSelectedIndexPath = indexPath

@@ -12,9 +12,10 @@ import UIKit
 // MARK: Show All Remote Catalog Entries in One Tab as Child ViewContoller
 //
 
-final class ITunesViewController : UIViewController  {
-    
-//},ControlledByMasterViewController  {
+final class ITunesViewController : UIViewController  { }
+
+
+//final class FileViewController : UIViewController,  ControlledByMasterViewController  {
 //    
 //    let refreshControl = UIRefreshControl()
 //    @IBAction func unwindToITunesViewController(_ segue: UIStoryboardSegue)  {
@@ -75,9 +76,7 @@ final class ITunesViewController : UIViewController  {
 //        
 //        var allofme:ManifestItems = []
 //        
-//        observer?.newdocument([:], "-local-")
-//        
-//        observer?.newpack(apptitle,false)
+//         
 //        do {
 //            let dir = FileManager.default.urls (for:  .documentDirectory, in: .userDomainMask)
 //            let documentsUrl =  dir.first!
@@ -88,9 +87,6 @@ final class ITunesViewController : UIViewController  {
 //                let lastpatch = $0.lastPathComponent
 //                if !lastpatch.hasPrefix(".") { // exclude wierd files
 //                    let imagename = lastpatch
-//                    // let part1 = image.components(separatedBy: ".")
-//                    // let part2 = part1[0].components(separatedBy: "-")
-//                    // let part3 = part2[0].components(separatedBy: "/")
 //                    
 //                    if (lastpatch as NSString).pathExtension.lowercased() == "json" {
 //                        let data = try Data(contentsOf: $0) // read
@@ -107,9 +103,7 @@ final class ITunesViewController : UIViewController  {
 //                        
 //                        
 //                        remSpace.addasset(ra: me) // be sure to coun
-//                        allofme.append(me)
-//                        //observer?.newentry(me: me)
-//                    }
+//                        allofme.append(me)                     }
 //                }
 //            }
 //            if completion != nil  {
@@ -153,7 +147,7 @@ final class ITunesViewController : UIViewController  {
 //        }
 //       refreshFromITunes()
 //    }
-}
+//}
 //MARK: UICollectionViewDataSource
 //extension ITunesViewController : UICollectionViewDataSource {
 //    func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -210,46 +204,48 @@ final class ITunesViewController : UIViewController  {
 //    }
 //    
 //}
-//// MARK: Delegates for actions from our associated menu
-//extension AppCE  {
+// MARK: Delegates for actions from our associated menu
+//extension AppCE {
 //    // not sure we want generate asis so changed back
-//    fileprivate static func makeNewCaptionITunes(   from ra:RemoteAsset, caption:String,id:String) {
+//    fileprivate static func makeNewCaptionCat(   from ra:RemoteAsset, caption:String ) {
 //        // make captionated entry from remote asset
-//        
-//        let alreadyIn = AppCaptionSpace.findMatchingAsset(path: ra.localimagepath, caption: caption)
-//        if !alreadyIn {
-//            let _ = AppCaptionSpace.make (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: ra.options)
+//        do {
+//            let alreadyIn = SharedCaptionSpace.findMatchingAsset(path: ra.localimagepath, caption: caption)
+//            if !alreadyIn {
+//                let options = ra.options
+//                if caption != "" {
+//                    let _ = AppCaptionSpace.make (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: options)
+//                }
+//                // here make the largest sticker possible and add to shared space
+//                let _ = try prepareStickers (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: options )  // cakks savetodisk N times - ugh
+//                SharedCaptionSpace.saveData()
+//            }else {
+//                // already in, lets just mark new sizrs and caption
+//            }
+//        }
+//        catch {
+//            print ("cant make sticker in makenewCaptioncat")
 //        }
 //    }
 //}
-//
-//extension ITunesViewController : ITunesMenuViewDelegate {
-//    
-//    
+//extension FileViewController : ITunesMenuViewDelegate {
 //    func useAsIs(remoteAsset:RemoteAsset) {
-//        AppCE.makeNewCaptionITunes(from: remoteAsset, caption: remoteAsset.caption , id: "")
-//    }
+//        AppCE.makeNewCaptionCat(from: remoteAsset, caption: remoteAsset.caption )    }
 //    func useWithNoCaption(remoteAsset:RemoteAsset) {
 //        // make un captionated entry from remote asset
-//        AppCE.makeNewCaptionITunes( from: remoteAsset, caption: "", id: "")
+//        AppCE.makeNewCaptionCat( from: remoteAsset, caption: "" )
 //    }
 //    func useWithCaption(remoteAsset:RemoteAsset,caption:String) {
 //        // make un captionated entry from remote asset
-//        AppCE.makeNewCaptionITunes( from: remoteAsset, caption: caption, id: "")
+//        AppCE.makeNewCaptionCat( from: remoteAsset, caption: caption )
 //    }
 //}
-//
-//
-//extension ITunesViewController : MEObserver {
+//extension FileViewController : MEObserver {
 //    func newdocument(_ propsDict: JSONDict, _ title:String) {
-//        remSpace.reset()
-//        remSpace.catalogTitle = title
+//        RemSpace.reset(title:title)
 //    }
-//    func newpack(_ pack: String,_ showsectionhead:Bool) {
-//        //print("**** new pack \(pack)")
-//        //remSpace.addhdr(s: pack) // adds new section
-//    }
+//    
 //    func newentry(me:RemoteAsset){
-//        remSpace.addasset(ra: me)
+//        //remSpace.addasset(ra: me)
 //    }
 //}

@@ -7,7 +7,17 @@
 //
 
 import UIKit
+/// "BACKGROUND-IMAGE" is the fade-in image
 
+
+var backgroundImagePath : String {
+get {
+    if let iDict = Bundle.main.infoDictionary ,
+        let w =  iDict["BACKGROUND-IMAGE"] as? String { return w }
+    fatalError("remote website url undefined")
+    //return nil
+    }
+}
 
 /// "REMOTE-WEBSITE-URL" is the website page for this sticker pack
 var websitePath: String {

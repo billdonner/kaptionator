@@ -63,10 +63,10 @@ struct IO {
         let task = xdataTask(with:url) {
             ( data,   response,  error) in
             //print("datatask responded \(error?.code)")
-            guard let _:Data = data, let _:URLResponse = response  , error == nil else {
+            guard   error ==  nil else {
                 
                 print("**** httpGET completing with error \(error)")
-                completion(571,nil)
+                completion((error as! NSError).code,nil)
                 return
             }
             // print("httpGET completing with data \(data)")

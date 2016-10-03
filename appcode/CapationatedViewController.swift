@@ -131,17 +131,17 @@
  }
  // MARK:  UICollectionViewDataSource runs in local space
  // MARK: Observer for model adjustments
- extension CapationatedViewController : MEObserver {
-    func newdocument(_ propsDict: JSONDict, _ title:String) {
-        stickerz.removeAll()
-        stickerz = [] // reset CAREFUL not [[]]
-    }
- 
-    func newentry(me:RemoteAsset){
-        let ce = me.convertToAppCE()
-        stickerz.append(ce) // append this
-    }
- }
+// extension CapationatedViewController : MEObserver {
+//    func newdocument(_ propsDict: JSONDict, _ title:String) {
+//        stickerz.removeAll()
+//        stickerz = [] // reset CAREFUL not [[]]
+//    }
+// 
+//    func newentry(me:RemoteAsset){
+//        let ce = me.convertToAppCE()
+//        stickerz.append(ce) // append this
+//    }
+// }
  extension CapationatedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         theSelectedIndexPath = indexPath
