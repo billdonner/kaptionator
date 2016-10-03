@@ -11,8 +11,7 @@ import UIKit
 
 
 final class CatalogViewController: UICollectionViewController,ControlledByMasterViewController {
-    @IBAction func unwindToCatalogItemsViewControlle(_ segue: UIStoryboardSegue)  {
-    }
+    @IBAction func unwindToCatalogItemsViewControlle(_ segue: UIStoryboardSegue)  {}
     
     var mvc : MasterViewController!
     

@@ -208,6 +208,10 @@
 		AD20A6011DA1951200877ABF /* ITunesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */; };
 		AD6CAF2A1DA19CF80062919B /* candidatesIconsCans-1024x768.png in Resources */ = {isa = PBXBuildFile; fileRef = AD6CAF291DA19CF80062919B /* candidatesIconsCans-1024x768.png */; };
 		AD6CAF2C1DA19D270062919B /* emoGeeStickerIcons-1024x768.png in Resources */ = {isa = PBXBuildFile; fileRef = AD6CAF2B1DA19D270062919B /* emoGeeStickerIcons-1024x768.png */; };
+		AD6CAF2E1DA2FEE80062919B /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD6CAF2D1DA2FEE80062919B /* SharedAssets.xcassets */; };
+		AD6CAF2F1DA2FEE80062919B /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD6CAF2D1DA2FEE80062919B /* SharedAssets.xcassets */; };
+		AD6CAF301DA2FEE80062919B /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD6CAF2D1DA2FEE80062919B /* SharedAssets.xcassets */; };
+		AD6CAF311DA2FEE80062919B /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD6CAF2D1DA2FEE80062919B /* SharedAssets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -371,6 +375,7 @@
 		88F2FC911D931A070055209C /* MoreMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreMenuViewController.swift; sourceTree = "<group>"; };
 		AD6CAF291DA19CF80062919B /* candidatesIconsCans-1024x768.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "candidatesIconsCans-1024x768.png"; path = "candidatezMessagesExtension/Assets.xcassets/iMessage App Icon.stickersiconset/candidatesIconsCans-1024x768.png"; sourceTree = "<group>"; };
 		AD6CAF2B1DA19D270062919B /* emoGeeStickerIcons-1024x768.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "emoGeeStickerIcons-1024x768.png"; path = "emogeezMessagesExtension/Assets.xcassets/iMessage App Icon.stickersiconset/emoGeeStickerIcons-1024x768.png"; sourceTree = "<group>"; };
+		AD6CAF2D1DA2FEE80062919B /* SharedAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SharedAssets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -633,6 +638,7 @@
 				889FB70A1D93785B0064B4C9 /* StickerzForBlur.png */,
 				889FB70B1D93785B0064B4C9 /* MessagesForBlur.png */,
 				88CBBDDB1D9348090089DD9A /* backforcatalog.png */,
+				AD6CAF2D1DA2FEE80062919B /* SharedAssets.xcassets */,
 			);
 			name = "app-images";
 			sourceTree = "<group>";
@@ -807,6 +813,7 @@
 					};
 					88AEA5A91D514B53006E5C70 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 922D9E65C8;
 						DevelopmentTeamName = "Bill Donner";
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -817,6 +824,7 @@
 					};
 					88AEA5BF1D514B6A006E5C70 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 922D9E65C8;
 						DevelopmentTeamName = "Bill Donner";
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -852,6 +860,7 @@
 					};
 					88AEA6191D514C5F006E5C70 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 922D9E65C8;
 						DevelopmentTeamName = "Bill Donner";
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -862,6 +871,7 @@
 					};
 					88AEA62E1D514C8D006E5C70 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 922D9E65C8;
 						DevelopmentTeamName = "Bill Donner";
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -916,6 +926,7 @@
 				88AEA59F1D514B29006E5C70 /* LaunchScreen.storyboard in Resources */,
 				889FB7101D93785B0064B4C9 /* StickerzForBlur.png in Resources */,
 				88AEA59C1D514B29006E5C70 /* Assets.xcassets in Resources */,
+				AD6CAF2E1DA2FEE80062919B /* SharedAssets.xcassets in Resources */,
 				889FB7141D93785B0064B4C9 /* MessagesForBlur.png in Resources */,
 				88CBBDDC1D9348090089DD9A /* backforcatalog.png in Resources */,
 				889FB70C1D93785B0064B4C9 /* CandidatesForBlur.png in Resources */,
@@ -933,6 +944,7 @@
 				88AEA5B41D514B53006E5C70 /* Assets.xcassets in Resources */,
 				889FB7151D93785B0064B4C9 /* MessagesForBlur.png in Resources */,
 				AD6CAF2A1DA19CF80062919B /* candidatesIconsCans-1024x768.png in Resources */,
+				AD6CAF2F1DA2FEE80062919B /* SharedAssets.xcassets in Resources */,
 				88CBBDDD1D9348090089DD9A /* backforcatalog.png in Resources */,
 				889FB70D1D93785B0064B4C9 /* CandidatesForBlur.png in Resources */,
 				889FB71F1D93FC480064B4C9 /* backforportrait.png in Resources */,
@@ -949,6 +961,7 @@
 				889FB7161D93785B0064B4C9 /* MessagesForBlur.png in Resources */,
 				889FB70E1D93785B0064B4C9 /* CandidatesForBlur.png in Resources */,
 				AD6CAF2C1DA19D270062919B /* emoGeeStickerIcons-1024x768.png in Resources */,
+				AD6CAF301DA2FEE80062919B /* SharedAssets.xcassets in Resources */,
 				889FB7201D93FC480064B4C9 /* backforportrait.png in Resources */,
 				88AEA5CA1D514B6A006E5C70 /* Assets.xcassets in Resources */,
 				889FB7121D93785B0064B4C9 /* StickerzForBlur.png in Resources */,
@@ -963,6 +976,7 @@
 				88AEA5F91D514BC3006E5C70 /* LaunchScreen.storyboard in Resources */,
 				88CBBDDF1D9348090089DD9A /* backforcatalog.png in Resources */,
 				889FB7171D93785B0064B4C9 /* MessagesForBlur.png in Resources */,
+				AD6CAF311DA2FEE80062919B /* SharedAssets.xcassets in Resources */,
 				889FB70F1D93785B0064B4C9 /* CandidatesForBlur.png in Resources */,
 				889FB7211D93FC480064B4C9 /* backforportrait.png in Resources */,
 				88AEA5F61D514BC3006E5C70 /* Assets.xcassets in Resources */,
@@ -1429,7 +1443,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = candidatez/candidatez.entitlements;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 922D9E65C8;
 				INFOPLIST_FILE = candidatez/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.candidatez;
@@ -1444,7 +1458,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = candidatez/candidatez.entitlements;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 922D9E65C8;
 				INFOPLIST_FILE = candidatez/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.candidatez;
@@ -1459,7 +1473,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = emogeez/emogeez.entitlements;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 922D9E65C8;
 				INFOPLIST_FILE = emogeez/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.emogees;
@@ -1474,7 +1488,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = emogeez/emogeez.entitlements;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 922D9E65C8;
 				INFOPLIST_FILE = emogeez/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.emogees;
@@ -1549,7 +1563,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_ENTITLEMENTS = emogeezMessagesExtension/emogeezMessagesExtension.entitlements;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 922D9E65C8;
 				INFOPLIST_FILE = emogeezMessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.emogees.MessagesExtension;
@@ -1564,7 +1578,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_ENTITLEMENTS = emogeezMessagesExtension/emogeezMessagesExtension.entitlements;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 922D9E65C8;
 				INFOPLIST_FILE = emogeezMessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.emogees.MessagesExtension;
@@ -1579,7 +1593,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_ENTITLEMENTS = candidatezMessagesExtension/candidatezMessagesExtension.entitlements;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 922D9E65C8;
 				INFOPLIST_FILE = candidatezMessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.candidatez.MessagesExtension;
@@ -1594,7 +1608,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_ENTITLEMENTS = candidatezMessagesExtension/candidatezMessagesExtension.entitlements;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 922D9E65C8;
 				INFOPLIST_FILE = candidatezMessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.candidatez.MessagesExtension;
