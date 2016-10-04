@@ -12,45 +12,40 @@
         <scene sceneID="zy2-dN-hdy">
             <objects>
                 <collectionViewController storyboardIdentifier="ShowCatalogID" clearsSelectionOnViewWillAppear="NO" id="C9F-Hr-QmC" customClass="CatalogViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="bJX-tC-oLi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="bJX-tC-oLi">
+                        <rect key="frame" x="0.0" y="0.0" width="384" height="512"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GmA-lK-o7I">
-                            <size key="itemSize" width="150" height="150"/>
+                            <size key="itemSize" width="150" height="180"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CatalogDataCell" id="0u2-77-52h" customClass="CatalogDataCell" customModule="candidatez" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="180"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R3f-h3-gCN"/>
-                                        <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="EcX-1c-6jl" userLabel="CLEAR ">
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AnimationOverlay" translatesAutoresizingMaskIntoConstraints="NO" id="gmL-Jg-cDP"/>
                                     </subviews>
                                 </view>
                                 <constraints>
                                     <constraint firstItem="R3f-h3-gCN" firstAttribute="top" secondItem="0u2-77-52h" secondAttribute="topMargin" id="45p-Bz-Aw0"/>
-                                    <constraint firstItem="EcX-1c-6jl" firstAttribute="leading" secondItem="0u2-77-52h" secondAttribute="leadingMargin" id="9Za-n8-BuF"/>
+                                    <constraint firstItem="gmL-Jg-cDP" firstAttribute="leading" secondItem="0u2-77-52h" secondAttribute="leadingMargin" id="A6f-CJ-KyJ"/>
                                     <constraint firstItem="R3f-h3-gCN" firstAttribute="leading" secondItem="0u2-77-52h" secondAttribute="leadingMargin" id="IOu-cn-lJF"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="EcX-1c-6jl" secondAttribute="bottom" constant="24" id="NwT-Kg-EpZ"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="EcX-1c-6jl" secondAttribute="trailing" id="UHk-B9-O4r"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="R3f-h3-gCN" secondAttribute="bottom" id="u1k-SA-ONO"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="gmL-Jg-cDP" secondAttribute="bottom" id="ZZ2-3f-dai"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="gmL-Jg-cDP" secondAttribute="trailing" id="jDL-Yl-45Q"/>
+                                    <constraint firstItem="gmL-Jg-cDP" firstAttribute="top" secondItem="R3f-h3-gCN" secondAttribute="bottom" id="vHu-zw-e4q"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="R3f-h3-gCN" secondAttribute="trailing" id="yb7-gI-USF"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="animatedImageView" destination="gmL-Jg-cDP" id="cQ4-oh-86O"/>
                                     <outlet property="detailsImageView" destination="R3f-h3-gCN" id="lea-u6-Nqf"/>
-                                    <outlet property="nameLabel" destination="EcX-1c-6jl" id="nqF-LX-QRA"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -59,6 +54,8 @@
                             <outlet property="delegate" destination="C9F-Hr-QmC" id="hYv-Xq-9JQ"/>
                         </connections>
                     </collectionView>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="384" height="512"/>
                     <connections>
                         <outlet property="startupLogo" destination="jFi-NN-11Z" id="sI2-YV-hXW"/>
                         <segue destination="8NT-q7-zWI" kind="presentation" identifier="CatalogCellTapMenuID" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="Oa6-IE-zKC"/>
@@ -1568,6 +1565,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AnimationOverlay" width="309" height="25"/>
         <image name="CandidatesForBlur.png" width="384" height="80"/>
         <image name="Help" width="44" height="44"/>
         <image name="Home" width="44" height="44"/>

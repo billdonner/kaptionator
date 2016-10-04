@@ -18,23 +18,19 @@ private struct BorderSettings {
 /// The cell responsible for displaying item data.
 class CatalogDataCell: UICollectionViewCell {
     // @IBOutlet fileprivate weak var stackView: UIStackView!
+    @IBOutlet weak var animatedImageView: UIImageView!
     @IBOutlet  fileprivate weak var detailsImageView: UIImageView!
-    @IBOutlet  fileprivate weak var nameLabel: UILabel!
-    
     override func prepareForReuse() {
+        // carefully get this scell back to where it needs to be 
         detailsImageView.image = nil // clean this out
-        nameLabel.text = ""
+        animatedImageView.isHidden = true // and set back to hidden
+     
     }
     // methods to adjust cell contents
-    func paint(name:String) {
-        nameLabel.text = name
-        nameLabel.textColor = //appTheme
-            .red
+    func showAnimationOverlay() {
+      animatedImageView.isHidden = false
     }
-    func colorFor(ra:RemoteAsset) {
-       let  isAnimated = ra.options.contains(.generateasis)  
-        nameLabel.textColor = isAnimated ?  appTheme.redColor :appTheme.textColor
-    }
+
     func paintImage(path imgLocalPath: String) {
         do {
             //reads local file synchronously

@@ -137,9 +137,10 @@ extension CatalogViewController {  //loading on first up - moved from masterview
      
         //show the primitive title
         if showVendorTitles {
-            cell.paint(name:ra.caption)
-        } else if ra.options.contains(.generateasis) {
-            cell.paint(name:"ANIMATED")
+            //cell.paint(name:ra.caption)
+        }
+        else if ra.options.contains(.generateasis) {
+             cell.showAnimationOverlay()
         }
         // if we have a thumbnail, show that 
         if ra.thumbnail != "" {
@@ -150,7 +151,7 @@ extension CatalogViewController {  //loading on first up - moved from masterview
             // have the data onhand
             cell.paintImage(path:ra.localimagepath)
         }
-        cell.colorFor(ra:ra)
+      
         return cell // Return the cell
     }
 
