@@ -131,15 +131,21 @@ extension CatalogViewController {  //loading on first up - moved from masterview
     }
     override func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "CatalogDataCell", for: indexPath  ) as! CatalogDataCell // Create the cell from the storyboard cell
+        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "CatalogDataCell", for: indexPath  )
+            as! CatalogDataCell // Create the cell from the storyboard cell
         let ra = RemSpace.itemAt(indexPath.row)
-        //print("cell at \(indexPath.row) is sized \(cell.frame.size)")
+     
         //show the primitive title
         if showVendorTitles {
             cell.paint(name:ra.caption)
         } else if ra.options.contains(.generateasis) {
             cell.paint(name:"ANIMATED")
         }
+        // if we have a thumbnail, show that 
+        if ra.thumbnail != "" {
+            // have the data onhand
+            cell.paintImage(path:ra.thumbnail)
+        } else
         if ra.localimagepath != "" {
             // have the data onhand
             cell.paintImage(path:ra.localimagepath)

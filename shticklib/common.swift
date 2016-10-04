@@ -21,6 +21,7 @@ let kStickers = "stickers"
 let kTitle = "title"
 let kID = "id"
 let kRemoteURL = "remoteurl"
+let kThumbNail = "thumb"
 
 let RemoteAssetsDataSpace = "SharedRemspace"
 

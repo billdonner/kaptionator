@@ -87,6 +87,10 @@ struct Manifest {
                                     animated = true
                                 }
                             }
+                            var thumbnail: String = ""
+                            if    let thumbpath  = sit["thumb"] as? String {
+                                thumbnail = baseURL +  thumbpath
+                            }
                             var title: String = ""
                             if    let titl  = sit["title"] as? String {
                                 title = titl
@@ -117,6 +121,7 @@ struct Manifest {
                             // setting up remote asset of nil will cause us to load the picture
                             let remoteAsset = RemoteAsset(pack: pack,
                                                           title: title,
+                                                          thumb: thumbnail,
                                                           remoteurl: imagepath,
                                                           
                                                           localpath: nil,

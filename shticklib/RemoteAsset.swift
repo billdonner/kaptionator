@@ -121,12 +121,13 @@ final class RemSpace {
                 if let  optionsvalue = ra [kOptions] as? Int,
                     let captiontext = ra [kCaption] as? String,
                     let pack = ra[kPack] as? String,
-                    let remoteurl = ra["remoteurl"] as? String,
+                    let remoteurl = ra[kRemoteURL] as? String,
+                    let thumburl = ra[kThumbNail] as? String,
                     let localpath = ra[kLocal] as? String {
                     var options = StickerMakingOptions()
                     options.rawValue = optionsvalue
                     //calling with an explicit local path will use existing file and wont re-read from remote site
-                    let ra = RemoteAsset(pack:  pack , title: captiontext, remoteurl:remoteurl, localpath:localpath , options: options)
+                    let ra = RemoteAsset(pack:  pack , title: captiontext, thumb:thumburl, remoteurl:remoteurl, localpath:localpath , options: options)
                     raz.append(ra)
                 }
             } // for loop
@@ -148,12 +149,13 @@ struct RemoteAsset {
     let pack:String
     var caption:String
     let remoteurl :String
+    let thumbnail:String
     let localimagepath:String
     let options:StickerMakingOptions
     
-    init(pack:String,title:String,remoteurl:String,localpath:String?,
-         options:StickerMakingOptions) {
+    init(pack:String,title:String,thumb:String, remoteurl:String,localpath:String?, options:StickerMakingOptions) {
         self.pack = pack
+        self.thumbnail = thumb
         let none = title == ""
         self.caption = none ? "<no title>" : title
         self.options = options
@@ -174,13 +176,14 @@ struct RemoteAsset {
         let x : JSONDict = [
             kCaption:caption as String,
             kRemoteURL:remoteurl as String  ,
+            kThumbNail: thumbnail as String,
             kLocal:localimagepath as String  ,
             kPack: pack as String,
             kOptions:  options.rawValue as Int ]
         return x
     }
-    func  convertToAppCE( )  -> AppCE {
-        let ce = AppCE( pack:  pack, title:  caption, imagepath:  localimagepath,   caption: "",  options: options)
-        return ce
-    }
+//    func  convertToAppCE( )  -> AppCE {
+//        let ce = AppCE( pack:  pack, title:  caption, imagepath:  localimagepath,   caption: "",  options: options)
+//        return ce
+//    }
 }
