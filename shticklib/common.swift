@@ -9,7 +9,7 @@
 import UIKit
 
 
-let versionBig = "0.0.8"
+let versionBig = "0.0.9"
 
 let kVersion = "version"
 let kAllCaptions = "allcaptions"
@@ -22,6 +22,20 @@ let kTitle = "title"
 let kID = "id"
 let kRemoteURL = "remoteurl"
 let kThumbNail = "thumb"
+
+let kStickerLargeSize = CGFloat(618)
+let kStickerMediumSize = CGFloat(408)
+let kStickerSmallSize = CGFloat(300)
+
+let kStickerLargeFontSize = CGFloat(40)
+let kStickerMediumFontSize = CGFloat(32)
+let kStickerSmallFontSize = CGFloat(24)
+
+
+let kStickerLargeImageRatio  = CGFloat(0.8)
+let kStickerMediumImageRatio = CGFloat(0.8)
+let kStickerSmallImageRatio = CGFloat(0.8)
+
 
 let RemoteAssetsDataSpace = "SharedRemspace"
 

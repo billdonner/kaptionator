@@ -180,7 +180,7 @@ final class MasterViewController: UIViewController {
         showMessagesViewController!.view.translatesAutoresizingMaskIntoConstraints = false
         cycleFromViewController(oldViewController: currentViewController!, toViewController: showMessagesViewController!)
         currentViewController = showMessagesViewController
-        self.navigationItem.title = "Messages App..."
+        self.navigationItem.title = "Stickers"
     }
 
     //MARK:- move between view controllers

@@ -25,7 +25,6 @@ struct SharedCE {
     let catalogpack:String
     let catalogtitle:String
     let localimagepath:String
-    //   let stickerimagepath:String // this is what the extension uses to make stickers
     
     /// these are the action functions that are called to move things between tabs
     
@@ -80,10 +79,7 @@ struct SharedCaptionSpace {
     static func itemCount () -> Int {
         return memSpace.entries.count
     }
-//    func itemAt(_ index:Int) -> SharedCE {
-//        let t = entries //.map { key, value in return value }
-//        return t [index] // horrible
-//    }
+ 
     static func items () -> [SharedCE] {
         return   memSpace.entries //.map { key, value in return value }
     }

@@ -17,19 +17,21 @@ typealias ERAC = ((RemoteAsset)->(Swift.Void))
 //  it is always refreshed on a software updated, however the images are reloaded fresh on each startup
 
 fileprivate var remSpace = RemSpace()
+
+
 //MARK: - RemSpace collects all RemoteAssets
-final class RemSpace {
+struct  RemSpace {
     static private var catalogTitle:String = "replace"
     static private var raz:[ RemoteAsset ] = []
-   static  private var  filenum : Int  { return raz.count + 1001 }
+    static  private var  filenum : Int  { return raz.count + 1001 }
     
     //  private var allImageData : [String:String] = [:]    // remote url of source image : local filepath url
     
     
-   fileprivate init() {
-    print("****sharedAppContainerDir init in ",sharedAppContainerDirectory())
+    fileprivate init() {
+        print("****sharedAppContainerDir init in ",sharedAppContainerDirectory())
     }
-    fileprivate class func  loadFromLocal(from localpath:String) -> String {
+    fileprivate static func  loadFromLocal(from localpath:String) -> String {
         
         do {
             let ext = (localpath as NSString).pathExtension
@@ -56,8 +58,8 @@ final class RemSpace {
         }
     }
     
-
-    fileprivate class func loadFileRemote(from remotepath:String) -> String {
+    
+    fileprivate static func loadFileRemote(from remotepath:String) -> String {
         
         do {
             let ext = (remotepath as NSString).pathExtension
@@ -84,19 +86,19 @@ final class RemSpace {
         }
     }
     
-    class func reset (title:String) {
+    static func reset (title:String) {
         raz = []
         catalogTitle = title
     }
-    class func itemAt(_ idx:Int) -> RemoteAsset {
+    static func itemAt(_ idx:Int) -> RemoteAsset {
         return raz [idx]
     }
-    class func itemCount() -> Int { return raz.count }
+    static func itemCount() -> Int { return raz.count }
     
-    class func addasset(ra:RemoteAsset){
+    static func addasset(ra:RemoteAsset){
         raz.append(ra)
     }
-    class func saveToDisk() {
+    static func saveToDisk() {
         var flattened:JSONArray = []
         for val in raz {
             flattened.append(val.serializeToJSONDict())
@@ -111,7 +113,7 @@ final class RemSpace {
         }
     }
     
-   class  func restoreRemspaceFromDisk () throws  {
+    static  func restoreRemspaceFromDisk () throws  {
         if  let defaults = UserDefaults(suiteName: nil),
             let flattened = defaults.object(forKey: "remspace") as? JSONArray,
             let version = defaults.object(forKey: "version") as? String,
@@ -143,8 +145,7 @@ final class RemSpace {
 
 //MARK: - RemoteAsset is readonly once loaded from manifest
 
-// RemoteAsset represents one image on a remote server in a "pack"
-/// NO LONGER TRUE:It is always reloaded from the net on a restart, or a pull to refresh
+// RemoteAsset represents one image on a remote server in a "pack" 
 struct RemoteAsset {
     let pack:String
     var caption:String
@@ -171,7 +172,7 @@ struct RemoteAsset {
             print("**** RA.INIT(..IMAGEPATH) \(self.localimagepath)")
         }
     }// init
-     
+    
     func serializeToJSONDict() -> JSONDict {
         let x : JSONDict = [
             kCaption:caption as String,
@@ -182,8 +183,8 @@ struct RemoteAsset {
             kOptions:  options.rawValue as Int ]
         return x
     }
-//    func  convertToAppCE( )  -> AppCE {
-//        let ce = AppCE( pack:  pack, title:  caption, imagepath:  localimagepath,   caption: "",  options: options)
-//        return ce
-//    }
+    //    func  convertToAppCE( )  -> AppCE {
+    //        let ce = AppCE( pack:  pack, title:  caption, imagepath:  localimagepath,   caption: "",  options: options)
+    //        return ce
+    //    }
 }

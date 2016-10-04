@@ -8,45 +8,41 @@
 
 import UIKit
 
-
-
-
 // global funcs called fr4om multiple kind of view controllers
-func animatedViewOf(frame:CGRect, size:CGSize, imageurl:String) -> UIWebView {
-    let inset:CGFloat = 10
-    let actualsize = min(size.width,size.height)
-    let screensize = min( frame.width,frame.height)
+extension UIViewController {
     
+    func animatedViewOf(frame:CGRect, size:CGSize, imageurl:String) -> UIWebView {
+        let inset:CGFloat = 10
+        let actualsize = min(size.width,size.height)
+        let screensize = min( frame.width,frame.height)
+        let imagesize = min(actualsize , screensize)
+        let offs = (screensize - imagesize) / 2
+        let frem = CGRect(x:offs+inset,
+                          y:offs+inset,
+                          width:imagesize-2*inset,
+                          height:imagesize-2*inset)
+        
+        let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  src='\(imageurl)' height='\(frem.height)' width='\(frem.width)'  alt='\(imageurl)' /</body></html5>"
+        let webViewOverlay = UIWebView(frame:frem)
+        webViewOverlay.scalesPageToFit = true
+        webViewOverlay.contentMode = .scaleToFill
+        webViewOverlay.loadHTMLString(html, baseURL: nil)
+        return webViewOverlay
+    }
     
-    let imagesize = min(actualsize , screensize)
-    let offs = (screensize - imagesize) / 2
-    let frem = CGRect(x:offs+inset,
-                      y:offs+inset,
-                      width:imagesize-2*inset,
-                      height:imagesize-2*inset)
-    
-    
-    
-    
-    let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  src='\(imageurl)' height='\(frem.height)' width='\(frem.width)'  alt='\(imageurl)' /</body></html5>"
-    let webViewOverlay = UIWebView(frame:frem)
-    webViewOverlay.scalesPageToFit = true
-    webViewOverlay.contentMode = .scaleToFill
-    webViewOverlay.loadHTMLString(html, baseURL: nil)
-    return webViewOverlay
+    //dismissButtonAltImageName
+    func addDismissButtonToViewController(_ v:UIViewController,named:String, _ sel:Selector){
+        let img = UIImage(named:named)
+        let iv = UIImageView(image:img)
+        iv.frame = CGRect(x:0,y:0,width:60,height:60)//// test
+        iv.isUserInteractionEnabled = true
+        iv.contentMode = .scaleAspectFit
+        let tgr = UITapGestureRecognizer(target: v, action: sel)
+        iv.addGestureRecognizer(tgr)
+        v.view.addSubview(iv)
+    }
 }
 
-//dismissButtonAltImageName
-func addDismissButtonToViewController(_ v:UIViewController,named:String, _ sel:Selector){
-    let img = UIImage(named:named)
-    let iv = UIImageView(image:img)
-    iv.frame = CGRect(x:0,y:0,width:60,height:60)//// test
-    iv.isUserInteractionEnabled = true
-    iv.contentMode = .scaleAspectFit
-    let tgr = UITapGestureRecognizer(target: v, action: sel)
-    iv.addGestureRecognizer(tgr)
-    v.view.addSubview(iv)
-}
 
 struct IO {
     private static func xdataTask(with url: URL, completionHandler: @escaping DTSKR) -> URLSessionDataTask {
@@ -54,12 +50,10 @@ struct IO {
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 5)
         //  print ("queing \(request)")
         let x = session.dataTask(with: request, completionHandler: completionHandler)
-        
         return x
     }
     
-    static func httpGET(url: URL,
-                        completion:  @escaping PGRC)  {
+    static func httpGET(url: URL,  completion:  @escaping PGRC)  {
         let task = xdataTask(with:url) {
             ( data,   response,  error) in
             //print("datatask responded \(error?.code)")
@@ -78,6 +72,79 @@ struct IO {
 }
 
 
+
+
+typealias LAS = ((String,[AppCE])->())?
+
+extension UIColor {
+    public convenience init(hexString: String) {
+        let r, g, b, a: CGFloat
+        
+        if hexString.hasPrefix("#") {
+            let parts = hexString.components(separatedBy: "#")
+            let hexColor = parts[1]
+            if hexColor.characters.count == 8 {
+                let scanner = Scanner(string: hexColor)
+                var hexNumber: UInt64 = 0
+                
+                if scanner.scanHexInt64(&hexNumber) {
+                    r = CGFloat((hexNumber & 0xff000000) >> 24) / 255
+                    g = CGFloat((hexNumber & 0x00ff0000) >> 16) / 255
+                    b = CGFloat((hexNumber & 0x0000ff00) >> 8) / 255
+                    a = CGFloat(hexNumber & 0x000000ff) / 255
+                    
+                    self.init(red: r, green: g, blue: b, alpha: a)
+                    return
+                }
+            }
+        }
+        self.init(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        return
+    }
+}
+
+
+func prepareStickers( pack:String,title:String,imagepath:String, caption:String, options:StickerMakingOptions) throws -> SharedCE {
+    do {
+        let theData = try Data(contentsOf: URL(string: imagepath)!)
+        
+        let stickerPaths =   StickerFileFactory.createStickerFilesFrom (imageData: theData ,path: imagepath, caption:caption, options:options)
+        
+        print("made sticker file urls \(stickerPaths)")
+        
+        let t = SharedCE( pack: pack, title: title,
+                          imagepath: imagepath,
+                          stickerpaths:stickerPaths,
+                          caption: caption,
+                          options: options )
+        
+        let _ = SharedCaptionSpace.add(ce: t)
+        return t
+    }
+    catch {
+        throw error
+    }
+}
+
+func checkForFileVariant(_ ce:SharedCE,_ variant:String) -> Bool {
+    let caption = ce.caption
+    let path = ce.localimagepath
+    let hashval = "\(caption.hash)"
+    let assep = (path as NSString).lastPathComponent
+    let type = (assep as NSString).pathExtension
+    let test = ( path as NSString).deletingPathExtension
+        + "-\(variant)-\(hashval)." + type
+    
+    let ent  = SharedCaptionSpace.findMatchingEntry(atPath:test)
+    let  t = ent != nil
+    if t  {
+        print("\(test) exists")
+    } else {
+        print("\(test) does not exist")
+    }
+    return t
+    //return false
+}
 /// these are all the colors permitted in the incoming json manifests
 struct Css   {
     
@@ -248,84 +315,3 @@ struct Css   {
     
 }
 
-
-
-typealias LAS = ((String,[AppCE])->())?
-
-extension UIColor {
-    public convenience init(hexString: String) {
-        let r, g, b, a: CGFloat
-        
-        if hexString.hasPrefix("#") {
-            let parts = hexString.components(separatedBy: "#")
-            let hexColor = parts[1]
-            if hexColor.characters.count == 8 {
-                let scanner = Scanner(string: hexColor)
-                var hexNumber: UInt64 = 0
-                
-                if scanner.scanHexInt64(&hexNumber) {
-                    r = CGFloat((hexNumber & 0xff000000) >> 24) / 255
-                    g = CGFloat((hexNumber & 0x00ff0000) >> 16) / 255
-                    b = CGFloat((hexNumber & 0x0000ff00) >> 8) / 255
-                    a = CGFloat(hexNumber & 0x000000ff) / 255
-                    
-                    self.init(red: r, green: g, blue: b, alpha: a)
-                    return
-                }
-            }
-        }
-        self.init(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        return
-    }
-}
-
-
-func prepareStickers( pack:String,title:String,imagepath:String,
-                      caption:String,
-                      options:StickerMakingOptions) throws -> SharedCE {
-    do {
-        let theData = try Data(contentsOf: URL(string: imagepath)!)
-        
-        
-        // adjust options based on size of image
-        
-        // first build the files
-        
-        let stickerPaths =   StickerFileFactory.createStickerFilesFrom (imageData: theData ,path: imagepath, caption:caption, options:options)
-        
-        print("made sticker file urls \(stickerPaths)")
-        
-        let t = SharedCE( pack: pack, title: title,
-                          imagepath: imagepath,
-                          stickerpaths:stickerPaths,
-                          caption: caption,
-                          options: options )
-        
-        let _ = SharedCaptionSpace.add(ce: t)
-        return t
-    }
-    catch {
-        throw error
-    }
-}
-
-func checkForFileVariant(_ ce:SharedCE,
-                         _ variant:String) -> Bool {
-    let caption = ce.caption
-    let path = ce.localimagepath   
-    let hashval = "\(caption.hash)"
-    let assep = (path as NSString).lastPathComponent
-    let type = (assep as NSString).pathExtension
-    let test = ( path as NSString).deletingPathExtension
-        + "-\(variant)-\(hashval)." + type
-    
-    let ent  = SharedCaptionSpace.findMatchingEntry(atPath:test)
-    let  t = ent != nil
-    if t  {
-        print("\(test) exists")
-    } else {
-        print("\(test) does not exist")
-    }
-    return t
-    //return false
-}

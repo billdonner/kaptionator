@@ -88,17 +88,16 @@ struct StickerFileFactory {
             } else {
                 // can return more than one
                 if options.contains(.generatesmall) {
-                    let rul =  try createTextSticker(imageData:imageData,caption:caption,
-                                                     label:label + "-S" ,type:type,size:CGFloat(300), proportion:0.8, fontSize:CGFloat(24)).absoluteString
-                    returls.append(rul)
+                    let rul =  try createTextSticker(imageData:imageData,caption:caption,  label:label + "-S" ,type:type,size:kStickerSmallSize, proportion:kStickerSmallImageRatio, fontSize:kStickerSmallFontSize)
+                    returls.append(rul.absoluteString)
                 }
                 if options.contains(.generatemedium) {
-                    let rul =  try createTextSticker(imageData:imageData,caption:caption,label:label + "-M" ,type:type,size:CGFloat(408), proportion:0.8, fontSize:CGFloat(32) ).absoluteString
-                    returls.append(rul)
+                    let rul =  try createTextSticker(imageData:imageData,caption:caption,label:label + "-M" ,type:type,size:kStickerMediumSize, proportion:kStickerMediumImageRatio, fontSize:kStickerMediumFontSize )
+                    returls.append(rul.absoluteString)
                 }
                 if options.contains(.generatelarge) {
-                    let rul =  try createTextSticker(imageData:imageData,caption:caption,label:label + "-L" ,type:type,size:CGFloat(618), proportion:0.8, fontSize:CGFloat(40)).absoluteString
-                    returls.append(rul)
+                    let rul =  try createTextSticker(imageData:imageData,caption:caption,label:label + "-L" ,type:type,size:kStickerLargeSize, proportion:kStickerLargeImageRatio, fontSize:kStickerLargeFontSize)
+                    returls.append(rul.absoluteString)
                 }
         }
         }

@@ -5,26 +5,39 @@
 //  Copyright © 2016 Martoons and MedCommons. All rights reserved.
 //
 import UIKit
+
+
+
 protocol MessagesAppMenuViewDelegate {
     func openinIMessage(captionedEntry:SharedCE)
     func removeFromIMessage(on captionedEntry:inout SharedCE )
 }
+
+/// All the heavy lifting and file manipulation is done on this side of the fence
+/// The Messages Extension code passes the filepaths to msSticker API without ever touching them, for a fast start
+
 class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
+    
     var captionedEntry:SharedCE! // must be set
     var delegate: MessagesAppMenuViewDelegate?  // mig
+    
     @IBAction func unwindToMessagesAppMenuViewController(_ segue: UIStoryboardSegue)  {}
+    
     private var isAnimated  = false
     fileprivate var changesMade: Bool = false
+    
     @IBOutlet weak var webviewOverlay: UIWebView!
     @IBOutlet weak var menuImageView: UIImageView!
     @IBOutlet weak var imageCaption: UITextField!
     @IBOutlet weak var openinimessage: UIButton!
     @IBOutlet weak var removefromimessage: UIButton!
     @IBOutlet weak var animatedLabel: UILabel!
-    //MARK:- MENU TAP ACTIONS
     @IBOutlet weak var smallSwitch: UISwitch!
     @IBOutlet weak var mediumSwitch: UISwitch!
     @IBOutlet weak var largeSwitch: UISwitch!
+    
+    /// delete files to correspond to current state of the shared space
+    
     private func unprepareStickers(_ ce:SharedCE , _ size:String) {
         let id = ce.id
         let pe = ce.localimagepath
@@ -37,6 +50,15 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
         StickerFileFactory.removeStickerFilesFrom([stickerpath])
         let _ = SharedCaptionSpace.remove(id: id)
     }
+    
+    /// go back with manual unwind so caller (MessageViewController) can repaint with new data model
+    internal func dismisstapped(_ s: AnyObject) {
+        //// dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "UnwindToMessagesAppVC", sender: s)
+    }
+    
+    
+        //MARK:- MENU TAP ACTIONS
     @IBAction func smallSwitchToggled(_ sender: AnyObject) {
         let ce = captionedEntry!
         var options: StickerMakingOptions = StickerMakingOptions()
@@ -128,26 +150,30 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
             smallSwitch.isOn = false
             mediumSwitch.isOn = false
             largeSwitch.isOn = false
-            if imgsize.width >= CGFloat(618) {
+            if imgsize.width >= kStickerLargeSize {
                 largeSwitch.isOn = true
             } else
-                if imgsize.width >= CGFloat(408) {
+                if imgsize.width >= kStickerMediumSize {
                     mediumSwitch.isOn = true
                 } else
-                    if imgsize.width >= CGFloat(300) {
+                    if imgsize.width >= kStickerSmallSize {
                         smallSwitch.isOn = true
             }
         } else {
+            
+            /// set switch ON only if file variant exists in correct size
             largeSwitch.isOn = checkForFileVariant(captionedEntry,"L")
             mediumSwitch.isOn = checkForFileVariant(captionedEntry,"M")
             smallSwitch.isOn = checkForFileVariant(captionedEntry,"S")
-            if imgsize.width >= CGFloat(618) {
+            
+            /// enable switches only if supplied file is large enough
+            if imgsize.width >= kStickerLargeSize {
                 largeSwitch.isEnabled = true
             }
-            if imgsize.width >= CGFloat(408) {
+            if imgsize.width >= kStickerMediumSize {
                 mediumSwitch.isEnabled = true
             }
-            if imgsize.width >= CGFloat(300) {
+            if imgsize.width >= kStickerSmallSize {
                 smallSwitch.isEnabled = true
             }
         }
@@ -168,10 +194,7 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
         }
         addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
     }
-    func dismisstapped(_ s: AnyObject) {
-        //// dismiss(animated: true, completion: nil)
-        self.performSegue(withIdentifier: "UnwindToMessagesAppVC", sender: s)
-    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
