@@ -62,12 +62,15 @@ final class MessagesViewController: UIViewController,ControlledByMasterViewContr
         tableView.alwaysBounceVertical = true  // needed so always can pull to refresh
     }
     fileprivate  func refreshFromMemSpace(){
-        let items = SharedCaptionSpace.items()
+        var items = SharedCaptionSpace.items()
         // group similar images together in reverse ti
-//        items.sort(by: { a,b in  let aa = a as SharedCE
-//            let bb = b as SharedCE
-//            return aa.id > bb.id
-//            })
+
+        items.sort (by: { a,b in  let aa = a as SharedCE
+            let bb = b as SharedCE
+            return aa.id > bb.id
+            }
+        )
+        
          stickerz = items
          tableView?.reloadData()
         // if two or more items, given user opportunity to sort
@@ -137,7 +140,7 @@ extension MessagesViewController : UITableViewDataSource {
         let line2 = ce.stickerOptions.description()
         cell.paint2(name:ce.caption,line2:line2)
         /// go get the image from our cache and then the net
-        let path =  ce.stickerPaths[0] // ?????
+        let path =  ce.localimagepath       //stickerPaths[0] // ?????
         if path != "" {
             cell.paintImage(path:path)
         }

@@ -15,6 +15,9 @@ final class CatalogViewController: UICollectionViewController,ControlledByMaster
     
     var mvc : MasterViewController!
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     
     let refreshControl = UIRefreshControl()
     fileprivate var theSelectedIndexPath:IndexPath?

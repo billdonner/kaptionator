@@ -14,14 +14,17 @@ protocol CaptionedMenuViewDelegate {
 final class CaptionedMenuViewController: UIViewController, AddDismissButton {
     var captionedEntry:AppCE! // must be set
     var delegate: CaptionedMenuViewDelegate?  // mig
+    
+    
     @IBAction func unwindToCaptionedMenuViewController(_ segue: UIStoryboardSegue)  {}
+    
     private var isAnimated  = false
     fileprivate var changesMade: Bool = false
     @IBOutlet weak var outerView: UIView!
     @IBOutlet weak var animatedLabel: UILabel!
     @IBOutlet weak var menuImageView: UIImageView!
     @IBOutlet weak var webviewOverlay: UIWebView!
-    @IBOutlet weak var imageCaption: UITextField!
+    @IBOutlet weak var imageCaption: UILabel!
     @IBOutlet weak var editsticker: UIButton!
     @IBOutlet weak var moveimessage: UIButton!
     //MARK:- MENU TAP ACTIONS
@@ -30,18 +33,32 @@ final class CaptionedMenuViewController: UIViewController, AddDismissButton {
         editStickerCaption(sender)
     }
     @IBAction func editStickerCaption(_ sender: AnyObject) {
-        imageCaption.textColor = appTheme.textFieldColor
-        imageCaption.backgroundColor = appTheme.textFieldBackgroundColor
-        imageCaption.isEnabled = true
+
         imageCaption.becomeFirstResponder()
-        imageCaption.isHidden = false
+  
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ChangeCaptionViewControllerID" ) as? ChangeCaptionViewController
+        if let vc = vc {
+            vc.delegate = self
+            vc.modalPresentationStyle = .overFullScreen
+            vc.modalTransitionStyle = .crossDissolve
+            present(vc,animated:true,completion:nil)
+        }
     }
     @IBAction func moveToIMessage(_ sender: AnyObject) {
         var newce = captionedEntry!
         delegate?.movetoIMessage(captionedEntry:&newce) // elsewhere
         dismiss(animated: true,completion:nil)
     }
+    internal func dismisstapped(_ s: AnyObject) {
+        //// dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "UnwindToCaptionedAppVC", sender: s)
+    }
+    
     //MARK:- VC LIFECYLE
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loadingthe view.
@@ -57,12 +74,12 @@ final class CaptionedMenuViewController: UIViewController, AddDismissButton {
             menuImageView.image = nil
         }
         imageCaption.text =     captionedEntry.caption
-        imageCaption.isEnabled  = false
-        imageCaption.isHidden = imageCaption.text == ""
-        imageCaption.keyboardAppearance = .dark
-        imageCaption.delegate = self
-        imageCaption.textColor = .white
-        imageCaption.backgroundColor = .clear
+//        imageCaption.isEnabled  = false
+//        imageCaption.isHidden = imageCaption.text == ""
+//        imageCaption.keyboardAppearance = .dark
+//        imageCaption.delegate = self
+//        imageCaption.textColor = .white
+//        imageCaption.backgroundColor = .clear
         if isAnimated {
             editsticker.isHidden = true
             let scale : CGFloat = 1 / 1
@@ -80,23 +97,23 @@ final class CaptionedMenuViewController: UIViewController, AddDismissButton {
         }
         addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
     }
-   internal func dismisstapped(_ s: AnyObject) {
-        //// dismiss(animated: true, completion: nil)
-        self.performSegue(withIdentifier: "UnwindToCaptionedAppVC", sender: s)
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
 }
-//MARK: UITextFieldDelegate when the single text field gets filled in
-extension CaptionedMenuViewController : UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+////MARK: UITextFieldDelegate when the single text field gets filled in
+//extension CaptionedMenuViewController : UITextFieldDelegate {
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        changesMade = true
+//        delegate?.cloneWithCaption(captionedEntry:self.captionedEntry,  caption: textField.text ?? "<!none!>")
+//        textField.resignFirstResponder()
+//        imageCaption.isEnabled  = false
+//        dismiss(animated: true,completion:nil)
+//        return true
+//    }
+//}
+extension CaptionedMenuViewController :ChangeCaptionDelegate {
+    func captionWasEntered(caption: String) {
         changesMade = true
-        delegate?.cloneWithCaption(captionedEntry:self.captionedEntry,  caption: textField.text ?? "<!none!>")
-        textField.resignFirstResponder()
+       delegate?.cloneWithCaption(captionedEntry:self.captionedEntry, caption: caption )
         imageCaption.isEnabled  = false
-        dismiss(animated: true,completion:nil)
-        return true
     }
 }

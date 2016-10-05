@@ -1,5 +1,5 @@
 //
-//  GetCaptionViewController.swift
+//  ChangeCaptionViewController
 //  kaptionator
 //
 //  Created by bill donner on 10/4/16.
@@ -7,19 +7,21 @@
 //
 
 import UIKit
-protocol GetCaptionDelegate {
+protocol ChangeCaptionDelegate {
     func captionWasEntered(caption:String)
 }
-class GetCaptionViewController: UIViewController  {
-    var delegate: GetCaptionDelegate?
+class ChangeCaptionViewController: UIViewController  {
+    var delegate: ChangeCaptionDelegate?
     internal func dismisstapped(_ s: AnyObject) {
-        self.performSegue(withIdentifier: "UnwindToCatalogAppVC", sender: nil)
+        self.performSegue(withIdentifier: "UnwindToCaptionedAppVC", sender: s)
     }
     
     @IBOutlet weak var theCaptionTextView: UITextView!
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +29,6 @@ class GetCaptionViewController: UIViewController  {
         theCaptionTextView.delegate = self
         theCaptionTextView.returnKeyType = .go
         theCaptionTextView.becomeFirstResponder()
-   
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,7 +36,7 @@ class GetCaptionViewController: UIViewController  {
         // Dispose of any resources that can be recreated.
     }
 }
-extension GetCaptionViewController:  UITextViewDelegate {
+extension ChangeCaptionViewController:  UITextViewDelegate {
  
 //MARK:- CALLBACKS
 ////MARK: UITextFieldDelegate when the single text field gets filled in  UITextFieldDelegate {
@@ -53,10 +54,13 @@ extension GetCaptionViewController:  UITextViewDelegate {
             delegate?.captionWasEntered(  caption: textView.text ?? "")
             textView.resignFirstResponder()
             
+            
             // unwindd all the way back
             self.dismisstapped(self)
+      
         }
         return true
     }
- 
+    
+//    func te
 }

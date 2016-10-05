@@ -35,8 +35,7 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
     }
     @IBAction func addCaptionToSticker(_ sender: AnyObject) {
         imageCaption.textColor = .darkGray
-//        imageCaption.backgroundColor = .white
-//        imageCaption.isEnabled = true
+ 
         imageCaption.becomeFirstResponder()
         imageCaption.isHidden = false
         
@@ -52,10 +51,16 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
     }
     internal func dismisstapped(_ s: AnyObject) {
         dismiss(animated: true, completion: nil)
+         self.performSegue(withIdentifier: "UnwindToCatalogAppVC", sender: s)
     }
     //MARK:- VC LIFECYLE
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
-        super.viewDidLoad() 
+        super.viewDidLoad()
+    
         useasisnocaption.setTitleColor(appTheme.buttonTextColor, for: .normal)
         addcaption.setTitleColor(appTheme.buttonTextColor, for: .normal)
         // Do any additional setup after loading the view.

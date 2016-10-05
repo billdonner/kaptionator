@@ -162,7 +162,7 @@ final class MasterViewController: UIViewController {
         cycleFromViewController(oldViewController:  currentViewController!, toViewController: showCaptionedViewController!)
         currentViewController = showCaptionedViewController
         
-        self.navigationItem.title = "Caption History"
+        self.navigationItem.title = "History"
     }
     
     internal  func imsgAction(tis:UIBarButtonItem) {

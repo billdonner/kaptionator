@@ -26,7 +26,7 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
     
     @IBOutlet weak var webviewOverlay: UIWebView!
     @IBOutlet weak var menuImageView: UIImageView!
-    @IBOutlet weak var imageCaption: UITextField!
+    @IBOutlet weak var imageCaption: UILabel!
     @IBOutlet weak var openinimessage: UIButton!
     @IBOutlet weak var removefromimessage: UIButton!
     @IBOutlet weak var animatedLabel: UILabel!
@@ -126,12 +126,9 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         let options = captionedEntry.stickerOptions
-        isAnimated = options.contains(.generateasis)
-        imageCaption.isEnabled  = false
-        imageCaption.textColor = .white
-        imageCaption.backgroundColor = .clear
+        isAnimated = options.contains(.generateasis)   
         do {
-            let path = captionedEntry.stickerPaths[0]
+            let path = captionedEntry.localimagepath //stickerPaths[0]
             let data = try  Data(contentsOf: URL(string:path)!)
             menuImageView.image = UIImage(data:data)
             menuImageView.contentMode = .scaleAspectFit

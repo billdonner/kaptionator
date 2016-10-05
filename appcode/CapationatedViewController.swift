@@ -47,7 +47,7 @@
     }
     private  func refreshFromCapSpace(){
         var items = AppCaptionSpace.items()
-        // group similar images together in reverse ti
+        // group similar images together in reverse time, newest first
         items.sort(by: { a,b in  let aa = a as AppCE
             let bb = b as AppCE
             return aa.id > bb.id

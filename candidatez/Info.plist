@@ -23,7 +23,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.07</string>
 	<key>CFBundleVersion</key>
-	<string>93</string>
+	<string>94</string>
 	<key>EXTENSION-SCHEME</key>
 	<string>Candidatez</string>
 	<key>LEFT-BBI-NAME</key>
@@ -54,7 +54,7 @@
 		<string>armv7</string>
 	</array>
 	<key>UIStatusBarHidden</key>
-	<false/>
+	<true/>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleDefault</string>
 	<key>UISupportedInterfaceOrientations</key>
