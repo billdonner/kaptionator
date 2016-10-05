@@ -198,6 +198,10 @@
 		88F2FC931D931A070055209C /* MoreMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F2FC911D931A070055209C /* MoreMenuViewController.swift */; };
 		88F2FC941D931A070055209C /* MoreMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F2FC911D931A070055209C /* MoreMenuViewController.swift */; };
 		88F2FC951D931A070055209C /* MoreMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F2FC911D931A070055209C /* MoreMenuViewController.swift */; };
+		88FA07D71DA402330063B483 /* GetCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FA07D61DA402330063B483 /* GetCaptionViewController.swift */; };
+		88FA07D81DA402330063B483 /* GetCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FA07D61DA402330063B483 /* GetCaptionViewController.swift */; };
+		88FA07D91DA402330063B483 /* GetCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FA07D61DA402330063B483 /* GetCaptionViewController.swift */; };
+		88FA07DA1DA402330063B483 /* GetCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FA07D61DA402330063B483 /* GetCaptionViewController.swift */; };
 		AD20A5FA1DA1946600877ABF /* ITunesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */; };
 		AD20A5FB1DA1946A00877ABF /* ITunesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */; };
 		AD20A5FC1DA1950A00877ABF /* ITunesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */; };
@@ -373,6 +377,7 @@
 		88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesMenuViewController.swift; sourceTree = "<group>"; };
 		88EEC93A1D9C06CF00C188EF /* DatabaseStuff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatabaseStuff.swift; path = ../appcode/DatabaseStuff.swift; sourceTree = "<group>"; };
 		88F2FC911D931A070055209C /* MoreMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreMenuViewController.swift; sourceTree = "<group>"; };
+		88FA07D61DA402330063B483 /* GetCaptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCaptionViewController.swift; sourceTree = "<group>"; };
 		AD6CAF291DA19CF80062919B /* candidatesIconsCans-1024x768.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "candidatesIconsCans-1024x768.png"; path = "candidatezMessagesExtension/Assets.xcassets/iMessage App Icon.stickersiconset/candidatesIconsCans-1024x768.png"; sourceTree = "<group>"; };
 		AD6CAF2B1DA19D270062919B /* emoGeeStickerIcons-1024x768.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "emoGeeStickerIcons-1024x768.png"; path = "emogeezMessagesExtension/Assets.xcassets/iMessage App Icon.stickersiconset/emoGeeStickerIcons-1024x768.png"; sourceTree = "<group>"; };
 		AD6CAF2D1DA2FEE80062919B /* SharedAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SharedAssets.xcassets; sourceTree = "<group>"; };
@@ -475,6 +480,7 @@
 				88DD92E21D88738200832564 /* CapationatedViewController.swift */,
 				88DD92E81D88738200832564 /* CaptionedTableCell.swift */,
 				88DD92E11D88738200832564 /* CaptionedMenuViewController.swift */,
+				88FA07D61DA402330063B483 /* GetCaptionViewController.swift */,
 				88DD92E41D88738200832564 /* HelpOverlayViewController.swift */,
 				88DD92E51D88738200832564 /* MasterViewController.swift */,
 				88DD92E31D88738200832564 /* MessagesViewController.swift */,
@@ -1037,6 +1043,7 @@
 				88EEC93B1D9C06CF00C188EF /* DatabaseStuff.swift in Sources */,
 				88DD92E91D88738200832564 /* AppDelegate.swift in Sources */,
 				AD20A5FA1DA1946600877ABF /* ITunesMenuViewController.swift in Sources */,
+				88FA07D71DA402330063B483 /* GetCaptionViewController.swift in Sources */,
 				88DD92F11D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				88DD93111D88738200832564 /* CaptionedTableCell.swift in Sources */,
 				88B54CE21D8870060076942D /* manifest.swift in Sources */,
@@ -1075,6 +1082,7 @@
 				886B4ACE1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88DD92F21D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				88DD92EE1D88738200832564 /* CatalogViewController.swift in Sources */,
+				88FA07D81DA402330063B483 /* GetCaptionViewController.swift in Sources */,
 				AD20A5FF1DA1951000877ABF /* ITunesMenuViewController.swift in Sources */,
 				88DD93121D88738200832564 /* CaptionedTableCell.swift in Sources */,
 				88B54CE41D8870060076942D /* manifest.swift in Sources */,
@@ -1113,6 +1121,7 @@
 				886B4ACF1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88DD92F31D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				88DD92EF1D88738200832564 /* CatalogViewController.swift in Sources */,
+				88FA07D91DA402330063B483 /* GetCaptionViewController.swift in Sources */,
 				AD20A6001DA1951100877ABF /* ITunesMenuViewController.swift in Sources */,
 				88DD93131D88738200832564 /* CaptionedTableCell.swift in Sources */,
 				88B54CE61D8870060076942D /* manifest.swift in Sources */,
@@ -1151,6 +1160,7 @@
 				886B4AD01D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88DD92F41D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				88DD92F01D88738200832564 /* CatalogViewController.swift in Sources */,
+				88FA07DA1DA402330063B483 /* GetCaptionViewController.swift in Sources */,
 				AD20A6011DA1951200877ABF /* ITunesMenuViewController.swift in Sources */,
 				88DD93141D88738200832564 /* CaptionedTableCell.swift in Sources */,
 				88B54CE81D8870060076942D /* manifest.swift in Sources */,

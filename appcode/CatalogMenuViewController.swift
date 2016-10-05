@@ -23,7 +23,7 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
     @IBOutlet weak var outerView: UIView!
     @IBOutlet weak var webviewOverlay: UIWebView!
     @IBOutlet weak var menuImageView: UIImageView!
-    @IBOutlet weak var imageCaption: UITextField!
+    @IBOutlet weak var imageCaption: UILabel!
     @IBOutlet weak var useasis: UIButton!
     @IBOutlet weak var useasisnocaption: UIButton!
     @IBOutlet weak var addcaption: UIButton!
@@ -35,10 +35,20 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
     }
     @IBAction func addCaptionToSticker(_ sender: AnyObject) {
         imageCaption.textColor = .darkGray
-        imageCaption.backgroundColor = .white
-        imageCaption.isEnabled = true
+//        imageCaption.backgroundColor = .white
+//        imageCaption.isEnabled = true
         imageCaption.becomeFirstResponder()
         imageCaption.isHidden = false
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "GetCaptionViewControllerID" ) as? GetCaptionViewController
+        if let vc = vc {
+        vc.delegate = self
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc,animated:true,completion:nil)
+        }
+        
+        
     }
     internal func dismisstapped(_ s: AnyObject) {
         dismiss(animated: true, completion: nil)
@@ -58,12 +68,12 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
         catch {
             menuImageView.image = nil
         }
-        imageCaption.isEnabled  = false
+       // imageCaption.isEnabled  = false
         imageCaption.text = showVendorTitles ? remoteAsset.caption : ""  // KEEP, its first
-        imageCaption.delegate = self
-        imageCaption.textColor = .white
-        imageCaption.backgroundColor = .clear
-        imageCaption.keyboardAppearance = .dark
+        //imageCaption.delegate = self
+        //imageCaption.textColor = .white
+       // imageCaption.backgroundColor = .clear
+       // imageCaption.keyboardAppearance = .dark
         // imageCaption.isHidden = imageCaption.text == ""
         if isAnimated {
             self.addcaption.isHidden = true
@@ -91,13 +101,21 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
 }
 //MARK:- CALLBACKS
 //MARK: UITextFieldDelegate when the single text field gets filled in
-extension CatalogMenuViewController : UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//extension CatalogMenuViewController : UITextFieldDelegate {
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        changesMade = true
+//        delegate?.useWithCaption(remoteAsset: remoteAsset, caption: textField.text ?? "")
+//        imageCaption.isEnabled  = false
+//        textField.resignFirstResponder()
+//        dismiss(animated: true,completion:nil)
+//        return true
+//    }
+//}
+
+extension CatalogMenuViewController :GetCaptionDelegate {
+    func captionWasEntered(caption: String) {
         changesMade = true
-        delegate?.useWithCaption(remoteAsset: remoteAsset, caption: textField.text ?? "")
+        delegate?.useWithCaption(remoteAsset: remoteAsset, caption: caption )
         imageCaption.isEnabled  = false
-        textField.resignFirstResponder()
-        dismiss(animated: true,completion:nil)
-        return true
     }
 }

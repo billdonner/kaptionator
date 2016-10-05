@@ -6,8 +6,6 @@
 //
 import UIKit
 
-
-
 protocol MessagesAppMenuViewDelegate {
     func openinIMessage(captionedEntry:SharedCE)
     func removeFromIMessage(on captionedEntry:inout SharedCE )
@@ -56,8 +54,7 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
         //// dismiss(animated: true, completion: nil)
         self.performSegue(withIdentifier: "UnwindToMessagesAppVC", sender: s)
     }
-    
-    
+
         //MARK:- MENU TAP ACTIONS
     @IBAction func smallSwitchToggled(_ sender: AnyObject) {
         let ce = captionedEntry!
@@ -134,7 +131,8 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
         imageCaption.textColor = .white
         imageCaption.backgroundColor = .clear
         do {
-            let data = try  Data(contentsOf: URL(string:captionedEntry.localimagepath)!)
+            let path = captionedEntry.stickerPaths[0]
+            let data = try  Data(contentsOf: URL(string:path)!)
             menuImageView.image = UIImage(data:data)
             menuImageView.contentMode = .scaleAspectFit
         }
