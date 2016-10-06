@@ -13,6 +13,7 @@ import Messages
 
 
 final class SchtickerzBrowserViewController : MSStickerBrowserViewController {
+    var mesExtVC: MessagesExtensionViewController!
     var stickerPool:StickerPool = StickerPool()
     override func viewDidLoad() {
        
@@ -22,7 +23,15 @@ final class SchtickerzBrowserViewController : MSStickerBrowserViewController {
         stickerPool.stickers = []
         stickerPool.makeMSStickersFromMemspace()
         print("&&&&&&&&&& loadFromSharedDataSpace"," got ",stickerPool.stickers.count)
-        self.stickerBrowserView.reloadData()
+  
+        if stickerPool.stickers.count == 0 {
+            mesExtVC.zeroItemsLabel.isHidden = false
+            // make a sticker and add it
+            stickerPool.makeMSStickerFromAppIcon()
+        } else {
+            mesExtVC.zeroItemsLabel.isHidden = true
+        }
+              self.stickerBrowserView.reloadData()
     }//loadstickers
     
     

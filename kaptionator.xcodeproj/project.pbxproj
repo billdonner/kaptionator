@@ -136,6 +136,12 @@
 		88B570ED1DA566B400CD4058 /* GetCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B570EB1DA566B400CD4058 /* GetCaptionViewController.swift */; };
 		88B570EE1DA566B400CD4058 /* GetCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B570EB1DA566B400CD4058 /* GetCaptionViewController.swift */; };
 		88B570EF1DA566B400CD4058 /* GetCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B570EB1DA566B400CD4058 /* GetCaptionViewController.swift */; };
+		88B570F01DA6906E00CD4058 /* emoGeeStickerIcons-1024x768.png in Resources */ = {isa = PBXBuildFile; fileRef = AD6CAF2B1DA19D270062919B /* emoGeeStickerIcons-1024x768.png */; };
+		88B570F11DA690AE00CD4058 /* candidatesIconsCans-1024x768.png in Resources */ = {isa = PBXBuildFile; fileRef = AD6CAF291DA19CF80062919B /* candidatesIconsCans-1024x768.png */; };
+		88B570F21DA696F900CD4058 /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA91D8870060076942D /* StickerFileFactory.swift */; };
+		88B570F31DA696FA00CD4058 /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA91D8870060076942D /* StickerFileFactory.swift */; };
+		88B570F41DA696FB00CD4058 /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA91D8870060076942D /* StickerFileFactory.swift */; };
+		88B570F51DA696FE00CD4058 /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA91D8870060076942D /* StickerFileFactory.swift */; };
 		88C7AED51D98685D0050A6CD /* Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7AED41D98685D0050A6CD /* Versions.swift */; };
 		88C7AED61D98685D0050A6CD /* Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7AED41D98685D0050A6CD /* Versions.swift */; };
 		88C7AED71D98685D0050A6CD /* Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7AED41D98685D0050A6CD /* Versions.swift */; };
@@ -1013,6 +1019,7 @@
 			files = (
 				88AEA6231D514C5F006E5C70 /* Assets.xcassets in Resources */,
 				88B54D011D8870F10076942D /* MainInterface.storyboard in Resources */,
+				88B570F01DA6906E00CD4058 /* emoGeeStickerIcons-1024x768.png in Resources */,
 				88AEA6211D514C5F006E5C70 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1022,6 +1029,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88AEA6381D514C8D006E5C70 /* Assets.xcassets in Resources */,
+				88B570F11DA690AE00CD4058 /* candidatesIconsCans-1024x768.png in Resources */,
 				88B54D001D8870F10076942D /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1208,6 +1216,7 @@
 				88B54CC91D8870060076942D /* common.swift in Sources */,
 				88B54CB91D8870060076942D /* theme.swift in Sources */,
 				88B54CF11D8870060076942D /* SharedCaptionSpace.swift in Sources */,
+				88B570F51DA696FE00CD4058 /* StickerFileFactory.swift in Sources */,
 				88B54C9B1D886FBC0076942D /* MartoonerBrowserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1221,6 +1230,7 @@
 				88B54CC71D8870060076942D /* common.swift in Sources */,
 				88B54CB71D8870060076942D /* theme.swift in Sources */,
 				88B54CEF1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
+				88B570F41DA696FB00CD4058 /* StickerFileFactory.swift in Sources */,
 				88B54C9A1D886FBC0076942D /* MartoonerBrowserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1234,6 +1244,7 @@
 				88B54CC51D8870060076942D /* common.swift in Sources */,
 				88B54CB51D8870060076942D /* theme.swift in Sources */,
 				88B54CED1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
+				88B570F31DA696FA00CD4058 /* StickerFileFactory.swift in Sources */,
 				88B54C991D886FBC0076942D /* MartoonerBrowserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1247,6 +1258,7 @@
 				88B54CC31D8870060076942D /* common.swift in Sources */,
 				88B54CB31D8870060076942D /* theme.swift in Sources */,
 				88B54CEB1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
+				88B570F21DA696F900CD4058 /* StickerFileFactory.swift in Sources */,
 				88B54C981D886FBC0076942D /* MartoonerBrowserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -56,7 +56,6 @@ fileprivate struct Snapsupport {
     }
 }
 
-/// only for use by extnesion
 struct StickerFileFactory {
     
 

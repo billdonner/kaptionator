@@ -32,9 +32,17 @@
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kqv-aA-d0s">
                                 <connections>
-                                    <segue destination="14L-Rb-M2F" kind="embed" id="eVA-RM-wCL"/>
+                                    <segue destination="14L-Rb-M2F" kind="embed" identifier="PassVCToBrowserViewController" id="eVA-RM-wCL"/>
                                 </connections>
                             </containerView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="touch &quot;captions&quot; to add and edit stickers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Tey-yo-Q3E">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="aRw-KB-R9Z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -42,9 +50,12 @@
                             <constraint firstItem="kqv-aA-d0s" firstAttribute="top" secondItem="9h6-nu-Wu1" secondAttribute="bottom" id="1Yd-qT-v7q"/>
                             <constraint firstItem="kqv-aA-d0s" firstAttribute="top" secondItem="d1e-fi-ked" secondAttribute="bottom" constant="3" id="D9J-Ib-0m5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9h6-nu-Wu1" secondAttribute="trailing" constant="10" id="FZD-iL-RTK"/>
+                            <constraint firstItem="Tey-yo-Q3E" firstAttribute="top" secondItem="kqv-aA-d0s" secondAttribute="top" id="GHp-uu-5Qd"/>
+                            <constraint firstItem="Tey-yo-Q3E" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" id="Q51-rS-zZq"/>
                             <constraint firstItem="kqv-aA-d0s" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leading" id="TYN-5C-wxP"/>
                             <constraint firstItem="n38-gi-rB5" firstAttribute="top" secondItem="kqv-aA-d0s" secondAttribute="bottom" id="UXL-ES-VU3"/>
                             <constraint firstAttribute="trailing" secondItem="kqv-aA-d0s" secondAttribute="trailing" id="cKS-P3-1qj"/>
+                            <constraint firstItem="Tey-yo-Q3E" firstAttribute="centerX" secondItem="kqv-aA-d0s" secondAttribute="centerX" id="jmk-3z-RlP"/>
                             <constraint firstItem="9h6-nu-Wu1" firstAttribute="top" secondItem="qkL-Od-lgU" secondAttribute="bottom" id="kDy-Sb-Jat"/>
                             <constraint firstItem="d1e-fi-ked" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" constant="10" id="sk8-4J-gkU"/>
                         </constraints>
@@ -55,11 +66,12 @@
                     <connections>
                         <outlet property="theButton" destination="9h6-nu-Wu1" id="bwN-3c-Jr6"/>
                         <outlet property="topLabel" destination="d1e-fi-ked" id="VeQ-Fx-I3F"/>
+                        <outlet property="zeroItemsLabel" destination="Tey-yo-Q3E" id="rI4-8E-d7M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.59999999999999" y="135.832083958021"/>
+            <point key="canvasLocation" x="144" y="-188.00599700149925"/>
         </scene>
         <!--Schtickerz Browser View Controller-->
         <scene sceneID="5LF-W4-Evm">

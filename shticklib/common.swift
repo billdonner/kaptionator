@@ -118,7 +118,14 @@ get {
     return "no LEFT-BBI-NAME"
 }
 }
-
+var backgroundImagePath : String {
+get {
+    if let iDict = Bundle.main.infoDictionary ,
+        let w =  iDict["BACKGROUND-IMAGE"] as? String { return w }
+    fatalError("remote website url undefined")
+    //return nil
+}
+}
 func restoreSharespaceFromDisk () throws  {
     let suite = SharedMemDataSpace
     SharedCaptionSpace.reset()

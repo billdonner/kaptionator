@@ -24,6 +24,8 @@
 	<string>29</string>
 	<key>EXTENSION-SCHEME</key>
 	<string>Stickerizer</string>
+	<key>BACKGROUND-IMAGE</key>
+	<string>emoGeeStickerIcons-1024x768.png</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionMainStoryboard</key>

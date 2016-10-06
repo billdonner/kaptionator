@@ -67,6 +67,31 @@ struct  StickerPool   {
             print ("&&&&&&&&& No stickers right now :(")
         }
     }
+    mutating func makeMSStickerFromAppIcon() {
+        
+        let ext = (backgroundImagePath as NSString).pathExtension
+        let bar = (backgroundImagePath as NSString).lastPathComponent
+        let res = (bar as NSString).deletingPathExtension
+        
+        let url  =  Bundle.main.url(forResource: res, withExtension: ext)
+        
+        guard let nurl = url else {
+            fatalError("cant find \(backgroundImagePath)")
+        }
+        do {
+        let theData = try Data(contentsOf: nurl)
+        let options:StickerMakingOptions = .generatemedium
+        let stickerPaths =   StickerFileFactory.createStickerFilesFrom (imageData: theData ,path: backgroundImagePath, caption: "Welcome to \(extensionScheme)", options:options)
+            if stickerPaths.count > 0 ,
+                let stickerurl = URL(string:stickerPaths[0]) {
+            makeMSSticker(url:stickerurl,title:"Welcome to \(extensionScheme)")
+        print("made sticker file urls \(stickerPaths)")
+            }
+        }
+        catch let error {
+            print("could not make sticker file \(error)")
+        }
+    }
     mutating func makeMSStickersFromTempFiles() {
         // thru temp file making stickers
         do {
@@ -105,21 +130,20 @@ struct  StickerPool   {
     }
     @IBOutlet weak var theButton: UIButton!
     
+    @IBOutlet weak var zeroItemsLabel: UILabel!  // normally zero
  
     func openMainAppFromExtension (scheme:String) {
         
         let p = "\(scheme)://home"
         let url = URL(string:p)!
-        //print("opening main app")
         self.extensionContext?.open(url, completionHandler: nil)
         
     }
     
     
-    func noteToCloud(dict:[String:String]) {
-            }
+   private func noteToCloud(dict:[String:String]) {  }
     
-    func p(_ s:String) {
+    private func p(_ s:String) {
         print("&&&&&&&&& ",s)
     }
 
@@ -131,7 +155,13 @@ struct  StickerPool   {
         p("messagesviewcontroller viewdidload")
         
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PassVCToBrowserViewController" {
+            if let vc = segue.destination as? SchtickerzBrowserViewController {
+                vc.mesExtVC = self
+            }
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
