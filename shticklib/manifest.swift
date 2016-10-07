@@ -25,51 +25,6 @@ typealias GFRM = ((_ status:Int,
 /// Manifest bundles static operations on groups of manifest entries
 struct Manifest {
     
-    private static func processAllPacks(url:URL,completion:@escaping UFRS) {
-        IO.httpGET(url:url) { status,data in
-            //print("status \(status)")
-            guard status == 200 else {
-                completion (status, [:],"", false,[])
-                return
-            } // not 200
-            
-            if let data = data {
-                do {
-                    
-                    let json = try JSONSerialization.jsonObject(with: data , options: [])
-                    var final : [(pack:String,url:URL)] = []
-                    if let jobj = json as? JSONDict,
-                        let apptitle = jobj ["app-title"] as? String,
-                        let showsections = jobj ["show-sectionheads"] as? Bool,
-                        let packsites = jobj ["pack-sites"] {
-                        for packsite in packsites as! [[String:String]] {
-                            if let ps = packsite["name"], let url = packsite["url"]{
-                                
-                                final.append((pack:ps,url:URL(string:url)!))
-                            } else {
-                                print ("blank or bad line spec \(url)")
-                            }
-                        }
-                        completion (200, [:],apptitle,showsections, final)
-                        return
-                    }
-                    return  // made it
-                }// inner do
-                catch  {
-                    print ("processAllPacks not found or bad parse \(url)")
-                    // caught inner throw from bad JSON parse
-                    completion ( 502, [:],"", false,[])
-                    return
-                }
-            } else {
-                // good status but no data
-                completion ( 501, [:],"", false,[])
-                return
-            }
-        }// end of closure
-    }
-    
-    
     static func parseData(_ data:Data, baseURL: String,completion:@escaping GFRM) {
         var final : ManifestItems = []
         do {
@@ -122,9 +77,8 @@ struct Manifest {
                             let remoteAsset = RemoteAsset(pack: pack,
                                                           title: title,
                                                           thumb: thumbnail,
-                                                          remoteurl: imagepath,
-                                                          
-                                                          localpath: nil,
+                                                          remoteurl: nil,
+                                                          localpath: imagepath,
                                                           options: options)
                             
                             RemSpace.addasset(ra: remoteAsset) // be sure to count
@@ -155,23 +109,49 @@ struct Manifest {
             }
         }
     }
-
+    
     /// load a bunch of manifests as listed in a super-manifest
+    
+    private static func processOneLocal(_ url:URL,  completion:@escaping GFRM) {
+        do {
+        let data = try Data(contentsOf: url)
+        
+        let baseURL = (url.absoluteString as NSString).deletingLastPathComponent.appending("/")
+         
+            parseData(data, baseURL: baseURL, completion: completion)
+     
+        }
+            catch let error {
+                  completion((error as NSError).code,"", [] )
+            }
+
+    }
+    static func loadJSONFromLocal(url:URL?,completion:GFRM?) {
+        guard let url = url else {
+            fatalError("loadJSONFromLocal")
+        }
+        processOneLocal (  url ){ status, s, mes in
+            
+            if completion != nil  {
+                completion! (status, "lny", mes)
+            }
+         
+        }
+    }
     
     static func loadJSONFromURL(url:URL?,completion:GFRM?) {
         guard let url = url else {
-             fatalError("loadFromITunesSharing(observer: observer,completion:completion)")
+            fatalError("loadFromITunesSharing(observer: observer,completion:completion)")
         }
-                processOneURL (  url ){ status, s, mes in
-                    
-                        if completion != nil  {
-                            completion! (status, "sny", mes)
-                    }
-                   // }
-               // }
-            //}
+        processOneURL (  url ){ status, s, mes in
+            
+            if completion != nil  {
+                completion! (status, "sny", mes)
+            }
+            
         }
     }
+    
     
     /// build a manifest from files user drags into itunes
     static func manifestFromDocumentsDirectory(pack:String) -> String {
@@ -205,4 +185,49 @@ struct Manifest {
     }
 }
 
- 
+//
+//private static func processAllPacks(url:URL,completion:@escaping UFRS) {
+//    IO.httpGET(url:url) { status,data in
+//        //print("status \(status)")
+//        guard status == 200 else {
+//            completion (status, [:],"", false,[])
+//            return
+//        } // not 200
+//
+//        if let data = data {
+//            do {
+//
+//                let json = try JSONSerialization.jsonObject(with: data , options: [])
+//                var final : [(pack:String,url:URL)] = []
+//                if let jobj = json as? JSONDict,
+//                    let apptitle = jobj ["app-title"] as? String,
+//                    let showsections = jobj ["show-sectionheads"] as? Bool,
+//                    let packsites = jobj ["pack-sites"] {
+//                    for packsite in packsites as! [[String:String]] {
+//                        if let ps = packsite["name"], let url = packsite["url"]{
+//
+//                            final.append((pack:ps,url:URL(string:url)!))
+//                        } else {
+//                            print ("blank or bad line spec \(url)")
+//                        }
+//                    }
+//                    completion (200, [:],apptitle,showsections, final)
+//                    return
+//                }
+//                return  // made it
+//            }// inner do
+//            catch  {
+//                print ("processAllPacks not found or bad parse \(url)")
+//                // caught inner throw from bad JSON parse
+//                completion ( 502, [:],"", false,[])
+//                return
+//            }
+//        } else {
+//            // good status but no data
+//            completion ( 501, [:],"", false,[])
+//            return
+//        }
+//    }// end of closure
+//}
+//
+

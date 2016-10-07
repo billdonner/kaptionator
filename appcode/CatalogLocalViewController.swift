@@ -10,14 +10,12 @@ import UIKit
 //
 
 
-final class CatalogViewController: UICollectionViewController,ControlledByMasterViewController {
-    @IBAction func unwindToCatalogItemsViewControlle(_ segue: UIStoryboardSegue)  {}
+ class CatalogViewController: UICollectionViewController,ControlledByMasterViewController {
+    @IBAction func unwindToCatalogLocalItemsViewControlle(_ segue: UIStoryboardSegue)  {}
     
     var mvc : MasterViewController!
     
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
+
     
     let refreshControl = UIRefreshControl()
     fileprivate var theSelectedIndexPath:IndexPath?
@@ -37,16 +35,16 @@ final class CatalogViewController: UICollectionViewController,ControlledByMaster
         disp()
     }
     private func disp() {
-        print ("Collection view size \(collectionView!.contentSize)")
-        assert( stickerManifestURL != nil)
+       // print ("Collection view size \(collectionView!.contentSize)")
+       // assert( stickerManifestURL != nil)
         //  only read the catalog if we have to
-        do {
-            try RemSpace.restoreRemspaceFromDisk()
-            print("RemSpace restored, \(RemSpace.itemCount()) items")
-            phase2 ()
-        }  catch {
+//        do {
+//            try RemSpace.restoreRemspaceFromDisk()
+//            print("RemSpace restored, \(RemSpace.itemCount()) items")
+//            phase2 ()
+//        }  catch {
             phase1()
-        }
+       // }
     }
     //MARK:- Dispatching to External ViewControllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -62,8 +60,6 @@ final class CatalogViewController: UICollectionViewController,ControlledByMaster
         }
     }
 }
-/// secret message to gary
-
 extension CatalogViewController {  //loading on first up - moved from masterview controller
     
     func refreshPulled(_ x:AnyObject) {
@@ -73,9 +69,18 @@ extension CatalogViewController {  //loading on first up - moved from masterview
     
     func phase1() {
         // only read remote if we have a list
-        if stickerManifestURL != nil {
-            print(">>>>>>>>>> phase1 Manifest.loadJSONFromURL \(stickerManifestURL)")
-            Manifest.loadJSONFromURL (url: stickerManifestURL  ) { status, title, allofme in
+        if let localResourcesBasedir = localResourcesBasedir {
+            
+            let mani = //"/" +
+            localResourcesBasedir
+            //""
+ 
+           // let url =  Bundle.main.url(forResource :"_manifest", withExtension : "json", subdirectory : mani)
+            let t = "\(mani)/_manifest.json"
+            let url = Bundle.main.bundleURL.appendingPathComponent(t, isDirectory: false)
+            
+            print(">>>>>>>>>> phase1 Manifest.loadJSONFromLocal \(url)")
+            Manifest.loadJSONFromLocal (url:url ) { status, title, allofme in
                 // at this point the observer callbacks have been called so the data is ready for redisplay on the main q
                 DispatchQueue.main.async  {
                     guard status == 200 else {
@@ -101,7 +106,7 @@ extension CatalogViewController {  //loading on first up - moved from masterview
         let vcid =  "ShowCatalogID"
         // self.activityIndicatorView.stopAnimating()
         let x = RemSpace.itemCount()
-        print(">>>>>>>>>> phase3 \(x) REMOTE ASSETS LOADED \(vcid) -- READY TO ROLL")
+        print(">>>>>>>>>> phase3 \(x) LOCAL ASSETS LOADED \(vcid) -- READY TO ROLL")
         self.collectionView?.reloadData()
         
         refreshControl.tintColor = .blue
@@ -157,13 +162,7 @@ extension CatalogViewController {  //loading on first up - moved from masterview
       
         return cell // Return the cell
     }
-
-//MARK: UICollectionViewDelegateFlowLayout incorporates didSelect....
-//: UICollectionViewDelegateFlowLayout {
-    //UICollectionViewDelegateFlowLayout
-    //    func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-    //        return false
-    //    }
+ 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         theSelectedIndexPath = indexPath
         // todo: analyze safety of passing indexpath thru, sees to work for now
@@ -173,39 +172,7 @@ extension CatalogViewController {  //loading on first up - moved from masterview
         performSegue(withIdentifier: "CatalogCellTapMenuID", sender: self)
     }
     //
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    //
-    //        let traitCollection = collectionView.traitCollection
-    //
-    //        if traitCollection.verticalSizeClass == .regular &&
-    //            traitCollection.horizontalSizeClass == .regular {
-    //            return CGSize(width: 250, height: 250) //ipad
-    //        }
-    //        if traitCollection.verticalSizeClass == .compact &&
-    //            traitCollection.horizontalSizeClass == .regular {
-    //            return CGSize(width: 200, height: 200) //7plus in landscape
-    //        }
-    //        return CGSize(width: 150, height: 150) //iphone vert
-    //    }
-    //    // CGSize(width:4, height:4)
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-    //        return CGFloat(4)
-    //    }
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-    //        return CGSize.zero
-    //    }
-    //
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-    //        return CGSize.zero
-    //    }
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-    //
-    //        return UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
-    //    }
-    //    //
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-    //        return 8
-    //    }
+ 
 }
 // MARK: Delegates for actions from our associated menu
 extension AppCE {
@@ -243,9 +210,3 @@ extension CatalogViewController : CatalogMenuViewDelegate {
         AppCE.makeNewCaptionCat( from: remoteAsset, caption: caption )
     }
 }
-//extension CatalogViewController : MEObserver {
-//    func newdocument(_ propsDict: JSONDict, _ title:String) {
-//        RemSpace.reset(title:title)
-//    }
-// 
-//}

@@ -2,10 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>BACKGROUND-IMAGE</key>
-	<string>candidatesIconsCans-1024x768.png</string>
 	<key>APP-TITLE</key>
 	<string>Candidatez by Martoons</string>
+	<key>BACKGROUND-IMAGE</key>
+	<string>candidatesIconsCans-1024x768.png</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -21,9 +21,9 @@
 	<key>CFBundlePackageType</key>
 	<string>XPC!</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.07</string>
+	<string>1.1</string>
 	<key>CFBundleVersion</key>
-	<string>95</string>
+	<string>101</string>
 	<key>EXTENSION-SCHEME</key>
 	<string>Candidatez</string>
 	<key>NSExtension</key>

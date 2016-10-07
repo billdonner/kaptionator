@@ -38,7 +38,8 @@ class MessagesTableCell: UITableViewCell {
                 detailsImageView.image = img
             }
         }
-        catch {
+        catch let error {
+            print("Cant paint image in messages table vc, \(error)")
         }
     }
     override func awakeFromNib() {

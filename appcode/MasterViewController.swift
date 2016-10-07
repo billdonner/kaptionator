@@ -19,18 +19,17 @@ protocol ControlledByMasterViewController{
 }
 final class MasterViewController: UIViewController {
     let  offColor:UIColor  = UIColor.lightGray
-    @IBAction func unwindToMaster(_ segue: UIStoryboardSegue)  {
-    }
+
+    @IBAction func unwindToMaster(_ segue: UIStoryboardSegue)  {}
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
-     @IBOutlet weak var orgbbi: UIBarButtonItem!
-
-    
+    @IBOutlet weak var orgbbi: UIBarButtonItem!
     @IBOutlet weak var morebbi: UIBarButtonItem!
     @IBOutlet weak var helpbbi: UIBarButtonItem!
     @IBOutlet weak var logoView: UIImageView!
-    @IBOutlet weak var coloredSpacer: UIView!
+    @IBOutlet weak var coloredSpacer: UIView! 
     var currentViewController: UIViewController?
+    
     private var showCatalogViewController: CatalogViewController?
     private var showCaptionedViewController: CapationatedViewController?
     private var showMessagesViewController: MessagesViewController?
@@ -85,7 +84,9 @@ final class MasterViewController: UIViewController {
         
     }// fall straight into it
     private func finishStartup() {
-        let vcid = (stickerManifestURL != nil) ? "ShowCatalogID" : "ShowITunesID"
+        let vcid = //(stickerManifestURL != nil) ?
+            "ShowCatalogID"
+            //: "ShowITunesID"
         
         showCatalogViewController = self.storyboard?.instantiateViewController(withIdentifier: vcid ) as? CatalogViewController
         showCatalogViewController?.mvc = self

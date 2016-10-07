@@ -126,18 +126,22 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         let options = captionedEntry.stickerOptions
-        isAnimated = options.contains(.generateasis)   
+        isAnimated = options.contains(.generateasis)
+        
+        imageCaption.text =  captionedEntry.caption
+        var imgsize:CGFloat
         do {
             let path = captionedEntry.localimagepath //stickerPaths[0]
             let data = try  Data(contentsOf: URL(string:path)!)
             menuImageView.image = UIImage(data:data)
             menuImageView.contentMode = .scaleAspectFit
+            imgsize = menuImageView.image!.size.width
         }
-        catch {
-            menuImageView.image = nil
-        }
-        imageCaption.text =  captionedEntry.caption
-        let imgsize = menuImageView.image!.size
+            catch {
+                menuImageView.image = nil
+                imgsize = kStickerSmallSize
+            }
+            
         smallSwitch.isEnabled = false
         mediumSwitch.isEnabled = false
         largeSwitch.isEnabled = false
@@ -145,13 +149,13 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
             smallSwitch.isOn = false
             mediumSwitch.isOn = false
             largeSwitch.isOn = false
-            if imgsize.width >= kStickerLargeSize {
+            if imgsize >= kStickerLargeSize {
                 largeSwitch.isOn = true
             } else
-                if imgsize.width >= kStickerMediumSize {
+                if imgsize >= kStickerMediumSize {
                     mediumSwitch.isOn = true
                 } else
-                    if imgsize.width >= kStickerSmallSize {
+                    if imgsize >= kStickerSmallSize {
                         smallSwitch.isOn = true
             }
         } else {
@@ -162,13 +166,13 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
             smallSwitch.isOn = checkForFileVariant(captionedEntry,"S")
             
             /// enable switches only if supplied file is large enough
-            if imgsize.width >= kStickerLargeSize {
+            if imgsize >= kStickerLargeSize {
                 largeSwitch.isEnabled = true
             }
-            if imgsize.width >= kStickerMediumSize {
+            if imgsize >= kStickerMediumSize {
                 mediumSwitch.isEnabled = true
             }
-            if imgsize.width >= kStickerSmallSize {
+            if imgsize >= kStickerSmallSize {
                 smallSwitch.isEnabled = true
             }
         }
@@ -186,7 +190,9 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
             webviewOverlay.contentMode = .scaleAspectFit
             webviewOverlay.loadHTMLString(html, baseURL: nil)
             ///  end of animated preview overlay
+        
         }
+      
         addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
     }
 

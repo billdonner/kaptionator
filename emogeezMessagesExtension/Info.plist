@@ -2,12 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>EXTENSION-SCHEME</key>
-	<string>EmoGeez</string>
-	<key>BACKGROUND-IMAGE</key>
-	<string>emoGeeStickerIcons-1024x768.png</string>
 	<key>APP-TITLE</key>
 	<string>EmoGeez by Martoons</string>
+	<key>BACKGROUND-IMAGE</key>
+	<string>emoGeeStickerIcons-1024x768.png</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -23,9 +21,11 @@
 	<key>CFBundlePackageType</key>
 	<string>XPC!</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.1</string>
 	<key>CFBundleVersion</key>
-	<string>95</string>
+	<string>101</string>
+	<key>EXTENSION-SCHEME</key>
+	<string>EmoGeez</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionMainStoryboard</key>

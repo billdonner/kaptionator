@@ -9,11 +9,6 @@
 import UIKit
 
 
-private struct BorderSettings {
-    static let width: CGFloat = 2.0 / UIScreen.main.scale
-    static let colour = UIColor(white: 0.5, alpha: 1.0)
-}
- 
 
 /// The cell responsible for displaying item data.
 class CatalogDataCell: UICollectionViewCell {
@@ -39,8 +34,8 @@ class CatalogDataCell: UICollectionViewCell {
             detailsImageView.image = img
             detailsImageView.contentMode = .scaleAspectFit
         }
-        catch {
-            
+        catch let error {
+         print ("Cant paintImage \(error)")
         }
     }
  

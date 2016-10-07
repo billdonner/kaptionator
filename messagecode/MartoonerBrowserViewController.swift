@@ -14,23 +14,11 @@ import Messages
 
 final class SchtickerzBrowserViewController : MSStickerBrowserViewController {
     var mesExtVC: MessagesExtensionViewController!
-    var stickerPool:StickerPool = StickerPool()
     override func viewDidLoad() {
-       
- 
-    /// for each JSON swatch in the extension space - expand to one ore more stickers
-   
-        stickerPool.stickers = []
-        stickerPool.makeMSStickersFromMemspace()
-        print("&&&&&&&&&& loadFromSharedDataSpace"," got ",stickerPool.stickers.count)
-  
-        if stickerPool.stickers.count == 0 {
-            mesExtVC.zeroItemsLabel.isHidden = false
-            // make a sticker and add it
-            stickerPool.makeMSStickerFromAppIcon()
-        } else {
-            mesExtVC.zeroItemsLabel.isHidden = true
-        }
+        
+        // the messages extension vc has the sticker pool under its watch
+                mesExtVC.resetStickerPool()
+
               self.stickerBrowserView.reloadData()
     }//loadstickers
     
@@ -41,15 +29,5 @@ extension SchtickerzBrowserViewController {
     func changeBrowserViewBackgroundColor(color:UIColor) {
         let pale = color.withAlphaComponent(0.1)
         stickerBrowserView.backgroundColor = pale
-    }
-}
-
-extension SchtickerzBrowserViewController { //: MSStickerBrowserViewDataSource {
-    override func numberOfStickers(in stickerBrowserView: MSStickerBrowserView) -> Int {
-        let  t = stickerPool.stickers.count
-        return t 
-    }
-    override func stickerBrowserView(_ stickerBrowserView: MSStickerBrowserView, stickerAt index: Int) -> MSSticker {
-        return  stickerPool.stickers[index]
     }
 }

@@ -43,6 +43,14 @@ let RemoteAssetsDataSpace = "SharedRemspace"
 
 let AppPrivateDataSpace = "AppPrivateDataSpace"
 
+
+struct BorderSettings {
+    static let width: CGFloat = 2.0 / UIScreen.main.scale
+    static let colour = UIColor(white: 0.5, alpha: 1.0)
+}
+
+
+
 /// "SHARED-INTERAPP-DATA" depending on the actual app instance theres a differen shared data area
 //    it looks something like group.xxx.yyy.zzz
 var SharedMemDataSpace: String  { get {
@@ -70,7 +78,7 @@ struct StickerMakingOptions: OptionSet {
     static let generatesmall    = StickerMakingOptions(rawValue: 1 << 0)
     static let generatemedium  = StickerMakingOptions(rawValue: 1 << 1)
     static let generatelarge   = StickerMakingOptions(rawValue: 1 << 2)
-    static let generateasis   = StickerMakingOptions(rawValue: 1 << 3) 
+    static let generateasis   = StickerMakingOptions(rawValue: 1 << 3)
     
     func description()->String {
         var buf = ""
@@ -86,7 +94,7 @@ struct StickerMakingOptions: OptionSet {
         if self.contains(.generateasis) {
             buf += " AsIs"
         }
-     
+        
         return buf
     }
     
@@ -126,6 +134,14 @@ get {
     //return nil
 }
 }
+// if this is set we avoid the network completely
+var localResourcesBasedir : String? {
+get {
+    if let iDict = Bundle.main.infoDictionary ,
+        let w =  iDict["LOCAL-RESOURCES-BASEDIR"] as? String { return w }
+        return nil
+    }
+}
 func restoreSharespaceFromDisk () throws  {
     let suite = SharedMemDataSpace
     SharedCaptionSpace.reset()
@@ -150,16 +166,13 @@ func restoreSharespaceFromDisk () throws  {
                 var options = StickerMakingOptions()
                 options.rawValue = optionsvalue
                 /// figure the shared paths
-            
-                    
-                    let t = SharedCE( pack: p, title: ti,
-                                            imagepath: i,
-                                            stickerpaths:s,
-                                            caption:  captiontext,
-                                            options: options )
-                
+                let t = SharedCE( pack: p, title: ti,
+                                  imagepath: i,
+                                  stickerpaths:s,
+                                  caption:  captiontext,
+                                  options: options )
                 let _ = SharedCaptionSpace.add(ce: t)
-              
+                
             }
         }
         SharedCaptionSpace.saveData()  //add calls it over and; over

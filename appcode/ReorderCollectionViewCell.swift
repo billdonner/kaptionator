@@ -9,12 +9,6 @@
 import UIKit
 
 
-private struct BorderSettings {
-    static let width: CGFloat = 2.0 / UIScreen.main.scale
-    static let colour = UIColor(white: 0.5, alpha: 1.0)
-}
- 
-
 /// The cell responsible for displaying item data.
 class ReorderCollectionViewCell: UICollectionViewCell {
     // @IBOutlet fileprivate weak var stackView: UIStackView!

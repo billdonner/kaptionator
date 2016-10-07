@@ -21,22 +21,17 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.07</string>
+	<string>1.1</string>
 	<key>CFBundleVersion</key>
-	<string>95</string>
+	<string>101</string>
 	<key>EXTENSION-SCHEME</key>
 	<string>Candidatez</string>
 	<key>LEFT-BBI-NAME</key>
 	<string>Catalog</string>
+	<key>LOCAL-RESOURCES-BASEDIR</key>
+	<string>candidates-stickerspackimages</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
-	<key>REMOTE-MANIFEST-URL</key>
-	<string>http://shtikerz.com/candidatez/stickerspackimages/_manifest.json</string>
 	<key>REMOTE-WEBSITE-URL</key>
 	<string>http://shtikerz.com/candidatez</string>
 	<key>SHARED-INTERAPP-DATA</key>
@@ -75,5 +70,12 @@
 	<false/>
 	<key>__IMPORTANT__</key>
 	<string>for safety: hidden functions is NO, no file sharing, manifest should be a single pack,app transport must move to ssl</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>xREMOTE-MANIFEST-URL</key>
+	<string>http://shtikerz.com/candidatez/stickerspackimages/_manifest.json</string>
 </dict>
 </plist>

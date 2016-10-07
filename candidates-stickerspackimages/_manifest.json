@@ -1,0 +1,178 @@
+{
+	"pack": "Candidatez",
+	"description": "Stikerz Pack Manifest for Candidatez",
+	"generated": "2016-08-03 00:05:14 +0000",
+	"images": [{
+		"image": "images/candidates-618.jpg",
+		"title": "The Candidates",
+		"size": "M"
+
+	}, {
+	 		"image": "images/blind-618.gif",
+		"title": "Elections",
+		"size": "M"	
+	}, {
+		"image": "images/votingMachine-618.gif",
+		"title": "title",
+		"size": "M"		
+	}, {	
+		"image": "images/2parties-618.jpg",
+		"title": "A323Z",
+		"size": "M"
+	}, {
+		"image": "images/hell-618.gif",
+		"title": "title",
+		"size": "M"
+	}, {
+	"image": "images/trumpStretchingTruth-300.gif",
+		"title": "The Truth",
+		"animated": 1,
+		"thumb":"images/_thumbs/trumpStretchingTruth.png"
+	}, {
+		"image": "images/badHair-618.jpg",
+		"title": "Bad Hair Day",
+		"size": "M"
+		
+	}, {
+		"image": "images/overcomb-618.gif",
+		"title": "We Shall Overcomb!",
+		"size": "M"		
+	}, {
+			"image": "images/trumpAndSam-618.gif",
+		"title": "His Aim?",
+		"size": "M"		
+	}, {
+		"image": "images/menace-300.png",
+		"title": "Donald The Menace",
+		"size": "M"
+	}, {
+			"image": "images/trumpFire-618.png",
+		"title": "Fired!",
+		"size": "M"
+	}, {
+
+		"image": "images/jackAssInTheBoxTRANS-3b-618.gif",
+		"title": "Jackass In The Box",
+		"animated": 1,
+		"thumb":"images/_thumbs/jackAssBox-300.png"
+	}, {
+	
+		"image": "images/immigrationReform-618.gif",
+		"title": "Immigrants",
+		"size": "M"
+	}, {
+		"image": "images/rudyAndDon-618.jpg",
+		"title": "Leadership",
+		"size": "M"
+	}, {
+
+		"image": "images/hillaryCashPile-618.gif",
+		"title": "Money in Politics",
+		"size": "M"
+		
+		
+}, {
+		"image": "images/hillaryBobbleHead-4-300.gif",
+		"title": "Hillary BobbleHead",
+		"animated": 1,
+		"size": "M"
+		
+		
+}, {
+		"image": "images/trumpBobbleHead-4-300.gif",
+		"title": "Donald BobbleHead",
+		"animated": 1,
+		"size": "M"
+		
+}, {
+		"image": "images/benitoTrumpVideo-300.gif",
+		"title": "Who's inside that head?",
+		"animated": 1,
+		"size": "M"
+		
+
+}, {
+		"image": "images/explodingHead2psd-300.gif",
+		"title": "What's Inside",
+		"animated": 1,
+		"size": "M"
+	}, {
+	
+			"image": "images/hillaryJuggle-300.gif",
+		"title": "Juggling",
+		"animated": 1,
+		"size": "M"
+	}, {
+	
+			"image": "images/trumpJuggle-300.gif",
+		"title": "Juggling",
+		"animated": 1,
+		"size": "M"
+	}, {
+	
+	
+		"image": "images/twoCansBlueAni14fr-300.gif",
+		"title": "The Can-didate-blue",
+		"animated": 1,
+		"size": "M"
+	}, {
+		"image": "images/twoCansRedAni14fr-300.gif",
+		"title": "The Can-didate-red",
+		"animated": 1,
+		"size": "M"		
+	}, {
+		"image": "images/women-618.gif",
+		"title": "Trump's Women?",
+		"size": "M"			
+	}, {
+
+		"image": "images/donaldGlobeTrans-618.gif",
+		"title": "Donald Under Glass",
+		"size": "M"
+	}, {
+		"image": "images/donaldSnowGlobeAni-300.gif",
+		"title": "Donald Under Glass-animated",
+		"animated": 1,
+		"size": "L"		
+	}, {
+
+		"image": "images/donaldPlatformTrans-618.gif",
+		"title": "Donald",
+		"size": "M"
+	}, {
+
+		"image": "images/hillaryGlobeTrans-618.gif",
+		"title": "Hillary Under Glass",
+		"size": "M"
+	}, {
+		"image": "images/hillarySnowGlobeAni-300.gif",
+		"title": "Hillary Under Glass-animated",
+		"animated": 1,
+		"size": "M"		
+	}, {
+		"image": "images/hillaryPlatformTrans-618.gif",
+		"title": "Hillary",
+		"size": "M"
+	}, {
+		"image": "images/socialism-618.png",
+		"title": "Socialism",
+		"size": "M"
+	}, {
+		"image": "images/cityOnAhill-618.gif",
+		"title": "City On A Hill",
+		"size": "M"
+	}, {
+			"image": "images/banker-618.gif",
+		"title": "Election Reform",
+		"size": "M"
+	}, {
+			"image": "images/trickleDown-618.gif",
+		"title": "Trickle Down",
+		"size": "M"
+	}, 
+	{
+			"image": "images/arrrggghhh-618.png",
+		"title": "The Process",
+		"size": "M"
+	}]
+}

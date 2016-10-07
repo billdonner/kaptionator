@@ -154,20 +154,22 @@ struct RemoteAsset {
     let localimagepath:String
     let options:StickerMakingOptions
     
-    init(pack:String,title:String,thumb:String, remoteurl:String,localpath:String?, options:StickerMakingOptions) {
+    init(pack:String,title:String,thumb:String, remoteurl:String?,localpath:String?, options:StickerMakingOptions) {
         self.pack = pack
         self.thumbnail = thumb
         let none = title == ""
         self.caption = none ? "<no title>" : title
         self.options = options
-        self.remoteurl = remoteurl
+        self.remoteurl = remoteurl ?? ""
+        // make a copy in shared filesystem
         if let lp = localpath { // if localpath supplied use that else
             let local  = RemSpace.loadFromLocal(from:lp)
             self.localimagepath = local
+            print("**** RA.INIT(..LOCALPATH) \(self.localimagepath)")
         }
         else {
             // load file from remote location
-            let local  = RemSpace.loadFileRemote(from:remoteurl)
+            let local  = RemSpace.loadFileRemote(from:self.remoteurl)
             self.localimagepath = local
             print("**** RA.INIT(..IMAGEPATH) \(self.localimagepath)")
         }

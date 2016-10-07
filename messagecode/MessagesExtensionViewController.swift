@@ -24,9 +24,10 @@ import Messages
 //  contains the actual MSStickers used by IOS10 - since these stickers are not movable between the
 //  app and the extension, they are generated as needed only in the extension
 
+fileprivate var stickerPool:StickerPool!
+
 struct  StickerPool   {
-    
-    var stickers:[MSSticker] = [] {
+   fileprivate  var stickers:[MSSticker] = [] {
         
         didSet {
             // print("+++StickerPool now holding \(stickers.count) stickers")
@@ -53,7 +54,7 @@ struct  StickerPool   {
             try restoreSharespaceFromDisk()
             
             print ("&&&&&&&&& restoreSharespaceFromDisk restored,\(SharedCaptionSpace.itemCount()) items ")
-            ///TODO: ajust to stkickerimages
+            
             for ce in SharedCaptionSpace.items() {
                 for stickerpath in ce.stickerPaths {
                 let url = URL(string:stickerpath)!
@@ -140,6 +141,22 @@ struct  StickerPool   {
         
     }
     
+    func resetStickerPool() {
+    stickerPool  = StickerPool()
+    stickerPool.makeMSStickersFromMemspace()
+    print("&&&&&&&&&& makeMSStickersFromMemspace  got ",stickerPool.stickers.count)
+    
+    /// if we have no stickers its probably because its the first time up
+    
+    if stickerPool.stickers.count == 0 {
+    zeroItemsLabel.isHidden = false
+    // make a sticker and add it
+    stickerPool.makeMSStickerFromAppIcon()
+    } else {
+    // hide the label because we have real stickers chosen by user
+    zeroItemsLabel.isHidden = true
+    }
+    }
     
    private func noteToCloud(dict:[String:String]) {  }
     
@@ -247,4 +264,15 @@ struct  StickerPool   {
         p("didTransition \(presentationStyle)")
     }
     
+}
+//
+
+extension SchtickerzBrowserViewController { //: MSStickerBrowserViewDataSource {
+    override func numberOfStickers(in stickerBrowserView: MSStickerBrowserView) -> Int {
+        let  t = stickerPool.stickers.count
+        return t
+    }
+    override func stickerBrowserView(_ stickerBrowserView: MSStickerBrowserView, stickerAt index: Int) -> MSSticker {
+        return  stickerPool.stickers[index]
+    }
 }
