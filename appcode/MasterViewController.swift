@@ -30,6 +30,7 @@ final class MasterViewController: UIViewController {
     @IBOutlet weak var coloredSpacer: UIView! 
     var currentViewController: UIViewController?
     
+    var showFirstHelp = true
     private var showCatalogViewController: CatalogViewController?
     private var showCaptionedViewController: CapationatedViewController?
     private var showMessagesViewController: MessagesViewController?

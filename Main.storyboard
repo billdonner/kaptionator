@@ -60,6 +60,7 @@
                     <connections>
                         <outlet property="startupLogo" destination="jFi-NN-11Z" id="sI2-YV-hXW"/>
                         <segue destination="8NT-q7-zWI" kind="presentation" identifier="CatalogCellTapMenuID" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="Oa6-IE-zKC"/>
+                        <segue destination="REF-5Q-Alp" kind="presentation" identifier="CatalogTabHelpID" modalPresentationStyle="pageSheet" modalTransitionStyle="coverVertical" id="pan-bd-xSv"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFc-4R-yZw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -163,17 +164,17 @@
                         <viewControllerLayoutGuide type="bottom" id="1BT-Ic-0oa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cs3-Bw-bFE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Evp-s8-xrP">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CaptionedTableCell" id="JCj-Dg-Rge" customClass="CaptionedTableCell" customModule="candidatez" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="100"/>
+                                        <rect key="frame" x="0.0" y="28" width="288" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JCj-Dg-Rge" id="HLq-aY-Omi">
-                                            <frame key="frameInset" width="343" height="99"/>
+                                            <frame key="frameInset" width="288" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Scx-pE-D4j">
@@ -239,17 +240,17 @@
                         <viewControllerLayoutGuide type="bottom" id="yWk-gc-1Fi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Hkq-py-Aqz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d7D-GC-Scz">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MessagesTableCell" id="T4c-g1-0ka" customClass="MessagesTableCell" customModule="candidatez" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="100"/>
+                                        <rect key="frame" x="0.0" y="28" width="288" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T4c-g1-0ka" id="o4R-Qt-FEy">
-                                            <frame key="frameInset" width="343" height="99"/>
+                                            <frame key="frameInset" width="288" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Fb2-HT-rRi">
@@ -323,7 +324,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Mo6-3a-xLp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Piz-v7-SwS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qsx-Ud-Mye"/>
@@ -387,9 +388,7 @@
                         <outlet property="logoView" destination="Qsx-Ud-Mye" id="gJe-dS-hGw"/>
                         <outlet property="morebbi" destination="iwR-wJ-SqY" id="Oq7-Yb-Onc"/>
                         <outlet property="orgbbi" destination="wCQ-X4-49y" id="6PL-sQ-A10"/>
-                        <segue destination="CxQ-5a-VxP" kind="presentation" identifier="HelpForCatalogSegue" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="jaf-84-Rqq"/>
                         <segue destination="KKk-qV-NG5" kind="presentation" identifier="PerformMoreSegue" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="WUV-dI-6q1"/>
-                        <segue destination="Hgk-9T-OVV" kind="presentation" identifier="HelpForStickersSegue" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="GrU-yW-rtD"/>
                         <segue destination="pcd-5r-9SV" kind="presentation" identifier="HelpForMessagesSegue" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="bHW-lv-HbY"/>
                     </connections>
                 </viewController>
@@ -403,175 +402,6 @@
             </objects>
             <point key="canvasLocation" x="-2100" y="-2861"/>
         </scene>
-        <!--CatalogTabHelp-->
-        <scene sceneID="5Qe-bb-egK">
-            <objects>
-                <viewController title="Help For Catalog Tab" id="CxQ-5a-VxP" userLabel="CatalogTabHelp" customClass="ModalBlurViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lT1-Jf-hrZ"/>
-                        <viewControllerLayoutGuide type="bottom" id="bZN-W5-bdE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4AY-T3-zeb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backforcatalog.png" translatesAutoresizingMaskIntoConstraints="NO" id="ssJ-E1-hjb"/>
-                            <visualEffectView opaque="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="joQ-nb-0Im">
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="9bD-1H-gUd">
-                                    <frame key="frameInset"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <blurEffect style="extraLight"/>
-                            </visualEffectView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WjO-VS-B7D">
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lix-tO-UO9" userLabel="SpacerView">
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="A6P-Zg-S0Y"/>
-                                        </constraints>
-                                    </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="G0D-xs-bfR">
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CandidatesForBlur.png" translatesAutoresizingMaskIntoConstraints="NO" id="gEG-6Q-wGr"/>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help for Candidatez Tab" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="piF-Ls-yst" userLabel="Content here against blurred overlay">
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="On this tab you can see the full catalog of all the images that come with the app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zM9-tQ-eYW">
-                                        <frame key="frameInset" minY="130" width="343" height="43"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" ambiguous="YES" text="Choose an Image by tapping then make a Sticker for your Stickerz Collection, or move the Sticker into Messages" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="c8a-v7-4vc">
-                                        <frame key="frameInset" minY="178" width="343" height="454"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Animated images can not be captioned." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOq-Ot-MJm">
-                                        <frame key="frameInset" minY="637" width="343"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="WjO-VS-B7D" secondAttribute="trailing" id="2YQ-xj-ulY"/>
-                            <constraint firstItem="bZN-W5-bdE" firstAttribute="top" secondItem="joQ-nb-0Im" secondAttribute="bottom" id="3My-IG-Qlj"/>
-                            <constraint firstItem="bZN-W5-bdE" firstAttribute="top" secondItem="WjO-VS-B7D" secondAttribute="bottom" constant="30" id="8tT-sC-hGY"/>
-                            <constraint firstItem="joQ-nb-0Im" firstAttribute="leading" secondItem="4AY-T3-zeb" secondAttribute="leading" id="HiX-UO-0xD"/>
-                            <constraint firstItem="WjO-VS-B7D" firstAttribute="leading" secondItem="4AY-T3-zeb" secondAttribute="leadingMargin" id="YI7-R4-82O"/>
-                            <constraint firstItem="bZN-W5-bdE" firstAttribute="top" secondItem="ssJ-E1-hjb" secondAttribute="bottom" constant="-290" id="Ymo-zs-xdh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ssJ-E1-hjb" secondAttribute="trailing" constant="-16" id="Z7A-kK-aQC"/>
-                            <constraint firstItem="ssJ-E1-hjb" firstAttribute="leading" secondItem="4AY-T3-zeb" secondAttribute="leadingMargin" constant="-16" id="cDS-rC-uuV"/>
-                            <constraint firstItem="joQ-nb-0Im" firstAttribute="top" secondItem="lT1-Jf-hrZ" secondAttribute="bottom" constant="-20" id="d1b-yO-KB9"/>
-                            <constraint firstItem="WjO-VS-B7D" firstAttribute="top" secondItem="lT1-Jf-hrZ" secondAttribute="bottom" constant="-20" id="dZ1-Nj-sGv"/>
-                            <constraint firstItem="ssJ-E1-hjb" firstAttribute="top" secondItem="lT1-Jf-hrZ" secondAttribute="bottom" constant="-20" id="lgt-2t-KUg"/>
-                            <constraint firstAttribute="trailing" secondItem="joQ-nb-0Im" secondAttribute="trailing" id="xqd-bZ-pwJ"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="J6t-98-Ybt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-882" y="-2813"/>
-        </scene>
-        <!--StickerzTabHelp-->
-        <scene sceneID="ert-2z-rBB">
-            <objects>
-                <viewController title="Help For Stickerz Tab" id="Hgk-9T-OVV" userLabel="StickerzTabHelp" customClass="ModalBlurViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gaS-2w-vhE"/>
-                        <viewControllerLayoutGuide type="bottom" id="mOL-l9-gho"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="VYO-OC-CyD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backforportrait.png" translatesAutoresizingMaskIntoConstraints="NO" id="6m3-x2-LkC"/>
-                            <visualEffectView opaque="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="ngd-2W-i2e">
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="IRR-PB-pr7">
-                                    <frame key="frameInset"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <blurEffect style="extraLight"/>
-                            </visualEffectView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="i9j-pL-vXS">
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nSI-gs-rUR" userLabel="SpacerView">
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="9fm-ED-LKA"/>
-                                        </constraints>
-                                    </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WFf-bi-JMj">
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StickerzForBlur.png" translatesAutoresizingMaskIntoConstraints="NO" id="p1i-Xg-TGI"/>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help for Stickerz Tab" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SBy-uY-vaG" userLabel="Content here against blurred overlay">
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="256" verticalCompressionResistancePriority="751" text="This tab holds all the Custom Stickers  you've ever made with this app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Hhk-BK-2pq">
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="259" verticalCompressionResistancePriority="749" text="You can, (and should) add a caption to most images. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rhf-vi-7wQ">
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Move your custom Sticker to the iMessage tab to use it with your friends and family" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMz-Vc-Cnl">
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Swipe to delete Stickerz - be careful" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jbn-Ch-DvH">
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose an Image by tapping then make a custom Sticker for your Stickerz Collection, or move the Sticker into Messages" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lq7-Gl-Agj">
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="6m3-x2-LkC" secondAttribute="trailing" constant="-16" id="0wh-2t-jVW"/>
-                            <constraint firstItem="mOL-l9-gho" firstAttribute="top" secondItem="ngd-2W-i2e" secondAttribute="bottom" id="Kyj-uN-paG"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="i9j-pL-vXS" secondAttribute="trailing" id="NnW-MQ-gLi"/>
-                            <constraint firstItem="mOL-l9-gho" firstAttribute="top" secondItem="6m3-x2-LkC" secondAttribute="bottom" constant="-5" id="Pg7-Xd-Pr8"/>
-                            <constraint firstItem="6m3-x2-LkC" firstAttribute="top" secondItem="gaS-2w-vhE" secondAttribute="bottom" constant="-20" id="TQu-Cn-M64"/>
-                            <constraint firstItem="ngd-2W-i2e" firstAttribute="leading" secondItem="VYO-OC-CyD" secondAttribute="leading" id="TVa-zb-l1r"/>
-                            <constraint firstItem="i9j-pL-vXS" firstAttribute="top" secondItem="gaS-2w-vhE" secondAttribute="bottom" constant="-20" id="XNm-4J-7kZ"/>
-                            <constraint firstItem="mOL-l9-gho" firstAttribute="top" secondItem="i9j-pL-vXS" secondAttribute="bottom" id="b12-2G-zUH"/>
-                            <constraint firstAttribute="trailing" secondItem="ngd-2W-i2e" secondAttribute="trailing" id="bpc-ar-qGn"/>
-                            <constraint firstItem="ngd-2W-i2e" firstAttribute="top" secondItem="gaS-2w-vhE" secondAttribute="bottom" constant="-20" id="uJg-Om-923"/>
-                            <constraint firstItem="i9j-pL-vXS" firstAttribute="leading" secondItem="VYO-OC-CyD" secondAttribute="leadingMargin" id="xQ7-jU-zmh"/>
-                            <constraint firstItem="6m3-x2-LkC" firstAttribute="leading" secondItem="VYO-OC-CyD" secondAttribute="leadingMargin" constant="-16" id="xcO-ee-ZtB"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qcQ-HF-Xbo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-724" y="-2813"/>
-        </scene>
         <!--MoreMenuViewController-->
         <scene sceneID="vPR-Pa-WFS">
             <objects>
@@ -581,7 +411,7 @@
                         <viewControllerLayoutGuide type="bottom" id="g17-wO-cbc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ozh-0c-yGW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backforportrait.png" translatesAutoresizingMaskIntoConstraints="NO" id="XDu-R5-lVe"/>
@@ -655,7 +485,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ID-Mq-Ch1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-263" y="-1152"/>
+            <point key="canvasLocation" x="658" y="124"/>
         </scene>
         <!--Catalog Menu-->
         <scene sceneID="jYu-0a-m1Z">
@@ -666,7 +496,7 @@
                         <viewControllerLayoutGuide type="bottom" id="o6p-0W-fz3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="R4q-xY-iZy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqk-YO-YES">
@@ -795,7 +625,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Cy2-0q-OVn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="muI-Ps-p2g">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0hL-qf-WeV">
@@ -939,7 +769,7 @@
                         <viewControllerLayoutGuide type="bottom" id="uvE-Sc-Cjz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yS5-WZ-BJg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdB-Co-DA7">
@@ -1105,7 +935,7 @@
                         <viewControllerLayoutGuide type="bottom" id="EC1-Q6-orJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Gim-NM-HDk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VXW-Tz-aBF">
@@ -1226,7 +1056,7 @@
                         <viewControllerLayoutGuide type="bottom" id="4u4-Ys-5DH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="z3v-Se-Ivv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDW-w3-htM">
@@ -1277,7 +1107,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="EhE-5x-woP">
-                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
@@ -1304,7 +1134,7 @@
                         <viewControllerLayoutGuide type="bottom" id="fj3-le-uru"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="S3z-7Q-ggf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backforportrait.png" translatesAutoresizingMaskIntoConstraints="NO" id="mXQ-PO-muG"/>
@@ -1366,7 +1196,97 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EHm-0z-TZc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-604" y="-2813"/>
+            <point key="canvasLocation" x="3714" y="-5583"/>
+        </scene>
+        <!--StartupHelp-->
+        <scene sceneID="OUM-LE-Mvp">
+            <objects>
+                <viewController storyboardIdentifier="CatalogTabHelpID" title="StartupHelp" id="REF-5Q-Alp" customClass="StartupHelpViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WqP-0q-OMY"/>
+                        <viewControllerLayoutGuide type="bottom" id="KAQ-IK-heT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="20g-pW-RMl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t2u-PF-gsC">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aFW-UJ-Hug">
+                                    <frame key="frameInset"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YJD-Dc-aYL">
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kib-LK-gfI">
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uPM-bb-515"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Your Stickers and Add Your Captions In This App" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FKq-ck-lyB" userLabel="Content here against blurred overlay">
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0kj-9M-xVB">
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your stickers are immediately available in Messages App" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ta3-lz-UHt" userLabel="Content here against blurred overlay">
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMessageLogo" translatesAutoresizingMaskIntoConstraints="NO" id="K1r-oR-9p6"/>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XQv-H5-5uo">
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app-store-imessage-96x96" translatesAutoresizingMaskIntoConstraints="NO" id="MMT-08-FQz"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When composing a message, select the Stickers icon next to the input field" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GVg-IN-bfY" userLabel="Content here against blurred overlay">
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Baf-IJ-BtM">
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Then choose the sticker pack from the menu to get to your stickers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aiI-KB-yqi" userLabel="Content here against blurred overlay">
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LowerPanel" translatesAutoresizingMaskIntoConstraints="NO" id="ToL-oO-Ikx"/>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="YJD-Dc-aYL" secondAttribute="trailing" constant="30" id="28c-5F-YL9"/>
+                            <constraint firstItem="t2u-PF-gsC" firstAttribute="top" secondItem="WqP-0q-OMY" secondAttribute="bottom" constant="-20" id="85P-tt-KC7"/>
+                            <constraint firstItem="YJD-Dc-aYL" firstAttribute="top" secondItem="WqP-0q-OMY" secondAttribute="bottom" constant="30" id="MO3-3v-Ozy"/>
+                            <constraint firstItem="t2u-PF-gsC" firstAttribute="leading" secondItem="20g-pW-RMl" secondAttribute="leadingMargin" constant="-16" id="d1m-4n-mJj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="t2u-PF-gsC" secondAttribute="trailing" constant="-16" id="dqS-Uu-oht"/>
+                            <constraint firstItem="KAQ-IK-heT" firstAttribute="top" secondItem="YJD-Dc-aYL" secondAttribute="bottom" constant="30" id="obm-Nn-fM2"/>
+                            <constraint firstItem="KAQ-IK-heT" firstAttribute="top" secondItem="t2u-PF-gsC" secondAttribute="bottom" id="rhF-Ca-Tu7"/>
+                            <constraint firstItem="YJD-Dc-aYL" firstAttribute="leading" secondItem="20g-pW-RMl" secondAttribute="leadingMargin" constant="30" id="v0I-K1-r0e"/>
+                        </constraints>
+                    </view>
+                    <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="pic" destination="uPM-bb-515" id="m2W-1C-bg9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jc0-Ug-nEk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2144.8000000000002" y="-3512.2938530734637"/>
         </scene>
         <!--AppHelp Overlay View Controller-->
         <scene sceneID="Pd4-iY-pNO">
@@ -1377,7 +1297,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Rlo-3S-bH7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FgF-Lu-yae">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Egx-ep-WXr">
@@ -1422,7 +1342,7 @@
                         <viewControllerLayoutGuide type="bottom" id="9hu-yj-49v"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="33Y-T5-GqH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0z6-aH-JDk">
@@ -1467,7 +1387,7 @@
                         <viewControllerLayoutGuide type="bottom" id="5iS-Cw-POu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8lh-r1-rSP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dxe-q7-lnx">
@@ -1528,7 +1448,7 @@
                         <viewControllerLayoutGuide type="bottom" id="WTi-xY-ts2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yNI-q1-evx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A0E-lc-GM4">
@@ -1584,8 +1504,8 @@
         <scene sceneID="qaM-we-gfF">
             <objects>
                 <collectionViewController storyboardIdentifier="ReorderMessagesID" id="vsv-jb-Nm1" customClass="ReorderMessagesViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Tu9-ZF-rxs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Tu9-ZF-rxs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gnD-R6-Zq2">
@@ -1627,7 +1547,7 @@
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="headerforreordercollection" id="cSg-Cw-EpW" customClass="ReorderMessagesReusableView" customModule="candidatez" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="These are your stickers currently in Messages. Reorder the stickers here, or delete from the Messages List." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pxy-9e-c12">
@@ -1664,17 +1584,17 @@
     </scenes>
     <resources>
         <image name="AnimationOverlay" width="309" height="25"/>
-        <image name="CandidatesForBlur.png" width="384" height="80"/>
         <image name="Help" width="44" height="44"/>
         <image name="Home" width="44" height="44"/>
+        <image name="IMessageLogo" width="100" height="100"/>
+        <image name="LowerPanel" width="729" height="477"/>
         <image name="MessagesForBlur.png" width="382" height="78"/>
-        <image name="StickerzForBlur.png" width="384" height="78"/>
-        <image name="backforcatalog.png" width="957" height="957"/>
+        <image name="app-store-imessage-96x96" width="96" height="96"/>
         <image name="backforportrait.png" width="840" height="840"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6bp-dS-sLd"/>
-        <segue reference="X63-RO-jMS"/>
         <segue reference="6eH-7j-mO0"/>
+        <segue reference="Txi-IE-6DO"/>
+        <segue reference="wlE-A6-VUh"/>
     </inferredMetricsTieBreakers>
 </document>

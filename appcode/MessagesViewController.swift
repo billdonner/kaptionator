@@ -51,7 +51,8 @@ final class MessagesViewController: UIViewController,ControlledByMasterViewContr
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        mvc.showFirstHelp = true
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = appTheme.backgroundColor

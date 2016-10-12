@@ -12,6 +12,16 @@ import UIKit
 class InnerBlurViewController: UIViewController {
     
 }
+class StartupHelpViewController: ReverseModalBlurViewController {
+    
+@IBOutlet    var pic: UIImageView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        pic.image = UIImage(named:backgroundImagePath)
+        
+    }
+}
 class ReverseModalBlurViewController: InnerBlurViewController, AddDismissButton {
     
     

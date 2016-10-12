@@ -15,11 +15,18 @@ import UIKit
     
     var mvc : MasterViewController!
     
-
     
     let refreshControl = UIRefreshControl()
     fileprivate var theSelectedIndexPath:IndexPath?
     @IBOutlet weak var startupLogo: UIImageView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if SharedCaptionSpace.itemCount() == 0 && mvc.showFirstHelp {
+                mvc.showFirstHelp = false
+                performSegue(withIdentifier: "CatalogTabHelpID", sender: nil)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -115,6 +122,8 @@ extension CatalogViewController {  //loading on first up - moved from masterview
         
         collectionView?.addSubview(refreshControl)
         collectionView?.alwaysBounceVertical = true  // needed so always can pull to refresh
+       
+       // performSegue(withIdentifier: "CatalogTabHelpID", sender: nil)
         
         UIView.animate(withDuration: 1.5, animations: {
             self.startupLogo.alpha =  0.0

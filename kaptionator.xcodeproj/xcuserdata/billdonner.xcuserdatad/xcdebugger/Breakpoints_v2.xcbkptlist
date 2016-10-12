@@ -1492,11 +1492,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/MasterViewController.swift"
-            timestampString = "497496091.946079"
+            timestampString = "497994166.146423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "stickerzAction(tis:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1602,11 +1602,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/CatalogLocalViewController.swift"
-            timestampString = "497490773.246975"
+            timestampString = "497994166.146423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "phase1()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1650,11 +1650,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/MessagesViewController.swift"
-            timestampString = "497497694.206059"
+            timestampString = "497994166.146423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
