@@ -10,12 +10,9 @@ import UIKit
 //
 
 
-class CatalogRemoteViewController: UICollectionViewController,ControlledByMasterViewController {
+class CatalogRemoteViewController: ControlledCollectionViewController {
     @IBAction func unwindToCatalogItemsViewControlle(_ segue: UIStoryboardSegue)  {}
-    
-    var mvc : MasterViewController!
-    
-
+     
     
     let refreshControl = UIRefreshControl()
     fileprivate var theSelectedIndexPath:IndexPath?
@@ -96,7 +93,7 @@ extension CatalogRemoteViewController {  //loading on first up - moved from mast
         self.phase3()
     }
     func phase3() {
-        let vcid =  "ShowCatalogID"
+        let vcid =  showCatalogID
         // self.activityIndicatorView.stopAnimating()
         let x = RemSpace.itemCount()
         print(">>>>>>>>>> phase3 \(x) REMOTE ASSETS LOADED \(vcid) -- READY TO ROLL")

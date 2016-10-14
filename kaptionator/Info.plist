@@ -5,7 +5,7 @@
 	<key>APP-TITLE</key>
 	<string>Stickerizer</string>
 	<key>BACKGROUND-IMAGE</key>
-	<string>emoGeeStickerIcons-1024x768.png</string>
+	<string>kaptionatorIcon-1024x768.png</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -25,16 +25,14 @@
 	<key>EXTENSION-SCHEME</key>
 	<string>Stickerizer</string>
 	<key>LEFT-BBI-NAME</key>
-	<string>iTunesFiles</string>
+	<string>itunes</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>xApp Transport Security Settings</key>
+	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>REMOTE-MANIFEST-URL</key>
-	<string>http://shtikerz.com/kaptionator/stickerspackimages/_manifest.json</string>
 	<key>REMOTE-WEBSITE-URL</key>
 	<string>http://shtikerz.com/kaptionator</string>
 	<key>SHARED-INTERAPP-DATA</key>
@@ -67,7 +65,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>xREMOTE-STICKERPACKLIST-URL</key>
-	<string>http://shtikerz.com/packlists/kaptionator-pak-list.json</string>
+	<key>SHOW-CATALOG-ID</key>
+	<string>ShowITunesID</string>
 </dict>
 </plist>

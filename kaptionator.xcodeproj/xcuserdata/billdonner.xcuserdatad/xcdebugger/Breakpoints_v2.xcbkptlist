@@ -994,9 +994,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "openwebsite(_:)"
-            landmarkType = "7">
+            endingLineNumber = "31">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1086,11 +1084,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/ITunesViewController.swift"
-            timestampString = "497485758.695944"
+            timestampString = "498101694.92193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "refreshFromITunes()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1102,11 +1100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/ITunesViewController.swift"
-            timestampString = "497485758.695944"
+            timestampString = "498101694.92193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "loadFromITunesSharing(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1118,11 +1116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/ITunesViewController.swift"
-            timestampString = "497485758.695944"
+            timestampString = "498101694.92193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "refreshFromITunes()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1134,11 +1132,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/ITunesViewController.swift"
-            timestampString = "497485758.695944"
+            timestampString = "498101694.92193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "loadFromITunesSharing(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1150,11 +1148,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/ITunesViewController.swift"
-            timestampString = "497485758.695944"
+            timestampString = "498101694.92193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "refreshFromITunes()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1492,11 +1490,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/MasterViewController.swift"
-            timestampString = "497994166.146423"
+            timestampString = "498101694.92193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "stickerzAction(tis:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1602,11 +1600,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/CatalogLocalViewController.swift"
-            timestampString = "497994166.146423"
+            timestampString = "498103226.512347"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "phase1()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1650,11 +1648,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/MessagesViewController.swift"
-            timestampString = "497994166.146423"
+            timestampString = "498101694.92193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>

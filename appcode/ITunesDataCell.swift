@@ -16,8 +16,6 @@ import UIKit
 //  Copyright © 2016 Martoons and MedCommons. All rights reserved.
 //
 
-import UIKit
-
 
 
 /// The cell responsible for displaying item data.

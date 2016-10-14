@@ -14,11 +14,17 @@ class InnerBlurViewController: UIViewController {
 }
 class StartupHelpViewController: ReverseModalBlurViewController {
     
-@IBOutlet    var pic: UIImageView!
+@IBOutlet weak     var pic: UIImageView!
+    
+    @IBOutlet weak var topLabel: UILabel!
+    
+static var first = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let count = SharedCaptionSpace.itemCount()
         pic.image = UIImage(named:backgroundImagePath)
+        topLabel.text = count == 0 ? "Welcome to " + extensionScheme : "you have \(count) stickers in the Messages app"
         
     }
 }

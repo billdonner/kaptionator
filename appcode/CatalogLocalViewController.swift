@@ -10,10 +10,8 @@ import UIKit
 //
 
 
- class CatalogViewController: UICollectionViewController,ControlledByMasterViewController {
-    @IBAction func unwindToCatalogLocalItemsViewControlle(_ segue: UIStoryboardSegue)  {}
-    
-    var mvc : MasterViewController!
+final class CatalogViewController: ControlledCollectionViewController {
+    @IBAction func unwindToCatalogLocalItemsViewController(_ segue: UIStoryboardSegue)  {}
     
     
     let refreshControl = UIRefreshControl()
@@ -53,6 +51,7 @@ import UIKit
             phase1()
        // }
     }
+    //ITunesCellTapMenuID
     //MARK:- Dispatching to External ViewControllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier ==  "CatalogCellTapMenuID"{
@@ -110,7 +109,7 @@ extension CatalogViewController {  //loading on first up - moved from masterview
         self.phase3()
     }
     func phase3() {
-        let vcid =  "ShowCatalogID"
+        let vcid =  showCatalogID
         // self.activityIndicatorView.stopAnimating()
         let x = RemSpace.itemCount()
         print(">>>>>>>>>> phase3 \(x) LOCAL ASSETS LOADED \(vcid) -- READY TO ROLL")

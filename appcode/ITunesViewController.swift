@@ -12,12 +12,10 @@ import UIKit
 // MARK: Show LocalItunes Document Entries in One Tab as Child ViewContoller
 //
 
-final class ITunesViewController : UICollectionViewController, ControlledByMasterViewController  {
+final class ITunesViewController : ControlledCollectionViewController {
     
     @IBAction func unwindToITunesViewController(_ segue: UIStoryboardSegue)  {
     }
-    
-    var mvc : MasterViewController!
     
     let refreshControl = UIRefreshControl()
     fileprivate var theSelectedIndexPath:IndexPath?
@@ -132,7 +130,7 @@ final class ITunesViewController : UICollectionViewController, ControlledByMaste
     }
     override func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "CatalogDataCell", for: indexPath  ) as! CatalogDataCell // Create the cell from the storyboard cell
+        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "ITunesDataCell", for: indexPath  ) as! ITunesDataCell // Create the cell from the storyboard cell
         
         let ra = RemSpace.itemAt(indexPath.row)
         

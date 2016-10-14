@@ -14,9 +14,19 @@ get {
     return nil
 }
 }
-protocol ControlledByMasterViewController{
+protocol ControlledByMasterView{
      var mvc:MasterViewController!{get }
 }
+
+ class ControlledByMasterViewController : UIViewController,ControlledByMasterView{
+    internal var mvc: MasterViewController!
+}
+class ControlledCollectionViewController:UICollectionViewController, ControlledByMasterView  {
+    
+   internal var mvc : MasterViewController!
+    
+}
+
 final class MasterViewController: UIViewController {
     let  offColor:UIColor  = UIColor.lightGray
 
@@ -31,7 +41,7 @@ final class MasterViewController: UIViewController {
     var currentViewController: UIViewController?
     
     var showFirstHelp = true
-    private var showCatalogViewController: CatalogViewController?
+    private var showCatalogViewController: ControlledCollectionViewController?
     private var showCaptionedViewController: CapationatedViewController?
     private var showMessagesViewController: MessagesViewController?
     private var testButtonViewController: UIViewController?
@@ -85,11 +95,7 @@ final class MasterViewController: UIViewController {
         
     }// fall straight into it
     private func finishStartup() {
-        let vcid = //(stickerManifestURL != nil) ?
-            "ShowCatalogID"
-            //: "ShowITunesID"
-        
-        showCatalogViewController = self.storyboard?.instantiateViewController(withIdentifier: vcid ) as? CatalogViewController
+        showCatalogViewController = self.storyboard?.instantiateViewController(withIdentifier: showCatalogID ) as? ControlledCollectionViewController
         showCatalogViewController?.mvc = self
         currentViewController = showCatalogViewController
         
@@ -133,9 +139,9 @@ final class MasterViewController: UIViewController {
     
     
         if showCatalogViewController == nil {
-            let vcid = (stickerManifestURL != nil) ? "ShowCatalogID" : "ShowITunesID"
+            let vcid = showCatalogID
             
-            showCatalogViewController = self.storyboard?.instantiateViewController(withIdentifier: vcid ) as? CatalogViewController
+            showCatalogViewController = self.storyboard?.instantiateViewController(withIdentifier: vcid ) as? ControlledCollectionViewController
             showCatalogViewController?.mvc = self
             
             showCatalogViewController?.view.translatesAutoresizingMaskIntoConstraints = false
@@ -196,10 +202,10 @@ final class MasterViewController: UIViewController {
             newViewController.view.alpha = 1
             oldViewController.view.alpha = 0
             },
-                       completion: { finished in
-                        oldViewController.view.removeFromSuperview()
-                        oldViewController.removeFromParentViewController()
-                        newViewController.didMove(toParentViewController: self)
+        completion: { finished in
+                    oldViewController.view.removeFromSuperview()
+                oldViewController.removeFromParentViewController()
+            newViewController.didMove(toParentViewController: self)
         })
     }
     fileprivate func addSubview(subView:UIView,toView parentView:UIView) {

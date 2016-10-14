@@ -7,8 +7,18 @@
 //
 
 import UIKit
-/// "BACKGROUND-IMAGE" is the fade-in image
+/// "SHOW-CATALOG-ID" is the storyboard id of controller to use for the Catalog
 
+var showCatalogID: String {
+get {
+    if let iDict = Bundle.main.infoDictionary ,
+        let w =  iDict["SHOW-CATALOG-ID"] as? String { return w
+    }
+    else {
+        return "ShowCatalogID"
+    }
+}
+}
 
 
 
