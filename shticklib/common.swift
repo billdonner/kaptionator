@@ -126,6 +126,21 @@ get {
     return "no LEFT-BBI-NAME"
 }
 }
+var bigBlurb : String {
+get {
+    if let iDict = Bundle.main.infoDictionary ,
+        let w =  iDict["TOP-BLURB"] as? String { return w }
+    fatalError("TOP-BLURB undefined")
+    //return nil
+}
+}
+var innerBlurb : String {
+get {
+    if let iDict = Bundle.main.infoDictionary ,
+        let w =  iDict["INNER-BLURB"] as? String { return w }
+    else {return "a Catalog of All Stickers in the App"} 
+}
+}
 var backgroundImagePath : String {
 get {
     if let iDict = Bundle.main.infoDictionary ,

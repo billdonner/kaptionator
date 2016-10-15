@@ -9,7 +9,9 @@ import UIKit
 //
 // MARK: Show All Captionated Entries in One Tab as Child ViewContoller
 //
-final class MessagesViewController: ControlledByMasterViewController  {
+final class MessagesViewController:UIViewController, ControlledByMasterView  {
+    internal var mvc: MasterViewController!
+ 
     fileprivate var stickerz:[SharedCE] = []
     fileprivate var theSelectedIndexPath:IndexPath?
     
@@ -35,6 +37,7 @@ final class MessagesViewController: ControlledByMasterViewController  {
                 if let avc =  segue.destination as? MessagesAppMenuViewController   {
                     avc.delegate = self
                     avc.captionedEntry = stickerz [indexPath.row]
+                    avc.mvc = mvc
                 }
             }}}
     internal func refreshPulled(_ x:AnyObject) {

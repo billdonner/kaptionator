@@ -17,17 +17,12 @@ typealias ERAC = ((RemoteAsset)->(Swift.Void))
 //  it is always refreshed on a software updated, however the images are reloaded fresh on each startup
 
 fileprivate var remSpace = RemSpace()
-
-
 //MARK: - RemSpace collects all RemoteAssets
 struct  RemSpace {
     static private var catalogTitle:String = "replace"
     static private var raz:[ RemoteAsset ] = []
-    static  private var  filenum : Int  { return raz.count + 1001 }
-    
-    //  private var allImageData : [String:String] = [:]    // remote url of source image : local filepath url
-    
-    
+    static private var  filenum : Int  { return raz.count + 1001 }
+ 
     fileprivate init() {
         print("****sharedAppContainerDir init in ",sharedAppContainerDirectory())
     }
@@ -59,12 +54,10 @@ struct  RemSpace {
     }
     
     
-    fileprivate static func loadFileRemote(from remotepath:String) -> String {
-        
-        do {
+    fileprivate static func loadFileRemote(from remotepath:String) -> String? {
+         do {
             let ext = (remotepath as NSString).pathExtension
             let name = "\(filenum).\(ext)"
-            
             let newfilename = sharedAppContainerDirectory().appendingPathComponent(name, isDirectory: false)
             
             if FileManager.default.fileExists(atPath: newfilename.absoluteString)
@@ -73,17 +66,15 @@ struct  RemSpace {
             }
             
             // now copy, could be in done in back but why?
-            
             let data = try Data(contentsOf: URL(string:remotepath)!)
             try data.write(to: newfilename, options: .atomicWrite)
             
             return newfilename.absoluteString
         }
         catch {
-            print("Could not load \(remotepath)")
-            // might as well die at this point
-            fatalError("could not load \(error)")
+            print("Could not load from \(remotepath) \(error)")
         }
+        return nil
     }
     
     static func reset (title:String) {
@@ -135,9 +126,7 @@ struct  RemSpace {
             } // for loop
             catalogTitle = catTitle
             print ("**** \(RemoteAssetsDataSpace) restoreFromDisk version \(version) count \(flattened.count) = \(raz.count)")
-        }
-            
-        else {
+        }  else {
             print("**** \(RemoteAssetsDataSpace) restoreFromDisk UserDefaults failure")
             throw KaptionatorErrors.restoreFailure}
     }
@@ -161,18 +150,22 @@ struct RemoteAsset {
         self.caption = none ? "<no title>" : title
         self.options = options
         self.remoteurl = remoteurl ?? ""
+        var s: String = ""
         // make a copy in shared filesystem
         if let lp = localpath { // if localpath supplied use that else
             let local  = RemSpace.loadFromLocal(from:lp)
-            self.localimagepath = local
-            print("**** RA.INIT(..LOCALPATH) \(self.localimagepath)")
+            s = local
+            print("**** RA.INIT(..LOCALPATH) \(s )")
         }
         else {
             // load file from remote location
             let local  = RemSpace.loadFileRemote(from:self.remoteurl)
-            self.localimagepath = local
-            print("**** RA.INIT(..IMAGEPATH) \(self.localimagepath)")
+            if let  local = local {
+            s = local
+            print("**** RA.INIT(..IMAGEPATH) \(s )")
+            }
         }
+        self.localimagepath  = s
     }// init
     
     func serializeToJSONDict() -> JSONDict {
@@ -185,8 +178,4 @@ struct RemoteAsset {
             kOptions:  options.rawValue as Int ]
         return x
     }
-    //    func  convertToAppCE( )  -> AppCE {
-    //        let ce = AppCE( pack:  pack, title:  caption, imagepath:  localimagepath,   caption: "",  options: options)
-    //        return ce
-    //    }
 }

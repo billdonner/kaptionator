@@ -7,8 +7,8 @@
 //
 
 
-/// Modified here 
-/// 
+/// Modified here
+///
 /// 1 - all devices show landscape mode
 ///
 /// 2 - black on white or white on black
@@ -25,101 +25,113 @@ var masterViewController : MasterViewController?
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate
-//, ModelDataHistoryDelegate
+    //, ModelDataHistoryDelegate
 {
     
     var window: UIWindow?
     
+    private func ModalPresentAddNewURL(_ url:URL)  {
+        let ra = RemoteAsset(pack: "app", title:url.lastPathComponent, thumb: "", remoteurl: url.absoluteString, localpath:nil, options: StickerMakingOptions.generateasis  )
+        RemSpace.addasset(ra: ra)
+        RemSpace.saveToDisk()
+    }
     
-//    let spotlightController = SpotlightController()
-//    let userActivityHandlers: [ModelDataUserActivityHandling]
-    //fileprivate let history = ModelDataHistory()
-//    fileprivate var applicationShortcutHandler: ApplicationShortcutHandler?
-//    
-//    override init() {
-//       // userActivityHandlers = []//[spotlightController, HandoffController()]
-//        super.init()
-//       // history.delegate = self
-//    }
-
- func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
- /*
-    UIApplication.shared.statusBarStyle = appTheme.altstatusBarStyle
-    UINavigationBar.appearance().barStyle = .black
-    // Set navigation bar tint / background colour
-   UINavigationBar.appearance().barTintColor = appTheme.backgroundColor
-    // Set Navigation bar Title colour
-    UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:appTheme.textColor]
-  */  
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        ModalPresentAddNewURL(url)
+        // try to reload the main controller if its showing
+        var vc: UIViewController? =   window!.rootViewController
+        if let nvc  = vc as? UINavigationController {
+               vc = nvc.topViewController
+        }
+        if let mvc = vc as? MasterViewController {
+            let ccvc = mvc.childViewControllers[0] // should be first
+            if  let cvc = ccvc as? UICollectionViewController {
+                cvc.collectionView?.reloadData()
+            }
+        }
+        
+        return true
+    }
     
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+        /*
+         UIApplication.shared.statusBarStyle = appTheme.altstatusBarStyle
+         UINavigationBar.appearance().barStyle = .black
+         // Set navigation bar tint / background colour
+         UINavigationBar.appearance().barTintColor = appTheme.backgroundColor
+         // Set Navigation bar Title colour
+         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:appTheme.textColor]
+         */
+        
         //spotlightController.indexCounties(DataItem.allItems)
-    
+        
         if let navigationController = window?.rootViewController as? UINavigationController, let m = navigationController.topViewController as? MasterViewController {
             masterViewController = m
             //masterViewController.history = history
             //applicationShortcutHandler = ApplicationShortcutHandler(masterViewController: masterViewController)
         }
-    
-    //// experiment
-    
-//    let docsPath = Bundle.main.resourcePath! + "/Assets.xcassets"
-//    let fileManager = FileManager.default
-//    
-//    do {
-//        let docsArray = try fileManager.subpathsOfDirectory(atPath: docsPath)
-//        
-//        print(docsArray)
-//    } catch {
-//        print(error)
-//    }
-    
-//    if let asset = NSDataAsset(name: "Data") {
-//        let data = asset.data
-//        let d = try? JSONSerialization.jsonObject(with: data, options: [])
-//        print(d)
-//    }
-    
-    
+        
+        //// experiment
+        
+        //    let docsPath = Bundle.main.resourcePath! + "/Assets.xcassets"
+        //    let fileManager = FileManager.default
+        //
+        //    do {
+        //        let docsArray = try fileManager.subpathsOfDirectory(atPath: docsPath)
+        //
+        //        print(docsArray)
+        //    } catch {
+        //        print(error)
+        //    }
+        
+        //    if let asset = NSDataAsset(name: "Data") {
+        //        let data = asset.data
+        //        let d = try? JSONSerialization.jsonObject(with: data, options: [])
+        //        print(d)
+        //    }
+        
+        
         return true
     }
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Swift.Void) -> Bool {
         let handled = false
         // Loop over our user activity handlers to handle the activity
-//        for userActivityHandler in userActivityHandlers {
-//            handled = userActivityHandler.handleUserActivity(userActivity, completionHandler: { (item) -> Void in
-//                dismissExistingCountyViewIfRequired({ (masterViewController) -> (Void) in
-//                    //masterViewController.showDetails(item: item, animated: true)
-//                })
-//            })
-//            if handled {
-//                // The user activity was handled so we don't need to query any more activity handlers
-//                break
-//            }
-//        }
+        //        for userActivityHandler in userActivityHandlers {
+        //            handled = userActivityHandler.handleUserActivity(userActivity, completionHandler: { (item) -> Void in
+        //                dismissExistingCountyViewIfRequired({ (masterViewController) -> (Void) in
+        //                    //masterViewController.showDetails(item: item, animated: true)
+        //                })
+        //            })
+        //            if handled {
+        //                // The user activity was handled so we don't need to query any more activity handlers
+        //                break
+        //            }
+        //        }
         
         return handled
     }
     
-//    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
-//        dismissExistingCountyViewIfRequired { [unowned self] (masterViewController) -> (Void) in
-//            self.applicationShortcutHandler?.handleApplicationShortcutItem(shortcutItem, completionHandler: completionHandler)
-//        }
-//    }
-//    
-//    fileprivate func dismissExistingCountyViewIfRequired(_ completion: (MasterViewController) -> (Void)) {
-//        let navigationController = window?.rootViewController as! UINavigationController
-//        // Dismiss any existing county that is being shown
-//        navigationController.dismiss(animated: false, completion: nil)
-//        let viewController = navigationController.topViewController as! MasterViewController
-//        completion(viewController)
-//    }
+    //    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+    //        dismissExistingCountyViewIfRequired { [unowned self] (masterViewController) -> (Void) in
+    //            self.applicationShortcutHandler?.handleApplicationShortcutItem(shortcutItem, completionHandler: completionHandler)
+    //        }
+    //    }
+    //
+    //    fileprivate func dismissExistingCountyViewIfRequired(_ completion: (MasterViewController) -> (Void)) {
+    //        let navigationController = window?.rootViewController as! UINavigationController
+    //        // Dismiss any existing county that is being shown
+    //        navigationController.dismiss(animated: false, completion: nil)
+    //        let viewController = navigationController.topViewController as! MasterViewController
+    //        completion(viewController)
+    //    }
     
     //MARK: ModelDataHistoryDelegate
-//    func countyHistoryDidUpdate(_ countyHistory: ModelDataHistory) {
-//        UIApplication.shared.shortcutItems = countyHistory.recentlyViewedCounties.map({ (county) -> UIApplicationShortcutItem in
-//            return UIApplicationShortcutItem(type: CountyItemShortcutType, localizedTitle: county.name)
-//        })
-//    }
+    //    func countyHistoryDidUpdate(_ countyHistory: ModelDataHistory) {
+    //        UIApplication.shared.shortcutItems = countyHistory.recentlyViewedCounties.map({ (county) -> UIApplicationShortcutItem in
+    //            return UIApplicationShortcutItem(type: CountyItemShortcutType, localizedTitle: county.name)
+    //        })
+    //    }
 }
 
 /// The shortcut item type for county history shortcut items.
@@ -128,11 +140,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 /// The class responsible for handling the response to application shortcuts.
 //class ApplicationShortcutHandler: NSObject {
 //    fileprivate let masterViewController: MasterViewController
-//    
+//
 //    init(masterViewController: MasterViewController) {
 //        self.masterViewController = masterViewController
 //    }
-//    
+//
 //    func handleApplicationShortcutItem(_ applicationShortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
 //        var handled = false
 //        if applicationShortcutItem.type == "Search" {
@@ -152,7 +164,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 //protocol ModelDataUserActivityHandling: class {
 //    /// The activity type handled by the activity handler.
 //    var handledActivityType: String {get}
-//    
+//
 //    /**
 //     Called when the receiver is to handle a user activity. Will only be called
 //     with user activities whose `activityType` matches the type returned by
@@ -207,7 +219,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 //            return documentsURL.appendingPathComponent("ModelDataHistory")
 //        }
 //    }
-//    
+//
 //    /**
 //     Call this function when the user views a county.
 //     - parameter county: The county viewed by the user.

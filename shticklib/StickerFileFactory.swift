@@ -80,7 +80,7 @@ struct StickerFileFactory {
                 //|| caption == "" 
             {
                 // if asis, the size is just for decoration
-                let rul = try makeStickerAndURLfromData(imageData:imageData, label:label + "-A",type:type ).absoluteString
+                let rul = try makeStickerAndURLfromAsIsData(   label:label  ,type:type ).absoluteString
                 returls.append(rul)
                 // only one now
                 
@@ -109,23 +109,23 @@ struct StickerFileFactory {
     // generates 0 or more stickers
     
        private static func
-        makeStickerAndURLfromData(imageData:Data,
+        makeStickerAndURLfromAsIsData(//imageData:Data,
                                   label:String,type:String ) throws -> URL {
         
         /// now write this view to the local file system 
         
-        let hashval = "AnImAtEd"
-        let rul = sharedAppContainerDirectory().appendingPathComponent("\(label)-\(hashval).\(type)")
+        let hashval = ""//"-AnImAtEd"
+        let rul = sharedAppContainerDirectory().appendingPathComponent("\(label)\(hashval).\(type)")
         
-        do {
-            
-            try imageData.write(to:rul)
-        }
-        catch  let error as NSError {
-            
-            print ("cant snapshot \(error)")
-            throw KaptionatorErrors.cant
-        }
+//        do {
+//            
+//            try imageData.write(to:rul)
+//        }
+//        catch  let error as NSError {
+//            
+//            print ("cant save animated sticker \(error)")
+//            throw KaptionatorErrors.cant
+//        }
         
         /// do not make stiker here but rather in init of extension
         

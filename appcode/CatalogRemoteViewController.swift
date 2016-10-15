@@ -10,8 +10,9 @@ import UIKit
 //
 
 
-class CatalogRemoteViewController: ControlledCollectionViewController {
-    @IBAction func unwindToCatalogItemsViewControlle(_ segue: UIStoryboardSegue)  {}
+class CatalogRemoteViewController:ControlledCollectionViewController{
+    
+@IBAction func unwindToCatalogItemsViewControlle(_ segue: UIStoryboardSegue)  {}
      
     
     let refreshControl = UIRefreshControl()
@@ -52,6 +53,7 @@ class CatalogRemoteViewController: ControlledCollectionViewController {
                 if let avc = avc  {
                     avc.delegate = self
                     avc.remoteAsset = ra
+                    avc.mvc = mvc
                 }
             }
         }
@@ -163,33 +165,10 @@ extension CatalogRemoteViewController {  //loading on first up - moved from mast
     }
     //
      }
-// MARK: Delegates for actions from our associated menu
-extension AppCE {
-    // not sure we want generate asis so changed back
-    fileprivate static func makeNewCaptionCat(   from ra:RemoteAsset, caption:String ) {
-        // make captionated entry from remote asset
-        do {
-            let alreadyIn = SharedCaptionSpace.findMatchingAsset(path: ra.localimagepath, caption: caption)
-            if !alreadyIn {
-                let options = ra.options
-                if caption != "" {
-                    let _ = AppCaptionSpace.make (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: options)
-                }
-                // here make the largest sticker possible and add to shared space
-                let _ = try prepareStickers (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: options )  // cakks savetodisk N times - ugh
-                SharedCaptionSpace.saveData()
-            }else {
-                // already in, lets just mark new sizrs and caption
-            }
-        }
-        catch {
-            print ("cant make sticker in makenewCaptioncat")
-        }
-    }
-}
+
 extension CatalogRemoteViewController : CatalogMenuViewDelegate {
     func useAsIs(remoteAsset:RemoteAsset) {
-        AppCE.makeNewCaptionCat(from: remoteAsset, caption: remoteAsset.caption )    }
+        AppCE.makeNewCaptionAsIs(from: remoteAsset )    }
     func useWithNoCaption(remoteAsset:RemoteAsset) {
         // make un captionated entry from remote asset
         AppCE.makeNewCaptionCat( from: remoteAsset, caption: "" )

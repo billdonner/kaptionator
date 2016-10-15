@@ -17,23 +17,6 @@ import UIKit
 var showVendorTitles = false
 
 
-/// "SHOW-HIDDEN-FUNCTIONS" adds extra admin entries to the urhc menu
-//    if not sent then only the website page is shown
-
-//var showHiddenUI: Bool {
-//  get {
-//    if let iDict = Bundle.main.infoDictionary ,
-//        let w =  iDict["SHOW-HIDDEN-FUNCTIONS"] as? Bool { return w }
-//    return false
-//  }
-//}
-
-
-/// "STICKER-LIST-PATH" adds extra admin entries to the urhc menu
-//    if not sent then only the website page is shown
-
-
-
 enum KaptionatorErrors : Error  {
     case generalFailure
     case restoreFailure

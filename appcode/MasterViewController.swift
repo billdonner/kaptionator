@@ -15,28 +15,22 @@ get {
 }
 }
 protocol ControlledByMasterView{
-     var mvc:MasterViewController!{get }
+     var mvc:MasterViewController!{ get }
 }
-
- class ControlledByMasterViewController : UIViewController,ControlledByMasterView{
-    internal var mvc: MasterViewController!
+class ControlledCollectionViewController:UICollectionViewController,ControlledByMasterView {
+     var mvc: MasterViewController!
+ 
 }
-class ControlledCollectionViewController:UICollectionViewController, ControlledByMasterView  {
-    
-   internal var mvc : MasterViewController!
-    
-}
-
 final class MasterViewController: UIViewController {
     let  offColor:UIColor  = UIColor.lightGray
 
     @IBAction func unwindToMaster(_ segue: UIStoryboardSegue)  {}
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
-    @IBOutlet weak var orgbbi: UIBarButtonItem!
+    //@IBOutlet weak var orgbbi: UIBarButtonItem!
     @IBOutlet weak var morebbi: UIBarButtonItem!
     @IBOutlet weak var helpbbi: UIBarButtonItem!
-    @IBOutlet weak var logoView: UIImageView!
+   // @IBOutlet weak var logoView: UIImageView!
     @IBOutlet weak var coloredSpacer: UIView! 
     var currentViewController: UIViewController?
     
@@ -60,8 +54,11 @@ final class MasterViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        // turn off toolbar for the itunes variant
+        self.navigationController?.toolbar.isHidden =        
+        showCatalogID == "ShowITunesID"
         
-        let catb = UIBarButtonItem(title: nameForLeftBBI, style: .plain, target: self, action: #selector(catalogAction))
+        let catb = UIBarButtonItem(image: UIImage(named: "Home"), style: .plain, target: self, action: #selector(catalogAction))
         let imessage = 
         UIBarButtonItem(image: UIImage(named: "Msgs"), style: .plain, target: self,action: #selector(imsgAction))
     
@@ -109,7 +106,7 @@ final class MasterViewController: UIViewController {
             bbi.isEnabled = true
         }
         if logoNotRemoved {
-            logoView.removeFromSuperview()
+           // logoView.removeFromSuperview()
             logoNotRemoved = false
             coloredSpacer.backgroundColor = appTheme.catalogColor
         }
@@ -129,7 +126,7 @@ final class MasterViewController: UIViewController {
     } 
    internal func catalogAction(tis:UIBarButtonItem ) {
     
-    orgbbi.isEnabled = false // always true on this tab
+  //  orgbbi.isEnabled = false // always true on this tab
         guard  currentViewController != showCatalogViewController ||
             showCatalogViewController == nil else  {  return }
         coloredSpacer.backgroundColor = appTheme.catalogColor
@@ -154,7 +151,7 @@ final class MasterViewController: UIViewController {
     }
     internal  func stickerzAction(tis:UIBarButtonItem) {
         
-        orgbbi.isEnabled = false // always true on this tab
+        //orgbbi.isEnabled = false // always true on this tab
     
         guard  currentViewController != showCaptionedViewController ||
             showCaptionedViewController == nil else  { return }
@@ -175,7 +172,7 @@ final class MasterViewController: UIViewController {
     
     internal  func imsgAction(tis:UIBarButtonItem) {
         
-        orgbbi.isEnabled = false // always true on this tab
+       // orgbbi.isEnabled = false // always true on this tab
         guard  currentViewController != showMessagesViewController || showMessagesViewController == nil else  { return }
         coloredSpacer.backgroundColor = appTheme.iMessageColor
         for bbi in allBarButtonItems {

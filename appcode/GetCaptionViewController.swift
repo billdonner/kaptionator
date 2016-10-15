@@ -12,8 +12,9 @@ protocol GetCaptionDelegate {
 }
 class GetCaptionViewController: UIViewController  {
     var delegate: GetCaptionDelegate?
+    var unwinder: String!
     internal func dismisstapped(_ s: AnyObject) {
-        self.performSegue(withIdentifier: "UnwindToCatalogAppVC", sender: nil)
+        self.performSegue(withIdentifier: unwinder, sender: nil)
     }
     
     @IBOutlet weak var theCaptionTextView: UITextView!

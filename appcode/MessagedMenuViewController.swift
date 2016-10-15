@@ -19,6 +19,7 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
     var captionedEntry:SharedCE! // must be set
     var delegate: MessagesAppMenuViewDelegate?  // mig
     
+    var mvc:MasterViewController! // must be set
     @IBAction func unwindToMessagesAppMenuViewController(_ segue: UIStoryboardSegue)  {}
     
     private var isAnimated  = false

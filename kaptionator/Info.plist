@@ -3,11 +3,68 @@
 <plist version="1.0">
 <dict>
 	<key>APP-TITLE</key>
-	<string>Stickerizer</string>
+	<string>kaptionator</string>
 	<key>BACKGROUND-IMAGE</key>
-	<string>kaptionatorIcon-1024x768.png</string>
+	<string>kaptionator-1024x768.png</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeIconFiles</key>
+			<array>
+				<string>MusicStand_72x72.png</string>
+				<string>MusicStand_512x512.png</string>
+				<string>theMidnightRambler-120</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Image GIF Input</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.compuserve.gif</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeIconFiles</key>
+			<array>
+				<string>MusicStand_72x72.png</string>
+				<string>MusicStand_512x512.png</string>
+				<string>theMidnightRambler-120</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Image PNG Input</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>public.png</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeIconFiles</key>
+			<array>
+				<string>MusicStand_72x72.png</string>
+				<string>MusicStand_512x512.png</string>
+				<string>theMidnightRambler-120</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Image JPEG Input</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>public.jpeg</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -21,9 +78,11 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.01</string>
 	<key>CFBundleVersion</key>
-	<string>29</string>
+	<string>37</string>
 	<key>EXTENSION-SCHEME</key>
-	<string>Stickerizer</string>
+	<string>kaptionator</string>
+	<key>INNER-BLURB</key>
+	<string>a Catalog of all images loaded - pull to load more</string>
 	<key>LEFT-BBI-NAME</key>
 	<string>itunes</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -37,8 +96,12 @@
 	<string>http://shtikerz.com/kaptionator</string>
 	<key>SHARED-INTERAPP-DATA</key>
 	<string>group.com.midnightrambler.kaptionator</string>
+	<key>SHOW-CATALOG-ID</key>
+	<string>ShowITunesID</string>
 	<key>SHOW-HIDDEN-FUNCTIONS</key>
 	<true/>
+	<key>TOP-BLURB</key>
+	<string>Drag files into iTunes on your computer then pull to load</string>
 	<key>UIFileSharingEnabled</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -65,7 +128,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>SHOW-CATALOG-ID</key>
-	<string>ShowITunesID</string>
 </dict>
 </plist>

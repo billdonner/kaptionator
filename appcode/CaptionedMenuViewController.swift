@@ -15,6 +15,7 @@ final class CaptionedMenuViewController: UIViewController, AddDismissButton {
     var captionedEntry:AppCE! // must be set
     var delegate: CaptionedMenuViewDelegate?  // mig
     
+    var mvc:MasterViewController! // must be set
     
     @IBAction func unwindToCaptionedMenuViewController(_ segue: UIStoryboardSegue)  {}
     
@@ -41,7 +42,7 @@ final class CaptionedMenuViewController: UIViewController, AddDismissButton {
             vc.delegate = self
             vc.modalPresentationStyle = .overFullScreen
             vc.modalTransitionStyle = .crossDissolve
-            present(vc,animated:true,completion:nil)
+            mvc.present(vc,animated:true,completion:nil)
         }
     }
     @IBAction func moveToIMessage(_ sender: AnyObject) {

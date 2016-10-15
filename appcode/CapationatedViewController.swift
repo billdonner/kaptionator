@@ -9,7 +9,9 @@
  //
  // MARK: Show All Captionated Entries in One Tab as Child ViewContoller
  //
- final class CapationatedViewController: ControlledByMasterViewController{
+ final class CapationatedViewController: UIViewController, ControlledByMasterView  {
+    internal var mvc: MasterViewController!
+ 
     fileprivate  var stickerz:[AppCE] = []
     fileprivate var theSelectedIndexPath:IndexPath?
     @IBOutlet internal  var tableView: UITableView!
@@ -34,6 +36,7 @@
                 if let avc =  segue.destination as? CaptionedMenuViewController  {
                     avc.delegate = self
                     avc.captionedEntry = stickerz [indexPath.row]               // pull image from cache and pass
+                    avc.mvc = mvc
                 }
             }
         }

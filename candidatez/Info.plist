@@ -6,6 +6,8 @@
 	<string>Candidatez by Martoons</string>
 	<key>BACKGROUND-IMAGE</key>
 	<string>candidatesIconsCans-1024x768.png</string>
+	<key>TOP-BLURB</key>
+	<string>Choose stickers and add captions here</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>

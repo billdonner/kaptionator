@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>APP-TITLE</key>
-	<string>Stickerizer</string>
+	<string>kaptionator</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -23,9 +23,7 @@
 	<key>CFBundleVersion</key>
 	<string>29</string>
 	<key>EXTENSION-SCHEME</key>
-	<string>Stickerizer</string>
-	<key>BACKGROUND-IMAGE</key>
-	<string>emoGeeStickerIcons-1024x768.png</string>
+	<string>kaptionator</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionMainStoryboard</key>
@@ -37,5 +35,7 @@
 	<string>ShowITunesID</string>
 	<key>SHARED-INTERAPP-DATA</key>
 	<string>group.com.midnightrambler.kaptionator</string>
+	<key>BACKGROUND-IMAGE</key>
+	<string>kaptionator-1024x768.png</string>
 </dict>
 </plist>

@@ -12,14 +12,16 @@ import UIKit
 // MARK: Show LocalItunes Document Entries in One Tab as Child ViewContoller
 //
 
-final class ITunesViewController : ControlledCollectionViewController {
+final class ITunesViewController :ControlledCollectionViewController {
     
     @IBAction func unwindToITunesViewController(_ segue: UIStoryboardSegue)  {
     }
     
     let refreshControl = UIRefreshControl()
     fileprivate var theSelectedIndexPath:IndexPath?
- 
+    
+    @IBOutlet weak var startupLogo: UIImageView!
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
@@ -36,6 +38,7 @@ final class ITunesViewController : ControlledCollectionViewController {
                 if let avc = avc  {
                     avc.delegate = self
                     avc.remoteAsset = ra
+                    avc.mvc = mvc
                 }
             }
         }
@@ -48,16 +51,13 @@ final class ITunesViewController : ControlledCollectionViewController {
         // store file locally into catalog
         // var first = true
         let apptitle = "-local-"
-        
         var allofme:ManifestItems = []
-        
-         
         do {
             let dir = FileManager.default.urls (for:  .documentDirectory, in: .userDomainMask)
             let documentsUrl =  dir.first!
             
             // Get the directory contents urls (including subfolders urls)
-            let directoryContents = try FileManager.default.contentsOfDirectory(at: documentsUrl, includingPropertiesForKeys: nil, options: [])
+            let directoryContents = try FileManager.default.contentsOfDirectory(at: documentsUrl, includingPropertiesForKeys: nil, options: .skipsSubdirectoryDescendants)
             let _ =  try directoryContents.map {
                 let lastpatch = $0.lastPathComponent
                 if !lastpatch.hasPrefix(".") { // exclude wierd files
@@ -71,25 +71,30 @@ final class ITunesViewController : ControlledCollectionViewController {
                         
                         
                         let localpath = $0
-                        let me = RemoteAsset(pack: "apptitle", title: imagename, thumb:"", remoteurl: "",  localpath: localpath.absoluteString, options:
+                        let me = RemoteAsset(pack: "apptitle", title: imagename, thumb:"", remoteurl: localpath.absoluteString,  localpath:nil, options:
                             .generatemedium)
                         
                         RemSpace.addasset(ra: me) // be sure to coun
                         allofme.append(me)                     }
+                    
+                // finally, delete the file
+                try FileManager.default.removeItem(at: $0)
                 }
             }
+            
+            RemSpace.saveToDisk()
             if completion != nil  {
                 completion! (200, apptitle, allofme)
             }
         }
         catch {
-            print("loadFromITunesSharing: cant get directory \(error)")
+            print("loadFromITunesSharing: file system error \(error)")
+            
+            self.refreshControl.endRefreshing()
         }
+            
     }
     func refreshFromITunes() {
-        
-        print("    func refreshFromITunes() pulled ")
-        
         loadFromITunesSharing( completion: { status, title, allofme in
             print(" refreshed with \(allofme.count) items")
             self.collectionView!.reloadData()
@@ -97,12 +102,27 @@ final class ITunesViewController : ControlledCollectionViewController {
             
         })
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if SharedCaptionSpace.itemCount() == 0 && mvc.showFirstHelp {
+            mvc.showFirstHelp = false
+            mvc.performSegue(withIdentifier: "StartupHelpID", sender: nil)
+        }
+    }
     override func viewDidLoad() {
         self.collectionView!.backgroundColor = appTheme.backgroundColor
         super.viewDidLoad()
         collectionView!.delegate = self
         collectionView!.dataSource = self
         
+        // put logo in there, we will fade it in
+        startupLogo.image = UIImage(named:backgroundImagePath)
+        startupLogo.frame = self.view.frame
+           // CGRect(x:0,y:0,width:self.view.frame.width, height:self.view.frame.height)
+          startupLogo.center = self.view.center
+        self.view.insertSubview(startupLogo, aboveSubview: self.view)
+        self.collectionView?.alpha = 0 // start as invisible
+        self.automaticallyAdjustsScrollViewInsets = false
         refreshControl.tintColor = .blue
         refreshControl.attributedTitle = NSAttributedString(string:"pulling fresh content from Itunes file sharing")
         refreshControl.addTarget(self, action: #selector(self.refreshFromITunes), for: .valueChanged)
@@ -118,7 +138,15 @@ final class ITunesViewController : ControlledCollectionViewController {
         }  catch {
              print("could not restore remspace")
         }
-       refreshFromITunes()
+      // refreshFromITunes()
+        UIView.animate(withDuration: 1.5, animations: {
+            self.startupLogo.alpha =  0.0
+            self.collectionView?.alpha = 1.0
+            }
+            , completion: { b in
+                self.startupLogo.removeFromSuperview()
+            }
+        )
     }
 // UICollectionViewDataSource {
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -133,11 +161,6 @@ final class ITunesViewController : ControlledCollectionViewController {
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "ITunesDataCell", for: indexPath  ) as! ITunesDataCell // Create the cell from the storyboard cell
         
         let ra = RemSpace.itemAt(indexPath.row)
-        
-        //show the primitive title
-      
-          //  cell.paint(name:ra.caption)
-     
         if ra.localimagepath != "" {
             // have the data onhand
             cell.paintImage(path:ra.localimagepath)
@@ -158,33 +181,10 @@ final class ITunesViewController : ControlledCollectionViewController {
     
 
 }
-// MARK: Delegates for actions from our associated menu
-extension AppCE {
-    // not sure we want generate asis so changed back
-    fileprivate static func makeNewCaptionCat(   from ra:RemoteAsset, caption:String ) {
-        // make captionated entry from remote asset
-        do {
-            let alreadyIn = SharedCaptionSpace.findMatchingAsset(path: ra.localimagepath, caption: caption)
-            if !alreadyIn {
-                let options = ra.options
-                if caption != "" {
-                    let _ = AppCaptionSpace.make (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: options)
-                }
-                // here make the largest sticker possible and add to shared space
-                let _ = try prepareStickers (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: options )  // cakks savetodisk N times - ugh
-                SharedCaptionSpace.saveData()
-            }else {
-                // already in, lets just mark new sizrs and caption
-            }
-        }
-        catch {
-            print ("cant make sticker in makenewCaptioncat")
-        }
-    }
-}
+
 extension ITunesViewController : ITunesMenuViewDelegate {
     func useAsIs(remoteAsset:RemoteAsset) {
-        AppCE.makeNewCaptionCat(from: remoteAsset, caption: remoteAsset.caption )    }
+        AppCE.makeNewCaptionAsIs(from: remoteAsset )       }
     func useWithNoCaption(remoteAsset:RemoteAsset) {
         // make un captionated entry from remote asset
         AppCE.makeNewCaptionCat( from: remoteAsset, caption: "" )
@@ -194,12 +194,3 @@ extension ITunesViewController : ITunesMenuViewDelegate {
         AppCE.makeNewCaptionCat( from: remoteAsset, caption: caption )
     }
 }
-//extension FileViewController : MEObserver {
-//    func newdocument(_ propsDict: JSONDict, _ title:String) {
-//        RemSpace.reset(title:title)
-//    }
-//    
-//    func newentry(me:RemoteAsset){
-//        //remSpace.addasset(ra: me)
-//    }
-//}

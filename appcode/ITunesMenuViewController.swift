@@ -13,16 +13,15 @@ protocol ITunesMenuViewDelegate {
     func useWithNoCaption(remoteAsset:RemoteAsset)
 } 
 class ITunesMenuViewController: UIViewController,AddDismissButton {
+    var mvc:MasterViewController! // must be set
     var remoteAsset:RemoteAsset! // must be set
     var delegate: ITunesMenuViewDelegate?  // mig
+    fileprivate var changesMade: Bool = false
     
     @IBAction func unwindToITunesMenuViewController(_ segue: UIStoryboardSegue)  {
     }
     @IBOutlet weak var outerView: UIView!
     
-    @IBOutlet weak var veryBottomButton: UIButton!
-    private var isAnimated  = false
-    fileprivate var changesMade: Bool = false
     @IBOutlet weak var menuImageView: UIImageView!
     @IBOutlet weak var imageCaption: UITextField!
     @IBOutlet weak var useasis: UIButton!
@@ -30,34 +29,34 @@ class ITunesMenuViewController: UIViewController,AddDismissButton {
     @IBOutlet weak var addcaption: UIButton!
     
     
-    var webViewOverlay: UIWebView!
-    //MARK:- MENU TAP ACTIONS
-    @IBAction func websitetapped(_ sender: AnyObject) {
-        IOSSpecialOps.openwebsite(self)
-        //dismiss(animated: true,completion:nil)
-    }
-    
     @IBOutlet weak var animatedLabel: UILabel!
-    @IBAction func useStickerAsIsPressed(_ sender: AnyObject) {
-     delegate?.useAsIs(remoteAsset:remoteAsset ) // elsewhere
-     dismiss(animated: true,completion:nil)
-    }
     
     @IBAction func useStickerNoCaptionPressed(_ sender: AnyObject) {
-    delegate?.useWithNoCaption(remoteAsset:remoteAsset ) // elsewhere
-        dismiss(animated: true,completion:nil)
+        
+        mvc.dismiss(animated: true) {
+        self.delegate?.useAsIs(remoteAsset:self.remoteAsset) // elsewhere
+        }
     }
-    
     @IBAction func addCaptionToSticker(_ sender: AnyObject) {
         imageCaption.textColor = .darkGray
-        imageCaption.backgroundColor = .white
-        imageCaption.isEnabled = true
         imageCaption.becomeFirstResponder()
-        
         imageCaption.isHidden = false
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "GetCaptionViewControllerID" ) as? GetCaptionViewController
+        if let vc = vc {
+            vc.delegate = self
+            vc.unwinder = "UnwindToITunesAppVC"
+            vc.modalPresentationStyle = .overFullScreen
+            vc.modalTransitionStyle = .crossDissolve
+              mvc.dismiss(animated: true) {
+                self.mvc.present(vc,animated:true,completion:nil)
+            }
+        }
+        
+        
     }
     func dismisstapped(_ s: AnyObject) {
-        dismiss(animated: true, completion: nil)
+        mvc.dismiss(animated: true, completion: nil)
     }
     //MARK:- VC LIFECYLE
     
@@ -65,14 +64,15 @@ class ITunesMenuViewController: UIViewController,AddDismissButton {
         super.viewDidLoad()
         //veryBottomButton.setTitleColor( appTheme.buttonTextColor, for: .normal)
         
-        useasis.setTitleColor(appTheme.buttonTextColor, for: .normal)
+//        useasis.setTitleColor(appTheme.buttonTextColor, for: .normal)
+        
         useasisnocaption.setTitleColor(appTheme.buttonTextColor, for: .normal)
         addcaption.setTitleColor(appTheme.buttonTextColor, for: .normal)
         
         
         // Do any additional setup after loading the view.
         
-        isAnimated = remoteAsset.options.contains(.generateasis)
+        //isAnimated = remoteAsset.options.contains(.generateasis)
         do {
             let data = try  Data(contentsOf: URL(string:remoteAsset.localimagepath )!)
             menuImageView.image = UIImage(data:data)
@@ -83,29 +83,29 @@ class ITunesMenuViewController: UIViewController,AddDismissButton {
         }
         imageCaption.isEnabled  = false
         imageCaption.text = showVendorTitles ? remoteAsset.caption : ""
-        imageCaption.delegate = self
-        
-        imageCaption.isHidden = imageCaption.text == ""
-        imageCaption.textColor = .white
-        imageCaption.backgroundColor = .clear
-        
-        imageCaption.keyboardAppearance = .dark
-     
-        if isAnimated {
-            self.menuImageView.isHidden = true
-            self.addcaption.isHidden = true
-            
-            self.useasisnocaption.isHidden = true
-            self.animatedLabel.isHidden = true
-            
-            
-            webViewOverlay = animatedViewOf(frame:self.view.frame, size:menuImageView.image!.size, imageurl: remoteAsset.localimagepath)
-            self.view.addSubview(webViewOverlay!)
-            addDismissButtonToViewController(self , named:appTheme.dismissButtonImageName,#selector(dismisstapped))
-            
-            return
-        }
-        
+//        imageCaption.delegate = self
+//        
+//        imageCaption.isHidden = imageCaption.text == ""
+//        imageCaption.textColor = .white
+//        imageCaption.backgroundColor = .clear
+//        
+//        imageCaption.keyboardAppearance = .dark
+//     
+//        if isAnimated {
+//            self.menuImageView.isHidden = true
+//            self.addcaption.isHidden = true
+//            
+//            self.useasisnocaption.isHidden = true
+//            self.animatedLabel.isHidden = true
+//            
+//            
+//            webViewOverlay = animatedViewOf(frame:self.view.frame, size:menuImageView.image!.size, imageurl: remoteAsset.localimagepath)
+//            self.view.addSubview(webViewOverlay!)
+//            addDismissButtonToViewController(self , named:appTheme.dismissButtonImageName,#selector(dismisstapped))
+//            
+//            return
+//        }
+//        
         addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
         
     }
@@ -122,19 +122,12 @@ class ITunesMenuViewController: UIViewController,AddDismissButton {
     }
 }
 
-
 //MARK:- CALLBACKS
 
-
-//MARK: UITextFieldDelegate when the single text field gets filled in
-extension ITunesMenuViewController : UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+extension ITunesMenuViewController : GetCaptionDelegate {
+    func captionWasEntered(caption: String) {
         changesMade = true
-        delegate?.useWithCaption(remoteAsset: remoteAsset, caption: imageCaption.text ?? "")
-        
+        delegate?.useWithCaption(remoteAsset: remoteAsset, caption: caption )
         imageCaption.isEnabled  = false
-        textField.resignFirstResponder()
-        dismiss(animated: true,completion:nil)
-        return true
     }
 }

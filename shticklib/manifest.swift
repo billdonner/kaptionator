@@ -143,12 +143,10 @@ struct Manifest {
         guard let url = url else {
             fatalError("loadFromITunesSharing(observer: observer,completion:completion)")
         }
-        processOneURL (  url ){ status, s, mes in
-            
+        processOneURL (  url ){ status, s, mes in 
             if completion != nil  {
                 completion! (status, "sny", mes)
             }
-            
         }
     }
     

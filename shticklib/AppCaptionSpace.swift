@@ -62,17 +62,57 @@ struct AppCE {
             self.id =   "\(AppCE.nicetime())" //: id
         }
 }
-
+// MARK: Delegates for actions from our associated menu
+extension AppCE {
+    // not sure we want generate asis so changed back
+    
+    static func makeNewCaptionAsIs(   from ra:RemoteAsset ) {
+        // make captionated entry from remote asset
+        do {
+            let alreadyIn = SharedCaptionSpace.findMatchingAsset(path: ra.localimagepath, caption: "")
+            if !alreadyIn {
+                let options = StickerMakingOptions.generateasis
+                
+                    let _ = AppCaptionSpace.make (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: "",  options: options)
+                
+                // here make the largest sticker possible and add to shared space
+                let _ = try prepareStickers (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: "",  options: options )  // cakks savetodisk N times - ugh
+                SharedCaptionSpace.saveData()
+            }else {
+                // already in, lets just mark new sizrs and caption
+            }
+        }
+        catch {
+            print ("cant make sticker in makeNewCaptionAsIs")
+        }
+    }
+ static func makeNewCaptionCat(   from ra:RemoteAsset, caption:String ) {
+        // make captionated entry from remote asset
+        do {
+            let alreadyIn = SharedCaptionSpace.findMatchingAsset(path: ra.localimagepath, caption: caption)
+            if !alreadyIn {
+                let options = ra.options
+                if caption != "" {
+                    let _ = AppCaptionSpace.make (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: options)
+                }
+                // here make the largest sticker possible and add to shared space
+                let _ = try prepareStickers (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: options )  // cakks savetodisk N times - ugh
+                SharedCaptionSpace.saveData()
+            }else {
+                // already in, lets just mark new sizrs and caption
+            }
+        }
+        catch {
+            print ("cant make sticker in makenewCaptioncat")
+        }
+    }
+}
 //MARK: AppCaptionSpace collects and persists AppCEs
 
 struct AppCaptionSpace {
     private var entries : [ AppCE] = []
     private var suite: String // partions nsuserdefaults
-//    static func unhinge(id:String) {
-//        // unhinge the entry
-//        let _ =  capSpace.remove(id:id)
-//        capSpace.entries[id] = nil
-//    }
+ 
    fileprivate init(_ suite:String) {
         self.suite = suite
     }
