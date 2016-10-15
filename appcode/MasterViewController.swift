@@ -28,8 +28,8 @@ final class MasterViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     //@IBOutlet weak var orgbbi: UIBarButtonItem!
-    @IBOutlet weak var morebbi: UIBarButtonItem!
-    @IBOutlet weak var helpbbi: UIBarButtonItem!
+  //  @IBOutlet weak var morebbi: UIBarButtonItem!
+    //@IBOutlet weak var helpbbi: UIBarButtonItem!
    // @IBOutlet weak var logoView: UIImageView!
     @IBOutlet weak var coloredSpacer: UIView! 
     var currentViewController: UIViewController?
@@ -59,6 +59,7 @@ final class MasterViewController: UIViewController {
         showCatalogID == "ShowITunesID"
         
         let catb = UIBarButtonItem(image: UIImage(named: "Home"), style: .plain, target: self, action: #selector(catalogAction))
+        let helpbbi = UIBarButtonItem(image: UIImage(named: "Help"), style: .plain, target: self, action: #selector(helpersAction))
         let imessage = 
         UIBarButtonItem(image: UIImage(named: "Msgs"), style: .plain, target: self,action: #selector(imsgAction))
     
@@ -71,17 +72,16 @@ final class MasterViewController: UIViewController {
         stickerz.tintColor = offColor
         imessage.tintColor = offColor
         helpbbi.tintColor = appTheme.textColor
-        morebbi.tintColor = appTheme.textColor
         catb.isEnabled = false
         stickerz.isEnabled = false
         imessage.isEnabled = false
-        allBarButtonItems = [catb,imessage,stickerz]
+        allBarButtonItems = [catb,helpbbi,imessage,stickerz]
         
         
         self.view.backgroundColor = appTheme.backgroundColor
         
         self.navigationItem.title = extensionScheme
-        self.navigationItem.leftBarButtonItems = [catb]
+        self.navigationItem.leftBarButtonItems = [catb,helpbbi]
         self.navigationItem.rightBarButtonItems = [imessage,stickerz]
         let dir = FileManager.default.urls (for: .documentDirectory, in : .userDomainMask)
         let documentsUrl =  dir.first!
@@ -113,17 +113,24 @@ final class MasterViewController: UIViewController {
     }
     //MARK:- Button Tap Handlers
     @IBAction func helpButtonPushed(_ sender: AnyObject) {
-        if currentViewController == showCatalogViewController {    performSegue(withIdentifier: "HelpForCatalogSegue", sender: nil) }
-        else   if currentViewController == showCaptionedViewController {    performSegue(withIdentifier: "HelpForStickersSegue", sender: nil) }
-        else
-            if currentViewController == showMessagesViewController {    performSegue(withIdentifier: "HelpForMessagesSegue", sender: nil) }
+       print("Dropdownpopup")
+        
+//        if currentViewController == showCatalogViewController {    performSegue(withIdentifier: "HelpForCatalogSegue", sender: nil) }
+//        else   if currentViewController == showCaptionedViewController {    performSegue(withIdentifier: "HelpForStickersSegue", sender: nil) }
+//        else
+//            if currentViewController == showMessagesViewController {    performSegue(withIdentifier: "HelpForMessagesSegue", sender: nil) }
     }
     @IBAction func moreButtonPushed(_ sender: AnyObject) {
         performSegue(withIdentifier: "PerformMoreSegue", sender: nil)
     }
     @IBAction func orgButtonPushed(_ sender: AnyObject) {
         performSegue(withIdentifier: "PerformMoreSegue", sender: nil)
-    } 
+    }
+    // this must invoke a popup - just do the performmoreseque
+     internal func helpersAction(tis:UIBarButtonItem ) {
+        
+        performSegue(withIdentifier: "HelpDropdownViewControllerID", sender: nil)
+    }
    internal func catalogAction(tis:UIBarButtonItem ) {
     
   //  orgbbi.isEnabled = false // always true on this tab

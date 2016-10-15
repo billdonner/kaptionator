@@ -272,31 +272,17 @@
                             <constraint firstItem="Mo6-3a-xLp" firstAttribute="top" secondItem="pDJ-lU-8Rv" secondAttribute="bottom" id="iXK-5c-wl9"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem image="Home" id="iwR-wJ-SqY">
-                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <segue destination="LPi-ea-8Wa" kind="presentation" id="6bp-dS-sLd"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="P8x-vG-Spa"/>
-                        <barButtonItem image="Help" id="fEM-fJ-QL9">
-                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <segue destination="bbi-GL-AyA" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="X63-RO-jMS"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="MustBeSupplied" id="nzt-vv-hvj"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="activityIndicatorView" destination="pDJ-lU-8Rv" id="qfP-00-EgJ"/>
                         <outlet property="coloredSpacer" destination="dZ6-fO-zz0" id="Epd-wD-t5x"/>
                         <outlet property="containerView" destination="J51-cA-3yj" id="i5e-d7-Ujm"/>
-                        <outlet property="helpbbi" destination="fEM-fJ-QL9" id="EdC-pC-jLK"/>
-                        <outlet property="morebbi" destination="iwR-wJ-SqY" id="Oq7-Yb-Onc"/>
                         <segue destination="REF-5Q-Alp" kind="presentation" identifier="StartupHelpID" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="feV-Qq-mVg"/>
+                        <segue destination="gSw-aw-CPu" kind="presentation" identifier="HelpDropdownViewControllerID" modalTransitionStyle="coverVertical" id="2fz-WH-9HE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5m-nU-S6G" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -767,7 +753,7 @@
         <!--Starts Here Nav -->
         <scene sceneID="LKI-ps-Ona">
             <objects>
-                <navigationController title="Starts Here Nav " automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" hidesBarsWhenVerticallyCompact="YES" id="gUA-Sq-LFh" sceneMemberID="viewController">
+                <navigationController title="Starts Here Nav " automaticallyAdjustsScrollViewInsets="NO" hidesBarsWhenVerticallyCompact="YES" id="gUA-Sq-LFh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -1098,6 +1084,99 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DoO-yL-zdC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1280" y="-403"/>
+        </scene>
+        <!--Help Dropdown View Controller-->
+        <scene sceneID="PBg-dO-mLn">
+            <objects>
+                <viewController storyboardIdentifier="HelpDropdownViewControllerID" id="gSw-aw-CPu" customClass="HelpDropdownViewController" customModule="kaptionator" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ttr-sq-sar"/>
+                        <viewControllerLayoutGuide type="bottom" id="Dz9-J3-AAu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X9R-NY-2v3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backforportrait" translatesAutoresizingMaskIntoConstraints="NO" id="HKz-O6-WEG">
+                                <frame key="frameInset" minY="-3" width="375" height="672"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N3n-gc-Ll2">
+                                <frame key="frameInset" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="KzD-Hy-K2G">
+                                    <frame key="frameInset"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="maG-iR-xmC">
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="911-Tu-Hf1">
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJX-kd-6X1">
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sub Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNV-Bc-DGp">
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq9-Th-w6F">
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GmS-66-XZx">
+                                        <state key="normal" title="Quick Help">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="REF-5Q-Alp" kind="presentation" id="Xgi-zr-l9n"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWd-VS-FKR">
+                                        <state key="normal" title="Web Help">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="e5R-KU-Svr" kind="presentation" id="med-cB-OtE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBg-CJ-edw">
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <state key="normal" title="Artist's Site">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="LPi-ea-8Wa" kind="presentation" id="gZz-7o-aCz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="maG-iR-xmC" firstAttribute="top" secondItem="Ttr-sq-sar" secondAttribute="bottom" id="4ES-Qa-9i8"/>
+                            <constraint firstAttribute="trailing" secondItem="maG-iR-xmC" secondAttribute="trailing" id="Srk-NB-btL"/>
+                            <constraint firstItem="maG-iR-xmC" firstAttribute="leading" secondItem="X9R-NY-2v3" secondAttribute="leading" id="rB9-ZI-NW5"/>
+                            <constraint firstItem="Dz9-J3-AAu" firstAttribute="top" secondItem="maG-iR-xmC" secondAttribute="bottom" id="w57-wG-0Ft"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bodyLabel" destination="gq9-Th-w6F" id="tiU-35-lSo"/>
+                        <outlet property="subLabel" destination="HNV-Bc-DGp" id="hC3-UM-QRK"/>
+                        <outlet property="topLabel" destination="fJX-kd-6X1" id="wh9-rM-uQS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U9l-ZS-Zrh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-153" y="301"/>
         </scene>
         <!--WebsiteOverlayViewController-->
         <scene sceneID="w3G-GE-Juz">
@@ -1542,4 +1621,7 @@
         <image name="backforportrait" width="840" height="840"/>
         <image name="captions" width="216" height="160"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Xgi-zr-l9n"/>
+    </inferredMetricsTieBreakers>
 </document>

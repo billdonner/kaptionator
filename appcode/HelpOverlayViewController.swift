@@ -27,7 +27,7 @@ final class HelpOverlayViewController:InnerOverlayViewController {
 final class AltHelpOverlayViewController:InnerOverlayViewController {
     override func getreq () -> URLRequest {
         let urlasstring = websitePath // + extensionScheme.lowercased()
-            +  "/ help.html"
+            +  "/help.html"
         return URLRequest(url:URL(string:urlasstring )!)
         
     }
