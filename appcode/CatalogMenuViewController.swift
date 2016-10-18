@@ -15,7 +15,7 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
     var remoteAsset:RemoteAsset! // must be set
     var delegate: CatalogMenuViewDelegate?  // mig
     
-    var mvc:MasterViewController! // must be set
+    var pvc:UIViewController! // must be set
     private var isAnimated  = false
     fileprivate var changesMade: Bool = false
     
@@ -43,12 +43,12 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
         if let vc = vc {
         vc.delegate = self
         vc.unwinder = "UnwindToCatalogAppVC"
-        vc.modalPresentationStyle = .overFullScreen
+        vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
-        mvc.present(vc,animated:true,completion:nil)
+        pvc.dismiss(animated: false) {       
+        self.pvc.present(vc,animated:true,completion:nil)
         }
-        
-        
+        }
     }
     internal func dismisstapped(_ s: AnyObject) {
         dismiss(animated: true, completion: nil)

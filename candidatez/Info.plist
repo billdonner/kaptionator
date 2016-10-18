@@ -6,8 +6,6 @@
 	<string>Candidatez by Martoons</string>
 	<key>BACKGROUND-IMAGE</key>
 	<string>candidatesIconsCans-1024x768.png</string>
-	<key>TOP-BLURB</key>
-	<string>Choose stickers and add captions here</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -23,9 +21,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.72</string>
+	<string>1.75</string>
 	<key>CFBundleVersion</key>
-	<string>103</string>
+	<string>105</string>
 	<key>EXTENSION-SCHEME</key>
 	<string>Candidatez</string>
 	<key>LEFT-BBI-NAME</key>
@@ -45,6 +43,8 @@
 	<string>group.com.martoons.candidatez</string>
 	<key>SHOW-HIDDEN-FUNCTIONS</key>
 	<false/>
+	<key>TOP-BLURB</key>
+	<string>Choose stickers and add captions here</string>
 	<key>UIFileSharingEnabled</key>
 	<false/>
 	<key>UILaunchStoryboardName</key>
@@ -56,7 +56,7 @@
 		<string>armv7</string>
 	</array>
 	<key>UIStatusBarHidden</key>
-	<true/>
+	<false/>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleDefault</string>
 	<key>UISupportedInterfaceOrientations</key>

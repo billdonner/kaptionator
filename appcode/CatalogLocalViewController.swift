@@ -61,7 +61,7 @@ final class CatalogViewController:ControlledCollectionViewController {
                 if let avc = avc  {
                     avc.delegate = self
                     avc.remoteAsset = ra
-                    avc.mvc = mvc 
+                    avc.pvc = self
                 }
             }
         }
@@ -184,6 +184,7 @@ extension CatalogViewController {  //loading on first up - moved from masterview
  
 }
 
+//MARK:- CALLBACKS
 extension CatalogViewController : CatalogMenuViewDelegate {
     func useAsIs(remoteAsset:RemoteAsset) {
         AppCE.makeNewCaptionCat(from: remoteAsset, caption: remoteAsset.caption )    }

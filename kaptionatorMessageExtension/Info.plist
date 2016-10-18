@@ -4,6 +4,8 @@
 <dict>
 	<key>APP-TITLE</key>
 	<string>kaptionator</string>
+	<key>BACKGROUND-IMAGE</key>
+	<string>kaptionator-1024x768.png</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -21,7 +23,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>29</string>
+	<string>105</string>
 	<key>EXTENSION-SCHEME</key>
 	<string>kaptionator</string>
 	<key>NSExtension</key>
@@ -31,11 +33,9 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.message-payload-provider</string>
 	</dict>
-	<key>SHOW-CATALOG-ID</key>
-	<string>ShowITunesID</string>
 	<key>SHARED-INTERAPP-DATA</key>
 	<string>group.com.midnightrambler.kaptionator</string>
-	<key>BACKGROUND-IMAGE</key>
-	<string>kaptionator-1024x768.png</string>
+	<key>SHOW-CATALOG-ID</key>
+	<string>ShowITunesID</string>
 </dict>
 </plist>

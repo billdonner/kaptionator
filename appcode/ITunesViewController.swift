@@ -38,7 +38,7 @@ final class ITunesViewController :ControlledCollectionViewController {
                 if let avc = avc  {
                     avc.delegate = self
                     avc.remoteAsset = ra
-                    avc.mvc = mvc
+                    avc.pvc = self
                 }
             }
         }

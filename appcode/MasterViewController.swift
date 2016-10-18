@@ -27,10 +27,15 @@ final class MasterViewController: UIViewController {
     @IBAction func unwindToMaster(_ segue: UIStoryboardSegue)  {}
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
-    //@IBOutlet weak var orgbbi: UIBarButtonItem!
-  //  @IBOutlet weak var morebbi: UIBarButtonItem!
-    //@IBOutlet weak var helpbbi: UIBarButtonItem!
-   // @IBOutlet weak var logoView: UIImageView!
+
+    
+    @IBOutlet weak var catb: UIBarButtonItem!
+    
+    @IBOutlet weak var stickerz: UIBarButtonItem!
+    
+    @IBOutlet weak var helpbbi: UIBarButtonItem!
+    @IBOutlet weak var imessage: UIBarButtonItem!
+    
     @IBOutlet weak var coloredSpacer: UIView! 
     var currentViewController: UIViewController?
     
@@ -54,18 +59,18 @@ final class MasterViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        let cg = CGRect(x:0,y:0,width:self.view.frame.width/3.0, height:44.0)
+        let fooview = UILabel(frame:cg)
+        fooview.text = appTitle// not extensionScheme
+        fooview.textAlignment = .center
+        fooview.numberOfLines = 0
+        fooview.adjustsFontSizeToFitWidth = true
+        
+        self.navigationItem.titleView = fooview
         // turn off toolbar for the itunes variant
         self.navigationController?.toolbar.isHidden =        
         showCatalogID == "ShowITunesID"
-        
-        let catb = UIBarButtonItem(image: UIImage(named: "Home"), style: .plain, target: self, action: #selector(catalogAction))
-        let helpbbi = UIBarButtonItem(image: UIImage(named: "Help"), style: .plain, target: self, action: #selector(helpersAction))
-        let imessage = 
-        UIBarButtonItem(image: UIImage(named: "Msgs"), style: .plain, target: self,action: #selector(imsgAction))
-    
-        let stickerz = UIBarButtonItem(image: UIImage(named: "History"), style: .plain,
-                    target: self, action: #selector(stickerzAction))
-        
+ 
         
         // start in the catalog
         catb.tintColor = appTheme.catalogColor
@@ -79,10 +84,7 @@ final class MasterViewController: UIViewController {
         
         
         self.view.backgroundColor = appTheme.backgroundColor
-        
-        self.navigationItem.title = extensionScheme
-        self.navigationItem.leftBarButtonItems = [catb,helpbbi]
-        self.navigationItem.rightBarButtonItems = [imessage,stickerz]
+
         let dir = FileManager.default.urls (for: .documentDirectory, in : .userDomainMask)
         let documentsUrl =  dir.first!
         print("-------Running from ",documentsUrl," ---------")
@@ -104,6 +106,7 @@ final class MasterViewController: UIViewController {
         coloredSpacer.backgroundColor = appTheme.catalogColor
         for bbi in allBarButtonItems {
             bbi.isEnabled = true
+           // bbi.width = 32
         }
         if logoNotRemoved {
            // logoView.removeFromSuperview()
@@ -111,37 +114,21 @@ final class MasterViewController: UIViewController {
             coloredSpacer.backgroundColor = appTheme.catalogColor
         }
     }
-    //MARK:- Button Tap Handlers
-    @IBAction func helpButtonPushed(_ sender: AnyObject) {
-       print("Dropdownpopup")
-        
-//        if currentViewController == showCatalogViewController {    performSegue(withIdentifier: "HelpForCatalogSegue", sender: nil) }
-//        else   if currentViewController == showCaptionedViewController {    performSegue(withIdentifier: "HelpForStickersSegue", sender: nil) }
-//        else
-//            if currentViewController == showMessagesViewController {    performSegue(withIdentifier: "HelpForMessagesSegue", sender: nil) }
-    }
-    @IBAction func moreButtonPushed(_ sender: AnyObject) {
-        performSegue(withIdentifier: "PerformMoreSegue", sender: nil)
-    }
-    @IBAction func orgButtonPushed(_ sender: AnyObject) {
-        performSegue(withIdentifier: "PerformMoreSegue", sender: nil)
-    }
+ 
     // this must invoke a popup - just do the performmoreseque
-     internal func helpersAction(tis:UIBarButtonItem ) {
-        
+    @IBAction func helpAction(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "HelpDropdownViewControllerID", sender: nil)
     }
-   internal func catalogAction(tis:UIBarButtonItem ) {
     
+    @IBAction func catalogueAction(_ sender: UIBarButtonItem) {
   //  orgbbi.isEnabled = false // always true on this tab
         guard  currentViewController != showCatalogViewController ||
             showCatalogViewController == nil else  {  return }
         coloredSpacer.backgroundColor = appTheme.catalogColor
         for bbi in allBarButtonItems {
-            bbi.tintColor = bbi == tis ? coloredSpacer.backgroundColor : offColor
+            bbi.tintColor = bbi == sender ? coloredSpacer.backgroundColor : offColor
         }
-    
-    
+ 
         if showCatalogViewController == nil {
             let vcid = showCatalogID
             
@@ -154,17 +141,15 @@ final class MasterViewController: UIViewController {
         cycleFromViewController(oldViewController:  currentViewController!, toViewController: showCatalogViewController!)
     
     currentViewController = showCatalogViewController
-    self.navigationItem.title = extensionScheme
     }
-    internal  func stickerzAction(tis:UIBarButtonItem) {
-        
-        //orgbbi.isEnabled = false // always true on this tab
+   
     
+    @IBAction func stickerAction(_ sender: UIBarButtonItem) {
         guard  currentViewController != showCaptionedViewController ||
             showCaptionedViewController == nil else  { return }
         coloredSpacer.backgroundColor = appTheme.stickerzColor
         for bbi in allBarButtonItems {
-            bbi.tintColor = bbi == tis ? coloredSpacer.backgroundColor : offColor
+            bbi.tintColor = bbi == sender ? coloredSpacer.backgroundColor : offColor
         }
         showCaptionedViewController = self.storyboard?.instantiateViewController(withIdentifier: "CaptionedViewControllerID" ) as? CapationatedViewController
         showCaptionedViewController?.mvc = self
@@ -177,13 +162,12 @@ final class MasterViewController: UIViewController {
         self.navigationItem.title = "History"
     }
     
-    internal  func imsgAction(tis:UIBarButtonItem) {
-        
-       // orgbbi.isEnabled = false // always true on this tab
+    @IBAction func imsg(_ sender: UIBarButtonItem) {
+    
         guard  currentViewController != showMessagesViewController || showMessagesViewController == nil else  { return }
         coloredSpacer.backgroundColor = appTheme.iMessageColor
         for bbi in allBarButtonItems {
-            bbi.tintColor = bbi == tis ? coloredSpacer.backgroundColor : offColor
+            bbi.tintColor = bbi == sender ? coloredSpacer.backgroundColor : offColor
         }
         
         showMessagesViewController = self.storyboard?.instantiateViewController(withIdentifier: "MessageViewControllerID") as? MessagesViewController
@@ -193,7 +177,7 @@ final class MasterViewController: UIViewController {
         cycleFromViewController(oldViewController: currentViewController!, toViewController: showMessagesViewController!)
         currentViewController = showMessagesViewController
         self.navigationItem.title = "Stickers"
-    }
+     }
 
     //MARK:- move between view controllers
    fileprivate  func cycleFromViewController(oldViewController: UIViewController, toViewController newViewController: UIViewController) {

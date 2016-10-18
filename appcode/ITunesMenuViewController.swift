@@ -13,7 +13,7 @@ protocol ITunesMenuViewDelegate {
     func useWithNoCaption(remoteAsset:RemoteAsset)
 } 
 class ITunesMenuViewController: UIViewController,AddDismissButton {
-    var mvc:MasterViewController! // must be set
+    var pvc:UIViewController! // must be set
     var remoteAsset:RemoteAsset! // must be set
     var delegate: ITunesMenuViewDelegate?  // mig
     fileprivate var changesMade: Bool = false
@@ -33,7 +33,7 @@ class ITunesMenuViewController: UIViewController,AddDismissButton {
     
     @IBAction func useStickerNoCaptionPressed(_ sender: AnyObject) {
         
-        mvc.dismiss(animated: true) {
+        pvc.dismiss(animated: true) {
         self.delegate?.useAsIs(remoteAsset:self.remoteAsset) // elsewhere
         }
     }
@@ -46,17 +46,17 @@ class ITunesMenuViewController: UIViewController,AddDismissButton {
         if let vc = vc {
             vc.delegate = self
             vc.unwinder = "UnwindToITunesAppVC"
-            vc.modalPresentationStyle = .overFullScreen
+            vc.modalPresentationStyle = .overCurrentContext
             vc.modalTransitionStyle = .crossDissolve
-              mvc.dismiss(animated: true) {
-                self.mvc.present(vc,animated:true,completion:nil)
+              pvc.dismiss(animated: false) {
+                self.pvc.present(vc,animated:true,completion:nil)
             }
         }
         
         
     }
     func dismisstapped(_ s: AnyObject) {
-        mvc.dismiss(animated: true, completion: nil)
+        pvc.dismiss(animated: true, completion: nil)
     }
     //MARK:- VC LIFECYLE
     
@@ -83,40 +83,13 @@ class ITunesMenuViewController: UIViewController,AddDismissButton {
         }
         imageCaption.isEnabled  = false
         imageCaption.text = showVendorTitles ? remoteAsset.caption : ""
-//        imageCaption.delegate = self
-//        
-//        imageCaption.isHidden = imageCaption.text == ""
-//        imageCaption.textColor = .white
-//        imageCaption.backgroundColor = .clear
-//        
-//        imageCaption.keyboardAppearance = .dark
-//     
-//        if isAnimated {
-//            self.menuImageView.isHidden = true
-//            self.addcaption.isHidden = true
-//            
-//            self.useasisnocaption.isHidden = true
-//            self.animatedLabel.isHidden = true
-//            
-//            
-//            webViewOverlay = animatedViewOf(frame:self.view.frame, size:menuImageView.image!.size, imageurl: remoteAsset.localimagepath)
-//            self.view.addSubview(webViewOverlay!)
-//            addDismissButtonToViewController(self , named:appTheme.dismissButtonImageName,#selector(dismisstapped))
-//            
-//            return
-//        }
-//        
+       
         addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    
+ 
+ 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
     }

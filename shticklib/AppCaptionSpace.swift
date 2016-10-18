@@ -107,6 +107,49 @@ extension AppCE {
         }
     }
 }
+
+///
+extension AppCE {
+      mutating func changeCaption(to caption:String) {
+        let alreadyIn = AppCaptionSpace.findMatchingAsset(path: self.localimagepath, caption: caption)
+        if !alreadyIn {
+            // keep old and
+            //AppCaptionSpace.unhinge(id:self.id) //remove old
+            // make new with new caption but all else is similar
+            let _ = AppCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath, caption: caption, options: self.stickerOptions)
+        }
+        //
+    }
+     func cloneWithNewCaption(_ caption:String){
+        let alreadyIn = AppCaptionSpace.findMatchingAsset(path: self.localimagepath, caption: caption)
+        if !alreadyIn {
+            // keep old and make another
+            let _ = AppCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath,  caption: caption,  options: self.stickerOptions )
+            let _ = try? prepareStickers( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath,  caption: caption,  options: self.stickerOptions)
+            SharedCaptionSpace.saveData()
+        }
+    }
+     mutating func moveToIMessage() { // only from capspace
+        // duplicate and save to other space under same id, as is
+        // if there is something in there with same file and caption then forget it
+        let alreadyIn = SharedCaptionSpace.findMatchingAsset(path: self.localimagepath, caption: self.caption)
+        if !alreadyIn {
+            do {
+                //let theData = try Data(contentsOf: URL(string:self.localimagepath)!)
+                let options = self.stickerOptions
+                // adjust options based on size of image
+                // now pass the filenames into the shared space
+                // ce.localimagepath = url.absoluteString // dink with this
+                let _ = try prepareStickers( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath,  caption: self.caption,  options: options)
+                SharedCaptionSpace.saveData()
+            }
+            catch {
+                print("could not makemade sticker file urls \(localimagepath)")
+            }
+        }
+    }
+}
+
 //MARK: AppCaptionSpace collects and persists AppCEs
 
 struct AppCaptionSpace {

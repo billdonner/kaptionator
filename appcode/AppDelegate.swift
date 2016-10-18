@@ -25,8 +25,7 @@ var masterViewController : MasterViewController?
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate
-    //, ModelDataHistoryDelegate
-{
+    {
     
     var window: UIWindow?
     
@@ -50,7 +49,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate
                 cvc.collectionView?.reloadData()
             }
         }
-        
         return true
     }
     

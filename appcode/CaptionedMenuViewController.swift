@@ -15,7 +15,7 @@ final class CaptionedMenuViewController: UIViewController, AddDismissButton {
     var captionedEntry:AppCE! // must be set
     var delegate: CaptionedMenuViewDelegate?  // mig
     
-    var mvc:MasterViewController! // must be set
+    var pvc:UIViewController! // must be set
     
     @IBAction func unwindToCaptionedMenuViewController(_ segue: UIStoryboardSegue)  {}
     
@@ -40,9 +40,12 @@ final class CaptionedMenuViewController: UIViewController, AddDismissButton {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "ChangeCaptionViewControllerID" ) as? ChangeCaptionViewController
         if let vc = vc {
             vc.delegate = self
-            vc.modalPresentationStyle = .overFullScreen
+            vc.modalPresentationStyle = .overCurrentContext
             vc.modalTransitionStyle = .crossDissolve
-            mvc.present(vc,animated:true,completion:nil)
+            pvc.dismiss(animated: false){
+                //first get rid of ourselves, then presenty on the parent
+            self.pvc.present(vc,animated:true,completion:nil)
+            }
         }
     }
     @IBAction func moveToIMessage(_ sender: AnyObject) {

@@ -9,6 +9,7 @@
 import UIKit
 final class HelpDropdownViewController: ReverseModalBlurViewController {
     
+    @IBOutlet weak var imageview: UIImageView!
     
     @IBOutlet weak var topLabel: UILabel!
     
@@ -20,7 +21,8 @@ final class HelpDropdownViewController: ReverseModalBlurViewController {
         let count = SharedCaptionSpace.itemCount()
         let remcount = RemSpace.itemCount()
         topLabel.text =  extensionScheme
-        subLabel.text =  " - \(count) stickers in Messages App"
-           bodyLabel.text =  " - \(remcount) catalog entries"
+        subLabel.text =  "Currently you have \(count) stickers in the Messages App"
+           bodyLabel.text =  "You have \(remcount) catalog entries as sources to make stickers"
+                imageview.image = UIImage(named:backgroundImagePath)
     }
 }
