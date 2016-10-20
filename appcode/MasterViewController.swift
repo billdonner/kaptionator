@@ -14,12 +14,11 @@ get {
     return nil
 }
 }
-protocol ControlledByMasterView{
+protocol ControlledByMasterView {
      var mvc:MasterViewController!{ get }
 }
 class ControlledCollectionViewController:UICollectionViewController,ControlledByMasterView {
      var mvc: MasterViewController!
- 
 }
 final class MasterViewController: UIViewController {
     let  offColor:UIColor  = UIColor.lightGray
@@ -27,19 +26,14 @@ final class MasterViewController: UIViewController {
     @IBAction func unwindToMaster(_ segue: UIStoryboardSegue)  {}
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
-
-    
     @IBOutlet weak var catb: UIBarButtonItem!
-    
     @IBOutlet weak var stickerz: UIBarButtonItem!
-    
     @IBOutlet weak var helpbbi: UIBarButtonItem!
     @IBOutlet weak var imessage: UIBarButtonItem!
-    
     @IBOutlet weak var coloredSpacer: UIView! 
-    var currentViewController: UIViewController?
+    private var currentViewController: UIViewController?
+     var showFirstHelp = true
     
-    var showFirstHelp = true
     private var showCatalogViewController: ControlledCollectionViewController?
     private var showCaptionedViewController: CapationatedViewController?
     private var showMessagesViewController: MessagesViewController?
@@ -51,9 +45,14 @@ final class MasterViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if let _  = segue.destination as? HelpOverlayViewController {
+        if let _  = segue.destination as? WebHelpViewController {
             //detailsViewController.presentingViewController?
             self.modalPresentationStyle = .overCurrentContext
+        }
+        else if "HelpDropdownViewControllerID" ==  segue.identifier {
+          if  let hdvc = segue.destination as?HelpDropdownViewController {
+            hdvc.pvc = self
+        }
         }
     }
   
@@ -130,13 +129,9 @@ final class MasterViewController: UIViewController {
         }
  
         if showCatalogViewController == nil {
-            let vcid = showCatalogID
-            
-            showCatalogViewController = self.storyboard?.instantiateViewController(withIdentifier: vcid ) as? ControlledCollectionViewController
+            showCatalogViewController = self.storyboard?.instantiateViewController(withIdentifier: showCatalogID ) as? ControlledCollectionViewController
             showCatalogViewController?.mvc = self
-            
             showCatalogViewController?.view.translatesAutoresizingMaskIntoConstraints = false
-            
         }
         cycleFromViewController(oldViewController:  currentViewController!, toViewController: showCatalogViewController!)
     

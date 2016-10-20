@@ -372,11 +372,21 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QqT-1J-GVa" userLabel="SPACER">
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QzG-eM-XxI">
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="animated" textAlignment="right" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3eP-ym-BMn">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" translatesAutoresizingMaskIntoConstraints="NO" id="0Vz-b7-bLk">
+                                                        <color key="onTintColor" red="0.19376453760000001" green="0.50850099329999998" blue="0.85232251879999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <action selector="animationSwitchTapped:" destination="8NT-q7-zWI" eventType="valueChanged" id="BLM-hn-0Bb"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADD A NEW STICKER FROM THE CATALOG" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Wda-1J-Mgd">
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -407,11 +417,6 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <variation key="heightClass=compact-widthClass=compact">
-                                            <mask key="subviews">
-                                                <exclude reference="QqT-1J-GVa"/>
-                                            </mask>
-                                        </variation>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -435,6 +440,7 @@
                     <connections>
                         <outlet property="addcaption" destination="Uw2-Wb-c8h" id="WRA-Db-KNI"/>
                         <outlet property="animatedLabel" destination="Wda-1J-Mgd" id="dGR-ex-QZo"/>
+                        <outlet property="animationSwitch" destination="0Vz-b7-bLk" id="VHI-k4-vuC"/>
                         <outlet property="imageCaption" destination="1Tp-cr-xLu" id="H7e-Ar-xuE"/>
                         <outlet property="menuImageView" destination="CnA-wW-HPt" id="Dx0-t7-d6z"/>
                         <outlet property="outerView" destination="zyh-fs-daL" id="Fce-GT-W94"/>
@@ -446,7 +452,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ij-FW-62O" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="UwL-ns-SpK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-3780" y="-5930"/>
+            <point key="canvasLocation" x="-3472" y="-7580"/>
         </scene>
         <!--Messaged Menu-->
         <scene sceneID="mcs-Nh-pSI">
@@ -485,8 +491,9 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="WLL-Dl-pFX" firstAttribute="top" secondItem="Ddf-uA-Ot8" secondAttribute="top" constant="90" id="A3I-gW-hHF"/>
+                                            <constraint firstAttribute="bottom" secondItem="ek7-tb-bXc" secondAttribute="bottom" constant="20" id="01X-ej-GYZ"/>
                                             <constraint firstItem="WLL-Dl-pFX" firstAttribute="centerX" secondItem="ek7-tb-bXc" secondAttribute="centerX" id="LVD-MR-DMP"/>
+                                            <constraint firstAttribute="trailing" secondItem="ek7-tb-bXc" secondAttribute="trailing" constant="20" id="Rvj-1l-dR5"/>
                                             <constraint firstItem="ek7-tb-bXc" firstAttribute="leading" secondItem="Ddf-uA-Ot8" secondAttribute="leading" constant="20" id="Y0L-WQ-ZnM"/>
                                             <constraint firstItem="WLL-Dl-pFX" firstAttribute="width" secondItem="ek7-tb-bXc" secondAttribute="height" multiplier="1:2" id="iuL-Xm-V3S"/>
                                             <constraint firstItem="WLL-Dl-pFX" firstAttribute="centerY" secondItem="ek7-tb-bXc" secondAttribute="centerY" id="jhA-HK-oO8"/>
@@ -611,7 +618,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DsP-IT-djv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2129" y="-5052"/>
+            <point key="canvasLocation" x="-2837" y="-6676"/>
         </scene>
         <!--Captioned Menu-->
         <scene sceneID="jCi-iC-0vi">
@@ -734,10 +741,10 @@
             </objects>
             <point key="canvasLocation" x="-2345" y="-4093"/>
         </scene>
-        <!--Help Overlay View Controller-->
+        <!--Web Help View Controller-->
         <scene sceneID="dou-G2-wW1">
             <objects>
-                <viewController storyboardIdentifier="HelpOverlayViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="bbi-GL-AyA" customClass="HelpOverlayViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebHelpViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="bbi-GL-AyA" customClass="WebHelpViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TZ7-63-wSY"/>
                         <viewControllerLayoutGuide type="bottom" id="4u4-Ys-5DH"/>
@@ -1063,7 +1070,7 @@
         <!--AppHelp Overlay View Controller-->
         <scene sceneID="Pd4-iY-pNO">
             <objects>
-                <viewController storyboardIdentifier="AltHelpOverlayViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="e5R-KU-Svr" userLabel="AppHelp Overlay View Controller" customClass="AltHelpOverlayViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AltWebHelpViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="e5R-KU-Svr" userLabel="AppHelp Overlay View Controller" customClass="AltWebHelpViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LKe-US-o0E"/>
                         <viewControllerLayoutGuide type="bottom" id="Rlo-3S-bH7"/>
@@ -1151,6 +1158,30 @@
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HIx-6n-nAp">
                                         <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bY8-FY-e0H">
+                                                <state key="normal" title="import from photo library">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="hitPhotoImport:" destination="gSw-aw-CPu" eventType="touchUpInside" id="jxT-9f-QCB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVH-hD-A6N">
+                                                <state key="normal" title="import from itunes">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="hitITunesAction:" destination="gSw-aw-CPu" eventType="touchUpInside" id="fXa-Fi-3Ws"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKB-Mx-ObQ">
+                                                <state key="normal" title="import from icloud">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="hitICloud:" destination="gSw-aw-CPu" eventType="touchUpInside" id="uJM-US-MIj"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GmS-66-XZx">
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                 <state key="normal" title="Quick Help">
@@ -1202,6 +1233,11 @@
                     </view>
                     <connections>
                         <outlet property="bodyLabel" destination="gq9-Th-w6F" id="tiU-35-lSo"/>
+                        <outlet property="hitArtistsSiteButton" destination="vBg-CJ-edw" id="iML-Nj-1u9"/>
+                        <outlet property="hitICloudButton" destination="DKB-Mx-ObQ" id="XQf-UC-kph"/>
+                        <outlet property="hitITunes" destination="aVH-hD-A6N" id="IQh-yY-rDl"/>
+                        <outlet property="hitPhotoImportButton" destination="bY8-FY-e0H" id="nD0-3D-Zar"/>
+                        <outlet property="hitWebHelpButton" destination="OWd-VS-FKR" id="RMK-I0-otN"/>
                         <outlet property="imageview" destination="URj-FH-z6e" id="vz6-xn-xL8"/>
                         <outlet property="subLabel" destination="HNV-Bc-DGp" id="hC3-UM-QRK"/>
                         <outlet property="topLabel" destination="fJX-kd-6X1" id="wh9-rM-uQS"/>
@@ -1209,7 +1245,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U9l-ZS-Zrh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-153.37331334332833" y="300"/>
+            <point key="canvasLocation" x="1138" y="183"/>
         </scene>
         <!--WebsiteOverlayViewController-->
         <scene sceneID="w3G-GE-Juz">
@@ -1268,6 +1304,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L56-Ay-f9E"/>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dxe-q7-lnx">
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fQ3-sh-vpy">
                                     <frame key="frameInset"/>
@@ -1301,13 +1338,18 @@
                             <constraint firstItem="OTT-gp-KCi" firstAttribute="top" secondItem="uAQ-bN-Vo3" secondAttribute="bottom" id="G3P-7M-Da8"/>
                             <constraint firstItem="5iS-Cw-POu" firstAttribute="top" secondItem="Dxe-q7-lnx" secondAttribute="bottom" id="QNX-P7-BBT"/>
                             <constraint firstItem="yuO-lN-Z04" firstAttribute="height" secondItem="8lh-r1-rSP" secondAttribute="height" multiplier="6:20" id="SVU-q4-Ept"/>
-                            <constraint firstItem="Dxe-q7-lnx" firstAttribute="leading" secondItem="8lh-r1-rSP" secondAttribute="leadingMargin" constant="-16" id="Uie-pQ-9iP"/>
+                            <constraint firstItem="Dxe-q7-lnx" firstAttribute="leading" secondItem="8lh-r1-rSP" secondAttribute="leadingMargin" constant="-20" id="Uie-pQ-9iP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OTT-gp-KCi" secondAttribute="trailing" constant="-16" id="Wo2-zW-XhZ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Dxe-q7-lnx" secondAttribute="trailing" constant="-16" id="d2R-6l-UR0"/>
+                            <constraint firstItem="5iS-Cw-POu" firstAttribute="top" secondItem="L56-Ay-f9E" secondAttribute="bottom" id="YWI-HC-ELl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="L56-Ay-f9E" secondAttribute="trailing" id="by5-TS-8se"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Dxe-q7-lnx" secondAttribute="trailing" constant="-20" id="d2R-6l-UR0"/>
+                            <constraint firstItem="L56-Ay-f9E" firstAttribute="leading" secondItem="8lh-r1-rSP" secondAttribute="leadingMargin" id="kTr-kK-JO5"/>
                             <constraint firstItem="Dxe-q7-lnx" firstAttribute="top" secondItem="uAQ-bN-Vo3" secondAttribute="bottom" constant="-20" id="vUr-xy-5pJ"/>
+                            <constraint firstItem="L56-Ay-f9E" firstAttribute="top" secondItem="uAQ-bN-Vo3" secondAttribute="bottom" id="xHh-nb-dVW"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundImageView" destination="L56-Ay-f9E" id="btP-YV-wvy"/>
                         <outlet property="theCaptionTextView" destination="yuO-lN-Z04" id="gO5-eV-Bnj"/>
                         <segue destination="Ji9-dU-8KZ" kind="unwind" identifier="UnwindToCatalogAppVC" unwindAction="unwindToCatalogLocalItemsViewController:" id="AS5-sv-UcK"/>
                         <segue destination="Ji9-dU-8KZ" kind="unwind" identifier="UnwindToITunesAppVC" unwindAction="unwindToITunesViewController:" id="Zkf-j0-69s"/>
@@ -1358,10 +1400,10 @@
                         <constraints>
                             <constraint firstItem="WTi-xY-ts2" firstAttribute="top" secondItem="A0E-lc-GM4" secondAttribute="bottom" id="DoK-mA-bkT"/>
                             <constraint firstItem="lMq-Ty-zg8" firstAttribute="leading" secondItem="yNI-q1-evx" secondAttribute="leadingMargin" constant="-16" id="JoT-jH-aUU"/>
-                            <constraint firstItem="A0E-lc-GM4" firstAttribute="leading" secondItem="yNI-q1-evx" secondAttribute="leadingMargin" constant="-16" id="SKx-yp-G9g"/>
+                            <constraint firstItem="A0E-lc-GM4" firstAttribute="leading" secondItem="yNI-q1-evx" secondAttribute="leadingMargin" constant="-20" id="SKx-yp-G9g"/>
                             <constraint firstItem="tAb-9V-Nir" firstAttribute="top" secondItem="lMq-Ty-zg8" secondAttribute="bottom" constant="16" id="W3l-Ti-CWY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tAb-9V-Nir" secondAttribute="trailing" id="Xeo-px-Lci"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="A0E-lc-GM4" secondAttribute="trailing" constant="-16" id="hyP-ej-s0o"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="A0E-lc-GM4" secondAttribute="trailing" constant="-20" id="hyP-ej-s0o"/>
                             <constraint firstItem="lMq-Ty-zg8" firstAttribute="top" secondItem="bdi-tR-qzH" secondAttribute="bottom" id="jKc-E7-Fat"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lMq-Ty-zg8" secondAttribute="trailing" constant="-16" id="lvM-xH-FE2"/>
                             <constraint firstItem="tAb-9V-Nir" firstAttribute="height" secondItem="yNI-q1-evx" secondAttribute="height" multiplier="6:20" id="nTE-wj-57v"/>
@@ -1552,10 +1594,19 @@
                                                     <constraint firstAttribute="width" secondItem="3Co-AZ-vzD" secondAttribute="height" multiplier="1:1" id="qtG-vi-Va1"/>
                                                 </constraints>
                                             </imageView>
+                                            <webView hidden="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdk-oy-zTP">
+                                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="kdk-oy-zTP" secondAttribute="height" multiplier="1:1" id="Isj-DI-J9b"/>
+                                                </constraints>
+                                            </webView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="3Co-AZ-vzD" secondAttribute="bottom" constant="20" id="AA1-O9-voh"/>
+                                            <constraint firstItem="kdk-oy-zTP" firstAttribute="width" secondItem="3Co-AZ-vzD" secondAttribute="height" multiplier="1:2" id="Czg-Vk-iJI"/>
+                                            <constraint firstItem="kdk-oy-zTP" firstAttribute="centerX" secondItem="3Co-AZ-vzD" secondAttribute="centerX" id="JPZ-un-lux"/>
+                                            <constraint firstItem="kdk-oy-zTP" firstAttribute="centerY" secondItem="3Co-AZ-vzD" secondAttribute="centerY" id="VW8-ex-E8q"/>
                                             <constraint firstItem="3Co-AZ-vzD" firstAttribute="leading" secondItem="eNy-ul-pkK" secondAttribute="leading" constant="20" id="c27-iN-zAO"/>
                                             <constraint firstItem="3Co-AZ-vzD" firstAttribute="top" secondItem="eNy-ul-pkK" secondAttribute="top" constant="20" id="cpI-6s-GBx"/>
                                             <constraint firstAttribute="trailing" secondItem="3Co-AZ-vzD" secondAttribute="trailing" constant="20" id="h8N-DX-qwb"/>
@@ -1568,11 +1619,22 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N84-iM-Boj" userLabel="SPACER">
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Le0-Jm-hRf">
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="try to show as animation" textAlignment="right" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCf-n3-G6v">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" translatesAutoresizingMaskIntoConstraints="NO" id="8b2-ii-TtE">
+                                                        <color key="onTintColor" red="0.19376453760000001" green="0.50850099329999998" blue="0.85232251879999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <action selector="animationSwitchTapped:" destination="Urn-Mx-6JP" eventType="valueChanged" id="O7H-AB-1kd"/>
+                                                            <action selector="animationSwitchTapped:" destination="8NT-q7-zWI" eventType="valueChanged" id="cBZ-qJ-NSj"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADD A NEW STICKER FROM ITUNES CATALOG OF IMAGES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jog-Fp-Xnl">
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -1603,11 +1665,6 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <variation key="heightClass=compact-widthClass=compact">
-                                            <mask key="subviews">
-                                                <exclude reference="N84-iM-Boj"/>
-                                            </mask>
-                                        </variation>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -1631,15 +1688,17 @@
                     <connections>
                         <outlet property="addcaption" destination="Nq8-hh-IvS" id="m4o-xq-YLO"/>
                         <outlet property="animatedLabel" destination="Jog-Fp-Xnl" id="2gi-S4-cXW"/>
+                        <outlet property="animationSwitch" destination="8b2-ii-TtE" id="hxf-R2-pHW"/>
                         <outlet property="imageCaption" destination="DtQ-nG-9T5" id="fNd-07-xn6"/>
                         <outlet property="menuImageView" destination="3Co-AZ-vzD" id="7hj-vL-7U4"/>
                         <outlet property="outerView" destination="eNy-ul-pkK" id="4bG-ta-YkU"/>
                         <outlet property="useasisnocaption" destination="aaa-4J-tSj" id="TFI-vG-SUu"/>
+                        <outlet property="webviewOverlay" destination="kdk-oy-zTP" id="vLT-7E-uW1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8o1-sP-PbQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3780" y="-5930"/>
+            <point key="canvasLocation" x="-3484" y="-6689"/>
         </scene>
     </scenes>
     <resources>
@@ -1654,6 +1713,6 @@
         <image name="captions" width="216" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="feV-Qq-mVg"/>
+        <segue reference="Xgi-zr-l9n"/>
     </inferredMetricsTieBreakers>
 </document>

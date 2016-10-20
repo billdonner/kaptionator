@@ -25,7 +25,7 @@ final class ITunesViewController :ControlledCollectionViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
-        print ("**********removed all cached images because CatalogViewController short on memory")
+        print ("**********removed all cached images because iTunesViewController short on memory")
     }
     
     //MARK:- Dispatching to External ViewControllers
@@ -46,53 +46,9 @@ final class ITunesViewController :ControlledCollectionViewController {
     
     //MARK:- Lifecyle for ViewControllers
       /// load from shared documents in itune (must be on in info.plist)
-        private func loadFromITunesSharing(   completion:GFRM?) {
-        //let iTunesBase = manifestFromDocumentsDirector
-        // store file locally into catalog
-        // var first = true
-        let apptitle = "-local-"
-        var allofme:ManifestItems = []
-        do {
-            let dir = FileManager.default.urls (for:  .documentDirectory, in: .userDomainMask)
-            let documentsUrl =  dir.first!
-            
-            // Get the directory contents urls (including subfolders urls)
-            let directoryContents = try FileManager.default.contentsOfDirectory(at: documentsUrl, includingPropertiesForKeys: nil, options: .skipsSubdirectoryDescendants)
-            let _ =  try directoryContents.map {
-                let lastpatch = $0.lastPathComponent
-                if !lastpatch.hasPrefix(".") { // exclude wierd files
-                    let imagename = lastpatch
-                    
-                    if (lastpatch as NSString).pathExtension.lowercased() == "json" {
-                        let data = try Data(contentsOf: $0) // read
-                        Manifest.parseData(data, baseURL: documentsUrl.absoluteString, completion: completion!)
-                    } else {
-                 // copy from documents area into a regular local file
-                        
-                        
-                        let localpath = $0
-                        let me = RemoteAsset(pack: "apptitle", title: imagename, thumb:"", remoteurl: localpath.absoluteString,  localpath:nil, options:
-                            .generatemedium)
-                        
-                        RemSpace.addasset(ra: me) // be sure to coun
-                        allofme.append(me)                     }
-                    
-                // finally, delete the file
-                try FileManager.default.removeItem(at: $0)
-                }
-            }
-            
-            RemSpace.saveToDisk()
-            if completion != nil  {
-                completion! (200, apptitle, allofme)
-            }
-        }
-        catch {
-            print("loadFromITunesSharing: file system error \(error)")
-            
-            self.refreshControl.endRefreshing()
-        }
-            
+    private func loadx ( completion:GFRM?) {
+        loadFromITunesSharing(completion: completion)
+        self.refreshControl.endRefreshing()
     }
     func refreshFromITunes() {
         loadFromITunesSharing( completion: { status, title, allofme in
@@ -108,6 +64,7 @@ final class ITunesViewController :ControlledCollectionViewController {
             mvc.showFirstHelp = false
             mvc.performSegue(withIdentifier: "StartupHelpID", sender: nil)
         }
+        self.collectionView!.reloadData()
     }
     override func viewDidLoad() {
         self.collectionView!.backgroundColor = appTheme.backgroundColor
@@ -166,6 +123,7 @@ final class ITunesViewController :ControlledCollectionViewController {
             cell.paintImage(path:ra.localimagepath)
         }
         //cell.colorFor(ra:ra)
+        cell.isSelected = false
         return cell // Return the cell
     }
     

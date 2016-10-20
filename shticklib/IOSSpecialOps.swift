@@ -69,6 +69,8 @@ struct IOSSpecialOps { // only compiles in main app - ios bug?
     
     
 }
+
+
 class CacheKey {
     // must wrap into real object for new generic Cache in swift3
     

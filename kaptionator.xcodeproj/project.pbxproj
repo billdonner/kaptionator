@@ -184,10 +184,10 @@
 		88DD92FE1D88738200832564 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E31D88738200832564 /* MessagesViewController.swift */; };
 		88DD92FF1D88738200832564 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E31D88738200832564 /* MessagesViewController.swift */; };
 		88DD93001D88738200832564 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E31D88738200832564 /* MessagesViewController.swift */; };
-		88DD93011D88738200832564 /* HelpOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E41D88738200832564 /* HelpOverlayViewController.swift */; };
-		88DD93021D88738200832564 /* HelpOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E41D88738200832564 /* HelpOverlayViewController.swift */; };
-		88DD93031D88738200832564 /* HelpOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E41D88738200832564 /* HelpOverlayViewController.swift */; };
-		88DD93041D88738200832564 /* HelpOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E41D88738200832564 /* HelpOverlayViewController.swift */; };
+		88DD93011D88738200832564 /* WebHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E41D88738200832564 /* WebHelpViewController.swift */; };
+		88DD93021D88738200832564 /* WebHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E41D88738200832564 /* WebHelpViewController.swift */; };
+		88DD93031D88738200832564 /* WebHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E41D88738200832564 /* WebHelpViewController.swift */; };
+		88DD93041D88738200832564 /* WebHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E41D88738200832564 /* WebHelpViewController.swift */; };
 		88DD93051D88738200832564 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E51D88738200832564 /* MasterViewController.swift */; };
 		88DD93061D88738200832564 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E51D88738200832564 /* MasterViewController.swift */; };
 		88DD93071D88738200832564 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E51D88738200832564 /* MasterViewController.swift */; };
@@ -396,7 +396,7 @@
 		88DD92E11D88738200832564 /* CaptionedMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptionedMenuViewController.swift; sourceTree = "<group>"; };
 		88DD92E21D88738200832564 /* CapationatedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapationatedViewController.swift; sourceTree = "<group>"; };
 		88DD92E31D88738200832564 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
-		88DD92E41D88738200832564 /* HelpOverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpOverlayViewController.swift; sourceTree = "<group>"; };
+		88DD92E41D88738200832564 /* WebHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebHelpViewController.swift; sourceTree = "<group>"; };
 		88DD92E51D88738200832564 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		88DD92E61D88738200832564 /* MessagedMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagedMenuViewController.swift; sourceTree = "<group>"; };
 		88DD92E71D88738200832564 /* CatalogDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogDataCell.swift; sourceTree = "<group>"; };
@@ -516,7 +516,6 @@
 				88FA07D61DA402330063B483 /* ChangeCaptionViewController.swift */,
 				88B570EB1DA566B400CD4058 /* GetCaptionViewController.swift */,
 				883982A41DB2B4F100B5A037 /* HelpDropdownViewController.swift */,
-				88DD92E41D88738200832564 /* HelpOverlayViewController.swift */,
 				883982961DB1421C00B5A037 /* InnerHelpViewController.swift */,
 				881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */,
 				88B5718D1DA6FC8F00CD4058 /* ITunesDataCell.swift */,
@@ -531,6 +530,7 @@
 				886B4AC71D9DDD5B00581C9B /* ReorderMessagesViewController.swift */,
 				88B54CA51D8870060076942D /* SFViewController.swift */,
 				8862CE311DB0838500685CCA /* StartupHelpViewController.swift */,
+				88DD92E41D88738200832564 /* WebHelpViewController.swift */,
 			);
 			path = appcode;
 			sourceTree = "<group>";
@@ -856,6 +856,9 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
 						};
 					};
 					88AEA5A91D514B53006E5C70 = {
@@ -934,6 +937,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};
@@ -1068,7 +1074,7 @@
 			files = (
 				88DD93091D88738200832564 /* MessagedMenuViewController.swift in Sources */,
 				88B5718E1DA6FC8F00CD4058 /* ITunesDataCell.swift in Sources */,
-				88DD93011D88738200832564 /* HelpOverlayViewController.swift in Sources */,
+				88DD93011D88738200832564 /* WebHelpViewController.swift in Sources */,
 				889FB7221D9438220064B4C9 /* CatalogRemoteViewController.swift in Sources */,
 				88EEC93B1D9C06CF00C188EF /* DatabaseStuff.swift in Sources */,
 				88DD92E91D88738200832564 /* AppDelegate.swift in Sources */,
@@ -1113,7 +1119,7 @@
 			files = (
 				88DD930A1D88738200832564 /* MessagedMenuViewController.swift in Sources */,
 				88B5718F1DA6FC8F00CD4058 /* ITunesDataCell.swift in Sources */,
-				88DD93021D88738200832564 /* HelpOverlayViewController.swift in Sources */,
+				88DD93021D88738200832564 /* WebHelpViewController.swift in Sources */,
 				88DD92EA1D88738200832564 /* AppDelegate.swift in Sources */,
 				886B4ACE1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88DD92F21D88738200832564 /* CatalogMenuViewController.swift in Sources */,
@@ -1158,7 +1164,7 @@
 			files = (
 				88DD930B1D88738200832564 /* MessagedMenuViewController.swift in Sources */,
 				88B571901DA6FC8F00CD4058 /* ITunesDataCell.swift in Sources */,
-				88DD93031D88738200832564 /* HelpOverlayViewController.swift in Sources */,
+				88DD93031D88738200832564 /* WebHelpViewController.swift in Sources */,
 				88DD92EB1D88738200832564 /* AppDelegate.swift in Sources */,
 				886B4ACF1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88DD92F31D88738200832564 /* CatalogMenuViewController.swift in Sources */,
@@ -1203,7 +1209,7 @@
 			files = (
 				88DD930C1D88738200832564 /* MessagedMenuViewController.swift in Sources */,
 				88B571911DA6FC8F00CD4058 /* ITunesDataCell.swift in Sources */,
-				88DD93041D88738200832564 /* HelpOverlayViewController.swift in Sources */,
+				88DD93041D88738200832564 /* WebHelpViewController.swift in Sources */,
 				88DD92EC1D88738200832564 /* AppDelegate.swift in Sources */,
 				886B4AD01D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88DD92F41D88738200832564 /* CatalogMenuViewController.swift in Sources */,

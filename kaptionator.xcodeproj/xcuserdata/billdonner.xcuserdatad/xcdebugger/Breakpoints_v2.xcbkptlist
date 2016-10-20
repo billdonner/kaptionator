@@ -926,11 +926,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shticklib/manifest.swift"
-            timestampString = "497491380.83215"
+            timestampString = "498580209.179823"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "loadJSONFromLocal(url:completion:)"
             landmarkType = "7">
             <Locations>
@@ -974,11 +974,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shticklib/manifest.swift"
-            timestampString = "497491380.83215"
+            timestampString = "498580209.179823"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "loadJSONFromLocal(url:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1036,11 +1036,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shticklib/manifest.swift"
-            timestampString = "497491380.83215"
+            timestampString = "498580209.179823"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "processOneURL(_:completion:)"
             landmarkType = "7">
             <Locations>
@@ -1084,11 +1084,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/ITunesViewController.swift"
-            timestampString = "498243135.553139"
+            timestampString = "498588610.709792"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1100,27 +1100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/ITunesViewController.swift"
-            timestampString = "498243135.553139"
+            timestampString = "498588610.709792"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "loadFromITunesSharing(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "appcode/ITunesViewController.swift"
-            timestampString = "498243135.553139"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "refreshFromITunes()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1132,27 +1116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/ITunesViewController.swift"
-            timestampString = "498243135.553139"
+            timestampString = "498588610.709792"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "loadFromITunesSharing(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "appcode/ITunesViewController.swift"
-            timestampString = "498243135.553139"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "refreshFromITunes()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1474,11 +1442,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/MasterViewController.swift"
-            timestampString = "498490652.373079"
+            timestampString = "498588610.709792"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "stickerAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1506,11 +1474,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/CatalogMenuViewController.swift"
-            timestampString = "498492807.655811"
+            timestampString = "498607119.125088"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "captionWasEntered(caption:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1568,11 +1536,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shticklib/manifest.swift"
-            timestampString = "497491380.83215"
+            timestampString = "498580209.179823"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "processOneLocal(_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1648,11 +1616,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shticklib/RemoteAsset.swift"
-            timestampString = "498236918.093931"
+            timestampString = "498595853.680224"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
             landmarkName = "init(pack:title:thumb:remoteurl:localpath:options:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1664,12 +1632,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/CatalogMenuViewController.swift"
-            timestampString = "498242732.886207"
+            timestampString = "498581788.13495"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "useStickerNoCaptionPressed(_:)"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "animationSwitchTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1728,11 +1696,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/AppDelegate.swift"
-            timestampString = "498491820.53611"
+            timestampString = "498576532.605366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "application(_:open:options:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1744,11 +1712,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/AppDelegate.swift"
-            timestampString = "498491820.53611"
+            timestampString = "498576532.605366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "application(_:open:options:)"
             landmarkType = "7">
             <Locations>
@@ -1788,49 +1756,81 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/ITunesMenuViewController.swift"
-            timestampString = "498269454.349669"
+            timestampString = "498607119.125088"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "addCaptionToSticker(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "emogeez.ITunesMenuViewController.addCaptionToSticker (Swift.AnyObject) -&gt; ()"
-                  moduleName = "emogeez"
+                  symbolName = "kaptionator.ITunesMenuViewController.addCaptionToSticker (Swift.AnyObject) -&gt; ()"
+                  moduleName = "kaptionator"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/billdonner/Documents/kaptionator/appcode/ITunesMenuViewController.swift"
-                  timestampString = "498495586.90943"
+                  timestampString = "498525642.115924"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "51"
                   endingLineNumber = "51"
-                  offsetFromSymbolStart = "1445">
+                  offsetFromSymbolStart = "1276">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "emogeez.ITunesMenuViewController.(addCaptionToSticker (Swift.AnyObject) -&gt; ()).(closure #1)"
-                  moduleName = "emogeez"
+                  symbolName = "kaptionator.ITunesMenuViewController.(addCaptionToSticker (Swift.AnyObject) -&gt; ()).(closure #1)"
+                  moduleName = "kaptionator"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/billdonner/Documents/kaptionator/appcode/ITunesMenuViewController.swift"
-                  timestampString = "498495586.910989"
+                  timestampString = "498525642.117692"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "52"
                   endingLineNumber = "52"
-                  offsetFromSymbolStart = "26">
+                  offsetFromSymbolStart = "28">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shticklib/RemoteAsset.swift"
+            timestampString = "498595853.680224"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "init(localurl:options:title:thumb:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "appcode/HelpDropdownViewController.swift"
+            timestampString = "498605801.829897"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

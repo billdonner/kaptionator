@@ -16,7 +16,7 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
     var delegate: CatalogMenuViewDelegate?  // mig
     
     var pvc:UIViewController! // must be set
-    private var isAnimated  = false
+    //private var isAnimated  = false
     fileprivate var changesMade: Bool = false
     
     @IBAction func unwindToCatalogMenuViewController(_ segue: UIStoryboardSegue)  {
@@ -30,9 +30,17 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
     @IBOutlet weak var addcaption: UIButton!
     //MARK:- MENU TAP ACTIONS
     @IBOutlet weak var animatedLabel: UILabel!
+    
+    @IBOutlet weak var animationSwitch: UISwitch!
+    
+    @IBAction func animationSwitchTapped(_ sender: AnyObject) {
+    addcaption.isEnabled = !animationSwitch.isOn
+     addcaption.setTitleColor(animationSwitch.isOn ? .darkGray : .lightGray,for: .normal) }
     @IBAction func useStickerNoCaptionPressed(_ sender: AnyObject) {
-        delegate?.useWithNoCaption (remoteAsset:remoteAsset) // elsewhere
-        dismiss(animated: true,completion:nil)
+        
+        pvc.dismiss(animated: true) {
+        self.delegate?.useWithNoCaption (remoteAsset:self.remoteAsset) // elsewhere
+        }
     }
     @IBAction func addCaptionToSticker(_ sender: AnyObject) {
         imageCaption.textColor = .darkGray
@@ -42,6 +50,8 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "GetCaptionViewControllerID" ) as? GetCaptionViewController
         if let vc = vc {
         vc.delegate = self
+            
+            vc.backgroundImage = menuImageView.image
         vc.unwinder = "UnwindToCatalogAppVC"
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
@@ -51,7 +61,7 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
         }
     }
     internal func dismisstapped(_ s: AnyObject) {
-        dismiss(animated: true, completion: nil)
+        pvc.dismiss(animated: true, completion: nil)
 //         self.performSegue(withIdentifier: "UnwindToCatalogAppVC", sender: s)
     }
     //MARK:- VC LIFECYLE
@@ -65,7 +75,7 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
         useasisnocaption.setTitleColor(appTheme.buttonTextColor, for: .normal)
         addcaption.setTitleColor(appTheme.buttonTextColor, for: .normal)
         // Do any additional setup after loading the view.
-        isAnimated = remoteAsset.options.contains(.generateasis)
+       let  isAnimated = remoteAsset.options.contains(.generateasis)
         do {
             let data = try  Data(contentsOf: URL(string:remoteAsset.localimagepath )!)
             menuImageView.image = UIImage(data:data)
@@ -77,7 +87,7 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
        // imageCaption.isEnabled  = false
         imageCaption.text = showVendorTitles ? remoteAsset.caption : ""  // KEEP, its first
         if isAnimated {
-            self.addcaption.isHidden = true
+            //self.addcaption.isHidden = true
             self.useasisnocaption.isHidden = false
             let scale : CGFloat = 1 / 1
             ///  put up animated preview
@@ -91,6 +101,13 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
             webviewOverlay.contentMode = .scaleAspectFit
             webviewOverlay.loadHTMLString(html, baseURL: nil)
         }
+      // animated can not me modified
+        animationSwitch.setOn(isAnimated ,animated:true)
+        let captionable = !isAnimated || showCatalogID == "ShowITunesID"
+        animationSwitch.isEnabled = showCatalogID == "ShowITunesID"
+
+        addcaption.isEnabled = captionable
+        addcaption.setTitleColor( captionable ? .white : .darkGray,for: .normal)
         addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
     }
     override func didReceiveMemoryWarning() {

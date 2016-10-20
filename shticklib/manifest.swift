@@ -74,12 +74,10 @@ struct Manifest {
                             }
                             
                             // setting up remote asset of nil will cause us to load the picture
-                            let remoteAsset = RemoteAsset(pack: pack,
-                                                          title: title,
-                                                          thumb: thumbnail,
-                                                          remoteurl: nil,
-                                                          localpath: imagepath,
-                                                          options: options)
+                            let remoteAsset = RemoteAsset(
+                                localurl: URL(string:imagepath)!,
+                                options: options,
+                                title: title, thumb:thumbnail)
                             
                             RemSpace.addasset(ra: remoteAsset) // be sure to count
                             final.append (remoteAsset)

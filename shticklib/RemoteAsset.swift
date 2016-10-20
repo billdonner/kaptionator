@@ -22,10 +22,39 @@ struct  RemSpace {
     static private var catalogTitle:String = "replace"
     static private var raz:[ RemoteAsset ] = []
     static private var  filenum : Int  { return raz.count + 1001 }
- 
+    
     fileprivate init() {
         print("****sharedAppContainerDir init in ",sharedAppContainerDirectory())
     }
+    static func  loadFromImage(_ image:UIImage) -> String {
+        
+        do {
+          let ext = "png"
+            let name = "\(filenum).\(ext)"
+            
+            let newfilename = sharedAppContainerDirectory().appendingPathComponent(name, isDirectory: false)
+            
+            if FileManager.default.fileExists(atPath: newfilename.absoluteString)
+            {
+                return newfilename.absoluteString
+            }
+            
+            // now copy, could be in done in back but why?
+            
+            let data = UIImagePNGRepresentation(image)
+            if let data = data {
+            try data.write(to: newfilename, options: .atomicWrite)
+            }
+            
+            return newfilename.absoluteString
+        }
+        catch {
+            print("Could not load image \(image) \(error)")
+            // might as well die at this point
+            fatalError("could not load \(error)")
+        }
+    }
+    
     fileprivate static func  loadFromLocal(from localpath:String) -> String {
         
         do {
@@ -55,7 +84,7 @@ struct  RemSpace {
     
     
     fileprivate static func loadFileRemote(from remotepath:String) -> String? {
-         do {
+        do {
             let ext = (remotepath as NSString).pathExtension
             let name = "\(filenum).\(ext)"
             let newfilename = sharedAppContainerDirectory().appendingPathComponent(name, isDirectory: false)
@@ -124,7 +153,9 @@ struct  RemSpace {
                     raz.append(ra)
                 }
             } // for loop
+            
             catalogTitle = catTitle
+            
             print ("**** \(RemoteAssetsDataSpace) restoreFromDisk version \(version) count \(flattened.count) = \(raz.count)")
         }  else {
             print("**** \(RemoteAssetsDataSpace) restoreFromDisk UserDefaults failure")
@@ -134,7 +165,7 @@ struct  RemSpace {
 
 //MARK: - RemoteAsset is readonly once loaded from manifest
 
-// RemoteAsset represents one image on a remote server in a "pack" 
+// RemoteAsset represents one image on a remote server in a "pack"
 struct RemoteAsset {
     let pack:String
     var caption:String
@@ -143,7 +174,24 @@ struct RemoteAsset {
     let localimagepath:String
     let options:StickerMakingOptions
     
-    init(pack:String,title:String,thumb:String, remoteurl:String?,localpath:String?, options:StickerMakingOptions) {
+    init(localurl:URL,options:StickerMakingOptions,title:String="",thumb:String="") {
+        self.init(pack:"",title:title,thumb:thumb, remoteurl:nil,
+                  localpath:localurl.absoluteString,options:options)
+    }
+    init(remoteurl:URL,options:StickerMakingOptions, title:String="") {
+        self.init(pack:"",title:title,thumb:"", remoteurl:remoteurl.absoluteString,localpath:nil,options:options)
+    }
+    init(byreference:URL,options:StickerMakingOptions, title:String="") {
+        self.pack = ""
+        self.thumbnail = ""
+        let none = title == ""
+        self.caption = none ? "<no title>" : title
+        self.options = options
+        self.remoteurl = ""
+        self.localimagepath = byreference.absoluteString
+    }
+    // this main init only for use during recovery
+    fileprivate init(pack:String,title:String,thumb:String, remoteurl:String?,localpath:String?, options:StickerMakingOptions) {
         self.pack = pack
         self.thumbnail = thumb
         let none = title == ""
@@ -161,8 +209,8 @@ struct RemoteAsset {
             // load file from remote location
             let local  = RemSpace.loadFileRemote(from:self.remoteurl)
             if let  local = local {
-            s = local
-            print("**** RA.INIT(..IMAGEPATH) \(s )")
+                s = local
+                print("**** RA.INIT(..IMAGEPATH) \(s )")
             }
         }
         self.localimagepath  = s
@@ -178,4 +226,59 @@ struct RemoteAsset {
             kOptions:  options.rawValue as Int ]
         return x
     }
+}
+func QuietlyAddNewURL(_ url:URL,options:StickerMakingOptions)  {
+    let ra = RemoteAsset(localurl:url,
+                         options: options,
+                         title:url.lastPathComponent)
+    RemSpace.addasset(ra: ra)
+    RemSpace.saveToDisk()
+}
+
+/// loads from documents without presenting a UI
+
+func loadFromITunesSharing(   completion:GFRM?) {
+    //let iTunesBase = manifestFromDocumentsDirector
+    // store file locally into catalog
+    // var first = true
+    let apptitle = "-local-"
+    var allofme:ManifestItems = []
+    do {
+        let dir = FileManager.default.urls (for:  .documentDirectory, in: .userDomainMask)
+        let documentsUrl =  dir.first!
+        
+        // Get the directory contents urls (including subfolders urls)
+        let directoryContents = try FileManager.default.contentsOfDirectory(at: documentsUrl, includingPropertiesForKeys: nil, options: .skipsSubdirectoryDescendants)
+        let _ =  try directoryContents.map {
+            let lastpatch = $0.lastPathComponent
+            if !lastpatch.hasPrefix(".") { // exclude wierd files
+                let imagename = lastpatch
+                
+                if (lastpatch as NSString).pathExtension.lowercased() == "json" {
+                    let data = try Data(contentsOf: $0) // read
+                    Manifest.parseData(data, baseURL: documentsUrl.absoluteString, completion: completion!)
+                } else {
+                    // copy from documents area into a regular local file
+                    
+                    //                        let me = RemoteAsset(pack: "apptitle", title: imagename, thumb:"", remoteurl: localpath.absoluteString,  localpath:nil, options:
+                    //                            .generatemedium)
+                    
+                    let me = RemoteAsset(remoteurl: $0,options: .generatemedium,title: imagename)
+                    RemSpace.addasset(ra: me) // be sure to coun
+                    allofme.append(me)                     }
+                
+                // finally, delete the file
+                try FileManager.default.removeItem(at: $0)
+            }
+        }
+        
+        RemSpace.saveToDisk()
+        if completion != nil  {
+            completion! (200, apptitle, allofme)
+        }
+    }
+    catch {
+        print("loadFromITunesSharing: file system error \(error)")
+    }
+    
 }

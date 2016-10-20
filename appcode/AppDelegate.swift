@@ -29,18 +29,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     
     var window: UIWindow?
     
-    private func ModalPresentAddNewURL(_ url:URL)  {
-        let ra = RemoteAsset(pack: "app", title:url.lastPathComponent, thumb: "", remoteurl: url.absoluteString, localpath:nil, options: StickerMakingOptions.generateasis  )
-        RemSpace.addasset(ra: ra)
-        RemSpace.saveToDisk()
-    }
+
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
-        ModalPresentAddNewURL(url)
+        QuietlyAddNewURL(url,options:StickerMakingOptions.generatelarge)
         // try to reload the main controller if its showing
         var vc: UIViewController? =   window!.rootViewController
         if let nvc  = vc as? UINavigationController {
+            nvc.popToRootViewController(animated: true)
                vc = nvc.topViewController
         }
         if let mvc = vc as? MasterViewController {

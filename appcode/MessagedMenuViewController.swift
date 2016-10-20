@@ -28,8 +28,8 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
     @IBOutlet weak var webviewOverlay: UIWebView!
     @IBOutlet weak var menuImageView: UIImageView!
     @IBOutlet weak var imageCaption: UILabel!
-    @IBOutlet weak var openinimessage: UIButton!
-    @IBOutlet weak var removefromimessage: UIButton!
+   // @IBOutlet weak var openinimessage: UIButton!
+   // @IBOutlet weak var removefromimessage: UIButton!
     @IBOutlet weak var animatedLabel: UILabel!
     @IBOutlet weak var smallSwitch: UISwitch!
     @IBOutlet weak var mediumSwitch: UISwitch!

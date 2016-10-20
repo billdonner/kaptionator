@@ -13,10 +13,13 @@ protocol GetCaptionDelegate {
 class GetCaptionViewController: UIViewController  {
     var delegate: GetCaptionDelegate?
     var unwinder: String!
+    var backgroundImage: UIImage!
+    
     internal func dismisstapped(_ s: AnyObject) {
         self.performSegue(withIdentifier: unwinder, sender: nil)
     }
     
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var theCaptionTextView: UITextView!
     override var prefersStatusBarHidden: Bool {
         return true
@@ -24,6 +27,7 @@ class GetCaptionViewController: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        backgroundImageView.image = backgroundImage
         addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
         theCaptionTextView.delegate = self
         theCaptionTextView.returnKeyType = .go
