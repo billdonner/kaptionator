@@ -26,6 +26,7 @@ final class HelpDropdownViewController: ReverseModalBlurViewController , UINavig
     @IBAction func hitITunesAction(_ sender: AnyObject) {
         loadFromITunesSharing(){status, title, allofme in
         print("loaded \(allofme.count) files")
+            IOSSpecialOps.blurt(self ,title:"loaded \(allofme.count) files",mess:"foo")
         }
     }
     
@@ -135,11 +136,9 @@ extension HelpDropdownViewController :   UIImagePickerControllerDelegate {
             let newimage = resizeImage(image: image,targetSize:(CGSize(width:618.0,height:618.0)))
             
        // turn this into a file wit a url
-           let t = RemSpace.loadFromImage(newimage)
-            let url = URL(string:t)
-            if let url = url {
-                QuietlyAddNewURL(url,options:StickerMakingOptions.generatelarge)
-            }
+           let url = RemSpace.writeImageToURL(newimage)
+            QuietlyAddNewURL(url,options:StickerMakingOptions.generatelarge)
+            
         }
         
         dismiss (animated: true, completion: nil)

@@ -8,11 +8,12 @@
 
 import UIKit
 
-
 // MARK: Show LocalItunes Document Entries in One Tab as Child ViewContoller
 //
 
-final class ITunesViewController :ControlledCollectionViewController {
+final class ITunesViewController :ChildOfMasterViewController, UICollectionViewDelegate, UICollectionViewDataSource   { 
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func unwindToITunesViewController(_ segue: UIStoryboardSegue)  {
     }
@@ -46,11 +47,8 @@ final class ITunesViewController :ControlledCollectionViewController {
     
     //MARK:- Lifecyle for ViewControllers
       /// load from shared documents in itune (must be on in info.plist)
-    private func loadx ( completion:GFRM?) {
-        loadFromITunesSharing(completion: completion)
-        self.refreshControl.endRefreshing()
-    }
-    func refreshFromITunes() {
+   
+   internal func refreshFromITunes() {
         loadFromITunesSharing( completion: { status, title, allofme in
             print(" refreshed with \(allofme.count) items")
             self.collectionView!.reloadData()
@@ -60,31 +58,29 @@ final class ITunesViewController :ControlledCollectionViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if SharedCaptionSpace.itemCount() == 0 && mvc.showFirstHelp {
-            mvc.showFirstHelp = false
-            mvc.performSegue(withIdentifier: "StartupHelpID", sender: nil)
-        }
+     
         self.collectionView!.reloadData()
     }
     override func viewDidLoad() {
-        self.collectionView!.backgroundColor = appTheme.backgroundColor
+        self.collectionView.backgroundColor = appTheme.backgroundColor
         super.viewDidLoad()
-        collectionView!.delegate = self
-        collectionView!.dataSource = self
+        collectionView.delegate = self
+        collectionView.dataSource = self
         
         // put logo in there, we will fade it in
+        let offset:CGFloat = 64.0
         startupLogo.image = UIImage(named:backgroundImagePath)
-        startupLogo.frame = self.view.frame
-           // CGRect(x:0,y:0,width:self.view.frame.width, height:self.view.frame.height)
-          startupLogo.center = self.view.center
+        startupLogo.frame = ////self.view.frame
+            CGRect(x:0,y:offset,width:self.view.frame.width, height:self.view.frame.height - offset )
+          ////startupLogo.center = self.view.center
         self.view.insertSubview(startupLogo, aboveSubview: self.view)
         self.collectionView?.alpha = 0 // start as invisible
         self.automaticallyAdjustsScrollViewInsets = false
         refreshControl.tintColor = .blue
         refreshControl.attributedTitle = NSAttributedString(string:"pulling fresh content from Itunes file sharing")
         refreshControl.addTarget(self, action: #selector(self.refreshFromITunes), for: .valueChanged)
-        collectionView!.addSubview(refreshControl)
-        collectionView!.alwaysBounceVertical = true  // needed so always can pull to refresh
+        collectionView.addSubview(refreshControl)
+        collectionView.alwaysBounceVertical = true  // needed so always can pull to refresh
         
         //  only read the catalog if we have to
         
@@ -98,7 +94,7 @@ final class ITunesViewController :ControlledCollectionViewController {
       // refreshFromITunes()
         UIView.animate(withDuration: 1.5, animations: {
             self.startupLogo.alpha =  0.0
-            self.collectionView?.alpha = 1.0
+            self.collectionView.alpha = 1.0
             }
             , completion: { b in
                 self.startupLogo.removeFromSuperview()
@@ -106,14 +102,14 @@ final class ITunesViewController :ControlledCollectionViewController {
         )
     }
 // UICollectionViewDataSource {
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+     func numberOfSections(in collectionView: UICollectionView) -> Int {
         // if self.refreshControl.isRefreshing { return 0 }
         return 1
     }
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return RemSpace.itemCount()
     }
-    override func collectionView(_ collectionView: UICollectionView,
+     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "ITunesDataCell", for: indexPath  ) as! ITunesDataCell // Create the cell from the storyboard cell
         
@@ -122,13 +118,14 @@ final class ITunesViewController :ControlledCollectionViewController {
             // have the data onhand
             cell.paintImage(path:ra.localimagepath)
         }
-        //cell.colorFor(ra:ra)
+         if ra.options.contains(.generateasis) {
+            cell.showAnimationOverlay()
+        }
         cell.isSelected = false
         return cell // Return the cell
     }
     
- 
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         theSelectedIndexPath = indexPath
         // todo: analyze safety of passing indexpath thru, sees to work for now
         let cell = collectionView.cellForItem(at: indexPath)
@@ -136,19 +133,23 @@ final class ITunesViewController :ControlledCollectionViewController {
         cell?.isHighlighted  = false
         performSegue(withIdentifier: "ITunesCellTapMenuID", sender: self)
     }
-    
-
 }
 
 extension ITunesViewController : ITunesMenuViewDelegate {
     func useAsIs(remoteAsset:RemoteAsset) {
-        AppCE.makeNewCaptionAsIs(from: remoteAsset )       }
+        AppCE.makeNewCaptionAsIs(from: remoteAsset )
+          MasterViewController.blurt(title: "Added one image to your catalog",mess: "as is")
+        
+    }
     func useWithNoCaption(remoteAsset:RemoteAsset) {
         // make un captionated entry from remote asset
         AppCE.makeNewCaptionCat( from: remoteAsset, caption: "" )
+        MasterViewController.blurt(title: "Added one image to your catalog",mess: "no caption")
+        
     }
     func useWithCaption(remoteAsset:RemoteAsset,caption:String) {
         // make un captionated entry from remote asset
         AppCE.makeNewCaptionCat( from: remoteAsset, caption: caption )
+   MasterViewController.blurt(title: "Added one image to your catalog",mess: caption)
     }
 }

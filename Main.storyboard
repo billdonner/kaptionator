@@ -59,6 +59,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="384" height="512"/>
                     <connections>
+                        <outlet property="collectionView" destination="bJX-tC-oLi" id="tSh-zO-941"/>
                         <outlet property="startupLogo" destination="jFi-NN-11Z" id="sI2-YV-hXW"/>
                         <segue destination="8NT-q7-zWI" kind="presentation" identifier="CatalogCellTapMenuID" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="Oa6-IE-zKC"/>
                     </connections>
@@ -295,7 +296,7 @@
                             </barButtonItem>
                             <barButtonItem image="Stickers" id="zWE-qh-xhw">
                                 <connections>
-                                    <action selector="imsg:" destination="Tm1-Gg-mxO" id="yhs-9i-TGL"/>
+                                    <action selector="imsgAction:" destination="Tm1-Gg-mxO" id="Myh-eZ-Cbu"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -789,7 +790,7 @@
         <!--Starts Here Nav -->
         <scene sceneID="LKI-ps-Ona">
             <objects>
-                <navigationController title="Starts Here Nav " automaticallyAdjustsScrollViewInsets="NO" hidesBarsWhenVerticallyCompact="YES" id="gUA-Sq-LFh" sceneMemberID="viewController">
+                <navigationController title="Starts Here Nav " automaticallyAdjustsScrollViewInsets="NO" id="gUA-Sq-LFh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -1138,12 +1139,17 @@
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="17" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="911-Tu-Hf1">
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJX-kd-6X1">
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="URj-FH-z6e"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="SKl-ww-Dww">
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJX-kd-6X1">
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="URj-FH-z6e"/>
+                                                </subviews>
+                                                <variation key="heightClass=regular-widthClass=compact" axis="horizontal"/>
+                                            </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sub Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HNV-Bc-DGp">
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -1553,6 +1559,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="384" height="512"/>
                     <connections>
+                        <outlet property="collectionView" destination="g9X-4I-TfY" id="2n8-KV-hlc"/>
                         <outlet property="startupLogo" destination="cbB-4A-dyH" id="eBR-JL-4qK"/>
                         <segue destination="Urn-Mx-6JP" kind="presentation" identifier="ITunesCellTapMenuID" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="0t7-MJ-od2"/>
                     </connections>
@@ -1713,6 +1720,6 @@
         <image name="captions" width="216" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xgi-zr-l9n"/>
+        <segue reference="feV-Qq-mVg"/>
     </inferredMetricsTieBreakers>
 </document>

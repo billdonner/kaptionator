@@ -9,9 +9,8 @@
  //
  // MARK: Show All Captionated Entries in One Tab as Child ViewContoller
  //
- final class CapationatedViewController: UIViewController, ControlledByMasterView  {
-    internal var mvc: MasterViewController!
- 
+ final class CapationatedViewController: ChildOfMasterViewController {
+   
     fileprivate  var stickerz:[AppCE] = []
     fileprivate var theSelectedIndexPath:IndexPath?
     @IBOutlet internal  var tableView: UITableView!
@@ -44,7 +43,6 @@
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mvc.showFirstHelp = true
         
         tableView.delegate = self
         tableView.dataSource = self

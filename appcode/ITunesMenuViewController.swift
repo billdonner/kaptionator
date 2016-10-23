@@ -35,7 +35,11 @@ class ITunesMenuViewController: UIViewController,AddDismissButton {
     @IBAction func animationSwitchTapped(_ sender: AnyObject) {
         
         addcaption.isEnabled = !animationSwitch.isOn
-        addcaption.setTitleColor(animationSwitch.isOn ? .darkGray : .lightGray,for: .normal) }
+        addcaption.setTitleColor(animationSwitch.isOn ? .darkGray : .lightGray,for: .normal)
+        // draw or redraw
+        showimage(remoteAsset: remoteAsset,animate:animationSwitch.isOn)
+    
+    }
     @IBAction func useStickerNoCaptionPressed(_ sender: AnyObject) {
         pvc.dismiss(animated: true) {
         self.delegate?.useAsIs(remoteAsset:self.remoteAsset) // elsewhere
@@ -62,30 +66,25 @@ class ITunesMenuViewController: UIViewController,AddDismissButton {
         pvc.dismiss(animated: true, completion: nil)
     }
     //MARK:- VC LIFECYLE
-    
-    override func viewDidLoad() {
-        super.viewDidLoad() 
+    private func showimage(remoteAsset:RemoteAsset,animate:Bool) {
         
-        useasisnocaption.setTitleColor(appTheme.buttonTextColor, for: .normal)
-        addcaption.setTitleColor(appTheme.buttonTextColor, for: .normal)
-        
-        
-        // Do any additional setup after loading the view.
-        
-        let isAnimated = remoteAsset.options.contains(.generateasis)
-        do {
-            let data = try  Data(contentsOf: URL(string:remoteAsset.localimagepath )!)
-            menuImageView.image = UIImage(data:data)
-            menuImageView.contentMode = .scaleAspectFit
-        }
-        catch {
-            menuImageView.image = nil
-        }
-        imageCaption.isEnabled  = false
-        imageCaption.text = showVendorTitles ? remoteAsset.caption : ""
-       
-        if isAnimated {
-            //self.addcaption.isHidden = true
+        let isAnimated = animate//remoteAsset.options.contains(.generateasis)
+        if !isAnimated {
+            
+            
+            self.menuImageView.isHidden = false
+            self.animatedLabel.isHidden = true
+            webviewOverlay.isHidden  = true
+            
+            do {
+                let data = try  Data(contentsOf: URL(string:remoteAsset.localimagepath )!)
+                menuImageView.image = UIImage(data:data)
+                menuImageView.contentMode = .scaleAspectFit
+            }
+            catch {
+                menuImageView.image = nil
+            }
+        } else {
             self.useasisnocaption.isHidden = false
             let scale : CGFloat = 1 / 1
             ///  put up animated preview
@@ -99,6 +98,22 @@ class ITunesMenuViewController: UIViewController,AddDismissButton {
             webviewOverlay.contentMode = .scaleAspectFit
             webviewOverlay.loadHTMLString(html, baseURL: nil)
         }
+        
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad() 
+        
+        useasisnocaption.setTitleColor(appTheme.buttonTextColor, for: .normal)
+        addcaption.setTitleColor(appTheme.buttonTextColor, for: .normal)
+        
+        
+        // Do any additional setup after loading the view.
+        
+        imageCaption.isEnabled  = true
+        imageCaption.text = showVendorTitles ? remoteAsset.caption : ""
+        
+        let isAnimated = remoteAsset.options.contains(.generateasis)
+        showimage(remoteAsset:remoteAsset,animate: isAnimated)
         
         // animated can not me modified
         animationSwitch.setOn(isAnimated ,animated:true)

@@ -9,9 +9,7 @@ import UIKit
 //
 // MARK: Show All Captionated Entries in One Tab as Child ViewContoller
 //
-final class MessagesViewController:UIViewController, ControlledByMasterView  {
-    internal var mvc: MasterViewController!
- 
+final class MessagesViewController:ChildOfMasterViewController { 
     fileprivate var stickerz:[SharedCE] = []
     fileprivate var theSelectedIndexPath:IndexPath?
     
@@ -36,8 +34,7 @@ final class MessagesViewController:UIViewController, ControlledByMasterView  {
             if let indexPath = theSelectedIndexPath {
                 if let avc =  segue.destination as? MessagesAppMenuViewController   {
                     avc.delegate = self
-                    avc.captionedEntry = stickerz [indexPath.row]
-                    avc.mvc = mvc
+                    avc.captionedEntry = stickerz [indexPath.row] 
                 }
             }}}
     internal func refreshPulled(_ x:AnyObject) {
@@ -52,7 +49,6 @@ final class MessagesViewController:UIViewController, ControlledByMasterView  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mvc.showFirstHelp = true
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = appTheme.backgroundColor
@@ -76,7 +72,7 @@ final class MessagesViewController:UIViewController, ControlledByMasterView  {
          tableView?.reloadData()
         // if two or more items, given user opportunity to sort
         
-        //mvc.orgbbi.isEnabled =  items.count > 1
+        //  =  items.count > 1
     
     }
     override func didMove(toParentViewController parent: UIViewController?) {
@@ -139,7 +135,7 @@ extension MessagesViewController : UITableViewDataSource {
         let ce = stickerz [indexPath.row]
         //show the primitive title
         let line2 = ce.stickerOptions.description()
-        cell.paint2(name:ce.caption,line2:line2)
+        cell.paint2(ce:ce,line2:line2)
         /// go get the image from our cache and then the net
         let path =  ce.localimagepath
             //ce.stickerPaths[0] // ?????

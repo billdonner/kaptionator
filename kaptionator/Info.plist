@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>APP-TITLE</key>
-	<string>kaptionator</string>
+	<string>Kaptionator</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Accessing Library to use your own images inside Kaptionator</string>
 	<key>BACKGROUND-IMAGE</key>
@@ -82,9 +82,9 @@
 	<key>CFBundleVersion</key>
 	<string>37</string>
 	<key>EXTENSION-SCHEME</key>
-	<string>kaptionator</string>
+	<string>Kaptionator</string>
 	<key>INNER-BLURB</key>
-	<string>a Catalog of all images loaded - pull to load more</string>
+	<string>a Catalog of all images loaded - pull to rearrange and delete images</string>
 	<key>LEFT-BBI-NAME</key>
 	<string>itunes</string>
 	<key>LSRequiresIPhoneOS</key>

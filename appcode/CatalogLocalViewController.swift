@@ -10,7 +10,10 @@ import UIKit
 //
 
 
-final class CatalogViewController:ControlledCollectionViewController {
+final class CatalogViewController:ChildOfMasterViewController, UICollectionViewDelegate, UICollectionViewDataSource   { 
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     @IBAction func unwindToCatalogLocalItemsViewController(_ segue: UIStoryboardSegue)  {}
     
     
@@ -20,14 +23,12 @@ final class CatalogViewController:ControlledCollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if SharedCaptionSpace.itemCount() == 0 && mvc.showFirstHelp {
-                mvc.showFirstHelp = false
-                mvc.performSegue(withIdentifier: "StartupHelpID", sender: nil)
-        }
+    
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        collectionView.dataSource = self
+        collectionView.delegate = self
         RemSpace.reset(title:extensionScheme)
         
         // put logo in there, we will fade it in
@@ -114,13 +115,13 @@ extension CatalogViewController {  //loading on first up - moved from masterview
         // self.activityIndicatorView.stopAnimating()
         let x = RemSpace.itemCount()
         print(">>>>>>>>>> phase3 \(x) LOCAL ASSETS LOADED \(vcid) -- READY TO ROLL")
-        self.collectionView?.reloadData()
+        self.collectionView.reloadData()
         
         refreshControl.tintColor = .blue
         refreshControl.attributedTitle = NSAttributedString(string:"These are the Sticker images in this pack")
         refreshControl.addTarget(self, action: #selector(self.refreshPulled), for: .valueChanged)
         
-        collectionView?.addSubview(refreshControl)
+        collectionView.addSubview(refreshControl)
         collectionView?.alwaysBounceVertical = true  // needed so always can pull to refresh
        
        // performSegue(withIdentifier: "CatalogTabHelpID", sender: nil)
@@ -139,14 +140,13 @@ extension CatalogViewController {  //loading on first up - moved from masterview
 
 //MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // if self.refreshControl.isRefreshing { return 0 }
-        return 1
-    }
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+ 
+    @objc(numberOfSectionsInCollectionView:) func numberOfSections(in collectionView: UICollectionView) -> Int { return 1 }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return RemSpace.itemCount()
     }
-    override func collectionView(_ collectionView: UICollectionView,
+    @objc(collectionView:cellForItemAtIndexPath:) func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "CatalogDataCell", for: indexPath  )
             as! CatalogDataCell // Create the cell from the storyboard cell
@@ -172,7 +172,7 @@ extension CatalogViewController {  //loading on first up - moved from masterview
         return cell // Return the cell
     }
  
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    @objc(collectionView:didSelectItemAtIndexPath:) func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         theSelectedIndexPath = indexPath
         // todo: analyze safety of passing indexpath thru, sees to work for now
         let cell = collectionView.cellForItem(at: indexPath)

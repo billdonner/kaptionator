@@ -26,7 +26,7 @@ struct  RemSpace {
     fileprivate init() {
         print("****sharedAppContainerDir init in ",sharedAppContainerDirectory())
     }
-    static func  loadFromImage(_ image:UIImage) -> String {
+    static func  writeImageToURL(_ image:UIImage) -> URL {
         
         do {
           let ext = "png"
@@ -36,7 +36,7 @@ struct  RemSpace {
             
             if FileManager.default.fileExists(atPath: newfilename.absoluteString)
             {
-                return newfilename.absoluteString
+                return newfilename
             }
             
             // now copy, could be in done in back but why?
@@ -46,7 +46,7 @@ struct  RemSpace {
             try data.write(to: newfilename, options: .atomicWrite)
             }
             
-            return newfilename.absoluteString
+            return newfilename 
         }
         catch {
             print("Could not load image \(image) \(error)")
@@ -54,57 +54,34 @@ struct  RemSpace {
             fatalError("could not load \(error)")
         }
     }
-    
-    fileprivate static func  loadFromLocal(from localpath:String) -> String {
+    fileprivate static func  copyURLtoURL(_ url:URL) -> URL {
         
         do {
-            let ext = (localpath as NSString).pathExtension
+            let ext = (url.absoluteString as NSString).pathExtension
             let name = "\(filenum).\(ext)"
             
             let newfilename = sharedAppContainerDirectory().appendingPathComponent(name, isDirectory: false)
             
             if FileManager.default.fileExists(atPath: newfilename.absoluteString)
             {
-                return newfilename.absoluteString
+                return newfilename
             }
             
             // now copy, could be in done in back but why?
             
-            let data = try Data(contentsOf: URL(string:localpath)!)
+            let data = try Data(contentsOf: url)
             try data.write(to: newfilename, options: .atomicWrite)
             
-            return newfilename.absoluteString
+            return newfilename
         }
         catch {
-            print("Could not load local \(localpath)")
+            print("Could not load file url \(url)")
             // might as well die at this point
             fatalError("could not load \(error)")
         }
     }
     
-    
-    fileprivate static func loadFileRemote(from remotepath:String) -> String? {
-        do {
-            let ext = (remotepath as NSString).pathExtension
-            let name = "\(filenum).\(ext)"
-            let newfilename = sharedAppContainerDirectory().appendingPathComponent(name, isDirectory: false)
-            
-            if FileManager.default.fileExists(atPath: newfilename.absoluteString)
-            {
-                return newfilename.absoluteString
-            }
-            
-            // now copy, could be in done in back but why?
-            let data = try Data(contentsOf: URL(string:remotepath)!)
-            try data.write(to: newfilename, options: .atomicWrite)
-            
-            return newfilename.absoluteString
-        }
-        catch {
-            print("Could not load from \(remotepath) \(error)")
-        }
-        return nil
-    }
+
     
     static func reset (title:String) {
         raz = []
@@ -168,7 +145,7 @@ struct  RemSpace {
 // RemoteAsset represents one image on a remote server in a "pack"
 struct RemoteAsset {
     let pack:String
-    var caption:String
+    let caption:String
     let remoteurl :String
     let thumbnail:String
     let localimagepath:String
@@ -191,6 +168,8 @@ struct RemoteAsset {
         self.localimagepath = byreference.absoluteString
     }
     // this main init only for use during recovery
+    //
+    // if localpath is non nil then set localimagepath
     fileprivate init(pack:String,title:String,thumb:String, remoteurl:String?,localpath:String?, options:StickerMakingOptions) {
         self.pack = pack
         self.thumbnail = thumb
@@ -198,22 +177,19 @@ struct RemoteAsset {
         self.caption = none ? "<no title>" : title
         self.options = options
         self.remoteurl = remoteurl ?? ""
-        var s: String = ""
+        
         // make a copy in shared filesystem
         if let lp = localpath { // if localpath supplied use that else
-            let local  = RemSpace.loadFromLocal(from:lp)
-            s = local
-            print("**** RA.INIT(..LOCALPATH) \(s )")
+            let local  = RemSpace.copyURLtoURL(URL(string:lp)!)
+            self.localimagepath  = local.absoluteString
+            print("**** RA.INIT(..LOCALPATH) \(local )")
         }
         else {
             // load file from remote location
-            let local  = RemSpace.loadFileRemote(from:self.remoteurl)
-            if let  local = local {
-                s = local
-                print("**** RA.INIT(..IMAGEPATH) \(s )")
-            }
+            let local  = RemSpace.copyURLtoURL(URL(string:self.remoteurl)!)
+                self.localimagepath  = local.absoluteString
+                print("**** RA.INIT(..IMAGEPATH) \(local )")
         }
-        self.localimagepath  = s
     }// init
     
     func serializeToJSONDict() -> JSONDict {
@@ -282,3 +258,54 @@ func loadFromITunesSharing(   completion:GFRM?) {
     }
     
 }
+//
+//fileprivate static func  xloadFromLocal(from localpath:String) -> URL {
+//    
+//    do {
+//        let ext = (localpath as NSString).pathExtension
+//        let name = "\(filenum).\(ext)"
+//        
+//        let newfilename = sharedAppContainerDirectory().appendingPathComponent(name, isDirectory: false)
+//        
+//        if FileManager.default.fileExists(atPath: newfilename.absoluteString)
+//        {
+//            return newfilename
+//        }
+//        
+//        // now copy, could be in done in back but why?
+//        
+//        let data = try Data(contentsOf: URL(string:localpath)!)
+//        try data.write(to: newfilename, options: .atomicWrite)
+//        
+//        return newfilename
+//    }
+//    catch {
+//        print("Could not load local \(localpath)")
+//        // might as well die at this point
+//        fatalError("could not load \(error)")
+//    }
+//}
+//
+//
+//fileprivate static func xloadFromRemote(from remotepath:String) -> URL? {
+//    do {
+//        let ext = (remotepath as NSString).pathExtension
+//        let name = "\(filenum).\(ext)"
+//        let newfilename = sharedAppContainerDirectory().appendingPathComponent(name, isDirectory: false)
+//        
+//        if FileManager.default.fileExists(atPath: newfilename.absoluteString)
+//        {
+//            return newfilename
+//        }
+//        
+//        // now copy, could be in done in back but why?
+//        let data = try Data(contentsOf: URL(string:remotepath)!)
+//        try data.write(to: newfilename, options: .atomicWrite)
+//        
+//        return newfilename
+//    }
+//    catch {
+//        print("Could not load from \(remotepath) \(error)")
+//    }
+//    return nil
+//}
