@@ -27,9 +27,7 @@ class ITunesMenuViewController: UIViewController,AddDismissButton {
     @IBOutlet weak var useasis: UIButton!
     @IBOutlet weak var useasisnocaption: UIButton!
     @IBOutlet weak var addcaption: UIButton!
-    
     @IBOutlet weak var animatedLabel: UILabel!
-    
     @IBOutlet weak var animationSwitch: UISwitch!
     
     @IBAction func animationSwitchTapped(_ sender: AnyObject) {
@@ -70,8 +68,6 @@ class ITunesMenuViewController: UIViewController,AddDismissButton {
         
         let isAnimated = animate//remoteAsset.options.contains(.generateasis)
         if !isAnimated {
-            
-            
             self.menuImageView.isHidden = false
             self.animatedLabel.isHidden = true
             webviewOverlay.isHidden  = true
@@ -123,16 +119,10 @@ class ITunesMenuViewController: UIViewController,AddDismissButton {
         addcaption.isEnabled = captionable
         addcaption.setTitleColor( captionable ? .white : .darkGray,for: .normal)
         
-        
         addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
         
     }
-    
  
- 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    }
 }
 
 //MARK:- CALLBACKS

@@ -12,14 +12,12 @@ import UIKit
 final class MessagesViewController:ChildOfMasterViewController { 
     fileprivate var stickerz:[SharedCE] = []
     fileprivate var theSelectedIndexPath:IndexPath?
-    
-    let refreshControl = UIRefreshControl()
+    fileprivate let refreshControl = UIRefreshControl()
     
     @IBOutlet internal  var tableView: UITableView!
  
     @IBAction func unwindToMessagesViewController(_ segue: UIStoryboardSegue)  {
-        
-        self.refreshControl.endRefreshing()
+        refreshControl.endRefreshing()
         refreshFromMemSpace()
     }
     override func didReceiveMemoryWarning() {
@@ -38,7 +36,6 @@ final class MessagesViewController:ChildOfMasterViewController {
                 }
             }}}
     internal func refreshPulled(_ x:AnyObject) {
-        
         if stickerz.count > 1 {
         self.performSegue(withIdentifier: "PresentReorder", sender: nil)
             // when controller returns the unwindTo func will call endrefreshing....
@@ -49,43 +46,23 @@ final class MessagesViewController:ChildOfMasterViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.backgroundColor = appTheme.backgroundColor
         refreshControl.tintColor = .blue
         refreshControl.attributedTitle = NSAttributedString(string:"your Stickers in Messages - swipe to delete or pull to reorder")
         refreshControl.addTarget(self, action: #selector(self.refreshPulled), for: .valueChanged)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.backgroundColor = appTheme.backgroundColor
         tableView.addSubview(refreshControl)
         tableView.alwaysBounceVertical = true  // needed so always can pull to refresh
     }
-    fileprivate  func refreshFromMemSpace(){
-        var items = SharedCaptionSpace.items()
-        // group similar images together in reverse ti
 
-        items.sort (by: { a,b in  let aa = a as SharedCE
-            let bb = b as SharedCE
-            return aa.id > bb.id
-            }
-        )
-        
-         stickerz = items
-         tableView?.reloadData()
-        // if two or more items, given user opportunity to sort
-        
-        //  =  items.count > 1
-    
-    }
     override func didMove(toParentViewController parent: UIViewController?) {
         refreshFromMemSpace()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         refreshFromMemSpace()
-        
-    }
-   fileprivate func displayTapMenu () {
-        // todo: analyze safety of passing indexpath thru, sees to work for now
-        performSegue(withIdentifier: "MessagesAppCellTapMenuID", sender: self)
     }
 }
 // MARK: Delegates for actions from our associated menu
@@ -145,17 +122,37 @@ extension MessagesViewController : UITableViewDataSource {
         cell.colorFor(options: ce.stickerOptions)
         return cell // Return the cell
     }
-}// MARK: Observer for model adjustments
-//extension MessagesViewController : MEObserver {
-//    func newdocument(_ propsDict: JSONDict, _ title:String) {
-//    }
-// 
-//  
-//}
+}
+
+// MARK: Observer for model adjustments
+
 extension MessagesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         theSelectedIndexPath = indexPath
         displayTapMenu()
+    }
+}
+private extension MessagesViewController {
+     func displayTapMenu () {
+        // todo: analyze safety of passing indexpath thru, sees to work for now
+        performSegue(withIdentifier: "MessagesAppCellTapMenuID", sender: self)
+    }
+      func refreshFromMemSpace(){
+        var items = SharedCaptionSpace.items()
+        // group similar images together in reverse ti
+        
+        items.sort (by: { a,b in  let aa = a as SharedCE
+            let bb = b as SharedCE
+            return aa.id > bb.id
+            }
+        )
+        
+        stickerz = items
+        tableView?.reloadData()
+        // if two or more items, given user opportunity to sort
+        
+        //  =  items.count > 1
+        
     }
 }
 extension SharedCE {
