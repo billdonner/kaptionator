@@ -19,9 +19,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.75</string>
+	<string>1.80</string>
 	<key>CFBundleVersion</key>
-	<string>105</string>
+	<string>107</string>
 	<key>EXTENSION-SCHEME</key>
 	<string>EmoGeez</string>
 	<key>LEFT-BBI-NAME</key>

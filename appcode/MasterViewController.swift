@@ -22,6 +22,9 @@ protocol ControlledByMasterView {
 class ChildOfMasterViewController : UIViewController,ControlledByMasterView {
     
 }
+fileprivate var masterViewController : MasterViewController?
+
+
 final class MasterViewController: UIViewController {
     
     @IBAction func unwindToMaster(_ segue: UIStoryboardSegue)  {}
@@ -44,7 +47,9 @@ final class MasterViewController: UIViewController {
     //MARK:-  globally available static funcs
     
     static func blurt(title:String,mess:String) {
-        IOSSpecialOps.blurt(masterViewController!,title: "Added one image to your catalog",mess: "as is")
+        if let mvc = masterViewController {
+        IOSSpecialOps.blurt(mvc,title:title,mess:mess )
+        }
     }
     
     //MARK:- Lifecyle for ViewControllers
@@ -64,7 +69,7 @@ final class MasterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        masterViewController = self 
         self.view.backgroundColor = appTheme.backgroundColor
         
         replaceTitle(appTitle)
