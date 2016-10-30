@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gUA-Sq-LFh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="J00-PY-CLl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -283,7 +283,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5m-nU-S6G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2895" y="-2809"/>
+            <point key="canvasLocation" x="-2308.5" y="-2809.5"/>
         </scene>
         <!--Catalog Menu-->
         <scene sceneID="jYu-0a-m1Z">
@@ -779,39 +779,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6MI-Tt-k3s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1624" y="-469"/>
-        </scene>
-        <!--Starts Here Nav -->
-        <scene sceneID="LKI-ps-Ona">
-            <objects>
-                <navigationController title="Starts Here Nav " automaticallyAdjustsScrollViewInsets="NO" id="gUA-Sq-LFh" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" misplaced="YES" id="gd4-1O-VKQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="EhE-5x-woP">
-                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="Tm1-Gg-mxO" kind="relationship" relationship="rootViewController" id="dRA-SX-wnR"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pJ0-J1-HsB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="hD5-uX-9ds">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                    <items>
-                        <barButtonItem title="Item" id="4vi-C8-R3G"/>
-                    </items>
-                </toolbar>
-            </objects>
-            <point key="canvasLocation" x="-3199" y="-2995"/>
         </scene>
         <!--StartupHelp-->
         <scene sceneID="OUM-LE-Mvp">
@@ -1901,6 +1868,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8o1-sP-PbQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3484" y="-6689"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cwf-ot-gas">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J00-PY-CLl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Apk-9L-Rkh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Tm1-Gg-mxO" kind="relationship" relationship="rootViewController" id="k8S-VZ-n87"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y3D-Ql-Vhu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2895.5" y="-2809.5"/>
         </scene>
     </scenes>
     <resources>
