@@ -95,6 +95,20 @@ struct  RemSpace {
     static func addasset(ra:RemoteAsset){
         raz.append(ra)
     }
+    // scan till ltight match and remove
+    static func remove(ra:RemoteAsset){
+        var idx = 0
+        for val in raz {
+            if ra.remoteurl == val.remoteurl {
+                if ra.localimagepath == val.localimagepath {
+                    raz.remove(at:idx)
+                    return
+                }
+            }
+            idx += 1
+        }
+        fatalError("Did not find ra in raz")
+    }
     static func saveToDisk() {
         var flattened:JSONArray = []
         for val in raz {
@@ -150,6 +164,16 @@ struct RemoteAsset {
     let thumbnail:String
     let localimagepath:String
     let options:StickerMakingOptions
+    
+    // clone this while changing the stickermaking options
+    //
+    //
+    func copyWithNewOptions(stickerOptions: StickerMakingOptions) -> RemoteAsset {
+        
+        let appce = RemoteAsset(pack: pack, title: caption, thumb: thumbnail, remoteurl: remoteurl, localpath: localimagepath, options: stickerOptions)
+        return appce
+        
+    }
     
     init(localurl:URL,options:StickerMakingOptions,title:String="",thumb:String="") {
         self.init(pack:"",title:title,thumb:thumb, remoteurl:nil,

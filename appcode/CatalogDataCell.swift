@@ -13,6 +13,9 @@ import UIKit
 /// The cell responsible for displaying item data.
 class CatalogDataCell: UICollectionViewCell {
     // @IBOutlet fileprivate weak var stackView: UIStackView!
+    
+    @IBOutlet weak var captionLabel: UILabel!
+    
     @IBOutlet weak var animatedImageView: UIImageView!
     @IBOutlet  fileprivate weak var detailsImageView: UIImageView!
     override func prepareForReuse() {
@@ -26,13 +29,14 @@ class CatalogDataCell: UICollectionViewCell {
       animatedImageView.isHidden = false
     }
 
-    func paintImage(path imgLocalPath: String) {
+    func paintImage(path imgLocalPath: String, text: String = "") {
         do {
             //reads local file synchronously
             let data =  try Data(contentsOf: URL(string:imgLocalPath)!)
             let img = UIImage(data:data)
             detailsImageView.image = img
             detailsImageView.contentMode = .scaleAspectFit
+            captionLabel.text = text
         }
         catch let error {
          print ("Cant paintImage \(error)")

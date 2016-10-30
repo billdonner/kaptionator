@@ -10,7 +10,7 @@ import UIKit
 //
 
 
-final class CatalogViewController:ChildOfMasterViewController, UICollectionViewDelegate, UICollectionViewDataSource   { 
+final class CatalogViewController:ChildOfMasterViewController, UICollectionViewDelegate, UICollectionViewDataSource   {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -20,23 +20,28 @@ final class CatalogViewController:ChildOfMasterViewController, UICollectionViewD
     let refreshControl = UIRefreshControl()
     fileprivate var theSelectedIndexPath:IndexPath?
     @IBOutlet weak var startupLogo: UIImageView!
-    
+    override func didMove(toParentViewController parent: UIViewController?) {
+        self.collectionView!.reloadData()
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    
+        
+        self.collectionView!.reloadData()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        startupLogo.image = UIImage(named:backgroundImagePath)
         collectionView.dataSource = self
         collectionView.delegate = self
         RemSpace.reset(title:extensionScheme)
         
         // put logo in there, we will fade it in
-        startupLogo.image = UIImage(named:backgroundImagePath)
-        startupLogo.frame = self.view.frame
-        startupLogo.center = self.view.center
-        self.view.insertSubview(startupLogo, aboveSubview: self.view)
-        self.collectionView?.alpha = 0 // start as invisible
+//        startupLogo.image = UIImage(named:backgroundImagePath)
+//        startupLogo.frame = self.view.frame
+//        startupLogo.center = self.view.center
+//        self.view.insertSubview(startupLogo, aboveSubview: self.view)
+//        self.collectionView?.alpha = 0 // start as invisible
         self.automaticallyAdjustsScrollViewInsets = false
         disp()
     }
@@ -162,11 +167,11 @@ extension CatalogViewController {  //loading on first up - moved from masterview
         // if we have a thumbnail, show that 
         if ra.thumbnail != "" {
             // have the data onhand
-            cell.paintImage(path:ra.thumbnail)
+            cell.paintImage(path:ra.thumbnail,text:ra.caption)
         } else
         if ra.localimagepath != "" {
             // have the data onhand
-            cell.paintImage(path:ra.localimagepath)
+            cell.paintImage(path:ra.localimagepath,text:ra.caption)
         }
       
         return cell // Return the cell

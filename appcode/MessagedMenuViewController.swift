@@ -56,6 +56,25 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
     }
 
         //MARK:- MENU TAP ACTIONS
+    @IBAction func share(_ sender: UIButton) {
+        do {
+        let path = captionedEntry.stickerPath
+           // stickerPath[0] doesnt work
+        let data = try  Data(contentsOf: URL(string:path )!)
+        let image = UIImage(data:data)
+        let titl = captionedEntry.caption == "" ? "<no caption>" : captionedEntry.caption
+            // set up activity view controller
+            let imageToShare:[Any]  = [titl , image! ]
+        let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        // exclude some activity types from the list (optional)
+        activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook ]
+        // present the view controller
+        self.present(activityViewController, animated: true, completion: nil)
+        }
+        catch {
+        }
+    }
     @IBAction func smallSwitchToggled(_ sender: AnyObject) {
         let ce = captionedEntry!
         var options: StickerMakingOptions = StickerMakingOptions()
@@ -131,7 +150,7 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
         imageCaption.text =  captionedEntry.caption
         var imgsize:CGFloat
         do {
-            let path = captionedEntry.localimagepath //stickerPaths[0]
+            let path = captionedEntry.stickerPath                                                                                                                                              //stickerPath[0]
             let data = try  Data(contentsOf: URL(string:path)!)
             menuImageView.image = UIImage(data:data)
             menuImageView.contentMode = .scaleAspectFit

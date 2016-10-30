@@ -56,11 +56,11 @@ struct  StickerPool   {
             print ("&&&&&&&&& restoreSharespaceFromDisk restored,\(SharedCaptionSpace.itemCount()) items ")
             
             for ce in SharedCaptionSpace.items() {
-                for stickerpath in ce.stickerPaths {
-                let url = URL(string:stickerpath)!
+                //for stickerpath in ce.stickerPath {
+                let url = URL(string:ce.stickerPath)!
                 let title =  "\(stickers.count)"
                 makeMSSticker(url:url,title:title)
-                }
+                
             }
             
             print ("&&&&&&&&& Total stickers \(SharedCaptionSpace.itemCount())")
@@ -82,11 +82,11 @@ struct  StickerPool   {
         do {
         let theData = try Data(contentsOf: nurl)
         let options:StickerMakingOptions = .generatemedium
-        let stickerPaths =   StickerFileFactory.createStickerFilesFrom (imageData: theData ,path: backgroundImagePath, caption: "Welcome to \(extensionScheme)", options:options)
-            if stickerPaths.count > 0 ,
-                let stickerurl = URL(string:stickerPaths[0]) {
+        let stickerPath =   StickerFileFactory.createStickerFileFrom (imageData: theData ,path: backgroundImagePath, caption: "Welcome to \(extensionScheme)", options:options)
+            if 
+                let stickerurl = URL(string:stickerPath) {
             makeMSSticker(url:stickerurl,title:"Welcome to \(extensionScheme)")
-        print("made sticker file urls \(stickerPaths)")
+        print("made sticker file urls \(stickerPath)")
             }
         }
         catch let error {

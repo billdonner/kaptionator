@@ -56,6 +56,9 @@ final class ITunesViewController :ChildOfMasterViewController, UICollectionViewD
             
         })
     }
+    override func didMove(toParentViewController parent: UIViewController?) {
+        self.collectionView!.reloadData()
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
      
@@ -67,14 +70,16 @@ final class ITunesViewController :ChildOfMasterViewController, UICollectionViewD
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        let img = UIImage(named:backgroundImagePath)
+        startupLogo.image = img
         // put logo in there, we will fade it in
-        let offset:CGFloat = 64.0
-        startupLogo.image = UIImage(named:backgroundImagePath)
-        startupLogo.frame = ////self.view.frame
-            CGRect(x:0,y:offset,width:self.view.frame.width, height:self.view.frame.height - offset )
-          ////startupLogo.center = self.view.center
-        self.view.insertSubview(startupLogo, aboveSubview: self.view)
-        self.collectionView?.alpha = 0 // start as invisible
+//let offset:CGFloat = 64.0
+//        startupLogo.image = UIImage(named:backgroundImagePath)
+//        startupLogo.frame = ////self.view.frame
+//            CGRect(x:0,y:offset,width:self.view.frame.width, height:self.view.frame.height - offset )
+//          ////startupLogo.center = self.view.center
+//        self.view.insertSubview(startupLogo, aboveSubview: self.view)
+//        self.collectionView?.alpha = 0 // start as invisible
         self.automaticallyAdjustsScrollViewInsets = false
         refreshControl.tintColor = .blue
         refreshControl.attributedTitle = NSAttributedString(string:"pulling fresh content from Itunes file sharing")
@@ -93,11 +98,11 @@ final class ITunesViewController :ChildOfMasterViewController, UICollectionViewD
         }
       // refreshFromITunes()
         UIView.animate(withDuration: 1.5, animations: {
-            self.startupLogo.alpha =  0.0
+           // self.startupLogo.alpha =  0.0
             self.collectionView.alpha = 1.0
             }
             , completion: { b in
-                self.startupLogo.removeFromSuperview()
+             //   self.startupLogo.removeFromSuperview()
             }
         )
     }
@@ -116,7 +121,7 @@ final class ITunesViewController :ChildOfMasterViewController, UICollectionViewD
         let ra = RemSpace.itemAt(indexPath.row)
         if ra.localimagepath != "" {
             // have the data onhand
-            cell.paintImage(path:ra.localimagepath)
+            cell.paintImage(path:ra.localimagepath,text:ra.caption)
         }
          if ra.options.contains(.generateasis) {
             cell.showAnimationOverlay()

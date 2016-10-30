@@ -9,7 +9,7 @@ import UIKit
 //
 // MARK: Show All Captionated Entries in One Tab as Child ViewContoller
 //
-final class MessagesViewController:ChildOfMasterViewController { 
+final class MessagesViewController: ChildOfMasterViewController{
     fileprivate var stickerz:[SharedCE] = []
     fileprivate var theSelectedIndexPath:IndexPath?
     fileprivate let refreshControl = UIRefreshControl()
@@ -114,8 +114,10 @@ extension MessagesViewController : UITableViewDataSource {
         let line2 = ce.stickerOptions.description()
         cell.paint2(ce:ce,line2:line2)
         /// go get the image from our cache and then the net
-        let path =  ce.localimagepath
-            //ce.stickerPaths[0] // ?????
+        let path =  ce.stickerPath
+            //ce.stickerPath[0] // ?????
+        
+       // print("=====lip--\(ce.localimagepath) spath--\(ce.stickerPath)")
         if path != "" {
             cell.paintImage(path:path)
         }

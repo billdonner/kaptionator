@@ -34,8 +34,23 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
     @IBOutlet weak var animationSwitch: UISwitch!
     
     @IBAction func animationSwitchTapped(_ sender: AnyObject) {
+        
     addcaption.isEnabled = !animationSwitch.isOn
-     addcaption.setTitleColor(animationSwitch.isOn ? .darkGray : .lightGray,for: .normal) }
+     addcaption.setTitleColor(animationSwitch.isOn ? .darkGray : .lightGray,for: .normal)
+        var  options = remoteAsset.options
+        if animationSwitch.isOn {
+            options.insert(.generateasis)
+        } else {
+            options.remove(.generateasis)
+        }
+        // to persist this seemingly trivial process we must make a whole new RemoteAsset
+        let newra = remoteAsset.copyWithNewOptions(stickerOptions: options)
+        
+        RemSpace.remove(ra:remoteAsset)
+        RemSpace.addasset(ra: newra)
+        RemSpace.saveToDisk()
+    
+    }
     @IBAction func useStickerNoCaptionPressed(_ sender: AnyObject) {
         
         pvc.dismiss(animated: true) {

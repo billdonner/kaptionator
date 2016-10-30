@@ -27,6 +27,7 @@ fileprivate var masterViewController : MasterViewController?
 
 final class MasterViewController: UIViewController {
     
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBAction func unwindToMaster(_ segue: UIStoryboardSegue)  {}
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
@@ -47,9 +48,7 @@ final class MasterViewController: UIViewController {
     //MARK:-  globally available static funcs
     
     static func blurt(title:String,mess:String) {
-        if let mvc = masterViewController {
-        IOSSpecialOps.blurt(mvc,title:title,mess:mess )
-        }
+        IOSSpecialOps.blurt(masterViewController!,title: "Added one image to your catalog",mess: "as is")
     }
     
     //MARK:- Lifecyle for ViewControllers
@@ -61,8 +60,8 @@ final class MasterViewController: UIViewController {
             self.modalPresentationStyle = .overCurrentContext
         }
         else if "HelpDropdownViewControllerID" ==  segue.identifier {
-            if  let hdvc = segue.destination as?HelpDropdownViewController {
-                hdvc.pvc = self
+            if  let _ = segue.destination as?HelpDropdownViewController {
+               // hdvc.pvc = self
             }
         }
     }
@@ -71,7 +70,8 @@ final class MasterViewController: UIViewController {
         super.viewDidLoad()
         masterViewController = self 
         self.view.backgroundColor = appTheme.backgroundColor
-        
+        let img = UIImage(named:backgroundImagePath)
+         self.backgroundImageView.image = img
         replaceTitle(appTitle)
         
         // start in the catalog
@@ -101,18 +101,17 @@ final class MasterViewController: UIViewController {
             performSegue(withIdentifier: "StartupHelpID", sender: nil)
         }
         cycleaction(sender: sender, id:showCatalogID,
-                    vc:&showFirstViewController)
+                    vc:&showFirstViewController,color:appTheme.catalogColor)
         replaceTitle(extensionScheme + " Home")
     }
     @IBAction func stickerAction(_ sender: UIBarButtonItem) {
         showFirstHelp = true
-        cycleaction(sender: sender, id:"CaptionedViewControllerID",vc:&showCaptionedViewController)
+        cycleaction(sender: sender, id:"CaptionedViewControllerID",vc:&showCaptionedViewController,color:appTheme.stickerzColor)
         replaceTitle(extensionScheme + " History")
     }
     @IBAction func imsgAction(_ sender: UIBarButtonItem) {
         showFirstHelp = true
-        cycleaction(sender: sender, id:"MessageViewControllerID",vc:&showMessagesViewController)
-        
+        cycleaction(sender: sender, id:"MessageViewControllerID",vc:&showMessagesViewController, color:appTheme.iMessageColor)
         replaceTitle(extensionScheme + " Stickers")
     }
 }
@@ -121,8 +120,8 @@ final class MasterViewController: UIViewController {
 
 private extension MasterViewController {
     
-    func resetvc (_ sender:UIBarButtonItem, _ vc:UIViewController) {
-        coloredSpacer.backgroundColor = appTheme.iMessageColor
+    func resetvc (_ sender:UIBarButtonItem, _ vc:UIViewController,_ color:UIColor) {
+        coloredSpacer.backgroundColor = color
         for bbi in allBarButtonItems {
             bbi.tintColor = bbi == sender ? coloredSpacer.backgroundColor : offColor
         }
@@ -131,13 +130,12 @@ private extension MasterViewController {
         currentViewController = vc
     }
     
-    func cycleaction<VC:ChildOfMasterViewController>(sender:UIBarButtonItem, id:String, vc:inout VC?) {
+    func cycleaction<VC:ChildOfMasterViewController>(sender:UIBarButtonItem, id:String, vc:inout VC?,color:UIColor) {
         
         guard  currentViewController != vc || vc == nil else  { return }
-        
         if vc == nil {
             vc = self.storyboard?.instantiateViewController(withIdentifier: id) as? VC         }
-        resetvc(sender, vc!)
+        resetvc(sender, vc!,color)
     }
     
     
@@ -151,7 +149,7 @@ private extension MasterViewController {
             newViewController.view.alpha = 1
             oldViewController.view.alpha = 0
             },
-                       completion: { finished in
+                completion: { finished in
                         oldViewController.view.removeFromSuperview()
                         oldViewController.removeFromParentViewController()
                         newViewController.didMove(toParentViewController: self)
@@ -161,7 +159,7 @@ private extension MasterViewController {
         parentView.addSubview(subView)
         var viewBindingsDict = [String: AnyObject]()
         viewBindingsDict["subView"] = subView
-        parentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[subView]|",  options: [], metrics: nil, views: viewBindingsDict))
+    parentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[subView]|",  options: [], metrics: nil, views: viewBindingsDict))
         parentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[subView]|", options: [], metrics: nil, views: viewBindingsDict))
     }
     

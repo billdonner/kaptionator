@@ -23,8 +23,7 @@ class ITunesMenuViewController: UIViewController,AddDismissButton {
     @IBOutlet weak var outerView: UIView!
     @IBOutlet weak var webviewOverlay: UIWebView!
     @IBOutlet weak var menuImageView: UIImageView!
-    @IBOutlet weak var imageCaption: UITextField!
-    @IBOutlet weak var useasis: UIButton!
+    @IBOutlet weak var imageCaption: UITextField! 
     @IBOutlet weak var useasisnocaption: UIButton!
     @IBOutlet weak var addcaption: UIButton!
     @IBOutlet weak var animatedLabel: UILabel!
@@ -32,10 +31,29 @@ class ITunesMenuViewController: UIViewController,AddDismissButton {
     
     @IBAction func animationSwitchTapped(_ sender: AnyObject) {
         
+     
         addcaption.isEnabled = !animationSwitch.isOn
         addcaption.setTitleColor(animationSwitch.isOn ? .darkGray : .lightGray,for: .normal)
+        var  options = remoteAsset.options
+        if animationSwitch.isOn {
+            options.insert(.generateasis)
+        } else {
+            options.remove(.generateasis)
+        }
+        // to persist this seemingly trivial process we must make a whole new RemoteAsset
+        let newra = remoteAsset.copyWithNewOptions(stickerOptions: options)
+        
+        RemSpace.remove(ra:remoteAsset)
+        RemSpace.addasset(ra: newra)
+        
+        
         // draw or redraw
-        showimage(remoteAsset: remoteAsset,animate:animationSwitch.isOn)
+        showimage(remoteAsset: newra,animate:animationSwitch.isOn)
+        
+        RemSpace.saveToDisk()
+        
+        remoteAsset = newra // IMPORTANT - point to new asset
+        
     
     }
     @IBAction func useStickerNoCaptionPressed(_ sender: AnyObject) {
@@ -69,7 +87,7 @@ class ITunesMenuViewController: UIViewController,AddDismissButton {
         let isAnimated = animate//remoteAsset.options.contains(.generateasis)
         if !isAnimated {
             self.menuImageView.isHidden = false
-            self.animatedLabel.isHidden = true
+            //self.animatedLabel.isHidden = true
             webviewOverlay.isHidden  = true
             
             do {
@@ -106,7 +124,7 @@ class ITunesMenuViewController: UIViewController,AddDismissButton {
         // Do any additional setup after loading the view.
         
         imageCaption.isEnabled  = true
-        imageCaption.text = showVendorTitles ? remoteAsset.caption : ""
+        imageCaption.text = remoteAsset.caption != "" ? remoteAsset.caption : "-no caption-"
         
         let isAnimated = remoteAsset.options.contains(.generateasis)
         showimage(remoteAsset:remoteAsset,animate: isAnimated)

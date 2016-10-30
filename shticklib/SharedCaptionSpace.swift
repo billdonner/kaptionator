@@ -21,7 +21,7 @@ struct SharedCE {
     let id: String //stringified float millisecs since 1970
     let caption: String
     let stickerOptions: StickerMakingOptions
-    var stickerPaths:[String]
+    var stickerPath:String
     let catalogpack:String
     let catalogtitle:String
     let localimagepath:String
@@ -33,7 +33,7 @@ struct SharedCE {
             kCaption:caption as AnyObject,
             kID:id as AnyObject,
             kLocal:localimagepath as AnyObject,
-            kStickers:stickerPaths as AnyObject,
+            kStickers:stickerPath as AnyObject,
             kPack:catalogpack as AnyObject,
             kTitle:catalogtitle as AnyObject,
             kOptions:stickerOptions.rawValue as AnyObject ]
@@ -52,14 +52,14 @@ struct SharedCE {
     }
     
     init(pack:String,title:String,imagepath:String,
-         stickerpaths:[String],
+         stickerPath:String,
          caption:String,
          options:StickerMakingOptions ) {
         
         self.catalogpack = pack
         self.catalogtitle = title
         self.localimagepath = imagepath
-        self.stickerPaths = stickerpaths
+        self.stickerPath = stickerPath
         self.caption = caption
         self.stickerOptions = options
         self.id =  "\(SharedCE.nicetime())"
@@ -133,11 +133,10 @@ struct SharedCaptionSpace {
    static  func findMatchingEntry(atPath:String) -> SharedCE? {
         let lpc = (atPath as NSString).lastPathComponent
         for entry in memSpace.entries {
-            for path in entry.stickerPaths {
+            let path =  entry.stickerPath
             if (path as NSString).lastPathComponent == lpc            {
                 return entry
             }
-        }
         }
         return nil
     }

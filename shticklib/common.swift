@@ -169,7 +169,7 @@ func restoreSharespaceFromDisk () throws  {
             if let  optionsvalue = acaption [kOptions] as? Int,
                 let captiontext = acaption [kCaption] as? String,
                 let i = acaption[kLocal] as? String,
-                let s = acaption[kStickers] as? [String],
+                let s = acaption[kStickers] as? String,
                 let p = acaption[kPack] as? String,
                 let _ = acaption[kID] as? String
             {
@@ -183,7 +183,7 @@ func restoreSharespaceFromDisk () throws  {
                 /// figure the shared paths
                 let t = SharedCE( pack: p, title: ti,
                                   imagepath: i,
-                                  stickerpaths:s,
+                                  stickerPath:s,
                                   caption:  captiontext,
                                   options: options )
                 let _ = SharedCaptionSpace.add(ce: t)

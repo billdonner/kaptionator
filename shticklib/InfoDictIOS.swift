@@ -108,13 +108,13 @@ func prepareStickers( pack:String,title:String,imagepath:String, caption:String,
     do {
         let theData = try Data(contentsOf: URL(string: imagepath)!)
         
-        let stickerPaths =   StickerFileFactory.createStickerFilesFrom (imageData: theData ,path: imagepath, caption:caption, options:options)
+        let stickerPath =   StickerFileFactory.createStickerFileFrom (imageData: theData ,path: imagepath, caption:caption, options:options)
         
-        print("made sticker file urls \(stickerPaths)")
+        print("made sticker file urls \(stickerPath)")
         
         let t = SharedCE( pack: pack, title: title,
                           imagepath: imagepath,
-                          stickerpaths:stickerPaths,
+                          stickerPath:stickerPath,
                           caption: caption,
                           options: options )
         

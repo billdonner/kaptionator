@@ -8,7 +8,7 @@
 import UIKit
 protocol CaptionedMenuViewDelegate {
     func movetoIMessage(captionedEntry:inout AppCE)
-    func changeCaption( on captionedEntry:inout AppCE, caption:String)
+    func changeCaption( on captionedEntry:inout AppCE,caption:String)
     func cloneWithCaption( captionedEntry:AppCE, caption:String)
 }
 final class CaptionedMenuViewController: UIViewController, AddDismissButton {
@@ -29,6 +29,7 @@ final class CaptionedMenuViewController: UIViewController, AddDismissButton {
     @IBOutlet weak var editsticker: UIButton!
     @IBOutlet weak var moveimessage: UIButton!
     //MARK:- MENU TAP ACTIONS
+      
     @IBAction func cloneWithNewCaptionTapped(_ sender: AnyObject) {
         imageCaption.text = ""
         editStickerCaption(sender)

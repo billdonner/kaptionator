@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A322" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11521.1" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,10 +23,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.81960784310000001" green="0.92549019610000005" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="5JV-7u-2x6" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-16" id="VE5-eo-Xyj"/>
+                            <constraint firstItem="5JV-7u-2x6" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="VE5-eo-Xyj"/>
                             <constraint firstItem="5JV-7u-2x6" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="lNZ-tf-hqg"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="5JV-7u-2x6" secondAttribute="bottom" id="pqH-sE-A79"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="5JV-7u-2x6" secondAttribute="trailing" constant="-16" id="uFb-fE-Cfu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5JV-7u-2x6" secondAttribute="trailing" constant="-20" id="uFb-fE-Cfu"/>
                         </constraints>
                     </view>
                 </viewController>

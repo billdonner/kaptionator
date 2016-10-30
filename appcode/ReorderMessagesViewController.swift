@@ -103,13 +103,12 @@ final class ReorderMessagesViewController: UICollectionViewController,AddDismiss
         } else if ra.stickerOptions   .contains(.generateasis) {
             cell.paint(name:"ANIMATED")
         }
-        if ra.stickerPaths.count > 0 {
-            let path = ra.stickerPaths[0]
+            let path = ra.stickerPath
             if path != "" {
                 // have the data onhand
                 cell.paintImage(path:path)
             }
-        }
+        
         cell.colorFor(ra:ra)
         return cell // Return the cell
     }

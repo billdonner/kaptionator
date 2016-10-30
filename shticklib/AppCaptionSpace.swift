@@ -25,6 +25,9 @@ struct AppCE {
     let catalogtitle:String
     let localimagepath:String  // path of local copy of source for 
     
+    
+ 
+    
     /// these are the action functions that are called to move things between tabs
   
 
