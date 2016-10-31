@@ -11,6 +11,10 @@
 		8816CF421DC7829B00A4D285 /* RemSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816CF401DC7829B00A4D285 /* RemSpace.swift */; };
 		8816CF431DC7829B00A4D285 /* RemSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816CF401DC7829B00A4D285 /* RemSpace.swift */; };
 		8816CF441DC7829B00A4D285 /* RemSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816CF401DC7829B00A4D285 /* RemSpace.swift */; };
+		8817590E1DC7F26900DB70C6 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8817590D1DC7F26900DB70C6 /* Help.storyboard */; };
+		8817590F1DC7F26900DB70C6 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8817590D1DC7F26900DB70C6 /* Help.storyboard */; };
+		881759101DC7F26900DB70C6 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8817590D1DC7F26900DB70C6 /* Help.storyboard */; };
+		881759111DC7F26900DB70C6 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8817590D1DC7F26900DB70C6 /* Help.storyboard */; };
 		881A13E41D90ACB500D7A4EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD92D91D8872D400832564 /* Main.storyboard */; };
 		882EB2101D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
 		882EB2121D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
@@ -196,6 +200,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		881759081DC7D11800DB70C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88AEA5891D514B29006E5C70 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88AEA5901D514B29006E5C70;
+			remoteInfo = kaptionator;
+		};
 		88475BF81D51607000FA7EC4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 88AEA5891D514B29006E5C70 /* Project object */;
@@ -286,6 +297,8 @@
 		881758A51DC7AB0700DB70C6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		881758F71DC7B13B00DB70C6 /* kaptionatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kaptionatorTests.swift; sourceTree = "<group>"; };
 		881758F91DC7B13B00DB70C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		881759031DC7D11800DB70C6 /* kaptionatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kaptionatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8817590D1DC7F26900DB70C6 /* Help.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Help.storyboard; sourceTree = SOURCE_ROOT; };
 		881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesViewController.swift; sourceTree = "<group>"; };
 		882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCaptionSpace.swift; sourceTree = "<group>"; };
 		883982961DB1421C00B5A037 /* InnerHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InnerHelpViewController.swift; sourceTree = "<group>"; };
@@ -363,6 +376,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		881759001DC7D11800DB70C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88AEA58E1D514B29006E5C70 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -435,6 +455,49 @@
 			path = kaptionatorTests;
 			sourceTree = "<group>";
 		};
+		881759121DC7FFF200DB70C6 /* ModalViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				883982A41DB2B4F100B5A037 /* HelpDropdownViewController.swift */,
+				88FA07D61DA402330063B483 /* ChangeCaptionViewController.swift */,
+				88B570EB1DA566B400CD4058 /* GetCaptionViewController.swift */,
+				88DD92E01D88738200832564 /* CatalogMenuViewController.swift */,
+				88DD92E11D88738200832564 /* CaptionedMenuViewController.swift */,
+				883982961DB1421C00B5A037 /* InnerHelpViewController.swift */,
+				88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */,
+				88DD92E61D88738200832564 /* MessagedMenuViewController.swift */,
+				88F2FC911D931A070055209C /* MoreMenuViewController.swift */,
+				886B4AC71D9DDD5B00581C9B /* ReorderMessagesViewController.swift */,
+				8862CE311DB0838500685CCA /* StartupHelpViewController.swift */,
+				88DD92E41D88738200832564 /* WebHelpViewController.swift */,
+			);
+			name = ModalViewControllers;
+			sourceTree = "<group>";
+		};
+		881759131DC8005000DB70C6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				886B4AC21D9CA4CB00581C9B /* MessagesTableCell.swift */,
+				88DD92E71D88738200832564 /* CatalogDataCell.swift */,
+				88DD92E81D88738200832564 /* CaptionedTableCell.swift */,
+				88B5718D1DA6FC8F00CD4058 /* ITunesDataCell.swift */,
+				886B4ACC1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		881759141DC8009200DB70C6 /* ControlledByMasterView */ = {
+			isa = PBXGroup;
+			children = (
+				88DD92DF1D88738200832564 /* CatalogRemoteViewController.swift */,
+				88B571921DA705AC00CD4058 /* CatalogLocalViewController.swift */,
+				88DD92E21D88738200832564 /* CapationatedViewController.swift */,
+				881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */,
+				88DD92E31D88738200832564 /* MessagesViewController.swift */,
+			);
+			name = ControlledByMasterView;
+			sourceTree = "<group>";
+		};
 		881836961DAFF3CD0034A078 /* shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,31 +524,13 @@
 			isa = PBXGroup;
 			children = (
 				88DD92D91D8872D400832564 /* Main.storyboard */,
+				8817590D1DC7F26900DB70C6 /* Help.storyboard */,
 				88DD92DE1D88738200832564 /* AppDelegate.swift */,
-				88DD92DF1D88738200832564 /* CatalogRemoteViewController.swift */,
-				88B571921DA705AC00CD4058 /* CatalogLocalViewController.swift */,
-				88DD92E01D88738200832564 /* CatalogMenuViewController.swift */,
-				88DD92E71D88738200832564 /* CatalogDataCell.swift */,
-				88DD92E21D88738200832564 /* CapationatedViewController.swift */,
-				88DD92E81D88738200832564 /* CaptionedTableCell.swift */,
-				88DD92E11D88738200832564 /* CaptionedMenuViewController.swift */,
-				88FA07D61DA402330063B483 /* ChangeCaptionViewController.swift */,
-				88B570EB1DA566B400CD4058 /* GetCaptionViewController.swift */,
-				883982A41DB2B4F100B5A037 /* HelpDropdownViewController.swift */,
-				883982961DB1421C00B5A037 /* InnerHelpViewController.swift */,
-				881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */,
-				88B5718D1DA6FC8F00CD4058 /* ITunesDataCell.swift */,
-				88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */,
+				881759141DC8009200DB70C6 /* ControlledByMasterView */,
+				881759121DC7FFF200DB70C6 /* ModalViewControllers */,
+				881759131DC8005000DB70C6 /* Cells */,
 				88DD92E51D88738200832564 /* MasterViewController.swift */,
-				88DD92E31D88738200832564 /* MessagesViewController.swift */,
-				886B4AC21D9CA4CB00581C9B /* MessagesTableCell.swift */,
-				88DD92E61D88738200832564 /* MessagedMenuViewController.swift */,
-				88F2FC911D931A070055209C /* MoreMenuViewController.swift */,
-				886B4ACC1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift */,
-				886B4AC71D9DDD5B00581C9B /* ReorderMessagesViewController.swift */,
 				88B54CA51D8870060076942D /* SFViewController.swift */,
-				8862CE311DB0838500685CCA /* StartupHelpViewController.swift */,
-				88DD92E41D88738200832564 /* WebHelpViewController.swift */,
 			);
 			path = appcode;
 			sourceTree = "<group>";
@@ -532,6 +577,7 @@
 				88AEA61A1D514C5F006E5C70 /* emogeezMessagesExtension.appex */,
 				88AEA62F1D514C8D006E5C70 /* candidatezMessagesExtension.appex */,
 				88AEA6441D514CC7006E5C70 /* kaptionatorMessageExtension.appex */,
+				881759031DC7D11800DB70C6 /* kaptionatorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -649,6 +695,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		881759021DC7D11800DB70C6 /* kaptionatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8817590A1DC7D11800DB70C6 /* Build configuration list for PBXNativeTarget "kaptionatorTests" */;
+			buildPhases = (
+				881758FF1DC7D11800DB70C6 /* Sources */,
+				881759001DC7D11800DB70C6 /* Frameworks */,
+				881759011DC7D11800DB70C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				881759091DC7D11800DB70C6 /* PBXTargetDependency */,
+			);
+			name = kaptionatorTests;
+			productName = kaptionatorTests;
+			productReference = 881759031DC7D11800DB70C6 /* kaptionatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		88AEA5901D514B29006E5C70 /* kaptionator */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88AEA5A31D514B29006E5C70 /* Build configuration list for PBXNativeTarget "kaptionator" */;
@@ -803,6 +867,12 @@
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = midnightrambler;
 				TargetAttributes = {
+					881759021DC7D11800DB70C6 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = X2PQYA6S48;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 88AEA5901D514B29006E5C70;
+					};
 					88AEA5901D514B29006E5C70 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = X2PQYA6S48;
@@ -923,11 +993,19 @@
 				88AEA6191D514C5F006E5C70 /* emogeezMessagesExtension */,
 				88AEA5EB1D514BC3006E5C70 /* holidayz */,
 				88AEA6011D514C1F006E5C70 /* holidazeMessagesExtension */,
+				881759021DC7D11800DB70C6 /* kaptionatorTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		881759011DC7D11800DB70C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88AEA58F1D514B29006E5C70 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -936,6 +1014,7 @@
 				88AEA59C1D514B29006E5C70 /* Assets.xcassets in Resources */,
 				AD6CAF2E1DA2FEE80062919B /* SharedAssets.xcassets in Resources */,
 				881A13E41D90ACB500D7A4EC /* Main.storyboard in Resources */,
+				8817590E1DC7F26900DB70C6 /* Help.storyboard in Resources */,
 				883982A01DB18C7600B5A037 /* theMidnightRambler-120.png in Resources */,
 				883982A31DB2A14300B5A037 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -949,6 +1028,7 @@
 				88B571A21DA71F4F00CD4058 /* candidates-stickerspackimages in Resources */,
 				88AEA5B41D514B53006E5C70 /* Assets.xcassets in Resources */,
 				AD6CAF2A1DA19CF80062919B /* candidatesIconsCans-1024x768.png in Resources */,
+				8817590F1DC7F26900DB70C6 /* Help.storyboard in Resources */,
 				AD6CAF2F1DA2FEE80062919B /* SharedAssets.xcassets in Resources */,
 				88E3B5D11D90B3CF0079E0CB /* Main.storyboard in Resources */,
 			);
@@ -962,6 +1042,7 @@
 				88B571A41DA71F8200CD4058 /* emogeez-stickerspackimages in Resources */,
 				AD6CAF2C1DA19D270062919B /* emoGeeStickerIcons-1024x768.png in Resources */,
 				AD6CAF301DA2FEE80062919B /* SharedAssets.xcassets in Resources */,
+				881759101DC7F26900DB70C6 /* Help.storyboard in Resources */,
 				88AEA5CA1D514B6A006E5C70 /* Assets.xcassets in Resources */,
 				88E3B5D21D90B3D00079E0CB /* Main.storyboard in Resources */,
 			);
@@ -973,6 +1054,7 @@
 			files = (
 				88AEA5F91D514BC3006E5C70 /* LaunchScreen.storyboard in Resources */,
 				AD6CAF311DA2FEE80062919B /* SharedAssets.xcassets in Resources */,
+				881759111DC7F26900DB70C6 /* Help.storyboard in Resources */,
 				88AEA5F61D514BC3006E5C70 /* Assets.xcassets in Resources */,
 				88E3B5D31D90B3D10079E0CB /* Main.storyboard in Resources */,
 			);
@@ -1023,6 +1105,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		881758FF1DC7D11800DB70C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88AEA58D1D514B29006E5C70 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1224,6 +1313,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		881759091DC7D11800DB70C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88AEA5901D514B29006E5C70 /* kaptionator */;
+			targetProxy = 881759081DC7D11800DB70C6 /* PBXContainerItemProxy */;
+		};
 		88475BF91D51607000FA7EC4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 88AEA62E1D514C8D006E5C70 /* candidatezMessagesExtension */;
@@ -1298,6 +1392,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8817590B1DC7D11800DB70C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = X2PQYA6S48;
+				INFOPLIST_FILE = kaptionatorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.kaptionatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kaptionator.app/kaptionator";
+			};
+			name = Debug;
+		};
+		8817590C1DC7D11800DB70C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = X2PQYA6S48;
+				INFOPLIST_FILE = kaptionatorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.kaptionatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kaptionator.app/kaptionator";
+			};
+			name = Release;
+		};
 		88AEA5A11D514B29006E5C70 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1633,6 +1759,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8817590A1DC7D11800DB70C6 /* Build configuration list for PBXNativeTarget "kaptionatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8817590B1DC7D11800DB70C6 /* Debug */,
+				8817590C1DC7D11800DB70C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		88AEA58C1D514B29006E5C70 /* Build configuration list for PBXProject "kaptionator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

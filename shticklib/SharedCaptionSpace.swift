@@ -15,13 +15,13 @@ fileprivate var memSpace  = SharedCaptionSpace(SharedMemDataSpace)
 
 //MARK: - AppCE represents a catalog entry modified the user
 
-struct SharedCE {
+public struct SharedCE {
     
     // write once
     let id: String //stringified float millisecs since 1970
     let caption: String
     let stickerOptions: StickerMakingOptions
-    let  stickerPath:String
+    let stickerPath:String
     let catalogpack:String
     let catalogtitle:String
     let localimagepath:String
@@ -90,9 +90,7 @@ struct SharedCaptionSpace {
         print("SharedCaptionSpace - \(suite) >>>>> \(entries)")
         
     }
-    //    mutating func addSharedCE(_ ce :SharedCE) {
-    //        self.entries[ce.id] = ce
-    //    }
+    
     static func reset() {
         memSpace.entries = []
         //saveToDisk()

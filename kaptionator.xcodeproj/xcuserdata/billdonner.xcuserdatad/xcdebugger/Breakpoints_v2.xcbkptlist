@@ -1178,11 +1178,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shticklib/SharedCaptionSpace.swift"
-            timestampString = "499118346.009756"
+            timestampString = "499637541.172302"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "saveData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1242,11 +1242,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shticklib/SharedCaptionSpace.swift"
-            timestampString = "499118346.009756"
+            timestampString = "499637541.172302"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "saveData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1364,11 +1364,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shticklib/SharedCaptionSpace.swift"
-            timestampString = "499118346.009756"
+            timestampString = "499637541.172302"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "findMatchingEntry(atPath:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1396,11 +1396,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "shticklib/SharedCaptionSpace.swift"
-            timestampString = "499118346.009756"
+            timestampString = "499637541.172302"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
             landmarkName = "saveData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1888,11 +1888,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/MasterViewController.swift"
-            timestampString = "499624035.890018"
+            timestampString = "499634416.247778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2032,11 +2032,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/MasterViewController.swift"
-            timestampString = "499624035.890018"
+            timestampString = "499634416.247778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "MasterViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -2048,11 +2048,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/MasterViewController.swift"
-            timestampString = "499624035.890018"
+            timestampString = "499634416.247778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "imsgAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2064,7 +2064,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/MasterViewController.swift"
-            timestampString = "499624035.890018"
+            timestampString = "499634416.247778"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "cycleaction(sender:id:vc:color:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "appcode/MasterViewController.swift"
+            timestampString = "499634416.247778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "131"
@@ -2080,27 +2096,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/MasterViewController.swift"
-            timestampString = "499624035.890018"
+            timestampString = "499634416.247778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
-            landmarkName = "cycleaction(sender:id:vc:color:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "appcode/MasterViewController.swift"
-            timestampString = "499624035.890018"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "MasterViewController"
             landmarkType = "4">
          </BreakpointContent>
@@ -2403,6 +2403,86 @@
             startingLineNumber = "14"
             endingLineNumber = "14"
             landmarkName = "parseData(_:baseURL:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "kaptionatorTests/kaptionatorTests.swift"
+            timestampString = "499637070.611971"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "testPerformanceExample()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "kaptionatorTests/kaptionatorTests.swift"
+            timestampString = "499637070.611971"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "testPerformanceExample()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "kaptionatorTests/kaptionatorTests.swift"
+            timestampString = "499637093.726101"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "testPerformanceExample()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shticklib/RemSpace.swift"
+            timestampString = "499637413.061932"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "saveToDisk()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "shticklib/AppCaptionSpace.swift"
+            timestampString = "499637428.886907"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "264"
+            endingLineNumber = "264"
+            landmarkName = "saveToDisk()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
