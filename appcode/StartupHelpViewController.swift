@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class StartupHelpViewController:  UIViewController, AddDismissButton  {
+final class StartupHelpViewController:  UIViewController, ModalOverCurrentContext  {
     
     @IBOutlet weak var pic: UIImageView!
     

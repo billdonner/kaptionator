@@ -11,7 +11,7 @@ protocol CatalogMenuViewDelegate : class {
     func useWithCaption(remoteAsset:RemoteAsset,caption:String)
     func useWithNoCaption(remoteAsset:RemoteAsset)
 }
-final class CatalogMenuViewController: UIViewController,AddDismissButton {
+final class CatalogMenuViewController: UIViewController,ModalOverCurrentContext {
     var remoteAsset:RemoteAsset! // must be set
     weak var delegate: CatalogMenuViewDelegate?  // mig
     

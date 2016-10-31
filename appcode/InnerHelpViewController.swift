@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class InnerHelpViewController: UIViewController, AddDismissButton  {
+final class InnerHelpViewController: UIViewController, ModalOverCurrentContext  {
     
     
     @IBOutlet weak var topLabel: UILabel!

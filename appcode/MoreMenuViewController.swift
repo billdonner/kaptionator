@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class MoreMenuViewController: UIViewController, AddDismissButton  {
+final class MoreMenuViewController: UIViewController, ModalOverCurrentContext  {
     func dismisstapped(_ s: AnyObject) {
         dismiss(animated: true, completion: nil)
     }

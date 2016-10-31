@@ -7,11 +7,11 @@
 //
 import UIKit
 protocol CaptionedMenuViewDelegate : class {
-    func movetoIMessage(captionedEntry:inout AppCE)
-    func changeCaption( on captionedEntry:inout AppCE,caption:String)
+    func movingtoIMessage(captionedEntry:inout AppCE)
+    func changingCaption( on captionedEntry:inout AppCE,caption:String)
     func cloneWithCaption( captionedEntry:AppCE, caption:String)
 }
-final class CaptionedMenuViewController: UIViewController, AddDismissButton {
+final class CaptionedMenuViewController: UIViewController, ModalOverCurrentContext {
     var captionedEntry:AppCE! // must be set
     weak var delegate: CaptionedMenuViewDelegate?  // mig
     
@@ -49,9 +49,9 @@ final class CaptionedMenuViewController: UIViewController, AddDismissButton {
             }
         }
     }
-    @IBAction func moveToIMessage(_ sender: AnyObject) {
+    @IBAction func moveToIMessageHit(_ sender: AnyObject) {
         var newce = captionedEntry!
-        delegate?.movetoIMessage(captionedEntry:&newce) // elsewhere
+        delegate?.movingtoIMessage(captionedEntry:&newce) // elsewhere
         dismiss(animated: true,completion:nil)
     }
     internal func dismisstapped(_ s: AnyObject) {

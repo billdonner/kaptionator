@@ -9,7 +9,7 @@
 import UIKit
 
 
-final class HelpDropdownViewController: UIViewController, AddDismissButton  , UINavigationControllerDelegate  {
+final class HelpDropdownViewController: UIViewController, ModalOverCurrentContext  , UINavigationControllerDelegate  {
     let supportedCloudUTIs =
         ["com.compuserve.gif",
          "public.png",

@@ -14,7 +14,7 @@ protocol MessagesAppMenuViewDelegate: class  {
 /// All the heavy lifting and file manipulation is done on this side of the fence
 /// The Messages Extension code passes the filepaths to msSticker API without ever touching them, for a fast start
 
-final class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
+final class MessagesAppMenuViewController: UIViewController ,ModalOverCurrentContext {
     
     var captionedEntry:SharedCE! // must be set
     weak var delegate: MessagesAppMenuViewDelegate?  // mig

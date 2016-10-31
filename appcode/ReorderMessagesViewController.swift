@@ -18,7 +18,7 @@ class ReorderMessagesReusableView: UICollectionReusableView {
    @IBOutlet weak var headerLabel: UILabel!
     
 }
-final class ReorderMessagesViewController: UICollectionViewController,AddDismissButton{
+final class ReorderMessagesViewController: UICollectionViewController,ModalOverCurrentContext{
    private var theSelectedIndexPath:IndexPath?
     
     internal func dismisstapped(_ s: AnyObject) {

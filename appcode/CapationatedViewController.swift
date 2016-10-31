@@ -79,13 +79,13 @@ private  extension CapationatedViewController {
         captionedEntry.cloneWithNewCaption(  caption)
         tableView.reloadData()
     }
-    func movetoIMessage(captionedEntry:inout AppCE){
-        print("CapationatedEntriesViewController movetoimessage")
-        captionedEntry.moveToIMessage()
+    func movingtoIMessage(captionedEntry:inout AppCE){
+        print("CapationatedEntriesViewController movingtoIMessage")
+        captionedEntry.cemoveToIMessage()
     }
-    func changeCaption( on captionedEntry:inout AppCE, caption:String){
-        print("CapationatedEntriesViewController changeCaption")
-        captionedEntry.changeCaption(to: caption)
+    func changingCaption( on captionedEntry:inout AppCE, caption:String){
+        print("CapationatedEntriesViewController changingCaption")
+        captionedEntry.changeCaptionForAppCE(to: caption)
         tableView.reloadData()
     }
  }
@@ -138,17 +138,7 @@ private  extension CapationatedViewController {
  }
  // MARK:  UICollectionViewDataSource runs in local space
  // MARK: Observer for model adjustments
-// extension CapationatedViewController : MEObserver {
-//    func newdocument(_ propsDict: JSONDict, _ title:String) {
-//        stickerz.removeAll()
-//        stickerz = [] // reset CAREFUL not [[]]
-//    }
-// 
-//    func newentry(me:RemoteAsset){
-//        let ce = me.convertToAppCE()
-//        stickerz.append(ce) // append this
-//    }
-// }
+ 
  extension CapationatedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         theSelectedIndexPath = indexPath

@@ -49,7 +49,6 @@
 		886B4AD01D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4ACC1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift */; };
 		889FB7221D9438220064B4C9 /* CatalogRemoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92DF1D88738200832564 /* CatalogRemoteViewController.swift */; };
 		88AEA59C1D514B29006E5C70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88AEA59B1D514B29006E5C70 /* Assets.xcassets */; };
-		88AEA59F1D514B29006E5C70 /* OldLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88AEA59D1D514B29006E5C70 /* OldLaunchScreen.storyboard */; };
 		88AEA5B41D514B53006E5C70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88AEA5B31D514B53006E5C70 /* Assets.xcassets */; };
 		88AEA5B71D514B53006E5C70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88AEA5B51D514B53006E5C70 /* LaunchScreen.storyboard */; };
 		88AEA5CA1D514B6A006E5C70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88AEA5C91D514B6A006E5C70 /* Assets.xcassets */; };
@@ -300,7 +299,6 @@
 		886B4ACC1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReorderCollectionViewCell.swift; sourceTree = "<group>"; };
 		88AEA5911D514B29006E5C70 /* kaptionator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kaptionator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88AEA59B1D514B29006E5C70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		88AEA59E1D514B29006E5C70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OldLaunchScreen.storyboard; sourceTree = "<group>"; };
 		88AEA5A01D514B29006E5C70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88AEA5AA1D514B53006E5C70 /* candidatez.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = candidatez.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88AEA5B31D514B53006E5C70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -543,7 +541,6 @@
 			children = (
 				88AEA59B1D514B29006E5C70 /* Assets.xcassets */,
 				8810D0011D53C510009BA9B3 /* kaptionator.entitlements */,
-				88AEA59D1D514B29006E5C70 /* OldLaunchScreen.storyboard */,
 				883982A21DB2A14300B5A037 /* LaunchScreen.storyboard */,
 				88AEA5A01D514B29006E5C70 /* Info.plist */,
 			);
@@ -936,7 +933,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8839829B1DB14FDD00B5A037 /* kaptionator-1024x768.png in Resources */,
-				88AEA59F1D514B29006E5C70 /* OldLaunchScreen.storyboard in Resources */,
 				88AEA59C1D514B29006E5C70 /* Assets.xcassets in Resources */,
 				AD6CAF2E1DA2FEE80062919B /* SharedAssets.xcassets in Resources */,
 				881A13E41D90ACB500D7A4EC /* Main.storyboard in Resources */,
@@ -1251,14 +1247,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		88AEA59D1D514B29006E5C70 /* OldLaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				88AEA59E1D514B29006E5C70 /* Base */,
-			);
-			name = OldLaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		88AEA5B51D514B53006E5C70 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -9,7 +9,7 @@
 import UIKit
 
 
-final class WebsiteOverlayViewController:UIViewController, UIWebViewDelegate,AddDismissButton  {
+final class WebsiteOverlayViewController:UIViewController, UIWebViewDelegate,ModalOverCurrentContext  {
     let  urlRequest : URLRequest = {
         return URLRequest(url:URL(string: websitePath )!)
     }()
@@ -34,7 +34,7 @@ final class WebsiteOverlayViewController:UIViewController, UIWebViewDelegate,Add
     }
 
 }
-final class WebHelpViewController:UIViewController, UIWebViewDelegate,AddDismissButton  {
+final class WebHelpViewController:UIViewController, UIWebViewDelegate,ModalOverCurrentContext  {
     let  urlRequest : URLRequest = {
         return URLRequest(url:URL(string:websitePath +  "/apphelp.html" )!)
     }()
@@ -59,7 +59,7 @@ final class WebHelpViewController:UIViewController, UIWebViewDelegate,AddDismiss
     }
 
 }
-final class AltWebHelpViewController:UIViewController, UIWebViewDelegate,AddDismissButton  {
+final class AltWebHelpViewController:UIViewController, UIWebViewDelegate,ModalOverCurrentContext  {
     
     
 let  urlRequest : URLRequest = {

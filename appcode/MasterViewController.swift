@@ -7,11 +7,9 @@
 //
 import UIKit
 
-let  offColor:UIColor  = UIColor.lightGray
-
-protocol ControlledByMasterView {
+protocol ControlledByMasterView : class {
 }
-protocol AddDismissButton : class {
+protocol ModalOverCurrentContext : class {
 }
 
 fileprivate var masterViewController : MasterViewController?
@@ -36,6 +34,9 @@ final class MasterViewController: UIViewController {
     fileprivate var allBarButtonItems : [UIBarButtonItem] = []
     
     //MARK:-  globally available static funcs
+    
+    
+    let  offColor:UIColor  = UIColor.lightGray
     
     static func blurt(title:String,mess:String,compl:(()->())? = nil ) {
         IOSSpecialOps.blurt(masterViewController!,title: title,mess:mess) {

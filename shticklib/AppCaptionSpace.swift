@@ -109,7 +109,7 @@ extension AppCE {
 
 ///
 extension AppCE {
-    mutating func changeCaption(to caption:String) {
+    mutating func changeCaptionForAppCE(to caption:String) {
         let alreadyIn = AppCaptionSpace.findMatchingAsset(path: self.localimagepath, caption: caption)
         if !alreadyIn {
             // keep old and
@@ -128,7 +128,7 @@ extension AppCE {
             SharedCaptionSpace.saveData()
         }
     }
-    mutating func moveToIMessage() { // only from capspace
+    mutating func cemoveToIMessage() { // only from capspace
         // duplicate and save to other space under same id, as is
         // if there is something in there with same file and caption then forget it
         let alreadyIn = SharedCaptionSpace.findMatchingAsset(path: self.localimagepath, caption: self.caption)

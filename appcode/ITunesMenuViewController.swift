@@ -14,7 +14,7 @@ protocol ITunesMenuViewDelegate : class {
     func useWithCaption(remoteAsset:RemoteAsset,caption:String)
     func useWithNoCaption(remoteAsset:RemoteAsset)
 }
-final class ITunesMenuViewController: UIViewController,AddDismissButton {
+final class ITunesMenuViewController: UIViewController,ModalOverCurrentContext {
     var pvc:UIViewController! // must be set
     var remoteAsset:RemoteAsset! // must be set
     weak var delegate: ITunesMenuViewDelegate?  // mig

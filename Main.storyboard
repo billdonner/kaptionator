@@ -677,9 +677,6 @@
                                                 <variation key="heightClass=regular-widthClass=regular">
                                                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                 </variation>
-                                                <connections>
-                                                    <action selector="moveToIMessage:" destination="P8v-au-Qtf" eventType="touchUpInside" id="Y54-7D-uMh"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sV7-mU-wpq">
                                                 <rect key="frame" x="0.0" y="203.5" width="281.5" height="48"/>
