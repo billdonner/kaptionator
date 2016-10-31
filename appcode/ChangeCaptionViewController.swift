@@ -7,11 +7,11 @@
 //
 
 import UIKit
-protocol ChangeCaptionDelegate {
+protocol ChangeCaptionDelegate : class{
     func captionWasEntered(caption:String)
 }
-class ChangeCaptionViewController: UIViewController  {
-    var delegate: ChangeCaptionDelegate?
+final class ChangeCaptionViewController: UIViewController  {
+    var delegate: ChangeCaptionDelegate?//todo: figure out why cant make weak
     internal func dismisstapped(_ s: AnyObject) {
         self.performSegue(withIdentifier: "UnwindToCaptionedAppVC", sender: s)
     }

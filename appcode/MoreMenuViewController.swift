@@ -8,13 +8,19 @@
 
 import UIKit
 
-class MoreMenuViewController: ReverseModalBlurViewController {
-    
+final class MoreMenuViewController: UIViewController, AddDismissButton  {
+    func dismisstapped(_ s: AnyObject) {
+        dismiss(animated: true, completion: nil)
+    }
     // place to open website
     
     @IBAction func websitetapped(_ sender: AnyObject) {
         IOSSpecialOps.openwebsite(self)
         // dismiss(animated: true,completion:nil)
     }
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
+    }
 }

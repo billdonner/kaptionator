@@ -7,12 +7,12 @@
 //
 
 import UIKit
-protocol GetCaptionDelegate {
+protocol GetCaptionDelegate:class {
     func captionWasEntered(caption:String)
 }
-class GetCaptionViewController: UIViewController  {
-    var delegate: GetCaptionDelegate?
-    var unwinder: String!
+final class GetCaptionViewController: UIViewController  {
+    var delegate: GetCaptionDelegate! // why ant be weak?
+    var unwinder: String! // unusual
     var backgroundImage: UIImage!
     
     internal func dismisstapped(_ s: AnyObject) {
@@ -21,6 +21,8 @@ class GetCaptionViewController: UIViewController  {
     
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var theCaptionTextView: UITextView!
+    
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }

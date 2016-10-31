@@ -6,14 +6,6 @@
 //  Copyright © 2016 Martoons and MedCommons. All rights reserved.
 //
 import UIKit
-// if nil we'll just pull from documents directory inside the catalog controller
-var stickerManifestURL: URL? {
-get {
-    if let iDict = Bundle.main.infoDictionary ,
-        let w =  iDict["REMOTE-MANIFEST-URL"] as? String { return URL(string:w) }
-    return nil
-}
-}
 
 let  offColor:UIColor  = UIColor.lightGray
 
@@ -47,10 +39,17 @@ final class MasterViewController: UIViewController {
     
     //MARK:-  globally available static funcs
     
-    static func blurt(title:String,mess:String) {
-        IOSSpecialOps.blurt(masterViewController!,title: "Added one image to your catalog",mess: "as is")
+    static func blurt(title:String,mess:String,compl:(()->())? = nil ) {
+        IOSSpecialOps.blurt(masterViewController!,title: title,mess:mess) {
+            compl?()
+        }
     }
     
+    static func ask(title:String,mess:String,compl:(()->())? = nil ) {
+        IOSSpecialOps.ask(masterViewController!,title: title,mess:mess) {
+            compl?()
+        }
+    }
     //MARK:- Lifecyle for ViewControllers
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -84,7 +83,7 @@ final class MasterViewController: UIViewController {
         imessage.isEnabled = false
         allBarButtonItems = [catb,helpbbi,imessage,stickerz]
         
-        databaseStuff()
+        IO.databaseStuff()
         finishStartup()
         
     }// fall straight into it

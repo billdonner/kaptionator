@@ -98,9 +98,12 @@ final class ReorderMessagesViewController: UICollectionViewController,AddDismiss
     override func collectionView(_ collectionView: UICollectionView,   cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "ReorderCollectionViewCell", for: indexPath  ) as! ReorderCollectionViewCell // Create the cell from the storyboard cell
         let ra = SharedCaptionSpace.itemAt(indexPath.row)
-        if showVendorTitles {
+       // if showVendorTitles {
             cell.paint(name:ra.caption)
-        } else if ra.stickerOptions   .contains(.generateasis) {
+      //  }
+        //else
+            
+            if ra.stickerOptions   .contains(.generateasis) {
             cell.paint(name:"ANIMATED")
         }
             let path = ra.stickerPath

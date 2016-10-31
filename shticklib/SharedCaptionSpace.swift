@@ -21,7 +21,7 @@ struct SharedCE {
     let id: String //stringified float millisecs since 1970
     let caption: String
     let stickerOptions: StickerMakingOptions
-    var stickerPath:String
+    let  stickerPath:String
     let catalogpack:String
     let catalogtitle:String
     let localimagepath:String
@@ -66,7 +66,7 @@ struct SharedCE {
     }
 }
 
-//MARK: AppCaptionSpace collects and persists AppCEs
+//MARK: SharedCaptionSpace collects and persists SharedCEs
 
 struct SharedCaptionSpace {
     fileprivate var entries : [SharedCE] = []
@@ -109,7 +109,7 @@ struct SharedCaptionSpace {
         memSpace.entries[a] = memSpace.entries[b]
         memSpace.entries[b] = t
     }
-    static func findIdx(id:String) -> Int {
+    private static func findIdx(id:String) -> Int {
         var idx = 0
         var found :SharedCE?
         for ent in memSpace.entries {

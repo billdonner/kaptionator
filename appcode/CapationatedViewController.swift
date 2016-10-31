@@ -48,24 +48,28 @@
         tableView.dataSource = self
         tableView.backgroundColor = appTheme.backgroundColor
     }
-    private  func refreshFromCapSpace(){
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        refreshFromCapSpace()
+    }
+
+ }
+private  extension CapationatedViewController {
+      func displayTapMenu () {
+        // todo: analyze safety of passing indexpath thru, sees to work for now
+        performSegue(withIdentifier: "CaptionedCellTapMenuID", sender: self)
+    }
+    func refreshFromCapSpace(){
         var items = AppCaptionSpace.items()
         // group similar images together in reverse time, newest first
         items.sort(by: { a,b in  let aa = a as AppCE
             let bb = b as AppCE
             return aa.id > bb.id
-            }
+        }
         )
         stickerz = items
         tableView?.reloadData()
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        refreshFromCapSpace()
-    }
-    fileprivate  func displayTapMenu () {
-        // todo: analyze safety of passing indexpath thru, sees to work for now
-        performSegue(withIdentifier: "CaptionedCellTapMenuID", sender: self)
     }
  }
  // MARK: Delegates for actions from our associated menu

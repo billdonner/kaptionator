@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StartupHelpViewController: ReverseModalBlurViewController {
+final class StartupHelpViewController:  UIViewController, AddDismissButton  {
     
     @IBOutlet weak var pic: UIImageView!
     
@@ -18,13 +18,17 @@ class StartupHelpViewController: ReverseModalBlurViewController {
     
     
     static var first = true
-    
+    func dismisstapped(_ s: AnyObject) {
+        dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         let count = SharedCaptionSpace.itemCount()
         pic.image = UIImage(named:backgroundImagePath)
         topLabel.text = count == 0 ? "Welcome to " + extensionScheme : "you have \(count) stickers in the Messages app"
         topBlurb.text = bigBlurb
+        
+        addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
         
     }
 }

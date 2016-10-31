@@ -6,7 +6,7 @@
 //
 import UIKit
 
-protocol MessagesAppMenuViewDelegate {
+protocol MessagesAppMenuViewDelegate: class  {
     func openinIMessage(captionedEntry:SharedCE)
     func removeFromIMessage(on captionedEntry:inout SharedCE )
 }
@@ -14,10 +14,10 @@ protocol MessagesAppMenuViewDelegate {
 /// All the heavy lifting and file manipulation is done on this side of the fence
 /// The Messages Extension code passes the filepaths to msSticker API without ever touching them, for a fast start
 
-class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
+final class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
     
     var captionedEntry:SharedCE! // must be set
-    var delegate: MessagesAppMenuViewDelegate?  // mig
+    weak var delegate: MessagesAppMenuViewDelegate?  // mig
      
     @IBAction func unwindToMessagesAppMenuViewController(_ segue: UIStoryboardSegue)  {}
     
@@ -26,9 +26,7 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
     
     @IBOutlet weak var webviewOverlay: UIWebView!
     @IBOutlet weak var menuImageView: UIImageView!
-    @IBOutlet weak var imageCaption: UILabel!
-   // @IBOutlet weak var openinimessage: UIButton!
-   // @IBOutlet weak var removefromimessage: UIButton!
+    @IBOutlet weak var imageCaption: UILabel! 
     @IBOutlet weak var animatedLabel: UILabel!
     @IBOutlet weak var smallSwitch: UISwitch!
     @IBOutlet weak var mediumSwitch: UISwitch!
@@ -81,7 +79,7 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
         if smallSwitch.isOn {
             do {  // make image of precise size for messages app
                 options.insert(.generatesmall)
-                let _  =  try prepareStickers(pack:ce.catalogpack, title:ce.catalogtitle, imagepath: ce.localimagepath, caption: ce.caption, options: options)
+                let _  =  try IO.prepareStickers(pack:ce.catalogpack, title:ce.catalogtitle, imagepath: ce.localimagepath, caption: ce.caption, options: options)
                 SharedCaptionSpace.saveData()
             }
             catch {
@@ -98,7 +96,7 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
         if mediumSwitch.isOn {
             do {  // make image of precise size for messages app
                 options.insert(.generatemedium)
-                let _  =  try prepareStickers(pack:ce.catalogpack, title:ce.catalogtitle, imagepath: ce.localimagepath, caption: ce.caption, options: options)
+                let _  =  try IO.prepareStickers(pack:ce.catalogpack, title:ce.catalogtitle, imagepath: ce.localimagepath, caption: ce.caption, options: options)
                 SharedCaptionSpace.saveData()
             }
             catch {
@@ -115,7 +113,7 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
         if largeSwitch.isOn {
             do {  // make image of precise size for messages app
                 options.insert(.generatelarge)
-                let _  =  try prepareStickers(pack:ce.catalogpack, title:ce.catalogtitle, imagepath: ce.localimagepath, caption: ce.caption, options: options)
+                let _  =  try IO.prepareStickers(pack:ce.catalogpack, title:ce.catalogtitle, imagepath: ce.localimagepath, caption: ce.caption, options: options)
                 SharedCaptionSpace.saveData()
             }
             catch {
@@ -180,9 +178,9 @@ class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
         } else {
             
             /// set switch ON only if file variant exists in correct size
-            largeSwitch.isOn = checkForFileVariant(captionedEntry,"L")
-            mediumSwitch.isOn = checkForFileVariant(captionedEntry,"M")
-            smallSwitch.isOn = checkForFileVariant(captionedEntry,"S")
+            largeSwitch.isOn = IO.checkForFileVariant(captionedEntry,"L")
+            mediumSwitch.isOn = IO.checkForFileVariant(captionedEntry,"M")
+            smallSwitch.isOn = IO.checkForFileVariant(captionedEntry,"S")
             
             /// enable switches only if supplied file is large enough
             if imgsize >= kStickerLargeSize {

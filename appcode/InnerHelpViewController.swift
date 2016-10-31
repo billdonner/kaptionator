@@ -8,14 +8,16 @@
 
 import UIKit
 
-final class InnerHelpViewController: ReverseModalBlurViewController {
+final class InnerHelpViewController: UIViewController, AddDismissButton  {
     
     
     @IBOutlet weak var topLabel: UILabel!
     
     @IBOutlet weak var topBlurb: UILabel!
     static var first = true
-    
+    func dismisstapped(_ s: AnyObject) {
+        dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         let count = SharedCaptionSpace.itemCount()
@@ -23,5 +25,9 @@ final class InnerHelpViewController: ReverseModalBlurViewController {
         topLabel.text = count == 0 ? "How To Use " + extensionScheme : "you have \(count) stickers in the Messages app"
         topBlurb.text = innerBlurb
         
+        
+        addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
+        
     }
+    
 }

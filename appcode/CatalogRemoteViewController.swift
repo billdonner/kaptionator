@@ -139,10 +139,11 @@ extension CatalogRemoteViewController {  //loading on first up - moved from mast
         let ra = RemSpace.itemAt(indexPath.row)
      
         //show the primitive title
-        if showVendorTitles {
-            //cell.paint(name:ra.caption)
-        }
-        else if ra.options.contains(.generateasis) {
+//        if showVendorTitles {
+//            //cell.paint(name:ra.caption)
+//        }
+        //else
+        if ra.options.contains(.generateasis) {
              cell.showAnimationOverlay()
         }
         // if we have a thumbnail, show that 

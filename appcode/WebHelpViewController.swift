@@ -8,7 +8,7 @@
 
 import UIKit
 protocol AddDismissButton {
-    func dismisstapped(_ s:AnyObject)
+  //  func dismisstapped(_ s:AnyObject)
 }
 
 final class WebsiteOverlayViewController:InnerOverlayViewController {

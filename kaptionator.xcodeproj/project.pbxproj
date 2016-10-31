@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		881836971DAFF3DA0034A078 /* Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7AED41D98685D0050A6CD /* Versions.swift */; };
-		881836981DAFF3DB0034A078 /* Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7AED41D98685D0050A6CD /* Versions.swift */; };
-		881836991DAFF3DC0034A078 /* Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7AED41D98685D0050A6CD /* Versions.swift */; };
-		8818369A1DAFF3DE0034A078 /* Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7AED41D98685D0050A6CD /* Versions.swift */; };
+		8816CF411DC7829B00A4D285 /* RemSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816CF401DC7829B00A4D285 /* RemSpace.swift */; };
+		8816CF421DC7829B00A4D285 /* RemSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816CF401DC7829B00A4D285 /* RemSpace.swift */; };
+		8816CF431DC7829B00A4D285 /* RemSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816CF401DC7829B00A4D285 /* RemSpace.swift */; };
+		8816CF441DC7829B00A4D285 /* RemSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816CF401DC7829B00A4D285 /* RemSpace.swift */; };
 		881A13E41D90ACB500D7A4EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD92D91D8872D400832564 /* Main.storyboard */; };
 		882EB2101D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
 		882EB2121D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
@@ -76,10 +76,6 @@
 		88B54C9D1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54C971D886FBC0076942D /* MessagesExtensionViewController.swift */; };
 		88B54C9E1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54C971D886FBC0076942D /* MessagesExtensionViewController.swift */; };
 		88B54C9F1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54C971D886FBC0076942D /* MessagesExtensionViewController.swift */; };
-		88B54CAA1D8870060076942D /* mlib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA01D8870060076942D /* mlib.swift */; };
-		88B54CAC1D8870060076942D /* mlib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA01D8870060076942D /* mlib.swift */; };
-		88B54CAE1D8870060076942D /* mlib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA01D8870060076942D /* mlib.swift */; };
-		88B54CB01D8870060076942D /* mlib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA01D8870060076942D /* mlib.swift */; };
 		88B54CB21D8870060076942D /* theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA11D8870060076942D /* theme.swift */; };
 		88B54CB31D8870060076942D /* theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA11D8870060076942D /* theme.swift */; };
 		88B54CB41D8870060076942D /* theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA11D8870060076942D /* theme.swift */; };
@@ -112,10 +108,10 @@
 		88B54CDC1D8870060076942D /* InfoDictIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA61D8870060076942D /* InfoDictIOS.swift */; };
 		88B54CDE1D8870060076942D /* InfoDictIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA61D8870060076942D /* InfoDictIOS.swift */; };
 		88B54CE01D8870060076942D /* InfoDictIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA61D8870060076942D /* InfoDictIOS.swift */; };
-		88B54CE21D8870060076942D /* manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA71D8870060076942D /* manifest.swift */; };
-		88B54CE41D8870060076942D /* manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA71D8870060076942D /* manifest.swift */; };
-		88B54CE61D8870060076942D /* manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA71D8870060076942D /* manifest.swift */; };
-		88B54CE81D8870060076942D /* manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA71D8870060076942D /* manifest.swift */; };
+		88B54CE21D8870060076942D /* Manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA71D8870060076942D /* Manifest.swift */; };
+		88B54CE41D8870060076942D /* Manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA71D8870060076942D /* Manifest.swift */; };
+		88B54CE61D8870060076942D /* Manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA71D8870060076942D /* Manifest.swift */; };
+		88B54CE81D8870060076942D /* Manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA71D8870060076942D /* Manifest.swift */; };
 		88B54CEA1D8870060076942D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* SharedCaptionSpace.swift */; };
 		88B54CEB1D8870060076942D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* SharedCaptionSpace.swift */; };
 		88B54CEC1D8870060076942D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* SharedCaptionSpace.swift */; };
@@ -128,10 +124,6 @@
 		88B54CF41D8870060076942D /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA91D8870060076942D /* StickerFileFactory.swift */; };
 		88B54CF61D8870060076942D /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA91D8870060076942D /* StickerFileFactory.swift */; };
 		88B54CF81D8870060076942D /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA91D8870060076942D /* StickerFileFactory.swift */; };
-		88B54CFA1D8870A00076942D /* mlib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA01D8870060076942D /* mlib.swift */; };
-		88B54CFB1D8870A10076942D /* mlib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA01D8870060076942D /* mlib.swift */; };
-		88B54CFC1D8870A10076942D /* mlib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA01D8870060076942D /* mlib.swift */; };
-		88B54CFD1D8870A30076942D /* mlib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA01D8870060076942D /* mlib.swift */; };
 		88B54CFF1D8870F10076942D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88B54CFE1D8870F10076942D /* MainInterface.storyboard */; };
 		88B54D001D8870F10076942D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88B54CFE1D8870F10076942D /* MainInterface.storyboard */; };
 		88B54D011D8870F10076942D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88B54CFE1D8870F10076942D /* MainInterface.storyboard */; };
@@ -146,21 +138,13 @@
 		88B570F31DA696FA00CD4058 /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA91D8870060076942D /* StickerFileFactory.swift */; };
 		88B570F41DA696FB00CD4058 /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA91D8870060076942D /* StickerFileFactory.swift */; };
 		88B570F51DA696FE00CD4058 /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA91D8870060076942D /* StickerFileFactory.swift */; };
-		88B5718C1DA6F93100CD4058 /* ITunesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */; };
 		88B5718E1DA6FC8F00CD4058 /* ITunesDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B5718D1DA6FC8F00CD4058 /* ITunesDataCell.swift */; };
-		88B5718F1DA6FC8F00CD4058 /* ITunesDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B5718D1DA6FC8F00CD4058 /* ITunesDataCell.swift */; };
-		88B571901DA6FC8F00CD4058 /* ITunesDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B5718D1DA6FC8F00CD4058 /* ITunesDataCell.swift */; };
-		88B571911DA6FC8F00CD4058 /* ITunesDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B5718D1DA6FC8F00CD4058 /* ITunesDataCell.swift */; };
 		88B571931DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B571921DA705AC00CD4058 /* CatalogLocalViewController.swift */; };
 		88B571941DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B571921DA705AC00CD4058 /* CatalogLocalViewController.swift */; };
 		88B571951DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B571921DA705AC00CD4058 /* CatalogLocalViewController.swift */; };
 		88B571961DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B571921DA705AC00CD4058 /* CatalogLocalViewController.swift */; };
 		88B571A21DA71F4F00CD4058 /* candidates-stickerspackimages in Resources */ = {isa = PBXBuildFile; fileRef = 88B571A11DA71F4F00CD4058 /* candidates-stickerspackimages */; };
 		88B571A41DA71F8200CD4058 /* emogeez-stickerspackimages in Resources */ = {isa = PBXBuildFile; fileRef = 88B571A31DA71F8200CD4058 /* emogeez-stickerspackimages */; };
-		88C7AED51D98685D0050A6CD /* Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7AED41D98685D0050A6CD /* Versions.swift */; };
-		88C7AED61D98685D0050A6CD /* Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7AED41D98685D0050A6CD /* Versions.swift */; };
-		88C7AED71D98685D0050A6CD /* Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7AED41D98685D0050A6CD /* Versions.swift */; };
-		88C7AED81D98685D0050A6CD /* Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7AED41D98685D0050A6CD /* Versions.swift */; };
 		88DD92E91D88738200832564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92DE1D88738200832564 /* AppDelegate.swift */; };
 		88DD92EA1D88738200832564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92DE1D88738200832564 /* AppDelegate.swift */; };
 		88DD92EB1D88738200832564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92DE1D88738200832564 /* AppDelegate.swift */; };
@@ -207,14 +191,6 @@
 		88E3B5D11D90B3CF0079E0CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD92D91D8872D400832564 /* Main.storyboard */; };
 		88E3B5D21D90B3D00079E0CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD92D91D8872D400832564 /* Main.storyboard */; };
 		88E3B5D31D90B3D10079E0CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD92D91D8872D400832564 /* Main.storyboard */; };
-		88EEC93B1D9C06CF00C188EF /* DatabaseStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEC93A1D9C06CF00C188EF /* DatabaseStuff.swift */; };
-		88EEC93C1D9C06CF00C188EF /* DatabaseStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEC93A1D9C06CF00C188EF /* DatabaseStuff.swift */; };
-		88EEC93D1D9C06CF00C188EF /* DatabaseStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEC93A1D9C06CF00C188EF /* DatabaseStuff.swift */; };
-		88EEC93E1D9C06CF00C188EF /* DatabaseStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EEC93A1D9C06CF00C188EF /* DatabaseStuff.swift */; };
-		88F2FC8D1D92F69E0055209C /* ModalBlurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C451D61D92EAD6003DC256 /* ModalBlurViewController.swift */; };
-		88F2FC8E1D92F6A20055209C /* ModalBlurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C451D61D92EAD6003DC256 /* ModalBlurViewController.swift */; };
-		88F2FC8F1D92F6A30055209C /* ModalBlurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C451D61D92EAD6003DC256 /* ModalBlurViewController.swift */; };
-		88F2FC901D92F6A60055209C /* ModalBlurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C451D61D92EAD6003DC256 /* ModalBlurViewController.swift */; };
 		88F2FC921D931A070055209C /* MoreMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F2FC911D931A070055209C /* MoreMenuViewController.swift */; };
 		88F2FC931D931A070055209C /* MoreMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F2FC911D931A070055209C /* MoreMenuViewController.swift */; };
 		88F2FC941D931A070055209C /* MoreMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F2FC911D931A070055209C /* MoreMenuViewController.swift */; };
@@ -225,9 +201,6 @@
 		88FA07DA1DA402330063B483 /* ChangeCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FA07D61DA402330063B483 /* ChangeCaptionViewController.swift */; };
 		AD20A5FA1DA1946600877ABF /* ITunesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */; };
 		AD20A5FB1DA1946A00877ABF /* ITunesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */; };
-		AD20A5FC1DA1950A00877ABF /* ITunesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */; };
-		AD20A5FD1DA1950B00877ABF /* ITunesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */; };
-		AD20A5FE1DA1950C00877ABF /* ITunesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */; };
 		AD20A5FF1DA1951000877ABF /* ITunesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */; };
 		AD20A6001DA1951100877ABF /* ITunesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */; };
 		AD20A6011DA1951200877ABF /* ITunesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */; };
@@ -326,6 +299,7 @@
 		8810D0001D53C4D2009BA9B3 /* candidatezMessagesExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = candidatezMessagesExtension.entitlements; sourceTree = "<group>"; };
 		8810D0011D53C510009BA9B3 /* kaptionator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kaptionator.entitlements; sourceTree = "<group>"; };
 		8810D0021D53C536009BA9B3 /* kaptionatorMessageExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kaptionatorMessageExtension.entitlements; sourceTree = "<group>"; };
+		8816CF401DC7829B00A4D285 /* RemSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemSpace.swift; sourceTree = "<group>"; };
 		881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesViewController.swift; sourceTree = "<group>"; };
 		882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCaptionSpace.swift; sourceTree = "<group>"; };
 		883982961DB1421C00B5A037 /* InnerHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InnerHelpViewController.swift; sourceTree = "<group>"; };
@@ -371,14 +345,13 @@
 		88AEA64E1D514CC7006E5C70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88B54C961D886FBC0076942D /* MartoonerBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MartoonerBrowserViewController.swift; sourceTree = "<group>"; };
 		88B54C971D886FBC0076942D /* MessagesExtensionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesExtensionViewController.swift; sourceTree = "<group>"; };
-		88B54CA01D8870060076942D /* mlib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mlib.swift; sourceTree = "<group>"; };
 		88B54CA11D8870060076942D /* theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = theme.swift; sourceTree = "<group>"; };
 		88B54CA21D8870060076942D /* RemoteAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteAsset.swift; sourceTree = "<group>"; };
 		88B54CA31D8870060076942D /* common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
 		88B54CA41D8870060076942D /* IOSSpecialOps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOSSpecialOps.swift; sourceTree = "<group>"; };
 		88B54CA51D8870060076942D /* SFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFViewController.swift; path = ../shticklib/SFViewController.swift; sourceTree = "<group>"; };
 		88B54CA61D8870060076942D /* InfoDictIOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoDictIOS.swift; sourceTree = "<group>"; };
-		88B54CA71D8870060076942D /* manifest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = manifest.swift; sourceTree = "<group>"; };
+		88B54CA71D8870060076942D /* Manifest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manifest.swift; sourceTree = "<group>"; };
 		88B54CA81D8870060076942D /* SharedCaptionSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedCaptionSpace.swift; sourceTree = "<group>"; };
 		88B54CA91D8870060076942D /* StickerFileFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerFileFactory.swift; sourceTree = "<group>"; };
 		88B54CFE1D8870F10076942D /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainInterface.storyboard; path = ../candidatezMessagesExtension/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -387,8 +360,6 @@
 		88B571921DA705AC00CD4058 /* CatalogLocalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogLocalViewController.swift; sourceTree = "<group>"; };
 		88B571A11DA71F4F00CD4058 /* candidates-stickerspackimages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "candidates-stickerspackimages"; sourceTree = "<group>"; };
 		88B571A31DA71F8200CD4058 /* emogeez-stickerspackimages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "emogeez-stickerspackimages"; sourceTree = "<group>"; };
-		88C451D61D92EAD6003DC256 /* ModalBlurViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalBlurViewController.swift; sourceTree = "<group>"; };
-		88C7AED41D98685D0050A6CD /* Versions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Versions.swift; sourceTree = "<group>"; };
 		88DD92D91D8872D400832564 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
 		88DD92DE1D88738200832564 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88DD92DF1D88738200832564 /* CatalogRemoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogRemoteViewController.swift; sourceTree = "<group>"; };
@@ -402,7 +373,6 @@
 		88DD92E71D88738200832564 /* CatalogDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogDataCell.swift; sourceTree = "<group>"; };
 		88DD92E81D88738200832564 /* CaptionedTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptionedTableCell.swift; sourceTree = "<group>"; };
 		88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesMenuViewController.swift; sourceTree = "<group>"; };
-		88EEC93A1D9C06CF00C188EF /* DatabaseStuff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatabaseStuff.swift; path = ../appcode/DatabaseStuff.swift; sourceTree = "<group>"; };
 		88F2FC911D931A070055209C /* MoreMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreMenuViewController.swift; sourceTree = "<group>"; };
 		88FA07D61DA402330063B483 /* ChangeCaptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeCaptionViewController.swift; sourceTree = "<group>"; };
 		AD6CAF291DA19CF80062919B /* candidatesIconsCans-1024x768.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "candidatesIconsCans-1024x768.png"; path = "candidatezMessagesExtension/Assets.xcassets/iMessage App Icon.stickersiconset/candidatesIconsCans-1024x768.png"; sourceTree = "<group>"; };
@@ -477,8 +447,6 @@
 		881836961DAFF3CD0034A078 /* shared */ = {
 			isa = PBXGroup;
 			children = (
-				88C7AED41D98685D0050A6CD /* Versions.swift */,
-				88B54CA01D8870060076942D /* mlib.swift */,
 				88B54CA11D8870060076942D /* theme.swift */,
 				88B54CA31D8870060076942D /* common.swift */,
 				88B54CA81D8870060076942D /* SharedCaptionSpace.swift */,
@@ -492,10 +460,10 @@
 			children = (
 				881836961DAFF3CD0034A078 /* shared */,
 				88B54CA21D8870060076942D /* RemoteAsset.swift */,
+				8816CF401DC7829B00A4D285 /* RemSpace.swift */,
 				88B54CA41D8870060076942D /* IOSSpecialOps.swift */,
 				88B54CA61D8870060076942D /* InfoDictIOS.swift */,
-				88EEC93A1D9C06CF00C188EF /* DatabaseStuff.swift */,
-				88B54CA71D8870060076942D /* manifest.swift */,
+				88B54CA71D8870060076942D /* Manifest.swift */,
 				882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */,
 			);
 			path = shticklib;
@@ -525,7 +493,6 @@
 				886B4AC21D9CA4CB00581C9B /* MessagesTableCell.swift */,
 				88DD92E61D88738200832564 /* MessagedMenuViewController.swift */,
 				88F2FC911D931A070055209C /* MoreMenuViewController.swift */,
-				88C451D61D92EAD6003DC256 /* ModalBlurViewController.swift */,
 				886B4ACC1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift */,
 				886B4AC71D9DDD5B00581C9B /* ReorderMessagesViewController.swift */,
 				88B54CA51D8870060076942D /* SFViewController.swift */,
@@ -1076,16 +1043,15 @@
 				88B5718E1DA6FC8F00CD4058 /* ITunesDataCell.swift in Sources */,
 				88DD93011D88738200832564 /* WebHelpViewController.swift in Sources */,
 				889FB7221D9438220064B4C9 /* CatalogRemoteViewController.swift in Sources */,
-				88EEC93B1D9C06CF00C188EF /* DatabaseStuff.swift in Sources */,
 				88DD92E91D88738200832564 /* AppDelegate.swift in Sources */,
 				883982A51DB2B4F100B5A037 /* HelpDropdownViewController.swift in Sources */,
 				AD20A5FA1DA1946600877ABF /* ITunesMenuViewController.swift in Sources */,
 				88FA07D71DA402330063B483 /* ChangeCaptionViewController.swift in Sources */,
+				8816CF411DC7829B00A4D285 /* RemSpace.swift in Sources */,
 				88DD92F11D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				88DD93111D88738200832564 /* CaptionedTableCell.swift in Sources */,
-				88B54CE21D8870060076942D /* manifest.swift in Sources */,
+				88B54CE21D8870060076942D /* Manifest.swift in Sources */,
 				886B4ACD1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
-				88B54CAA1D8870060076942D /* mlib.swift in Sources */,
 				88DD92F91D88738200832564 /* CapationatedViewController.swift in Sources */,
 				88DD92F51D88738200832564 /* CaptionedMenuViewController.swift in Sources */,
 				88B571931DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */,
@@ -1096,10 +1062,8 @@
 				882EB2101D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */,
 				8862CE321DB0838500685CCA /* StartupHelpViewController.swift in Sources */,
 				88B54CEA1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
-				88C7AED51D98685D0050A6CD /* Versions.swift in Sources */,
 				88B54CF21D8870060076942D /* StickerFileFactory.swift in Sources */,
 				88B54CD21D8870060076942D /* SFViewController.swift in Sources */,
-				88F2FC8D1D92F69E0055209C /* ModalBlurViewController.swift in Sources */,
 				88B54CCA1D8870060076942D /* IOSSpecialOps.swift in Sources */,
 				88DD930D1D88738200832564 /* CatalogDataCell.swift in Sources */,
 				88B54CB21D8870060076942D /* theme.swift in Sources */,
@@ -1118,7 +1082,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				88DD930A1D88738200832564 /* MessagedMenuViewController.swift in Sources */,
-				88B5718F1DA6FC8F00CD4058 /* ITunesDataCell.swift in Sources */,
 				88DD93021D88738200832564 /* WebHelpViewController.swift in Sources */,
 				88DD92EA1D88738200832564 /* AppDelegate.swift in Sources */,
 				886B4ACE1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
@@ -1128,9 +1091,7 @@
 				88FA07D81DA402330063B483 /* ChangeCaptionViewController.swift in Sources */,
 				AD20A5FF1DA1951000877ABF /* ITunesMenuViewController.swift in Sources */,
 				88DD93121D88738200832564 /* CaptionedTableCell.swift in Sources */,
-				88B54CE41D8870060076942D /* manifest.swift in Sources */,
-				88EEC93C1D9C06CF00C188EF /* DatabaseStuff.swift in Sources */,
-				88B54CAC1D8870060076942D /* mlib.swift in Sources */,
+				88B54CE41D8870060076942D /* Manifest.swift in Sources */,
 				88DD92FA1D88738200832564 /* CapationatedViewController.swift in Sources */,
 				88DD92F61D88738200832564 /* CaptionedMenuViewController.swift in Sources */,
 				88B571941DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */,
@@ -1143,8 +1104,8 @@
 				88B54CD41D8870060076942D /* SFViewController.swift in Sources */,
 				88F2FC931D931A070055209C /* MoreMenuViewController.swift in Sources */,
 				88B54CCC1D8870060076942D /* IOSSpecialOps.swift in Sources */,
+				8816CF421DC7829B00A4D285 /* RemSpace.swift in Sources */,
 				88DD930E1D88738200832564 /* CatalogDataCell.swift in Sources */,
-				AD20A5FC1DA1950A00877ABF /* ITunesViewController.swift in Sources */,
 				88B54CB41D8870060076942D /* theme.swift in Sources */,
 				88B54CC41D8870060076942D /* common.swift in Sources */,
 				88DD93061D88738200832564 /* MasterViewController.swift in Sources */,
@@ -1153,8 +1114,6 @@
 				8839829C1DB1556800B5A037 /* InnerHelpViewController.swift in Sources */,
 				88DD92FE1D88738200832564 /* MessagesViewController.swift in Sources */,
 				886B4AC41D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */,
-				88C7AED61D98685D0050A6CD /* Versions.swift in Sources */,
-				88F2FC8E1D92F6A20055209C /* ModalBlurViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1163,7 +1122,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				88DD930B1D88738200832564 /* MessagedMenuViewController.swift in Sources */,
-				88B571901DA6FC8F00CD4058 /* ITunesDataCell.swift in Sources */,
 				88DD93031D88738200832564 /* WebHelpViewController.swift in Sources */,
 				88DD92EB1D88738200832564 /* AppDelegate.swift in Sources */,
 				886B4ACF1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
@@ -1173,9 +1131,7 @@
 				88FA07D91DA402330063B483 /* ChangeCaptionViewController.swift in Sources */,
 				AD20A6001DA1951100877ABF /* ITunesMenuViewController.swift in Sources */,
 				88DD93131D88738200832564 /* CaptionedTableCell.swift in Sources */,
-				88B54CE61D8870060076942D /* manifest.swift in Sources */,
-				88EEC93D1D9C06CF00C188EF /* DatabaseStuff.swift in Sources */,
-				88B54CAE1D8870060076942D /* mlib.swift in Sources */,
+				88B54CE61D8870060076942D /* Manifest.swift in Sources */,
 				88DD92FB1D88738200832564 /* CapationatedViewController.swift in Sources */,
 				88DD92F71D88738200832564 /* CaptionedMenuViewController.swift in Sources */,
 				88B571951DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */,
@@ -1188,8 +1144,8 @@
 				88B54CD61D8870060076942D /* SFViewController.swift in Sources */,
 				88F2FC941D931A070055209C /* MoreMenuViewController.swift in Sources */,
 				88B54CCE1D8870060076942D /* IOSSpecialOps.swift in Sources */,
+				8816CF431DC7829B00A4D285 /* RemSpace.swift in Sources */,
 				88DD930F1D88738200832564 /* CatalogDataCell.swift in Sources */,
-				AD20A5FD1DA1950B00877ABF /* ITunesViewController.swift in Sources */,
 				88B54CB61D8870060076942D /* theme.swift in Sources */,
 				88B54CC61D8870060076942D /* common.swift in Sources */,
 				88DD93071D88738200832564 /* MasterViewController.swift in Sources */,
@@ -1198,8 +1154,6 @@
 				8839829D1DB1556B00B5A037 /* InnerHelpViewController.swift in Sources */,
 				88DD92FF1D88738200832564 /* MessagesViewController.swift in Sources */,
 				886B4AC51D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */,
-				88C7AED71D98685D0050A6CD /* Versions.swift in Sources */,
-				88F2FC8F1D92F6A30055209C /* ModalBlurViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1208,7 +1162,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				88DD930C1D88738200832564 /* MessagedMenuViewController.swift in Sources */,
-				88B571911DA6FC8F00CD4058 /* ITunesDataCell.swift in Sources */,
 				88DD93041D88738200832564 /* WebHelpViewController.swift in Sources */,
 				88DD92EC1D88738200832564 /* AppDelegate.swift in Sources */,
 				886B4AD01D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
@@ -1218,9 +1171,7 @@
 				88FA07DA1DA402330063B483 /* ChangeCaptionViewController.swift in Sources */,
 				AD20A6011DA1951200877ABF /* ITunesMenuViewController.swift in Sources */,
 				88DD93141D88738200832564 /* CaptionedTableCell.swift in Sources */,
-				88B54CE81D8870060076942D /* manifest.swift in Sources */,
-				88EEC93E1D9C06CF00C188EF /* DatabaseStuff.swift in Sources */,
-				88B54CB01D8870060076942D /* mlib.swift in Sources */,
+				88B54CE81D8870060076942D /* Manifest.swift in Sources */,
 				88DD92FC1D88738200832564 /* CapationatedViewController.swift in Sources */,
 				88DD92F81D88738200832564 /* CaptionedMenuViewController.swift in Sources */,
 				88B571961DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */,
@@ -1233,8 +1184,8 @@
 				88B54CD81D8870060076942D /* SFViewController.swift in Sources */,
 				88F2FC951D931A070055209C /* MoreMenuViewController.swift in Sources */,
 				88B54CD01D8870060076942D /* IOSSpecialOps.swift in Sources */,
+				8816CF441DC7829B00A4D285 /* RemSpace.swift in Sources */,
 				88DD93101D88738200832564 /* CatalogDataCell.swift in Sources */,
-				AD20A5FE1DA1950C00877ABF /* ITunesViewController.swift in Sources */,
 				88B54CB81D8870060076942D /* theme.swift in Sources */,
 				88B54CC81D8870060076942D /* common.swift in Sources */,
 				88DD93081D88738200832564 /* MasterViewController.swift in Sources */,
@@ -1243,8 +1194,6 @@
 				8839829E1DB1556C00B5A037 /* InnerHelpViewController.swift in Sources */,
 				88DD93001D88738200832564 /* MessagesViewController.swift in Sources */,
 				886B4AC61D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */,
-				88C7AED81D98685D0050A6CD /* Versions.swift in Sources */,
-				88F2FC901D92F6A60055209C /* ModalBlurViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1252,12 +1201,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88B54CFD1D8870A30076942D /* mlib.swift in Sources */,
 				88B54C9F1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */,
 				88B54CC91D8870060076942D /* common.swift in Sources */,
 				88B54CB91D8870060076942D /* theme.swift in Sources */,
-				8818369A1DAFF3DE0034A078 /* Versions.swift in Sources */,
-				88B5718C1DA6F93100CD4058 /* ITunesViewController.swift in Sources */,
 				88B54CF11D8870060076942D /* SharedCaptionSpace.swift in Sources */,
 				88B570F51DA696FE00CD4058 /* StickerFileFactory.swift in Sources */,
 				88B54C9B1D886FBC0076942D /* MartoonerBrowserViewController.swift in Sources */,
@@ -1268,9 +1214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88B54CFC1D8870A10076942D /* mlib.swift in Sources */,
 				88B54C9E1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */,
-				881836991DAFF3DC0034A078 /* Versions.swift in Sources */,
 				88B54CC71D8870060076942D /* common.swift in Sources */,
 				88B54CB71D8870060076942D /* theme.swift in Sources */,
 				88B54CEF1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
@@ -1283,9 +1227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88B54CFB1D8870A10076942D /* mlib.swift in Sources */,
 				88B54C9D1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */,
-				881836981DAFF3DB0034A078 /* Versions.swift in Sources */,
 				88B54CC51D8870060076942D /* common.swift in Sources */,
 				88B54CB51D8870060076942D /* theme.swift in Sources */,
 				88B54CED1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
@@ -1298,9 +1240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88B54CFA1D8870A00076942D /* mlib.swift in Sources */,
 				88B54C9C1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */,
-				881836971DAFF3DA0034A078 /* Versions.swift in Sources */,
 				88B54CC31D8870060076942D /* common.swift in Sources */,
 				88B54CB31D8870060076942D /* theme.swift in Sources */,
 				88B54CEB1D8870060076942D /* SharedCaptionSpace.swift in Sources */,

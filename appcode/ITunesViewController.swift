@@ -49,12 +49,15 @@ final class ITunesViewController :ChildOfMasterViewController, UICollectionViewD
       /// load from shared documents in itune (must be on in info.plist)
    
    internal func refreshFromITunes() {
-        loadFromITunesSharing( completion: { status, title, allofme in
+        RemoteAsset.loadFromITunesSharing( completion: { status, title, allofme in
             print(" refreshed with \(allofme.count) items")
             self.collectionView!.reloadData()
             self.refreshControl.endRefreshing()
             
         })
+    }
+    internal func refresher() {
+        self.refreshControl.endRefreshing()
     }
     override func didMove(toParentViewController parent: UIViewController?) {
         self.collectionView!.reloadData()
@@ -82,8 +85,9 @@ final class ITunesViewController :ChildOfMasterViewController, UICollectionViewD
 //        self.collectionView?.alpha = 0 // start as invisible
         self.automaticallyAdjustsScrollViewInsets = false
         refreshControl.tintColor = .blue
-        refreshControl.attributedTitle = NSAttributedString(string:"pulling fresh content from Itunes file sharing")
-        refreshControl.addTarget(self, action: #selector(self.refreshFromITunes), for: .valueChanged)
+        refreshControl.attributedTitle =
+        NSAttributedString(string:"your Catalog of Images - select to add captions and move into Messages app")
+        refreshControl.addTarget(self, action: #selector(self.refresher ), for: .valueChanged)
         collectionView.addSubview(refreshControl)
         collectionView.alwaysBounceVertical = true  // needed so always can pull to refresh
         
@@ -141,10 +145,27 @@ final class ITunesViewController :ChildOfMasterViewController, UICollectionViewD
 }
 
 extension ITunesViewController : ITunesMenuViewDelegate {
+    
+    func changedAnimationState(remoteAsset:RemoteAsset){
+        // all the work has been done, just refresh
+        
+        
+        self.collectionView.reloadData()
+        
+    }
     func useAsIs(remoteAsset:RemoteAsset) {
         AppCE.makeNewCaptionAsIs(from: remoteAsset )
           MasterViewController.blurt(title: "Added one image to your catalog",mess: "as is")
         
+    }
+    func deleteAsset(remoteAsset:RemoteAsset) {
+        
+        MasterViewController.ask(title: "Are you sure?",mess: "You will have to reload the image to restore") {
+        RemSpace.remove(ra: remoteAsset)
+        self.collectionView.reloadData()
+        RemSpace.saveToDisk()
+        MasterViewController.blurt(title: "Removed from catalog",mess: "")
+        }
     }
     func useWithNoCaption(remoteAsset:RemoteAsset) {
         // make un captionated entry from remote asset

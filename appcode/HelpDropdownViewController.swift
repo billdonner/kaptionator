@@ -9,7 +9,7 @@
 import UIKit
 
 
-final class HelpDropdownViewController: ReverseModalBlurViewController , UINavigationControllerDelegate  {
+final class HelpDropdownViewController: UIViewController, AddDismissButton  , UINavigationControllerDelegate  {
     let supportedCloudUTIs =
         ["com.compuserve.gif",
          "public.png",
@@ -18,9 +18,12 @@ final class HelpDropdownViewController: ReverseModalBlurViewController , UINavig
     private var imagePicker = UIImagePickerController()
     
    // var pvc: UIViewController! // must be set by caller to masterview
+    func dismisstapped(_ s: AnyObject) {
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func hitITunesAction(_ sender: AnyObject) {
-        loadFromITunesSharing(){status, title, allofme in
+       RemoteAsset.loadFromITunesSharing(){status, title, allofme in
         print("loaded \(allofme.count) files")
             if allofme.count == 0 {
                  IOSSpecialOps.blurt(self ,title:"no files loaded",mess:"go to ITunes > your device > apps")
@@ -89,6 +92,10 @@ final class HelpDropdownViewController: ReverseModalBlurViewController , UINavig
         
         topLabel.text =  extensionScheme
         imageview.image = UIImage(named:backgroundImagePath)
+        
+        
+        addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
+        
     }
 }
 //MARK: - UIDocumentPickerDelegate
@@ -99,7 +106,7 @@ extension HelpDropdownViewController : UIDocumentPickerDelegate {
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
         print("picked new document at \(url)")
-         QuietlyAddNewURL(url,options:StickerMakingOptions.generatemedium)
+         RemoteAsset.QuietlyAddNewURL(url,options:StickerMakingOptions.generatemedium)
     }
 }
 
@@ -111,7 +118,7 @@ extension HelpDropdownViewController :UIImagePickerControllerDelegate {
             
        // turn this into a file wit a url
            let url = RemSpace.writeImageToURL(newimage)
-            QuietlyAddNewURL(url,options:StickerMakingOptions.generatelarge)
+            RemoteAsset.QuietlyAddNewURL(url,options:StickerMakingOptions.generatelarge)
         }
         dismiss (animated: true, completion: nil)
     }

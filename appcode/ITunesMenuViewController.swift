@@ -7,16 +7,20 @@
 //
 
 import UIKit
-protocol ITunesMenuViewDelegate {
+protocol ITunesMenuViewDelegate : class {
+    
+    func changedAnimationState(remoteAsset:RemoteAsset)
+    func deleteAsset(remoteAsset:RemoteAsset)
     func useAsIs(remoteAsset:RemoteAsset)
     func useWithCaption(remoteAsset:RemoteAsset,caption:String)
     func useWithNoCaption(remoteAsset:RemoteAsset)
 } 
-class ITunesMenuViewController: UIViewController,AddDismissButton {
+final class ITunesMenuViewController: UIViewController,AddDismissButton {
     var pvc:UIViewController! // must be set
     var remoteAsset:RemoteAsset! // must be set
-    var delegate: ITunesMenuViewDelegate?  // mig
-    fileprivate var changesMade: Bool = false
+    weak var delegate: ITunesMenuViewDelegate?  // mig
+    fileprivate var setup = false
+    
     
     @IBAction func unwindToITunesMenuViewController(_ segue: UIStoryboardSegue)  {
     }
@@ -30,32 +34,35 @@ class ITunesMenuViewController: UIViewController,AddDismissButton {
     @IBOutlet weak var animationSwitch: UISwitch!
     
     @IBAction func animationSwitchTapped(_ sender: AnyObject) {
-        
-     
         addcaption.isEnabled = !animationSwitch.isOn
-        addcaption.setTitleColor(animationSwitch.isOn ? .darkGray : .lightGray,for: .normal)
+       addcaption.setTitleColor(animationSwitch.isOn ? .darkGray : .lightGray,for: .normal)
         var  options = remoteAsset.options
         if animationSwitch.isOn {
             options.insert(.generateasis)
         } else {
             options.remove(.generateasis)
         }
+        setup = false
         // to persist this seemingly trivial process we must make a whole new RemoteAsset
         let newra = remoteAsset.copyWithNewOptions(stickerOptions: options)
         
         RemSpace.remove(ra:remoteAsset)
         RemSpace.addasset(ra: newra)
         
-        
         // draw or redraw
         showimage(remoteAsset: newra,animate:animationSwitch.isOn)
-        
         RemSpace.saveToDisk()
-        
         remoteAsset = newra // IMPORTANT - point to new asset
+        self.delegate?.changedAnimationState(remoteAsset: newra)
         
-    
     }
+    @IBAction func deleteAsset(_ sender: AnyObject) {
+        
+        pvc.dismiss(animated: true) {
+    self.delegate?.deleteAsset(remoteAsset:self.remoteAsset) // elsewhere
+        }
+    }
+    
     @IBAction func useStickerNoCaptionPressed(_ sender: AnyObject) {
         pvc.dismiss(animated: true) {
         self.delegate?.useAsIs(remoteAsset:self.remoteAsset) // elsewhere
@@ -82,44 +89,12 @@ class ITunesMenuViewController: UIViewController,AddDismissButton {
         pvc.dismiss(animated: true, completion: nil)
     }
     //MARK:- VC LIFECYLE
-    private func showimage(remoteAsset:RemoteAsset,animate:Bool) {
-        
-        let isAnimated = animate//remoteAsset.options.contains(.generateasis)
-        if !isAnimated {
-            self.menuImageView.isHidden = false
-            //self.animatedLabel.isHidden = true
-            webviewOverlay.isHidden  = true
-            
-            do {
-                let data = try  Data(contentsOf: URL(string:remoteAsset.localimagepath )!)
-                menuImageView.image = UIImage(data:data)
-                menuImageView.contentMode = .scaleAspectFit
-            }
-            catch {
-                menuImageView.image = nil
-            }
-        } else {
-            self.useasisnocaption.isHidden = false
-            let scale : CGFloat = 1 / 1
-            ///  put up animated preview
-            self.menuImageView.isHidden = true
-            self.animatedLabel.isHidden = false
-            webviewOverlay.isHidden  = false
-            let w = webviewOverlay.frame.width
-            let h = webviewOverlay.frame.height
-            let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  style='max-width: 100%; height: auto;' src='\(remoteAsset.localimagepath)' alt='\(remoteAsset.localimagepath) height='\(h * scale)' width='\(w * scale)' ></body></html5>"
-            webviewOverlay.scalesPageToFit = true
-            webviewOverlay.contentMode = .scaleAspectFit
-            webviewOverlay.loadHTMLString(html, baseURL: nil)
-        }
-        
-    }
+  
     override func viewDidLoad() {
         super.viewDidLoad() 
         
         useasisnocaption.setTitleColor(appTheme.buttonTextColor, for: .normal)
         addcaption.setTitleColor(appTheme.buttonTextColor, for: .normal)
-        
         
         // Do any additional setup after loading the view.
         
@@ -138,16 +113,51 @@ class ITunesMenuViewController: UIViewController,AddDismissButton {
         addcaption.setTitleColor( captionable ? .white : .darkGray,for: .normal)
         
         addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
+    }
+}
+private extension ITunesMenuViewController {
+    func showimage(remoteAsset:RemoteAsset,animate:Bool) {
+        
+        let isAnimated = animate//remoteAsset.options.contains(.generateasis)
+        if !isAnimated {
+            menuImageView.isHidden = false
+            // only set up once
+            webviewOverlay.isHidden  = true
+            if !setup {
+            do {
+                let data = try  Data(contentsOf: URL(string:remoteAsset.localimagepath )!)
+                menuImageView.image = UIImage(data:data)
+                menuImageView.contentMode = .scaleAspectFit
+            }
+            catch {
+                menuImageView.image = nil
+            }
+            }
+        } else {
+            self.useasisnocaption.isHidden = false
+            let scale : CGFloat = 1 / 1
+            ///  put up animated preview
+            self.menuImageView.isHidden = true
+            self.animatedLabel.isHidden = false
+           
+            webviewOverlay.isHidden  = false
+             if !setup {
+            let w = webviewOverlay.frame.width
+            let h = webviewOverlay.frame.height
+            let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  style='max-width: 100%; height: auto;' src='\(remoteAsset.localimagepath)' alt='\(remoteAsset.localimagepath) height='\(h * scale)' width='\(w * scale)' ></body></html5>"
+            webviewOverlay.scalesPageToFit = true
+            webviewOverlay.contentMode = .scaleAspectFit
+            webviewOverlay.loadHTMLString(html, baseURL: nil)
+            }
+        }
+    setup = true
         
     }
- 
 }
-
 //MARK:- CALLBACKS
 
 extension ITunesMenuViewController : GetCaptionDelegate {
     func captionWasEntered(caption: String) {
-        changesMade = true
         delegate?.useWithCaption(remoteAsset: remoteAsset, caption: caption )
         imageCaption.isEnabled  = false
     }

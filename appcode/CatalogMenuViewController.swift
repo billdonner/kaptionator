@@ -6,14 +6,14 @@
 //  Copyright © 2016 Martoons and MedCommons. All rights reserved.
 //
 import UIKit
-protocol CatalogMenuViewDelegate {
+protocol CatalogMenuViewDelegate : class {
     func useAsIs(remoteAsset:RemoteAsset)
     func useWithCaption(remoteAsset:RemoteAsset,caption:String)
     func useWithNoCaption(remoteAsset:RemoteAsset)
 }
 class CatalogMenuViewController: UIViewController,AddDismissButton {
     var remoteAsset:RemoteAsset! // must be set
-    var delegate: CatalogMenuViewDelegate?  // mig
+    weak var delegate: CatalogMenuViewDelegate?  // mig
     
     var pvc:UIViewController! // must be set
     //private var isAnimated  = false
@@ -100,7 +100,7 @@ class CatalogMenuViewController: UIViewController,AddDismissButton {
             menuImageView.image = nil
         }
        // imageCaption.isEnabled  = false
-        imageCaption.text = showVendorTitles ? remoteAsset.caption : ""  // KEEP, its first
+        imageCaption.text =   remoteAsset.caption 
         if isAnimated {
             //self.addcaption.isHidden = true
             self.useasisnocaption.isHidden = false

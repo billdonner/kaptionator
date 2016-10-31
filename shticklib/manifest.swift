@@ -10,23 +10,13 @@ import UIKit
 
 //MARK: - Manifest is only static funcs
 
-///// protocol to allow viewcontrollers to Observe data model changes
-//protocol MEObserver {
-//    func newdocument(_ colors: JSONDict, _ title:String)
-//}
-
-typealias ManifestItems = [RemoteAsset]
-
-///  completion handler typealias
-typealias GFRM = ((_ status:Int,
-    _ name:String,
-    _ items:ManifestItems) -> (Swift.Void))
+///  completion handler typealias 
 
 /// Manifest bundles static operations on groups of manifest entries
-struct Manifest {
-    
-    static func parseData(_ data:Data, baseURL: String,completion:@escaping GFRM) {
-        var final : ManifestItems = []
+public struct Manifest {
+    //
+    static func parseData(_ data:Data, baseURL: String,completion:  ((Int,String,[RemoteAsset]) -> (Swift.Void))) {
+        var final : [RemoteAsset] = []
         do {
             let json = try JSONSerialization.jsonObject(with: data, options: [])
             if let jobj = json as? JSONDict,
@@ -93,7 +83,7 @@ struct Manifest {
             completion(error.code, "-err0r-", final ) //}// made it
         }
     }
-    private static func processOneURL(_ url:URL,  completion:@escaping GFRM) {
+    private static func processOneURL(_ url:URL,  completion:@escaping ((Int,String,[RemoteAsset]) -> (Swift.Void))) {
         
         IO.httpGET(url:url) { status,data in
             guard status == 200 else {
@@ -110,7 +100,7 @@ struct Manifest {
     
     /// load a bunch of manifests as listed in a super-manifest
     
-    private static func processOneLocal(_ url:URL,  completion:@escaping GFRM) {
+    private static func processOneLocal(_ url:URL,  completion:@escaping ((Int,String,[RemoteAsset]) -> (Swift.Void))) {
         do {
         let data = try Data(contentsOf: url)
         
@@ -124,7 +114,7 @@ struct Manifest {
             }
 
     }
-    static func loadJSONFromLocal(url:URL?,completion:GFRM?) {
+    static func loadJSONFromLocal(url:URL?,completion:((Int,String,[RemoteAsset]) -> (Swift.Void))?) {
         guard let url = url else {
             fatalError("loadJSONFromLocal")
         }
@@ -137,7 +127,7 @@ struct Manifest {
         }
     }
     
-    static func loadJSONFromURL(url:URL?,completion:GFRM?) {
+    static func loadJSONFromURL(url:URL?,completion:((Int,String,[RemoteAsset]) -> (Swift.Void))?) {
         guard let url = url else {
             fatalError("loadFromITunesSharing(observer: observer,completion:completion)")
         }
@@ -147,39 +137,41 @@ struct Manifest {
             }
         }
     }
-    
+}
     
     /// build a manifest from files user drags into itunes
-    static func manifestFromDocumentsDirectory(pack:String) -> String {
-        var manifestBuffer = "{\"pack\":\"\(pack)\",\n\"description\":\"Stikerz Pack Manifest for \(pack)\",\n\"generated\":\"\(Date())\",\n\"images\":[\n"
-        let dirprefix = "images/"
-        var first = true
-        do {
-            let dir = FileManager.default.urls (for:  .documentDirectory, in: .userDomainMask)
-            let documentsUrl =  dir.first!
-            
-            // Get the directory contents urls (including subfolders urls)
-            let directoryContents = try FileManager.default.contentsOfDirectory(at: documentsUrl, includingPropertiesForKeys: nil, options: [])
-            let _ = directoryContents.map {
-                let lastpatch = $0.lastPathComponent
-                if !lastpatch.hasPrefix(".") { // exclude wierd files
-                    let image = dirprefix + lastpatch
-                    let part1 = image.components(separatedBy: ".")
-                    let part2 = part1[0].components(separatedBy: "-")
-                    let part3 = part2[0].components(separatedBy: "/")
-                    if first { first = false } else { manifestBuffer += ", " }
-                    manifestBuffer += "{\"image\":\"\(image)\",\"title\":\"\(part3[1])\"}\n"
-                }
-            }
-        }
-        catch {
-            print("manifestBuffer: cant get directory \(error)")
-        }
-        manifestBuffer += "]}" // close the json epression
-        print("manifestBuffer: " + manifestBuffer)
-        return manifestBuffer
-    }
-}
+//    
+//    static func manifestFromDocumentsDirectory(pack:String) -> String {
+//        var manifestBuffer = "{\"pack\":\"\(pack)\",\n\"description\":\"Stikerz Pack Manifest for \(pack)\",\n\"generated\":\"\(Date())\",\n\"images\":[\n"
+//        let dirprefix = "images/"
+//        var first = true
+//        do {
+//            let dir = FileManager.default.urls (for:  .documentDirectory, in: .userDomainMask)
+//            let documentsUrl =  dir.first!
+//            
+//            // Get the directory contents urls (including subfolders urls)
+//            let directoryContents = try FileManager.default.contentsOfDirectory(at: documentsUrl, includingPropertiesForKeys: nil, options: [])
+//            let _ = directoryContents.map {
+//                let lastpatch = $0.lastPathComponent
+//                if !lastpatch.hasPrefix(".") { // exclude wierd files
+//                    let image = dirprefix + lastpatch
+//                    let part1 = image.components(separatedBy: ".")
+//                    let part2 = part1[0].components(separatedBy: "-")
+//                    let part3 = part2[0].components(separatedBy: "/")
+//                    if first { first = false } else { manifestBuffer += ", " }
+//                    manifestBuffer += "{\"image\":\"\(image)\",\"title\":\"\(part3[1])\"}\n"
+//                }
+//            }
+//        }
+//        catch {
+//            print("manifestBuffer: cant get directory \(error)")
+//        }
+//        manifestBuffer += "]}" // close the json epression
+//        print("manifestBuffer: " + manifestBuffer)
+//        return manifestBuffer
+//    }
+//    
+
 
 //
 //private static func processAllPacks(url:URL,completion:@escaping UFRS) {

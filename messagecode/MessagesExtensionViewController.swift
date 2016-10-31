@@ -8,10 +8,9 @@
 
 import UIKit
 import Messages
-/// this is where sticker files get made, stickers get made only in the extension
 
 
-//MARK:- Singleton StickerPool used by extension only
+/// this is where sticker files get made, MSstickers get made only in the extension
 
 //MARK:- Singleton StickerPool used by extension only
 

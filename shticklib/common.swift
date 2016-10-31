@@ -50,6 +50,21 @@ struct BorderSettings {
 }
 
 
+enum KaptionatorErrors : Error  {
+    case generalFailure
+    case restoreFailure
+    case cant
+    case assetnotfound
+    case colornotfound
+    case propertynotfound
+    case badasset
+}
+
+/// json
+typealias JSONDict  = [String:Any ]
+typealias JSONArray = [JSONDict]
+typealias JSONPayload = [JSONArray]
+
 
 /// "SHARED-INTERAPP-DATA" depending on the actual app instance theres a differen shared data area
 //    it looks something like group.xxx.yyy.zzz
@@ -60,6 +75,93 @@ var SharedMemDataSpace: String  { get {
     }
     return ""
 }
+}
+
+
+// if nil we'll just pull from documents directory inside the catalog controller
+var stickerManifestURL: URL? {
+get {
+if let iDict = Bundle.main.infoDictionary ,
+let w =  iDict["REMOTE-MANIFEST-URL"] as? String { return URL(string:w) }
+return nil
+}
+}
+
+/// "SHOW-CATALOG-ID" is the storyboard id of controller to use for the Catalog
+
+
+var showCatalogID: String {
+get {
+    if let iDict = Bundle.main.infoDictionary ,
+        let w =  iDict["SHOW-CATALOG-ID"] as? String { return w
+    }
+    else {
+        return "ShowCatalogID"
+    }
+}
+}
+
+
+
+/// "REMOTE-WEBSITE-URL" is the website page for this sticker pack
+var websitePath: String {
+get {
+    if let iDict = Bundle.main.infoDictionary ,
+        let w =  iDict["REMOTE-WEBSITE-URL"] as? String { return w
+    }
+    fatalError("remote website url undefined")
+    //return nil
+}
+}
+
+public class Versions {
+    
+    class func make() -> Versions { return Versions() }
+    
+    class func versionString () -> String {
+        if let iDict = Bundle.main.infoDictionary {
+            if let w:AnyObject =  iDict["CFBundleIdentifier"] as AnyObject? {
+                if let x:AnyObject =  iDict["CFBundleName"] as AnyObject? {
+                    if let y:AnyObject = iDict["CFBundleShortVersionString"] as AnyObject? {
+                        if let z:AnyObject = iDict["CFBundleVersion"] as AnyObject? {
+                            return "\(w) \(x) \(y) \(z)"
+                        }
+                    }
+                }
+            }
+        }
+        return "**no version info**"
+    }
+    private func versionSave () {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(Versions.versionString(), forKey: "version")
+        userDefaults.synchronize()
+    }
+    
+    private func versionFetch() -> String? {
+        let userDefaults = UserDefaults.standard
+        if let s : AnyObject = userDefaults.object(forKey: "version") as AnyObject? {
+            return (s as! String)
+        }
+        return nil
+    }
+    
+    private func versionCheck() -> Bool {
+        let s = Versions.versionString()
+        if let v = versionFetch() {
+            if s != v {
+                versionSave()
+                print ("versionCheck changed :::: \(s) - will reset and may be slow to delete existing files")
+            } else {
+                print ("versionCheck is  stable :::: \(s)")
+            }
+            return s==v
+        }
+        // if nothing stored then store something, but we check OK
+        versionSave()
+        print("versionCheck first time up :::: \(s)")
+        return true
+    }
 }
 
 func sharedAppContainerDirectory() -> URL {
