@@ -9,45 +9,20 @@
 import UIKit
 
 
-final class WebsiteOverlayViewController:InnerOverlayViewController {
-    override func getreq () -> URLRequest {
-        let urlasstring = websitePath
-        return URLRequest(url:URL(string: urlasstring )!)
-    }
-}
-final class WebHelpViewController:InnerOverlayViewController {
-    override func getreq () -> URLRequest {
-        let urlasstring = websitePath +  "/apphelp.html"
-        return URLRequest(url:URL(string:urlasstring )!)
-    }
-}
-final class AltWebHelpViewController:InnerOverlayViewController {
-    override func getreq () -> URLRequest {
-        let urlasstring = websitePath +  "/help.html"
-        return URLRequest(url:URL(string:urlasstring )!)
-    }
-}
- class InnerOverlayViewController: UIViewController, UIWebViewDelegate,AddDismissButton {
-    
-    func getreq () -> URLRequest {
-        fatalError("must subclass")
-    }
+final class WebsiteOverlayViewController:UIViewController, UIWebViewDelegate,AddDismissButton  {
+    let  urlRequest : URLRequest = {
+        return URLRequest(url:URL(string: websitePath )!)
+    }()
     
     @IBOutlet weak var webView: UIWebView!
     
-    // put button in left hand corner
-    
-    func dismisstapped (_ s:AnyObject) {
-        dismiss(animated: true)
-    }
+    func dismisstapped (_ s:AnyObject) {dismiss(animated: true)}
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.clear
-        
         self.webView.delegate = self
-        let request = getreq()
-        self.webView.loadRequest(request)
+        self.webView.loadRequest(urlRequest)
         self.webView.isOpaque = false
         self.webView.backgroundColor = UIColor.clear
         addDismissButtonToViewController(self ,named:appTheme.dismissButtonAltImageName, #selector(self.dismisstapped))
@@ -57,4 +32,57 @@ final class AltWebHelpViewController:InnerOverlayViewController {
         let x = error as NSError
         IOSSpecialOps.blurt(self,title: "Network error code = \(x.code)",mess: error.localizedDescription)
     }
+
+}
+final class WebHelpViewController:UIViewController, UIWebViewDelegate,AddDismissButton  {
+    let  urlRequest : URLRequest = {
+        return URLRequest(url:URL(string:websitePath +  "/apphelp.html" )!)
+    }()
+    
+    @IBOutlet weak var webView: UIWebView!
+    
+    func dismisstapped (_ s:AnyObject) {dismiss(animated: true)}
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = UIColor.clear
+        self.webView.delegate = self
+        self.webView.loadRequest(urlRequest)
+        self.webView.isOpaque = false
+        self.webView.backgroundColor = UIColor.clear
+        addDismissButtonToViewController(self ,named:appTheme.dismissButtonAltImageName, #selector(self.dismisstapped))
+    }
+    
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+        let x = error as NSError
+        IOSSpecialOps.blurt(self,title: "Network error code = \(x.code)",mess: error.localizedDescription)
+    }
+
+}
+final class AltWebHelpViewController:UIViewController, UIWebViewDelegate,AddDismissButton  {
+    
+    
+let  urlRequest : URLRequest = {
+        return URLRequest(url:URL(string:websitePath +  "/help.html" )!)
+    }()
+    
+    @IBOutlet weak var webView: UIWebView!
+    
+    func dismisstapped (_ s:AnyObject) {dismiss(animated: true)}
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = UIColor.clear
+        self.webView.delegate = self
+        self.webView.loadRequest(urlRequest)
+        self.webView.isOpaque = false
+        self.webView.backgroundColor = UIColor.clear
+        addDismissButtonToViewController(self ,named:appTheme.dismissButtonAltImageName, #selector(self.dismisstapped))
+    }
+    
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+        let x = error as NSError
+        IOSSpecialOps.blurt(self,title: "Network error code = \(x.code)",mess: error.localizedDescription)
+    }
+
 }

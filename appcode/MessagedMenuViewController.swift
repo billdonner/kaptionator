@@ -1,5 +1,5 @@
 //  MessagesAppMenuViewController.swift
-//  ub ori
+//  Kaptionator
 //
 //  Created by bill donner on 8/24/16.
 //  Copyright © 2016 Bill Donner/midnightrambler. All rights reserved.
@@ -22,7 +22,7 @@ final class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
     @IBAction func unwindToMessagesAppMenuViewController(_ segue: UIStoryboardSegue)  {}
     
     private var isAnimated  = false
-    fileprivate var changesMade: Bool = false
+    fileprivate var setup: Bool = false
     
     @IBOutlet weak var webviewOverlay: UIWebView!
     @IBOutlet weak var menuImageView: UIImageView!
@@ -142,79 +142,55 @@ final class MessagesAppMenuViewController: UIViewController ,AddDismissButton {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let options = captionedEntry.stickerOptions
-        isAnimated = options.contains(.generateasis)
+    
+        isAnimated = captionedEntry.stickerOptions.contains(.generateasis)
         
-        imageCaption.text =  captionedEntry.caption
-        var imgsize:CGFloat
-        do {
-            let path = captionedEntry.stickerPath                                                                                                                                              //stickerPath[0]
-            let data = try  Data(contentsOf: URL(string:path)!)
-            menuImageView.image = UIImage(data:data)
-            menuImageView.contentMode = .scaleAspectFit
-            imgsize = menuImageView.image!.size.width
-        }
-            catch {
-                menuImageView.image = nil
-                imgsize = kStickerSmallSize
-            }
-            
-        smallSwitch.isEnabled = false
-        mediumSwitch.isEnabled = false
-        largeSwitch.isEnabled = false
-        if isAnimated {
-            smallSwitch.isOn = false
-            mediumSwitch.isOn = false
-            largeSwitch.isOn = false
-            if imgsize >= kStickerLargeSize {
-                largeSwitch.isOn = true
-            } else
-                if imgsize >= kStickerMediumSize {
-                    mediumSwitch.isOn = true
-                } else
-                    if imgsize >= kStickerSmallSize {
-                        smallSwitch.isOn = true
-            }
-        } else {
-            
-            /// set switch ON only if file variant exists in correct size
-            largeSwitch.isOn = IO.checkForFileVariant(captionedEntry,"L")
-            mediumSwitch.isOn = IO.checkForFileVariant(captionedEntry,"M")
-            smallSwitch.isOn = IO.checkForFileVariant(captionedEntry,"S")
-            
-            /// enable switches only if supplied file is large enough
-            if imgsize >= kStickerLargeSize {
-                largeSwitch.isEnabled = true
-            }
-            if imgsize >= kStickerMediumSize {
-                mediumSwitch.isEnabled = true
-            }
-            if imgsize >= kStickerSmallSize {
-                smallSwitch.isEnabled = true
-            }
-        }
-        if isAnimated {
-            //
-            let scale : CGFloat = 1 / 1
-            ///  put up animated preview
-            self.menuImageView.isHidden = true
-            self.animatedLabel.isHidden = false
-            webviewOverlay.isHidden  = false
-            let w = webviewOverlay.frame.width
-            let h = webviewOverlay.frame.height
-            let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  style='max-width: 100%; height: auto;' src='\(captionedEntry.localimagepath)' alt='\(captionedEntry.localimagepath) height='\(h * scale)' width='\(w * scale)' ></body></html5>"
-            webviewOverlay.scalesPageToFit = true
-            webviewOverlay.contentMode = .scaleAspectFit
-            webviewOverlay.loadHTMLString(html, baseURL: nil)
-            ///  end of animated preview overlay
-        
-        }
-      
+        showImageFromSharedCE(ce:captionedEntry,animate: isAnimated)
+
         addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+}
+
+private extension MessagesAppMenuViewController {
+    func showImageFromSharedCE(ce:SharedCE,animate:Bool) {
+        
+        let isAnimated = animate//remoteAsset.options.contains(.generateasis)
+        if !isAnimated {
+            menuImageView.isHidden = false
+            // only set up once
+            webviewOverlay.isHidden  = true
+            if !setup {
+                do {
+                    let data = try  Data(contentsOf: URL(string:ce.localimagepath )!)
+                    menuImageView.image = UIImage(data:data)
+                    menuImageView.contentMode = .scaleAspectFit
+                }
+                catch {
+                    menuImageView.image = nil
+                }
+            }
+        } else {
+           // self.useasisnocaption.isHidden = false
+            let scale : CGFloat = 1 / 1
+            ///  put up animated preview
+            self.menuImageView.isHidden = true
+            self.animatedLabel.isHidden = false
+            
+            webviewOverlay.isHidden  = false
+            if !setup {
+                let w = webviewOverlay.frame.width
+                let h = webviewOverlay.frame.height
+                let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  style='max-width: 100%; height: auto;' src='\(ce.localimagepath)' alt='\(ce.localimagepath) height='\(h * scale)' width='\(w * scale)' ></body></html5>"
+                webviewOverlay.scalesPageToFit = true
+                webviewOverlay.contentMode = .scaleAspectFit
+                webviewOverlay.loadHTMLString(html, baseURL: nil)
+            }
+        }
+        setup = true
     }
 }

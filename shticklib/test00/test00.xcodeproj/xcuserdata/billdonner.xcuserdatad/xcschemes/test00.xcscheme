@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "88AEA5901D514B29006E5C70"
-               BuildableName = "kaptionator.app"
-               BlueprintName = "kaptionator"
-               ReferencedContainer = "container:kaptionator.xcodeproj">
+               BlueprintIdentifier = "881758BE1DC7ACD600DB70C6"
+               BuildableName = "test00.app"
+               BlueprintName = "test00"
+               ReferencedContainer = "container:test00.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +32,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "881758991DC7A88B00DB70C6"
-               BuildableName = "kaptionatorTests.xctest"
-               BlueprintName = "kaptionatorTests"
-               ReferencedContainer = "container:kaptionator.xcodeproj">
+               BlueprintIdentifier = "881758D21DC7ACD700DB70C6"
+               BuildableName = "test00Tests.xctest"
+               BlueprintName = "test00Tests"
+               ReferencedContainer = "container:test00.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "88AEA5901D514B29006E5C70"
-            BuildableName = "kaptionator.app"
-            BlueprintName = "kaptionator"
-            ReferencedContainer = "container:kaptionator.xcodeproj">
+            BlueprintIdentifier = "881758BE1DC7ACD600DB70C6"
+            BuildableName = "test00.app"
+            BlueprintName = "test00"
+            ReferencedContainer = "container:test00.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -65,19 +65,12 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "88AEA5901D514B29006E5C70"
-            BuildableName = "kaptionator.app"
-            BlueprintName = "kaptionator"
-            ReferencedContainer = "container:kaptionator.xcodeproj">
+            BlueprintIdentifier = "881758BE1DC7ACD600DB70C6"
+            BuildableName = "test00.app"
+            BlueprintName = "test00"
+            ReferencedContainer = "container:test00.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "OS_ACTIVITY_MODE"
-            value = "disaabled"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -91,10 +84,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "88AEA5901D514B29006E5C70"
-            BuildableName = "kaptionator.app"
-            BlueprintName = "kaptionator"
-            ReferencedContainer = "container:kaptionator.xcodeproj">
+            BlueprintIdentifier = "881758BE1DC7ACD600DB70C6"
+            BuildableName = "test00.app"
+            BlueprintName = "test00"
+            ReferencedContainer = "container:test00.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

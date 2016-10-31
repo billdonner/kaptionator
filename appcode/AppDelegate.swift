@@ -50,21 +50,13 @@ struct Theme {
         case .white : return .darkGray
         }
     }
-    var textFieldColor:UIColor {
-        
-        // imageCaption.textColor = .darkGray
-        // imageCaption.backgroundColor = .white
-        
+    var textFieldColor:UIColor {     
         switch theme {
         case .black : return .white
         case .white : return .darkGray
         }
     }
     var textFieldBackgroundColor:UIColor {
-        
-        // imageCaption.textColor = .darkGray
-        // imageCaption.backgroundColor = .white
-        
         switch theme {
         case .black : return .clear
         case .white : return .white
@@ -106,8 +98,6 @@ struct Theme {
     }
 }
 
-
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate
     {
@@ -115,7 +105,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
-        RemoteAsset.QuietlyAddNewURL(url,options:StickerMakingOptions.generatelarge)
+        RemoteAsset.quietlyAddNewURL(url,options:StickerMakingOptions.generatelarge)
         // try to reload the main controller if its showing
         var vc: UIViewController? =   window!.rootViewController
         if let nvc  = vc as? UINavigationController {

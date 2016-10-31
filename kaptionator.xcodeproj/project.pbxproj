@@ -284,6 +284,9 @@
 		8810D0011D53C510009BA9B3 /* kaptionator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kaptionator.entitlements; sourceTree = "<group>"; };
 		8810D0021D53C536009BA9B3 /* kaptionatorMessageExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kaptionatorMessageExtension.entitlements; sourceTree = "<group>"; };
 		8816CF401DC7829B00A4D285 /* RemSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemSpace.swift; sourceTree = "<group>"; };
+		881758A51DC7AB0700DB70C6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		881758F71DC7B13B00DB70C6 /* kaptionatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kaptionatorTests.swift; sourceTree = "<group>"; };
+		881758F91DC7B13B00DB70C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesViewController.swift; sourceTree = "<group>"; };
 		882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCaptionSpace.swift; sourceTree = "<group>"; };
 		883982961DB1421C00B5A037 /* InnerHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InnerHelpViewController.swift; sourceTree = "<group>"; };
@@ -425,6 +428,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		881758F61DC7B13B00DB70C6 /* kaptionatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				881758F71DC7B13B00DB70C6 /* kaptionatorTests.swift */,
+				881758F91DC7B13B00DB70C6 /* Info.plist */,
+			);
+			path = kaptionatorTests;
+			sourceTree = "<group>";
+		};
 		881836961DAFF3CD0034A078 /* shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -505,6 +517,7 @@
 				88AEA61C1D514C5F006E5C70 /* emogeezMessagesExtension */,
 				88AEA6311D514C8D006E5C70 /* candidatezMessagesExtension */,
 				88AEA6461D514CC7006E5C70 /* kaptionatorMessageExtension */,
+				881758F61DC7B13B00DB70C6 /* kaptionatorTests */,
 				88AEA6031D514C1F006E5C70 /* Frameworks */,
 				88AEA5921D514B29006E5C70 /* Products */,
 			);
@@ -573,6 +586,7 @@
 		88AEA6031D514C1F006E5C70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				881758A51DC7AB0700DB70C6 /* XCTest.framework */,
 				88AEA6041D514C1F006E5C70 /* Messages.framework */,
 			);
 			name = Frameworks;
@@ -788,7 +802,7 @@
 		88AEA5891D514B29006E5C70 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
+				LastSwiftUpdateCheck = 0810;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = midnightrambler;
 				TargetAttributes = {

@@ -1,6 +1,6 @@
 //
 //  CaptionedTableCell.swift
-//  ub ori
+//  Kaptionator
 //
 //  Created by bill donner on 9/12/16.
 //  Copyright © 2016 Bill Donner/midnightrambler. All rights reserved.

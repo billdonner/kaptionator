@@ -1,6 +1,6 @@
 //
 //  CatalogMenuViewController.swift
-//  ub ori
+//  Kaptionator
 //
 //  Created by bill donner on 8/24/16.
 //  Copyright © 2016 Bill Donner/midnightrambler. All rights reserved.
@@ -17,7 +17,7 @@ final class CatalogMenuViewController: UIViewController,AddDismissButton {
     
     var pvc:UIViewController! // must be set
     //private var isAnimated  = false
-    fileprivate var changesMade: Bool = false
+    fileprivate var setup: Bool = false
     
     @IBAction func unwindToCatalogMenuViewController(_ segue: UIStoryboardSegue)  {
     }
@@ -90,32 +90,9 @@ final class CatalogMenuViewController: UIViewController,AddDismissButton {
         useasisnocaption.setTitleColor(appTheme.buttonTextColor, for: .normal)
         addcaption.setTitleColor(appTheme.buttonTextColor, for: .normal)
         // Do any additional setup after loading the view.
-        let  isAnimated = remoteAsset.options.contains(.generateasis)
-        do {
-            let data = try  Data(contentsOf: URL(string:remoteAsset.localimagepath )!)
-            menuImageView.image = UIImage(data:data)
-            menuImageView.contentMode = .scaleAspectFit
-        }
-        catch {
-            menuImageView.image = nil
-        }
-        // imageCaption.isEnabled  = false
-        imageCaption.text =   remoteAsset.caption
-        if isAnimated {
-            //self.addcaption.isHidden = true
-            self.useasisnocaption.isHidden = false
-            let scale : CGFloat = 1 / 1
-            ///  put up animated preview
-            self.menuImageView.isHidden = true
-            self.animatedLabel.isHidden = false
-            webviewOverlay.isHidden  = false
-            let w = webviewOverlay.frame.width
-            let h = webviewOverlay.frame.height
-            let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  style='max-width: 100%; height: auto;' src='\(remoteAsset.localimagepath)' alt='\(remoteAsset.localimagepath) height='\(h * scale)' width='\(w * scale)' ></body></html5>"
-            webviewOverlay.scalesPageToFit = true
-            webviewOverlay.contentMode = .scaleAspectFit
-            webviewOverlay.loadHTMLString(html, baseURL: nil)
-        }
+        
+        let isAnimated = remoteAsset.options.contains(.generateasis)
+        showImageFromLocalAsset(remoteAsset:remoteAsset,animate: isAnimated)
         // animated can not me modified
         animationSwitch.setOn(isAnimated ,animated:true)
         let captionable = !isAnimated || showCatalogID == "ShowITunesID"
@@ -128,9 +105,47 @@ final class CatalogMenuViewController: UIViewController,AddDismissButton {
 }
 //MARK:- CALLBACKS
 
+private extension CatalogMenuViewController {
+    func showImageFromLocalAsset(remoteAsset:RemoteAsset,animate:Bool) {
+        
+        let isAnimated = animate//remoteAsset.options.contains(.generateasis)
+        if !isAnimated {
+            menuImageView.isHidden = false
+            // only set up once
+            webviewOverlay.isHidden  = true
+            if !setup {
+                do {
+                    let data = try  Data(contentsOf: URL(string:remoteAsset.localimagepath )!)
+                    menuImageView.image = UIImage(data:data)
+                    menuImageView.contentMode = .scaleAspectFit
+                }
+                catch {
+                    menuImageView.image = nil
+                }
+            }
+        } else {
+            self.useasisnocaption.isHidden = false
+            let scale : CGFloat = 1 / 1
+            ///  put up animated preview
+            self.menuImageView.isHidden = true
+            self.animatedLabel.isHidden = false
+            
+            webviewOverlay.isHidden  = false
+            if !setup {
+                let w = webviewOverlay.frame.width
+                let h = webviewOverlay.frame.height
+                let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  style='max-width: 100%; height: auto;' src='\(remoteAsset.localimagepath)' alt='\(remoteAsset.localimagepath) height='\(h * scale)' width='\(w * scale)' ></body></html5>"
+                webviewOverlay.scalesPageToFit = true
+                webviewOverlay.contentMode = .scaleAspectFit
+                webviewOverlay.loadHTMLString(html, baseURL: nil)
+            }
+        }
+        setup = true
+        
+    }
+}
 extension CatalogMenuViewController : GetCaptionDelegate {
     func captionWasEntered(caption: String) {
-        changesMade = true
         delegate?.useWithCaption(remoteAsset: remoteAsset, caption: caption )
         imageCaption.isEnabled  = false
     }

@@ -106,7 +106,7 @@ extension HelpDropdownViewController : UIDocumentPickerDelegate {
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
         print("picked new document at \(url)")
-         RemoteAsset.QuietlyAddNewURL(url,options:StickerMakingOptions.generatemedium)
+         RemoteAsset.quietlyAddNewURL(url,options:StickerMakingOptions.generatemedium)
     }
 }
 
@@ -118,7 +118,7 @@ extension HelpDropdownViewController :UIImagePickerControllerDelegate {
             
        // turn this into a file wit a url
            let url = RemSpace.writeImageToURL(newimage)
-            RemoteAsset.QuietlyAddNewURL(url,options:StickerMakingOptions.generatelarge)
+            RemoteAsset.quietlyAddNewURL(url,options:StickerMakingOptions.generatelarge)
         }
         dismiss (animated: true, completion: nil)
     }

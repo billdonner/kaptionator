@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "0810"
-   version = "1.3">
+   wasCreatedForAppExtension = "YES"
+   version = "2.0">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -14,9 +15,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "88AEA5901D514B29006E5C70"
-               BuildableName = "kaptionator.app"
-               BlueprintName = "kaptionator"
+               BlueprintIdentifier = "8876DE051D9C312800F211A5"
+               BuildableName = "candydatesMessagesExtension copy.appex"
+               BlueprintName = "candydatesMessagesExtension copy"
                ReferencedContainer = "container:kaptionator.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,56 +29,30 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "881758991DC7A88B00DB70C6"
-               BuildableName = "kaptionatorTests.xctest"
-               BlueprintName = "kaptionatorTests"
-               ReferencedContainer = "container:kaptionator.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "88AEA5901D514B29006E5C70"
-            BuildableName = "kaptionator.app"
-            BlueprintName = "kaptionator"
-            ReferencedContainer = "container:kaptionator.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      selectedDebuggerIdentifier = ""
+      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      allowLocationSimulation = "YES"
+      launchAutomaticallySubstyle = "2">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "88AEA5901D514B29006E5C70"
-            BuildableName = "kaptionator.app"
-            BlueprintName = "kaptionator"
+            BlueprintIdentifier = "8876DE051D9C312800F211A5"
+            BuildableName = "candydatesMessagesExtension copy.appex"
+            BlueprintName = "candydatesMessagesExtension copy"
             ReferencedContainer = "container:kaptionator.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "OS_ACTIVITY_MODE"
-            value = "disaabled"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -86,17 +61,17 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      debugDocumentVersioning = "YES"
+      launchAutomaticallySubstyle = "2">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "88AEA5901D514B29006E5C70"
-            BuildableName = "kaptionator.app"
-            BlueprintName = "kaptionator"
+            BlueprintIdentifier = "8876DE051D9C312800F211A5"
+            BuildableName = "candydatesMessagesExtension copy.appex"
+            BlueprintName = "candydatesMessagesExtension copy"
             ReferencedContainer = "container:kaptionator.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -16,9 +16,7 @@ final class StartupHelpViewController:  UIViewController, AddDismissButton  {
     
     @IBOutlet weak var topBlurb: UILabel!
     
-    
-    static var first = true
-    func dismisstapped(_ s: AnyObject) {
+    internal func dismisstapped(_ s: AnyObject) {
         dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {

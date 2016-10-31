@@ -1,6 +1,6 @@
 //
 //  CaptionedMenuViewController.swift
-//  ub ori
+//  Kaptionator
 //
 //  Created by bill donner on 8/24/16.
 //  Copyright © 2016 Bill Donner/midnightrambler. All rights reserved.
@@ -20,7 +20,7 @@ final class CaptionedMenuViewController: UIViewController, AddDismissButton {
     @IBAction func unwindToCaptionedMenuViewController(_ segue: UIStoryboardSegue)  {}
     
     private var isAnimated  = false
-    fileprivate var changesMade: Bool = false
+    fileprivate var setup: Bool = false
     @IBOutlet weak var outerView: UIView!
     @IBOutlet weak var animatedLabel: UILabel!
     @IBOutlet weak var menuImageView: UIImageView!
@@ -70,54 +70,54 @@ final class CaptionedMenuViewController: UIViewController, AddDismissButton {
         moveimessage.setTitleColor( appTheme.buttonTextColor, for: .normal)
         editsticker.setTitleColor( appTheme.buttonTextColor, for: .normal)
         isAnimated = captionedEntry.stickerOptions.contains(.generateasis)
-        do {
-            let data = try  Data(contentsOf: URL(string:captionedEntry.localimagepath )!)
-            menuImageView.image = UIImage(data:data)
-            menuImageView.contentMode = .scaleAspectFit
-        }
-        catch {
-            menuImageView.image = nil
-        }
-        imageCaption.text =     captionedEntry.caption
-//        imageCaption.isEnabled  = false
-//        imageCaption.isHidden = imageCaption.text == ""
-//        imageCaption.keyboardAppearance = .dark
-//        imageCaption.delegate = self
-//        imageCaption.textColor = .white
-//        imageCaption.backgroundColor = .clear
-        if isAnimated {
-            editsticker.isHidden = true
-            let scale : CGFloat = 1 / 1
-            ///  put up animated preview
-            self.menuImageView.isHidden = true
-            self.animatedLabel.isHidden = false
-            webviewOverlay.isHidden  = false
-            let w = webviewOverlay.frame.width
-            let h = webviewOverlay.frame.height
-            let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  style='max-width: 100%; height: auto;' src='\(captionedEntry.localimagepath)' alt='\(captionedEntry.localimagepath) height='\(h * scale)' width='\(w * scale)' ></body></html5>"
-            webviewOverlay.scalesPageToFit = true
-            webviewOverlay.contentMode = .scaleAspectFit
-            webviewOverlay.loadHTMLString(html, baseURL: nil)
-            ///  end of animated preview overlay
-        }
+        
+        showImageFromAppCE(ce:captionedEntry,animate: isAnimated)
         addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
     }
 
 }
-////MARK: UITextFieldDelegate when the single text field gets filled in
-//extension CaptionedMenuViewController : UITextFieldDelegate {
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        changesMade = true
-//        delegate?.cloneWithCaption(captionedEntry:self.captionedEntry,  caption: textField.text ?? "<!none!>")
-//        textField.resignFirstResponder()
-//        imageCaption.isEnabled  = false
-//        dismiss(animated: true,completion:nil)
-//        return true
-//    }
-//}
+
+private extension CaptionedMenuViewController {
+    func showImageFromAppCE(ce:AppCE,animate:Bool) {
+        
+        let isAnimated = animate//remoteAsset.options.contains(.generateasis)
+        if !isAnimated {
+            menuImageView.isHidden = false
+            // only set up once
+            webviewOverlay.isHidden  = true
+            if !setup {
+                do {
+                    let data = try  Data(contentsOf: URL(string:ce.localimagepath )!)
+                    menuImageView.image = UIImage(data:data)
+                    menuImageView.contentMode = .scaleAspectFit
+                }
+                catch {
+                    menuImageView.image = nil
+                }
+            }
+        } else {
+           // self.useasisnocaption.isHidden = false
+            let scale : CGFloat = 1 / 1
+            ///  put up animated preview
+            self.menuImageView.isHidden = true
+            self.animatedLabel.isHidden = false
+            
+            webviewOverlay.isHidden  = false
+            if !setup {
+                let w = webviewOverlay.frame.width
+                let h = webviewOverlay.frame.height
+                let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  style='max-width: 100%; height: auto;' src='\(ce.localimagepath)' alt='\(ce.localimagepath) height='\(h * scale)' width='\(w * scale)' ></body></html5>"
+                webviewOverlay.scalesPageToFit = true
+                webviewOverlay.contentMode = .scaleAspectFit
+                webviewOverlay.loadHTMLString(html, baseURL: nil)
+            }
+        }
+        setup = true
+    }
+}
+
 extension CaptionedMenuViewController :ChangeCaptionDelegate {
     func captionWasEntered(caption: String) {
-        changesMade = true
        delegate?.cloneWithCaption(captionedEntry:self.captionedEntry, caption: caption )
         imageCaption.isEnabled  = false
     }

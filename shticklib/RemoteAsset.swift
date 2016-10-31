@@ -1,23 +1,21 @@
 //
 //  RemoteAsset.swift
-//  ub ori
+//  Kaptionator
 //
 //  Created by bill donner on 9/12/16.
 //  Copyright © 2016 Bill Donner/midnightrambler. All rights reserved.
 //
 
 import UIKit
- 
-
 
 // RemoteAsset represents one image on a remote server in a "pack"
 public struct RemoteAsset {
     let pack:String
-       let caption:String
-       let remoteurl :String
-       let thumbnail:String
-       let localimagepath:String
-       let options:StickerMakingOptions
+    let caption:String
+    let remoteurl :String
+    let thumbnail:String
+    let localimagepath:String
+    let options:StickerMakingOptions
     
     // clone this while changing the stickermaking options
     //
@@ -48,7 +46,7 @@ public struct RemoteAsset {
     // this main init only for use during recovery
     //
     // if localpath is non nil then set localimagepath
-     init(pack:String,title:String,thumb:String, remoteurl:String?,localpath:String?, options:StickerMakingOptions) {
+    init(pack:String,title:String,thumb:String, remoteurl:String?,localpath:String?, options:StickerMakingOptions) {
         self.pack = pack
         self.thumbnail = thumb
         let none = title == ""
@@ -65,8 +63,8 @@ public struct RemoteAsset {
         else {
             // load file from remote location
             let local  = RemSpace.copyURLtoURL(URL(string:self.remoteurl)!)
-                self.localimagepath  = local.absoluteString
-                print("**** RA.INIT(..IMAGEPATH) \(local )")
+            self.localimagepath  = local.absoluteString
+            print("**** RA.INIT(..IMAGEPATH) \(local )")
         }
     }// init
     
@@ -82,78 +80,78 @@ public struct RemoteAsset {
     }
     
     /// loads from documents without presenting a UI
-    static func QuietlyAddNewURL(_ url:URL,options:StickerMakingOptions)  {
+    static func quietlyAddNewURL(_ url:URL,options:StickerMakingOptions)  {
         let ra = RemoteAsset(localurl:url,
                              options: options,
                              title:url.lastPathComponent)
         RemSpace.addasset(ra: ra)
         RemSpace.saveToDisk()
     }
-
-static func loadFromITunesSharing(   completion:((Int,String,[RemoteAsset]) -> (Swift.Void))?) {
-    //let iTunesBase = manifestFromDocumentsDirector
-    // store file locally into catalog
-    // var first = true
-    let apptitle = "-local-"
-    var allofme:[RemoteAsset] = []
-    do {
-        let dir = FileManager.default.urls (for:  .documentDirectory, in: .userDomainMask)
-        let documentsUrl =  dir.first!
-        
-        // Get the directory contents urls (including subfolders urls)
-        let directoryContents = try FileManager.default.contentsOfDirectory(at: documentsUrl, includingPropertiesForKeys: nil, options: .skipsSubdirectoryDescendants)
-        let _ =  try directoryContents.map {
-            let lastpatch = $0.lastPathComponent
-            if !lastpatch.hasPrefix(".") { // exclude wierd files
-                let imagename = lastpatch
-                
-                if (lastpatch as NSString).pathExtension.lowercased() == "json" {
-                    let data = try Data(contentsOf: $0) // read
-                    Manifest.parseData(data, baseURL: documentsUrl.absoluteString, completion: completion!)
-                } else {
-                    // copy from documents area into a regular local file
+    
+    static func loadFromITunesSharing(   completion:((Int,String,[RemoteAsset]) -> (Swift.Void))?) {
+        //let iTunesBase = manifestFromDocumentsDirector
+        // store file locally into catalog
+        // var first = true
+        let apptitle = "-local-"
+        var allofme:[RemoteAsset] = []
+        do {
+            let dir = FileManager.default.urls (for:  .documentDirectory, in: .userDomainMask)
+            let documentsUrl =  dir.first!
+            
+            // Get the directory contents urls (including subfolders urls)
+            let directoryContents = try FileManager.default.contentsOfDirectory(at: documentsUrl, includingPropertiesForKeys: nil, options: .skipsSubdirectoryDescendants)
+            let _ =  try directoryContents.map {
+                let lastpatch = $0.lastPathComponent
+                if !lastpatch.hasPrefix(".") { // exclude wierd files
+                    let imagename = lastpatch
                     
-                    //                        let me = RemoteAsset(pack: "apptitle", title: imagename, thumb:"", remoteurl: localpath.absoluteString,  localpath:nil, options:
-                    //                            .generatemedium)
+                    if (lastpatch as NSString).pathExtension.lowercased() == "json" {
+                        let data = try Data(contentsOf: $0) // read
+                        Manifest.parseData(data, baseURL: documentsUrl.absoluteString, completion: completion!)
+                    } else {
+                        // copy from documents area into a regular local file
+                        
+                        //                        let me = RemoteAsset(pack: "apptitle", title: imagename, thumb:"", remoteurl: localpath.absoluteString,  localpath:nil, options:
+                        //                            .generatemedium)
+                        
+                        let me = RemoteAsset(remoteurl: $0,options: .generatemedium,title: imagename)
+                        RemSpace.addasset(ra: me) // be sure to coun
+                        allofme.append(me)                     }
                     
-                    let me = RemoteAsset(remoteurl: $0,options: .generatemedium,title: imagename)
-                    RemSpace.addasset(ra: me) // be sure to coun
-                    allofme.append(me)                     }
-                
-                // finally, delete the file
-                try FileManager.default.removeItem(at: $0)
+                    // finally, delete the file
+                    try FileManager.default.removeItem(at: $0)
+                }
+            }
+            
+            RemSpace.saveToDisk()
+            if completion != nil  {
+                completion! (200, apptitle, allofme)
             }
         }
-        
-        RemSpace.saveToDisk()
-        if completion != nil  {
-            completion! (200, apptitle, allofme)
+        catch {
+            print("loadFromITunesSharing: file system error \(error)")
         }
-    }
-    catch {
-        print("loadFromITunesSharing: file system error \(error)")
-    }
     }
 }
 //
 //fileprivate static func  xloadFromLocal(from localpath:String) -> URL {
-//    
+//
 //    do {
 //        let ext = (localpath as NSString).pathExtension
 //        let name = "\(filenum).\(ext)"
-//        
+//
 //        let newfilename = sharedAppContainerDirectory().appendingPathComponent(name, isDirectory: false)
-//        
+//
 //        if FileManager.default.fileExists(atPath: newfilename.absoluteString)
 //        {
 //            return newfilename
 //        }
-//        
+//
 //        // now copy, could be in done in back but why?
-//        
+//
 //        let data = try Data(contentsOf: URL(string:localpath)!)
 //        try data.write(to: newfilename, options: .atomicWrite)
-//        
+//
 //        return newfilename
 //    }
 //    catch {
@@ -169,16 +167,16 @@ static func loadFromITunesSharing(   completion:((Int,String,[RemoteAsset]) -> (
 //        let ext = (remotepath as NSString).pathExtension
 //        let name = "\(filenum).\(ext)"
 //        let newfilename = sharedAppContainerDirectory().appendingPathComponent(name, isDirectory: false)
-//        
+//
 //        if FileManager.default.fileExists(atPath: newfilename.absoluteString)
 //        {
 //            return newfilename
 //        }
-//        
+//
 //        // now copy, could be in done in back but why?
 //        let data = try Data(contentsOf: URL(string:remotepath)!)
 //        try data.write(to: newfilename, options: .atomicWrite)
-//        
+//
 //        return newfilename
 //    }
 //    catch {
