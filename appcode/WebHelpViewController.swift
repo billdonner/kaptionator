@@ -3,13 +3,11 @@
 //  Re-Kaptionator
 //
 //  Created by bill donner on 8/17/16.
-//  Copyright © 2016 Martoons and MedCommons. All rights reserved.
+//  Copyright © 2016 Bill Donner/midnightrambler. All rights reserved.
 //
 
 import UIKit
-protocol AddDismissButton {
-  //  func dismisstapped(_ s:AnyObject)
-}
+
 
 final class WebsiteOverlayViewController:InnerOverlayViewController {
     override func getreq () -> URLRequest {
@@ -55,10 +53,6 @@ final class AltWebHelpViewController:InnerOverlayViewController {
         addDismissButtonToViewController(self ,named:appTheme.dismissButtonAltImageName, #selector(self.dismisstapped))
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
         let x = error as NSError
         IOSSpecialOps.blurt(self,title: "Network error code = \(x.code)",mess: error.localizedDescription)

@@ -3,7 +3,7 @@
 //  ub ori
 //
 //  Created by bill donner on 8/24/16.
-//  Copyright © 2016 Martoons and MedCommons. All rights reserved.
+//  Copyright © 2016 Bill Donner/midnightrambler. All rights reserved.
 //
 import UIKit
 protocol CaptionedMenuViewDelegate : class {

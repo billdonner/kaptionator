@@ -3,13 +3,15 @@
 //  Re-Kaptionator
 //
 //  Created by Bill Donner on 15/12/2015.
-//  Copyright © 2016 Martoons and MedCommons. All rights reserved.
+//  Copyright © 2016 Bill Donner/midnightrambler. All rights reserved.
 //
 import UIKit
 
 let  offColor:UIColor  = UIColor.lightGray
 
 protocol ControlledByMasterView {
+}
+protocol AddDismissButton : class {
 }
 
 fileprivate var masterViewController : MasterViewController?

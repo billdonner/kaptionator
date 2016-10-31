@@ -3,7 +3,7 @@
 //  ub ori
 //
 //  Created by bill donner on 9/12/16.
-//  Copyright © 2016 Darjeeling Apps. All rights reserved.
+//  Copyright © 2016 Bill Donner/midnightrambler. All rights reserved.
 //
 
 import UIKit

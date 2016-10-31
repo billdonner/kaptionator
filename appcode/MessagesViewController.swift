@@ -3,7 +3,7 @@
 //  kaptionator
 //
 //  Created by bill donner on 8/6/16.
-//  Copyright © 2016 martoons. All rights reserved.
+//  Copyright © 2016 Bill Donner/ midnightrambler  All rights reserved.
 //
 import UIKit
 //

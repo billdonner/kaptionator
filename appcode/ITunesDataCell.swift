@@ -3,7 +3,7 @@
 //  kaptionator
 //
 //  Created by bill donner on 10/6/16.
-//  Copyright © 2016 midnightrambler. All rights reserved.
+//  Copyright © 2016 Bill Donner/ midnightrambler. All rights reserved.
 //
 
 import UIKit
@@ -13,7 +13,7 @@ import UIKit
 //  Re-Kaptionator
 //
 //  Created by Bill Donner on 15/12/2015.
-//  Copyright © 2016 Martoons and MedCommons. All rights reserved.
+//  Copyright © 2016 Bill Donner/midnightrambler. All rights reserved.
 //
 
 
