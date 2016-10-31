@@ -10,7 +10,7 @@ import UIKit
 //
 
 
-final class CatalogViewController:ChildOfMasterViewController, UICollectionViewDelegate, UICollectionViewDataSource   {
+final class CatalogViewController:UIViewController,ControlledByMasterView, UICollectionViewDelegate, UICollectionViewDataSource   {
     
     @IBOutlet weak var collectionView: UICollectionView!
     

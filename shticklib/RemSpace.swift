@@ -12,6 +12,7 @@
 import UIKit
 
 fileprivate var remSpace = RemSpace()
+
 //MARK: - RemSpace collects all RemoteAssets
 public struct  RemSpace {
     static private var catalogTitle:String = "replace"
@@ -150,3 +151,131 @@ public struct  RemSpace {
 }
 
 //MARK: - RemoteAsset is readonly once loaded from manifest
+
+/// Manifest bundles static operations on groups of manifest entries
+public struct Manifest {
+    
+    //
+    static func parseData(_ data:Data, baseURL: String,completion:  ((Int,String,[RemoteAsset]) -> (Swift.Void))) {
+        var final : [RemoteAsset] = []
+        do {
+            let json = try JSONSerialization.jsonObject(with: data, options: [])
+            if let jobj = json as? JSONDict,
+                let sites = jobj["images"] as? [AnyObject],
+                let pack = jobj["pack"] as? String {
+                for site in sites {
+                    if  let sit  = site as? JSONDict {
+                        if let imgpath = sit["image"] as? String {
+                            // animation must be present And true
+                            var animated: Bool = false
+                            if    let anima  = sit["animated"] as? Bool {
+                                if anima == true {
+                                    animated = true
+                                }
+                            }
+                            var thumbnail: String = ""
+                            if    let thumbpath  = sit["thumb"] as? String {
+                                thumbnail = baseURL +  thumbpath
+                            }
+                            var title: String = ""
+                            if    let titl  = sit["title"] as? String {
+                                title = titl
+                            }
+                            
+                            let imagepath = baseURL + imgpath
+                            
+                            var sizes = "S"
+                            if let szes = sit["size"] as? String {
+                                sizes = szes
+                            }
+                            // actually need
+                            var options = StickerMakingOptions()
+                            if sizes.contains("S") {
+                                options.insert( .generatesmall)
+                            }
+                            if sizes.contains("M") {
+                                options.insert( .generatemedium)
+                            }
+                            if sizes.contains("L") {
+                                options.insert( .generatelarge)
+                            }
+                            if animated  //|| title == ""
+                            {
+                                options.insert( .generateasis)
+                            }
+                            
+                            // setting up remote asset of nil will cause us to load the picture
+                            let remoteAsset = RemoteAsset(
+                                localurl: URL(string:imagepath)!,
+                                options: options,
+                                title: title, thumb:thumbnail)
+                            
+                            RemSpace.addasset(ra: remoteAsset) // be sure to count
+                            final.append (remoteAsset)
+                        }
+                    }
+                }//for
+                completion(200,pack, final ) //}// made it
+                return
+            }
+        }// inner do
+        catch let error as NSError {
+            print ("************* bad JSON parseData \(error) ********** ")
+            completion(error.code, "-err0r-", final ) //}// made it
+        }
+    }
+    private static func processOneURL(_ url:URL,  completion:@escaping ((Int,String,[RemoteAsset]) -> (Swift.Void))) {
+        
+        IO.httpGET(url:url) { status,data in
+            guard status == 200 else {
+                completion(status,"", [] )
+                return
+            }
+            let baseURL = (url.absoluteString as NSString).deletingLastPathComponent.appending("/")
+            
+            if let data = data {
+                parseData(data, baseURL: baseURL, completion: completion)
+            }
+        }
+    }
+    
+    /// load a bunch of manifests as listed in a super-manifest
+    
+    private static func processOneLocal(_ url:URL,  completion:@escaping ((Int,String,[RemoteAsset]) -> (Swift.Void))) {
+        do {
+            let data = try Data(contentsOf: url)
+            
+            let baseURL = (url.absoluteString as NSString).deletingLastPathComponent.appending("/")
+            
+            parseData(data, baseURL: baseURL, completion: completion)
+            
+        }
+        catch let error {
+            completion((error as NSError).code,"", [] )
+        }
+        
+    }
+    static func loadJSONFromLocal(url:URL?,completion:((Int,String,[RemoteAsset]) -> (Swift.Void))?) {
+        guard let url = url else {
+            fatalError("loadJSONFromLocal")
+        }
+        processOneLocal (  url ){ status, s, mes in
+            
+            if completion != nil  {
+                completion! (status, "lny", mes)
+            }
+            
+        }
+    }
+    
+    static func loadJSONFromURL(url:URL?,completion:((Int,String,[RemoteAsset]) -> (Swift.Void))?) {
+        guard let url = url else {
+            fatalError("loadFromITunesSharing(observer: observer,completion:completion)")
+        }
+        processOneURL (  url ){ status, s, mes in
+            if completion != nil  {
+                completion! (status, "sny", mes)
+            }
+        }
+    }
+}

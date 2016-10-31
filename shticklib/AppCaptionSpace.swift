@@ -200,7 +200,6 @@ public struct AppCaptionSpace {
             idx += 1
         }
         return nil
-        
     }
     
     static  func findMatchingEntry(ce:AppCE) -> Bool {

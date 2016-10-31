@@ -11,7 +11,7 @@ import UIKit
 // MARK: Show LocalItunes Document Entries in One Tab as Child ViewContoller
 //
 
-final class ITunesViewController :ChildOfMasterViewController, UICollectionViewDelegate, UICollectionViewDataSource   { 
+final class ITunesViewController :UIViewController,ControlledByMasterView, UICollectionViewDelegate, UICollectionViewDataSource   { 
     
     @IBOutlet weak var collectionView: UICollectionView!
     

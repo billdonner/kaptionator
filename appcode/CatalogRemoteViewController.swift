@@ -10,7 +10,7 @@ import UIKit
 //
 
 
-class CatalogRemoteViewController:ChildOfMasterViewController, UICollectionViewDelegate, UICollectionViewDataSource  { 
+class CatalogRemoteViewController:UIViewController,ControlledByMasterView, UICollectionViewDelegate, UICollectionViewDataSource  { 
 
     @IBOutlet weak var collectionView: UICollectionView!
     

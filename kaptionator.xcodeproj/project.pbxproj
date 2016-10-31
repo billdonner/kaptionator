@@ -76,14 +76,6 @@
 		88B54C9D1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54C971D886FBC0076942D /* MessagesExtensionViewController.swift */; };
 		88B54C9E1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54C971D886FBC0076942D /* MessagesExtensionViewController.swift */; };
 		88B54C9F1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54C971D886FBC0076942D /* MessagesExtensionViewController.swift */; };
-		88B54CB21D8870060076942D /* theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA11D8870060076942D /* theme.swift */; };
-		88B54CB31D8870060076942D /* theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA11D8870060076942D /* theme.swift */; };
-		88B54CB41D8870060076942D /* theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA11D8870060076942D /* theme.swift */; };
-		88B54CB51D8870060076942D /* theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA11D8870060076942D /* theme.swift */; };
-		88B54CB61D8870060076942D /* theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA11D8870060076942D /* theme.swift */; };
-		88B54CB71D8870060076942D /* theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA11D8870060076942D /* theme.swift */; };
-		88B54CB81D8870060076942D /* theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA11D8870060076942D /* theme.swift */; };
-		88B54CB91D8870060076942D /* theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA11D8870060076942D /* theme.swift */; };
 		88B54CBA1D8870060076942D /* RemoteAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA21D8870060076942D /* RemoteAsset.swift */; };
 		88B54CBC1D8870060076942D /* RemoteAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA21D8870060076942D /* RemoteAsset.swift */; };
 		88B54CBE1D8870060076942D /* RemoteAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA21D8870060076942D /* RemoteAsset.swift */; };
@@ -96,10 +88,6 @@
 		88B54CC71D8870060076942D /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA31D8870060076942D /* common.swift */; };
 		88B54CC81D8870060076942D /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA31D8870060076942D /* common.swift */; };
 		88B54CC91D8870060076942D /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA31D8870060076942D /* common.swift */; };
-		88B54CCA1D8870060076942D /* IOSSpecialOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA41D8870060076942D /* IOSSpecialOps.swift */; };
-		88B54CCC1D8870060076942D /* IOSSpecialOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA41D8870060076942D /* IOSSpecialOps.swift */; };
-		88B54CCE1D8870060076942D /* IOSSpecialOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA41D8870060076942D /* IOSSpecialOps.swift */; };
-		88B54CD01D8870060076942D /* IOSSpecialOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA41D8870060076942D /* IOSSpecialOps.swift */; };
 		88B54CD21D8870060076942D /* SFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA51D8870060076942D /* SFViewController.swift */; };
 		88B54CD41D8870060076942D /* SFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA51D8870060076942D /* SFViewController.swift */; };
 		88B54CD61D8870060076942D /* SFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA51D8870060076942D /* SFViewController.swift */; };
@@ -108,10 +96,6 @@
 		88B54CDC1D8870060076942D /* InfoDictIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA61D8870060076942D /* InfoDictIOS.swift */; };
 		88B54CDE1D8870060076942D /* InfoDictIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA61D8870060076942D /* InfoDictIOS.swift */; };
 		88B54CE01D8870060076942D /* InfoDictIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA61D8870060076942D /* InfoDictIOS.swift */; };
-		88B54CE21D8870060076942D /* Manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA71D8870060076942D /* Manifest.swift */; };
-		88B54CE41D8870060076942D /* Manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA71D8870060076942D /* Manifest.swift */; };
-		88B54CE61D8870060076942D /* Manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA71D8870060076942D /* Manifest.swift */; };
-		88B54CE81D8870060076942D /* Manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA71D8870060076942D /* Manifest.swift */; };
 		88B54CEA1D8870060076942D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* SharedCaptionSpace.swift */; };
 		88B54CEB1D8870060076942D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* SharedCaptionSpace.swift */; };
 		88B54CEC1D8870060076942D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* SharedCaptionSpace.swift */; };
@@ -345,13 +329,10 @@
 		88AEA64E1D514CC7006E5C70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88B54C961D886FBC0076942D /* MartoonerBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MartoonerBrowserViewController.swift; sourceTree = "<group>"; };
 		88B54C971D886FBC0076942D /* MessagesExtensionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesExtensionViewController.swift; sourceTree = "<group>"; };
-		88B54CA11D8870060076942D /* theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = theme.swift; sourceTree = "<group>"; };
 		88B54CA21D8870060076942D /* RemoteAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteAsset.swift; sourceTree = "<group>"; };
 		88B54CA31D8870060076942D /* common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
-		88B54CA41D8870060076942D /* IOSSpecialOps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOSSpecialOps.swift; sourceTree = "<group>"; };
 		88B54CA51D8870060076942D /* SFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFViewController.swift; path = ../shticklib/SFViewController.swift; sourceTree = "<group>"; };
 		88B54CA61D8870060076942D /* InfoDictIOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoDictIOS.swift; sourceTree = "<group>"; };
-		88B54CA71D8870060076942D /* Manifest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manifest.swift; sourceTree = "<group>"; };
 		88B54CA81D8870060076942D /* SharedCaptionSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedCaptionSpace.swift; sourceTree = "<group>"; };
 		88B54CA91D8870060076942D /* StickerFileFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerFileFactory.swift; sourceTree = "<group>"; };
 		88B54CFE1D8870F10076942D /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainInterface.storyboard; path = ../candidatezMessagesExtension/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -447,7 +428,6 @@
 		881836961DAFF3CD0034A078 /* shared */ = {
 			isa = PBXGroup;
 			children = (
-				88B54CA11D8870060076942D /* theme.swift */,
 				88B54CA31D8870060076942D /* common.swift */,
 				88B54CA81D8870060076942D /* SharedCaptionSpace.swift */,
 				88B54CA91D8870060076942D /* StickerFileFactory.swift */,
@@ -461,9 +441,7 @@
 				881836961DAFF3CD0034A078 /* shared */,
 				88B54CA21D8870060076942D /* RemoteAsset.swift */,
 				8816CF401DC7829B00A4D285 /* RemSpace.swift */,
-				88B54CA41D8870060076942D /* IOSSpecialOps.swift */,
 				88B54CA61D8870060076942D /* InfoDictIOS.swift */,
-				88B54CA71D8870060076942D /* Manifest.swift */,
 				882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */,
 			);
 			path = shticklib;
@@ -1050,7 +1028,6 @@
 				8816CF411DC7829B00A4D285 /* RemSpace.swift in Sources */,
 				88DD92F11D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				88DD93111D88738200832564 /* CaptionedTableCell.swift in Sources */,
-				88B54CE21D8870060076942D /* Manifest.swift in Sources */,
 				886B4ACD1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88DD92F91D88738200832564 /* CapationatedViewController.swift in Sources */,
 				88DD92F51D88738200832564 /* CaptionedMenuViewController.swift in Sources */,
@@ -1064,9 +1041,7 @@
 				88B54CEA1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
 				88B54CF21D8870060076942D /* StickerFileFactory.swift in Sources */,
 				88B54CD21D8870060076942D /* SFViewController.swift in Sources */,
-				88B54CCA1D8870060076942D /* IOSSpecialOps.swift in Sources */,
 				88DD930D1D88738200832564 /* CatalogDataCell.swift in Sources */,
-				88B54CB21D8870060076942D /* theme.swift in Sources */,
 				886B4AC81D9DDD5B00581C9B /* ReorderMessagesViewController.swift in Sources */,
 				88B54CC21D8870060076942D /* common.swift in Sources */,
 				883982971DB1421C00B5A037 /* InnerHelpViewController.swift in Sources */,
@@ -1091,7 +1066,6 @@
 				88FA07D81DA402330063B483 /* ChangeCaptionViewController.swift in Sources */,
 				AD20A5FF1DA1951000877ABF /* ITunesMenuViewController.swift in Sources */,
 				88DD93121D88738200832564 /* CaptionedTableCell.swift in Sources */,
-				88B54CE41D8870060076942D /* Manifest.swift in Sources */,
 				88DD92FA1D88738200832564 /* CapationatedViewController.swift in Sources */,
 				88DD92F61D88738200832564 /* CaptionedMenuViewController.swift in Sources */,
 				88B571941DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */,
@@ -1103,10 +1077,8 @@
 				8862CE331DB0838500685CCA /* StartupHelpViewController.swift in Sources */,
 				88B54CD41D8870060076942D /* SFViewController.swift in Sources */,
 				88F2FC931D931A070055209C /* MoreMenuViewController.swift in Sources */,
-				88B54CCC1D8870060076942D /* IOSSpecialOps.swift in Sources */,
 				8816CF421DC7829B00A4D285 /* RemSpace.swift in Sources */,
 				88DD930E1D88738200832564 /* CatalogDataCell.swift in Sources */,
-				88B54CB41D8870060076942D /* theme.swift in Sources */,
 				88B54CC41D8870060076942D /* common.swift in Sources */,
 				88DD93061D88738200832564 /* MasterViewController.swift in Sources */,
 				88B54CBC1D8870060076942D /* RemoteAsset.swift in Sources */,
@@ -1131,7 +1103,6 @@
 				88FA07D91DA402330063B483 /* ChangeCaptionViewController.swift in Sources */,
 				AD20A6001DA1951100877ABF /* ITunesMenuViewController.swift in Sources */,
 				88DD93131D88738200832564 /* CaptionedTableCell.swift in Sources */,
-				88B54CE61D8870060076942D /* Manifest.swift in Sources */,
 				88DD92FB1D88738200832564 /* CapationatedViewController.swift in Sources */,
 				88DD92F71D88738200832564 /* CaptionedMenuViewController.swift in Sources */,
 				88B571951DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */,
@@ -1143,10 +1114,8 @@
 				8862CE341DB0838500685CCA /* StartupHelpViewController.swift in Sources */,
 				88B54CD61D8870060076942D /* SFViewController.swift in Sources */,
 				88F2FC941D931A070055209C /* MoreMenuViewController.swift in Sources */,
-				88B54CCE1D8870060076942D /* IOSSpecialOps.swift in Sources */,
 				8816CF431DC7829B00A4D285 /* RemSpace.swift in Sources */,
 				88DD930F1D88738200832564 /* CatalogDataCell.swift in Sources */,
-				88B54CB61D8870060076942D /* theme.swift in Sources */,
 				88B54CC61D8870060076942D /* common.swift in Sources */,
 				88DD93071D88738200832564 /* MasterViewController.swift in Sources */,
 				88B54CBE1D8870060076942D /* RemoteAsset.swift in Sources */,
@@ -1171,7 +1140,6 @@
 				88FA07DA1DA402330063B483 /* ChangeCaptionViewController.swift in Sources */,
 				AD20A6011DA1951200877ABF /* ITunesMenuViewController.swift in Sources */,
 				88DD93141D88738200832564 /* CaptionedTableCell.swift in Sources */,
-				88B54CE81D8870060076942D /* Manifest.swift in Sources */,
 				88DD92FC1D88738200832564 /* CapationatedViewController.swift in Sources */,
 				88DD92F81D88738200832564 /* CaptionedMenuViewController.swift in Sources */,
 				88B571961DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */,
@@ -1183,10 +1151,8 @@
 				8862CE351DB0838500685CCA /* StartupHelpViewController.swift in Sources */,
 				88B54CD81D8870060076942D /* SFViewController.swift in Sources */,
 				88F2FC951D931A070055209C /* MoreMenuViewController.swift in Sources */,
-				88B54CD01D8870060076942D /* IOSSpecialOps.swift in Sources */,
 				8816CF441DC7829B00A4D285 /* RemSpace.swift in Sources */,
 				88DD93101D88738200832564 /* CatalogDataCell.swift in Sources */,
-				88B54CB81D8870060076942D /* theme.swift in Sources */,
 				88B54CC81D8870060076942D /* common.swift in Sources */,
 				88DD93081D88738200832564 /* MasterViewController.swift in Sources */,
 				88B54CC01D8870060076942D /* RemoteAsset.swift in Sources */,
@@ -1203,7 +1169,6 @@
 			files = (
 				88B54C9F1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */,
 				88B54CC91D8870060076942D /* common.swift in Sources */,
-				88B54CB91D8870060076942D /* theme.swift in Sources */,
 				88B54CF11D8870060076942D /* SharedCaptionSpace.swift in Sources */,
 				88B570F51DA696FE00CD4058 /* StickerFileFactory.swift in Sources */,
 				88B54C9B1D886FBC0076942D /* MartoonerBrowserViewController.swift in Sources */,
@@ -1216,7 +1181,6 @@
 			files = (
 				88B54C9E1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */,
 				88B54CC71D8870060076942D /* common.swift in Sources */,
-				88B54CB71D8870060076942D /* theme.swift in Sources */,
 				88B54CEF1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
 				88B570F41DA696FB00CD4058 /* StickerFileFactory.swift in Sources */,
 				88B54C9A1D886FBC0076942D /* MartoonerBrowserViewController.swift in Sources */,
@@ -1229,7 +1193,6 @@
 			files = (
 				88B54C9D1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */,
 				88B54CC51D8870060076942D /* common.swift in Sources */,
-				88B54CB51D8870060076942D /* theme.swift in Sources */,
 				88B54CED1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
 				88B570F31DA696FA00CD4058 /* StickerFileFactory.swift in Sources */,
 				88B54C991D886FBC0076942D /* MartoonerBrowserViewController.swift in Sources */,
@@ -1242,7 +1205,6 @@
 			files = (
 				88B54C9C1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */,
 				88B54CC31D8870060076942D /* common.swift in Sources */,
-				88B54CB31D8870060076942D /* theme.swift in Sources */,
 				88B54CEB1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
 				88B570F21DA696F900CD4058 /* StickerFileFactory.swift in Sources */,
 				88B54C981D886FBC0076942D /* MartoonerBrowserViewController.swift in Sources */,

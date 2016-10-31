@@ -9,7 +9,7 @@ import UIKit
 //
 // MARK: Show All Captionated Entries in One Tab as Child ViewContoller
 //
-final class MessagesViewController: ChildOfMasterViewController{
+final class MessagesViewController: UIViewController,ControlledByMasterView{
     fileprivate var stickerz:[SharedCE] = []
     fileprivate var theSelectedIndexPath:IndexPath?
     fileprivate let refreshControl = UIRefreshControl()

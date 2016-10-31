@@ -11,12 +11,8 @@ let  offColor:UIColor  = UIColor.lightGray
 
 protocol ControlledByMasterView {
 }
-class ChildOfMasterViewController : UIViewController,ControlledByMasterView {
-    
-}
+
 fileprivate var masterViewController : MasterViewController?
-
-
 final class MasterViewController: UIViewController {
     
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -31,7 +27,7 @@ final class MasterViewController: UIViewController {
     
     fileprivate var showFirstHelp = true
     fileprivate var currentViewController: UIViewController?
-    fileprivate var showFirstViewController: ChildOfMasterViewController?
+    fileprivate var showFirstViewController: UIViewController?
     fileprivate var showCaptionedViewController: CapationatedViewController?
     fileprivate var showMessagesViewController: MessagesViewController?
     fileprivate var logoNotRemoved = true
@@ -129,7 +125,7 @@ private extension MasterViewController {
         currentViewController = vc
     }
     
-    func cycleaction<VC:ChildOfMasterViewController>(sender:UIBarButtonItem, id:String, vc:inout VC?,color:UIColor) {
+    func cycleaction<VC:UIViewController>(sender:UIBarButtonItem, id:String, vc:inout VC?,color:UIColor) {
         
         guard  currentViewController != vc || vc == nil else  { return }
         if vc == nil {
@@ -177,7 +173,7 @@ private extension MasterViewController {
         let documentsUrl =  dir.first!
         print("-------Running from ",documentsUrl," ---------")
         
-        showFirstViewController = self.storyboard?.instantiateViewController(withIdentifier: showCatalogID ) as? ChildOfMasterViewController
+        showFirstViewController = self.storyboard?.instantiateViewController(withIdentifier: showCatalogID )
         currentViewController = showFirstViewController
         
         currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false

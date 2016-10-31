@@ -21,9 +21,9 @@
 	<key>CFBundlePackageType</key>
 	<string>XPC!</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.02</string>
 	<key>CFBundleVersion</key>
-	<string>107</string>
+	<string>111</string>
 	<key>EXTENSION-SCHEME</key>
 	<string>kaptionator</string>
 	<key>NSExtension</key>
