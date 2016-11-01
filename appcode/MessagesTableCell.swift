@@ -21,16 +21,14 @@ class MessagesTableCell: UITableViewCell {
     }
     // methods to adjust cell contents
     func paint2(ce:SharedCE,line2:String ) {
-       
         let line1 = ce.caption != "" ? ce.caption : "<no caption>"
         if ce.stickerOptions.contains(.generateasis) {
             nameLabel.text =  "-this is an animated image and can not have a caption-"
             nameLabel.font = UIFont.systemFont(ofSize: 12)
         } else {
-        nameLabel.text = line1
-        nameLabel.textColor = appTheme.textColor
+            nameLabel.text = line1
+            nameLabel.textColor = appTheme.textColor
         }
-        
         line2Label.text = line2
         line2Label.textColor = appTheme.textColor
     }
@@ -52,8 +50,6 @@ class MessagesTableCell: UITableViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        // selectedBackgroundView = UIView()
-        // selectedBackgroundView?.backgroundColor = BorderSettings.colour
     }
     override func layoutSubviews() {
         super.layoutSubviews()
