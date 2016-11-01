@@ -7,19 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8816CF411DC7829B00A4D285 /* RemSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816CF401DC7829B00A4D285 /* RemSpace.swift */; };
-		8816CF421DC7829B00A4D285 /* RemSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816CF401DC7829B00A4D285 /* RemSpace.swift */; };
-		8816CF431DC7829B00A4D285 /* RemSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816CF401DC7829B00A4D285 /* RemSpace.swift */; };
-		8816CF441DC7829B00A4D285 /* RemSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8816CF401DC7829B00A4D285 /* RemSpace.swift */; };
+		8806817B1DC900F100340D8A /* stikz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880681781DC900CD00340D8A /* stikz.framework */; };
+		8806817C1DC900F100340D8A /* stikz.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 880681781DC900CD00340D8A /* stikz.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		880681801DC9044E00340D8A /* stikz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880681781DC900CD00340D8A /* stikz.framework */; };
 		8817590E1DC7F26900DB70C6 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8817590D1DC7F26900DB70C6 /* Help.storyboard */; };
 		8817590F1DC7F26900DB70C6 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8817590D1DC7F26900DB70C6 /* Help.storyboard */; };
 		881759101DC7F26900DB70C6 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8817590D1DC7F26900DB70C6 /* Help.storyboard */; };
 		881759111DC7F26900DB70C6 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8817590D1DC7F26900DB70C6 /* Help.storyboard */; };
 		881A13E41D90ACB500D7A4EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DD92D91D8872D400832564 /* Main.storyboard */; };
-		882EB2101D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
-		882EB2121D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
-		882EB2141D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
-		882EB2161D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */; };
 		883982971DB1421C00B5A037 /* InnerHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883982961DB1421C00B5A037 /* InnerHelpViewController.swift */; };
 		8839829B1DB14FDD00B5A037 /* kaptionator-1024x768.png in Resources */ = {isa = PBXBuildFile; fileRef = 8839829A1DB14FDD00B5A037 /* kaptionator-1024x768.png */; };
 		8839829C1DB1556800B5A037 /* InnerHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883982961DB1421C00B5A037 /* InnerHelpViewController.swift */; };
@@ -79,38 +74,10 @@
 		88B54C9D1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54C971D886FBC0076942D /* MessagesExtensionViewController.swift */; };
 		88B54C9E1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54C971D886FBC0076942D /* MessagesExtensionViewController.swift */; };
 		88B54C9F1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54C971D886FBC0076942D /* MessagesExtensionViewController.swift */; };
-		88B54CBA1D8870060076942D /* RemoteAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA21D8870060076942D /* RemoteAsset.swift */; };
-		88B54CBC1D8870060076942D /* RemoteAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA21D8870060076942D /* RemoteAsset.swift */; };
-		88B54CBE1D8870060076942D /* RemoteAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA21D8870060076942D /* RemoteAsset.swift */; };
-		88B54CC01D8870060076942D /* RemoteAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA21D8870060076942D /* RemoteAsset.swift */; };
-		88B54CC21D8870060076942D /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA31D8870060076942D /* common.swift */; };
-		88B54CC31D8870060076942D /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA31D8870060076942D /* common.swift */; };
-		88B54CC41D8870060076942D /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA31D8870060076942D /* common.swift */; };
-		88B54CC51D8870060076942D /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA31D8870060076942D /* common.swift */; };
-		88B54CC61D8870060076942D /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA31D8870060076942D /* common.swift */; };
-		88B54CC71D8870060076942D /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA31D8870060076942D /* common.swift */; };
-		88B54CC81D8870060076942D /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA31D8870060076942D /* common.swift */; };
-		88B54CC91D8870060076942D /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA31D8870060076942D /* common.swift */; };
 		88B54CD21D8870060076942D /* SFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA51D8870060076942D /* SFViewController.swift */; };
 		88B54CD41D8870060076942D /* SFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA51D8870060076942D /* SFViewController.swift */; };
 		88B54CD61D8870060076942D /* SFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA51D8870060076942D /* SFViewController.swift */; };
 		88B54CD81D8870060076942D /* SFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA51D8870060076942D /* SFViewController.swift */; };
-		88B54CDA1D8870060076942D /* InfoDictIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA61D8870060076942D /* InfoDictIOS.swift */; };
-		88B54CDC1D8870060076942D /* InfoDictIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA61D8870060076942D /* InfoDictIOS.swift */; };
-		88B54CDE1D8870060076942D /* InfoDictIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA61D8870060076942D /* InfoDictIOS.swift */; };
-		88B54CE01D8870060076942D /* InfoDictIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA61D8870060076942D /* InfoDictIOS.swift */; };
-		88B54CEA1D8870060076942D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* SharedCaptionSpace.swift */; };
-		88B54CEB1D8870060076942D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* SharedCaptionSpace.swift */; };
-		88B54CEC1D8870060076942D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* SharedCaptionSpace.swift */; };
-		88B54CED1D8870060076942D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* SharedCaptionSpace.swift */; };
-		88B54CEE1D8870060076942D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* SharedCaptionSpace.swift */; };
-		88B54CEF1D8870060076942D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* SharedCaptionSpace.swift */; };
-		88B54CF01D8870060076942D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* SharedCaptionSpace.swift */; };
-		88B54CF11D8870060076942D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA81D8870060076942D /* SharedCaptionSpace.swift */; };
-		88B54CF21D8870060076942D /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA91D8870060076942D /* StickerFileFactory.swift */; };
-		88B54CF41D8870060076942D /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA91D8870060076942D /* StickerFileFactory.swift */; };
-		88B54CF61D8870060076942D /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA91D8870060076942D /* StickerFileFactory.swift */; };
-		88B54CF81D8870060076942D /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA91D8870060076942D /* StickerFileFactory.swift */; };
 		88B54CFF1D8870F10076942D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88B54CFE1D8870F10076942D /* MainInterface.storyboard */; };
 		88B54D001D8870F10076942D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88B54CFE1D8870F10076942D /* MainInterface.storyboard */; };
 		88B54D011D8870F10076942D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88B54CFE1D8870F10076942D /* MainInterface.storyboard */; };
@@ -121,10 +88,6 @@
 		88B570EF1DA566B400CD4058 /* GetCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B570EB1DA566B400CD4058 /* GetCaptionViewController.swift */; };
 		88B570F01DA6906E00CD4058 /* emoGeeStickerIcons-1024x768.png in Resources */ = {isa = PBXBuildFile; fileRef = AD6CAF2B1DA19D270062919B /* emoGeeStickerIcons-1024x768.png */; };
 		88B570F11DA690AE00CD4058 /* candidatesIconsCans-1024x768.png in Resources */ = {isa = PBXBuildFile; fileRef = AD6CAF291DA19CF80062919B /* candidatesIconsCans-1024x768.png */; };
-		88B570F21DA696F900CD4058 /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA91D8870060076942D /* StickerFileFactory.swift */; };
-		88B570F31DA696FA00CD4058 /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA91D8870060076942D /* StickerFileFactory.swift */; };
-		88B570F41DA696FB00CD4058 /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA91D8870060076942D /* StickerFileFactory.swift */; };
-		88B570F51DA696FE00CD4058 /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA91D8870060076942D /* StickerFileFactory.swift */; };
 		88B5718E1DA6FC8F00CD4058 /* ITunesDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B5718D1DA6FC8F00CD4058 /* ITunesDataCell.swift */; };
 		88B571931DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B571921DA705AC00CD4058 /* CatalogLocalViewController.swift */; };
 		88B571941DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B571921DA705AC00CD4058 /* CatalogLocalViewController.swift */; };
@@ -200,6 +163,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		880681771DC900CD00340D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880681721DC900CD00340D8A /* stikz.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8806810C1DC8EFF100340D8A;
+			remoteInfo = stikz;
+		};
+		880681791DC900CD00340D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880681721DC900CD00340D8A /* stikz.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 880681151DC8EFF100340D8A;
+			remoteInfo = stikzTests;
+		};
+		8806817D1DC900F100340D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880681721DC900CD00340D8A /* stikz.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8806810B1DC8EFF100340D8A;
+			remoteInfo = stikz;
+		};
 		881759081DC7D11800DB70C6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 88AEA5891D514B29006E5C70 /* Project object */;
@@ -238,6 +222,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		8806817F1DC900F100340D8A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8806817C1DC900F100340D8A /* stikz.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88475BFA1D51607000FA7EC4 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -285,6 +280,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		880681721DC900CD00340D8A /* stikz.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = stikz.xcodeproj; path = stikz/stikz.xcodeproj; sourceTree = "<group>"; };
 		8810CFFB1D53C415009BA9B3 /* holidayz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = holidayz.entitlements; sourceTree = "<group>"; };
 		8810CFFC1D53C45C009BA9B3 /* holidazeMessagesExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = holidazeMessagesExtension.entitlements; sourceTree = "<group>"; };
 		8810CFFD1D53C475009BA9B3 /* emogeez.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = emogeez.entitlements; sourceTree = "<group>"; };
@@ -293,14 +289,12 @@
 		8810D0001D53C4D2009BA9B3 /* candidatezMessagesExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = candidatezMessagesExtension.entitlements; sourceTree = "<group>"; };
 		8810D0011D53C510009BA9B3 /* kaptionator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kaptionator.entitlements; sourceTree = "<group>"; };
 		8810D0021D53C536009BA9B3 /* kaptionatorMessageExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kaptionatorMessageExtension.entitlements; sourceTree = "<group>"; };
-		8816CF401DC7829B00A4D285 /* RemSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemSpace.swift; sourceTree = "<group>"; };
 		881758A51DC7AB0700DB70C6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		881758F71DC7B13B00DB70C6 /* kaptionatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kaptionatorTests.swift; sourceTree = "<group>"; };
 		881758F91DC7B13B00DB70C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		881759031DC7D11800DB70C6 /* kaptionatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kaptionatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8817590D1DC7F26900DB70C6 /* Help.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Help.storyboard; sourceTree = SOURCE_ROOT; };
 		881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesViewController.swift; sourceTree = "<group>"; };
-		882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCaptionSpace.swift; sourceTree = "<group>"; };
 		883982961DB1421C00B5A037 /* InnerHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InnerHelpViewController.swift; sourceTree = "<group>"; };
 		8839829A1DB14FDD00B5A037 /* kaptionator-1024x768.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kaptionator-1024x768.png"; sourceTree = "<group>"; };
 		8839829F1DB18C7600B5A037 /* theMidnightRambler-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "theMidnightRambler-120.png"; path = "kaptionator/Assets.xcassets/AppIcon.appiconset/theMidnightRambler-120.png"; sourceTree = "<group>"; };
@@ -343,12 +337,7 @@
 		88AEA64E1D514CC7006E5C70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88B54C961D886FBC0076942D /* MartoonerBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MartoonerBrowserViewController.swift; sourceTree = "<group>"; };
 		88B54C971D886FBC0076942D /* MessagesExtensionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesExtensionViewController.swift; sourceTree = "<group>"; };
-		88B54CA21D8870060076942D /* RemoteAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteAsset.swift; sourceTree = "<group>"; };
-		88B54CA31D8870060076942D /* common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
 		88B54CA51D8870060076942D /* SFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFViewController.swift; path = ../shticklib/SFViewController.swift; sourceTree = "<group>"; };
-		88B54CA61D8870060076942D /* InfoDictIOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoDictIOS.swift; sourceTree = "<group>"; };
-		88B54CA81D8870060076942D /* SharedCaptionSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedCaptionSpace.swift; sourceTree = "<group>"; };
-		88B54CA91D8870060076942D /* StickerFileFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerFileFactory.swift; sourceTree = "<group>"; };
 		88B54CFE1D8870F10076942D /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainInterface.storyboard; path = ../candidatezMessagesExtension/MainInterface.storyboard; sourceTree = "<group>"; };
 		88B570EB1DA566B400CD4058 /* GetCaptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCaptionViewController.swift; sourceTree = "<group>"; };
 		88B5718D1DA6FC8F00CD4058 /* ITunesDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesDataCell.swift; sourceTree = "<group>"; };
@@ -387,6 +376,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8806817B1DC900F100340D8A /* stikz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,12 +430,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				88AEA6451D514CC7006E5C70 /* Messages.framework in Frameworks */,
+				880681801DC9044E00340D8A /* stikz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		880681731DC900CD00340D8A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				880681781DC900CD00340D8A /* stikz.framework */,
+				8806817A1DC900CD00340D8A /* stikzTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		881758F61DC7B13B00DB70C6 /* kaptionatorTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,28 +498,6 @@
 			name = ControlledByMasterView;
 			sourceTree = "<group>";
 		};
-		881836961DAFF3CD0034A078 /* shared */ = {
-			isa = PBXGroup;
-			children = (
-				88B54CA31D8870060076942D /* common.swift */,
-				88B54CA81D8870060076942D /* SharedCaptionSpace.swift */,
-				88B54CA91D8870060076942D /* StickerFileFactory.swift */,
-			);
-			name = shared;
-			sourceTree = "<group>";
-		};
-		88722EF51D52186400B2F85B /* shticklib */ = {
-			isa = PBXGroup;
-			children = (
-				881836961DAFF3CD0034A078 /* shared */,
-				88B54CA21D8870060076942D /* RemoteAsset.swift */,
-				8816CF401DC7829B00A4D285 /* RemSpace.swift */,
-				88B54CA61D8870060076942D /* InfoDictIOS.swift */,
-				882EB20F1D8C621A00E01B08 /* AppCaptionSpace.swift */,
-			);
-			path = shticklib;
-			sourceTree = "<group>";
-		};
 		88722F661D522AAB00B2F85B /* appcode */ = {
 			isa = PBXGroup;
 			children = (
@@ -548,8 +526,8 @@
 		88AEA5881D514B29006E5C70 = {
 			isa = PBXGroup;
 			children = (
+				880681721DC900CD00340D8A /* stikz.xcodeproj */,
 				88E95EA61DA27E9F007266CB /* app-images */,
-				88722EF51D52186400B2F85B /* shticklib */,
 				88722F9E1D522ADF00B2F85B /* messagecode */,
 				88722F661D522AAB00B2F85B /* appcode */,
 				88AEA5C11D514B6A006E5C70 /* emogeez */,
@@ -721,11 +699,13 @@
 				88AEA58E1D514B29006E5C70 /* Frameworks */,
 				88AEA58F1D514B29006E5C70 /* Resources */,
 				88AEA6151D514C1F006E5C70 /* Embed App Extensions */,
+				8806817F1DC900F100340D8A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				88AEA6501D514CC7006E5C70 /* PBXTargetDependency */,
+				8806817E1DC900F100340D8A /* PBXTargetDependency */,
 			);
 			name = kaptionator;
 			productName = kaptionator;
@@ -983,6 +963,12 @@
 			mainGroup = 88AEA5881D514B29006E5C70;
 			productRefGroup = 88AEA5921D514B29006E5C70 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 880681731DC900CD00340D8A /* Products */;
+					ProjectRef = 880681721DC900CD00340D8A /* stikz.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				88AEA5901D514B29006E5C70 /* kaptionator */,
@@ -997,6 +983,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		880681781DC900CD00340D8A /* stikz.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = stikz.framework;
+			remoteRef = 880681771DC900CD00340D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8806817A1DC900CD00340D8A /* stikzTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = stikzTests.xctest;
+			remoteRef = 880681791DC900CD00340D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		881759011DC7D11800DB70C6 /* Resources */ = {
@@ -1124,7 +1127,6 @@
 				883982A51DB2B4F100B5A037 /* HelpDropdownViewController.swift in Sources */,
 				AD20A5FA1DA1946600877ABF /* ITunesMenuViewController.swift in Sources */,
 				88FA07D71DA402330063B483 /* ChangeCaptionViewController.swift in Sources */,
-				8816CF411DC7829B00A4D285 /* RemSpace.swift in Sources */,
 				88DD92F11D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				88DD93111D88738200832564 /* CaptionedTableCell.swift in Sources */,
 				886B4ACD1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
@@ -1135,18 +1137,12 @@
 				886B4AC31D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */,
 				88F2FC921D931A070055209C /* MoreMenuViewController.swift in Sources */,
 				AD20A5FB1DA1946A00877ABF /* ITunesViewController.swift in Sources */,
-				882EB2101D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */,
 				8862CE321DB0838500685CCA /* StartupHelpViewController.swift in Sources */,
-				88B54CEA1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
-				88B54CF21D8870060076942D /* StickerFileFactory.swift in Sources */,
 				88B54CD21D8870060076942D /* SFViewController.swift in Sources */,
 				88DD930D1D88738200832564 /* CatalogDataCell.swift in Sources */,
 				886B4AC81D9DDD5B00581C9B /* ReorderMessagesViewController.swift in Sources */,
-				88B54CC21D8870060076942D /* common.swift in Sources */,
 				883982971DB1421C00B5A037 /* InnerHelpViewController.swift in Sources */,
 				88DD93051D88738200832564 /* MasterViewController.swift in Sources */,
-				88B54CBA1D8870060076942D /* RemoteAsset.swift in Sources */,
-				88B54CDA1D8870060076942D /* InfoDictIOS.swift in Sources */,
 				88DD92FD1D88738200832564 /* MessagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1169,19 +1165,12 @@
 				88DD92F61D88738200832564 /* CaptionedMenuViewController.swift in Sources */,
 				88B571941DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */,
 				88B570ED1DA566B400CD4058 /* GetCaptionViewController.swift in Sources */,
-				882EB2121D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */,
 				886B4AC91D9DDD5B00581C9B /* ReorderMessagesViewController.swift in Sources */,
-				88B54CEC1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
-				88B54CF41D8870060076942D /* StickerFileFactory.swift in Sources */,
 				8862CE331DB0838500685CCA /* StartupHelpViewController.swift in Sources */,
 				88B54CD41D8870060076942D /* SFViewController.swift in Sources */,
 				88F2FC931D931A070055209C /* MoreMenuViewController.swift in Sources */,
-				8816CF421DC7829B00A4D285 /* RemSpace.swift in Sources */,
 				88DD930E1D88738200832564 /* CatalogDataCell.swift in Sources */,
-				88B54CC41D8870060076942D /* common.swift in Sources */,
 				88DD93061D88738200832564 /* MasterViewController.swift in Sources */,
-				88B54CBC1D8870060076942D /* RemoteAsset.swift in Sources */,
-				88B54CDC1D8870060076942D /* InfoDictIOS.swift in Sources */,
 				8839829C1DB1556800B5A037 /* InnerHelpViewController.swift in Sources */,
 				88DD92FE1D88738200832564 /* MessagesViewController.swift in Sources */,
 				886B4AC41D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */,
@@ -1206,19 +1195,12 @@
 				88DD92F71D88738200832564 /* CaptionedMenuViewController.swift in Sources */,
 				88B571951DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */,
 				88B570EE1DA566B400CD4058 /* GetCaptionViewController.swift in Sources */,
-				882EB2141D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */,
 				886B4ACA1D9DDD5B00581C9B /* ReorderMessagesViewController.swift in Sources */,
-				88B54CEE1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
-				88B54CF61D8870060076942D /* StickerFileFactory.swift in Sources */,
 				8862CE341DB0838500685CCA /* StartupHelpViewController.swift in Sources */,
 				88B54CD61D8870060076942D /* SFViewController.swift in Sources */,
 				88F2FC941D931A070055209C /* MoreMenuViewController.swift in Sources */,
-				8816CF431DC7829B00A4D285 /* RemSpace.swift in Sources */,
 				88DD930F1D88738200832564 /* CatalogDataCell.swift in Sources */,
-				88B54CC61D8870060076942D /* common.swift in Sources */,
 				88DD93071D88738200832564 /* MasterViewController.swift in Sources */,
-				88B54CBE1D8870060076942D /* RemoteAsset.swift in Sources */,
-				88B54CDE1D8870060076942D /* InfoDictIOS.swift in Sources */,
 				8839829D1DB1556B00B5A037 /* InnerHelpViewController.swift in Sources */,
 				88DD92FF1D88738200832564 /* MessagesViewController.swift in Sources */,
 				886B4AC51D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */,
@@ -1243,19 +1225,12 @@
 				88DD92F81D88738200832564 /* CaptionedMenuViewController.swift in Sources */,
 				88B571961DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */,
 				88B570EF1DA566B400CD4058 /* GetCaptionViewController.swift in Sources */,
-				882EB2161D8C621A00E01B08 /* AppCaptionSpace.swift in Sources */,
 				886B4ACB1D9DDD5B00581C9B /* ReorderMessagesViewController.swift in Sources */,
-				88B54CF01D8870060076942D /* SharedCaptionSpace.swift in Sources */,
-				88B54CF81D8870060076942D /* StickerFileFactory.swift in Sources */,
 				8862CE351DB0838500685CCA /* StartupHelpViewController.swift in Sources */,
 				88B54CD81D8870060076942D /* SFViewController.swift in Sources */,
 				88F2FC951D931A070055209C /* MoreMenuViewController.swift in Sources */,
-				8816CF441DC7829B00A4D285 /* RemSpace.swift in Sources */,
 				88DD93101D88738200832564 /* CatalogDataCell.swift in Sources */,
-				88B54CC81D8870060076942D /* common.swift in Sources */,
 				88DD93081D88738200832564 /* MasterViewController.swift in Sources */,
-				88B54CC01D8870060076942D /* RemoteAsset.swift in Sources */,
-				88B54CE01D8870060076942D /* InfoDictIOS.swift in Sources */,
 				8839829E1DB1556C00B5A037 /* InnerHelpViewController.swift in Sources */,
 				88DD93001D88738200832564 /* MessagesViewController.swift in Sources */,
 				886B4AC61D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */,
@@ -1267,9 +1242,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				88B54C9F1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */,
-				88B54CC91D8870060076942D /* common.swift in Sources */,
-				88B54CF11D8870060076942D /* SharedCaptionSpace.swift in Sources */,
-				88B570F51DA696FE00CD4058 /* StickerFileFactory.swift in Sources */,
 				88B54C9B1D886FBC0076942D /* MartoonerBrowserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1279,9 +1251,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				88B54C9E1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */,
-				88B54CC71D8870060076942D /* common.swift in Sources */,
-				88B54CEF1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
-				88B570F41DA696FB00CD4058 /* StickerFileFactory.swift in Sources */,
 				88B54C9A1D886FBC0076942D /* MartoonerBrowserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1291,9 +1260,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				88B54C9D1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */,
-				88B54CC51D8870060076942D /* common.swift in Sources */,
-				88B54CED1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
-				88B570F31DA696FA00CD4058 /* StickerFileFactory.swift in Sources */,
 				88B54C991D886FBC0076942D /* MartoonerBrowserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1303,9 +1269,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				88B54C9C1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */,
-				88B54CC31D8870060076942D /* common.swift in Sources */,
-				88B54CEB1D8870060076942D /* SharedCaptionSpace.swift in Sources */,
-				88B570F21DA696F900CD4058 /* StickerFileFactory.swift in Sources */,
 				88B54C981D886FBC0076942D /* MartoonerBrowserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1313,6 +1276,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8806817E1DC900F100340D8A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = stikz;
+			targetProxy = 8806817D1DC900F100340D8A /* PBXContainerItemProxy */;
+		};
 		881759091DC7D11800DB70C6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 88AEA5901D514B29006E5C70 /* kaptionator */;
@@ -1464,7 +1432,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1508,7 +1476,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1766,6 +1734,7 @@
 				8817590C1DC7D11800DB70C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		88AEA58C1D514B29006E5C70 /* Build configuration list for PBXProject "kaptionator" */ = {
 			isa = XCConfigurationList;

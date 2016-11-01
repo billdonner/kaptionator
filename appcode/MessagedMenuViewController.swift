@@ -6,6 +6,7 @@
 //
 import UIKit
 
+import stikz
 protocol MessagesAppMenuViewDelegate: class  {
     func openinIMessage(captionedEntry:SharedCE)
     func removeFromIMessage(on captionedEntry:inout SharedCE )

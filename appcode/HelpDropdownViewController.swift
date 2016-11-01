@@ -8,6 +8,7 @@
 
 import UIKit
 
+import stikz
 
 final class HelpDropdownViewController: UIViewController, ModalOverCurrentContext  , UINavigationControllerDelegate  {
     let supportedCloudUTIs =

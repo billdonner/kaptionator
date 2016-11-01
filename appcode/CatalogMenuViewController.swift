@@ -6,6 +6,9 @@
 //  Copyright © 2016 Bill Donner/midnightrambler. All rights reserved.
 //
 import UIKit
+
+import stikz
+
 protocol CatalogMenuViewDelegate : class {
     func useAsIs(remoteAsset:RemoteAsset)
     func useWithCaption(remoteAsset:RemoteAsset,caption:String)

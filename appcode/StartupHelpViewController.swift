@@ -8,6 +8,9 @@
 
 import UIKit
 
+import stikz
+
+
 final class StartupHelpViewController:  UIViewController, ModalOverCurrentContext  {
     
     @IBOutlet weak var pic: UIImageView!

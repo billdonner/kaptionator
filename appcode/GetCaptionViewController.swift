@@ -7,6 +7,9 @@
 //
 
 import UIKit
+
+import stikz
+
 protocol GetCaptionDelegate:class {
     func captionWasEntered(caption:String)
 }

@@ -1,0 +1,455 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		880681161DC8EFF100340D8A /* stikz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8806810C1DC8EFF100340D8A /* stikz.framework */; };
+		8806811B1DC8EFF100340D8A /* stikzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806811A1DC8EFF100340D8A /* stikzTests.swift */; };
+		8806811D1DC8EFF100340D8A /* stikz-Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 8806810F1DC8EFF100340D8A /* stikz-Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		880681301DC8F05300340D8A /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880681261DC8F05300340D8A /* AppCaptionSpace.swift */; };
+		880681311DC8F05300340D8A /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880681271DC8F05300340D8A /* common.swift */; };
+		880681321DC8F05300340D8A /* InfoDictIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880681281DC8F05300340D8A /* InfoDictIOS.swift */; };
+		880681341DC8F05300340D8A /* RemoteAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806812A1DC8F05300340D8A /* RemoteAsset.swift */; };
+		880681351DC8F05300340D8A /* RemSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806812B1DC8F05300340D8A /* RemSpace.swift */; };
+		880681371DC8F05300340D8A /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806812D1DC8F05300340D8A /* SharedCaptionSpace.swift */; };
+		880681381DC8F05300340D8A /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806812E1DC8F05300340D8A /* StickerFileFactory.swift */; };
+		8806813D1DC8F18B00340D8A /* SFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806813C1DC8F18B00340D8A /* SFViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		880681171DC8EFF100340D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 880681031DC8EFF100340D8A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8806810B1DC8EFF100340D8A;
+			remoteInfo = stikz;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8806810C1DC8EFF100340D8A /* stikz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = stikz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8806810F1DC8EFF100340D8A /* stikz-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "stikz-Swift.h"; sourceTree = "<group>"; };
+		880681101DC8EFF100340D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		880681151DC8EFF100340D8A /* stikzTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = stikzTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8806811A1DC8EFF100340D8A /* stikzTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stikzTests.swift; sourceTree = "<group>"; };
+		8806811C1DC8EFF100340D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		880681261DC8F05300340D8A /* AppCaptionSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCaptionSpace.swift; sourceTree = "<group>"; };
+		880681271DC8F05300340D8A /* common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
+		880681281DC8F05300340D8A /* InfoDictIOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoDictIOS.swift; sourceTree = "<group>"; };
+		8806812A1DC8F05300340D8A /* RemoteAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteAsset.swift; sourceTree = "<group>"; };
+		8806812B1DC8F05300340D8A /* RemSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemSpace.swift; sourceTree = "<group>"; };
+		8806812D1DC8F05300340D8A /* SharedCaptionSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedCaptionSpace.swift; sourceTree = "<group>"; };
+		8806812E1DC8F05300340D8A /* StickerFileFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerFileFactory.swift; sourceTree = "<group>"; };
+		8806813C1DC8F18B00340D8A /* SFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		880681081DC8EFF100340D8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		880681121DC8EFF100340D8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				880681161DC8EFF100340D8A /* stikz.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		880681021DC8EFF100340D8A = {
+			isa = PBXGroup;
+			children = (
+				8806810E1DC8EFF100340D8A /* stikz */,
+				880681191DC8EFF100340D8A /* stikzTests */,
+				8806810D1DC8EFF100340D8A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8806810D1DC8EFF100340D8A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8806810C1DC8EFF100340D8A /* stikz.framework */,
+				880681151DC8EFF100340D8A /* stikzTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8806810E1DC8EFF100340D8A /* stikz */ = {
+			isa = PBXGroup;
+			children = (
+				8806813C1DC8F18B00340D8A /* SFViewController.swift */,
+				880681261DC8F05300340D8A /* AppCaptionSpace.swift */,
+				880681271DC8F05300340D8A /* common.swift */,
+				880681281DC8F05300340D8A /* InfoDictIOS.swift */,
+				8806812A1DC8F05300340D8A /* RemoteAsset.swift */,
+				8806812B1DC8F05300340D8A /* RemSpace.swift */,
+				8806812D1DC8F05300340D8A /* SharedCaptionSpace.swift */,
+				8806812E1DC8F05300340D8A /* StickerFileFactory.swift */,
+				8806810F1DC8EFF100340D8A /* stikz-Swift.h */,
+				880681101DC8EFF100340D8A /* Info.plist */,
+			);
+			path = stikz;
+			sourceTree = "<group>";
+		};
+		880681191DC8EFF100340D8A /* stikzTests */ = {
+			isa = PBXGroup;
+			children = (
+				8806811A1DC8EFF100340D8A /* stikzTests.swift */,
+				8806811C1DC8EFF100340D8A /* Info.plist */,
+			);
+			path = stikzTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		880681091DC8EFF100340D8A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8806811D1DC8EFF100340D8A /* stikz-Swift.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8806810B1DC8EFF100340D8A /* stikz */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 880681201DC8EFF100340D8A /* Build configuration list for PBXNativeTarget "stikz" */;
+			buildPhases = (
+				880681071DC8EFF100340D8A /* Sources */,
+				880681081DC8EFF100340D8A /* Frameworks */,
+				880681091DC8EFF100340D8A /* Headers */,
+				8806810A1DC8EFF100340D8A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = stikz;
+			productName = stikz;
+			productReference = 8806810C1DC8EFF100340D8A /* stikz.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		880681141DC8EFF100340D8A /* stikzTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 880681231DC8EFF100340D8A /* Build configuration list for PBXNativeTarget "stikzTests" */;
+			buildPhases = (
+				880681111DC8EFF100340D8A /* Sources */,
+				880681121DC8EFF100340D8A /* Frameworks */,
+				880681131DC8EFF100340D8A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				880681181DC8EFF100340D8A /* PBXTargetDependency */,
+			);
+			name = stikzTests;
+			productName = stikzTests;
+			productReference = 880681151DC8EFF100340D8A /* stikzTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		880681031DC8EFF100340D8A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = midnightrambler;
+				TargetAttributes = {
+					8806810B1DC8EFF100340D8A = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = X2PQYA6S48;
+						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
+					};
+					880681141DC8EFF100340D8A = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = X2PQYA6S48;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 880681061DC8EFF100340D8A /* Build configuration list for PBXProject "stikz" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 880681021DC8EFF100340D8A;
+			productRefGroup = 8806810D1DC8EFF100340D8A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8806810B1DC8EFF100340D8A /* stikz */,
+				880681141DC8EFF100340D8A /* stikzTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8806810A1DC8EFF100340D8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		880681131DC8EFF100340D8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		880681071DC8EFF100340D8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				880681311DC8F05300340D8A /* common.swift in Sources */,
+				8806813D1DC8F18B00340D8A /* SFViewController.swift in Sources */,
+				880681341DC8F05300340D8A /* RemoteAsset.swift in Sources */,
+				880681301DC8F05300340D8A /* AppCaptionSpace.swift in Sources */,
+				880681371DC8F05300340D8A /* SharedCaptionSpace.swift in Sources */,
+				880681321DC8F05300340D8A /* InfoDictIOS.swift in Sources */,
+				880681381DC8F05300340D8A /* StickerFileFactory.swift in Sources */,
+				880681351DC8F05300340D8A /* RemSpace.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		880681111DC8EFF100340D8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8806811B1DC8EFF100340D8A /* stikzTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		880681181DC8EFF100340D8A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8806810B1DC8EFF100340D8A /* stikz */;
+			targetProxy = 880681171DC8EFF100340D8A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8806811E1DC8EFF100340D8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8806811F1DC8EFF100340D8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		880681211DC8EFF100340D8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = X2PQYA6S48;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = stikz/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.stikz;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		880681221DC8EFF100340D8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = X2PQYA6S48;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = stikz/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.stikz;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		880681241DC8EFF100340D8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = X2PQYA6S48;
+				INFOPLIST_FILE = stikzTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.stikzTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		880681251DC8EFF100340D8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = X2PQYA6S48;
+				INFOPLIST_FILE = stikzTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.stikzTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		880681061DC8EFF100340D8A /* Build configuration list for PBXProject "stikz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8806811E1DC8EFF100340D8A /* Debug */,
+				8806811F1DC8EFF100340D8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		880681201DC8EFF100340D8A /* Build configuration list for PBXNativeTarget "stikz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				880681211DC8EFF100340D8A /* Debug */,
+				880681221DC8EFF100340D8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		880681231DC8EFF100340D8A /* Build configuration list for PBXNativeTarget "stikzTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				880681241DC8EFF100340D8A /* Debug */,
+				880681251DC8EFF100340D8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 880681031DC8EFF100340D8A /* Project object */;
+}

@@ -6,6 +6,9 @@
 //  Copyright © 2016 Bill Donner/midnightrambler. All rights reserved.
 //
 import UIKit
+
+import stikz
+
 protocol CaptionedMenuViewDelegate : class {
     func movingtoIMessage(captionedEntry:inout AppCE)
     func changingCaption( on captionedEntry:inout AppCE,caption:String)

@@ -8,6 +8,7 @@
 
 import UIKit
 import Messages
+import stikz
 
 
 /// this is where sticker files get made, MSstickers get made only in the extension

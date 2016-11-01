@@ -7,6 +7,9 @@
 //
 
 import UIKit
+
+import stikz
+
 protocol ITunesMenuViewDelegate : class {
     func changedAnimationState(remoteAsset:RemoteAsset)
     func deleteAsset(remoteAsset:RemoteAsset)

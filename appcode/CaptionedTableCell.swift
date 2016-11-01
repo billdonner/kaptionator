@@ -6,6 +6,8 @@
 //  Copyright © 2016 Bill Donner/midnightrambler. All rights reserved.
 //
 import UIKit
+import stikz
+
 class CaptionedTableCell: UITableViewCell {
     @IBOutlet  fileprivate weak var detailsImageView: UIImageView!
     @IBOutlet  fileprivate weak var nameLabel: UILabel!
