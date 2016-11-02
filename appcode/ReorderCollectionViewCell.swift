@@ -35,10 +35,10 @@ class ReorderCollectionViewCell: UICollectionViewCell {
         ra.stickerOptions.contains(.generateasis)
         nameLabel.textColor = isAnimated ?  appTheme.redColor :appTheme.textColor
     }
-    func paintImage(path imgLocalPath: String) {
+    func paintImageForReorderCollectionViewCell(url: URL) {
         do {
             //reads local file synchronously
-            let data =  try Data(contentsOf: URL(string:imgLocalPath)!)
+            let data =  try Data(contentsOf:url)
             let img = UIImage(data:data,scale:0.4)
             detailsImageView.image = img
           

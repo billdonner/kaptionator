@@ -9,39 +9,39 @@
 import UIKit
 
 
-let versionBig = "0.0.9"
+public let versionBig = "0.0.9"
 
-let kVersion = "version"
-let kAllCaptions = "allcaptions"
-let kOptions = "options"
-let kCaption = "caption"
-let kLocal = "local"
-let kPack = "pack"
-let kStickers = "stickers"
-let kTitle = "title"
-let kID = "id"
-let kRemoteURL = "remoteurl"
-let kThumbNail = "thumb"
+public let kVersion = "version"
+public let kAllCaptions = "allcaptions"
+public let kOptions = "options"
+public let kCaption = "caption"
+public let kLocal = "local"
+public let kPack = "pack"
+public let kStickers = "stickers"
+public let kTitle = "title"
+public let kID = "id"
+public let kRemoteURL = "remoteurl"
+public let kThumbNail = "thumburl"
 
-let kStickerLargeSize = CGFloat(618)
-let kStickerMediumSize = CGFloat(408)
-let kStickerSmallSize = CGFloat(300)
+public let kStickerLargeSize = CGFloat(618)
+public let kStickerMediumSize = CGFloat(408)
+public let kStickerSmallSize = CGFloat(300)
 
-let kStickerLargeFontSize = CGFloat(40)
-let kStickerMediumFontSize = CGFloat(32)
-let kStickerSmallFontSize = CGFloat(24)
-
-
-let kStickerLargeImageRatio  = CGFloat(0.8)
-let kStickerMediumImageRatio = CGFloat(0.8)
-let kStickerSmallImageRatio = CGFloat(0.8)
+public let kStickerLargeFontSize = CGFloat(40)
+public let kStickerMediumFontSize = CGFloat(32)
+public let kStickerSmallFontSize = CGFloat(24)
 
 
-let RemoteAssetsDataSpace = "SharedRemspace"
+public let kStickerLargeImageRatio  = CGFloat(0.8)
+public let kStickerMediumImageRatio = CGFloat(0.8)
+public let kStickerSmallImageRatio = CGFloat(0.8)
+
+
+public let StickerAssetsDataSpace = "SharedRemspace"
 
 // captionated entries - are stashed in either of two places - in the app, or in the shared memory with iMessage
 
-let AppPrivateDataSpace = "AppPrivateDataSpace"
+public let AppPrivateDataSpace = "AppPrivateDataSpace"
 
 
 public struct BorderSettings {
@@ -50,7 +50,7 @@ public struct BorderSettings {
 }
 
 
-enum KaptionatorErrors : Error  {
+public enum KaptionatorErrors : Error  {
     case generalFailure
     case restoreFailure
     case cant
@@ -61,58 +61,10 @@ enum KaptionatorErrors : Error  {
 }
 
 /// json
-typealias JSONDict  = [String:Any ]
-typealias JSONArray = [JSONDict]
-typealias JSONPayload = [JSONArray]
+public typealias JSONDict  = [String:Any ]
+public typealias JSONArray = [JSONDict]
+public typealias JSONPayload = [JSONArray]
 
-
-/// "SHARED-INTERAPP-DATA" depending on the actual app instance theres a differen shared data area
-//    it looks something like group.xxx.yyy.zzz
-var SharedMemDataSpace: String  { get {
-    if let iDict = Bundle.main.infoDictionary,
-        let w =  iDict["SHARED-INTERAPP-DATA"] as? String {
-        return w
-    }
-    return ""
-}
-}
-
-
-// if nil we'll just pull from documents directory inside the catalog controller
-public var  stickerManifestURL: URL? {
-get {
-if let iDict = Bundle.main.infoDictionary ,
-let w =  iDict["REMOTE-MANIFEST-URL"] as? String { return URL(string:w) }
-return nil
-}
-}
-
-/// "SHOW-CATALOG-ID" is the storyboard id of controller to use for the Catalog
-
-
-public var showCatalogID: String {
-get {
-    if let iDict = Bundle.main.infoDictionary ,
-        let w =  iDict["SHOW-CATALOG-ID"] as? String { return w
-    }
-    else {
-        return "ShowCatalogID"
-    }
-}
-}
-
-
-
-/// "REMOTE-WEBSITE-URL" is the website page for this sticker pack
-public var websitePath: String {
-get {
-    if let iDict = Bundle.main.infoDictionary ,
-        let w =  iDict["REMOTE-WEBSITE-URL"] as? String { return w
-    }
-    fatalError("remote website url undefined")
-    //return nil
-}
-}
 
 public class Versions {
     
@@ -207,6 +159,54 @@ public struct StickerMakingOptions: OptionSet {
 }
 
 
+/// "SHARED-INTERAPP-DATA" depending on the actual app instance theres a differen shared data area
+//    it looks something like group.xxx.yyy.zzz
+public var SharedMemDataSpace: String  { get {
+    if let iDict = Bundle.main.infoDictionary,
+        let w =  iDict["SHARED-INTERAPP-DATA"] as? String {
+        return w
+    }
+    return ""
+}
+}
+
+
+// if nil we'll just pull from documents directory inside the catalog controller
+public var  stickerManifestURL: URL? {
+get {
+    if let iDict = Bundle.main.infoDictionary ,
+        let w =  iDict["REMOTE-MANIFEST-URL"] as? String { return URL(string:w) }
+    return nil
+}
+}
+
+/// "SHOW-CATALOG-ID" is the storyboard id of controller to use for the Catalog
+
+
+public var showCatalogID: String {
+get {
+    if let iDict = Bundle.main.infoDictionary ,
+        let w =  iDict["SHOW-CATALOG-ID"] as? String { return w
+    }
+    else {
+        return "ShowCatalogID"
+    }
+}
+}
+
+
+
+/// "REMOTE-WEBSITE-URL" is the website page for this sticker pack
+public var websitePath: String {
+get {
+    if let iDict = Bundle.main.infoDictionary ,
+        let w =  iDict["REMOTE-WEBSITE-URL"] as? String { return w
+    }
+    fatalError("remote website url undefined")
+    //return nil
+}
+}
+
 
 public var appTitle: String {
 get {
@@ -287,9 +287,11 @@ public func restoreSharespaceFromDisk () throws  {
                 var options = StickerMakingOptions()
                 options.rawValue = optionsvalue
                 /// figure the shared paths
+                let iurl = URL(string:i)!
+                let surl = URL(string:s)!
                 let t = SharedCE( pack: p, title: ti,
-                                  imagepath: i,
-                                  stickerPath:s,
+                                  imageurl: iurl,
+                                  stickerurl:surl,
                                   caption:  captiontext,
                                   options: options )
                 let _ = SharedCaptionSpace.add(ce: t)

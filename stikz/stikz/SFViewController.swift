@@ -8,7 +8,23 @@
 
 import UIKit
 import SafariServices
+import stikz
 
+public    func openwebsite(_ presentor:UIViewController) {
+    
+    let url = URL(string:websitePath)!
+    let vc = SFViewController(url: url)
+    let nav = UINavigationController(rootViewController: vc)
+    vc.delegate =  vc
+    presentor.present(nav, animated: true, completion: nil)
+}
+public   func openInAnotherApp(url:URL)->Bool {
+    if UIApplication.shared.canOpenURL(url) {
+        UIApplication.shared.open(url,options:[:]){ b in }
+        return true
+    }
+    return false
+}
 /// SFViewController wraps sfafari
 class SFViewController: SFSafariViewController {
  
@@ -17,8 +33,7 @@ class SFViewController: SFSafariViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.done))
-       // self.navigationItem.title = remSpace.catalogTitle
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.done)) 
     }
 }
 

@@ -129,12 +129,9 @@ private  extension CapationatedViewController {
         let showname = ce.caption 
         cell.paint(name:showname)
         /// go get the image from our cache and then the net
-        let path =  ce.localimagepath // ?????
-        if path != "" {
-            // dont crash but dont paint
-            // have the data onhand
-            cell.paintImage(path:path)
-        }
+        
+            cell.paintImageForCaptionedTableCell(url: ce.imageurl  )
+      
         cell.colorFor(options: ce.stickerOptions)
         return cell // Return the cell
     }

@@ -9,15 +9,9 @@
 /* Begin PBXBuildFile section */
 		880681161DC8EFF100340D8A /* stikz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8806810C1DC8EFF100340D8A /* stikz.framework */; };
 		8806811B1DC8EFF100340D8A /* stikzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806811A1DC8EFF100340D8A /* stikzTests.swift */; };
-		8806811D1DC8EFF100340D8A /* stikz-Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 8806810F1DC8EFF100340D8A /* stikz-Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		880681301DC8F05300340D8A /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880681261DC8F05300340D8A /* AppCaptionSpace.swift */; };
-		880681311DC8F05300340D8A /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880681271DC8F05300340D8A /* common.swift */; };
-		880681321DC8F05300340D8A /* InfoDictIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880681281DC8F05300340D8A /* InfoDictIOS.swift */; };
-		880681341DC8F05300340D8A /* RemoteAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806812A1DC8F05300340D8A /* RemoteAsset.swift */; };
-		880681351DC8F05300340D8A /* RemSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806812B1DC8F05300340D8A /* RemSpace.swift */; };
-		880681371DC8F05300340D8A /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806812D1DC8F05300340D8A /* SharedCaptionSpace.swift */; };
-		880681381DC8F05300340D8A /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806812E1DC8F05300340D8A /* StickerFileFactory.swift */; };
-		8806813D1DC8F18B00340D8A /* SFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806813C1DC8F18B00340D8A /* SFViewController.swift */; };
+		88A6E5101DCA4E8A00E2D1B7 /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880681271DC8F05300340D8A /* common.swift */; };
+		88A6E5111DCA4E9300E2D1B7 /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806812D1DC8F05300340D8A /* SharedCaptionSpace.swift */; };
+		88A6E5121DCA4E9700E2D1B7 /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806812E1DC8F05300340D8A /* StickerFileFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,19 +26,13 @@
 
 /* Begin PBXFileReference section */
 		8806810C1DC8EFF100340D8A /* stikz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = stikz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8806810F1DC8EFF100340D8A /* stikz-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "stikz-Swift.h"; sourceTree = "<group>"; };
 		880681101DC8EFF100340D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		880681151DC8EFF100340D8A /* stikzTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = stikzTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8806811A1DC8EFF100340D8A /* stikzTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stikzTests.swift; sourceTree = "<group>"; };
 		8806811C1DC8EFF100340D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		880681261DC8F05300340D8A /* AppCaptionSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCaptionSpace.swift; sourceTree = "<group>"; };
 		880681271DC8F05300340D8A /* common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
-		880681281DC8F05300340D8A /* InfoDictIOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoDictIOS.swift; sourceTree = "<group>"; };
-		8806812A1DC8F05300340D8A /* RemoteAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteAsset.swift; sourceTree = "<group>"; };
-		8806812B1DC8F05300340D8A /* RemSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemSpace.swift; sourceTree = "<group>"; };
 		8806812D1DC8F05300340D8A /* SharedCaptionSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedCaptionSpace.swift; sourceTree = "<group>"; };
 		8806812E1DC8F05300340D8A /* StickerFileFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerFileFactory.swift; sourceTree = "<group>"; };
-		8806813C1DC8F18B00340D8A /* SFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,15 +75,9 @@
 		8806810E1DC8EFF100340D8A /* stikz */ = {
 			isa = PBXGroup;
 			children = (
-				8806813C1DC8F18B00340D8A /* SFViewController.swift */,
-				880681261DC8F05300340D8A /* AppCaptionSpace.swift */,
 				880681271DC8F05300340D8A /* common.swift */,
-				880681281DC8F05300340D8A /* InfoDictIOS.swift */,
-				8806812A1DC8F05300340D8A /* RemoteAsset.swift */,
-				8806812B1DC8F05300340D8A /* RemSpace.swift */,
 				8806812D1DC8F05300340D8A /* SharedCaptionSpace.swift */,
 				8806812E1DC8F05300340D8A /* StickerFileFactory.swift */,
-				8806810F1DC8EFF100340D8A /* stikz-Swift.h */,
 				880681101DC8EFF100340D8A /* Info.plist */,
 			);
 			path = stikz;
@@ -117,7 +99,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8806811D1DC8EFF100340D8A /* stikz-Swift.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,14 +204,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				880681311DC8F05300340D8A /* common.swift in Sources */,
-				8806813D1DC8F18B00340D8A /* SFViewController.swift in Sources */,
-				880681341DC8F05300340D8A /* RemoteAsset.swift in Sources */,
-				880681301DC8F05300340D8A /* AppCaptionSpace.swift in Sources */,
-				880681371DC8F05300340D8A /* SharedCaptionSpace.swift in Sources */,
-				880681321DC8F05300340D8A /* InfoDictIOS.swift in Sources */,
-				880681381DC8F05300340D8A /* StickerFileFactory.swift in Sources */,
-				880681351DC8F05300340D8A /* RemSpace.swift in Sources */,
+				88A6E5121DCA4E9700E2D1B7 /* StickerFileFactory.swift in Sources */,
+				88A6E5111DCA4E9300E2D1B7 /* SharedCaptionSpace.swift in Sources */,
+				88A6E5101DCA4E8A00E2D1B7 /* common.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

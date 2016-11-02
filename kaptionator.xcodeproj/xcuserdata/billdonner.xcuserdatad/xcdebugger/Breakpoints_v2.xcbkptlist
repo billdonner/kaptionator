@@ -1428,11 +1428,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/CatalogMenuViewController.swift"
-            timestampString = "499714888.088916"
+            timestampString = "499791037.906851"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158">
+            startingLineNumber = "159"
+            endingLineNumber = "159">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1460,9 +1460,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "10"
-            endingLineNumber = "10"
-            landmarkName = "GetCaptionDelegate"
-            landmarkType = "5">
+            endingLineNumber = "10">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1525,7 +1523,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
             endingLineNumber = "36"
-            landmarkName = "paintImage(path:text:)"
+            landmarkName = "paintImageCatalogDataCell(url:text:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1552,11 +1550,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/MessagesViewController.swift"
-            timestampString = "499714888.088916"
+            timestampString = "499779891.648093"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "refreshFromMemSpace()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1776,11 +1774,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/HelpDropdownViewController.swift"
-            timestampString = "499714888.088916"
+            timestampString = "499796341.693887"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1836,7 +1834,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/CatalogRemoteViewController.swift"
@@ -1861,23 +1859,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "152"
             endingLineNumber = "152"
-            landmarkName = "CatalogViewController"
-            landmarkType = "4">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "appcode/MessagesViewController.swift"
-            timestampString = "499714888.088916"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "openinIMessage(captionedEntry:)"
+            landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1920,11 +1902,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/MessagedMenuViewController.swift"
-            timestampString = "499714888.088916"
+            timestampString = "499791037.906851"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "share(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2064,11 +2046,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/MasterViewController.swift"
-            timestampString = "499714888.088916"
+            timestampString = "499793149.734188"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "cycleaction(sender:id:vc:color:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2080,11 +2062,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/MasterViewController.swift"
-            timestampString = "499714888.088916"
+            timestampString = "499793149.734188"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "cycleaction(sender:id:vc:color:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2096,11 +2078,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/MasterViewController.swift"
-            timestampString = "499714888.088916"
+            timestampString = "499793149.734188"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "MasterViewController"
             landmarkType = "4">
          </BreakpointContent>
@@ -2160,11 +2142,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/ITunesMenuViewController.swift"
-            timestampString = "499714888.088916"
+            timestampString = "499791037.906851"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "captionWasEntered(caption:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2483,6 +2465,22 @@
             startingLineNumber = "264"
             endingLineNumber = "264"
             landmarkName = "saveToDisk()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "stikz/stikz/AppCaptionSpace.swift"
+            timestampString = "499791384.729501"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "makeNewCaptionAsIs(from:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

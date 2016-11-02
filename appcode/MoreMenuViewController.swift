@@ -18,7 +18,7 @@ final class MoreMenuViewController: UIViewController, ModalOverCurrentContext  {
     // place to open website
     
     @IBAction func websitetapped(_ sender: AnyObject) {
-        IOSSpecialOps.openwebsite(self)
+       openwebsite(self)
         // dismiss(animated: true,completion:nil)
     }
     override func viewDidLoad() {

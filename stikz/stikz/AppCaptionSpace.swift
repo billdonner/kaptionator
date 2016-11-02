@@ -7,31 +7,39 @@
 //
 
 import UIKit
-
+import stikz
 
 /// AppCaptionSpace is a singleton global struct that is persisted
 //  every instance of a user captioning a particular element is here
 //   note to self: DO NOT POLLUTE THIS STRUCT with class refs
 
-fileprivate var capSpace  = AppCaptionSpace(AppPrivateDataSpace)
+fileprivate var appCaptionSpace  = AppCaptionSpace(AppPrivateDataSpace)
+
+
+/// non-mutating public funcs
+
+
 //MARK: - AppCE represents a catalog entry as modified the user
 
 public struct AppCE {
     
-public     let id: String //stringified float millisecs since 1970
-public     let caption: String
-public     let stickerOptions: StickerMakingOptions
- public    let catalogpack:String
- public    let catalogtitle:String
- public    let localimagepath:String  // path of local copy of source for
+    public let id: String //stringified float millisecs since 1970
+    public let caption: String
+    public let stickerOptions: StickerMakingOptions
+    public let catalogpack:String
+    public let catalogtitle:String
+    public let imageurl:URL  // path of local copy of source for
     
     /// these are the action functions that are called to move things between tabs
     
     fileprivate func serializeToJSONDict() -> JSONDict {
+        
+        let imurl =  (imageurl.absoluteString)  as String
+        
         let x : JSONDict = [
             kID:id as AnyObject,
             kCaption:caption  as AnyObject,
-            kLocal:localimagepath as AnyObject,
+            kLocal:imurl as AnyObject,
             kPack:catalogpack as AnyObject,
             kTitle:catalogtitle as AnyObject,
             kOptions:stickerOptions.rawValue as AnyObject ]
@@ -48,34 +56,34 @@ public     let stickerOptions: StickerMakingOptions
         return intWithLeadingZeros( intnow, digits: 20)
     }
     
-   public  init(pack:String,
-         title:String,
-         imagepath:String,
-         caption:String,
-         options:StickerMakingOptions  ) {
+    public init(pack:String,
+                 title:String,
+                 imageurl:URL,
+                 caption:String,
+                 options:StickerMakingOptions  ) {
         self.catalogpack = pack
         self.catalogtitle = title
-        self.localimagepath = imagepath
+        self.imageurl = imageurl
         self.caption = caption
         self.stickerOptions = options
         self.id =   "\(AppCE.nicetime())" //: id
     }
-}
-// MARK: Delegates for actions from our associated menu
-extension AppCE {
+    
+    // MARK: Delegates for actions from our associated menu
+    
     // not sure we want generate asis so changed back
     
-  public   static func makeNewCaptionAsIs(   from ra:RemoteAsset ) {
+    public  static func makeNewCaptionAsIs(   from ra:StickerAsset ) {
         // make captionated entry from remote asset
         do {
-            let alreadyIn = SharedCaptionSpace.findMatchingAsset(path: ra.localimagepath, caption: "")
+            let alreadyIn = SharedCaptionSpace.findMatchingAssetInSharedSpace(url: ra.localurl!, caption: "")
             if !alreadyIn {
                 let options = StickerMakingOptions.generateasis
                 
-                let _ = AppCaptionSpace.make (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: "",  options: options)
+                let _ = AppCaptionSpace.make (pack: ra.packID, title: ra.assetName, imageurl: ra.localurl!,   caption: "",  options: options)
                 
                 // here make the largest sticker possible and add to shared space
-                let _ = try IO.prepareStickers (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: "",  options: options )  // cakks savetodisk N times - ugh
+                let _ = try IO.prepareStickers (pack: ra.packID, title: ra.assetName, imageurl: ra.localurl!,   caption: "",  options: options )  // cakks savetodisk N times - ugh
                 SharedCaptionSpace.saveData()
             }else {
                 // already in, lets just mark new sizrs and caption
@@ -85,17 +93,17 @@ extension AppCE {
             print ("cant make sticker in makeNewCaptionAsIs")
         }
     }
-  public   static func makeNewCaptionCat(   from ra:RemoteAsset, caption:String ) {
+    public  static func makeNewCaptionCat(   from ra:StickerAsset, caption:String ) {
         // make captionated entry from remote asset
         do {
-            let alreadyIn = SharedCaptionSpace.findMatchingAsset(path: ra.localimagepath, caption: caption)
+            let alreadyIn = SharedCaptionSpace.findMatchingAssetInSharedSpace(url: ra.localurl!, caption: caption)
             if !alreadyIn {
                 let options = ra.options
                 if caption != "" {
-                    let _ = AppCaptionSpace.make (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: options)
+                    let _ = AppCaptionSpace.make (pack: ra.packID, title: ra.assetName, imageurl: ra.localurl!,   caption: caption,  options: options)
                 }
                 // here make the largest sticker possible and add to shared space
-                let _ = try IO.prepareStickers (pack: ra.pack, title: ra.caption, imagepath: ra.localimagepath,   caption: caption,  options: options )  // cakks savetodisk N times - ugh
+                let _ = try IO.prepareStickers (pack: ra.packID, title: ra.assetName, imageurl: ra.localurl!,   caption: caption,  options: options )  // cakks savetodisk N times - ugh
                 SharedCaptionSpace.saveData()
             }else {
                 // already in, lets just mark new sizrs and caption
@@ -105,96 +113,95 @@ extension AppCE {
             print ("cant make sticker in makenewCaptioncat")
         }
     }
-}
 
-///
-extension AppCE {
-  public   mutating func changeCaptionForAppCE(to caption:String) {
-        let alreadyIn = AppCaptionSpace.findMatchingAsset(path: self.localimagepath, caption: caption)
+    public func changeCaptionForAppCE(to caption:String) {
+        let alreadyIn = AppCaptionSpace.findMatchingAsset(url: imageurl, caption: caption)
         if !alreadyIn {
             // keep old and
             //AppCaptionSpace.unhinge(id:self.id) //remove old
             // make new with new caption but all else is similar
-            let _ = AppCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath, caption: caption, options: self.stickerOptions)
+            let _ = AppCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imageurl: self.imageurl, caption: caption, options: self.stickerOptions)
         }
         //
     }
- public    func cloneWithNewCaption(_ caption:String){
-        let alreadyIn = AppCaptionSpace.findMatchingAsset(path: self.localimagepath, caption: caption)
+    public func cloneWithNewCaption(_ caption:String){
+        let alreadyIn = AppCaptionSpace.findMatchingAsset(url:  imageurl, caption: caption)
         if !alreadyIn {
             // keep old and make another
-            let _ = AppCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath,  caption: caption,  options: self.stickerOptions )
-            let _ = try? IO.prepareStickers( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath,  caption: caption,  options: self.stickerOptions)
+            let _ = AppCaptionSpace.make( pack: self.catalogpack, title: self.catalogtitle, imageurl: self.imageurl,  caption: caption,  options: self.stickerOptions )
+            let _ = try? IO.prepareStickers( pack: self.catalogpack, title: self.catalogtitle, imageurl: self.imageurl,  caption: caption,  options: self.stickerOptions)
             SharedCaptionSpace.saveData()
         }
     }
-public     mutating func cemoveToIMessage() { // only from capspace
+    public  func cemoveToIMessage() { // only from appCaptionSpace
         // duplicate and save to other space under same id, as is
         // if there is something in there with same file and caption then forget it
-        let alreadyIn = SharedCaptionSpace.findMatchingAsset(path: self.localimagepath, caption: self.caption)
+        let alreadyIn = SharedCaptionSpace.findMatchingAssetInSharedSpace(url: self.imageurl, caption: self.caption)
         if !alreadyIn {
             do {
-                //let theData = try Data(contentsOf: URL(string:self.localimagepath)!)
+                //let theData = try Data(contentsOf: URL(string:self.imageurl)!)
                 let options = self.stickerOptions
                 // adjust options based on size of image
                 // now pass the filenames into the shared space
-                // ce.localimagepath = url.absoluteString // dink with this
-                let _ = try IO.prepareStickers( pack: self.catalogpack, title: self.catalogtitle, imagepath: self.localimagepath,  caption: self.caption,  options: options)
+                // ce.imageurl = url.absoluteString // dink with this
+                let _ = try IO.prepareStickers( pack: self.catalogpack, title: self.catalogtitle, imageurl: self.imageurl,  caption: self.caption,  options: options)
                 SharedCaptionSpace.saveData()
             }
             catch {
-                print("could not makemade sticker file urls \(localimagepath)")
+                print("could not makemade sticker file urls \(imageurl)")
             }
         }
     }
 }
+
+/// non-mutating public funcs
 
 //MARK: AppCaptionSpace collects and persists AppCEs
 
 public struct AppCaptionSpace {
     private var entries : [ AppCE] = []
-    private var suite: String // partions nsuserdefaults
+    private let suite: String // partions nsuserdefaults
     
     fileprivate init(_ suite:String) {
         self.suite = suite
     }
     public static  func itemCount () -> Int {
-        return capSpace.entries.count
+        return appCaptionSpace.entries.count
     }
     public static    func itemAt(_ index:Int) -> AppCE {
-        let t = capSpace.entries
+        let t = appCaptionSpace.entries
         return t [index] // not horrible
     }
     public static    func items () -> [AppCE] {
-        return   capSpace.entries
+        return   appCaptionSpace.entries
     }
     public static   func dump() {
-        print("AppCaptionSpace - \(capSpace.suite) >>>>> \(capSpace.entries.count)")
+        print("AppCaptionSpace - \(appCaptionSpace.suite) >>>>> \(appCaptionSpace.entries.count)")
         
     }
     
-    public static  func make(pack:String,  title:String,imagepath:String ,caption:String,  options:StickerMakingOptions )->AppCE {
+    public static  func make(pack:String,  title:String,imageurl:URL ,caption:String,  options:StickerMakingOptions )->AppCE {
         let newself = AppCE( pack: pack, title: title,
-                             imagepath: imagepath,
+                             imageurl: imageurl,
                              caption: caption,
                              options: options )
         
         // users newce.id to CLONE
-        capSpace.entries.append(newself)
+        appCaptionSpace.entries.append(newself)
         saveToDisk()
         return newself
     }
     
     public static func reset() {
-        capSpace.entries = []
+        appCaptionSpace.entries = []
         saveToDisk()
     }
     public static func remove(id:String) -> AppCE? {
         var idx = 0
-        for entry in capSpace.entries {
+        for entry in appCaptionSpace.entries {
             if entry.id == id {
-                let t = capSpace.entries[idx]
-                capSpace.entries.remove(at: idx)
+                let t = appCaptionSpace.entries[idx]
+                appCaptionSpace.entries.remove(at: idx)
                 return t
             }
             idx += 1
@@ -202,8 +209,8 @@ public struct AppCaptionSpace {
         return nil
     }
     
-    public static  func findMatchingEntry(ce:AppCE) -> Bool {
-        for entry in capSpace.entries {
+    public static   func findMatchingEntry(ce:AppCE) -> Bool {
+        for entry in appCaptionSpace.entries {
             if entry.catalogtitle == ce.catalogtitle &&
                 entry.caption == ce.caption
             {
@@ -213,12 +220,10 @@ public struct AppCaptionSpace {
         return false
     }
     
-    public static func findMatchingAsset(path:String,caption:String) -> Bool {
-        for entry in capSpace.entries {
-            if entry.localimagepath == path &&
+    fileprivate static  func findMatchingAsset(url:URL,caption:String) -> Bool {
+        for entry in appCaptionSpace.entries {
+            if entry.imageurl == url &&
                 entry.caption ==  caption
-                // entry.localimagepath == ce.localimagepath
-                
             {
                 return true
             }
@@ -228,10 +233,10 @@ public struct AppCaptionSpace {
     
     //put in special NSUserDefaults which can be shared
     public static  func restoreAppspaceFromDisk () throws  {
-        if  let defaults = UserDefaults(suiteName: capSpace.suite),
+        if  let defaults = UserDefaults(suiteName: appCaptionSpace.suite),
             let allcaptions = defaults.object(forKey: kAllCaptions) as? JSONArray,
             let version = defaults.object(forKey: "version") {
-            print ("**** \(capSpace.suite) restoreFromDisk version \(version) count \(allcaptions.count)")
+            print ("**** \(appCaptionSpace.suite) restoreFromDisk version \(version) count \(allcaptions.count)")
             
             for acaption in allcaptions {
                 if let  optionsvalue = acaption [kOptions] as? Int,
@@ -248,26 +253,27 @@ public struct AppCaptionSpace {
                     var options = StickerMakingOptions()
                     options.rawValue = optionsvalue
                     
-                    let _ =  make(pack:p,title:ti,imagepath:i ,
+                    let iurl = URL(string:i)!
+                    let _ =  make(pack:p,title:ti,imageurl:iurl ,
                                   caption:captiontext,
                                   options:options)
                 }
             }
         }
         else {
-            print("**** \(capSpace.suite) restoreFromDisk UserDefaults failure")
+            print("**** \(appCaptionSpace.suite) restoreFromDisk UserDefaults failure")
             throw KaptionatorErrors.restoreFailure}
     }// restore
-
+    
     public static   func saveToDisk() {
         var flattened:JSONArray = []
-        for val in capSpace.entries {
+        for val in appCaptionSpace.entries {
             flattened.append(val.serializeToJSONDict())
         }
-        if let defaults  = UserDefaults(suiteName:capSpace.suite) {
+        if let defaults  = UserDefaults(suiteName:appCaptionSpace.suite) {
             defaults.set( versionBig, forKey: "version")
             defaults.set(   flattened, forKey: "allcaptions")
-            print("**** \(capSpace.suite) saveToDisk version \(versionBig) count \(flattened.count)")
+            print("**** \(appCaptionSpace.suite) saveToDisk version \(versionBig) count \(flattened.count)")
         }
     }
 }

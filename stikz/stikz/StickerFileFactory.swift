@@ -18,8 +18,6 @@ fileprivate struct Snapsupport {
         return wv
     }
     static func getsnapweb(wv:UIView ) {
-        
-        
         let asset = "gallery"
         
         let dir = FileManager.default.urls (for: .documentDirectory, in : .userDomainMask)
@@ -27,13 +25,13 @@ fileprivate struct Snapsupport {
         do {
             let thepath = ("\(asset)")
             let urlpath =  documentsUrl.appendingPathComponent(thepath)
-            let rul = urlpath
+             
             do {
                 let snapshotimage = try   snap(view: wv)
                 guard let data = UIImagePNGRepresentation(snapshotimage) else {
                     fatalError ("cant UIImagePNGRepresentation")
                 }
-                try data.write(to:rul)
+                try data.write(to:urlpath)
             }
             catch  let error as NSError {
                 fatalError ("cant snapshot \(error)")
@@ -57,36 +55,8 @@ fileprivate struct Snapsupport {
 }
 
 public struct StickerFileFactory {
-    //http://stackoverflow.com/questions/31314412/how-to-resize-image-in-swiftfunc
-    
-  public  static func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
-        let size = image.size
-        
-        let widthRatio  = targetSize.width  / image.size.width
-        let heightRatio = targetSize.height / image.size.height
-        
-        // Figure out what our orientation is, and use that to form the rectangle
-        var newSize: CGSize
-        if(widthRatio > heightRatio) {
-            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
-        } else {
-            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
-        }
-        
-        // This is the rect that we've calculated out and this is what is actually used below
-        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
-        
-        // Actually do the resizing to the rect using the ImageContext stuff
-        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
-        image.draw(in: rect)
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return newImage!
-    }
-
-
- public   static  func removeStickerFilesFrom(_ urls:[String]) -> Swift.Void {
+ 
+    public static  func removeStickerFilesFrom(_ urls:[String]) -> Swift.Void {
         for url in urls {
             do {
                 try FileManager.default.removeItem(at: URL(string:url)!)
@@ -96,15 +66,15 @@ public struct StickerFileFactory {
             }
         }
     }
-public     static func createStickerFileFrom(imageData:Data,path:String, caption:String,options:StickerMakingOptions) -> String {
+    public static func createStickerFileFrom(imageData:Data,imageurl:URL, caption:String,options:StickerMakingOptions) -> URL? {
         var returls:[String] = []
-        let assep = (path as NSString).lastPathComponent
+        let assep = (imageurl.absoluteString as NSString).lastPathComponent
         let type = (assep as NSString).pathExtension
         let label = // captionedEntry.id + "_" +
             ( assep as NSString).deletingPathExtension
-    do {
+        do {
             if options.contains(.generateasis)
-                //|| caption == "" 
+                //|| caption == ""
             {
                 // if asis, the size is just for decoration
                 let rul = try makeStickerAndURLfromAsIsData(   label:label  ,type:type ).absoluteString
@@ -125,34 +95,25 @@ public     static func createStickerFileFrom(imageData:Data,path:String, caption
                     let rul =  try createTextSticker(imageData:imageData,caption:caption,label:label + "-L" ,type:type,size:kStickerLargeSize, proportion:kStickerLargeImageRatio, fontSize:kStickerLargeFontSize)
                     returls.append(rul.absoluteString)
                 }
-        }
+            }
         }
         catch {
             print ("cant create labelled text sticker in row for \(label) \(error)")
+            return nil
         }
-        return returls[0]
+        return URL(string:returls[0])!
     }
     
     // generates 0 or more stickers
     
-       private static func
+    private static func
         makeStickerAndURLfromAsIsData(//imageData:Data,
-                                  label:String,type:String ) throws -> URL {
+        label:String,type:String ) throws -> URL {
         
-        /// now write this view to the local file system 
+        /// now write this view to the local file system
         
         let hashval = ""//"-AnImAtEd"
         let rul = sharedAppContainerDirectory().appendingPathComponent("\(label)\(hashval).\(type)")
-        
-//        do {
-//            
-//            try imageData.write(to:rul)
-//        }
-//        catch  let error as NSError {
-//            
-//            print ("cant save animated sticker \(error)")
-//            throw KaptionatorErrors.cant
-//        }
         
         /// do not make stiker here but rather in init of extension
         
@@ -165,7 +126,7 @@ public     static func createStickerFileFrom(imageData:Data,path:String, caption
         let image = UIImage(data:imageData) // can scale here
         if let image = image {  // make sure not nil
             let ms =  try makeCaptionatedStickerFile(label:label + hashval, image: image,type:type,size:size, proportion: proportion, fontSize:fontSize, caption: caption  )
-             
+            
             return ms
         }
         
@@ -223,5 +184,5 @@ public     static func createStickerFileFrom(imageData:Data,path:String, caption
         print(">>>>>> created on disk sticker now at \(rul)")
         return rul
     }// end of create stickerX into local file system
-
+    
 }

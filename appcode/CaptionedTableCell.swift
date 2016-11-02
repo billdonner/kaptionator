@@ -29,9 +29,9 @@ class CaptionedTableCell: UITableViewCell {
         nameLabel.text = name
         nameLabel.textColor = appTheme.textColor
     }
-    func paintImage(path: String) {
+    func paintImageForCaptionedTableCell(url:URL) {
         do {
-            let data =  try Data(contentsOf: URL(string:path)!)
+            let data =  try Data(contentsOf: url)
             let img = UIImage(data:data)
             if let img = img {
                 detailsImageView.image = img

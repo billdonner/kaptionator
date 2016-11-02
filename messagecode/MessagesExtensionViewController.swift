@@ -8,6 +8,7 @@
 
 import UIKit
 import Messages
+
 import stikz
 
 
@@ -57,9 +58,10 @@ struct  StickerPool   {
             
             for ce in SharedCaptionSpace.items() {
                 //for stickerpath in ce.stickerPath {
-                let url = URL(string:ce.stickerPath)!
+                if  let url =  ce.stickerurl {
                 let title =  "\(stickers.count)"
                 makeMSSticker(url:url,title:title)
+                }
                 
             }
             
@@ -80,18 +82,20 @@ struct  StickerPool   {
             fatalError("cant find \(backgroundImagePath)")
         }
         do {
+            if   let birl = URL(string:backgroundImagePath) {
         let theData = try Data(contentsOf: nurl)
         let options:StickerMakingOptions = .generatemedium
-        let stickerPath =   StickerFileFactory.createStickerFileFrom (imageData: theData ,path: backgroundImagePath, caption: "Welcome to \(extensionScheme)", options:options)
+        let stickerurl =   StickerFileFactory.createStickerFileFrom (imageData: theData ,imageurl: birl, caption: "Welcome to \(extensionScheme)", options:options)
             if 
-                let stickerurl = URL(string:stickerPath) {
+                let stickerurl = stickerurl {
             makeMSSticker(url:stickerurl,title:"Welcome to \(extensionScheme)")
-        print("made sticker file urls \(stickerPath)")
+            }
             }
         }
         catch let error {
             print("could not make sticker file \(error)")
         }
+            
     }
     mutating func makeMSStickersFromTempFiles() {
         // thru temp file making stickers

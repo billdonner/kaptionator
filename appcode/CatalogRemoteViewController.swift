@@ -13,7 +13,7 @@ import stikz
 //
 
 
-class CatalogRemoteViewController:UIViewController,ControlledByMasterView, UICollectionViewDelegate, UICollectionViewDataSource  { 
+final class CatalogRemoteViewController:UIViewController,ControlledByMasterView, UICollectionViewDelegate, UICollectionViewDataSource  {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -27,7 +27,7 @@ class CatalogRemoteViewController:UIViewController,ControlledByMasterView, UICol
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-        RemSpace.reset(title:extensionScheme)
+        StickerAssetSpace.reset(title:extensionScheme)
         
         // put logo in there, we will fade it in
         startupLogo.image = UIImage(named:backgroundImagePath)
@@ -43,8 +43,8 @@ class CatalogRemoteViewController:UIViewController,ControlledByMasterView, UICol
         assert( stickerManifestURL != nil)
         //  only read the catalog if we have to
         do {
-            try RemSpace.restoreRemspaceFromDisk()
-            print("RemSpace restored, \(RemSpace.itemCount()) items")
+            try StickerAssetSpace.restoreRemspaceFromDisk()
+            print("StickerAssetSpace restored, \(StickerAssetSpace.itemCount()) items")
             phase2 ()
         }  catch {
             phase1()
@@ -54,7 +54,7 @@ class CatalogRemoteViewController:UIViewController,ControlledByMasterView, UICol
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier ==  "CatalogCellTapMenuID"{
             if let indexPath = theSelectedIndexPath {
-                let ra = RemSpace.itemAt(indexPath.row)
+                let ra = StickerAssetSpace.itemAt(indexPath.row)
                 let avc =  segue.destination as? CatalogMenuViewController
                 if let avc = avc  {
                     avc.delegate = self
@@ -89,7 +89,7 @@ extension CatalogRemoteViewController {  //loading on first up - moved from mast
                         }
                         return
                     }
-                    RemSpace.saveToDisk()
+                    StickerAssetSpace.saveToDisk()
                     // if good, move on to phase 2 which happens in next view controller
                     self.perform(#selector(self.phase2 ), with: nil, afterDelay: 2.0)
                 }
@@ -103,7 +103,7 @@ extension CatalogRemoteViewController {  //loading on first up - moved from mast
     func phase3() {
         let vcid =  showCatalogID
         // self.activityIndicatorView.stopAnimating()
-        let x = RemSpace.itemCount()
+        let x = StickerAssetSpace.itemCount()
         print(">>>>>>>>>> phase3 \(x) REMOTE ASSETS LOADED \(vcid) -- READY TO ROLL")
         self.collectionView.reloadData()
         
@@ -122,10 +122,7 @@ extension CatalogRemoteViewController {  //loading on first up - moved from mast
                 self.startupLogo.removeFromSuperview()
             }
         )
-        
-       
     }
-
 //MARK: UICollectionViewDataSource
 
     @objc(numberOfSectionsInCollectionView:) func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -133,30 +130,25 @@ extension CatalogRemoteViewController {  //loading on first up - moved from mast
         return 1
     }
      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return RemSpace.itemCount()
+        return StickerAssetSpace.itemCount()
     }
      @objc(collectionView:cellForItemAtIndexPath:) func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "CatalogDataCell", for: indexPath  )
             as! CatalogDataCell // Create the cell from the storyboard cell
-        let ra = RemSpace.itemAt(indexPath.row)
-     
-        //show the primitive title
-//        if showVendorTitles {
-//            //cell.paint(name:ra.caption)
-//        }
-        //else
+        let ra = StickerAssetSpace.itemAt(indexPath.row)
+ 
         if ra.options.contains(.generateasis) {
              cell.showAnimationOverlay()
         }
         // if we have a thumbnail, show that 
-        if ra.thumbnail != "" {
+        if let thumburl = ra.thumburl {
             // have the data onhand
-            cell.paintImage(path:ra.thumbnail)
+            cell.paintImageCatalogDataCell(url: thumburl)
         } else
-        if ra.localimagepath != "" {
+        if let imurl = ra.localurl {
             // have the data onhand
-            cell.paintImage(path:ra.localimagepath)
+            cell.paintImageCatalogDataCell(url:imurl)
         }
       
         return cell // Return the cell
@@ -174,20 +166,14 @@ extension CatalogRemoteViewController {  //loading on first up - moved from mast
      }
 
 extension CatalogRemoteViewController : CatalogMenuViewDelegate {
-    func useAsIs(remoteAsset:RemoteAsset) {
+    func useAsIs(remoteAsset:StickerAsset) {
         AppCE.makeNewCaptionAsIs(from: remoteAsset )    }
-    func useWithNoCaption(remoteAsset:RemoteAsset) {
+    func useWithNoCaption(remoteAsset:StickerAsset) {
         // make un captionated entry from remote asset
         AppCE.makeNewCaptionCat( from: remoteAsset, caption: "" )
     }
-    func useWithCaption(remoteAsset:RemoteAsset,caption:String) {
+    func useWithCaption(remoteAsset:StickerAsset,caption:String) {
         // make un captionated entry from remote asset
         AppCE.makeNewCaptionCat( from: remoteAsset, caption: caption )
     }
 }
-//extension CatalogViewController : MEObserver {
-//    func newdocument(_ propsDict: JSONDict, _ title:String) {
-//        RemSpace.reset(title:title)
-//    }
-// 
-//}

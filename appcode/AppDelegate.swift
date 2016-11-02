@@ -107,7 +107,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
-        RemoteAsset.quietlyAddNewURL(url,options:StickerMakingOptions.generatelarge)
+        StickerAsset.quietlyAddNewURL(url,options:StickerMakingOptions.generatelarge)
         // try to reload the main controller if its showing
         var vc: UIViewController? =   window!.rootViewController
         if let nvc  = vc as? UINavigationController {

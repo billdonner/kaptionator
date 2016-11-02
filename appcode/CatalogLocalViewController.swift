@@ -37,35 +37,18 @@ final class CatalogViewController:UIViewController,ControlledByMasterView, UICol
         startupLogo.image = UIImage(named:backgroundImagePath)
         collectionView.dataSource = self
         collectionView.delegate = self
-        RemSpace.reset(title:extensionScheme)
-        
-        // put logo in there, we will fade it in
-//        startupLogo.image = UIImage(named:backgroundImagePath)
-//        startupLogo.frame = self.view.frame
-//        startupLogo.center = self.view.center
-//        self.view.insertSubview(startupLogo, aboveSubview: self.view)
-//        self.collectionView?.alpha = 0 // start as invisible
+        StickerAssetSpace.reset(title:extensionScheme)
+ 
         self.automaticallyAdjustsScrollViewInsets = false
-        disp()
+        phase1()
     }
-    private func disp() {
-       // print ("Collection view size \(collectionView!.contentSize)")
-       // assert( stickerManifestURL != nil)
-        //  only read the catalog if we have to
-//        do {
-//            try RemSpace.restoreRemspaceFromDisk()
-//            print("RemSpace restored, \(RemSpace.itemCount()) items")
-//            phase2 ()
-//        }  catch {
-            phase1()
-       // }
-    }
+ 
     //ITunesCellTapMenuID
     //MARK:- Dispatching to External ViewControllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier ==  "CatalogCellTapMenuID"{
             if let indexPath = theSelectedIndexPath {
-                let ra = RemSpace.itemAt(indexPath.row)
+                let ra = StickerAssetSpace.itemAt(indexPath.row)
                 let avc =  segue.destination as? CatalogMenuViewController
                 if let avc = avc  {
                     avc.delegate = self
@@ -107,7 +90,7 @@ extension CatalogViewController {  //loading on first up - moved from masterview
                         }
                         return
                     }
-                    RemSpace.saveToDisk()
+                    StickerAssetSpace.saveToDisk()
                     // if good, move on to phase 2 which happens in next view controller
                     self.perform(#selector(self.phase2 ), with: nil, afterDelay: 2.0)
                 }
@@ -121,7 +104,7 @@ extension CatalogViewController {  //loading on first up - moved from masterview
     func phase3() {
         let vcid =  showCatalogID
         // self.activityIndicatorView.stopAnimating()
-        let x = RemSpace.itemCount()
+        let x = StickerAssetSpace.itemCount()
         print(">>>>>>>>>> phase3 \(x) LOCAL ASSETS LOADED \(vcid) -- READY TO ROLL")
         self.collectionView.reloadData()
         
@@ -152,13 +135,13 @@ extension CatalogViewController {  //loading on first up - moved from masterview
     @objc(numberOfSectionsInCollectionView:) func numberOfSections(in collectionView: UICollectionView) -> Int { return 1 }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return RemSpace.itemCount()
+        return StickerAssetSpace.itemCount()
     }
     @objc(collectionView:cellForItemAtIndexPath:) func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "CatalogDataCell", for: indexPath  )
             as! CatalogDataCell // Create the cell from the storyboard cell
-        let ra = RemSpace.itemAt(indexPath.row)
+        let ra = StickerAssetSpace.itemAt(indexPath.row)
      
         //show the primitive title
 //        if showVendorTitles {
@@ -169,13 +152,13 @@ extension CatalogViewController {  //loading on first up - moved from masterview
              cell.showAnimationOverlay()
         }
         // if we have a thumbnail, show that 
-        if ra.thumbnail != "" {
+        if let thumburl = ra.thumburl {
             // have the data onhand
-            cell.paintImage(path:ra.thumbnail,text:ra.caption)
+            cell.paintImageCatalogDataCell(url:thumburl,text:ra.assetName)
         } else
-        if ra.localimagepath != "" {
+        if let imgrul = ra.localurl {
             // have the data onhand
-            cell.paintImage(path:ra.localimagepath,text:ra.caption)
+            cell.paintImageCatalogDataCell(url:imgrul,text:ra.assetName)
         }
       
         return cell // Return the cell
@@ -195,13 +178,13 @@ extension CatalogViewController {  //loading on first up - moved from masterview
 
 //MARK:- CALLBACKS
 extension CatalogViewController : CatalogMenuViewDelegate {
-    func useAsIs(remoteAsset:RemoteAsset) {
-        AppCE.makeNewCaptionCat(from: remoteAsset, caption: remoteAsset.caption )    }
-    func useWithNoCaption(remoteAsset:RemoteAsset) {
+    func useAsIs(remoteAsset:StickerAsset) {
+        AppCE.makeNewCaptionCat(from: remoteAsset, caption: remoteAsset.assetName )    }
+    func useWithNoCaption(remoteAsset:StickerAsset) {
         // make un captionated entry from remote asset
         AppCE.makeNewCaptionCat( from: remoteAsset, caption: "" )
     }
-    func useWithCaption(remoteAsset:RemoteAsset,caption:String) {
+    func useWithCaption(remoteAsset:StickerAsset,caption:String) {
         // make un captionated entry from remote asset
         AppCE.makeNewCaptionCat( from: remoteAsset, caption: caption )
     }

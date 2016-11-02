@@ -47,6 +47,22 @@
 		886B4ACF1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4ACC1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift */; };
 		886B4AD01D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4ACC1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift */; };
 		889FB7221D9438220064B4C9 /* CatalogRemoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92DF1D88738200832564 /* CatalogRemoteViewController.swift */; };
+		88A6E4D71DCA38F800E2D1B7 /* SFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6E4D61DCA38F800E2D1B7 /* SFViewController.swift */; };
+		88A6E4D81DCA38F800E2D1B7 /* SFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6E4D61DCA38F800E2D1B7 /* SFViewController.swift */; };
+		88A6E4D91DCA38F800E2D1B7 /* SFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6E4D61DCA38F800E2D1B7 /* SFViewController.swift */; };
+		88A6E4DA1DCA38F800E2D1B7 /* SFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6E4D61DCA38F800E2D1B7 /* SFViewController.swift */; };
+		88A6E5021DCA4DDF00E2D1B7 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6E5011DCA4DDF00E2D1B7 /* AppCaptionSpace.swift */; };
+		88A6E5031DCA4DDF00E2D1B7 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6E5011DCA4DDF00E2D1B7 /* AppCaptionSpace.swift */; };
+		88A6E5041DCA4DDF00E2D1B7 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6E5011DCA4DDF00E2D1B7 /* AppCaptionSpace.swift */; };
+		88A6E5051DCA4DDF00E2D1B7 /* AppCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6E5011DCA4DDF00E2D1B7 /* AppCaptionSpace.swift */; };
+		88A6E5071DCA4E1300E2D1B7 /* InfoDictIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6E5061DCA4E1300E2D1B7 /* InfoDictIOS.swift */; };
+		88A6E5081DCA4E1300E2D1B7 /* InfoDictIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6E5061DCA4E1300E2D1B7 /* InfoDictIOS.swift */; };
+		88A6E5091DCA4E1300E2D1B7 /* InfoDictIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6E5061DCA4E1300E2D1B7 /* InfoDictIOS.swift */; };
+		88A6E50A1DCA4E1300E2D1B7 /* InfoDictIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6E5061DCA4E1300E2D1B7 /* InfoDictIOS.swift */; };
+		88A6E50C1DCA4E3600E2D1B7 /* StickerAssetSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6E50B1DCA4E3600E2D1B7 /* StickerAssetSpace.swift */; };
+		88A6E50D1DCA4E3600E2D1B7 /* StickerAssetSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6E50B1DCA4E3600E2D1B7 /* StickerAssetSpace.swift */; };
+		88A6E50E1DCA4E3600E2D1B7 /* StickerAssetSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6E50B1DCA4E3600E2D1B7 /* StickerAssetSpace.swift */; };
+		88A6E50F1DCA4E3600E2D1B7 /* StickerAssetSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6E50B1DCA4E3600E2D1B7 /* StickerAssetSpace.swift */; };
 		88AEA59C1D514B29006E5C70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88AEA59B1D514B29006E5C70 /* Assets.xcassets */; };
 		88AEA5B41D514B53006E5C70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88AEA5B31D514B53006E5C70 /* Assets.xcassets */; };
 		88AEA5B71D514B53006E5C70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88AEA5B51D514B53006E5C70 /* LaunchScreen.storyboard */; };
@@ -74,10 +90,6 @@
 		88B54C9D1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54C971D886FBC0076942D /* MessagesExtensionViewController.swift */; };
 		88B54C9E1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54C971D886FBC0076942D /* MessagesExtensionViewController.swift */; };
 		88B54C9F1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54C971D886FBC0076942D /* MessagesExtensionViewController.swift */; };
-		88B54CD21D8870060076942D /* SFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA51D8870060076942D /* SFViewController.swift */; };
-		88B54CD41D8870060076942D /* SFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA51D8870060076942D /* SFViewController.swift */; };
-		88B54CD61D8870060076942D /* SFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA51D8870060076942D /* SFViewController.swift */; };
-		88B54CD81D8870060076942D /* SFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54CA51D8870060076942D /* SFViewController.swift */; };
 		88B54CFF1D8870F10076942D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88B54CFE1D8870F10076942D /* MainInterface.storyboard */; };
 		88B54D001D8870F10076942D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88B54CFE1D8870F10076942D /* MainInterface.storyboard */; };
 		88B54D011D8870F10076942D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88B54CFE1D8870F10076942D /* MainInterface.storyboard */; };
@@ -184,13 +196,6 @@
 			remoteGlobalIDString = 8806810B1DC8EFF100340D8A;
 			remoteInfo = stikz;
 		};
-		881759081DC7D11800DB70C6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 88AEA5891D514B29006E5C70 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 88AEA5901D514B29006E5C70;
-			remoteInfo = kaptionator;
-		};
 		88475BF81D51607000FA7EC4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 88AEA5891D514B29006E5C70 /* Project object */;
@@ -292,7 +297,6 @@
 		881758A51DC7AB0700DB70C6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		881758F71DC7B13B00DB70C6 /* kaptionatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kaptionatorTests.swift; sourceTree = "<group>"; };
 		881758F91DC7B13B00DB70C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		881759031DC7D11800DB70C6 /* kaptionatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kaptionatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8817590D1DC7F26900DB70C6 /* Help.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Help.storyboard; sourceTree = SOURCE_ROOT; };
 		881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesViewController.swift; sourceTree = "<group>"; };
 		883982961DB1421C00B5A037 /* InnerHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InnerHelpViewController.swift; sourceTree = "<group>"; };
@@ -304,6 +308,10 @@
 		886B4AC21D9CA4CB00581C9B /* MessagesTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableCell.swift; sourceTree = "<group>"; };
 		886B4AC71D9DDD5B00581C9B /* ReorderMessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReorderMessagesViewController.swift; sourceTree = "<group>"; };
 		886B4ACC1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReorderCollectionViewCell.swift; sourceTree = "<group>"; };
+		88A6E4D61DCA38F800E2D1B7 /* SFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFViewController.swift; path = ../stikz/stikz/SFViewController.swift; sourceTree = "<group>"; };
+		88A6E5011DCA4DDF00E2D1B7 /* AppCaptionSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppCaptionSpace.swift; path = ../stikz/stikz/AppCaptionSpace.swift; sourceTree = "<group>"; };
+		88A6E5061DCA4E1300E2D1B7 /* InfoDictIOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoDictIOS.swift; path = ../stikz/stikz/InfoDictIOS.swift; sourceTree = "<group>"; };
+		88A6E50B1DCA4E3600E2D1B7 /* StickerAssetSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StickerAssetSpace.swift; path = ../stikz/stikz/StickerAssetSpace.swift; sourceTree = "<group>"; };
 		88AEA5911D514B29006E5C70 /* kaptionator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kaptionator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88AEA59B1D514B29006E5C70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88AEA5A01D514B29006E5C70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -337,7 +345,6 @@
 		88AEA64E1D514CC7006E5C70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88B54C961D886FBC0076942D /* MartoonerBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MartoonerBrowserViewController.swift; sourceTree = "<group>"; };
 		88B54C971D886FBC0076942D /* MessagesExtensionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesExtensionViewController.swift; sourceTree = "<group>"; };
-		88B54CA51D8870060076942D /* SFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFViewController.swift; path = ../shticklib/SFViewController.swift; sourceTree = "<group>"; };
 		88B54CFE1D8870F10076942D /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainInterface.storyboard; path = ../candidatezMessagesExtension/MainInterface.storyboard; sourceTree = "<group>"; };
 		88B570EB1DA566B400CD4058 /* GetCaptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCaptionViewController.swift; sourceTree = "<group>"; };
 		88B5718D1DA6FC8F00CD4058 /* ITunesDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesDataCell.swift; sourceTree = "<group>"; };
@@ -365,13 +372,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		881759001DC7D11800DB70C6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		88AEA58E1D514B29006E5C70 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -490,6 +490,7 @@
 			isa = PBXGroup;
 			children = (
 				88DD92DF1D88738200832564 /* CatalogRemoteViewController.swift */,
+				88DD92E51D88738200832564 /* MasterViewController.swift */,
 				88B571921DA705AC00CD4058 /* CatalogLocalViewController.swift */,
 				88DD92E21D88738200832564 /* CapationatedViewController.swift */,
 				881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */,
@@ -501,14 +502,16 @@
 		88722F661D522AAB00B2F85B /* appcode */ = {
 			isa = PBXGroup;
 			children = (
+				88A6E5061DCA4E1300E2D1B7 /* InfoDictIOS.swift */,
+				88A6E50B1DCA4E3600E2D1B7 /* StickerAssetSpace.swift */,
+				88A6E5011DCA4DDF00E2D1B7 /* AppCaptionSpace.swift */,
+				88A6E4D61DCA38F800E2D1B7 /* SFViewController.swift */,
 				88DD92D91D8872D400832564 /* Main.storyboard */,
 				8817590D1DC7F26900DB70C6 /* Help.storyboard */,
 				88DD92DE1D88738200832564 /* AppDelegate.swift */,
 				881759141DC8009200DB70C6 /* ControlledByMasterView */,
 				881759121DC7FFF200DB70C6 /* ModalViewControllers */,
 				881759131DC8005000DB70C6 /* Cells */,
-				88DD92E51D88738200832564 /* MasterViewController.swift */,
-				88B54CA51D8870060076942D /* SFViewController.swift */,
 			);
 			path = appcode;
 			sourceTree = "<group>";
@@ -555,7 +558,6 @@
 				88AEA61A1D514C5F006E5C70 /* emogeezMessagesExtension.appex */,
 				88AEA62F1D514C8D006E5C70 /* candidatezMessagesExtension.appex */,
 				88AEA6441D514CC7006E5C70 /* kaptionatorMessageExtension.appex */,
-				881759031DC7D11800DB70C6 /* kaptionatorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -673,24 +675,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		881759021DC7D11800DB70C6 /* kaptionatorTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8817590A1DC7D11800DB70C6 /* Build configuration list for PBXNativeTarget "kaptionatorTests" */;
-			buildPhases = (
-				881758FF1DC7D11800DB70C6 /* Sources */,
-				881759001DC7D11800DB70C6 /* Frameworks */,
-				881759011DC7D11800DB70C6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				881759091DC7D11800DB70C6 /* PBXTargetDependency */,
-			);
-			name = kaptionatorTests;
-			productName = kaptionatorTests;
-			productReference = 881759031DC7D11800DB70C6 /* kaptionatorTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		88AEA5901D514B29006E5C70 /* kaptionator */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88AEA5A31D514B29006E5C70 /* Build configuration list for PBXNativeTarget "kaptionator" */;
@@ -847,12 +831,6 @@
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = midnightrambler;
 				TargetAttributes = {
-					881759021DC7D11800DB70C6 = {
-						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = X2PQYA6S48;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 88AEA5901D514B29006E5C70;
-					};
 					88AEA5901D514B29006E5C70 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = X2PQYA6S48;
@@ -979,7 +957,6 @@
 				88AEA6191D514C5F006E5C70 /* emogeezMessagesExtension */,
 				88AEA5EB1D514BC3006E5C70 /* holidayz */,
 				88AEA6011D514C1F006E5C70 /* holidazeMessagesExtension */,
-				881759021DC7D11800DB70C6 /* kaptionatorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1002,13 +979,6 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		881759011DC7D11800DB70C6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		88AEA58F1D514B29006E5C70 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1108,13 +1078,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		881758FF1DC7D11800DB70C6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		88AEA58D1D514B29006E5C70 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1122,6 +1085,7 @@
 				88DD93091D88738200832564 /* MessagedMenuViewController.swift in Sources */,
 				88B5718E1DA6FC8F00CD4058 /* ITunesDataCell.swift in Sources */,
 				88DD93011D88738200832564 /* WebHelpViewController.swift in Sources */,
+				88A6E50C1DCA4E3600E2D1B7 /* StickerAssetSpace.swift in Sources */,
 				889FB7221D9438220064B4C9 /* CatalogRemoteViewController.swift in Sources */,
 				88DD92E91D88738200832564 /* AppDelegate.swift in Sources */,
 				883982A51DB2B4F100B5A037 /* HelpDropdownViewController.swift in Sources */,
@@ -1130,6 +1094,7 @@
 				88DD92F11D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				88DD93111D88738200832564 /* CaptionedTableCell.swift in Sources */,
 				886B4ACD1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
+				88A6E5021DCA4DDF00E2D1B7 /* AppCaptionSpace.swift in Sources */,
 				88DD92F91D88738200832564 /* CapationatedViewController.swift in Sources */,
 				88DD92F51D88738200832564 /* CaptionedMenuViewController.swift in Sources */,
 				88B571931DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */,
@@ -1138,11 +1103,12 @@
 				88F2FC921D931A070055209C /* MoreMenuViewController.swift in Sources */,
 				AD20A5FB1DA1946A00877ABF /* ITunesViewController.swift in Sources */,
 				8862CE321DB0838500685CCA /* StartupHelpViewController.swift in Sources */,
-				88B54CD21D8870060076942D /* SFViewController.swift in Sources */,
+				88A6E5071DCA4E1300E2D1B7 /* InfoDictIOS.swift in Sources */,
 				88DD930D1D88738200832564 /* CatalogDataCell.swift in Sources */,
 				886B4AC81D9DDD5B00581C9B /* ReorderMessagesViewController.swift in Sources */,
 				883982971DB1421C00B5A037 /* InnerHelpViewController.swift in Sources */,
 				88DD93051D88738200832564 /* MasterViewController.swift in Sources */,
+				88A6E4D71DCA38F800E2D1B7 /* SFViewController.swift in Sources */,
 				88DD92FD1D88738200832564 /* MessagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1152,8 +1118,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				88DD930A1D88738200832564 /* MessagedMenuViewController.swift in Sources */,
+				88A6E50D1DCA4E3600E2D1B7 /* StickerAssetSpace.swift in Sources */,
 				88DD93021D88738200832564 /* WebHelpViewController.swift in Sources */,
 				88DD92EA1D88738200832564 /* AppDelegate.swift in Sources */,
+				88A6E5031DCA4DDF00E2D1B7 /* AppCaptionSpace.swift in Sources */,
 				886B4ACE1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88DD92F21D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				883982A61DB2BEEC00B5A037 /* HelpDropdownViewController.swift in Sources */,
@@ -1167,13 +1135,14 @@
 				88B570ED1DA566B400CD4058 /* GetCaptionViewController.swift in Sources */,
 				886B4AC91D9DDD5B00581C9B /* ReorderMessagesViewController.swift in Sources */,
 				8862CE331DB0838500685CCA /* StartupHelpViewController.swift in Sources */,
-				88B54CD41D8870060076942D /* SFViewController.swift in Sources */,
+				88A6E4D81DCA38F800E2D1B7 /* SFViewController.swift in Sources */,
 				88F2FC931D931A070055209C /* MoreMenuViewController.swift in Sources */,
 				88DD930E1D88738200832564 /* CatalogDataCell.swift in Sources */,
 				88DD93061D88738200832564 /* MasterViewController.swift in Sources */,
 				8839829C1DB1556800B5A037 /* InnerHelpViewController.swift in Sources */,
 				88DD92FE1D88738200832564 /* MessagesViewController.swift in Sources */,
 				886B4AC41D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */,
+				88A6E5081DCA4E1300E2D1B7 /* InfoDictIOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1182,8 +1151,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				88DD930B1D88738200832564 /* MessagedMenuViewController.swift in Sources */,
+				88A6E50E1DCA4E3600E2D1B7 /* StickerAssetSpace.swift in Sources */,
 				88DD93031D88738200832564 /* WebHelpViewController.swift in Sources */,
 				88DD92EB1D88738200832564 /* AppDelegate.swift in Sources */,
+				88A6E5041DCA4DDF00E2D1B7 /* AppCaptionSpace.swift in Sources */,
 				886B4ACF1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88DD92F31D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				883982A71DB2BEED00B5A037 /* HelpDropdownViewController.swift in Sources */,
@@ -1197,13 +1168,14 @@
 				88B570EE1DA566B400CD4058 /* GetCaptionViewController.swift in Sources */,
 				886B4ACA1D9DDD5B00581C9B /* ReorderMessagesViewController.swift in Sources */,
 				8862CE341DB0838500685CCA /* StartupHelpViewController.swift in Sources */,
-				88B54CD61D8870060076942D /* SFViewController.swift in Sources */,
+				88A6E4D91DCA38F800E2D1B7 /* SFViewController.swift in Sources */,
 				88F2FC941D931A070055209C /* MoreMenuViewController.swift in Sources */,
 				88DD930F1D88738200832564 /* CatalogDataCell.swift in Sources */,
 				88DD93071D88738200832564 /* MasterViewController.swift in Sources */,
 				8839829D1DB1556B00B5A037 /* InnerHelpViewController.swift in Sources */,
 				88DD92FF1D88738200832564 /* MessagesViewController.swift in Sources */,
 				886B4AC51D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */,
+				88A6E5091DCA4E1300E2D1B7 /* InfoDictIOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1212,8 +1184,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				88DD930C1D88738200832564 /* MessagedMenuViewController.swift in Sources */,
+				88A6E50F1DCA4E3600E2D1B7 /* StickerAssetSpace.swift in Sources */,
 				88DD93041D88738200832564 /* WebHelpViewController.swift in Sources */,
 				88DD92EC1D88738200832564 /* AppDelegate.swift in Sources */,
+				88A6E5051DCA4DDF00E2D1B7 /* AppCaptionSpace.swift in Sources */,
 				886B4AD01D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88DD92F41D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				883982A81DB2BEEE00B5A037 /* HelpDropdownViewController.swift in Sources */,
@@ -1227,13 +1201,14 @@
 				88B570EF1DA566B400CD4058 /* GetCaptionViewController.swift in Sources */,
 				886B4ACB1D9DDD5B00581C9B /* ReorderMessagesViewController.swift in Sources */,
 				8862CE351DB0838500685CCA /* StartupHelpViewController.swift in Sources */,
-				88B54CD81D8870060076942D /* SFViewController.swift in Sources */,
+				88A6E4DA1DCA38F800E2D1B7 /* SFViewController.swift in Sources */,
 				88F2FC951D931A070055209C /* MoreMenuViewController.swift in Sources */,
 				88DD93101D88738200832564 /* CatalogDataCell.swift in Sources */,
 				88DD93081D88738200832564 /* MasterViewController.swift in Sources */,
 				8839829E1DB1556C00B5A037 /* InnerHelpViewController.swift in Sources */,
 				88DD93001D88738200832564 /* MessagesViewController.swift in Sources */,
 				886B4AC61D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */,
+				88A6E50A1DCA4E1300E2D1B7 /* InfoDictIOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1280,11 +1255,6 @@
 			isa = PBXTargetDependency;
 			name = stikz;
 			targetProxy = 8806817D1DC900F100340D8A /* PBXContainerItemProxy */;
-		};
-		881759091DC7D11800DB70C6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 88AEA5901D514B29006E5C70 /* kaptionator */;
-			targetProxy = 881759081DC7D11800DB70C6 /* PBXContainerItemProxy */;
 		};
 		88475BF91D51607000FA7EC4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1360,38 +1330,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		8817590B1DC7D11800DB70C6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
-				DEVELOPMENT_TEAM = X2PQYA6S48;
-				INFOPLIST_FILE = kaptionatorTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.kaptionatorTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kaptionator.app/kaptionator";
-			};
-			name = Debug;
-		};
-		8817590C1DC7D11800DB70C6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
-				DEVELOPMENT_TEAM = X2PQYA6S48;
-				INFOPLIST_FILE = kaptionatorTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.kaptionatorTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kaptionator.app/kaptionator";
-			};
-			name = Release;
-		};
 		88AEA5A11D514B29006E5C70 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1727,15 +1665,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8817590A1DC7D11800DB70C6 /* Build configuration list for PBXNativeTarget "kaptionatorTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8817590B1DC7D11800DB70C6 /* Debug */,
-				8817590C1DC7D11800DB70C6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		88AEA58C1D514B29006E5C70 /* Build configuration list for PBXProject "kaptionator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

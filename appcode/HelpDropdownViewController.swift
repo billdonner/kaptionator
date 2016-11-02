@@ -24,7 +24,7 @@ final class HelpDropdownViewController: UIViewController, ModalOverCurrentContex
     }
     
     @IBAction func hitITunesAction(_ sender: AnyObject) {
-       RemoteAsset.loadFromITunesSharing(){status, title, allofme in
+       Manifest.loadFromITunesSharing(){status, title, allofme in
         print("loaded \(allofme.count) files")
             if allofme.count == 0 {
                  IOSSpecialOps.blurt(self ,title:"no files loaded",mess:"go to ITunes > your device > apps")
@@ -66,7 +66,7 @@ final class HelpDropdownViewController: UIViewController, ModalOverCurrentContex
         super.viewWillAppear(animated)
         
         let count = SharedCaptionSpace.itemCount()
-        let remcount = RemSpace.itemCount()
+        let remcount = StickerAssetSpace.itemCount()
         let s = count == 1 ? "" : "s"
         subLabel.text =  "Currently you have \(count) sticker" + s + " in the Messages App"
         bodyLabel.text = remcount != 1 ? "You have \(remcount) catalog entries as sources to make stickers" :"You have one catalog entry as a sticker source"
@@ -107,19 +107,47 @@ extension HelpDropdownViewController : UIDocumentPickerDelegate {
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
         print("picked new document at \(url)")
-         RemoteAsset.quietlyAddNewURL(url,options:StickerMakingOptions.generatemedium)
+         StickerAsset.quietlyAddNewURL(url,options:StickerMakingOptions.generatemedium)
     }
 }
-
+private extension HelpDropdownViewController {
+    //http://stackoverflow.com/questions/31314412/how-to-resize-image-in-swiftfunc
+ func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+        
+        let widthRatio  = targetSize.width  / image.size.width
+        let heightRatio = targetSize.height / image.size.height
+        
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        }
+        
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
+    
+}
 //MARK: - UIImagePickerControllerDelegate
 extension HelpDropdownViewController :UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            let newimage = StickerFileFactory.resizeImage(image: image,targetSize:(CGSize(width:618.0,height:618.0)))
+            let newimage =  resizeImage(image: image,targetSize:(CGSize(width:618.0,height:618.0)))
             
        // turn this into a file wit a url
-           let url = RemSpace.writeImageToURL(newimage)
-            RemoteAsset.quietlyAddNewURL(url,options:StickerMakingOptions.generatelarge)
+           let url = StickerAssetSpace.writeImageToURL(newimage)
+            StickerAsset.quietlyAddNewURL(url,options:StickerMakingOptions.generatelarge)
         }
         dismiss (animated: true, completion: nil)
     }

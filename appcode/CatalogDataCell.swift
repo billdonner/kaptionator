@@ -30,10 +30,10 @@ class CatalogDataCell: UICollectionViewCell {
       animatedImageView.isHidden = false
     }
 
-    func paintImage(path imgLocalPath: String, text: String = "") {
+    func paintImageCatalogDataCell(url:URL, text: String = "") {
         do {
             //reads local file synchronously
-            let data =  try Data(contentsOf: URL(string:imgLocalPath)!)
+            let data =  try Data(contentsOf: url )
             let img = UIImage(data:data)
             detailsImageView.image = img
             detailsImageView.contentMode = .scaleAspectFit

@@ -69,13 +69,11 @@ final class MessagesViewController: UIViewController,ControlledByMasterView{
 }
 // MARK: Delegates for actions from our associated menu
 extension  MessagesViewController:MessagesAppMenuViewDelegate {
-    func openinIMessage(captionedEntry:SharedCE) {
-        print("MessagesAppEntriesViewController openinIMessage")
-        captionedEntry.openinImessage()
-    }
-    func removeFromIMessage(on captionedEntry:inout SharedCE ){
+
+    func removingFromIMessage(on captionedEntry:inout SharedCE ){
         print("MessagesAppEntriesViewController removeFromIMessage")
-        captionedEntry.removeCEFromIMessage()
+       let _ = SharedCaptionSpace.remove(id:captionedEntry.id)
+        SharedCaptionSpace.saveData()
         refreshFromMemSpace()
     }
 }
@@ -83,16 +81,7 @@ extension MessagesViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-//    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-//        let srcrow = sourceIndexPath.row
-//        let dstrow = destinationIndexPath.row
-//        // swap thises guys around
-//        let stuff = stickerz [srcrow]
-//        stickerz [srcrow] = stickerz [dstrow]
-//        stickerz [dstrow] = stuff
-//        // too much here
-//        SharedCaptionSpace.saveData()
-//    }
+ 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let ce =  stickerz.remove(at: indexPath.row)
@@ -116,12 +105,12 @@ extension MessagesViewController : UITableViewDataSource {
         let line2 = ce.stickerOptions.description()
         cell.paint2(ce:ce,line2:line2)
         /// go get the image from our cache and then the net
-        let path =  ce.stickerPath
+        if  let surl =  ce.stickerurl {
             //ce.stickerPath[0] // ?????
         
        // print("=====lip--\(ce.localimagepath) spath--\(ce.stickerPath)")
-        if path != "" {
-            cell.paintImage(path:path)
+    
+            cell.paintImageForMessagesTableCell(url:surl)
         }
         cell.colorFor(options: ce.stickerOptions)
         return cell // Return the cell
@@ -159,11 +148,4 @@ private extension MessagesViewController {
         
     }
 }
-extension SharedCE {
-    fileprivate func openinImessage() {
-    }
-    fileprivate mutating func removeCEFromIMessage() {
-        let _ =  SharedCaptionSpace.remove(id:self.id)
-        SharedCaptionSpace.saveData()
-    }
-}
+

@@ -5,11 +5,10 @@
 //  Copyright © 2016 Bill Donner/midnightrambler. All rights reserved.
 //
 import UIKit
-
 import stikz
+
 protocol MessagesAppMenuViewDelegate: class  {
-    func openinIMessage(captionedEntry:SharedCE)
-    func removeFromIMessage(on captionedEntry:inout SharedCE )
+    func removingFromIMessage(on captionedEntry:inout SharedCE )
 }
 
 /// All the heavy lifting and file manipulation is done on this side of the fence
@@ -37,7 +36,9 @@ final class MessagesAppMenuViewController: UIViewController ,ModalOverCurrentCon
     
     private func unprepareStickers(_ ce:SharedCE , _ size:String) {
         let id = ce.id
-        let pe = ce.localimagepath
+        if let imgurl =  ce.appimageurl {
+            let pe = imgurl.absoluteString
+      
         let hashval = "\(ce.caption.hash)"
         let lpc = (pe as NSString).lastPathComponent
         let type = (pe as NSString).pathExtension
@@ -46,6 +47,7 @@ final class MessagesAppMenuViewController: UIViewController ,ModalOverCurrentCon
         let stickerpath = path + "/" + lsp + "-\(size)-\(hashval)." + type
         StickerFileFactory.removeStickerFilesFrom([stickerpath])
         let _ = SharedCaptionSpace.remove(id: id)
+        }
     }
     
     /// go back with manual unwind so caller (MessageViewController) can repaint with new data model
@@ -57,9 +59,9 @@ final class MessagesAppMenuViewController: UIViewController ,ModalOverCurrentCon
         //MARK:- MENU TAP ACTIONS
     @IBAction func share(_ sender: UIButton) {
         do {
-        let path = captionedEntry.stickerPath
+            if let url = captionedEntry.stickerurl {
            // stickerPath[0] doesnt work
-        let data = try  Data(contentsOf: URL(string:path )!)
+        let data = try  Data(contentsOf:url )
         let image = UIImage(data:data)
         let titl = captionedEntry.caption == "" ? "<no caption>" : captionedEntry.caption
             // set up activity view controller
@@ -70,72 +72,62 @@ final class MessagesAppMenuViewController: UIViewController ,ModalOverCurrentCon
         activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook ]
         // present the view controller
         self.present(activityViewController, animated: true, completion: nil)
+            }
         }
         catch {
         }
     }
+    private func  swhel(_ options:StickerMakingOptions){
+        do {  // make image of precise size for messages app
+             let ce = captionedEntry!
+            let _  =  try IO.prepareStickers(pack:ce.catalogpack,
+                                             title:ce.catalogtitle,
+                                             imageurl: ce.appimageurl!,
+                                             caption: ce.caption,
+                                             options: options)
+        }
+        catch {
+            print("could not prepareStickers")
+        }
+    }
     @IBAction func smallSwitchToggled(_ sender: AnyObject) {
-        let ce = captionedEntry!
         var options: StickerMakingOptions = StickerMakingOptions()
         if smallSwitch.isOn {
-            do {  // make image of precise size for messages app
-                options.insert(.generatesmall)
-                let _  =  try IO.prepareStickers(pack:ce.catalogpack, title:ce.catalogtitle, imagepath: ce.localimagepath, caption: ce.caption, options: options)
-                SharedCaptionSpace.saveData()
-            }
-            catch {
-                print("could not prepareStickers")
-            }
+            options.insert(.generatesmall)
+            swhel(options)
         } else {  // delete the image
-            unprepareStickers(ce,"S")
+            unprepareStickers(captionedEntry,"S")
         }
         SharedCaptionSpace.saveData()
     }
     @IBAction func mediumSwitchToggled(_ sender: AnyObject) {
-        let ce = captionedEntry!
         var options: StickerMakingOptions = StickerMakingOptions()
-        if mediumSwitch.isOn {
-            do {  // make image of precise size for messages app
-                options.insert(.generatemedium)
-                let _  =  try IO.prepareStickers(pack:ce.catalogpack, title:ce.catalogtitle, imagepath: ce.localimagepath, caption: ce.caption, options: options)
-                SharedCaptionSpace.saveData()
-            }
-            catch {
-                print("could not prepareStickers")
-            }
+        if smallSwitch.isOn {
+            options.insert(.generatemedium)
+            swhel(options)
         } else {  // delete the image
-            unprepareStickers(ce,"M")
+            unprepareStickers(captionedEntry,"M")
         }
         SharedCaptionSpace.saveData()
     }
     @IBAction func largeSwithToggled(_ sender: AnyObject) {
-        let ce = captionedEntry!
         var options: StickerMakingOptions = StickerMakingOptions()
-        if largeSwitch.isOn {
-            do {  // make image of precise size for messages app
-                options.insert(.generatelarge)
-                let _  =  try IO.prepareStickers(pack:ce.catalogpack, title:ce.catalogtitle, imagepath: ce.localimagepath, caption: ce.caption, options: options)
-                SharedCaptionSpace.saveData()
-            }
-            catch {
-                print("could not prepareStickers")
-            }
+        if smallSwitch.isOn {
+            options.insert(.generatelarge)
+            swhel(options)
         } else {  // delete the image
-            unprepareStickers(ce,"L")
+            unprepareStickers(captionedEntry,"L")
         }
         SharedCaptionSpace.saveData()
     }
     @IBAction func websitetapped(_ sender: AnyObject) {
-        IOSSpecialOps.openwebsite(self)
+         openwebsite(self)
     }
     @IBAction func removeimessagetapped(_ sender: AnyObject) {
-        delegate?.removeFromIMessage(on: &captionedEntry!)
+        delegate?.removingFromIMessage(on: &captionedEntry!)
         dismiss(animated: true,completion:nil)
     }
-    @IBAction func openimessagetapped(_ sender: AnyObject) {
-        delegate?.openinIMessage(captionedEntry: captionedEntry)
-        dismiss(animated: true,completion:nil)
-    }
+ 
     //MARK:- VC LIFECYLE
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -159,7 +151,7 @@ final class MessagesAppMenuViewController: UIViewController ,ModalOverCurrentCon
 
 private extension MessagesAppMenuViewController {
     func showImageFromSharedCE(ce:SharedCE,animate:Bool) {
-        
+        let imageurl = ce.appimageurl!
         let isAnimated = animate//remoteAsset.options.contains(.generateasis)
         if !isAnimated {
             menuImageView.isHidden = false
@@ -167,7 +159,7 @@ private extension MessagesAppMenuViewController {
             webviewOverlay.isHidden  = true
             if !setup {
                 do {
-                    let data = try  Data(contentsOf: URL(string:ce.localimagepath )!)
+                    let data = try  Data(contentsOf:imageurl)
                     menuImageView.image = UIImage(data:data)
                     menuImageView.contentMode = .scaleAspectFit
                 }
@@ -186,7 +178,7 @@ private extension MessagesAppMenuViewController {
             if !setup {
                 let w = webviewOverlay.frame.width
                 let h = webviewOverlay.frame.height
-                let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  style='max-width: 100%; height: auto;' src='\(ce.localimagepath)' alt='\(ce.localimagepath) height='\(h * scale)' width='\(w * scale)' ></body></html5>"
+                let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  style='max-width: 100%; height: auto;' src='\(imageurl)' alt='\(imageurl) height='\(h * scale)' width='\(w * scale)' ></body></html5>"
                 webviewOverlay.scalesPageToFit = true
                 webviewOverlay.contentMode = .scaleAspectFit
                 webviewOverlay.loadHTMLString(html, baseURL: nil)

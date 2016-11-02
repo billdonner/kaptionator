@@ -109,10 +109,10 @@ final class ReorderMessagesViewController: UICollectionViewController,ModalOverC
             if ra.stickerOptions   .contains(.generateasis) {
             cell.paint(name:"ANIMATED")
         }
-            let path = ra.stickerPath
-            if path != "" {
+            if let url = ra.stickerurl
+          {
                 // have the data onhand
-                cell.paintImage(path:path)
+                cell.paintImageForReorderCollectionViewCell(url:url)
             }
         
         cell.colorFor(ra:ra)

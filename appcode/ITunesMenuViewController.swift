@@ -11,15 +11,15 @@ import UIKit
 import stikz
 
 protocol ITunesMenuViewDelegate : class {
-    func changedAnimationState(remoteAsset:RemoteAsset)
-    func deleteAsset(remoteAsset:RemoteAsset)
-    func useAsIs(remoteAsset:RemoteAsset)
-    func useWithCaption(remoteAsset:RemoteAsset,caption:String)
-    func useWithNoCaption(remoteAsset:RemoteAsset)
+    func changedAnimationState(remoteAsset:StickerAsset)
+    func deleteAsset(remoteAsset:StickerAsset)
+    func useAsIs(remoteAsset:StickerAsset)
+    func useWithCaption(remoteAsset:StickerAsset,caption:String)
+    func useWithNoCaption(remoteAsset:StickerAsset)
 }
 final class ITunesMenuViewController: UIViewController,ModalOverCurrentContext {
     var pvc:UIViewController! // must be set
-    var remoteAsset:RemoteAsset! // must be set
+    var remoteAsset:StickerAsset! // must be set
     weak var delegate: ITunesMenuViewDelegate?  // mig
     fileprivate var setup = false
     
@@ -44,15 +44,15 @@ addcaption.setTitleColor(animationSwitch.isOn ? .darkGray : .lightGray,for: .nor
             options.remove(.generateasis)
         }
         setup = false
-        // to persist this seemingly trivial process we must make a whole new RemoteAsset
+        // to persist this seemingly trivial process we must make a whole new StickerAsset
         let newra = remoteAsset.copyWithNewOptions(stickerOptions: options)
         
-        RemSpace.remove(ra:remoteAsset)
-        RemSpace.addasset(ra: newra)
+        StickerAssetSpace.remove(ra:remoteAsset)
+        StickerAssetSpace.addasset(ra: newra)
         
         // draw or redraw
         showImageFromLocalAsset(remoteAsset: newra,animate:animationSwitch.isOn)
-        RemSpace.saveToDisk()
+        StickerAssetSpace.saveToDisk()
         remoteAsset = newra // IMPORTANT - point to new asset
         self.delegate?.changedAnimationState(remoteAsset: newra)
         
@@ -98,7 +98,7 @@ addcaption.setTitleColor(animationSwitch.isOn ? .darkGray : .lightGray,for: .nor
         // Do any additional setup after loading the view.
         
         imageCaption.isEnabled  = true
-        imageCaption.text = remoteAsset.caption != "" ? remoteAsset.caption : "-no caption-"
+        imageCaption.text = remoteAsset.assetName != "" ? remoteAsset.assetName : "-no caption-"
         
         let isAnimated = remoteAsset.options.contains(.generateasis)
         showImageFromLocalAsset(remoteAsset:remoteAsset,animate: isAnimated)
@@ -115,8 +115,8 @@ addcaption.setTitleColor(animationSwitch.isOn ? .darkGray : .lightGray,for: .nor
     }
 }
 private extension ITunesMenuViewController {
-    func showImageFromLocalAsset(remoteAsset:RemoteAsset,animate:Bool) {
-        
+    func showImageFromLocalAsset(remoteAsset:StickerAsset,animate:Bool) {
+        if let imgurl = remoteAsset.localurl {
         let isAnimated = animate//remoteAsset.options.contains(.generateasis)
         if !isAnimated {
             menuImageView.isHidden = false
@@ -124,7 +124,7 @@ private extension ITunesMenuViewController {
             webviewOverlay.isHidden  = true
             if !setup {
                 do {
-                    let data = try  Data(contentsOf: URL(string:remoteAsset.localimagepath )!)
+                    let data = try  Data(contentsOf:imgurl)
                     menuImageView.image = UIImage(data:data)
                     menuImageView.contentMode = .scaleAspectFit
                 }
@@ -143,13 +143,14 @@ private extension ITunesMenuViewController {
             if !setup {
                 let w = webviewOverlay.frame.width
                 let h = webviewOverlay.frame.height
-                let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  style='max-width: 100%; height: auto;' src='\(remoteAsset.localimagepath)' alt='\(remoteAsset.localimagepath) height='\(h * scale)' width='\(w * scale)' ></body></html5>"
+                let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  style='max-width: 100%; height: auto;' src='\(imgurl)' alt='\(imgurl) height='\(h * scale)' width='\(w * scale)' ></body></html5>"
                 webviewOverlay.scalesPageToFit = true
                 webviewOverlay.contentMode = .scaleAspectFit
                 webviewOverlay.loadHTMLString(html, baseURL: nil)
             }
         }
         setup = true
+    }
     }
 }
 //MARK:- CALLBACKS

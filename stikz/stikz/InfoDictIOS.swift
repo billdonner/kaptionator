@@ -7,85 +7,45 @@
 //
 
 import UIKit
+import stikz
 
 // global funcs called fr4om multiple kind of view controllers
 
 public struct IO {
     
    private typealias PGRC = ((_ status:Int, _ data:Data?) -> (Swift.Void))
-   private typealias DTSKR = ((_ data:Data?, _ response:URLResponse?, _ nserror:Error?) -> (Swift.Void))
-    
-    private static func xdataTask(with url: URL, completionHandler: @escaping DTSKR) -> URLSessionDataTask {
-        let session = URLSession.shared
-        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 5)
-        //  print ("queing \(request)")
-        let x = session.dataTask(with: request, completionHandler: completionHandler)
-        return x
-    }
-    
-   public  static func httpGET(url: URL,  completion:  @escaping ((Int,Data?) -> (Swift.Void)))  {
-        let task = xdataTask(with:url) {
-            ( data,   response,  error) in
-            //print("datatask responded \(error?.code)")
-            guard   error ==  nil else {
-                
-                print("**** httpGET completing with error \(error)")
-                completion((error as! NSError).code,nil)
-                return
-            }
-            // print("httpGET completing with data \(data)")
-            completion(200,data)
-            return
-        }
-        task.resume()
-    }
-    
-   public  static func databaseStuff() {
-        //
-        // restore or create captions db
-        if let _ = try? AppCaptionSpace.restoreAppspaceFromDisk() {
-            print ("AppPrivateDataSpace restored,\(AppCaptionSpace.itemCount()) items ")
-        } else { // nothing there
-            AppCaptionSpace.reset()
-            print ("AppPrivateDataSpace reset,\(AppCaptionSpace.itemCount()) items ")
-            AppCaptionSpace.saveToDisk()
-        }
-        //
-        // restore or create shared memspace db for SharedCaptionSpace extension
-        if let _ = try? restoreSharespaceFromDisk() {
-            print ("SharedCaptionSpace restored,\(SharedCaptionSpace.itemCount()) items ")
-        } else { // nothing there
-            SharedCaptionSpace.reset()
-            print ("SharedCaptionSpace reset,\(SharedCaptionSpace.itemCount()) items ")
-            SharedCaptionSpace.saveData()
-        }
-    }
-    
-  public   static func prepareStickers( pack:String,title:String,imagepath:String, caption:String, options:StickerMakingOptions) throws -> SharedCE {
+ 
+
+  public static func prepareStickers( pack:String,title:String,imageurl:URL, caption:String, options:StickerMakingOptions) throws -> SharedCE {
         do {
-            let theData = try Data(contentsOf: URL(string: imagepath)!)
+            let theData = try Data(contentsOf:imageurl)
             
-            let stickerPath =   StickerFileFactory.createStickerFileFrom (imageData: theData ,path: imagepath, caption:caption, options:options)
+            if let stickerURL =   StickerFileFactory.createStickerFileFrom (imageData: theData ,imageurl: imageurl, caption:caption, options:options) {
             
-            print("made sticker file urls \(stickerPath)")
+            print("made sticker file urls \(stickerURL)")
             
             let t = SharedCE( pack: pack, title: title,
-                              imagepath: imagepath,
-                              stickerPath:stickerPath,
+                              imageurl: imageurl,
+                              stickerurl:stickerURL,
                               caption: caption,
                               options: options )
             
             let _ = SharedCaptionSpace.add(ce: t)
             return t
+            }
+            else {
+                throw KaptionatorErrors.cant
+            }
         }
         catch {
             throw error
         }
     }
     
-  public   static func checkForFileVariant(_ ce:SharedCE,_ variant:String) -> Bool {
+  public static func checkForFileVariant(_ ce:SharedCE,_ variant:String) -> Bool {
+        guard let imgurl = ce.appimageurl else { return  false }
         let caption = ce.caption
-        let path = ce.localimagepath
+        let path = imgurl.absoluteString
         let hashval = "\(caption.hash)"
         let assep = (path as NSString).lastPathComponent
         let type = (assep as NSString).pathExtension
@@ -273,7 +233,7 @@ struct Css   {
     }
 }
 
-typealias LAS = ((String,[AppCE])->())?
+//typealias LAS = ((String,[AppCE])->())?
 
 extension UIColor {
     public convenience init(hexString: String) {
@@ -304,22 +264,8 @@ extension UIColor {
 
 public struct IOSSpecialOps { // only compiles in main app - ios bug?
     
-   public  static func openwebsite(_ presentor:UIViewController) {
-        
-        let url = URL(string:websitePath)!
-        let vc = SFViewController(url: url)
-        let nav = UINavigationController(rootViewController: vc)
-        vc.delegate =  vc
-        presentor.present(nav, animated: true, completion: nil)
-    }
-  public   static func openInAnotherApp(url:URL)->Bool {
-        if UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url,options:[:]){ b in }
-            return true
-        }
-        return false
-    }
-  public   static func blurt (_ vc:UIViewController, title:String, mess:String, f:@escaping ()->()) {
+
+  public static func blurt (_ vc:UIViewController, title:String, mess:String, f:@escaping ()->()) {
         
         let action : UIAlertController = UIAlertController(title:title, message: mess, preferredStyle: .alert)
         
@@ -332,10 +278,10 @@ public struct IOSSpecialOps { // only compiles in main app - ios bug?
         popPresenter?.sourceView = vc.view
         vc.present(action, animated: true , completion:nil)
     }
- public    static func blurt (_ vc:UIViewController, title:String, mess:String) {
+ public static func blurt (_ vc:UIViewController, title:String, mess:String) {
         blurt(vc,title:title,mess:mess,f:{})
     }
-  public   static func ask (_ vc:UIViewController, title:String, mess:String, f:@escaping ()->()) {
+  public static func ask (_ vc:UIViewController, title:String, mess:String, f:@escaping ()->()) {
         
         let action : UIAlertController = UIAlertController(title:title, message: mess, preferredStyle: .alert)
         
@@ -358,7 +304,7 @@ public struct IOSSpecialOps { // only compiles in main app - ios bug?
 
 extension UIViewController {
     
-  public   func animatedViewOf(frame:CGRect, size:CGSize, imageurl:String) -> UIWebView {
+  public func animatedViewOf(frame:CGRect, size:CGSize, imageurl:String) -> UIWebView {
         let inset:CGFloat = 10
         let actualsize = min(size.width,size.height)
         let screensize = min( frame.width,frame.height)
@@ -378,7 +324,7 @@ extension UIViewController {
     }
     
     //dismissButtonAltImageName
-  public   func addDismissButtonToViewController(_ v:UIViewController,named:String, _ sel:Selector){
+  public func addDismissButtonToViewController(_ v:UIViewController,named:String, _ sel:Selector){
         let img = UIImage(named:named)
         let iv = UIImageView(image:img)
         iv.frame = CGRect(x:0,y:0,width:60,height:60)//// test

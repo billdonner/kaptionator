@@ -35,7 +35,7 @@ final class ITunesViewController :UIViewController,ControlledByMasterView, UICol
         
         if segue.identifier ==  "ITunesCellTapMenuID"{
             if let indexPath = theSelectedIndexPath {
-                let ra = RemSpace.itemAt(indexPath.row)
+                let ra = StickerAssetSpace.itemAt(indexPath.row)
                 let avc =  segue.destination as? ITunesMenuViewController
                 if let avc = avc  {
                     avc.delegate = self
@@ -50,7 +50,7 @@ final class ITunesViewController :UIViewController,ControlledByMasterView, UICol
       /// load from shared documents in itune (must be on in info.plist)
    
    internal func refreshFromITunes() {
-        RemoteAsset.loadFromITunesSharing( completion: { status, title, allofme in
+        Manifest.loadFromITunesSharing( completion: { status, title, allofme in
             print(" refreshed with \(allofme.count) items")
             self.collectionView!.reloadData()
             self.refreshControl.endRefreshing()
@@ -96,8 +96,8 @@ final class ITunesViewController :UIViewController,ControlledByMasterView, UICol
         
         assert( stickerManifestURL == nil)
         do {
-            try RemSpace.restoreRemspaceFromDisk()
-            print("remSpace restored, \(RemSpace.itemCount()) items")
+            try StickerAssetSpace.restoreRemspaceFromDisk()
+            print("remSpace restored, \(StickerAssetSpace.itemCount()) items")
         }  catch {
              print("could not restore remspace")
         }
@@ -117,16 +117,16 @@ final class ITunesViewController :UIViewController,ControlledByMasterView, UICol
         return 1
     }
      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return RemSpace.itemCount()
+        return StickerAssetSpace.itemCount()
     }
      func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "ITunesDataCell", for: indexPath  ) as! ITunesDataCell // Create the cell from the storyboard cell
         
-        let ra = RemSpace.itemAt(indexPath.row)
-        if ra.localimagepath != "" {
+        let ra = StickerAssetSpace.itemAt(indexPath.row)
+        if let imgurl = ra.localurl {
             // have the data onhand
-            cell.paintImage(path:ra.localimagepath,text:ra.caption)
+            cell.paintImageForITunesDataCell(url:imgurl,text:ra.assetName)
         }
          if ra.options.contains(.generateasis) {
             cell.showAnimationOverlay()
@@ -147,34 +147,34 @@ final class ITunesViewController :UIViewController,ControlledByMasterView, UICol
 
 extension ITunesViewController : ITunesMenuViewDelegate {
     
-    func changedAnimationState(remoteAsset:RemoteAsset){
+    func changedAnimationState(remoteAsset:StickerAsset){
         // all the work has been done, just refresh
         
         
         self.collectionView.reloadData()
         
     }
-    func useAsIs(remoteAsset:RemoteAsset) {
+    func useAsIs(remoteAsset:StickerAsset) {
         AppCE.makeNewCaptionAsIs(from: remoteAsset )
           MasterViewController.blurt(title: "Added one image to your catalog",mess: "as is")
         
     }
-    func deleteAsset(remoteAsset:RemoteAsset) {
+    func deleteAsset(remoteAsset:StickerAsset) {
         
         MasterViewController.ask(title: "Are you sure?",mess: "You will have to reload the image to restore") {
-        RemSpace.remove(ra: remoteAsset)
+        StickerAssetSpace.remove(ra: remoteAsset)
         self.collectionView.reloadData()
-        RemSpace.saveToDisk()
+        StickerAssetSpace.saveToDisk()
         MasterViewController.blurt(title: "Removed from catalog",mess: "")
         }
     }
-    func useWithNoCaption(remoteAsset:RemoteAsset) {
+    func useWithNoCaption(remoteAsset:StickerAsset) {
         // make un captionated entry from remote asset
         AppCE.makeNewCaptionCat( from: remoteAsset, caption: "" )
         MasterViewController.blurt(title: "Added one image to your catalog",mess: "no caption")
         
     }
-    func useWithCaption(remoteAsset:RemoteAsset,caption:String) {
+    func useWithCaption(remoteAsset:StickerAsset,caption:String) {
         // make un captionated entry from remote asset
         AppCE.makeNewCaptionCat( from: remoteAsset, caption: caption )
    MasterViewController.blurt(title: "Added one image to your catalog",mess: caption)

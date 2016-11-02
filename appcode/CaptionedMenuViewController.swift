@@ -82,6 +82,7 @@ final class CaptionedMenuViewController: UIViewController, ModalOverCurrentConte
 
 private extension CaptionedMenuViewController {
     func showImageFromAppCE(ce:AppCE,animate:Bool) {
+       let imgurl = ce.imageurl
         
         let isAnimated = animate//remoteAsset.options.contains(.generateasis)
         if !isAnimated {
@@ -90,7 +91,7 @@ private extension CaptionedMenuViewController {
             webviewOverlay.isHidden  = true
             if !setup {
                 do {
-                    let data = try  Data(contentsOf: URL(string:ce.localimagepath )!)
+                    let data = try  Data(contentsOf:imgurl)
                     menuImageView.image = UIImage(data:data)
                     menuImageView.contentMode = .scaleAspectFit
                 }
@@ -109,7 +110,7 @@ private extension CaptionedMenuViewController {
             if !setup {
                 let w = webviewOverlay.frame.width
                 let h = webviewOverlay.frame.height
-                let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  style='max-width: 100%; height: auto;' src='\(ce.localimagepath)' alt='\(ce.localimagepath) height='\(h * scale)' width='\(w * scale)' ></body></html5>"
+                let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  style='max-width: 100%; height: auto;' src='\(imgurl.absoluteString)' alt='\(imgurl.absoluteString) height='\(h * scale)' width='\(w * scale)' ></body></html5>"
                 webviewOverlay.scalesPageToFit = true
                 webviewOverlay.contentMode = .scaleAspectFit
                 webviewOverlay.loadHTMLString(html, baseURL: nil)
