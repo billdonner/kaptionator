@@ -18,7 +18,9 @@ final class CatalogViewController:UIViewController,ControlledByMasterView, UICol
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func unwindToCatalogLocalItemsViewController(_ segue: UIStoryboardSegue)  {}
-    
+    func refreshLayout() {
+        self.collectionView!.reloadData()
+    }
     
     let refreshControl = UIRefreshControl()
     fileprivate var theSelectedIndexPath:IndexPath?

@@ -8,6 +8,7 @@
 
 import UIKit
 import Messages
+import stikz
 
 // creates a set of stickers first time up or when refreshed
 
@@ -16,6 +17,7 @@ final class SchtickerzBrowserViewController : MSStickerBrowserViewController {
     var mesExtVC: MessagesExtensionViewController!
     override func viewDidLoad() {
         
+        print("SchtickerzBrowserViewController  >>>>> \(tagLine)")
         // the messages extension vc has the sticker pool under its watch
                 mesExtVC.resetStickerPool()
 

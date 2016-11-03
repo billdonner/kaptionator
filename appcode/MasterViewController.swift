@@ -9,6 +9,7 @@ import UIKit
 import stikz
 
 protocol ControlledByMasterView : class {
+    func refreshLayout()
 }
 protocol ModalOverCurrentContext : class {
 }
@@ -59,14 +60,16 @@ final class MasterViewController: UIViewController {
             self.modalPresentationStyle = .overCurrentContext
         }
         else if "HelpDropdownViewControllerID" ==  segue.identifier {
-            if  let _ = segue.destination as?HelpDropdownViewController {
-               // hdvc.pvc = self
+            if  let hdvc = segue.destination as? HelpDropdownViewController {
+                 hdvc.delegate = self
             }
         }
     }
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("MasterViewController  >>>>> \(tagLine)")
+        
         masterViewController = self 
         self.view.backgroundColor = appTheme.backgroundColor
         let img = UIImage(named:backgroundImagePath)
@@ -123,15 +126,15 @@ func databaseStuff() {
         //
         // restore or create captions db
         if let _ = try? AppCaptionSpace.restoreAppspaceFromDisk() {
-            print ("AppPrivateDataSpace restored,\(AppCaptionSpace.itemCount()) items ")
+            print ("kAppPrivateDataSpace restored,\(AppCaptionSpace.itemCount()) items ")
         } else { // nothing there
             AppCaptionSpace.reset()
-            print ("AppPrivateDataSpace reset,\(AppCaptionSpace.itemCount()) items ")
+            print ("kAppPrivateDataSpace reset,\(AppCaptionSpace.itemCount()) items ")
             AppCaptionSpace.saveToDisk()
         }
         //
         // restore or create shared memspace db for SharedCaptionSpace extension
-        if let _ = try? restoreSharespaceFromDisk() {
+        if let _ = try? SharedCaptionSpace.restoreSharespaceFromDisk() {
             print ("SharedCaptionSpace restored,\(SharedCaptionSpace.itemCount()) items ")
         } else { // nothing there
             SharedCaptionSpace.reset()
@@ -214,6 +217,14 @@ func databaseStuff() {
         logoNotRemoved = false
     }
 }
+
+///HelpDropdownDelegate
+extension MasterViewController: HelpDropdownDelegate {
+    func refreshLayout() {
+    
+    }
+}
+
 //MARK: - StickerAsset is readonly once loaded from manifest
 
 /// Manifest bundles static operations on groups of manifest entries

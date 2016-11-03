@@ -107,18 +107,11 @@ public struct StickerFileFactory {
     // generates 0 or more stickers
     
     private static func
-        makeStickerAndURLfromAsIsData(//imageData:Data,
-        label:String,type:String ) throws -> URL {
+        makeStickerAndURLfromAsIsData( label:String,type:String ) throws -> URL {
         
-        /// now write this view to the local file system
-        
+        /// do not make stiker here but rather in init of extension 
         let hashval = ""//"-AnImAtEd"
-        let rul = sharedAppContainerDirectory().appendingPathComponent("\(label)\(hashval).\(type)")
-        
-        /// do not make stiker here but rather in init of extension
-        
-        return rul
-        
+        return sharedAppContainerDirectory().appendingPathComponent("\(label)\(hashval).\(type)")
     }
     
     private  static func createTextSticker(imageData:Data,caption:String, label:String,type:String,size:CGFloat, proportion: CGFloat, fontSize:CGFloat ) throws -> URL {

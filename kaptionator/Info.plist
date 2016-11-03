@@ -98,6 +98,8 @@
 	<string>http://shtikerz.com/kaptionator</string>
 	<key>SHARED-INTERAPP-DATA</key>
 	<string>group.com.midnightrambler.kaptionator</string>
+	<key>TAGLINE</key>
+	<string>kaptionator-main</string>
 	<key>SHOW-CATALOG-ID</key>
 	<string>ShowITunesID</string>
 	<key>SHOW-HIDDEN-FUNCTIONS</key>

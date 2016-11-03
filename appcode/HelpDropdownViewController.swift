@@ -9,7 +9,9 @@
 import UIKit
 
 import stikz
-
+protocol HelpDropdownDelegate : class {
+    func refreshLayout()
+}
 final class HelpDropdownViewController: UIViewController, ModalOverCurrentContext  , UINavigationControllerDelegate  {
     let supportedCloudUTIs =
         ["com.compuserve.gif",
@@ -18,8 +20,10 @@ final class HelpDropdownViewController: UIViewController, ModalOverCurrentContex
     
     private var imagePicker = UIImagePickerController()
     
+    weak var delegate: HelpDropdownDelegate?  // mig
    // var pvc: UIViewController! // must be set by caller to masterview
     func dismisstapped(_ s: AnyObject) {
+        delegate?.refreshLayout()
         dismiss(animated: true, completion: nil)
     }
     
@@ -38,7 +42,7 @@ final class HelpDropdownViewController: UIViewController, ModalOverCurrentContex
     @IBAction func hitICloud(_ sender: AnyObject) {
         let importMenu = UIDocumentPickerViewController(documentTypes:  supportedCloudUTIs, in: .import)
         importMenu.delegate = self
-        self.present (importMenu, animated: true, completion: nil)
+        present (importMenu, animated: true, completion: nil)
     }
     
     @IBAction func hitPhotoImport(_ sender: AnyObject) {
@@ -62,6 +66,11 @@ final class HelpDropdownViewController: UIViewController, ModalOverCurrentContex
     
     
     //MARK: - Lifecycle
+    
+    override func didMove(toParentViewController parent: UIViewController?) {
+        delegate?.refreshLayout()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -70,6 +79,7 @@ final class HelpDropdownViewController: UIViewController, ModalOverCurrentContex
         let s = count == 1 ? "" : "s"
         subLabel.text =  "Currently you have \(count) sticker" + s + " in the Messages App"
         bodyLabel.text = remcount != 1 ? "You have \(remcount) catalog entries as sources to make stickers" :"You have one catalog entry as a sticker source"
+        
     }
     
     override func viewDidLoad() {
@@ -108,6 +118,7 @@ extension HelpDropdownViewController : UIDocumentPickerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
         print("picked new document at \(url)")
          StickerAsset.quietlyAddNewURL(url,options:StickerMakingOptions.generatemedium)
+        self.dismisstapped(self)
     }
 }
 private extension HelpDropdownViewController {
@@ -149,7 +160,7 @@ extension HelpDropdownViewController :UIImagePickerControllerDelegate {
            let url = StickerAssetSpace.writeImageToURL(newimage)
             StickerAsset.quietlyAddNewURL(url,options:StickerMakingOptions.generatelarge)
         }
-        dismiss (animated: true, completion: nil)
+        self.dismisstapped(self)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

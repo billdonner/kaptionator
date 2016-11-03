@@ -13,6 +13,7 @@ protocol CatalogMenuViewDelegate : class {
     func useAsIs(remoteAsset:StickerAsset)
     func useWithCaption(remoteAsset:StickerAsset,caption:String)
     func useWithNoCaption(remoteAsset:StickerAsset)
+    func refreshLayout()
 }
 final class CatalogMenuViewController: UIViewController,ModalOverCurrentContext {
     var remoteAsset:StickerAsset! // must be set
@@ -57,9 +58,9 @@ final class CatalogMenuViewController: UIViewController,ModalOverCurrentContext 
     @IBAction func useStickerNoCaptionPressed(_ sender: AnyObject) {
         
         pvc.dismiss(animated: true) {
-        AppCE.makeNewCaptionCat( from: self.remoteAsset, caption: "" )
+            AppCE.makeNewCaptionCat( from: self.remoteAsset, caption: "" )
             
-           // self.delegate?.useWithNoCaption (remoteAsset:self.remoteAsset) // elsewhere
+            // self.delegate?.useWithNoCaption (remoteAsset:self.remoteAsset) // elsewhere
         }
     }
     @IBAction func addCaptionToSticker(_ sender: AnyObject) {
@@ -81,6 +82,8 @@ final class CatalogMenuViewController: UIViewController,ModalOverCurrentContext 
         }
     }
     internal func dismisstapped(_ s: AnyObject) {
+        
+        delegate?.refreshLayout() //make this better
         pvc.dismiss(animated: true, completion: nil)
         //         self.performSegue(withIdentifier: "UnwindToCatalogAppVC", sender: s)
     }
@@ -91,7 +94,7 @@ final class CatalogMenuViewController: UIViewController,ModalOverCurrentContext 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        imageCaption.text = remoteAsset.assetName
         useasisnocaption.setTitleColor(appTheme.buttonTextColor, for: .normal)
         addcaption.setTitleColor(appTheme.buttonTextColor, for: .normal)
         // Do any additional setup after loading the view.
@@ -105,6 +108,8 @@ final class CatalogMenuViewController: UIViewController,ModalOverCurrentContext 
         
         addcaption.isEnabled = captionable
         addcaption.setTitleColor( captionable ? .white : .darkGray,for: .normal)
+        
+        
         addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
     }
 }
@@ -113,41 +118,41 @@ final class CatalogMenuViewController: UIViewController,ModalOverCurrentContext 
 private extension CatalogMenuViewController {
     func showImageFromLocalAsset(remoteAsset:StickerAsset,animate:Bool) {
         if let imgurl = remoteAsset.localurl {
-        let isAnimated = animate//remoteAsset.options.contains(.generateasis)
-        if !isAnimated {
-            menuImageView.isHidden = false
-            // only set up once
-            webviewOverlay.isHidden  = true
-            if !setup {
-                do {
-                    let data = try  Data(contentsOf:imgurl)
-                    menuImageView.image = UIImage(data:data)
-                    menuImageView.contentMode = .scaleAspectFit
+            let isAnimated = animate//remoteAsset.options.contains(.generateasis)
+            if !isAnimated {
+                menuImageView.isHidden = false
+                // only set up once
+                webviewOverlay.isHidden  = true
+                if !setup {
+                    do {
+                        let data = try  Data(contentsOf:imgurl)
+                        menuImageView.image = UIImage(data:data)
+                        menuImageView.contentMode = .scaleAspectFit
+                    }
+                    catch {
+                        menuImageView.image = nil
+                    }
                 }
-                catch {
-                    menuImageView.image = nil
+            } else {
+                self.useasisnocaption.isHidden = false
+                let scale : CGFloat = 1 / 1
+                ///  put up animated preview
+                self.menuImageView.isHidden = true
+                self.animatedLabel.isHidden = false
+                
+                webviewOverlay.isHidden  = false
+                if !setup {
+                    let w = webviewOverlay.frame.width
+                    let h = webviewOverlay.frame.height
+                    let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  style='max-width: 100%; height: auto;' src='\(imgurl.absoluteString)' alt='\(imgurl.absoluteString) height='\(h * scale)' width='\(w * scale)' ></body></html5>"
+                    webviewOverlay.scalesPageToFit = true
+                    webviewOverlay.contentMode = .scaleAspectFit
+                    webviewOverlay.loadHTMLString(html, baseURL: nil)
                 }
             }
-        } else {
-            self.useasisnocaption.isHidden = false
-            let scale : CGFloat = 1 / 1
-            ///  put up animated preview
-            self.menuImageView.isHidden = true
-            self.animatedLabel.isHidden = false
+            setup = true
             
-            webviewOverlay.isHidden  = false
-            if !setup {
-                let w = webviewOverlay.frame.width
-                let h = webviewOverlay.frame.height
-                let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  style='max-width: 100%; height: auto;' src='\(imgurl.absoluteString)' alt='\(imgurl.absoluteString) height='\(h * scale)' width='\(w * scale)' ></body></html5>"
-                webviewOverlay.scalesPageToFit = true
-                webviewOverlay.contentMode = .scaleAspectFit
-                webviewOverlay.loadHTMLString(html, baseURL: nil)
-            }
         }
-        setup = true
-        
-    }
     }
 }
 extension CatalogMenuViewController : GetCaptionDelegate {

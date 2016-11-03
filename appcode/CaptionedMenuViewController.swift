@@ -13,6 +13,7 @@ protocol CaptionedMenuViewDelegate : class {
     func movingtoIMessage(captionedEntry:inout AppCE)
     func changingCaption( on captionedEntry:inout AppCE,caption:String)
     func cloneWithCaption( captionedEntry:AppCE, caption:String)
+    func refreshLayout() 
 }
 final class CaptionedMenuViewController: UIViewController, ModalOverCurrentContext {
     var captionedEntry:AppCE! // must be set
@@ -58,7 +59,8 @@ final class CaptionedMenuViewController: UIViewController, ModalOverCurrentConte
         dismiss(animated: true,completion:nil)
     }
     internal func dismisstapped(_ s: AnyObject) {
-        //// dismiss(animated: true, completion: nil)
+        
+        delegate?.refreshLayout() //make this better
         self.performSegue(withIdentifier: "UnwindToCaptionedAppVC", sender: s)
     }
     
@@ -74,6 +76,7 @@ final class CaptionedMenuViewController: UIViewController, ModalOverCurrentConte
         editsticker.setTitleColor( appTheme.buttonTextColor, for: .normal)
         isAnimated = captionedEntry.stickerOptions.contains(.generateasis)
         
+        imageCaption.text = captionedEntry.caption
         showImageFromAppCE(ce:captionedEntry,animate: isAnimated)
         addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
     }

@@ -16,7 +16,9 @@ final class ITunesViewController :UIViewController,ControlledByMasterView, UICol
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBAction func unwindToITunesViewController(_ segue: UIStoryboardSegue)  {
+    @IBAction func unwindToITunesViewController(_ segue: UIStoryboardSegue)  {}
+    func refreshLayout() {
+        self.collectionView!.reloadData()
     }
     
     let refreshControl = UIRefreshControl()

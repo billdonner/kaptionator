@@ -59,21 +59,14 @@ final class ReorderMessagesViewController: UICollectionViewController,ModalOverC
         //2
         case UICollectionElementKindSectionHeader:
             //3
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                             withReuseIdentifier: "headerforreordercollection",
-                                                                             for: indexPath)
-                as! ReorderMessagesReusableView
+let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+withReuseIdentifier: "headerforreordercollection",
+for: indexPath) as! ReorderMessagesReusableView
             
             headerView.headerLabel.text =
                 "These are your stickers currently in Messages. Reorder the stickers here, or delete from the Messages List."
-            
-            
             headerView.headerLabel.textColor = .gray
             headerView.headerLabel.backgroundColor = .clear
-            // headerView.headerLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
-//            let tgr = UITapGestureRecognizer(//UILongPressGestureRecognizer
-//                target: self, action: #selector(TilesViewController.pressedLong))
-//            headerView.addGestureRecognizer(tgr)
             return headerView
         default:
             //4

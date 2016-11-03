@@ -502,9 +502,7 @@
 		88722F661D522AAB00B2F85B /* appcode */ = {
 			isa = PBXGroup;
 			children = (
-				88A6E5061DCA4E1300E2D1B7 /* InfoDictIOS.swift */,
-				88A6E50B1DCA4E3600E2D1B7 /* StickerAssetSpace.swift */,
-				88A6E5011DCA4DDF00E2D1B7 /* AppCaptionSpace.swift */,
+				88A6E5131DCA500900E2D1B7 /* shared */,
 				88A6E4D61DCA38F800E2D1B7 /* SFViewController.swift */,
 				88DD92D91D8872D400832564 /* Main.storyboard */,
 				8817590D1DC7F26900DB70C6 /* Help.storyboard */,
@@ -524,6 +522,16 @@
 				88B54C971D886FBC0076942D /* MessagesExtensionViewController.swift */,
 			);
 			path = messagecode;
+			sourceTree = "<group>";
+		};
+		88A6E5131DCA500900E2D1B7 /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				88A6E5061DCA4E1300E2D1B7 /* InfoDictIOS.swift */,
+				88A6E50B1DCA4E3600E2D1B7 /* StickerAssetSpace.swift */,
+				88A6E5011DCA4DDF00E2D1B7 /* AppCaptionSpace.swift */,
+			);
+			name = shared;
 			sourceTree = "<group>";
 		};
 		88AEA5881D514B29006E5C70 = {

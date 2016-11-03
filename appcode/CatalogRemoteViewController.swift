@@ -18,7 +18,9 @@ final class CatalogRemoteViewController:UIViewController,ControlledByMasterView,
     @IBOutlet weak var collectionView: UICollectionView!
     
 @IBAction func unwindToCatalogItemsViewControlle(_ segue: UIStoryboardSegue)  {}
-     
+    func refreshLayout() {
+        self.collectionView!.reloadData()
+    }
     
     let refreshControl = UIRefreshControl()
     fileprivate var theSelectedIndexPath:IndexPath?

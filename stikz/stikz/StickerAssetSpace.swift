@@ -59,18 +59,22 @@ public struct StickerAsset {
         self.assetName = none ? "<no title>" : title
         self.options = options
         self.remoteurl = remoteurl
-        
+        do {
         // make a copy in shared filesystem
         if let lp = localpath { // if localpath supplied use that else
-            let local  = StickerAssetSpace.copyURLtoURL(lp)
+            let local  = try StickerAssetSpace.copyURLtoURL(lp)
             self.localurl  = local
             print("**** RA.INIT(..LOCALPATH) \(local )")
         }
         else {
             // load file from remote location
-            let local  = StickerAssetSpace.copyURLtoURL(  self.remoteurl!)
+            let local  = try StickerAssetSpace.copyURLtoURL(  self.remoteurl!)
             self.localurl  = local
             print("**** RA.INIT(..IMAGEPATH) \(local )")
+        }
+        }
+        catch {
+           self.localurl = nil
         }
     }// init
     
@@ -112,22 +116,21 @@ public static func  writeImageToURL(_ image:UIImage) -> URL {
       do {
             let ext = "png"
             let name = "\(filenum).\(ext)"
+            let newfileurl = sharedAppContainerDirectory().appendingPathComponent(name, isDirectory: false)
             
-            let newfilename = sharedAppContainerDirectory().appendingPathComponent(name, isDirectory: false)
-            
-            if FileManager.default.fileExists(atPath: newfilename.absoluteString)
+            if FileManager.default.fileExists(atPath: newfileurl.absoluteString)
             {
-                return newfilename
+                return newfileurl
             }
             
             // now copy, could be in done in back but why?
             
             let data = UIImagePNGRepresentation(image)
             if let data = data {
-                try data.write(to: newfilename, options: .atomicWrite)
+                try data.write(to: newfileurl, options: .atomicWrite)
             }
             
-            return newfilename
+            return newfileurl
         }
         catch {
             print("Could not load image \(image) \(error)")
@@ -173,7 +176,7 @@ public static func saveToDisk() {
             defaults.set( catalogTitle, forKey: "catalogTitle")
             //  defaults.set(hdrz,forKey:"headerz")
             defaults.set(   flattened, forKey: "remspace")
-            print("**** \(StickerAssetsDataSpace) saveToDisk version \(versionBig) count \(flattened.count)=\(raz.count)")
+            print("**** \(kStickerAssetsDataSpace) saveToDisk version \(versionBig) count \(flattened.count)=\(raz.count)")
         }
     }
     
@@ -204,37 +207,37 @@ public static func saveToDisk() {
             
             catalogTitle = catTitle
             
-            print ("**** \(StickerAssetsDataSpace) restoreFromDisk version \(version) count \(flattened.count) = \(raz.count)")
+            print ("**** \(kStickerAssetsDataSpace) restoreFromDisk version \(version) count \(flattened.count) = \(raz.count)")
         }  else {
-            print("**** \(StickerAssetsDataSpace) restoreFromDisk UserDefaults failure")
+            print("**** \(kStickerAssetsDataSpace) restoreFromDisk UserDefaults failure")
             throw KaptionatorErrors.restoreFailure}
     } 
- public static func  copyURLtoURL(_ url:URL) -> URL {
+ public static func  copyURLtoURL(_ url:URL) throws -> URL {
         
         do {
             let ext = (url.absoluteString as NSString).pathExtension
             let name = "\(filenum).\(ext)"
             
-            let newfilename = sharedAppContainerDirectory().appendingPathComponent(name, isDirectory: false)
+            let newfileurl = sharedAppContainerDirectory().appendingPathComponent(name, isDirectory: false)
             
-            if FileManager.default.fileExists(atPath: newfilename.absoluteString)
+            if FileManager.default.fileExists(atPath: newfileurl.absoluteString)
             {
-                return newfilename
+                return newfileurl
             }
             
             // now copy, could be in done in back but why?
             
             let data = try Data(contentsOf: url)
-            try data.write(to: newfilename, options: .atomicWrite)
+            try data.write(to: newfileurl, options: .atomicWrite)
             
-            return newfilename
+            return newfileurl
         }
         catch {
             print("Could not load file url \(url)")
             // might as well die at this point
-            fatalError("could not load \(error)")
+           // fatalError("could not load \(error)")
         }
-    }
+   
+    throw KaptionatorErrors.cant
+     }
 }
-
-

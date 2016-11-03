@@ -10,7 +10,10 @@ import UIKit
 import stikz
 
 // global funcs called fr4om multiple kind of view controllers
-
+public struct BorderSettings {
+    public static let width: CGFloat = 2.0 / UIScreen.main.scale
+    public static let colour = UIColor(white: 0.5, alpha: 1.0)
+}
 public struct IO {
     
    private typealias PGRC = ((_ status:Int, _ data:Data?) -> (Swift.Void))
@@ -336,5 +339,76 @@ extension UIViewController {
     }
 }
 
+//
 
+
+// if nil we'll just pull from documents directory inside the catalog controller
+public var  stickerManifestURL: URL? {
+get {
+    if let iDict = Bundle.main.infoDictionary ,
+        let w =  iDict["REMOTE-MANIFEST-URL"] as? String { return URL(string:w) }
+    return nil
+}
+}
+
+/// "SHOW-CATALOG-ID" is the storyboard id of controller to use for the Catalog
+
+
+public var showCatalogID: String {
+get {
+    if let iDict = Bundle.main.infoDictionary ,
+        let w =  iDict["SHOW-CATALOG-ID"] as? String { return w
+    }
+    else {
+        return "ShowCatalogID"
+    }
+}
+}
+
+
+
+/// "REMOTE-WEBSITE-URL" is the website page for this sticker pack
+public var websitePath: String {
+get {
+    if let iDict = Bundle.main.infoDictionary ,
+        let w =  iDict["REMOTE-WEBSITE-URL"] as? String { return w
+    }
+    fatalError("remote website url undefined")
+    //return nil
+}
+}
+
+
+public var nameForLeftBBI: String {
+get {
+    if let iDict = Bundle.main.infoDictionary ,
+        let w =  iDict["LEFT-BBI-NAME"] as? String { return w
+    }
+    return "no LEFT-BBI-NAME"
+}
+}
+public var bigBlurb : String {
+get {
+    if let iDict = Bundle.main.infoDictionary ,
+        let w =  iDict["TOP-BLURB"] as? String { return w }
+    fatalError("TOP-BLURB undefined")
+    //return nil
+}
+}
+public var innerBlurb : String {
+get {
+    if let iDict = Bundle.main.infoDictionary ,
+        let w =  iDict["INNER-BLURB"] as? String { return w }
+    else {return "a Catalog of All Stickers in the App"}
+}
+}
+
+// if this is set we avoid the network completely
+public var localResourcesBasedir : String? {
+get {
+    if let iDict = Bundle.main.infoDictionary ,
+        let w =  iDict["LOCAL-RESOURCES-BASEDIR"] as? String { return w }
+    return nil
+}
+}
 

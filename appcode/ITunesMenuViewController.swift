@@ -16,6 +16,7 @@ protocol ITunesMenuViewDelegate : class {
     func useAsIs(remoteAsset:StickerAsset)
     func useWithCaption(remoteAsset:StickerAsset,caption:String)
     func useWithNoCaption(remoteAsset:StickerAsset)
+    func refreshLayout() 
 }
 final class ITunesMenuViewController: UIViewController,ModalOverCurrentContext {
     var pvc:UIViewController! // must be set
@@ -36,7 +37,8 @@ final class ITunesMenuViewController: UIViewController,ModalOverCurrentContext {
     
     @IBAction func animationSwitchTapped(_ sender: AnyObject) {
         addcaption.isEnabled = !animationSwitch.isOn
-addcaption.setTitleColor(animationSwitch.isOn ? .darkGray : .lightGray,for: .normal)
+        addcaption.setTitleColor(animationSwitch.isOn ?
+                    .darkGray : .lightGray,for: .normal)
         var  options = remoteAsset.options
         if animationSwitch.isOn {
             options.insert(.generateasis)
@@ -85,10 +87,13 @@ addcaption.setTitleColor(animationSwitch.isOn ? .darkGray : .lightGray,for: .nor
         }
     }
     func dismisstapped(_ s: AnyObject) {
+        delegate?.refreshLayout() //make this better
         pvc.dismiss(animated: true, completion: nil)
     }
     //MARK:- VC LIFECYLE
-    
+    override func didMove(toParentViewController parent: UIViewController?) {
+        delegate?.refreshLayout()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         

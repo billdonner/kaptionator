@@ -13,7 +13,7 @@ import stikz
 //  every instance of a user captioning a particular element is here
 //   note to self: DO NOT POLLUTE THIS STRUCT with class refs
 
-fileprivate var appCaptionSpace  = AppCaptionSpace(AppPrivateDataSpace)
+fileprivate var appCaptionSpace  = AppCaptionSpace(kAppPrivateDataSpace)
 
 
 /// non-mutating public funcs

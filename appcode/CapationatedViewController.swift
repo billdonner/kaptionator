@@ -24,6 +24,9 @@
     @IBAction func unwindToCapationatedViewController(_ segue: UIStoryboardSegue)  {
         refreshFromCapSpace()
     }
+    func refreshLayout() {
+        self.tableView!.reloadData()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         print ("**********removed all cached images because CapationatedEntriesViewController short on memory")

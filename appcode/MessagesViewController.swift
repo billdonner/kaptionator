@@ -22,6 +22,11 @@ final class MessagesViewController: UIViewController,ControlledByMasterView{
         refreshControl.endRefreshing()
         refreshFromMemSpace()
     }
+    
+    func refreshLayout() {
+        self.tableView!.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -139,7 +144,7 @@ private extension MessagesViewController {
             return aa.id > bb.id
             }
         )
-        
+
         stickerz = items
         tableView?.reloadData()
         // if two or more items, given user opportunity to sort

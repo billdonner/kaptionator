@@ -6,7 +6,7 @@
 //  Copyright © 2016 Bill Donner/midnightrambler. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 // this will be seen in both the main program and the extension, but a restorefromdisk needs doing
 
@@ -29,18 +29,16 @@ public struct SharedCE {
     /// these are the action functions that are called to move things between tabs
     
     fileprivate func serializeToJSONDict() -> JSONDict {
-        
         let appurl = (appimageurl != nil) ?(appimageurl?.absoluteString)! : "" as String
         let stkurl = (stickerurl != nil) ?(stickerurl?.absoluteString)! : "" as String
-        
         let x : JSONDict = [//"params":params.query,
-            kCaption:caption as AnyObject,
-            kID:id as AnyObject,
-            kLocal:appurl as AnyObject,
-            kStickers:stkurl as AnyObject,
-            kPack:catalogpack as AnyObject,
-            kTitle:catalogtitle as AnyObject,
-            kOptions:stickerOptions.rawValue as AnyObject ]
+            kCaption:caption as String,
+            kID:id as String,
+            kLocal:appurl as String,
+            kStickers:stkurl as String,
+            kPack:catalogpack as String,
+            kTitle:catalogtitle as String,
+            kOptions:stickerOptions.rawValue as Int ]
         return x
     }
     
@@ -79,6 +77,8 @@ public struct SharedCaptionSpace {
     
     fileprivate init(_ suite:String) {
         self.suite = suite
+        
+        print("SharedCaptionSpace - \(suite) >>>>> \(tagLine)")
     }
     
     public static func itemCount () -> Int {
@@ -141,10 +141,7 @@ public struct SharedCaptionSpace {
     public static func findMatchingEntry(ce:SharedCE) -> Bool {
         for entry in sharedCaptionSpace.entries {
             if entry.catalogtitle == ce.catalogtitle &&
-                entry.caption == ce.caption
-                // entry.localimagepath == ce.localimagepath
-                
-            {
+                entry.caption == ce.caption {
                 return true
             }
         }
@@ -177,4 +174,48 @@ public struct SharedCaptionSpace {
             print("**** \(sharedCaptionSpace.suite) saveToDisk version \(versionBig) count \(flattened.count)")
         }
     }
+    
+    public static func restoreSharespaceFromDisk () throws  {
+        let suite = SharedMemDataSpace
+        SharedCaptionSpace.reset()
+        if  let defaults = UserDefaults(suiteName: suite),
+            let allcaptions = defaults.object(forKey: kAllCaptions) as? JSONArray,
+            let version = defaults.object(forKey: kVersion) {
+            print ("**** \(suite) restoreFromDisk version \(version) count \(allcaptions.count)")
+            
+            for acaption in allcaptions {
+                if let  optionsvalue = acaption [kOptions] as? Int,
+                    let captiontext = acaption [kCaption] as? String,
+                    let i = acaption[kLocal] as? String,
+                    let s = acaption[kStickers] as? String,
+                    let p = acaption[kPack] as? String,
+                    let _ = acaption[kID] as? String
+                {
+                    var ti = ""
+                    if
+                        let capt  = acaption[kTitle] as? String {
+                        ti = capt
+                    }
+                    var options = StickerMakingOptions()
+                    options.rawValue = optionsvalue
+                    /// figure the shared paths
+                    let iurl = URL(string:i)!
+                    let surl = URL(string:s)!
+                    let t = SharedCE( pack: p, title: ti,
+                                      imageurl: iurl,
+                                      stickerurl:surl,
+                                      caption:  captiontext,
+                                      options: options )
+                    let _ = SharedCaptionSpace.add(ce: t)
+                    
+                }
+            }
+            SharedCaptionSpace.saveData()  //add calls it over and; over
+        }
+        else {
+            print("**** \(suite) restoreFromDisk UserDefaults failure")
+            throw KaptionatorErrors.restoreFailure}
+    }// restore
+    
+
 }

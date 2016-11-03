@@ -31,24 +31,15 @@ public let kStickerLargeFontSize = CGFloat(40)
 public let kStickerMediumFontSize = CGFloat(32)
 public let kStickerSmallFontSize = CGFloat(24)
 
-
 public let kStickerLargeImageRatio  = CGFloat(0.8)
 public let kStickerMediumImageRatio = CGFloat(0.8)
 public let kStickerSmallImageRatio = CGFloat(0.8)
 
 
-public let StickerAssetsDataSpace = "SharedRemspace"
-
 // captionated entries - are stashed in either of two places - in the app, or in the shared memory with iMessage
 
-public let AppPrivateDataSpace = "AppPrivateDataSpace"
-
-
-public struct BorderSettings {
-    public static let width: CGFloat = 2.0 / UIScreen.main.scale
-    public static let colour = UIColor(white: 0.5, alpha: 1.0)
-}
-
+public let kStickerAssetsDataSpace = "StickerAssetsDataSpace"
+public let kAppPrivateDataSpace = "AppPrivateDataSpace"
 
 public enum KaptionatorErrors : Error  {
     case generalFailure
@@ -64,7 +55,6 @@ public enum KaptionatorErrors : Error  {
 public typealias JSONDict  = [String:Any ]
 public typealias JSONArray = [JSONDict]
 public typealias JSONPayload = [JSONArray]
-
 
 public class Versions {
     
@@ -117,13 +107,9 @@ public class Versions {
 }
 
 public func sharedAppContainerDirectory() -> URL {
-    //let t = NSTemporaryDirectory()
-    
     let sharedContainerURL = FileManager().containerURL(forSecurityApplicationGroupIdentifier: SharedMemDataSpace )!
     return sharedContainerURL
 }
-
-
 
 //MARK: - StickerMakingOptions determine what the sticker looks like
 
@@ -169,82 +155,12 @@ public var SharedMemDataSpace: String  { get {
     return ""
 }
 }
-
-
-// if nil we'll just pull from documents directory inside the catalog controller
-public var  stickerManifestURL: URL? {
-get {
-    if let iDict = Bundle.main.infoDictionary ,
-        let w =  iDict["REMOTE-MANIFEST-URL"] as? String { return URL(string:w) }
-    return nil
-}
-}
-
-/// "SHOW-CATALOG-ID" is the storyboard id of controller to use for the Catalog
-
-
-public var showCatalogID: String {
-get {
-    if let iDict = Bundle.main.infoDictionary ,
-        let w =  iDict["SHOW-CATALOG-ID"] as? String { return w
-    }
-    else {
-        return "ShowCatalogID"
-    }
-}
-}
-
-
-
-/// "REMOTE-WEBSITE-URL" is the website page for this sticker pack
-public var websitePath: String {
-get {
-    if let iDict = Bundle.main.infoDictionary ,
-        let w =  iDict["REMOTE-WEBSITE-URL"] as? String { return w
-    }
-    fatalError("remote website url undefined")
-    //return nil
-}
-}
-
-
-public var appTitle: String {
-get {
-    if let iDict = Bundle.main.infoDictionary ,
-        let w =  iDict["APP-TITLE"] as? String { return w
-    }
-    return "no APP-TITLE"
-}
-}
 public var extensionScheme: String {
 get {
     if let iDict = Bundle.main.infoDictionary ,
         let w =  iDict["EXTENSION-SCHEME"] as? String { return w
     }
     return "no EXTENSION-SCHEME"
-}
-}
-public var nameForLeftBBI: String {
-get {
-    if let iDict = Bundle.main.infoDictionary ,
-        let w =  iDict["LEFT-BBI-NAME"] as? String { return w
-    }
-    return "no LEFT-BBI-NAME"
-}
-}
-public var bigBlurb : String {
-get {
-    if let iDict = Bundle.main.infoDictionary ,
-        let w =  iDict["TOP-BLURB"] as? String { return w }
-    fatalError("TOP-BLURB undefined")
-    //return nil
-}
-}
-public var innerBlurb : String {
-get {
-    if let iDict = Bundle.main.infoDictionary ,
-        let w =  iDict["INNER-BLURB"] as? String { return w }
-    else {return "a Catalog of All Stickers in the App"} 
 }
 }
 public var backgroundImagePath : String {
@@ -255,53 +171,21 @@ get {
     //return nil
 }
 }
-// if this is set we avoid the network completely
-public var localResourcesBasedir : String? {
+
+public var appTitle: String {
 get {
     if let iDict = Bundle.main.infoDictionary ,
-        let w =  iDict["LOCAL-RESOURCES-BASEDIR"] as? String { return w }
-        return nil
+        let w =  iDict["APP-TITLE"] as? String { return w
     }
+    return "no APP-TITLE"
 }
-public func restoreSharespaceFromDisk () throws  {
-    let suite = SharedMemDataSpace
-    SharedCaptionSpace.reset()
-    if  let defaults = UserDefaults(suiteName: suite),
-        let allcaptions = defaults.object(forKey: kAllCaptions) as? JSONArray,
-        let version = defaults.object(forKey: kVersion) {
-        print ("**** \(suite) restoreFromDisk version \(version) count \(allcaptions.count)")
-        
-        for acaption in allcaptions {
-            if let  optionsvalue = acaption [kOptions] as? Int,
-                let captiontext = acaption [kCaption] as? String,
-                let i = acaption[kLocal] as? String,
-                let s = acaption[kStickers] as? String,
-                let p = acaption[kPack] as? String,
-                let _ = acaption[kID] as? String
-            {
-                var ti = ""
-                if
-                    let capt  = acaption[kTitle] as? String {
-                    ti = capt
-                }
-                var options = StickerMakingOptions()
-                options.rawValue = optionsvalue
-                /// figure the shared paths
-                let iurl = URL(string:i)!
-                let surl = URL(string:s)!
-                let t = SharedCE( pack: p, title: ti,
-                                  imageurl: iurl,
-                                  stickerurl:surl,
-                                  caption:  captiontext,
-                                  options: options )
-                let _ = SharedCaptionSpace.add(ce: t)
-                
-            }
-        }
-        SharedCaptionSpace.saveData()  //add calls it over and; over
-    }
-    else {
-        print("**** \(suite) restoreFromDisk UserDefaults failure")
-        throw KaptionatorErrors.restoreFailure}
-}// restore
+}
 
+public var tagLine: String {
+get {
+    if let iDict = Bundle.main.infoDictionary ,
+        let w =  iDict["TAGLINE"] as? String { return w
+    }
+    return "no TAGLINE"
+}
+}

@@ -52,7 +52,7 @@ struct  StickerPool   {
     mutating func makeMSStickersFromMemspace() {
         do {
             
-            try restoreSharespaceFromDisk()
+            try SharedCaptionSpace.restoreSharespaceFromDisk()
             
             print ("&&&&&&&&& restoreSharespaceFromDisk restored,\(SharedCaptionSpace.itemCount()) items ")
             

@@ -9,6 +9,7 @@ import stikz
 
 protocol MessagesAppMenuViewDelegate: class  {
     func removingFromIMessage(on captionedEntry:inout SharedCE )
+    func refreshLayout() 
 }
 
 /// All the heavy lifting and file manipulation is done on this side of the fence
@@ -52,7 +53,8 @@ final class MessagesAppMenuViewController: UIViewController ,ModalOverCurrentCon
     
     /// go back with manual unwind so caller (MessageViewController) can repaint with new data model
     internal func dismisstapped(_ s: AnyObject) {
-        //// dismiss(animated: true, completion: nil)
+        
+        delegate?.refreshLayout() //make this better
         self.performSegue(withIdentifier: "UnwindToMessagesAppVC", sender: s)
     }
 
@@ -140,6 +142,7 @@ final class MessagesAppMenuViewController: UIViewController ,ModalOverCurrentCon
         
         showImageFromSharedCE(ce:captionedEntry,animate: isAnimated)
 
+        imageCaption.text = captionedEntry.caption
         addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
     }
 
