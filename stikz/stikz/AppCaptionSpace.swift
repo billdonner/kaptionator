@@ -25,7 +25,7 @@ public struct AppCE {
     
     public let id: String //stringified float millisecs since 1970
     public let caption: String
-    public let stickerOptions: StickerMakingOptions
+    public let stickerOptions: StickerOptions
     public let catalogpack:String
     public let catalogtitle:String
     public let imageurl:URL  // path of local copy of source for
@@ -60,7 +60,7 @@ public struct AppCE {
                  title:String,
                  imageurl:URL,
                  caption:String,
-                 options:StickerMakingOptions  ) {
+                 options:StickerOptions  ) {
         self.catalogpack = pack
         self.catalogtitle = title
         self.imageurl = imageurl
@@ -78,7 +78,9 @@ public struct AppCE {
         do {
             let alreadyIn = SharedCaptionSpace.findMatchingAssetInSharedSpace(url: ra.localurl!, caption: "")
             if !alreadyIn {
-                let options = StickerMakingOptions.generateasis
+                let options = ra.options
+                
+                //StickerOptions.generateasis
                 
                 let _ = AppCaptionSpace.make (pack: ra.packID, title: ra.assetName, imageurl: ra.localurl!,   caption: "",  options: options)
                 
@@ -180,7 +182,7 @@ public struct AppCaptionSpace {
         
     }
     
-    public static  func make(pack:String,  title:String,imageurl:URL ,caption:String,  options:StickerMakingOptions )->AppCE {
+    public static  func make(pack:String,  title:String,imageurl:URL ,caption:String,  options:StickerOptions )->AppCE {
         let newself = AppCE( pack: pack, title: title,
                              imageurl: imageurl,
                              caption: caption,
@@ -250,7 +252,7 @@ public struct AppCaptionSpace {
                         let capt  = acaption[kTitle] as? String {
                         ti = capt
                     }
-                    var options = StickerMakingOptions()
+                    var options = StickerOptions()
                     options.rawValue = optionsvalue
                     
                     let iurl = URL(string:i)!

@@ -10,13 +10,13 @@ import UIKit
 import stikz
 
 protocol CatalogMenuViewDelegate : class {
-    func useAsIs(remoteAsset:StickerAsset)
-    func useWithCaption(remoteAsset:StickerAsset,caption:String)
-    func useWithNoCaption(remoteAsset:StickerAsset)
+    func useAsIs(stickerAsset:StickerAsset)
+    func useWithCaption(stickerAsset:StickerAsset,caption:String)
+    func useWithNoCaption(stickerAsset:StickerAsset)
     func refreshLayout()
 }
 final class CatalogMenuViewController: UIViewController,ModalOverCurrentContext {
-    var remoteAsset:StickerAsset! // must be set
+    var stickerAsset:StickerAsset! // must be set
     weak var delegate: CatalogMenuViewDelegate?  // mig
     
     var pvc:UIViewController! // must be set
@@ -41,16 +41,16 @@ final class CatalogMenuViewController: UIViewController,ModalOverCurrentContext 
         
         addcaption.isEnabled = !animationSwitch.isOn
         addcaption.setTitleColor(animationSwitch.isOn ? .darkGray : .lightGray,for: .normal)
-        var  options = remoteAsset.options
+        var  options = stickerAsset.options
         if animationSwitch.isOn {
             options.insert(.generateasis)
         } else {
             options.remove(.generateasis)
         }
         // to persist this seemingly trivial process we must make a whole new StickerAsset
-        let newra = remoteAsset.copyWithNewOptions(stickerOptions: options)
+        let newra = stickerAsset.copyWithNewOptions(stickerOptions: options)
         
-        StickerAssetSpace.remove(ra:remoteAsset)
+        StickerAssetSpace.remove(ra:stickerAsset)
         StickerAssetSpace.addasset(ra: newra)
         StickerAssetSpace.saveToDisk()
         
@@ -58,9 +58,9 @@ final class CatalogMenuViewController: UIViewController,ModalOverCurrentContext 
     @IBAction func useStickerNoCaptionPressed(_ sender: AnyObject) {
         
         pvc.dismiss(animated: true) {
-            AppCE.makeNewCaptionCat( from: self.remoteAsset, caption: "" )
+            AppCE.makeNewCaptionCat( from: self.stickerAsset, caption: "" )
             
-            // self.delegate?.useWithNoCaption (remoteAsset:self.remoteAsset) // elsewhere
+            // self.delegate?.useWithNoCaption (stickerAsset:self.stickerAsset) // elsewhere
         }
     }
     @IBAction func addCaptionToSticker(_ sender: AnyObject) {
@@ -94,13 +94,13 @@ final class CatalogMenuViewController: UIViewController,ModalOverCurrentContext 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageCaption.text = remoteAsset.assetName
+        imageCaption.text = stickerAsset.assetName
         useasisnocaption.setTitleColor(appTheme.buttonTextColor, for: .normal)
         addcaption.setTitleColor(appTheme.buttonTextColor, for: .normal)
         // Do any additional setup after loading the view.
         
-        let isAnimated = remoteAsset.options.contains(.generateasis)
-        showImageFromLocalAsset(remoteAsset:remoteAsset,animate: isAnimated)
+        let isAnimated = stickerAsset.options.contains(.generateasis)
+        showImageFromLocalAsset(stickerAsset:stickerAsset,animate: isAnimated)
         // animated can not me modified
         animationSwitch.setOn(isAnimated ,animated:true)
         let captionable = !isAnimated || showCatalogID == "ShowITunesID"
@@ -116,9 +116,9 @@ final class CatalogMenuViewController: UIViewController,ModalOverCurrentContext 
 //MARK:- CALLBACKS
 
 private extension CatalogMenuViewController {
-    func showImageFromLocalAsset(remoteAsset:StickerAsset,animate:Bool) {
-        if let imgurl = remoteAsset.localurl {
-            let isAnimated = animate//remoteAsset.options.contains(.generateasis)
+    func showImageFromLocalAsset(stickerAsset:StickerAsset,animate:Bool) {
+        if let imgurl = stickerAsset.localurl {
+            let isAnimated = animate//stickerAsset.options.contains(.generateasis)
             if !isAnimated {
                 menuImageView.isHidden = false
                 // only set up once
@@ -135,20 +135,16 @@ private extension CatalogMenuViewController {
                 }
             } else {
                 self.useasisnocaption.isHidden = false
-                let scale : CGFloat = 1 / 1
                 ///  put up animated preview
                 self.menuImageView.isHidden = true
                 self.animatedLabel.isHidden = false
                 
-                webviewOverlay.isHidden  = false
                 if !setup {
-                    let w = webviewOverlay.frame.width
-                    let h = webviewOverlay.frame.height
-                    let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  style='max-width: 100%; height: auto;' src='\(imgurl.absoluteString)' alt='\(imgurl.absoluteString) height='\(h * scale)' width='\(w * scale)' ></body></html5>"
-                    webviewOverlay.scalesPageToFit = true
-                    webviewOverlay.contentMode = .scaleAspectFit
-                    webviewOverlay.loadHTMLString(html, baseURL: nil)
+                    IO.setupAnimationPreview(wv:webviewOverlay,imgurl:imgurl)
                 }
+                
+                webviewOverlay.isHidden  = false
+         
             }
             setup = true
             
@@ -157,7 +153,7 @@ private extension CatalogMenuViewController {
 }
 extension CatalogMenuViewController : GetCaptionDelegate {
     func captionWasEntered(caption: String) {
-        delegate?.useWithCaption(remoteAsset: remoteAsset, caption: caption )
+        delegate?.useWithCaption(stickerAsset: stickerAsset, caption: caption )
         imageCaption.isEnabled  = false
     }
 }

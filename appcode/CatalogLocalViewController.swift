@@ -54,7 +54,7 @@ final class CatalogViewController:UIViewController,ControlledByMasterView, UICol
                 let avc =  segue.destination as? CatalogMenuViewController
                 if let avc = avc  {
                     avc.delegate = self
-                    avc.remoteAsset = ra
+                    avc.stickerAsset = ra
                     avc.pvc = self
                 }
             }
@@ -180,14 +180,14 @@ extension CatalogViewController {  //loading on first up - moved from masterview
 
 //MARK:- CALLBACKS
 extension CatalogViewController : CatalogMenuViewDelegate {
-    func useAsIs(remoteAsset:StickerAsset) {
-        AppCE.makeNewCaptionCat(from: remoteAsset, caption: remoteAsset.assetName )    }
-    func useWithNoCaption(remoteAsset:StickerAsset) {
+    func useAsIs(stickerAsset:StickerAsset) {
+        AppCE.makeNewCaptionCat(from: stickerAsset, caption: stickerAsset.assetName )    }
+    func useWithNoCaption(stickerAsset:StickerAsset) {
         // make un captionated entry from remote asset
-        AppCE.makeNewCaptionCat( from: remoteAsset, caption: "" )
+        AppCE.makeNewCaptionCat( from: stickerAsset, caption: "" )
     }
-    func useWithCaption(remoteAsset:StickerAsset,caption:String) {
+    func useWithCaption(stickerAsset:StickerAsset,caption:String) {
         // make un captionated entry from remote asset
-        AppCE.makeNewCaptionCat( from: remoteAsset, caption: caption )
+        AppCE.makeNewCaptionCat( from: stickerAsset, caption: caption )
     }
 }

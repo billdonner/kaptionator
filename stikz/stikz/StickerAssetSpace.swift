@@ -9,12 +9,13 @@
 /// StickerAssetSpace is a singleton global struct that is currently persisted in NSUserDefaults
 //  each separate catalog entry across all manifests is represented here
 //  it is always refreshed on a software updated, however the images are reloaded fresh on each startup
+
+
 import UIKit
 import stikz
 
-//fileprivate var remSpace = StickerAssetSpace()
 
-// StickerAsset represents one image in a "pack" in either the local or remote filesystem
+/// StickerAsset represents one image in a "pack" in either the local or remote filesystem
 
 public struct StickerAsset {
     public let packID:String    // arbitrary string
@@ -22,25 +23,27 @@ public struct StickerAsset {
     public let remoteurl:URL?    
     public let thumburl:URL?
     public let localurl:URL?
-    public let options:StickerMakingOptions
+    public let options:StickerOptions
     
     // clone this while changing the stickermaking options
     //
     //
-    public func copyWithNewOptions(stickerOptions: StickerMakingOptions) -> StickerAsset {
+    
+    
+    public func copyWithNewOptions(stickerOptions: StickerOptions) -> StickerAsset {
         let appce = StickerAsset(pack: packID, title: assetName, thumburl: thumburl, remoteurl: remoteurl , localpath: localurl, options: stickerOptions)
         return appce
         
     }
     
-    public init(localurl:URL,options:StickerMakingOptions,title:String="",thumb:URL? = nil) {
+    public init(localurl:URL,options:StickerOptions,title:String="",thumb:URL? = nil) {
         self.init(pack:"",title:title,thumburl:thumb, remoteurl:nil,
                   localpath:localurl ,options:options)
     }
-    public init(remoteurl:URL,options:StickerMakingOptions, title:String="") {
+    public init(remoteurl:URL,options:StickerOptions, title:String="") {
         self.init(pack:"",title:title,thumburl:nil, remoteurl:remoteurl ,localpath:nil,options:options)
     }
-    public init(byreference:URL,options:StickerMakingOptions, title:String="") {
+    public init(byreference:URL,options:StickerOptions, title:String="") {
         self.packID = ""
         self.thumburl = nil
         let none = title == ""
@@ -52,7 +55,7 @@ public struct StickerAsset {
     // this main init only for use during recovery
     //
     // if localpath is non nil then set localurl
-    public init(pack:String,title:String,thumburl:URL?, remoteurl:URL?,localpath:URL?, options:StickerMakingOptions) {
+    public init(pack:String,title:String,thumburl:URL?, remoteurl:URL?,localpath:URL?, options:StickerOptions) {
         self.packID = pack
         self.thumburl = thumburl
         let none = title == ""
@@ -94,7 +97,7 @@ public struct StickerAsset {
     }
     
     /// loads from documents without presenting a UI
-    public static func quietlyAddNewURL(_ url:URL,options:StickerMakingOptions)  {
+    public static func quietlyAddNewURL(_ url:URL,options:StickerOptions)  {
         let ra = StickerAsset(localurl:url,
                               options: options,
                               title:url.lastPathComponent)
@@ -193,7 +196,7 @@ public static func saveToDisk() {
                     let remoteurl = ra[kRemoteURL] as? String,
                     let thumburl = ra[kThumbNail] as? String,
                     let localpath = ra[kLocal] as? String {
-                    var options = StickerMakingOptions()
+                    var options = StickerOptions()
                     options.rawValue = optionsvalue
                     //calling with an explicit local path will use existing file and wont re-read from remote site
                     let lurl = URL(string:localpath)

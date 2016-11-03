@@ -41,7 +41,7 @@ final class ITunesViewController :UIViewController,ControlledByMasterView, UICol
                 let avc =  segue.destination as? ITunesMenuViewController
                 if let avc = avc  {
                     avc.delegate = self
-                    avc.remoteAsset = ra
+                    avc.stickerAsset = ra
                     avc.pvc = self
                 }
             }
@@ -149,36 +149,36 @@ final class ITunesViewController :UIViewController,ControlledByMasterView, UICol
 
 extension ITunesViewController : ITunesMenuViewDelegate {
     
-    func changedAnimationState(remoteAsset:StickerAsset){
+    func changedAnimationState(stickerAsset:StickerAsset){
         // all the work has been done, just refresh
         
         
         self.collectionView.reloadData()
         
     }
-    func useAsIs(remoteAsset:StickerAsset) {
-        AppCE.makeNewCaptionAsIs(from: remoteAsset )
+    func useAsIs(stickerAsset:StickerAsset) {
+        AppCE.makeNewCaptionAsIs(from: stickerAsset )
           MasterViewController.blurt(title: "Added one image to your catalog",mess: "as is")
         
     }
-    func deleteAsset(remoteAsset:StickerAsset) {
+    func deleteAsset(stickerAsset:StickerAsset) {
         
         MasterViewController.ask(title: "Are you sure?",mess: "You will have to reload the image to restore") {
-        StickerAssetSpace.remove(ra: remoteAsset)
+        StickerAssetSpace.remove(ra: stickerAsset)
         self.collectionView.reloadData()
         StickerAssetSpace.saveToDisk()
         MasterViewController.blurt(title: "Removed from catalog",mess: "")
         }
     }
-    func useWithNoCaption(remoteAsset:StickerAsset) {
+    func useWithNoCaption(stickerAsset:StickerAsset) {
         // make un captionated entry from remote asset
-        AppCE.makeNewCaptionCat( from: remoteAsset, caption: "" )
+        AppCE.makeNewCaptionCat( from: stickerAsset, caption: "" )
         MasterViewController.blurt(title: "Added one image to your catalog",mess: "no caption")
         
     }
-    func useWithCaption(remoteAsset:StickerAsset,caption:String) {
+    func useWithCaption(stickerAsset:StickerAsset,caption:String) {
         // make un captionated entry from remote asset
-        AppCE.makeNewCaptionCat( from: remoteAsset, caption: caption )
+        AppCE.makeNewCaptionCat( from: stickerAsset, caption: caption )
    MasterViewController.blurt(title: "Added one image to your catalog",mess: caption)
     }
 }

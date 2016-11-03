@@ -48,6 +48,8 @@ final class HelpDropdownViewController: UIViewController, ModalOverCurrentContex
     @IBAction func hitPhotoImport(_ sender: AnyObject) {
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
+        imagePicker.modalPresentationStyle = .formSheet
+        imagePicker.modalTransitionStyle = .crossDissolve
         present (imagePicker, animated: true, completion: nil)
     }
     
@@ -117,7 +119,7 @@ extension HelpDropdownViewController : UIDocumentPickerDelegate {
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
         print("picked new document at \(url)")
-         StickerAsset.quietlyAddNewURL(url,options:StickerMakingOptions.generatemedium)
+         StickerAsset.quietlyAddNewURL(url,options:StickerOptions.generatemedium)
         self.dismisstapped(self)
     }
 }
@@ -158,7 +160,7 @@ extension HelpDropdownViewController :UIImagePickerControllerDelegate {
             
        // turn this into a file wit a url
            let url = StickerAssetSpace.writeImageToURL(newimage)
-            StickerAsset.quietlyAddNewURL(url,options:StickerMakingOptions.generatelarge)
+            StickerAsset.quietlyAddNewURL(url,options:StickerOptions.generatelarge)
         }
         self.dismisstapped(self)
     }

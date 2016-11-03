@@ -1,5 +1,5 @@
 //
-//  MessagesViewController
+//  SharedCaptionSpaceViewController
 //  kaptionator
 //
 //  Created by bill donner on 8/6/16.
@@ -11,14 +11,14 @@ import stikz
 //
 // MARK: Show All Captionated Entries in One Tab as Child ViewContoller
 //
-final class MessagesViewController: UIViewController,ControlledByMasterView{
+final class SharedCaptionSpaceViewController: UIViewController,ControlledByMasterView{
     fileprivate var stickerz:[SharedCE] = []
     fileprivate var theSelectedIndexPath:IndexPath?
     fileprivate let refreshControl = UIRefreshControl()
     
     @IBOutlet internal  var tableView: UITableView!
  
-    @IBAction func unwindToMessagesViewController(_ segue: UIStoryboardSegue)  {
+    @IBAction func unwindToSharedCaptionSpaceViewController(_ segue: UIStoryboardSegue)  {
         refreshControl.endRefreshing()
         refreshFromMemSpace()
     }
@@ -30,14 +30,14 @@ final class MessagesViewController: UIViewController,ControlledByMasterView{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        print ("**********removed all cached images because MessagesViewController short on memory")
+        print ("**********removed all cached images because SharedCaptionSpaceViewController short on memory")
     }
  
     //MARK:- Dispatching to External ViewControllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier ==  "MessagesAppCellTapMenuID"{
             if let indexPath = theSelectedIndexPath {
-                if let avc =  segue.destination as? MessagesAppMenuViewController   {
+                if let avc =  segue.destination as? SharedSpaceMenuViewController   {
                     avc.delegate = self
                     avc.captionedEntry = stickerz [indexPath.row] 
                 }
@@ -73,7 +73,7 @@ final class MessagesViewController: UIViewController,ControlledByMasterView{
     }
 }
 // MARK: Delegates for actions from our associated menu
-extension  MessagesViewController:MessagesAppMenuViewDelegate {
+extension  SharedCaptionSpaceViewController:SharedSpaceMenuDelegate {
 
     func removingFromIMessage(on captionedEntry:inout SharedCE ){
         print("MessagesAppEntriesViewController removeFromIMessage")
@@ -82,7 +82,7 @@ extension  MessagesViewController:MessagesAppMenuViewDelegate {
         refreshFromMemSpace()
     }
 }
-extension MessagesViewController : UITableViewDataSource {
+extension SharedCaptionSpaceViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -124,13 +124,13 @@ extension MessagesViewController : UITableViewDataSource {
 
 // MARK: Observer for model adjustments
 
-extension MessagesViewController: UITableViewDelegate {
+extension SharedCaptionSpaceViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         theSelectedIndexPath = indexPath
         displayTapMenu()
     }
 }
-private extension MessagesViewController {
+private extension SharedCaptionSpaceViewController {
      func displayTapMenu () {
         // todo: analyze safety of passing indexpath thru, sees to work for now
         performSegue(withIdentifier: "MessagesAppCellTapMenuID", sender: self)

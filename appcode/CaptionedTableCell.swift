@@ -16,7 +16,7 @@ class CaptionedTableCell: UITableViewCell {
         detailsImageView.image = nil // clean this out
         nameLabel.text = ""
     }
-    func colorFor(options:StickerMakingOptions) {
+    func colorFor(options:StickerOptions) {
         let  isAnimated = options.contains(.generateasis)
         nameLabel.textColor = isAnimated ? appTheme.redColor : appTheme.textColor
     }

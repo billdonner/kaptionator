@@ -1,5 +1,5 @@
  //
- //  CapationatedViewController
+ //  AppCaptionSpaceViewController
  //  kaptionator
  //
  //  Created by bill donner on 8/6/16.
@@ -12,16 +12,18 @@
  //
  // MARK: Show All Captionated Entries in One Tab as Child ViewContoller
  //
- final class CapationatedViewController: UIViewController,ControlledByMasterView {
+ final class AppCaptionSpaceViewController: UIViewController, ControlledByMasterView {
    
     fileprivate  var stickerz:[AppCE] = []
     fileprivate var theSelectedIndexPath:IndexPath?
     @IBOutlet internal  var tableView: UITableView!
+    
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         // self.showAll = true
     }
-    @IBAction func unwindToCapationatedViewController(_ segue: UIStoryboardSegue)  {
+    @IBAction func unwindToAppCaptionSpaceViewController(_ segue: UIStoryboardSegue)  {
         refreshFromCapSpace()
     }
     func refreshLayout() {
@@ -38,7 +40,7 @@
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier ==  "CaptionedCellTapMenuID"{
             if let indexPath = theSelectedIndexPath {
-                if let avc =  segue.destination as? CaptionedMenuViewController  {
+                if let avc =  segue.destination as? AppSpaceMenuViewController  {
                     avc.delegate = self
                     avc.captionedEntry = stickerz [indexPath.row]               // pull image from cache and pass
                     avc.pvc = self
@@ -49,10 +51,10 @@
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = appTheme.backgroundColor
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -61,7 +63,7 @@
     }
 
  }
-private  extension CapationatedViewController {
+private  extension AppCaptionSpaceViewController {
       func displayTapMenu () {
         // todo: analyze safety of passing indexpath thru, sees to work for now
         performSegue(withIdentifier: "CaptionedCellTapMenuID", sender: self)
@@ -79,7 +81,7 @@ private  extension CapationatedViewController {
     }
  }
  // MARK: Delegates for actions from our associated menu
- extension CapationatedViewController : CaptionedMenuViewDelegate {
+ extension AppCaptionSpaceViewController : AppSpaceMenuDelegate {
     func cloneWithCaption(captionedEntry:  AppCE, caption: String) {
         print("CapationatedEntriesViewController cloneWithCaption")
         captionedEntry.cloneWithNewCaption(  caption)
@@ -95,7 +97,7 @@ private  extension CapationatedViewController {
         tableView.reloadData()
     }
  }
- extension CapationatedViewController : UITableViewDataSource {
+ extension AppCaptionSpaceViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let ce =  stickerz.remove(at: indexPath.row)
@@ -142,7 +144,7 @@ private  extension CapationatedViewController {
  // MARK:  UICollectionViewDataSource runs in local space
  // MARK: Observer for model adjustments
  
- extension CapationatedViewController: UITableViewDelegate {
+ extension AppCaptionSpaceViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         theSelectedIndexPath = indexPath
         displayTapMenu()

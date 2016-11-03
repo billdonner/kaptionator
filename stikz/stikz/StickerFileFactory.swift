@@ -66,7 +66,7 @@ public struct StickerFileFactory {
             }
         }
     }
-    public static func createStickerFileFrom(imageData:Data,imageurl:URL, caption:String,options:StickerMakingOptions) -> URL? {
+    public static func createStickerFileFrom(imageData:Data,imageurl:URL, caption:String,options:StickerOptions) -> URL? {
         var returls:[String] = []
         let assep = (imageurl.absoluteString as NSString).lastPathComponent
         let type = (assep as NSString).pathExtension

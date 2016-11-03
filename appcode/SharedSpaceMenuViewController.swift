@@ -1,4 +1,4 @@
-//  MessagesAppMenuViewController.swift
+//  SharedSpaceMenuViewController.swift
 //  Kaptionator
 //
 //  Created by bill donner on 8/24/16.
@@ -7,7 +7,7 @@
 import UIKit
 import stikz
 
-protocol MessagesAppMenuViewDelegate: class  {
+protocol SharedSpaceMenuDelegate: class  {
     func removingFromIMessage(on captionedEntry:inout SharedCE )
     func refreshLayout() 
 }
@@ -15,20 +15,20 @@ protocol MessagesAppMenuViewDelegate: class  {
 /// All the heavy lifting and file manipulation is done on this side of the fence
 /// The Messages Extension code passes the filepaths to msSticker API without ever touching them, for a fast start
 
-final class MessagesAppMenuViewController: UIViewController ,ModalOverCurrentContext {
+final class SharedSpaceMenuViewController: UIViewController ,ModalOverCurrentContext {
     
     var captionedEntry:SharedCE! // must be set
-    weak var delegate: MessagesAppMenuViewDelegate?  // mig
+    weak var delegate: SharedSpaceMenuDelegate?  // mig
      
-    @IBAction func unwindToMessagesAppMenuViewController(_ segue: UIStoryboardSegue)  {}
+    @IBAction func unwindToSharedSpaceMenuViewController(_ segue: UIStoryboardSegue)  {}
     
     private var isAnimated  = false
     fileprivate var setup: Bool = false
     
+    @IBOutlet weak var isAnimatedSignifier: UIImageView!
     @IBOutlet weak var webviewOverlay: UIWebView!
     @IBOutlet weak var menuImageView: UIImageView!
     @IBOutlet weak var imageCaption: UILabel! 
-    @IBOutlet weak var animatedLabel: UILabel!
     @IBOutlet weak var smallSwitch: UISwitch!
     @IBOutlet weak var mediumSwitch: UISwitch!
     @IBOutlet weak var largeSwitch: UISwitch!
@@ -79,7 +79,7 @@ final class MessagesAppMenuViewController: UIViewController ,ModalOverCurrentCon
         catch {
         }
     }
-    private func  swhel(_ options:StickerMakingOptions){
+    private func  swhel(_ options:StickerOptions){
         do {  // make image of precise size for messages app
              let ce = captionedEntry!
             let _  =  try IO.prepareStickers(pack:ce.catalogpack,
@@ -93,7 +93,7 @@ final class MessagesAppMenuViewController: UIViewController ,ModalOverCurrentCon
         }
     }
     @IBAction func smallSwitchToggled(_ sender: AnyObject) {
-        var options: StickerMakingOptions = StickerMakingOptions()
+        var options: StickerOptions = StickerOptions()
         if smallSwitch.isOn {
             options.insert(.generatesmall)
             swhel(options)
@@ -103,7 +103,7 @@ final class MessagesAppMenuViewController: UIViewController ,ModalOverCurrentCon
         SharedCaptionSpace.saveData()
     }
     @IBAction func mediumSwitchToggled(_ sender: AnyObject) {
-        var options: StickerMakingOptions = StickerMakingOptions()
+        var options: StickerOptions = StickerOptions()
         if smallSwitch.isOn {
             options.insert(.generatemedium)
             swhel(options)
@@ -113,7 +113,7 @@ final class MessagesAppMenuViewController: UIViewController ,ModalOverCurrentCon
         SharedCaptionSpace.saveData()
     }
     @IBAction func largeSwithToggled(_ sender: AnyObject) {
-        var options: StickerMakingOptions = StickerMakingOptions()
+        var options: StickerOptions = StickerOptions()
         if smallSwitch.isOn {
             options.insert(.generatelarge)
             swhel(options)
@@ -152,17 +152,17 @@ final class MessagesAppMenuViewController: UIViewController ,ModalOverCurrentCon
     }
 }
 
-private extension MessagesAppMenuViewController {
-    func showImageFromSharedCE(ce:SharedCE,animate:Bool) {
-        let imageurl = ce.appimageurl!
-        let isAnimated = animate//remoteAsset.options.contains(.generateasis)
+private extension SharedSpaceMenuViewController {
+    func showImageFromSharedCE(ce:SharedCE,animate isAnimated:Bool) {
+        let imgurl = ce.appimageurl!
+     //   self.isAnimatedSignifier.isHidden = isAnimated
         if !isAnimated {
             menuImageView.isHidden = false
             // only set up once
             webviewOverlay.isHidden  = true
             if !setup {
                 do {
-                    let data = try  Data(contentsOf:imageurl)
+                    let data = try  Data(contentsOf:imgurl)
                     menuImageView.image = UIImage(data:data)
                     menuImageView.contentMode = .scaleAspectFit
                 }
@@ -171,21 +171,14 @@ private extension MessagesAppMenuViewController {
                 }
             }
         } else {
-           // self.useasisnocaption.isHidden = false
-            let scale : CGFloat = 1 / 1
             ///  put up animated preview
             self.menuImageView.isHidden = true
-            self.animatedLabel.isHidden = false
+            if !setup {
+                IO.setupAnimationPreview(wv:webviewOverlay,imgurl:imgurl)
+            }
             
             webviewOverlay.isHidden  = false
-            if !setup {
-                let w = webviewOverlay.frame.width
-                let h = webviewOverlay.frame.height
-                let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  style='max-width: 100%; height: auto;' src='\(imageurl)' alt='\(imageurl) height='\(h * scale)' width='\(w * scale)' ></body></html5>"
-                webviewOverlay.scalesPageToFit = true
-                webviewOverlay.contentMode = .scaleAspectFit
-                webviewOverlay.loadHTMLString(html, baseURL: nil)
-            }
+
         }
         setup = true
     }

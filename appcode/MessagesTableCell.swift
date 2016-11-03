@@ -17,7 +17,7 @@ class MessagesTableCell: UITableViewCell {
         nameLabel.text = ""
         line2Label.text = ""
     }
-    func colorFor(options:StickerMakingOptions) {
+    func colorFor(options:StickerOptions) {
         let  isAnimated = options.contains(.generateasis)
         nameLabel.textColor = isAnimated ? appTheme.redColor : appTheme.textColor
     }

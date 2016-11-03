@@ -30,8 +30,8 @@ final class MasterViewController: UIViewController {
     fileprivate var showFirstHelp = true
     fileprivate var currentViewController: UIViewController?
     fileprivate var showFirstViewController: UIViewController?
-    fileprivate var showCaptionedViewController: CapationatedViewController?
-    fileprivate var showMessagesViewController: MessagesViewController?
+    fileprivate var showCaptionedViewController: AppCaptionSpaceViewController?
+    fileprivate var showSharedCaptionSpaceViewController: SharedCaptionSpaceViewController?
     fileprivate var logoNotRemoved = true
     fileprivate var allBarButtonItems : [UIBarButtonItem] = []
     
@@ -61,7 +61,7 @@ final class MasterViewController: UIViewController {
         }
         else if "HelpDropdownViewControllerID" ==  segue.identifier {
             if  let hdvc = segue.destination as? HelpDropdownViewController {
-                 hdvc.delegate = self
+                hdvc.delegate = self
             }
         }
     }
@@ -70,10 +70,10 @@ final class MasterViewController: UIViewController {
         
         print("MasterViewController  >>>>> \(tagLine)")
         
-        masterViewController = self 
+        masterViewController = self
         self.view.backgroundColor = appTheme.backgroundColor
         let img = UIImage(named:backgroundImagePath)
-         self.backgroundImageView.image = img
+        self.backgroundImageView.image = img
         replaceTitle(appTitle)
         
         // start in the catalog
@@ -86,7 +86,7 @@ final class MasterViewController: UIViewController {
         imessage.isEnabled = false
         allBarButtonItems = [catb,helpbbi,imessage,stickerz]
         
-       databaseStuff()
+        databaseStuff()
         finishStartup()
         
     }// fall straight into it
@@ -96,7 +96,6 @@ final class MasterViewController: UIViewController {
     @IBAction func helpAction(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "HelpDropdownViewControllerID", sender: nil)
     }
-    
     @IBAction func catalogueAction(_ sender: UIBarButtonItem) {
         if SharedCaptionSpace.itemCount() == 0 && showFirstHelp {
             showFirstHelp = false
@@ -105,15 +104,18 @@ final class MasterViewController: UIViewController {
         cycleaction(sender: sender, id:showCatalogID,
                     vc:&showFirstViewController,color:appTheme.catalogColor)
         replaceTitle(extensionScheme + " Home")
+        
     }
     @IBAction func stickerAction(_ sender: UIBarButtonItem) {
         showFirstHelp = true
         cycleaction(sender: sender, id:"CaptionedViewControllerID",vc:&showCaptionedViewController,color:appTheme.stickerzColor)
+        showCaptionedViewController?.refreshLayout()
         replaceTitle(extensionScheme + " History")
     }
     @IBAction func imsgAction(_ sender: UIBarButtonItem) {
         showFirstHelp = true
-        cycleaction(sender: sender, id:"MessageViewControllerID",vc:&showMessagesViewController, color:appTheme.iMessageColor)
+        cycleaction(sender: sender, id:"MessageViewControllerID",vc:&showSharedCaptionSpaceViewController, color:appTheme.iMessageColor)
+        showSharedCaptionSpaceViewController?.refreshLayout()
         replaceTitle(extensionScheme + " Stickers")
     }
 }
@@ -121,8 +123,30 @@ final class MasterViewController: UIViewController {
 //MARK:- private helper methods
 
 private extension MasterViewController {
-    
-func databaseStuff() {
+      func refreshCurrentVC() {
+        //TODO: - figure out how to do this generically
+        if currentViewController is ITunesViewController {
+            if let vc = currentViewController as? ITunesViewController {
+                vc.refreshLayout()
+            }
+        } else
+            if currentViewController is CatalogViewController {
+                if let vc = currentViewController as? CatalogViewController {
+                    vc.refreshLayout()
+                }
+            } else
+                if currentViewController is AppCaptionSpaceViewController {
+                    if let vc = currentViewController as? AppCaptionSpaceViewController {
+                        vc.refreshLayout()
+                    }
+                } else
+                    if currentViewController is SharedCaptionSpaceViewController {
+                        if let vc = currentViewController as? SharedCaptionSpaceViewController {
+                            vc.refreshLayout()
+                        }
+        }
+    }
+    func databaseStuff() {
         //
         // restore or create captions db
         if let _ = try? AppCaptionSpace.restoreAppspaceFromDisk() {
@@ -142,8 +166,7 @@ func databaseStuff() {
             SharedCaptionSpace.saveData()
         }
     }
-    
-    func resetvc (_ sender:UIBarButtonItem, _ vc:UIViewController,_ color:UIColor) {
+      func resetvc (_ sender:UIBarButtonItem, _ vc:UIViewController,_ color:UIColor) {
         coloredSpacer.backgroundColor = color
         for bbi in allBarButtonItems {
             bbi.tintColor = bbi == sender ? coloredSpacer.backgroundColor : offColor
@@ -151,6 +174,7 @@ func databaseStuff() {
         vc.view.translatesAutoresizingMaskIntoConstraints = false
         cycleFromViewController(oldViewController: currentViewController!, toViewController: vc)
         currentViewController = vc
+        refreshCurrentVC()
     }
     
     func cycleaction<VC:UIViewController>(sender:UIBarButtonItem, id:String, vc:inout VC?,color:UIColor) {
@@ -171,8 +195,8 @@ func databaseStuff() {
         UIView.animate(withDuration: 0.5, animations: {
             newViewController.view.alpha = 1
             oldViewController.view.alpha = 0
-            },
-                completion: { finished in
+        },
+                       completion: { finished in
                         oldViewController.view.removeFromSuperview()
                         oldViewController.removeFromParentViewController()
                         newViewController.didMove(toParentViewController: self)
@@ -182,7 +206,7 @@ func databaseStuff() {
         parentView.addSubview(subView)
         var viewBindingsDict = [String: AnyObject]()
         viewBindingsDict["subView"] = subView
-    parentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[subView]|",  options: [], metrics: nil, views: viewBindingsDict))
+        parentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[subView]|",  options: [], metrics: nil, views: viewBindingsDict))
         parentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[subView]|", options: [], metrics: nil, views: viewBindingsDict))
     }
     
@@ -221,7 +245,8 @@ func databaseStuff() {
 ///HelpDropdownDelegate
 extension MasterViewController: HelpDropdownDelegate {
     func refreshLayout() {
-    
+        /// coming back here as delegate of presented view controller
+        refreshCurrentVC()
     }
 }
 
@@ -264,7 +289,7 @@ public struct Manifest {
                                 sizes = szes
                             }
                             // actually need
-                            var options = StickerMakingOptions()
+                            var options = StickerOptions()
                             if sizes.contains("S") {
                                 options.insert( .generatesmall)
                             }
@@ -283,14 +308,14 @@ public struct Manifest {
                             
                             let thurl = URL(string:thumbnail)
                             let localurl = URL(string:imagepath)
-                            let remoteAsset = StickerAsset(
+                            let stickerAsset = StickerAsset(
                                 localurl: localurl!,
                                 options: options,
                                 title: title, thumb:thurl)
                             
                             
-                            StickerAssetSpace.addasset(ra: remoteAsset) // be sure to count
-                            final.append (remoteAsset)
+                            StickerAssetSpace.addasset(ra: stickerAsset) // be sure to count
+                            final.append (stickerAsset)
                         }
                     }
                 }//for
@@ -303,16 +328,8 @@ public struct Manifest {
             completion(error.code, "-err0r-", final ) //}// made it
         }
     }
-      private typealias DTSKR = ((_ data:Data?, _ response:URLResponse?, _ nserror:Error?) -> (Swift.Void))
-    private static func xdataTask(with url: URL, completionHandler: @escaping DTSKR) -> URLSessionDataTask {
-        let session = URLSession.shared
-        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 5)
-        //  print ("queing \(request)")
-        let x = session.dataTask(with: request, completionHandler: completionHandler)
-        return x
-    }
-    
-   static func httpGET(url: URL,  completion:  @escaping ((Int,Data?) -> (Swift.Void)))  {
+
+    static func httpGET(url: URL,  completion:  @escaping ((Int,Data?) -> (Swift.Void)))  {
         let task = xdataTask(with:url) {
             ( data,   response,  error) in
             //print("datatask responded \(error?.code)")
@@ -329,38 +346,6 @@ public struct Manifest {
         task.resume()
     }
 
-    
-    private static func processOneURL(_ url:URL,  completion:@escaping ((Int,String,[StickerAsset]) -> (Swift.Void))) {
-        
-        httpGET(url:url) { status,data in
-            guard status == 200 else {
-                completion(status,"", [] )
-                return
-            }
-            let baseURL = (url.absoluteString as NSString).deletingLastPathComponent.appending("/")
-            
-            if let data = data {
-                parseData(data, baseURL: baseURL, completion: completion)
-            }
-        }
-    }
-    
-    /// load a bunch of manifests as listed in a super-manifest
-    
-    private static func processOneLocal(_ url:URL,  completion:@escaping ((Int,String,[StickerAsset]) -> (Swift.Void))) {
-        do {
-            let data = try Data(contentsOf: url)
-            
-            let baseURL = (url.absoluteString as NSString).deletingLastPathComponent.appending("/")
-            
-            parseData(data, baseURL: baseURL, completion: completion)
-            
-        }
-        catch let error {
-            completion((error as NSError).code,"", [] )
-        }
-        
-    }
     public static func loadJSONFromLocal(url:URL?,completion:((Int,String,[StickerAsset]) -> (Swift.Void))?) {
         guard let url = url else {
             fatalError("loadJSONFromLocal")
@@ -426,5 +411,49 @@ public struct Manifest {
         catch {
             print("loadFromITunesSharing: file system error \(error)")
         }
+    }
+}
+
+private extension Manifest {
+    
+      typealias DTSKR = ((_ data:Data?, _ response:URLResponse?, _ nserror:Error?) -> (Swift.Void))
+      static func xdataTask(with url: URL, completionHandler: @escaping DTSKR) -> URLSessionDataTask {
+        let session = URLSession.shared
+        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 5)
+        //  print ("queing \(request)")
+        let x = session.dataTask(with: request, completionHandler: completionHandler)
+        return x
+    }
+    
+      static func processOneURL(_ url:URL,  completion:@escaping ((Int,String,[StickerAsset]) -> (Swift.Void))) {
+        
+        httpGET(url:url) { status,data in
+            guard status == 200 else {
+                completion(status,"", [] )
+                return
+            }
+            let baseURL = (url.absoluteString as NSString).deletingLastPathComponent.appending("/")
+            
+            if let data = data {
+                parseData(data, baseURL: baseURL, completion: completion)
+            }
+        }
+    }
+    
+    /// load a bunch of manifests as listed in a super-manifest
+    
+      static func processOneLocal(_ url:URL,  completion:@escaping ((Int,String,[StickerAsset]) -> (Swift.Void))) {
+        do {
+            let data = try Data(contentsOf: url)
+            
+            let baseURL = (url.absoluteString as NSString).deletingLastPathComponent.appending("/")
+            
+            parseData(data, baseURL: baseURL, completion: completion)
+            
+        }
+        catch let error {
+            completion((error as NSError).code,"", [] )
+        }
+        
     }
 }

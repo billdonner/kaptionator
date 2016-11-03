@@ -84,7 +84,7 @@ struct  StickerPool   {
         do {
             if   let birl = URL(string:backgroundImagePath) {
         let theData = try Data(contentsOf: nurl)
-        let options:StickerMakingOptions = .generatemedium
+        let options:StickerOptions = .generatemedium
         let stickerurl =   StickerFileFactory.createStickerFileFrom (imageData: theData ,imageurl: birl, caption: "Welcome to \(extensionScheme)", options:options)
             if 
                 let stickerurl = stickerurl {

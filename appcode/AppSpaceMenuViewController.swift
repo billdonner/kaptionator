@@ -1,5 +1,5 @@
 //
-//  CaptionedMenuViewController.swift
+//  AppSpaceMenuViewController.swift
 //  Kaptionator
 //
 //  Created by bill donner on 8/24/16.
@@ -9,24 +9,24 @@ import UIKit
 
 import stikz
 
-protocol CaptionedMenuViewDelegate : class {
+protocol AppSpaceMenuDelegate : class {
     func movingtoIMessage(captionedEntry:inout AppCE)
     func changingCaption( on captionedEntry:inout AppCE,caption:String)
     func cloneWithCaption( captionedEntry:AppCE, caption:String)
     func refreshLayout() 
 }
-final class CaptionedMenuViewController: UIViewController, ModalOverCurrentContext {
+final class AppSpaceMenuViewController: UIViewController, ModalOverCurrentContext {
     var captionedEntry:AppCE! // must be set
-    weak var delegate: CaptionedMenuViewDelegate?  // mig
+    weak var delegate: AppSpaceMenuDelegate?  // mig
     
     var pvc:UIViewController! // must be set
     
-    @IBAction func unwindToCaptionedMenuViewController(_ segue: UIStoryboardSegue)  {}
+    @IBAction func unwindToAppSpaceMenuViewController(_ segue: UIStoryboardSegue)  {}
     
+    @IBOutlet weak var isAnimatedSignifier: UIImageView!
     private var isAnimated  = false
     fileprivate var setup: Bool = false
     @IBOutlet weak var outerView: UIView!
-    @IBOutlet weak var animatedLabel: UILabel!
     @IBOutlet weak var menuImageView: UIImageView!
     @IBOutlet weak var webviewOverlay: UIWebView!
     @IBOutlet weak var imageCaption: UILabel!
@@ -83,11 +83,11 @@ final class CaptionedMenuViewController: UIViewController, ModalOverCurrentConte
 
 }
 
-private extension CaptionedMenuViewController {
-    func showImageFromAppCE(ce:AppCE,animate:Bool) {
+private extension AppSpaceMenuViewController {
+    func showImageFromAppCE(ce:AppCE,animate isAnimated:Bool) {
        let imgurl = ce.imageurl
-        
-        let isAnimated = animate//remoteAsset.options.contains(.generateasis)
+         
+         // self.isAnimatedSignifier.isHidden = isAnimated
         if !isAnimated {
             menuImageView.isHidden = false
             // only set up once
@@ -103,27 +103,22 @@ private extension CaptionedMenuViewController {
                 }
             }
         } else {
-           // self.useasisnocaption.isHidden = false
-            let scale : CGFloat = 1 / 1
             ///  put up animated preview
             self.menuImageView.isHidden = true
-            self.animatedLabel.isHidden = false
+          
+            
+            if !setup {
+                IO.setupAnimationPreview(wv:webviewOverlay,imgurl:imgurl)
+            }
             
             webviewOverlay.isHidden  = false
-            if !setup {
-                let w = webviewOverlay.frame.width
-                let h = webviewOverlay.frame.height
-                let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  style='max-width: 100%; height: auto;' src='\(imgurl.absoluteString)' alt='\(imgurl.absoluteString) height='\(h * scale)' width='\(w * scale)' ></body></html5>"
-                webviewOverlay.scalesPageToFit = true
-                webviewOverlay.contentMode = .scaleAspectFit
-                webviewOverlay.loadHTMLString(html, baseURL: nil)
-            }
+         
         }
         setup = true
     }
 }
 
-extension CaptionedMenuViewController :ChangeCaptionDelegate {
+extension AppSpaceMenuViewController :ChangeCaptionDelegate {
     func captionWasEntered(caption: String) {
        delegate?.cloneWithCaption(captionedEntry:self.captionedEntry, caption: caption )
         imageCaption.isEnabled  = false

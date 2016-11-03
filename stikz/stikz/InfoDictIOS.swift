@@ -17,9 +17,21 @@ public struct BorderSettings {
 public struct IO {
     
    private typealias PGRC = ((_ status:Int, _ data:Data?) -> (Swift.Void))
- 
+   public static  func setupAnimationPreview(wv:UIWebView,imgurl:URL) {
+        
+        let scale : CGFloat = 5 / 1
+        
+        let w = wv.frame.width
+        let h = wv.frame.height
+        let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><center  style='padding:0px;margin:0px'><img  style='max-width: 100%; height: auto;' src='\(imgurl)' alt='\(imgurl) height='\(h * scale)' width='\(w * scale)' ></center></html5>"
+        wv.scalesPageToFit = true
+        wv.contentMode = .scaleAspectFit
+        
+        //wv.center = menuImageView.center
+        wv.loadHTMLString(html, baseURL: nil)
+    }
 
-  public static func prepareStickers( pack:String,title:String,imageurl:URL, caption:String, options:StickerMakingOptions) throws -> SharedCE {
+  public static func prepareStickers( pack:String,title:String,imageurl:URL, caption:String, options:StickerOptions) throws -> SharedCE {
         do {
             let theData = try Data(contentsOf:imageurl)
             

@@ -1,5 +1,5 @@
 //
-//  ReorderMessagesViewController
+//  ReorderSharedCaptionSpaceViewController
 //  kaptionator
 //
 //  Created by bill donner on 8/6/16.
@@ -21,11 +21,11 @@ class ReorderMessagesReusableView: UICollectionReusableView {
    @IBOutlet weak var headerLabel: UILabel!
     
 }
-final class ReorderMessagesViewController: UICollectionViewController,ModalOverCurrentContext{
+final class ReorderSharedCaptionSpaceViewController: UICollectionViewController,ModalOverCurrentContext{
    private var theSelectedIndexPath:IndexPath?
     
     internal func dismisstapped(_ s: AnyObject) {
-        performSegue(withIdentifier: "unwindToMessagesViewController", sender: self)
+        performSegue(withIdentifier: "unwindToSharedCaptionSpaceViewController", sender: self)
     }
     
     override func viewDidLoad() {

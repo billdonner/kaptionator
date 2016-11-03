@@ -11,16 +11,16 @@ import UIKit
 import stikz
 
 protocol ITunesMenuViewDelegate : class {
-    func changedAnimationState(remoteAsset:StickerAsset)
-    func deleteAsset(remoteAsset:StickerAsset)
-    func useAsIs(remoteAsset:StickerAsset)
-    func useWithCaption(remoteAsset:StickerAsset,caption:String)
-    func useWithNoCaption(remoteAsset:StickerAsset)
+    func changedAnimationState(stickerAsset:StickerAsset)
+    func deleteAsset(stickerAsset:StickerAsset)
+    func useAsIs(stickerAsset:StickerAsset)
+    func useWithCaption(stickerAsset:StickerAsset,caption:String)
+    func useWithNoCaption(stickerAsset:StickerAsset)
     func refreshLayout() 
 }
 final class ITunesMenuViewController: UIViewController,ModalOverCurrentContext {
     var pvc:UIViewController! // must be set
-    var remoteAsset:StickerAsset! // must be set
+    var stickerAsset:StickerAsset! // must be set
     weak var delegate: ITunesMenuViewDelegate?  // mig
     fileprivate var setup = false
     
@@ -39,7 +39,7 @@ final class ITunesMenuViewController: UIViewController,ModalOverCurrentContext {
         addcaption.isEnabled = !animationSwitch.isOn
         addcaption.setTitleColor(animationSwitch.isOn ?
                     .darkGray : .lightGray,for: .normal)
-        var  options = remoteAsset.options
+        var  options = stickerAsset.options
         if animationSwitch.isOn {
             options.insert(.generateasis)
         } else {
@@ -47,26 +47,26 @@ final class ITunesMenuViewController: UIViewController,ModalOverCurrentContext {
         }
         setup = false
         // to persist this seemingly trivial process we must make a whole new StickerAsset
-        let newra = remoteAsset.copyWithNewOptions(stickerOptions: options)
+        let newra = stickerAsset.copyWithNewOptions(stickerOptions: options)
         
-        StickerAssetSpace.remove(ra:remoteAsset)
+        StickerAssetSpace.remove(ra:stickerAsset)
         StickerAssetSpace.addasset(ra: newra)
         
         // draw or redraw
-        showImageFromLocalAsset(remoteAsset: newra,animate:animationSwitch.isOn)
+        showImageFromLocalAsset(stickerAsset: newra,animate:animationSwitch.isOn)
         StickerAssetSpace.saveToDisk()
-        remoteAsset = newra // IMPORTANT - point to new asset
-        self.delegate?.changedAnimationState(remoteAsset: newra)
+        stickerAsset = newra // IMPORTANT - point to new asset
+        self.delegate?.changedAnimationState(stickerAsset: newra)
         
     }
     @IBAction func deleteAsset(_ sender: AnyObject) {
         pvc.dismiss(animated: true) {
-        self.delegate?.deleteAsset(remoteAsset:self.remoteAsset) // elsewhere
+        self.delegate?.deleteAsset(stickerAsset:self.stickerAsset) // elsewhere
         }
     }
     @IBAction func useStickerNoCaptionPressed(_ sender: AnyObject) {
         pvc.dismiss(animated: true) {
-            self.delegate?.useAsIs(remoteAsset:self.remoteAsset) // elsewhere
+            self.delegate?.useAsIs(stickerAsset:self.stickerAsset) // elsewhere
         }
     }
     @IBAction func addCaptionToSticker(_ sender: AnyObject) {
@@ -103,10 +103,10 @@ final class ITunesMenuViewController: UIViewController,ModalOverCurrentContext {
         // Do any additional setup after loading the view.
         
         imageCaption.isEnabled  = true
-        imageCaption.text = remoteAsset.assetName != "" ? remoteAsset.assetName : "-no caption-"
+        imageCaption.text = stickerAsset.assetName != "" ? stickerAsset.assetName : "-no caption-"
         
-        let isAnimated = remoteAsset.options.contains(.generateasis)
-        showImageFromLocalAsset(remoteAsset:remoteAsset,animate: isAnimated)
+        let isAnimated = stickerAsset.options.contains(.generateasis)
+        showImageFromLocalAsset(stickerAsset:stickerAsset,animate: isAnimated)
         
         // animated can not me modified
         animationSwitch.setOn(isAnimated ,animated:true)
@@ -120,9 +120,9 @@ final class ITunesMenuViewController: UIViewController,ModalOverCurrentContext {
     }
 }
 private extension ITunesMenuViewController {
-    func showImageFromLocalAsset(remoteAsset:StickerAsset,animate:Bool) {
-        if let imgurl = remoteAsset.localurl {
-        let isAnimated = animate//remoteAsset.options.contains(.generateasis)
+    func showImageFromLocalAsset(stickerAsset:StickerAsset,animate isAnimated:Bool) {
+        if let imgurl = stickerAsset.localurl {
+      
         if !isAnimated {
             menuImageView.isHidden = false
             // only set up once
@@ -139,30 +139,27 @@ private extension ITunesMenuViewController {
             }
         } else {
             self.useasisnocaption.isHidden = false
-            let scale : CGFloat = 1 / 1
             ///  put up animated preview
             self.menuImageView.isHidden = true
             self.animatedLabel.isHidden = false
             
-            webviewOverlay.isHidden  = false
             if !setup {
-                let w = webviewOverlay.frame.width
-                let h = webviewOverlay.frame.height
-                let html = "<html5> <meta name='viewport' content='width=device-width, maximum-scale=1.0' /><body  style='padding:0px;margin:0px'><img  style='max-width: 100%; height: auto;' src='\(imgurl)' alt='\(imgurl) height='\(h * scale)' width='\(w * scale)' ></body></html5>"
-                webviewOverlay.scalesPageToFit = true
-                webviewOverlay.contentMode = .scaleAspectFit
-                webviewOverlay.loadHTMLString(html, baseURL: nil)
+                IO.setupAnimationPreview(wv:webviewOverlay,imgurl:imgurl)
             }
+            
+            webviewOverlay.isHidden  = false
         }
         setup = true
     }
     }
+    
+
 }
 //MARK:- CALLBACKS
 
 extension ITunesMenuViewController : GetCaptionDelegate {
     func captionWasEntered(caption: String) {
-        delegate?.useWithCaption(remoteAsset: remoteAsset, caption: caption )
+        delegate?.useWithCaption(stickerAsset: stickerAsset, caption: caption )
         imageCaption.isEnabled  = false
     }
 }

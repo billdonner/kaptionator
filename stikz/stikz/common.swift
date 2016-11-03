@@ -107,22 +107,22 @@ public class Versions {
 }
 
 public func sharedAppContainerDirectory() -> URL {
-    let sharedContainerURL = FileManager().containerURL(forSecurityApplicationGroupIdentifier: SharedMemDataSpace )!
+    let sharedContainerURL = FileManager().containerURL(forSecurityApplicationGroupIdentifier: sharedMedDataSpace )!
     return sharedContainerURL
 }
 
-//MARK: - StickerMakingOptions determine what the sticker looks like
+//MARK: - StickerOptions determine what the sticker looks like
 
-public struct StickerMakingOptions: OptionSet {
+public struct StickerOptions: OptionSet {
     public var rawValue: Int
     
     public init(rawValue:Int) {
         self.rawValue = rawValue
     }
-    public static let generatesmall    = StickerMakingOptions(rawValue: 1 << 0)
-    public static let generatemedium  = StickerMakingOptions(rawValue: 1 << 1)
-    public static let generatelarge   = StickerMakingOptions(rawValue: 1 << 2)
-    public static let generateasis   = StickerMakingOptions(rawValue: 1 << 3)
+    public static let generatesmall    = StickerOptions(rawValue: 1 << 0)
+    public static let generatemedium  = StickerOptions(rawValue: 1 << 1)
+    public static let generatelarge   = StickerOptions(rawValue: 1 << 2)
+    public static let generateasis   = StickerOptions(rawValue: 1 << 3)
     
     public func description()->String {
         var buf = ""
@@ -147,7 +147,7 @@ public struct StickerMakingOptions: OptionSet {
 
 /// "SHARED-INTERAPP-DATA" depending on the actual app instance theres a differen shared data area
 //    it looks something like group.xxx.yyy.zzz
-public var SharedMemDataSpace: String  { get {
+public var sharedMedDataSpace: String  { get {
     if let iDict = Bundle.main.infoDictionary,
         let w =  iDict["SHARED-INTERAPP-DATA"] as? String {
         return w

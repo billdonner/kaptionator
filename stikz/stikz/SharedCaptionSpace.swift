@@ -11,7 +11,7 @@ import Foundation
 // this will be seen in both the main program and the extension, but a restorefromdisk needs doing
 
 
-fileprivate var sharedCaptionSpace  = SharedCaptionSpace(SharedMemDataSpace)
+fileprivate var sharedCaptionSpace  = SharedCaptionSpace(sharedMedDataSpace)
 
 //MARK: - SharedCE represents a sticker with caption ready for the Messages Extension to use directly
 
@@ -20,7 +20,7 @@ public struct SharedCE {
     // write once
     public let id: String //stringified float millisecs since 1970
     public let caption: String
-    public let stickerOptions: StickerMakingOptions
+    public let stickerOptions: StickerOptions
     public let stickerurl:URL?
     public let catalogpack:String
     public let catalogtitle:String
@@ -57,7 +57,7 @@ public struct SharedCE {
                 imageurl:URL,
                 stickerurl:URL,
                 caption:String,
-                options:StickerMakingOptions ) {
+                options:StickerOptions ) {
         
         self.catalogpack = pack
         self.catalogtitle = title
@@ -176,7 +176,7 @@ public struct SharedCaptionSpace {
     }
     
     public static func restoreSharespaceFromDisk () throws  {
-        let suite = SharedMemDataSpace
+        let suite = sharedMedDataSpace
         SharedCaptionSpace.reset()
         if  let defaults = UserDefaults(suiteName: suite),
             let allcaptions = defaults.object(forKey: kAllCaptions) as? JSONArray,
@@ -196,7 +196,7 @@ public struct SharedCaptionSpace {
                         let capt  = acaption[kTitle] as? String {
                         ti = capt
                     }
-                    var options = StickerMakingOptions()
+                    var options = StickerOptions()
                     options.rawValue = optionsvalue
                     /// figure the shared paths
                     let iurl = URL(string:i)!

@@ -118,18 +118,18 @@
 		88DD92F21D88738200832564 /* CatalogMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E01D88738200832564 /* CatalogMenuViewController.swift */; };
 		88DD92F31D88738200832564 /* CatalogMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E01D88738200832564 /* CatalogMenuViewController.swift */; };
 		88DD92F41D88738200832564 /* CatalogMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E01D88738200832564 /* CatalogMenuViewController.swift */; };
-		88DD92F51D88738200832564 /* CaptionedMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E11D88738200832564 /* CaptionedMenuViewController.swift */; };
-		88DD92F61D88738200832564 /* CaptionedMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E11D88738200832564 /* CaptionedMenuViewController.swift */; };
-		88DD92F71D88738200832564 /* CaptionedMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E11D88738200832564 /* CaptionedMenuViewController.swift */; };
-		88DD92F81D88738200832564 /* CaptionedMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E11D88738200832564 /* CaptionedMenuViewController.swift */; };
-		88DD92F91D88738200832564 /* CapationatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E21D88738200832564 /* CapationatedViewController.swift */; };
-		88DD92FA1D88738200832564 /* CapationatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E21D88738200832564 /* CapationatedViewController.swift */; };
-		88DD92FB1D88738200832564 /* CapationatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E21D88738200832564 /* CapationatedViewController.swift */; };
-		88DD92FC1D88738200832564 /* CapationatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E21D88738200832564 /* CapationatedViewController.swift */; };
-		88DD92FD1D88738200832564 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E31D88738200832564 /* MessagesViewController.swift */; };
-		88DD92FE1D88738200832564 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E31D88738200832564 /* MessagesViewController.swift */; };
-		88DD92FF1D88738200832564 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E31D88738200832564 /* MessagesViewController.swift */; };
-		88DD93001D88738200832564 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E31D88738200832564 /* MessagesViewController.swift */; };
+		88DD92F51D88738200832564 /* AppSpaceMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E11D88738200832564 /* AppSpaceMenuViewController.swift */; };
+		88DD92F61D88738200832564 /* AppSpaceMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E11D88738200832564 /* AppSpaceMenuViewController.swift */; };
+		88DD92F71D88738200832564 /* AppSpaceMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E11D88738200832564 /* AppSpaceMenuViewController.swift */; };
+		88DD92F81D88738200832564 /* AppSpaceMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E11D88738200832564 /* AppSpaceMenuViewController.swift */; };
+		88DD92F91D88738200832564 /* AppCaptionSpaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E21D88738200832564 /* AppCaptionSpaceViewController.swift */; };
+		88DD92FA1D88738200832564 /* AppCaptionSpaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E21D88738200832564 /* AppCaptionSpaceViewController.swift */; };
+		88DD92FB1D88738200832564 /* AppCaptionSpaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E21D88738200832564 /* AppCaptionSpaceViewController.swift */; };
+		88DD92FC1D88738200832564 /* AppCaptionSpaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E21D88738200832564 /* AppCaptionSpaceViewController.swift */; };
+		88DD92FD1D88738200832564 /* SharedCaptionSpaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E31D88738200832564 /* SharedCaptionSpaceViewController.swift */; };
+		88DD92FE1D88738200832564 /* SharedCaptionSpaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E31D88738200832564 /* SharedCaptionSpaceViewController.swift */; };
+		88DD92FF1D88738200832564 /* SharedCaptionSpaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E31D88738200832564 /* SharedCaptionSpaceViewController.swift */; };
+		88DD93001D88738200832564 /* SharedCaptionSpaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E31D88738200832564 /* SharedCaptionSpaceViewController.swift */; };
 		88DD93011D88738200832564 /* WebHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E41D88738200832564 /* WebHelpViewController.swift */; };
 		88DD93021D88738200832564 /* WebHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E41D88738200832564 /* WebHelpViewController.swift */; };
 		88DD93031D88738200832564 /* WebHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E41D88738200832564 /* WebHelpViewController.swift */; };
@@ -138,10 +138,10 @@
 		88DD93061D88738200832564 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E51D88738200832564 /* MasterViewController.swift */; };
 		88DD93071D88738200832564 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E51D88738200832564 /* MasterViewController.swift */; };
 		88DD93081D88738200832564 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E51D88738200832564 /* MasterViewController.swift */; };
-		88DD93091D88738200832564 /* MessagedMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E61D88738200832564 /* MessagedMenuViewController.swift */; };
-		88DD930A1D88738200832564 /* MessagedMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E61D88738200832564 /* MessagedMenuViewController.swift */; };
-		88DD930B1D88738200832564 /* MessagedMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E61D88738200832564 /* MessagedMenuViewController.swift */; };
-		88DD930C1D88738200832564 /* MessagedMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E61D88738200832564 /* MessagedMenuViewController.swift */; };
+		88DD93091D88738200832564 /* SharedSpaceMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E61D88738200832564 /* SharedSpaceMenuViewController.swift */; };
+		88DD930A1D88738200832564 /* SharedSpaceMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E61D88738200832564 /* SharedSpaceMenuViewController.swift */; };
+		88DD930B1D88738200832564 /* SharedSpaceMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E61D88738200832564 /* SharedSpaceMenuViewController.swift */; };
+		88DD930C1D88738200832564 /* SharedSpaceMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E61D88738200832564 /* SharedSpaceMenuViewController.swift */; };
 		88DD930D1D88738200832564 /* CatalogDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E71D88738200832564 /* CatalogDataCell.swift */; };
 		88DD930E1D88738200832564 /* CatalogDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E71D88738200832564 /* CatalogDataCell.swift */; };
 		88DD930F1D88738200832564 /* CatalogDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E71D88738200832564 /* CatalogDataCell.swift */; };
@@ -355,12 +355,12 @@
 		88DD92DE1D88738200832564 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88DD92DF1D88738200832564 /* CatalogRemoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogRemoteViewController.swift; sourceTree = "<group>"; };
 		88DD92E01D88738200832564 /* CatalogMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogMenuViewController.swift; sourceTree = "<group>"; };
-		88DD92E11D88738200832564 /* CaptionedMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptionedMenuViewController.swift; sourceTree = "<group>"; };
-		88DD92E21D88738200832564 /* CapationatedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapationatedViewController.swift; sourceTree = "<group>"; };
-		88DD92E31D88738200832564 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		88DD92E11D88738200832564 /* AppSpaceMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSpaceMenuViewController.swift; sourceTree = "<group>"; };
+		88DD92E21D88738200832564 /* AppCaptionSpaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCaptionSpaceViewController.swift; sourceTree = "<group>"; };
+		88DD92E31D88738200832564 /* SharedCaptionSpaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedCaptionSpaceViewController.swift; sourceTree = "<group>"; };
 		88DD92E41D88738200832564 /* WebHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebHelpViewController.swift; sourceTree = "<group>"; };
 		88DD92E51D88738200832564 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		88DD92E61D88738200832564 /* MessagedMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagedMenuViewController.swift; sourceTree = "<group>"; };
+		88DD92E61D88738200832564 /* SharedSpaceMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedSpaceMenuViewController.swift; sourceTree = "<group>"; };
 		88DD92E71D88738200832564 /* CatalogDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogDataCell.swift; sourceTree = "<group>"; };
 		88DD92E81D88738200832564 /* CaptionedTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptionedTableCell.swift; sourceTree = "<group>"; };
 		88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesMenuViewController.swift; sourceTree = "<group>"; };
@@ -462,10 +462,10 @@
 				88FA07D61DA402330063B483 /* ChangeCaptionViewController.swift */,
 				88B570EB1DA566B400CD4058 /* GetCaptionViewController.swift */,
 				88DD92E01D88738200832564 /* CatalogMenuViewController.swift */,
-				88DD92E11D88738200832564 /* CaptionedMenuViewController.swift */,
+				88DD92E11D88738200832564 /* AppSpaceMenuViewController.swift */,
 				883982961DB1421C00B5A037 /* InnerHelpViewController.swift */,
 				88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */,
-				88DD92E61D88738200832564 /* MessagedMenuViewController.swift */,
+				88DD92E61D88738200832564 /* SharedSpaceMenuViewController.swift */,
 				88F2FC911D931A070055209C /* MoreMenuViewController.swift */,
 				886B4AC71D9DDD5B00581C9B /* ReorderMessagesViewController.swift */,
 				8862CE311DB0838500685CCA /* StartupHelpViewController.swift */,
@@ -490,11 +490,10 @@
 			isa = PBXGroup;
 			children = (
 				88DD92DF1D88738200832564 /* CatalogRemoteViewController.swift */,
-				88DD92E51D88738200832564 /* MasterViewController.swift */,
 				88B571921DA705AC00CD4058 /* CatalogLocalViewController.swift */,
-				88DD92E21D88738200832564 /* CapationatedViewController.swift */,
+				88DD92E21D88738200832564 /* AppCaptionSpaceViewController.swift */,
 				881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */,
-				88DD92E31D88738200832564 /* MessagesViewController.swift */,
+				88DD92E31D88738200832564 /* SharedCaptionSpaceViewController.swift */,
 			);
 			name = ControlledByMasterView;
 			sourceTree = "<group>";
@@ -507,6 +506,7 @@
 				88DD92D91D8872D400832564 /* Main.storyboard */,
 				8817590D1DC7F26900DB70C6 /* Help.storyboard */,
 				88DD92DE1D88738200832564 /* AppDelegate.swift */,
+				88DD92E51D88738200832564 /* MasterViewController.swift */,
 				881759141DC8009200DB70C6 /* ControlledByMasterView */,
 				881759121DC7FFF200DB70C6 /* ModalViewControllers */,
 				881759131DC8005000DB70C6 /* Cells */,
@@ -1090,7 +1090,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88DD93091D88738200832564 /* MessagedMenuViewController.swift in Sources */,
+				88DD93091D88738200832564 /* SharedSpaceMenuViewController.swift in Sources */,
 				88B5718E1DA6FC8F00CD4058 /* ITunesDataCell.swift in Sources */,
 				88DD93011D88738200832564 /* WebHelpViewController.swift in Sources */,
 				88A6E50C1DCA4E3600E2D1B7 /* StickerAssetSpace.swift in Sources */,
@@ -1103,8 +1103,8 @@
 				88DD93111D88738200832564 /* CaptionedTableCell.swift in Sources */,
 				886B4ACD1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88A6E5021DCA4DDF00E2D1B7 /* AppCaptionSpace.swift in Sources */,
-				88DD92F91D88738200832564 /* CapationatedViewController.swift in Sources */,
-				88DD92F51D88738200832564 /* CaptionedMenuViewController.swift in Sources */,
+				88DD92F91D88738200832564 /* AppCaptionSpaceViewController.swift in Sources */,
+				88DD92F51D88738200832564 /* AppSpaceMenuViewController.swift in Sources */,
 				88B571931DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */,
 				88B570EC1DA566B400CD4058 /* GetCaptionViewController.swift in Sources */,
 				886B4AC31D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */,
@@ -1117,7 +1117,7 @@
 				883982971DB1421C00B5A037 /* InnerHelpViewController.swift in Sources */,
 				88DD93051D88738200832564 /* MasterViewController.swift in Sources */,
 				88A6E4D71DCA38F800E2D1B7 /* SFViewController.swift in Sources */,
-				88DD92FD1D88738200832564 /* MessagesViewController.swift in Sources */,
+				88DD92FD1D88738200832564 /* SharedCaptionSpaceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1125,7 +1125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88DD930A1D88738200832564 /* MessagedMenuViewController.swift in Sources */,
+				88DD930A1D88738200832564 /* SharedSpaceMenuViewController.swift in Sources */,
 				88A6E50D1DCA4E3600E2D1B7 /* StickerAssetSpace.swift in Sources */,
 				88DD93021D88738200832564 /* WebHelpViewController.swift in Sources */,
 				88DD92EA1D88738200832564 /* AppDelegate.swift in Sources */,
@@ -1137,8 +1137,8 @@
 				88FA07D81DA402330063B483 /* ChangeCaptionViewController.swift in Sources */,
 				AD20A5FF1DA1951000877ABF /* ITunesMenuViewController.swift in Sources */,
 				88DD93121D88738200832564 /* CaptionedTableCell.swift in Sources */,
-				88DD92FA1D88738200832564 /* CapationatedViewController.swift in Sources */,
-				88DD92F61D88738200832564 /* CaptionedMenuViewController.swift in Sources */,
+				88DD92FA1D88738200832564 /* AppCaptionSpaceViewController.swift in Sources */,
+				88DD92F61D88738200832564 /* AppSpaceMenuViewController.swift in Sources */,
 				88B571941DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */,
 				88B570ED1DA566B400CD4058 /* GetCaptionViewController.swift in Sources */,
 				886B4AC91D9DDD5B00581C9B /* ReorderMessagesViewController.swift in Sources */,
@@ -1148,7 +1148,7 @@
 				88DD930E1D88738200832564 /* CatalogDataCell.swift in Sources */,
 				88DD93061D88738200832564 /* MasterViewController.swift in Sources */,
 				8839829C1DB1556800B5A037 /* InnerHelpViewController.swift in Sources */,
-				88DD92FE1D88738200832564 /* MessagesViewController.swift in Sources */,
+				88DD92FE1D88738200832564 /* SharedCaptionSpaceViewController.swift in Sources */,
 				886B4AC41D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */,
 				88A6E5081DCA4E1300E2D1B7 /* InfoDictIOS.swift in Sources */,
 			);
@@ -1158,7 +1158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88DD930B1D88738200832564 /* MessagedMenuViewController.swift in Sources */,
+				88DD930B1D88738200832564 /* SharedSpaceMenuViewController.swift in Sources */,
 				88A6E50E1DCA4E3600E2D1B7 /* StickerAssetSpace.swift in Sources */,
 				88DD93031D88738200832564 /* WebHelpViewController.swift in Sources */,
 				88DD92EB1D88738200832564 /* AppDelegate.swift in Sources */,
@@ -1170,8 +1170,8 @@
 				88FA07D91DA402330063B483 /* ChangeCaptionViewController.swift in Sources */,
 				AD20A6001DA1951100877ABF /* ITunesMenuViewController.swift in Sources */,
 				88DD93131D88738200832564 /* CaptionedTableCell.swift in Sources */,
-				88DD92FB1D88738200832564 /* CapationatedViewController.swift in Sources */,
-				88DD92F71D88738200832564 /* CaptionedMenuViewController.swift in Sources */,
+				88DD92FB1D88738200832564 /* AppCaptionSpaceViewController.swift in Sources */,
+				88DD92F71D88738200832564 /* AppSpaceMenuViewController.swift in Sources */,
 				88B571951DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */,
 				88B570EE1DA566B400CD4058 /* GetCaptionViewController.swift in Sources */,
 				886B4ACA1D9DDD5B00581C9B /* ReorderMessagesViewController.swift in Sources */,
@@ -1181,7 +1181,7 @@
 				88DD930F1D88738200832564 /* CatalogDataCell.swift in Sources */,
 				88DD93071D88738200832564 /* MasterViewController.swift in Sources */,
 				8839829D1DB1556B00B5A037 /* InnerHelpViewController.swift in Sources */,
-				88DD92FF1D88738200832564 /* MessagesViewController.swift in Sources */,
+				88DD92FF1D88738200832564 /* SharedCaptionSpaceViewController.swift in Sources */,
 				886B4AC51D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */,
 				88A6E5091DCA4E1300E2D1B7 /* InfoDictIOS.swift in Sources */,
 			);
@@ -1191,7 +1191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88DD930C1D88738200832564 /* MessagedMenuViewController.swift in Sources */,
+				88DD930C1D88738200832564 /* SharedSpaceMenuViewController.swift in Sources */,
 				88A6E50F1DCA4E3600E2D1B7 /* StickerAssetSpace.swift in Sources */,
 				88DD93041D88738200832564 /* WebHelpViewController.swift in Sources */,
 				88DD92EC1D88738200832564 /* AppDelegate.swift in Sources */,
@@ -1203,8 +1203,8 @@
 				88FA07DA1DA402330063B483 /* ChangeCaptionViewController.swift in Sources */,
 				AD20A6011DA1951200877ABF /* ITunesMenuViewController.swift in Sources */,
 				88DD93141D88738200832564 /* CaptionedTableCell.swift in Sources */,
-				88DD92FC1D88738200832564 /* CapationatedViewController.swift in Sources */,
-				88DD92F81D88738200832564 /* CaptionedMenuViewController.swift in Sources */,
+				88DD92FC1D88738200832564 /* AppCaptionSpaceViewController.swift in Sources */,
+				88DD92F81D88738200832564 /* AppSpaceMenuViewController.swift in Sources */,
 				88B571961DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */,
 				88B570EF1DA566B400CD4058 /* GetCaptionViewController.swift in Sources */,
 				886B4ACB1D9DDD5B00581C9B /* ReorderMessagesViewController.swift in Sources */,
@@ -1214,7 +1214,7 @@
 				88DD93101D88738200832564 /* CatalogDataCell.swift in Sources */,
 				88DD93081D88738200832564 /* MasterViewController.swift in Sources */,
 				8839829E1DB1556C00B5A037 /* InnerHelpViewController.swift in Sources */,
-				88DD93001D88738200832564 /* MessagesViewController.swift in Sources */,
+				88DD93001D88738200832564 /* SharedCaptionSpaceViewController.swift in Sources */,
 				886B4AC61D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */,
 				88A6E50A1DCA4E1300E2D1B7 /* InfoDictIOS.swift in Sources */,
 			);
