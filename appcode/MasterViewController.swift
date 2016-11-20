@@ -123,10 +123,10 @@ final class MasterViewController: UIViewController,UserInteractionSignalDelegate
         performSegue(withIdentifier: "HelpDropdownViewControllerID", sender: nil)
     }
     @IBAction func catalogueAction(_ sender: UIBarButtonItem) {
-        if SharedCaptionSpace.itemCount() == 0 && showFirstHelp {
-            showFirstHelp = false
-            performSegue(withIdentifier: "StartupHelpID", sender: nil)
-        }
+//        if SharedCaptionSpace.itemCount() == 0 && showFirstHelp {
+//            showFirstHelp = false
+//            performSegue(withIdentifier: "StartupHelpID", sender: nil)
+//        }
         cycleaction(sender: sender, id:showCatalogID,
                     vc:&showFirstViewController,color:appTheme.catalogColor)
         replaceTitle(extensionScheme + " Home")

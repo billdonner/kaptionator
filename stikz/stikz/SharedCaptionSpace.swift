@@ -10,7 +10,6 @@ import Foundation
 
 // this will be seen in both the main program and the extension, but a restorefromdisk needs doing
 
-
 fileprivate var sharedCaptionSpace  = SharedCaptionSpace(sharedMedDataSpace)
 
 //MARK: - SharedCE represents a sticker with caption ready for the Messages Extension to use directly
@@ -41,18 +40,14 @@ public struct SharedCE {
             kOptions:stickerOptions.rawValue as Int ]
         return x
     }
-    
-    
     static private  func intWithLeadingZeros (_ thing:Int64,digits:Int) -> String  {
         return String(format:"%0\(digits)lu", (thing) )
     }
-    
     static private  func nicetime () -> String  {
         let now = CFAbsoluteTimeGetCurrent()*100000000.0
         let intnow = Int64(now)
         return intWithLeadingZeros( intnow, digits: 20)
     }
-    
     public init(pack:String,title:String,
                 imageurl:URL,
                 stickerurl:URL,
@@ -73,8 +68,7 @@ public struct SharedCE {
 /// nothing mutable but the entries themselves
 public struct SharedCaptionSpace {
     fileprivate var entries : [SharedCE] = []
-    fileprivate  let  suite: String // partions nsuserdefaults
-    
+    fileprivate let  suite: String // partions nsuserdefaults
     fileprivate init(_ suite:String) {
         self.suite = suite
         
@@ -207,7 +201,6 @@ public struct SharedCaptionSpace {
                                       caption:  captiontext,
                                       options: options )
                     let _ = SharedCaptionSpace.add(ce: t)
-                    
                 }
             }
             SharedCaptionSpace.saveData()  //add calls it over and; over
@@ -216,6 +209,4 @@ public struct SharedCaptionSpace {
             print("**** \(suite) restoreFromDisk UserDefaults failure")
             throw KaptionatorErrors.restoreFailure}
     }// restore
-    
-
 }

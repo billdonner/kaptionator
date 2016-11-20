@@ -88,7 +88,8 @@ public struct StickerFileFactory {
                     returls.append(rul.absoluteString)
                 }
                 if options.contains(.generatemedium) {
-                    let rul =  try createTextSticker(imageData:imageData,caption:caption,label:label + "-M" ,type:type,size:kStickerMediumSize, proportion:kStickerMediumImageRatio, fontSize:kStickerMediumFontSize )
+                    let rul =  try createTextSticker(imageData:imageData,caption:caption,
+                        label:label + "-M" ,type:type,size:kStickerMediumSize, proportion:kStickerMediumImageRatio, fontSize:kStickerMediumFontSize )
                     returls.append(rul.absoluteString)
                 }
                 if options.contains(.generatelarge) {
@@ -103,9 +104,7 @@ public struct StickerFileFactory {
         }
         return URL(string:returls[0])!
     }
-    
     // generates 0 or more stickers
-    
     private static func
         makeStickerAndURLfromAsIsData( label:String,type:String ) throws -> URL {
         
@@ -113,7 +112,6 @@ public struct StickerFileFactory {
         let hashval = ""//"-AnImAtEd"
         return sharedAppContainerDirectory().appendingPathComponent("\(label)\(hashval).\(type)")
     }
-    
     private  static func createTextSticker(imageData:Data,caption:String, label:String,type:String,size:CGFloat, proportion: CGFloat, fontSize:CGFloat ) throws -> URL {
         let hashval = "-\(caption.hash)"
         let image = UIImage(data:imageData) // can scale here
@@ -163,7 +161,6 @@ public struct StickerFileFactory {
         /// now write this view to the local file system
         //let sz = Int(floor(size)) ?? 0
         let rul = sharedAppContainerDirectory().appendingPathComponent   ("\(label).\(type)")
-        
         do {
             let snapshotimage = try  Snapsupport.snap(view: oview)
             guard let data = UIImagePNGRepresentation(snapshotimage) else {
@@ -177,5 +174,4 @@ public struct StickerFileFactory {
         print(">>>>>> created on disk sticker now at \(rul)")
         return rul
     }// end of create stickerX into local file system
-    
 }

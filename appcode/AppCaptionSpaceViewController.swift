@@ -63,7 +63,9 @@
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         refreshFromCapSpace()
+        if AppCaptionSpace.itemCount() == 0 {
         masterViewController?.performSegue(withIdentifier: "NoHistoryContentID", sender: self)
+        }
     }
  }
  

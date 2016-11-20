@@ -23,7 +23,7 @@ final class SharedCaptionSpaceViewController: UIViewController,ControlledByMaste
         refreshControl.endRefreshing()
         refreshFromMemSpace()
     }
- 
+    
     func refreshLayout() {
         self.tableView!.reloadData()
     }
@@ -36,14 +36,14 @@ final class SharedCaptionSpaceViewController: UIViewController,ControlledByMaste
     
     //MARK:- Dispatching to External ViewControllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      
-            if segue.identifier ==  "MessagesAppCellTapMenuID"{
-                if let indexPath = theSelectedIndexPath {
-                    if let avc =  segue.destination as? SharedSpaceMenuViewController   {
-                        avc.delegate = self
-                        avc.captionedEntry = stickerz [indexPath.row]
-                    }
-                }}}
+        
+        if segue.identifier ==  "MessagesAppCellTapMenuID"{
+            if let indexPath = theSelectedIndexPath {
+                if let avc =  segue.destination as? SharedSpaceMenuViewController   {
+                    avc.delegate = self
+                    avc.captionedEntry = stickerz [indexPath.row]
+                }
+            }}}
     internal func refreshPulled(_ x:AnyObject) {
         if stickerz.count > 1 {
             self.performSegue(withIdentifier: "PresentReorder", sender: nil)
@@ -72,11 +72,9 @@ final class SharedCaptionSpaceViewController: UIViewController,ControlledByMaste
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         refreshFromMemSpace()
-        
-        
-        masterViewController?.performSegue(withIdentifier: "NoMessagesContentID", sender: self)
-        
-        
+        if SharedCaptionSpace.itemCount() == 0 {
+            masterViewController?.performSegue(withIdentifier: "NoMessagesContentID", sender: self)
+        }
     }
 }
 // MARK: Delegates for actions from our associated menu
@@ -118,10 +116,6 @@ extension SharedCaptionSpaceViewController : UITableViewDataSource {
         cell.paint2(ce:ce,line2:line2)
         /// go get the image from our cache and then the net
         if  let surl =  ce.stickerurl {
-            //ce.stickerPath[0] // ?????
-            
-            // print("=====lip--\(ce.localimagepath) spath--\(ce.stickerPath)")
-            
             cell.paintImageForMessagesTableCell(url:surl)
         }
         cell.colorFor(options: ce.stickerOptions)
@@ -155,9 +149,6 @@ private extension SharedCaptionSpaceViewController {
         stickerz = items
         tableView?.reloadData()
         // if two or more items, given user opportunity to sort
-        
-        //  =  items.count > 1
-        
     }
 }
 

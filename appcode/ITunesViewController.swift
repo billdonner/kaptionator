@@ -65,8 +65,9 @@ final class ITunesViewController :UIViewController,ControlledByMasterView, UICol
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.collectionView!.reloadData()
-        
+        if StickerAssetSpace.itemCount() == 0 {
         masterViewController?.performSegue(withIdentifier: "NoITunesContentID", sender: self)
+        }
         
     }
     override func viewDidLoad() {
