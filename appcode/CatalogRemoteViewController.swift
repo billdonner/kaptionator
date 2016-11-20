@@ -13,11 +13,16 @@ import stikz
 //
 
 
-final class CatalogRemoteViewController:UIViewController,ControlledByMasterView, UICollectionViewDelegate, UICollectionViewDataSource  {
+final class CatalogRemoteViewController:UIViewController,ControlledByMasterView, UserInteractionSignalDelegate,UICollectionViewDelegate, UICollectionViewDataSource  {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
 @IBAction func unwindToCatalogItemsViewControlle(_ segue: UIStoryboardSegue)  {}
+    
+    func backToCallerAndDismiss () {// can go directly back
+        masterViewController?.dismiss(animated: true, completion: nil)
+    }
+    
     func refreshLayout() {
         self.collectionView!.reloadData()
     }
@@ -45,7 +50,7 @@ final class CatalogRemoteViewController:UIViewController,ControlledByMasterView,
         assert( stickerManifestURL != nil)
         //  only read the catalog if we have to
         do {
-            try StickerAssetSpace.restoreRemspaceFromDisk()
+            try StickerAssetSpace.restoreStickerAssetsFromDisk()
             print("StickerAssetSpace restored, \(StickerAssetSpace.itemCount()) items")
             phase2 ()
         }  catch {
@@ -170,10 +175,10 @@ extension CatalogRemoteViewController {  //loading on first up - moved from mast
 extension CatalogRemoteViewController : CatalogMenuViewDelegate {
     func useAsIs(stickerAsset:StickerAsset) {
         AppCE.makeNewCaptionAsIs(from: stickerAsset )    }
-    func useWithNoCaption(stickerAsset:StickerAsset) {
-        // make un captionated entry from remote asset
-        AppCE.makeNewCaptionCat( from: stickerAsset, caption: "" )
-    }
+//    func zuseWithNoCaption(stickerAsset:StickerAsset) {
+//        // make un captionated entry from remote asset
+//        AppCE.makeNewCaptionCat( from: stickerAsset, caption: "" )
+//    }
     func useWithCaption(stickerAsset:StickerAsset,caption:String) {
         // make un captionated entry from remote asset
         AppCE.makeNewCaptionCat( from: stickerAsset, caption: caption )

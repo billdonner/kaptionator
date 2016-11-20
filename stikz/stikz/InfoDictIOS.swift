@@ -279,8 +279,8 @@ extension UIColor {
 
 public struct IOSSpecialOps { // only compiles in main app - ios bug?
     
-
-  public static func blurt (_ vc:UIViewController, title:String, mess:String, f:@escaping ()->()) {
+    
+    public static func blurt (_ vc:UIViewController, title:String, mess:String, f:@escaping ()->()) {
         
         let action : UIAlertController = UIAlertController(title:title, message: mess, preferredStyle: .alert)
         
@@ -293,10 +293,10 @@ public struct IOSSpecialOps { // only compiles in main app - ios bug?
         popPresenter?.sourceView = vc.view
         vc.present(action, animated: true , completion:nil)
     }
- public static func blurt (_ vc:UIViewController, title:String, mess:String) {
+    public static func blurt (_ vc:UIViewController, title:String, mess:String) {
         blurt(vc,title:title,mess:mess,f:{})
     }
-  public static func ask (_ vc:UIViewController, title:String, mess:String, f:@escaping ()->()) {
+    public static func ask (_ vc:UIViewController, title:String, mess:String, f:@escaping ()->()) {
         
         let action : UIAlertController = UIAlertController(title:title, message: mess, preferredStyle: .alert)
         
@@ -312,7 +312,7 @@ public struct IOSSpecialOps { // only compiles in main app - ios bug?
         popPresenter?.sourceView = vc.view
         vc.present(action, animated: true , completion:nil)
     }
-   public  static func ask (_ vc:UIViewController, title:String, mess:String) {
+    public  static func ask (_ vc:UIViewController, title:String, mess:String) {
         ask(vc,title:title,mess:mess,f:{})
     }
 }

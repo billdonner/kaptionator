@@ -12,11 +12,14 @@ import stikz
 // MARK: Show LocalItunes Document Entries in One Tab as Child ViewContoller
 //
 
-final class ITunesViewController :UIViewController,ControlledByMasterView, UICollectionViewDelegate, UICollectionViewDataSource   { 
+final class ITunesViewController :UIViewController,ControlledByMasterView, UICollectionViewDelegate, UICollectionViewDataSource   {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func unwindToITunesViewController(_ segue: UIStoryboardSegue)  {}
+    
+
+    
     func refreshLayout() {
         self.collectionView!.reloadData()
     }
@@ -26,15 +29,10 @@ final class ITunesViewController :UIViewController,ControlledByMasterView, UICol
     
     @IBOutlet weak var startupLogo: UIImageView!
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-        print ("**********removed all cached images because iTunesViewController short on memory")
-    }
-    
     //MARK:- Dispatching to External ViewControllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+ 
         if segue.identifier ==  "ITunesCellTapMenuID"{
             if let indexPath = theSelectedIndexPath {
                 let ra = StickerAssetSpace.itemAt(indexPath.row)
@@ -56,7 +54,6 @@ final class ITunesViewController :UIViewController,ControlledByMasterView, UICol
             print(" refreshed with \(allofme.count) items")
             self.collectionView!.reloadData()
             self.refreshControl.endRefreshing()
-            
         })
     }
     internal func refresher() {
@@ -67,8 +64,10 @@ final class ITunesViewController :UIViewController,ControlledByMasterView, UICol
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-     
         self.collectionView!.reloadData()
+        
+        masterViewController?.performSegue(withIdentifier: "NoITunesContentID", sender: self)
+        
     }
     override func viewDidLoad() {
         self.collectionView.backgroundColor = appTheme.backgroundColor
@@ -78,14 +77,6 @@ final class ITunesViewController :UIViewController,ControlledByMasterView, UICol
         
         let img = UIImage(named:backgroundImagePath)
         startupLogo.image = img
-        // put logo in there, we will fade it in
-//let offset:CGFloat = 64.0
-//        startupLogo.image = UIImage(named:backgroundImagePath)
-//        startupLogo.frame = ////self.view.frame
-//            CGRect(x:0,y:offset,width:self.view.frame.width, height:self.view.frame.height - offset )
-//          ////startupLogo.center = self.view.center
-//        self.view.insertSubview(startupLogo, aboveSubview: self.view)
-//        self.collectionView?.alpha = 0 // start as invisible
         self.automaticallyAdjustsScrollViewInsets = false
         refreshControl.tintColor = .blue
         refreshControl.attributedTitle =
@@ -98,11 +89,13 @@ final class ITunesViewController :UIViewController,ControlledByMasterView, UICol
         
         assert( stickerManifestURL == nil)
         do {
-            try StickerAssetSpace.restoreRemspaceFromDisk()
+            try StickerAssetSpace.restoreStickerAssetsFromDisk()
             print("remSpace restored, \(StickerAssetSpace.itemCount()) items")
         }  catch {
              print("could not restore remspace")
         }
+        
+        
       // refreshFromITunes()
         UIView.animate(withDuration: 1.5, animations: {
            // self.startupLogo.alpha =  0.0
@@ -110,6 +103,9 @@ final class ITunesViewController :UIViewController,ControlledByMasterView, UICol
             }
             , completion: { b in
              //   self.startupLogo.removeFromSuperview()
+    
+                
+            
             }
         )
     }
@@ -151,18 +147,13 @@ extension ITunesViewController : ITunesMenuViewDelegate {
     
     func changedAnimationState(stickerAsset:StickerAsset){
         // all the work has been done, just refresh
-        
-        
         self.collectionView.reloadData()
-        
     }
     func useAsIs(stickerAsset:StickerAsset) {
         AppCE.makeNewCaptionAsIs(from: stickerAsset )
           MasterViewController.blurt(title: "Added one image to your catalog",mess: "as is")
-        
     }
     func deleteAsset(stickerAsset:StickerAsset) {
-        
         MasterViewController.ask(title: "Are you sure?",mess: "You will have to reload the image to restore") {
         StickerAssetSpace.remove(ra: stickerAsset)
         self.collectionView.reloadData()
@@ -170,15 +161,14 @@ extension ITunesViewController : ITunesMenuViewDelegate {
         MasterViewController.blurt(title: "Removed from catalog",mess: "")
         }
     }
-    func useWithNoCaption(stickerAsset:StickerAsset) {
-        // make un captionated entry from remote asset
-        AppCE.makeNewCaptionCat( from: stickerAsset, caption: "" )
-        MasterViewController.blurt(title: "Added one image to your catalog",mess: "no caption")
-        
-    }
+//    func xuseWithNoCaption(stickerAsset:StickerAsset) {
+//        // make un captionated entry from remote asset
+//        AppCE.makeNewCaptionCat( from: stickerAsset, caption: "" )
+//        MasterViewController.blurt(title: "Added one image to your catalog",mess: "no caption")
+//    }
     func useWithCaption(stickerAsset:StickerAsset,caption:String) {
         // make un captionated entry from remote asset
         AppCE.makeNewCaptionCat( from: stickerAsset, caption: caption )
-   MasterViewController.blurt(title: "Added one image to your catalog",mess: caption)
+        MasterViewController.blurt(title: "Added one image to your catalog",mess: caption)
     }
 }

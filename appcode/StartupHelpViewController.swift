@@ -26,7 +26,7 @@ final class StartupHelpViewController:  UIViewController, ModalOverCurrentContex
         super.viewDidLoad()
         let count = SharedCaptionSpace.itemCount()
         pic.image = UIImage(named:backgroundImagePath)
-        topLabel.text = count == 0 ? "Welcome to " + extensionScheme : "you have \(count) stickers in the Messages app"
+        topLabel.text = count == 0 ? "Welcome to " + extensionScheme : " \(count) stickers in  Messages app"
         topBlurb.text = bigBlurb
         
         addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))

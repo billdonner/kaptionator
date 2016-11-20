@@ -21,10 +21,18 @@ final class HelpDropdownViewController: UIViewController, ModalOverCurrentContex
     private var imagePicker = UIImagePickerController()
     
     weak var delegate: HelpDropdownDelegate?  // mig
-   // var pvc: UIViewController! // must be set by caller to masterview
+ 
+    
+    
     func dismisstapped(_ s: AnyObject) {
         delegate?.refreshLayout()
         dismiss(animated: true, completion: nil)
+    }
+    @IBAction func imageWasTapped(_ sender: Any) {
+        // here we can do secret shit
+        
+        print("secret")
+        
     }
     
     @IBAction func hitITunesAction(_ sender: AnyObject) {

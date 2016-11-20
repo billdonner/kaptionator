@@ -21,11 +21,17 @@ class ReorderMessagesReusableView: UICollectionReusableView {
    @IBOutlet weak var headerLabel: UILabel!
     
 }
+protocol ReorderSharedCaptionSpaceDelegate:class {
+    func refreshLayout()
+}
 final class ReorderSharedCaptionSpaceViewController: UICollectionViewController,ModalOverCurrentContext{
    private var theSelectedIndexPath:IndexPath?
-    
+    var delegate: ReorderSharedCaptionSpaceDelegate!
     internal func dismisstapped(_ s: AnyObject) {
-        performSegue(withIdentifier: "unwindToSharedCaptionSpaceViewController", sender: self)
+//        performSegue(withIdentifier: "unwindToSharedCaptionSpaceViewController", sender: self)
+            delegate?.refreshLayout()
+            dismiss(animated: true, completion: nil)
+        
     }
     
     override func viewDidLoad() {

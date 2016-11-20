@@ -213,8 +213,11 @@
                                         <rect key="frame" x="0.0" y="2" width="383" height="37"/>
                                         <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </activityIndicatorView>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xY9-Dn-0Jh">
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iK5-z1-qgE">
                                         <rect key="frame" x="0.0" y="39" width="383" height="564"/>
+                                        <connections>
+                                            <segue destination="elE-YM-2FG" kind="embed" id="CNV-88-a0u"/>
+                                        </connections>
                                     </containerView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -269,20 +272,20 @@
                         <outlet property="backgroundImageView" destination="C2L-za-zCh" id="k1r-pB-eAn"/>
                         <outlet property="catb" destination="waC-ep-YLe" id="mqL-9O-aNB"/>
                         <outlet property="coloredSpacer" destination="dZ6-fO-zz0" id="Epd-wD-t5x"/>
-                        <outlet property="containerView" destination="xY9-Dn-0Jh" id="e61-3Y-uqc"/>
+                        <outlet property="containerView" destination="iK5-z1-qgE" id="8gP-Ja-LGf"/>
                         <outlet property="helpbbi" destination="bEI-po-Of0" id="TOT-sQ-QqK"/>
                         <outlet property="imessage" destination="zWE-qh-xhw" id="KXO-5t-J6g"/>
                         <outlet property="stickerz" destination="qTl-Jn-SiP" id="dEp-xh-Sa5"/>
                         <segue destination="oCt-SS-lEW" kind="presentation" identifier="StartupHelpID" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="k4G-Ht-f8R"/>
                         <segue destination="Zqb-xI-IZm" kind="presentation" identifier="HelpDropdownViewControllerID" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="klH-0n-Hwv"/>
                         <segue destination="2S6-iY-a2i" kind="presentation" identifier="NoHistoryContentID" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="mHR-Z2-LiG"/>
-                        <segue destination="JmH-Xp-7fQ" kind="presentation" identifier="NoMessagesContentID" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="D0Q-3L-Qao"/>
-                        <segue destination="0qH-oT-Rby" kind="presentation" identifier="NoITunesContentID" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="MbT-bW-ajj"/>
+                        <segue destination="JmH-Xp-7fQ" kind="presentation" identifier="NoMessagesContenID" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="D0Q-3L-Qao"/>
+                        <segue destination="0qH-oT-Rby" kind="presentation" identifier="NoITunesContentID" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="AxM-XX-ore"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5m-nU-S6G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3361" y="-9564"/>
+            <point key="canvasLocation" x="-3196" y="-9345"/>
         </scene>
         <!--StartupHelpID-->
         <scene sceneID="RDg-KN-aW8">
@@ -1357,7 +1360,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avo-8S-TNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4188" y="-9793"/>
+            <point key="canvasLocation" x="-3484" y="-9534"/>
         </scene>
         <!--NoCatalogContentID-->
         <scene sceneID="Mud-32-gUz">
@@ -1667,7 +1670,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oGN-wD-Khz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3425" y="-7768"/>
+            <point key="canvasLocation" x="-3436" y="-7739"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KIR-iM-9bF">
@@ -1705,6 +1708,20 @@
             </objects>
             <point key="canvasLocation" x="-1771" y="-7732"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="4YZ-s3-K3b">
+            <objects>
+                <viewController id="elE-YM-2FG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EOP-Yx-5Z6">
+                        <rect key="frame" x="0.0" y="0.0" width="383" height="564"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MHH-XO-aFf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-30" y="-1510"/>
+        </scene>
     </scenes>
     <resources>
         <image name="AnimationOverlay" width="309" height="25"/>
@@ -1715,9 +1732,9 @@
         <image name="Stickers" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MbT-bW-ajj"/>
         <segue reference="D0Q-3L-Qao"/>
+        <segue reference="AxM-XX-ore"/>
         <segue reference="mHR-Z2-LiG"/>
-        <segue reference="klH-0n-Hwv"/>
+        <segue reference="oPb-Vs-Kkn"/>
     </inferredMetricsTieBreakers>
 </document>

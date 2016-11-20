@@ -155,7 +155,7 @@ final class SharedSpaceMenuViewController: UIViewController ,ModalOverCurrentCon
 private extension SharedSpaceMenuViewController {
     func showImageFromSharedCE(ce:SharedCE,animate isAnimated:Bool) {
         let imgurl = ce.appimageurl!
-     //   self.isAnimatedSignifier.isHidden = isAnimated
+        self.isAnimatedSignifier.isHidden = !isAnimated
         if !isAnimated {
             menuImageView.isHidden = false
             // only set up once

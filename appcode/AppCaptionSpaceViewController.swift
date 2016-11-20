@@ -12,7 +12,7 @@
  //
  // MARK: Show All Captionated Entries in One Tab as Child ViewContoller
  //
- final class AppCaptionSpaceViewController: UIViewController, ControlledByMasterView {
+ final class AppCaptionSpaceViewController: UIViewController,   ControlledByMasterView {
    
     fileprivate  var stickerz:[AppCE] = []
     fileprivate var theSelectedIndexPath:IndexPath?
@@ -26,6 +26,8 @@
     @IBAction func unwindToAppCaptionSpaceViewController(_ segue: UIStoryboardSegue)  {
         refreshFromCapSpace()
     }
+ 
+    
     func refreshLayout() {
         self.tableView!.reloadData()
     }
@@ -38,7 +40,8 @@
     }
     //MARK:- Dispatching to External ViewControllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier ==  "CaptionedCellTapMenuID"{
+        
+  if segue.identifier ==  "CaptionedCellTapMenuID"{
             if let indexPath = theSelectedIndexPath {
                 if let avc =  segue.destination as? AppSpaceMenuViewController  {
                     avc.delegate = self
@@ -60,9 +63,10 @@
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         refreshFromCapSpace()
+        masterViewController?.performSegue(withIdentifier: "NoHistoryContentID", sender: self)
     }
-
  }
+ 
 private  extension AppCaptionSpaceViewController {
       func displayTapMenu () {
         // todo: analyze safety of passing indexpath thru, sees to work for now
@@ -91,11 +95,11 @@ private  extension AppCaptionSpaceViewController {
         print("CapationatedEntriesViewController movingtoIMessage")
         captionedEntry.cemoveToIMessage()
     }
-    func changingCaption( on captionedEntry:inout AppCE, caption:String){
-        print("CapationatedEntriesViewController changingCaption")
-        captionedEntry.changeCaptionForAppCE(to: caption)
-        tableView.reloadData()
-    }
+//    func changingCaption( on captionedEntry:inout AppCE, caption:String){
+//        print("CapationatedEntriesViewController changingCaption")
+//        captionedEntry.changeCaptionForAppCE(to: caption)
+//        tableView.reloadData()
+//    }
  }
  extension AppCaptionSpaceViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {

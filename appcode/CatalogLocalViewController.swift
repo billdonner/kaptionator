@@ -18,6 +18,9 @@ final class CatalogViewController:UIViewController,ControlledByMasterView, UICol
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func unwindToCatalogLocalItemsViewController(_ segue: UIStoryboardSegue)  {}
+    
+    
+ 
     func refreshLayout() {
         self.collectionView!.reloadData()
     }
@@ -32,6 +35,8 @@ final class CatalogViewController:UIViewController,ControlledByMasterView, UICol
         super.viewWillAppear(animated)
         
         self.collectionView!.reloadData()
+        
+        masterViewController?.performSegue(withIdentifier: "NoCatalogContentID", sender: self)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +53,7 @@ final class CatalogViewController:UIViewController,ControlledByMasterView, UICol
     //ITunesCellTapMenuID
     //MARK:- Dispatching to External ViewControllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier ==  "CatalogCellTapMenuID"{
+    if segue.identifier ==  "CatalogCellTapMenuID"{
             if let indexPath = theSelectedIndexPath {
                 let ra = StickerAssetSpace.itemAt(indexPath.row)
                 let avc =  segue.destination as? CatalogMenuViewController
@@ -182,10 +187,10 @@ extension CatalogViewController {  //loading on first up - moved from masterview
 extension CatalogViewController : CatalogMenuViewDelegate {
     func useAsIs(stickerAsset:StickerAsset) {
         AppCE.makeNewCaptionCat(from: stickerAsset, caption: stickerAsset.assetName )    }
-    func useWithNoCaption(stickerAsset:StickerAsset) {
-        // make un captionated entry from remote asset
-        AppCE.makeNewCaptionCat( from: stickerAsset, caption: "" )
-    }
+//    func zuseWithNoCaption(stickerAsset:StickerAsset) {
+//        // make un captionated entry from remote asset
+//        AppCE.makeNewCaptionCat( from: stickerAsset, caption: "" )
+//    }
     func useWithCaption(stickerAsset:StickerAsset,caption:String) {
         // make un captionated entry from remote asset
         AppCE.makeNewCaptionCat( from: stickerAsset, caption: caption )

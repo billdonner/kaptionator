@@ -13,9 +13,9 @@ protocol ControlledByMasterView : class {
 }
 protocol ModalOverCurrentContext : class {
 }
-
-fileprivate var masterViewController : MasterViewController?
-final class MasterViewController: UIViewController {
+// global to allow mastr to get calle to present modal overlays
+var masterViewController : MasterViewController?
+final class MasterViewController: UIViewController,UserInteractionSignalDelegate {
     
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBAction func unwindToMaster(_ segue: UIStoryboardSegue)  {}
@@ -63,6 +63,32 @@ final class MasterViewController: UIViewController {
             if  let hdvc = segue.destination as? HelpDropdownViewController {
                 hdvc.delegate = self
             }
+        } else
+            if segue.identifier == "NoITunesContentID" {
+                if  let nav = segue.destination as? UINavigationController{
+                    if let uivc = nav.topViewController  as? NoITunesContentViewController {
+                        uivc.delegate = self
+                    }
+                }
+            }   else   if segue.identifier == "NoCatalogContentID" {
+                if  let nav = segue.destination as? UINavigationController{
+                    if let uivc = nav.topViewController  as? NoCatalogContentViewController {
+                        uivc.delegate = self
+                    }
+                }
+            } else if segue.identifier == "NoMessagesContentID" {
+                if  let nav = segue.destination as? UINavigationController{
+                    if let uivc = nav.topViewController  as? NoMessagesContentViewController {
+                        uivc.delegate = self
+                    }
+                }
+            }
+            else if segue.identifier == "NoHistoryContentID" {
+                if  let nav = segue.destination as? UINavigationController{
+                    if let uivc = nav.topViewController  as? NoHistoryContentViewController {
+                        uivc.delegate = self
+                    }
+                }
         }
     }
     override func viewDidLoad() {
@@ -118,12 +144,17 @@ final class MasterViewController: UIViewController {
         showSharedCaptionSpaceViewController?.refreshLayout()
         replaceTitle(extensionScheme + " Stickers")
     }
+    
+    func backToCallerAndDismiss () {// can go directly back
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 //MARK:- private helper methods
 
 private extension MasterViewController {
-      func refreshCurrentVC() {
+    func refreshCurrentVC() {
         //TODO: - figure out how to do this generically
         if currentViewController is ITunesViewController {
             if let vc = currentViewController as? ITunesViewController {
@@ -166,7 +197,7 @@ private extension MasterViewController {
             SharedCaptionSpace.saveData()
         }
     }
-      func resetvc (_ sender:UIBarButtonItem, _ vc:UIViewController,_ color:UIColor) {
+    func resetvc (_ sender:UIBarButtonItem, _ vc:UIViewController,_ color:UIColor) {
         coloredSpacer.backgroundColor = color
         for bbi in allBarButtonItems {
             bbi.tintColor = bbi == sender ? coloredSpacer.backgroundColor : offColor
@@ -328,7 +359,7 @@ public struct Manifest {
             completion(error.code, "-err0r-", final ) //}// made it
         }
     }
-
+    
     static func httpGET(url: URL,  completion:  @escaping ((Int,Data?) -> (Swift.Void)))  {
         let task = xdataTask(with:url) {
             ( data,   response,  error) in
@@ -345,7 +376,7 @@ public struct Manifest {
         }
         task.resume()
     }
-
+    
     public static func loadJSONFromLocal(url:URL?,completion:((Int,String,[StickerAsset]) -> (Swift.Void))?) {
         guard let url = url else {
             fatalError("loadJSONFromLocal")
@@ -416,8 +447,8 @@ public struct Manifest {
 
 private extension Manifest {
     
-      typealias DTSKR = ((_ data:Data?, _ response:URLResponse?, _ nserror:Error?) -> (Swift.Void))
-      static func xdataTask(with url: URL, completionHandler: @escaping DTSKR) -> URLSessionDataTask {
+    typealias DTSKR = ((_ data:Data?, _ response:URLResponse?, _ nserror:Error?) -> (Swift.Void))
+    static func xdataTask(with url: URL, completionHandler: @escaping DTSKR) -> URLSessionDataTask {
         let session = URLSession.shared
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 5)
         //  print ("queing \(request)")
@@ -425,7 +456,7 @@ private extension Manifest {
         return x
     }
     
-      static func processOneURL(_ url:URL,  completion:@escaping ((Int,String,[StickerAsset]) -> (Swift.Void))) {
+    static func processOneURL(_ url:URL,  completion:@escaping ((Int,String,[StickerAsset]) -> (Swift.Void))) {
         
         httpGET(url:url) { status,data in
             guard status == 200 else {
@@ -442,7 +473,7 @@ private extension Manifest {
     
     /// load a bunch of manifests as listed in a super-manifest
     
-      static func processOneLocal(_ url:URL,  completion:@escaping ((Int,String,[StickerAsset]) -> (Swift.Void))) {
+    static func processOneLocal(_ url:URL,  completion:@escaping ((Int,String,[StickerAsset]) -> (Swift.Void))) {
         do {
             let data = try Data(contentsOf: url)
             

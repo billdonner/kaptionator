@@ -183,7 +183,7 @@ public static func saveToDisk() {
         }
     }
     
- public static  func restoreRemspaceFromDisk () throws  {
+ public static  func restoreStickerAssetsFromDisk () throws  {
         if  let defaults = UserDefaults(suiteName: nil),
             let flattened = defaults.object(forKey: "remspace") as? JSONArray,
             let version = defaults.object(forKey: "version") as? String,

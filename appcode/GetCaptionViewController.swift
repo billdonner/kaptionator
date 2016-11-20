@@ -9,12 +9,11 @@
 import UIKit
 
 import stikz
-
-protocol GetCaptionDelegate:class {
-    func captionWasEntered(caption:String)
+protocol GetCaptionDelegate :  class {
+    func captionWasEntered(caption: String)
 }
 final class GetCaptionViewController: UIViewController  {
-    var delegate: GetCaptionDelegate! // why ant be weak?
+    weak var delegate: GetCaptionDelegate! // why ant be weak?
     var unwinder: String! // unusual
     var backgroundImage: UIImage!
     

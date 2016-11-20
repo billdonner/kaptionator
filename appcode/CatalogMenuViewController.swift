@@ -12,7 +12,7 @@ import stikz
 protocol CatalogMenuViewDelegate : class {
     func useAsIs(stickerAsset:StickerAsset)
     func useWithCaption(stickerAsset:StickerAsset,caption:String)
-    func useWithNoCaption(stickerAsset:StickerAsset)
+   // func zuseWithNoCaption(stickerAsset:StickerAsset)
     func refreshLayout()
 }
 final class CatalogMenuViewController: UIViewController,ModalOverCurrentContext {
@@ -35,26 +35,11 @@ final class CatalogMenuViewController: UIViewController,ModalOverCurrentContext 
     //MARK:- MENU TAP ACTIONS
     @IBOutlet weak var animatedLabel: UILabel!
     
-    @IBOutlet weak var animationSwitch: UISwitch!
+   // @IBOutlet weak var animationSwitch: UISwitch!
     
-    @IBAction func animationSwitchTapped(_ sender: AnyObject) {
-        
-        addcaption.isEnabled = !animationSwitch.isOn
-        addcaption.setTitleColor(animationSwitch.isOn ? .darkGray : .lightGray,for: .normal)
-        var  options = stickerAsset.options
-        if animationSwitch.isOn {
-            options.insert(.generateasis)
-        } else {
-            options.remove(.generateasis)
-        }
-        // to persist this seemingly trivial process we must make a whole new StickerAsset
-        let newra = stickerAsset.copyWithNewOptions(stickerOptions: options)
-        
-        StickerAssetSpace.remove(ra:stickerAsset)
-        StickerAssetSpace.addasset(ra: newra)
-        StickerAssetSpace.saveToDisk()
-        
-    }
+    @IBOutlet weak var isAnimatedSignifier: UIImageView!
+    
+
     @IBAction func useStickerNoCaptionPressed(_ sender: AnyObject) {
         
         pvc.dismiss(animated: true) {
@@ -102,23 +87,22 @@ final class CatalogMenuViewController: UIViewController,ModalOverCurrentContext 
         let isAnimated = stickerAsset.options.contains(.generateasis)
         showImageFromLocalAsset(stickerAsset:stickerAsset,animate: isAnimated)
         // animated can not me modified
-        animationSwitch.setOn(isAnimated ,animated:true)
+       // animationSwitch.setOn(isAnimated ,animated:true)
         let captionable = !isAnimated || showCatalogID == "ShowITunesID"
-        animationSwitch.isEnabled = showCatalogID == "ShowITunesID"
+        //animationSwitch.isEnabled = showCatalogID == "ShowITunesID"
         
         addcaption.isEnabled = captionable
         addcaption.setTitleColor( captionable ? .white : .darkGray,for: .normal)
-        
-        
+  
         addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
     }
 }
 //MARK:- CALLBACKS
 
 private extension CatalogMenuViewController {
-    func showImageFromLocalAsset(stickerAsset:StickerAsset,animate:Bool) {
+    func showImageFromLocalAsset(stickerAsset:StickerAsset,animate isAnimated:Bool) {
         if let imgurl = stickerAsset.localurl {
-            let isAnimated = animate//stickerAsset.options.contains(.generateasis)
+            self.isAnimatedSignifier.isHidden = !isAnimated
             if !isAnimated {
                 menuImageView.isHidden = false
                 // only set up once
@@ -142,15 +126,13 @@ private extension CatalogMenuViewController {
                 if !setup {
                     IO.setupAnimationPreview(wv:webviewOverlay,imgurl:imgurl)
                 }
-                
                 webviewOverlay.isHidden  = false
-         
             }
             setup = true
-            
         }
     }
 }
+
 extension CatalogMenuViewController : GetCaptionDelegate {
     func captionWasEntered(caption: String) {
         delegate?.useWithCaption(stickerAsset: stickerAsset, caption: caption )

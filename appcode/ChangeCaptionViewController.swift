@@ -13,9 +13,10 @@ protocol ChangeCaptionDelegate : class{
     func captionWasEntered(caption:String)
 }
 final class ChangeCaptionViewController: UIViewController  {
-    var delegate: ChangeCaptionDelegate?//todo: figure out why cant make weak
+    weak var delegate: ChangeCaptionDelegate?     
+    var unwinder: String! // unusual
     internal func dismisstapped(_ s: AnyObject) {
-        self.performSegue(withIdentifier: "UnwindToCaptionedAppVC", sender: s)
+        self.performSegue(withIdentifier: unwinder, sender: s)
     }
     
     @IBOutlet weak var theCaptionTextView: UITextView!

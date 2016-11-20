@@ -25,11 +25,9 @@ final class InnerHelpViewController: UIViewController, ModalOverCurrentContext  
         super.viewDidLoad()
         let count = SharedCaptionSpace.itemCount()
      
-        topLabel.text = count == 0 ? "How To Use " + extensionScheme : "you have \(count) stickers in the Messages app"
+        topLabel.text = count == 0 ? "How To Use " + extensionScheme : "\(count) stickers in Messages app"
         topBlurb.text = innerBlurb
-        
-        
-        addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
+addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
         
     }
     

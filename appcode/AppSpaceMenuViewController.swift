@@ -11,7 +11,7 @@ import stikz
 
 protocol AppSpaceMenuDelegate : class {
     func movingtoIMessage(captionedEntry:inout AppCE)
-    func changingCaption( on captionedEntry:inout AppCE,caption:String)
+    //func changingCaption( on captionedEntry:inout AppCE,caption:String)
     func cloneWithCaption( captionedEntry:AppCE, caption:String)
     func refreshLayout() 
 }
@@ -44,6 +44,7 @@ final class AppSpaceMenuViewController: UIViewController, ModalOverCurrentContex
   
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "ChangeCaptionViewControllerID" ) as? ChangeCaptionViewController
         if let vc = vc {
+            vc.unwinder = "UnwindToCaptionedAppVC"
             vc.delegate = self
             vc.modalPresentationStyle = .overCurrentContext
             vc.modalTransitionStyle = .crossDissolve
@@ -87,7 +88,7 @@ private extension AppSpaceMenuViewController {
     func showImageFromAppCE(ce:AppCE,animate isAnimated:Bool) {
        let imgurl = ce.imageurl
          
-         // self.isAnimatedSignifier.isHidden = isAnimated
+          self.isAnimatedSignifier.isHidden = !isAnimated
         if !isAnimated {
             menuImageView.isHidden = false
             // only set up once

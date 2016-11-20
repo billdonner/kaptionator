@@ -78,7 +78,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.03</string>
 	<key>CFBundleVersion</key>
-	<string>113</string>
+	<string>117</string>
 	<key>EXTENSION-SCHEME</key>
 	<string>Kaptionator</string>
 	<key>INNER-BLURB</key>
@@ -98,12 +98,12 @@
 	<string>http://shtikerz.com/kaptionator</string>
 	<key>SHARED-INTERAPP-DATA</key>
 	<string>group.com.midnightrambler.kaptionator</string>
-	<key>TAGLINE</key>
-	<string>kaptionator-main</string>
 	<key>SHOW-CATALOG-ID</key>
 	<string>ShowITunesID</string>
 	<key>SHOW-HIDDEN-FUNCTIONS</key>
 	<true/>
+	<key>TAGLINE</key>
+	<string>kaptionator-main</string>
 	<key>TOP-BLURB</key>
 	<string>Drag files into iTunes on your computer then pull to load</string>
 	<key>UIFileSharingEnabled</key>
