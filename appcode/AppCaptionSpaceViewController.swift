@@ -40,16 +40,14 @@
     }
     //MARK:- Dispatching to External ViewControllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-  if segue.identifier ==  "CaptionedCellTapMenuID"{
-            if let indexPath = theSelectedIndexPath {
-                if let avc =  segue.destination as? AppSpaceMenuViewController  {
+  guard segue.identifier ==  "CaptionedCellTapMenuID" ,
+    let indexPath = theSelectedIndexPath ,
+    let avc =  segue.destination as? AppSpaceMenuViewController  else {
+        return
+        }
                     avc.delegate = self
                     avc.captionedEntry = stickerz [indexPath.row]               // pull image from cache and pass
                     avc.pvc = self
-                }
-            }
-        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()

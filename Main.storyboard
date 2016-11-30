@@ -274,7 +274,7 @@
                         <outlet property="imessage" destination="zWE-qh-xhw" id="KXO-5t-J6g"/>
                         <outlet property="stickerz" destination="qTl-Jn-SiP" id="dEp-xh-Sa5"/>
                         <segue destination="oCt-SS-lEW" kind="presentation" identifier="StartupHelpID" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="k4G-Ht-f8R"/>
-                        <segue destination="Zqb-xI-IZm" kind="presentation" identifier="HelpDropdownViewControllerID" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="klH-0n-Hwv"/>
+                        <segue destination="Zqb-xI-IZm" kind="presentation" identifier="ImportMenuViewControllerID" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="klH-0n-Hwv"/>
                         <segue destination="2S6-iY-a2i" kind="presentation" identifier="NoHistoryContentID" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="mHR-Z2-LiG"/>
                         <segue destination="JmH-Xp-7fQ" kind="presentation" identifier="NoMessagesContentID" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="D0Q-3L-Qao"/>
                         <segue destination="0qH-oT-Rby" kind="presentation" identifier="NoITunesContentID" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="MbT-bW-ajj"/>
@@ -774,10 +774,10 @@
             </objects>
             <point key="canvasLocation" x="-770" y="-9608"/>
         </scene>
-        <!--HelpDropdownViewControllerID-->
+        <!--ImportMenuViewControllerID-->
         <scene sceneID="9jG-wB-SFe">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="HelpDropdownViewControllerID" storyboardName="Help" referencedIdentifier="HelpDropdownViewControllerID" id="Zqb-xI-IZm" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="ImportMenuViewControllerID" storyboardName="Help" referencedIdentifier="ImportMenuViewControllerID" id="Zqb-xI-IZm" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bPZ-1u-TGd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-742" y="-9422"/>
@@ -923,7 +923,7 @@
         <scene sceneID="qaM-we-gfF">
             <objects>
                 <collectionViewController storyboardIdentifier="ReorderMessagesID" id="vsv-jb-Nm1" customClass="ReorderSharedCaptionSpaceViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Tu9-ZF-rxs">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Tu9-ZF-rxs">
                         <rect key="frame" x="0.0" y="0.0" width="384" height="512"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1346,7 +1346,7 @@
             <objects>
                 <navigationController title="MASTER NAV" automaticallyAdjustsScrollViewInsets="NO" id="pHI-Q6-ax5" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IXi-P9-phC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="IXi-P9-phC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1638,7 +1638,7 @@
             <objects>
                 <navigationController storyboardIdentifier="NoCatalogContentID" automaticallyAdjustsScrollViewInsets="NO" id="tuB-ys-Aya" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dby-B5-lym">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dby-B5-lym">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1656,7 +1656,7 @@
             <objects>
                 <navigationController storyboardIdentifier="NoItunesContentID" automaticallyAdjustsScrollViewInsets="NO" id="0qH-oT-Rby" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vgI-qj-ehk">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vgI-qj-ehk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1674,7 +1674,7 @@
             <objects>
                 <navigationController storyboardIdentifier="NoMessagesContentID" automaticallyAdjustsScrollViewInsets="NO" id="JmH-Xp-7fQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uma-Qk-Twl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="uma-Qk-Twl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1692,7 +1692,7 @@
             <objects>
                 <navigationController storyboardIdentifier="NoHistoryContentID" automaticallyAdjustsScrollViewInsets="NO" id="2S6-iY-a2i" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e3k-V9-eCa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="e3k-V9-eCa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

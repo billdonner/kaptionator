@@ -28,7 +28,7 @@ import stikz
 fileprivate var stickerPool:StickerPool!
 
 struct  StickerPool   {
-   fileprivate  var stickers:[MSSticker] = [] {
+    fileprivate  var stickers:[MSSticker] = [] {
         
         didSet {
             // print("+++StickerPool now holding \(stickers.count) stickers")
@@ -59,8 +59,8 @@ struct  StickerPool   {
             for ce in SharedCaptionSpace.items() {
                 //for stickerpath in ce.stickerPath {
                 if  let url =  ce.stickerurl {
-                let title =  "\(stickers.count)"
-                makeMSSticker(url:url,title:title)
+                    let title =  "\(stickers.count)"
+                    makeMSSticker(url:url,title:title)
                 }
                 
             }
@@ -83,19 +83,19 @@ struct  StickerPool   {
         }
         do {
             if   let birl = URL(string:backgroundImagePath) {
-        let theData = try Data(contentsOf: nurl)
-        let options:StickerOptions = .generatemedium
-        let stickerurl =   StickerFileFactory.createStickerFileFrom (imageData: theData ,imageurl: birl, caption: "Welcome to \(extensionScheme)", options:options)
-            if 
-                let stickerurl = stickerurl {
-            makeMSSticker(url:stickerurl,title:"Welcome to \(extensionScheme)")
-            }
+                let theData = try Data(contentsOf: nurl)
+                let options:StickerOptions = .generatemedium
+                let stickerurl =   StickerFileFactory.createStickerFileFrom (imageData: theData ,imageurl: birl, caption: "Welcome to \(extensionScheme)", options:options)
+                if
+                    let stickerurl = stickerurl {
+                    makeMSSticker(url:stickerurl,title:"Welcome to \(extensionScheme)")
+                }
             }
         }
         catch let error {
             print("could not make sticker file \(error)")
         }
-            
+        
     }
     mutating func makeMSStickersFromTempFiles() {
         // thru temp file making stickers
@@ -126,7 +126,7 @@ struct  StickerPool   {
 }
 // MSMessagesAppViewController
 
- class MessagesExtensionViewController: MSMessagesAppViewController {
+class MessagesExtensionViewController: MSMessagesAppViewController {
     
     @IBOutlet weak var topLabel: UILabel!
     
@@ -136,7 +136,7 @@ struct  StickerPool   {
     @IBOutlet weak var theButton: UIButton!
     
     @IBOutlet weak var zeroItemsLabel: UILabel!  // normally zero
- 
+    
     func openMainAppFromExtension (scheme:String) {
         
         let p = "\(scheme)://home"
@@ -146,28 +146,28 @@ struct  StickerPool   {
     }
     
     func resetStickerPool() {
-    stickerPool  = StickerPool()
-    stickerPool.makeMSStickersFromMemspace()
-    print("&&&&&&&&&& makeMSStickersFromMemspace  got ",stickerPool.stickers.count)
-    
-    /// if we have no stickers its probably because its the first time up
-    
-    if stickerPool.stickers.count == 0 {
-    zeroItemsLabel.isHidden = false
-    // make a sticker and add it
-    stickerPool.makeMSStickerFromAppIcon()
-    } else {
-    // hide the label because we have real stickers chosen by user
-    zeroItemsLabel.isHidden = true
+        stickerPool  = StickerPool()
+        stickerPool.makeMSStickersFromMemspace()
+        print("&&&&&&&&&& makeMSStickersFromMemspace  got ",stickerPool.stickers.count)
+        
+        /// if we have no stickers its probably because its the first time up
+        
+        if stickerPool.stickers.count == 0 {
+            zeroItemsLabel.isHidden = false
+            // make a sticker and add it
+            stickerPool.makeMSStickerFromAppIcon()
+        } else {
+            // hide the label because we have real stickers chosen by user
+            zeroItemsLabel.isHidden = true
+        }
     }
-    }
     
-   private func noteToCloud(dict:[String:String]) {  }
+    private func noteToCloud(dict:[String:String]) {  }
     
     private func p(_ s:String) {
         print("&&&&&&&&& ",s)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.topLabel.text = appTitle
@@ -177,19 +177,21 @@ struct  StickerPool   {
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "PassVCToBrowserViewController" {
-            if let vc = segue.destination as? SchtickerzBrowserViewController {
-                vc.mesExtVC = self
-            }
+        guard segue.identifier == "PassVCToBrowserViewController" ,
+            let vc = segue.destination as? SchtickerzBrowserViewController else {
+                return
         }
+        
+        vc.mesExtVC = self
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Conversation Handling
-
+    
     
     override func willBecomeActive(with conversation: MSConversation) {
         // Called when the extension is about to move from the inactive to active state.
@@ -197,11 +199,11 @@ struct  StickerPool   {
         
         // Use this method to configure the extension and restore previously stored state.
         
-//        self.view.backgroundColor = self.view.backgroundColor?.withAlphaComponent(0.1)
-//        setupBrowserViewController()
-//       browserViewController.loadFromSharedDataSpace()
-//        
-//        browserViewController.stickerBrowserView.reloadData()
+        //        self.view.backgroundColor = self.view.backgroundColor?.withAlphaComponent(0.1)
+        //        setupBrowserViewController()
+        //       browserViewController.loadFromSharedDataSpace()
+        //
+        //        browserViewController.stickerBrowserView.reloadData()
         p("willBecomeActive with \(conversation.localParticipantIdentifier)")
         noteToCloud(dict: ["op":"willBecomeActive", "conversation":"\(conversation.localParticipantIdentifier)"])
     }
@@ -234,7 +236,7 @@ struct  StickerPool   {
         // Called when the user taps the send button.
         
         // whaxky
-    
+        
         self.view.backgroundColor = self.view.backgroundColor?.withAlphaComponent(0.5)
         
         p("didStartSending   with \(conversation)")

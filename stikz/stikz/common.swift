@@ -8,38 +8,37 @@
 
 import UIKit
 
-
-public let versionBig = "0.0.9"
-
-public let kVersion = "version"
-public let kAllCaptions = "allcaptions"
-public let kOptions = "options"
-public let kCaption = "caption"
-public let kLocal = "local"
-public let kPack = "pack"
-public let kStickers = "stickers"
-public let kTitle = "title"
-public let kID = "id"
-public let kRemoteURL = "remoteurl"
-public let kThumbNail = "thumburl"
-
-public let kStickerLargeSize = CGFloat(618)
-public let kStickerMediumSize = CGFloat(408)
-public let kStickerSmallSize = CGFloat(300)
-
-public let kStickerLargeFontSize = CGFloat(40)
-public let kStickerMediumFontSize = CGFloat(32)
-public let kStickerSmallFontSize = CGFloat(24)
-
-public let kStickerLargeImageRatio  = CGFloat(0.8)
-public let kStickerMediumImageRatio = CGFloat(0.8)
-public let kStickerSmallImageRatio = CGFloat(0.8)
-
+public  let versionBig = "0.0.9"
+public  let kVersion = "version"
+public  let kAllCaptions = "allcaptions"
+public  let kOptions = "options"
+public  let kCaption = "caption"
+public  let kLocal = "local"
+public  let kPack = "pack"
+public  let kStickers = "stickers"
+public  let kTitle = "title"
+public  let kID = "id"
+public  let kRemoteURL = "remoteurl"
+public  let kThumbNail = "thumburl"
 
 // captionated entries - are stashed in either of two places - in the app, or in the shared memory with iMessage
 
-public let kStickerAssetsDataSpace = "StickerAssetsDataSpace"
-public let kAppPrivateDataSpace = "AppPrivateDataSpace"
+public  let kStickerAssetsDataSpace = "StickerAssetsDataSpace"
+public  let kAppPrivateDataSpace = "AppPrivateDataSpace"
+
+
+public  let kStickerLargeSize = CGFloat(618)
+public  let kStickerMediumSize = CGFloat(408)
+public  let kStickerSmallSize = CGFloat(300)
+
+public  let kStickerLargeFontSize = CGFloat(40)
+public  let kStickerMediumFontSize = CGFloat(32)
+public  let kStickerSmallFontSize = CGFloat(24)
+
+public  let kStickerLargeImageRatio  = CGFloat(0.8)
+public  let kStickerMediumImageRatio = CGFloat(0.8)
+public  let kStickerSmallImageRatio = CGFloat(0.8)
+
 
 public enum KaptionatorErrors : Error  {
     case generalFailure

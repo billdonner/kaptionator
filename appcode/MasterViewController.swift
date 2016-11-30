@@ -55,41 +55,39 @@ final class MasterViewController: UIViewController,UserInteractionSignalDelegate
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if let _  = segue.destination as? WebHelpViewController {
-            //detailsViewController.presentingViewController?
-            self.modalPresentationStyle = .overCurrentContext
-        }
-        else if "HelpDropdownViewControllerID" ==  segue.identifier {
-            if  let hdvc = segue.destination as? HelpDropdownViewController {
+        guard let segid = segue.identifier else { return }
+        
+        switch segid {
+            
+        case "ImportMenuViewControllerID" :
+            if  let hdvc = segue.destination as? ImportMenuViewController {
                 hdvc.delegate = self
             }
-        } else
-            if segue.identifier == "NoITunesContentID" {
-                if  let nav = segue.destination as? UINavigationController{
-                    if let uivc = nav.topViewController  as? NoITunesContentViewController {
-                        uivc.delegate = self
-                    }
-                }
-            }   else   if segue.identifier == "NoCatalogContentID" {
-                if  let nav = segue.destination as? UINavigationController{
-                    if let uivc = nav.topViewController  as? NoCatalogContentViewController {
-                        uivc.delegate = self
-                    }
-                }
-            } else if segue.identifier == "NoMessagesContentID" {
-                if  let nav = segue.destination as? UINavigationController{
-                    if let uivc = nav.topViewController  as? NoMessagesContentViewController {
-                        uivc.delegate = self
-                    }
-                }
+        case "NoITunesContentID" :
+            if  let nav = segue.destination as? UINavigationController,
+                let uivc = nav.topViewController  as? NoITunesContentViewController {
+                uivc.delegate = self
             }
-            else if segue.identifier == "NoHistoryContentID" {
-                if  let nav = segue.destination as? UINavigationController{
-                    if let uivc = nav.topViewController  as? NoHistoryContentViewController {
-                        uivc.delegate = self
-                    }
-                }
+        case  "NoCatalogContentID" :
+            if  let nav = segue.destination as? UINavigationController,
+                let uivc = nav.topViewController  as? NoCatalogContentViewController {
+                uivc.delegate = self
+            }
+            
+        case "NoMessagesContentID" :
+            if  let nav = segue.destination as? UINavigationController,
+                let uivc = nav.topViewController  as? NoMessagesContentViewController {
+                uivc.delegate = self
+            }
+            
+        case  "NoHistoryContentID" :
+            if  let nav = segue.destination as? UINavigationController,
+                let uivc = nav.topViewController  as? NoHistoryContentViewController {
+                uivc.delegate = self
+            }
+        default: break
         }
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,13 +118,9 @@ final class MasterViewController: UIViewController,UserInteractionSignalDelegate
     // MARK:- UIBarButtonItem actions for top buttons
     
     @IBAction func helpAction(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "HelpDropdownViewControllerID", sender: nil)
+        performSegue(withIdentifier: "ImportMenuViewControllerID", sender: nil)
     }
     @IBAction func catalogueAction(_ sender: UIBarButtonItem) {
-//        if SharedCaptionSpace.itemCount() == 0 && showFirstHelp {
-//            showFirstHelp = false
-//            performSegue(withIdentifier: "StartupHelpID", sender: nil)
-//        }
         cycleaction(sender: sender, id:showCatalogID,
                     vc:&showFirstViewController,color:appTheme.catalogColor)
         replaceTitle(extensionScheme + " Home")
@@ -150,6 +144,7 @@ final class MasterViewController: UIViewController,UserInteractionSignalDelegate
     }
     
 }
+
 
 //MARK:- private helper methods
 
@@ -273,8 +268,8 @@ private extension MasterViewController {
     }
 }
 
-///HelpDropdownDelegate
-extension MasterViewController: HelpDropdownDelegate {
+///ImportMenuDelegate
+extension MasterViewController: ImportMenuDelegate {
     func refreshLayout() {
         /// coming back here as delegate of presented view controller
         refreshCurrentVC()

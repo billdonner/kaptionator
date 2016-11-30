@@ -22,6 +22,20 @@
 		8808460D1DE0EBC800EB7965 /* LoadDocFilesIntoSheetCheats.md in Sources */ = {isa = PBXBuildFile; fileRef = 8808460B1DE0EBC800EB7965 /* LoadDocFilesIntoSheetCheats.md */; };
 		8808460E1DE0EBC800EB7965 /* LoadDocFilesIntoSheetCheats.md in Sources */ = {isa = PBXBuildFile; fileRef = 8808460B1DE0EBC800EB7965 /* LoadDocFilesIntoSheetCheats.md */; };
 		8808460F1DE0EBC800EB7965 /* LoadDocFilesIntoSheetCheats.md in Sources */ = {isa = PBXBuildFile; fileRef = 8808460B1DE0EBC800EB7965 /* LoadDocFilesIntoSheetCheats.md */; };
+		880E6F5F1DEF4280007D3631 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 880E6F5E1DEF4280007D3631 /* LICENSE.txt */; };
+		880E6F621DEF43C0007D3631 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 880E6F611DEF43C0007D3631 /* README.md */; };
+		880E6F701DEF448A007D3631 /* blueishSanta-618x618.gif in Resources */ = {isa = PBXBuildFile; fileRef = 880E6F641DEF448A007D3631 /* blueishSanta-618x618.gif */; };
+		880E6F711DEF448A007D3631 /* elfHearth-618x618.gif in Resources */ = {isa = PBXBuildFile; fileRef = 880E6F651DEF448A007D3631 /* elfHearth-618x618.gif */; };
+		880E6F721DEF448A007D3631 /* hohoho-618x618.gif in Resources */ = {isa = PBXBuildFile; fileRef = 880E6F661DEF448A007D3631 /* hohoho-618x618.gif */; };
+		880E6F731DEF448A007D3631 /* onTheRoof1-618x618-72.gif in Resources */ = {isa = PBXBuildFile; fileRef = 880E6F671DEF448A007D3631 /* onTheRoof1-618x618-72.gif */; };
+		880E6F741DEF448A007D3631 /* sadSanta-618x618.gif in Resources */ = {isa = PBXBuildFile; fileRef = 880E6F681DEF448A007D3631 /* sadSanta-618x618.gif */; };
+		880E6F751DEF448A007D3631 /* santa1Text-618x618.gif in Resources */ = {isa = PBXBuildFile; fileRef = 880E6F691DEF448A007D3631 /* santa1Text-618x618.gif */; };
+		880E6F761DEF448A007D3631 /* santaGiftKids-618x618.gif in Resources */ = {isa = PBXBuildFile; fileRef = 880E6F6A1DEF448A007D3631 /* santaGiftKids-618x618.gif */; };
+		880E6F771DEF448A007D3631 /* santaHelpWanted-618x618.gif in Resources */ = {isa = PBXBuildFile; fileRef = 880E6F6B1DEF448A007D3631 /* santaHelpWanted-618x618.gif */; };
+		880E6F781DEF448A007D3631 /* santaMirandaL-618x618.gif in Resources */ = {isa = PBXBuildFile; fileRef = 880E6F6C1DEF448A007D3631 /* santaMirandaL-618x618.gif */; };
+		880E6F791DEF448A007D3631 /* santaYarmulkeMenorahDredel-618x618.gif in Resources */ = {isa = PBXBuildFile; fileRef = 880E6F6D1DEF448A007D3631 /* santaYarmulkeMenorahDredel-618x618.gif */; };
+		880E6F7A1DEF448A007D3631 /* snowGlobeHoldUp-618x618.gif in Resources */ = {isa = PBXBuildFile; fileRef = 880E6F6E1DEF448A007D3631 /* snowGlobeHoldUp-618x618.gif */; };
+		880E6F7B1DEF448A007D3631 /* wreath-618x618.gif in Resources */ = {isa = PBXBuildFile; fileRef = 880E6F6F1DEF448A007D3631 /* wreath-618x618.gif */; };
 		8817590E1DC7F26900DB70C6 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8817590D1DC7F26900DB70C6 /* Help.storyboard */; };
 		8817590F1DC7F26900DB70C6 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8817590D1DC7F26900DB70C6 /* Help.storyboard */; };
 		881759101DC7F26900DB70C6 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8817590D1DC7F26900DB70C6 /* Help.storyboard */; };
@@ -34,10 +48,10 @@
 		883982A01DB18C7600B5A037 /* theMidnightRambler-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 8839829F1DB18C7600B5A037 /* theMidnightRambler-120.png */; };
 		883982A11DB27F7800B5A037 /* kaptionator-1024x768.png in Resources */ = {isa = PBXBuildFile; fileRef = 8839829A1DB14FDD00B5A037 /* kaptionator-1024x768.png */; };
 		883982A31DB2A14300B5A037 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883982A21DB2A14300B5A037 /* LaunchScreen.storyboard */; };
-		883982A51DB2B4F100B5A037 /* HelpDropdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883982A41DB2B4F100B5A037 /* HelpDropdownViewController.swift */; };
-		883982A61DB2BEEC00B5A037 /* HelpDropdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883982A41DB2B4F100B5A037 /* HelpDropdownViewController.swift */; };
-		883982A71DB2BEED00B5A037 /* HelpDropdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883982A41DB2B4F100B5A037 /* HelpDropdownViewController.swift */; };
-		883982A81DB2BEEE00B5A037 /* HelpDropdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883982A41DB2B4F100B5A037 /* HelpDropdownViewController.swift */; };
+		883982A51DB2B4F100B5A037 /* ImportMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883982A41DB2B4F100B5A037 /* ImportMenuViewController.swift */; };
+		883982A61DB2BEEC00B5A037 /* ImportMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883982A41DB2B4F100B5A037 /* ImportMenuViewController.swift */; };
+		883982A71DB2BEED00B5A037 /* ImportMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883982A41DB2B4F100B5A037 /* ImportMenuViewController.swift */; };
+		883982A81DB2BEEE00B5A037 /* ImportMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883982A41DB2B4F100B5A037 /* ImportMenuViewController.swift */; };
 		88475BF71D51607000FA7EC4 /* candidatezMessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 88AEA62F1D514C8D006E5C70 /* candidatezMessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		88475BFB1D51609200FA7EC4 /* holidazeMessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 88AEA6021D514C1F006E5C70 /* holidazeMessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		88475BFF1D51609C00FA7EC4 /* emogeezMessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 88AEA61A1D514C5F006E5C70 /* emogeezMessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -303,6 +317,20 @@
 		880845E51DE0CDF800EB7965 /* NoContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoContentViewController.swift; sourceTree = "<group>"; };
 		880846061DE0EB8000EB7965 /* sshelp */ = {isa = PBXFileReference; lastKnownFileType = folder; name = sshelp; path = stikz/sshelp; sourceTree = "<group>"; };
 		8808460B1DE0EBC800EB7965 /* LoadDocFilesIntoSheetCheats.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = LoadDocFilesIntoSheetCheats.md; path = stikz/LoadDocFilesIntoSheetCheats.md; sourceTree = "<group>"; };
+		880E6F5E1DEF4280007D3631 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		880E6F611DEF43C0007D3631 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		880E6F641DEF448A007D3631 /* blueishSanta-618x618.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "blueishSanta-618x618.gif"; sourceTree = "<group>"; };
+		880E6F651DEF448A007D3631 /* elfHearth-618x618.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "elfHearth-618x618.gif"; sourceTree = "<group>"; };
+		880E6F661DEF448A007D3631 /* hohoho-618x618.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "hohoho-618x618.gif"; sourceTree = "<group>"; };
+		880E6F671DEF448A007D3631 /* onTheRoof1-618x618-72.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "onTheRoof1-618x618-72.gif"; sourceTree = "<group>"; };
+		880E6F681DEF448A007D3631 /* sadSanta-618x618.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "sadSanta-618x618.gif"; sourceTree = "<group>"; };
+		880E6F691DEF448A007D3631 /* santa1Text-618x618.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "santa1Text-618x618.gif"; sourceTree = "<group>"; };
+		880E6F6A1DEF448A007D3631 /* santaGiftKids-618x618.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "santaGiftKids-618x618.gif"; sourceTree = "<group>"; };
+		880E6F6B1DEF448A007D3631 /* santaHelpWanted-618x618.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "santaHelpWanted-618x618.gif"; sourceTree = "<group>"; };
+		880E6F6C1DEF448A007D3631 /* santaMirandaL-618x618.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "santaMirandaL-618x618.gif"; sourceTree = "<group>"; };
+		880E6F6D1DEF448A007D3631 /* santaYarmulkeMenorahDredel-618x618.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "santaYarmulkeMenorahDredel-618x618.gif"; sourceTree = "<group>"; };
+		880E6F6E1DEF448A007D3631 /* snowGlobeHoldUp-618x618.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "snowGlobeHoldUp-618x618.gif"; sourceTree = "<group>"; };
+		880E6F6F1DEF448A007D3631 /* wreath-618x618.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "wreath-618x618.gif"; sourceTree = "<group>"; };
 		8810CFFB1D53C415009BA9B3 /* holidayz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = holidayz.entitlements; sourceTree = "<group>"; };
 		8810CFFC1D53C45C009BA9B3 /* holidazeMessagesExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = holidazeMessagesExtension.entitlements; sourceTree = "<group>"; };
 		8810CFFD1D53C475009BA9B3 /* emogeez.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = emogeez.entitlements; sourceTree = "<group>"; };
@@ -320,7 +348,7 @@
 		8839829A1DB14FDD00B5A037 /* kaptionator-1024x768.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kaptionator-1024x768.png"; sourceTree = "<group>"; };
 		8839829F1DB18C7600B5A037 /* theMidnightRambler-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "theMidnightRambler-120.png"; path = "kaptionator/Assets.xcassets/AppIcon.appiconset/theMidnightRambler-120.png"; sourceTree = "<group>"; };
 		883982A21DB2A14300B5A037 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		883982A41DB2B4F100B5A037 /* HelpDropdownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpDropdownViewController.swift; sourceTree = "<group>"; };
+		883982A41DB2B4F100B5A037 /* ImportMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportMenuViewController.swift; sourceTree = "<group>"; };
 		8862CE311DB0838500685CCA /* StartupHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupHelpViewController.swift; sourceTree = "<group>"; };
 		886B4AC21D9CA4CB00581C9B /* MessagesTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableCell.swift; sourceTree = "<group>"; };
 		886B4AC71D9DDD5B00581C9B /* ReorderSharedCaptionSpaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReorderSharedCaptionSpaceViewController.swift; sourceTree = "<group>"; };
@@ -471,6 +499,26 @@
 			name = HelpAssets;
 			sourceTree = "<group>";
 		};
+		880E6F631DEF448A007D3631 /* test files */ = {
+			isa = PBXGroup;
+			children = (
+				880E6F641DEF448A007D3631 /* blueishSanta-618x618.gif */,
+				880E6F651DEF448A007D3631 /* elfHearth-618x618.gif */,
+				880E6F661DEF448A007D3631 /* hohoho-618x618.gif */,
+				880E6F671DEF448A007D3631 /* onTheRoof1-618x618-72.gif */,
+				880E6F681DEF448A007D3631 /* sadSanta-618x618.gif */,
+				880E6F691DEF448A007D3631 /* santa1Text-618x618.gif */,
+				880E6F6A1DEF448A007D3631 /* santaGiftKids-618x618.gif */,
+				880E6F6B1DEF448A007D3631 /* santaHelpWanted-618x618.gif */,
+				880E6F6C1DEF448A007D3631 /* santaMirandaL-618x618.gif */,
+				880E6F6D1DEF448A007D3631 /* santaYarmulkeMenorahDredel-618x618.gif */,
+				880E6F6E1DEF448A007D3631 /* snowGlobeHoldUp-618x618.gif */,
+				880E6F6F1DEF448A007D3631 /* wreath-618x618.gif */,
+			);
+			name = "test files";
+			path = "__holidayStickers-12 2";
+			sourceTree = "<group>";
+		};
 		881758F61DC7B13B00DB70C6 /* kaptionatorTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,10 +534,6 @@
 				88FA07D61DA402330063B483 /* ChangeCaptionViewController.swift */,
 				88B570EB1DA566B400CD4058 /* GetCaptionViewController.swift */,
 				886B4AC71D9DDD5B00581C9B /* ReorderSharedCaptionSpaceViewController.swift */,
-				883982A41DB2B4F100B5A037 /* HelpDropdownViewController.swift */,
-				8862CE311DB0838500685CCA /* StartupHelpViewController.swift */,
-				883982961DB1421C00B5A037 /* InnerHelpViewController.swift */,
-				88DD92E41D88738200832564 /* WebHelpViewController.swift */,
 			);
 			name = ModalViewControllers;
 			sourceTree = "<group>";
@@ -518,13 +562,25 @@
 			name = ChildrenOfMasterView;
 			sourceTree = "<group>";
 		};
+		885BFE281DEDBCC8002DAE16 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				8817590D1DC7F26900DB70C6 /* Help.storyboard */,
+				883982A41DB2B4F100B5A037 /* ImportMenuViewController.swift */,
+				8862CE311DB0838500685CCA /* StartupHelpViewController.swift */,
+				883982961DB1421C00B5A037 /* InnerHelpViewController.swift */,
+				88DD92E41D88738200832564 /* WebHelpViewController.swift */,
+			);
+			name = Help;
+			path = appcode;
+			sourceTree = "<group>";
+		};
 		88722F661D522AAB00B2F85B /* appcode */ = {
 			isa = PBXGroup;
 			children = (
 				88A6E5131DCA500900E2D1B7 /* shared */,
 				88A6E4D61DCA38F800E2D1B7 /* SFViewController.swift */,
 				88EBCE271DE1307900C77D8B /* Main.storyboard */,
-				8817590D1DC7F26900DB70C6 /* Help.storyboard */,
 				88DD92DE1D88738200832564 /* AppDelegate.swift */,
 				88DD92E51D88738200832564 /* MasterViewController.swift */,
 				880845E51DE0CDF800EB7965 /* NoContentViewController.swift */,
@@ -570,8 +626,12 @@
 		88AEA5881D514B29006E5C70 = {
 			isa = PBXGroup;
 			children = (
+				880E6F631DEF448A007D3631 /* test files */,
+				880E6F611DEF43C0007D3631 /* README.md */,
+				880E6F5E1DEF4280007D3631 /* LICENSE.txt */,
 				880846101DE0EBDB00EB7965 /* HelpAssets */,
 				880681721DC900CD00340D8A /* stikz.xcodeproj */,
+				885BFE281DEDBCC8002DAE16 /* Help */,
 				88E95EA61DA27E9F007266CB /* app-images */,
 				88722F9E1D522ADF00B2F85B /* messagecode */,
 				88722F661D522AAB00B2F85B /* appcode */,
@@ -1026,12 +1086,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				8839829B1DB14FDD00B5A037 /* kaptionator-1024x768.png in Resources */,
+				880E6F771DEF448A007D3631 /* santaHelpWanted-618x618.gif in Resources */,
 				88AEA59C1D514B29006E5C70 /* Assets.xcassets in Resources */,
+				880E6F741DEF448A007D3631 /* sadSanta-618x618.gif in Resources */,
+				880E6F751DEF448A007D3631 /* santa1Text-618x618.gif in Resources */,
 				AD6CAF2E1DA2FEE80062919B /* SharedAssets.xcassets in Resources */,
+				880E6F7A1DEF448A007D3631 /* snowGlobeHoldUp-618x618.gif in Resources */,
+				880E6F711DEF448A007D3631 /* elfHearth-618x618.gif in Resources */,
+				880E6F731DEF448A007D3631 /* onTheRoof1-618x618-72.gif in Resources */,
+				880E6F5F1DEF4280007D3631 /* LICENSE.txt in Resources */,
+				880E6F701DEF448A007D3631 /* blueishSanta-618x618.gif in Resources */,
+				880E6F791DEF448A007D3631 /* santaYarmulkeMenorahDredel-618x618.gif in Resources */,
+				880E6F7B1DEF448A007D3631 /* wreath-618x618.gif in Resources */,
 				88EBCE281DE1307900C77D8B /* Main.storyboard in Resources */,
+				880E6F781DEF448A007D3631 /* santaMirandaL-618x618.gif in Resources */,
 				8817590E1DC7F26900DB70C6 /* Help.storyboard in Resources */,
 				880846071DE0EB8000EB7965 /* sshelp in Resources */,
+				880E6F761DEF448A007D3631 /* santaGiftKids-618x618.gif in Resources */,
 				883982A01DB18C7600B5A037 /* theMidnightRambler-120.png in Resources */,
+				880E6F721DEF448A007D3631 /* hohoho-618x618.gif in Resources */,
 				883982A31DB2A14300B5A037 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1134,12 +1207,13 @@
 				88A6E50C1DCA4E3600E2D1B7 /* StickerAssetSpace.swift in Sources */,
 				889FB7221D9438220064B4C9 /* CatalogRemoteViewController.swift in Sources */,
 				88DD92E91D88738200832564 /* AppDelegate.swift in Sources */,
-				883982A51DB2B4F100B5A037 /* HelpDropdownViewController.swift in Sources */,
+				883982A51DB2B4F100B5A037 /* ImportMenuViewController.swift in Sources */,
 				880845E61DE0CDF800EB7965 /* NoContentViewController.swift in Sources */,
 				AD20A5FA1DA1946600877ABF /* ITunesMenuViewController.swift in Sources */,
 				88FA07D71DA402330063B483 /* ChangeCaptionViewController.swift in Sources */,
 				88DD92F11D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				88DD93111D88738200832564 /* CaptionedTableCell.swift in Sources */,
+				880E6F621DEF43C0007D3631 /* README.md in Sources */,
 				886B4ACD1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88A6E5021DCA4DDF00E2D1B7 /* AppCaptionSpace.swift in Sources */,
 				88DD92F91D88738200832564 /* AppCaptionSpaceViewController.swift in Sources */,
@@ -1171,7 +1245,7 @@
 				88A6E5031DCA4DDF00E2D1B7 /* AppCaptionSpace.swift in Sources */,
 				886B4ACE1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88DD92F21D88738200832564 /* CatalogMenuViewController.swift in Sources */,
-				883982A61DB2BEEC00B5A037 /* HelpDropdownViewController.swift in Sources */,
+				883982A61DB2BEEC00B5A037 /* ImportMenuViewController.swift in Sources */,
 				88DD92EE1D88738200832564 /* CatalogRemoteViewController.swift in Sources */,
 				88FA07D81DA402330063B483 /* ChangeCaptionViewController.swift in Sources */,
 				AD20A5FF1DA1951000877ABF /* ITunesMenuViewController.swift in Sources */,
@@ -1207,7 +1281,7 @@
 				88A6E5041DCA4DDF00E2D1B7 /* AppCaptionSpace.swift in Sources */,
 				886B4ACF1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88DD92F31D88738200832564 /* CatalogMenuViewController.swift in Sources */,
-				883982A71DB2BEED00B5A037 /* HelpDropdownViewController.swift in Sources */,
+				883982A71DB2BEED00B5A037 /* ImportMenuViewController.swift in Sources */,
 				88DD92EF1D88738200832564 /* CatalogRemoteViewController.swift in Sources */,
 				88FA07D91DA402330063B483 /* ChangeCaptionViewController.swift in Sources */,
 				AD20A6001DA1951100877ABF /* ITunesMenuViewController.swift in Sources */,
@@ -1243,7 +1317,7 @@
 				88A6E5051DCA4DDF00E2D1B7 /* AppCaptionSpace.swift in Sources */,
 				886B4AD01D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88DD92F41D88738200832564 /* CatalogMenuViewController.swift in Sources */,
-				883982A81DB2BEEE00B5A037 /* HelpDropdownViewController.swift in Sources */,
+				883982A81DB2BEEE00B5A037 /* ImportMenuViewController.swift in Sources */,
 				88DD92F01D88738200832564 /* CatalogRemoteViewController.swift in Sources */,
 				88FA07DA1DA402330063B483 /* ChangeCaptionViewController.swift in Sources */,
 				AD20A6011DA1951200877ABF /* ITunesMenuViewController.swift in Sources */,

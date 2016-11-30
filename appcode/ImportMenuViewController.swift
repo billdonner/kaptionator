@@ -1,5 +1,5 @@
 //
-//  HelpDropdownViewController.swift
+//  ImportMenuViewController.swift
 //  kaptionator
 //
 //  Created by bill donner on 10/15/16.
@@ -9,10 +9,10 @@
 import UIKit
 
 import stikz
-protocol HelpDropdownDelegate : class {
+protocol ImportMenuDelegate : class {
     func refreshLayout()
 }
-final class HelpDropdownViewController: UIViewController, ModalOverCurrentContext  , UINavigationControllerDelegate  {
+final class ImportMenuViewController: UIViewController, ModalOverCurrentContext  , UINavigationControllerDelegate  {
     let supportedCloudUTIs =
         ["com.compuserve.gif",
          "public.png",
@@ -20,10 +20,9 @@ final class HelpDropdownViewController: UIViewController, ModalOverCurrentContex
     
     private var imagePicker = UIImagePickerController()
     
-    weak var delegate: HelpDropdownDelegate?  // mig
+    
+    weak var delegate: ImportMenuDelegate?  // mig
  
-    
-    
     func dismisstapped(_ s: AnyObject) {
         delegate?.refreshLayout()
         dismiss(animated: true, completion: nil)
@@ -120,7 +119,7 @@ final class HelpDropdownViewController: UIViewController, ModalOverCurrentContex
     }
 }
 //MARK: - UIDocumentPickerDelegate
-extension HelpDropdownViewController : UIDocumentPickerDelegate {
+extension ImportMenuViewController : UIDocumentPickerDelegate {
     func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
         print("cancelled from doc picker")
     }
@@ -131,7 +130,7 @@ extension HelpDropdownViewController : UIDocumentPickerDelegate {
         self.dismisstapped(self)
     }
 }
-private extension HelpDropdownViewController {
+private extension ImportMenuViewController {
     //http://stackoverflow.com/questions/31314412/how-to-resize-image-in-swiftfunc
  func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
         let size = image.size
@@ -161,7 +160,7 @@ private extension HelpDropdownViewController {
     
 }
 //MARK: - UIImagePickerControllerDelegate
-extension HelpDropdownViewController :UIImagePickerControllerDelegate {
+extension ImportMenuViewController :UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             let newimage =  resizeImage(image: image,targetSize:(CGSize(width:618.0,height:618.0)))

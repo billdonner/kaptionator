@@ -36,14 +36,14 @@ final class SharedCaptionSpaceViewController: UIViewController,ControlledByMaste
     
     //MARK:- Dispatching to External ViewControllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier ==  "MessagesAppCellTapMenuID"{
-            if let indexPath = theSelectedIndexPath {
-                if let avc =  segue.destination as? SharedSpaceMenuViewController   {
-                    avc.delegate = self
-                    avc.captionedEntry = stickerz [indexPath.row]
-                }
-            }}}
+        guard segue.identifier ==  "MessagesAppCellTapMenuID" ,
+            let indexPath = theSelectedIndexPath ,
+            let avc =  segue.destination as? SharedSpaceMenuViewController  else { return
+        }
+        avc.delegate = self
+        avc.captionedEntry = stickerz [indexPath.row]
+    }
+    
     internal func refreshPulled(_ x:AnyObject) {
         if stickerz.count > 1 {
             self.performSegue(withIdentifier: "PresentReorder", sender: nil)

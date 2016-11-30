@@ -14,10 +14,10 @@ import stikz
 
 
 final class CatalogRemoteViewController:UIViewController,ControlledByMasterView, UserInteractionSignalDelegate,UICollectionViewDelegate, UICollectionViewDataSource  {
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
-@IBAction func unwindToCatalogItemsViewControlle(_ segue: UIStoryboardSegue)  {}
+    @IBAction func unwindToCatalogItemsViewControlle(_ segue: UIStoryboardSegue)  {}
     
     func backToCallerAndDismiss () {// can go directly back
         masterViewController?.dismiss(animated: true, completion: nil)
@@ -59,17 +59,16 @@ final class CatalogRemoteViewController:UIViewController,ControlledByMasterView,
     }
     //MARK:- Dispatching to External ViewControllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier ==  "CatalogCellTapMenuID"{
-            if let indexPath = theSelectedIndexPath {
-                let ra = StickerAssetSpace.itemAt(indexPath.row)
-                let avc =  segue.destination as? CatalogMenuViewController
-                if let avc = avc  {
-                    avc.delegate = self
-                    avc.stickerAsset = ra
-                    avc.pvc = self
-                }
-            }
+        guard segue.identifier ==  "CatalogCellTapMenuID",
+            let indexPath = theSelectedIndexPath ,
+            let avc =  segue.destination as? CatalogMenuViewController
+            else {
+                return
         }
+        avc.delegate = self
+        avc.stickerAsset = StickerAssetSpace.itemAt(indexPath.row)
+        
+        avc.pvc = self
     }
 }
 /// secret message to gary
@@ -77,8 +76,8 @@ final class CatalogRemoteViewController:UIViewController,ControlledByMasterView,
 extension CatalogRemoteViewController {  //loading on first up - moved from masterview controller
     
     func refreshPulled(_ x:AnyObject) {
-            refreshControl.endRefreshing()
-        }
+        refreshControl.endRefreshing()
+    }
     
     
     func phase1() {
@@ -124,44 +123,44 @@ extension CatalogRemoteViewController {  //loading on first up - moved from mast
         UIView.animate(withDuration: 1.5, animations: {
             self.startupLogo.alpha =  0.0
             self.collectionView.alpha = 1.0
-            }
+        }
             , completion: { b in
                 self.startupLogo.removeFromSuperview()
-            }
+        }
         )
     }
-//MARK: UICollectionViewDataSource
-
+    //MARK: UICollectionViewDataSource
+    
     @objc(numberOfSectionsInCollectionView:) func numberOfSections(in collectionView: UICollectionView) -> Int {
         // if self.refreshControl.isRefreshing { return 0 }
         return 1
     }
-     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return StickerAssetSpace.itemCount()
     }
-     @objc(collectionView:cellForItemAtIndexPath:) func collectionView(_ collectionView: UICollectionView,
-                                 cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    @objc(collectionView:cellForItemAtIndexPath:) func collectionView(_ collectionView: UICollectionView,
+                                                                      cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "CatalogDataCell", for: indexPath  )
             as! CatalogDataCell // Create the cell from the storyboard cell
         let ra = StickerAssetSpace.itemAt(indexPath.row)
- 
+        
         if ra.options.contains(.generateasis) {
-             cell.showAnimationOverlay()
+            cell.showAnimationOverlay()
         }
-        // if we have a thumbnail, show that 
+        // if we have a thumbnail, show that
         if let thumburl = ra.thumburl {
             // have the data onhand
             cell.paintImageCatalogDataCell(url: thumburl)
         } else
-        if let imurl = ra.localurl {
-            // have the data onhand
-            cell.paintImageCatalogDataCell(url:imurl)
+            if let imurl = ra.localurl {
+                // have the data onhand
+                cell.paintImageCatalogDataCell(url:imurl)
         }
-      
+        
         return cell // Return the cell
     }
- 
-     @objc(collectionView:didSelectItemAtIndexPath:) func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+    @objc(collectionView:didSelectItemAtIndexPath:) func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         theSelectedIndexPath = indexPath
         // todo: analyze safety of passing indexpath thru, sees to work for now
         let cell = collectionView.cellForItem(at: indexPath)
@@ -170,15 +169,15 @@ extension CatalogRemoteViewController {  //loading on first up - moved from mast
         performSegue(withIdentifier: "CatalogCellTapMenuID", sender: self)
     }
     //
-     }
+}
 
 extension CatalogRemoteViewController : CatalogMenuViewDelegate {
     func useAsIs(stickerAsset:StickerAsset) {
         AppCE.makeNewCaptionAsIs(from: stickerAsset )    }
-//    func zuseWithNoCaption(stickerAsset:StickerAsset) {
-//        // make un captionated entry from remote asset
-//        AppCE.makeNewCaptionCat( from: stickerAsset, caption: "" )
-//    }
+    //    func zuseWithNoCaption(stickerAsset:StickerAsset) {
+    //        // make un captionated entry from remote asset
+    //        AppCE.makeNewCaptionCat( from: stickerAsset, caption: "" )
+    //    }
     func useWithCaption(stickerAsset:StickerAsset,caption:String) {
         // make un captionated entry from remote asset
         AppCE.makeNewCaptionCat( from: stickerAsset, caption: caption )
