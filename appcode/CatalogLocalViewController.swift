@@ -35,9 +35,9 @@ final class CatalogViewController:UIViewController,ControlledByMasterView, UICol
         super.viewWillAppear(animated)
         
         self.collectionView!.reloadData()
-        if StickerAssetSpace.itemCount() == 0 {
-            masterViewController?.performSegue(withIdentifier: "NoCatalogContentID", sender: self)
-        }
+//        if StickerAssetSpace.itemCount() == 0 {
+//            masterViewController?.performSegue(withIdentifier: "NoCatalogContentID", sender: self)
+//        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()

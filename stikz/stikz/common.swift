@@ -166,7 +166,7 @@ public var backgroundImagePath : String {
 get {
     if let iDict = Bundle.main.infoDictionary ,
         let w =  iDict["BACKGROUND-IMAGE"] as? String { return w }
-    fatalError("remote website url undefined")
+    fatalError("BACKGROUND-IMAGE undefined")
     //return nil
 }
 }

@@ -4,10 +4,20 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>APP-TITLE</key>
+	<string>Holidayz by Martoons</string>
+	<key>EXTENSION-SCHEME</key>
+	<string>Holidayz</string>
+	<key>LEFT-BBI-NAME</key>
+	<string>Catalog</string>
+	<key>LOCAL-RESOURCES-BASEDIR</key>
+	<string>holidayz-stickerspackimages</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.martoons.holidayz</string>
+	<key>BACKGROUND-IMAGE</key>
+	<string>holidayStickerIcons-1024x768.png</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -25,13 +35,15 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>REMOTE-STICKERPACKLIST-URL</key>
-	<string>http://shtikerz.com/packlists/holidaze-pak-list.json</string>
 	<key>REMOTE-WEBSITE-URL</key>
 	<string>http://shtikerz.com/holidayz</string>
 	<key>SHARED-INTERAPP-DATA</key>
 	<string>group.com.martoons.holidayz</string>
 	<key>SHOW-HIDDEN-FUNCTIONS</key>
+	<false/>
+	<key>TOP-BLURB</key>
+	<string>Choose stickers and add captions here</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>UIFileSharingEnabled</key>
 	<false/>

@@ -71,6 +71,8 @@
 		886B4ACE1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4ACC1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift */; };
 		886B4ACF1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4ACC1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift */; };
 		886B4AD01D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4ACC1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift */; };
+		887AEF3E1DF075AA00599D5B /* holidayStickerIcons-1024x768.png in Resources */ = {isa = PBXBuildFile; fileRef = 887AEF3C1DF075AA00599D5B /* holidayStickerIcons-1024x768.png */; };
+		887AEF871DF07BB500599D5B /* holidayz-stickerspackimages in Resources */ = {isa = PBXBuildFile; fileRef = 887AEF861DF07BB500599D5B /* holidayz-stickerspackimages */; };
 		889FB7221D9438220064B4C9 /* CatalogRemoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92DF1D88738200832564 /* CatalogRemoteViewController.swift */; };
 		88A6E4D71DCA38F800E2D1B7 /* SFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6E4D61DCA38F800E2D1B7 /* SFViewController.swift */; };
 		88A6E4D81DCA38F800E2D1B7 /* SFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6E4D61DCA38F800E2D1B7 /* SFViewController.swift */; };
@@ -353,6 +355,8 @@
 		886B4AC21D9CA4CB00581C9B /* MessagesTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableCell.swift; sourceTree = "<group>"; };
 		886B4AC71D9DDD5B00581C9B /* ReorderSharedCaptionSpaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReorderSharedCaptionSpaceViewController.swift; sourceTree = "<group>"; };
 		886B4ACC1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReorderCollectionViewCell.swift; sourceTree = "<group>"; };
+		887AEF3C1DF075AA00599D5B /* holidayStickerIcons-1024x768.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "holidayStickerIcons-1024x768.png"; sourceTree = "<group>"; };
+		887AEF861DF07BB500599D5B /* holidayz-stickerspackimages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "holidayz-stickerspackimages"; sourceTree = "<group>"; };
 		88A6E4D61DCA38F800E2D1B7 /* SFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFViewController.swift; path = ../stikz/stikz/SFViewController.swift; sourceTree = "<group>"; };
 		88A6E5011DCA4DDF00E2D1B7 /* AppCaptionSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppCaptionSpace.swift; path = ../stikz/stikz/AppCaptionSpace.swift; sourceTree = "<group>"; };
 		88A6E5061DCA4E1300E2D1B7 /* InfoDictIOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoDictIOS.swift; path = ../stikz/stikz/InfoDictIOS.swift; sourceTree = "<group>"; };
@@ -763,12 +767,14 @@
 		88E95EA61DA27E9F007266CB /* app-images */ = {
 			isa = PBXGroup;
 			children = (
+				887AEF861DF07BB500599D5B /* holidayz-stickerspackimages */,
 				88B571A31DA71F8200CD4058 /* emogeez-stickerspackimages */,
 				88B571A11DA71F4F00CD4058 /* candidates-stickerspackimages */,
 				AD6CAF291DA19CF80062919B /* candidatesIconsCans-1024x768.png */,
+				887AEF3C1DF075AA00599D5B /* holidayStickerIcons-1024x768.png */,
+				AD6CAF2B1DA19D270062919B /* emoGeeStickerIcons-1024x768.png */,
 				8839829A1DB14FDD00B5A037 /* kaptionator-1024x768.png */,
 				8839829F1DB18C7600B5A037 /* theMidnightRambler-120.png */,
-				AD6CAF2B1DA19D270062919B /* emoGeeStickerIcons-1024x768.png */,
 				AD6CAF2D1DA2FEE80062919B /* SharedAssets.xcassets */,
 			);
 			name = "app-images";
@@ -1144,7 +1150,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				88AEA5F91D514BC3006E5C70 /* LaunchScreen.storyboard in Resources */,
+				887AEF871DF07BB500599D5B /* holidayz-stickerspackimages in Resources */,
 				AD6CAF311DA2FEE80062919B /* SharedAssets.xcassets in Resources */,
+				887AEF3E1DF075AA00599D5B /* holidayStickerIcons-1024x768.png in Resources */,
 				881759111DC7F26900DB70C6 /* Help.storyboard in Resources */,
 				88AEA5F61D514BC3006E5C70 /* Assets.xcassets in Resources */,
 				88EBCE2B1DE1307900C77D8B /* Main.storyboard in Resources */,
