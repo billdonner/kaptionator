@@ -1,14 +1,13 @@
 # kaptionator
 ios10  swift-3kaptionator app for custom Messages Stickers
 
-![screenshot1](http://billdonner.com/kaptionatorpic/ka1.png)
+![screenshot1](http://billdonner.com/kaptionatorpic/ka1.png)  ![screenshot2](http://billdonner.com/kaptionatorpic/ka2.png)  ![screenshot3](http://billdonner.com/kaptionatorpic/ka3.png)
 
-![screenshot2](http://billdonner.com/kaptionatorpic/ka2.png)
-
-![screenshot3](http://billdonner.com/kaptionatorpic/ka3.png)
 designed by gary martin and bill donner
 
 swift-3 code by bill donner
+
+artwork by gary martin 
 
 in the app store as Candidatez and Emogeez
 
