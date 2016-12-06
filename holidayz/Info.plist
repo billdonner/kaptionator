@@ -2,22 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
 	<key>APP-TITLE</key>
 	<string>Holidayz by Martoons</string>
-	<key>EXTENSION-SCHEME</key>
-	<string>Holidayz</string>
-	<key>LEFT-BBI-NAME</key>
-	<string>Catalog</string>
-	<key>LOCAL-RESOURCES-BASEDIR</key>
-	<string>holidayz-stickerspackimages</string>
+	<key>BACKGROUND-IMAGE</key>
+	<string>holidayStickerIcons-1024x768.png</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.martoons.holidayz</string>
-	<key>BACKGROUND-IMAGE</key>
-	<string>holidayStickerIcons-1024x768.png</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -27,7 +21,13 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>15</string>
+	<string>109</string>
+	<key>EXTENSION-SCHEME</key>
+	<string>Holidayz</string>
+	<key>LEFT-BBI-NAME</key>
+	<string>Catalog</string>
+	<key>LOCAL-RESOURCES-BASEDIR</key>
+	<string>holidayz-stickerspackimages</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -43,8 +43,6 @@
 	<false/>
 	<key>TOP-BLURB</key>
 	<string>Choose stickers and add captions here</string>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
 	<key>UIFileSharingEnabled</key>
 	<false/>
 	<key>UILaunchStoryboardName</key>
@@ -68,5 +66,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>

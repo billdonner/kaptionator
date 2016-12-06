@@ -1030,7 +1030,7 @@
                                                     <rect key="frame" x="8" y="156" width="134" height="25"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aej-nA-v4t">
-                                                    <rect key="frame" x="8" y="158" width="134" height="38"/>
+                                                    <rect key="frame" x="8" y="168" width="134" height="32"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1042,11 +1042,11 @@
                                             <constraint firstItem="aej-nA-v4t" firstAttribute="leading" secondItem="Pkp-Iw-yht" secondAttribute="leadingMargin" id="5DH-u2-BZS"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="qzk-fQ-cYm" secondAttribute="trailing" id="7za-00-Zfo"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="GEF-DG-ge6" secondAttribute="trailing" id="DcZ-IP-Um8"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="aej-nA-v4t" secondAttribute="bottom" constant="-4" id="GYh-YS-e5p"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="aej-nA-v4t" secondAttribute="bottom" constant="-8" id="GYh-YS-e5p"/>
                                             <constraint firstItem="qzk-fQ-cYm" firstAttribute="top" secondItem="GEF-DG-ge6" secondAttribute="bottom" constant="6" id="JWe-0r-Rlc"/>
                                             <constraint firstItem="qzk-fQ-cYm" firstAttribute="leading" secondItem="Pkp-Iw-yht" secondAttribute="leadingMargin" id="Mzz-9a-OLv"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="qzk-fQ-cYm" secondAttribute="bottom" constant="11" id="TOF-nf-0h0"/>
-                                            <constraint firstItem="aej-nA-v4t" firstAttribute="top" secondItem="GEF-DG-ge6" secondAttribute="bottom" constant="8" id="Yr7-Cc-L7O"/>
+                                            <constraint firstItem="aej-nA-v4t" firstAttribute="top" secondItem="GEF-DG-ge6" secondAttribute="bottom" constant="18" id="Yr7-Cc-L7O"/>
                                             <constraint firstItem="GEF-DG-ge6" firstAttribute="leading" secondItem="Pkp-Iw-yht" secondAttribute="leadingMargin" id="zwt-Ex-Pqa"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="aej-nA-v4t" secondAttribute="trailing" id="zzJ-XI-rUJ"/>
                                         </constraints>

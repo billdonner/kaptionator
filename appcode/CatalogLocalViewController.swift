@@ -172,16 +172,20 @@ final class CatalogViewController:UIViewController,ControlledByMasterView, UICol
     //MARK:- CALLBACKS
     extension CatalogViewController : CatalogMenuViewDelegate {
         func catUseAsIs(stickerAsset:StickerAsset) {
+          
             AppCE.makeNewCaptionCat(from: stickerAsset , caption: stickerAsset.assetName)
             MasterViewController.blurt(title: "Added one image to your catalog",mess: "as is")
+            
         }
         func xuseAsIs(stickerAsset:StickerAsset) {
             AppCE.makeNewCaptionCat(from: stickerAsset, caption: stickerAsset.assetName )
         }
  
         func catUseWithCaption(stickerAsset:StickerAsset,caption:String) {
+             if !stickerAsset.options.contains(.generateasis) {
             // make un captionated entry from remote asset
             AppCE.makeNewCaptionCat( from: stickerAsset, caption: caption )
             MasterViewController.blurt(title: "Added one image to your catalog",mess: caption)
+            }
         }
 }
