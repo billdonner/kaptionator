@@ -8,7 +8,7 @@
 
 import UIKit
 
-import stikz
+//import stikz
 protocol ImportMenuDelegate : class {
     func refreshLayout()
 }

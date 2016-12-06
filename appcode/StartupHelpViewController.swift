@@ -8,7 +8,7 @@
 
 import UIKit
 
-import stikz
+//import stikz
 
 
 final class StartupHelpViewController:  UIViewController, ModalOverCurrentContext  {

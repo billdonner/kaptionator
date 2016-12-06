@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import stikz
+//import stikz
 
 // global funcs called fr4om multiple kind of view controllers
 public struct BorderSettings {

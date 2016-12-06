@@ -8,7 +8,7 @@
 
 import UIKit
 
-import stikz
+//import stikz
 
 protocol ITunesMenuViewDelegate : class {
     func changedAnimationState(stickerAsset:StickerAsset)

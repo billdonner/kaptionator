@@ -8,7 +8,7 @@
 
 import UIKit
 import SafariServices
-import stikz
+//import stikz
 
 public    func openwebsite(_ presentor:UIViewController) {
     

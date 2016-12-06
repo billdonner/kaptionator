@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>APP-TITLE</key>
-	<string>Holidayz by Martoons</string>
+	<string>Holidaze by Martoons</string>
 	<key>BACKGROUND-IMAGE</key>
 	<string>holidayStickerIcons-1024x768.png</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -11,7 +11,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.martoons.holidayz</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -21,9 +21,9 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>109</string>
+	<string>111</string>
 	<key>EXTENSION-SCHEME</key>
-	<string>Holidayz</string>
+	<string>Holidaze</string>
 	<key>LEFT-BBI-NAME</key>
 	<string>Catalog</string>
 	<key>LOCAL-RESOURCES-BASEDIR</key>
@@ -38,7 +38,7 @@
 	<key>REMOTE-WEBSITE-URL</key>
 	<string>http://shtikerz.com/holidayz</string>
 	<key>SHARED-INTERAPP-DATA</key>
-	<string>group.com.martoons.holidayz</string>
+	<string>group.com.martoons.holidaze</string>
 	<key>SHOW-HIDDEN-FUNCTIONS</key>
 	<false/>
 	<key>TOP-BLURB</key>

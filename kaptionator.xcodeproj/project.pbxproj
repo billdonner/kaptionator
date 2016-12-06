@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8806817B1DC900F100340D8A /* stikz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880681781DC900CD00340D8A /* stikz.framework */; };
-		8806817C1DC900F100340D8A /* stikz.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 880681781DC900CD00340D8A /* stikz.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		880681801DC9044E00340D8A /* stikz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880681781DC900CD00340D8A /* stikz.framework */; };
 		880845E61DE0CDF800EB7965 /* NoContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880845E51DE0CDF800EB7965 /* NoContentViewController.swift */; };
 		880845E71DE0CDF800EB7965 /* NoContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880845E51DE0CDF800EB7965 /* NoContentViewController.swift */; };
 		880845E81DE0CDF800EB7965 /* NoContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880845E51DE0CDF800EB7965 /* NoContentViewController.swift */; };
@@ -42,6 +39,34 @@
 		8862CE331DB0838500685CCA /* StartupHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8862CE311DB0838500685CCA /* StartupHelpViewController.swift */; };
 		8862CE341DB0838500685CCA /* StartupHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8862CE311DB0838500685CCA /* StartupHelpViewController.swift */; };
 		8862CE351DB0838500685CCA /* StartupHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8862CE311DB0838500685CCA /* StartupHelpViewController.swift */; };
+		8865F1D31DF7289E0099CD1D /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865F1CE1DF7289E0099CD1D /* common.swift */; };
+		8865F1D41DF7289E0099CD1D /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865F1CE1DF7289E0099CD1D /* common.swift */; };
+		8865F1D51DF7289E0099CD1D /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865F1CE1DF7289E0099CD1D /* common.swift */; };
+		8865F1D61DF7289E0099CD1D /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865F1CE1DF7289E0099CD1D /* common.swift */; };
+		8865F1D71DF7289E0099CD1D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865F1CF1DF7289E0099CD1D /* SharedCaptionSpace.swift */; };
+		8865F1D81DF7289E0099CD1D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865F1CF1DF7289E0099CD1D /* SharedCaptionSpace.swift */; };
+		8865F1D91DF7289E0099CD1D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865F1CF1DF7289E0099CD1D /* SharedCaptionSpace.swift */; };
+		8865F1DA1DF7289E0099CD1D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865F1CF1DF7289E0099CD1D /* SharedCaptionSpace.swift */; };
+		8865F1DB1DF7289E0099CD1D /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865F1D01DF7289E0099CD1D /* StickerFileFactory.swift */; };
+		8865F1DC1DF7289E0099CD1D /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865F1D01DF7289E0099CD1D /* StickerFileFactory.swift */; };
+		8865F1DD1DF7289E0099CD1D /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865F1D01DF7289E0099CD1D /* StickerFileFactory.swift */; };
+		8865F1DE1DF7289E0099CD1D /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865F1D01DF7289E0099CD1D /* StickerFileFactory.swift */; };
+		8865F1DF1DF7289E0099CD1D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8865F1D11DF7289E0099CD1D /* Info.plist */; };
+		8865F1E01DF7289E0099CD1D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8865F1D11DF7289E0099CD1D /* Info.plist */; };
+		8865F1E11DF7289E0099CD1D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8865F1D11DF7289E0099CD1D /* Info.plist */; };
+		8865F1E21DF7289E0099CD1D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8865F1D11DF7289E0099CD1D /* Info.plist */; };
+		8865F1E31DF728C00099CD1D /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865F1CE1DF7289E0099CD1D /* common.swift */; };
+		8865F1E41DF728C10099CD1D /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865F1CE1DF7289E0099CD1D /* common.swift */; };
+		8865F1E51DF728C20099CD1D /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865F1CE1DF7289E0099CD1D /* common.swift */; };
+		8865F1E61DF728C70099CD1D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865F1CF1DF7289E0099CD1D /* SharedCaptionSpace.swift */; };
+		8865F1E71DF728C80099CD1D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865F1CF1DF7289E0099CD1D /* SharedCaptionSpace.swift */; };
+		8865F1E81DF728CA0099CD1D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865F1CF1DF7289E0099CD1D /* SharedCaptionSpace.swift */; };
+		8865F1E91DF728CE0099CD1D /* SharedCaptionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865F1CF1DF7289E0099CD1D /* SharedCaptionSpace.swift */; };
+		8865F1EA1DF729120099CD1D /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865F1D01DF7289E0099CD1D /* StickerFileFactory.swift */; };
+		8865F1EB1DF729130099CD1D /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865F1D01DF7289E0099CD1D /* StickerFileFactory.swift */; };
+		8865F1EC1DF729140099CD1D /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865F1D01DF7289E0099CD1D /* StickerFileFactory.swift */; };
+		8865F1ED1DF729170099CD1D /* StickerFileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865F1D01DF7289E0099CD1D /* StickerFileFactory.swift */; };
+		8865F1EE1DF729580099CD1D /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8865F1CE1DF7289E0099CD1D /* common.swift */; };
 		886B4AC31D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4AC21D9CA4CB00581C9B /* MessagesTableCell.swift */; };
 		886B4AC41D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4AC21D9CA4CB00581C9B /* MessagesTableCell.swift */; };
 		886B4AC51D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4AC21D9CA4CB00581C9B /* MessagesTableCell.swift */; };
@@ -188,27 +213,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		880681771DC900CD00340D8A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 880681721DC900CD00340D8A /* stikz.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8806810C1DC8EFF100340D8A;
-			remoteInfo = stikz;
-		};
-		880681791DC900CD00340D8A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 880681721DC900CD00340D8A /* stikz.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 880681151DC8EFF100340D8A;
-			remoteInfo = stikzTests;
-		};
-		8806817D1DC900F100340D8A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 880681721DC900CD00340D8A /* stikz.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8806810B1DC8EFF100340D8A;
-			remoteInfo = stikz;
-		};
 		88475BF81D51607000FA7EC4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 88AEA5891D514B29006E5C70 /* Project object */;
@@ -246,7 +250,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8806817C1DC900F100340D8A /* stikz.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,7 +301,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		880681721DC900CD00340D8A /* stikz.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = stikz.xcodeproj; path = stikz/stikz.xcodeproj; sourceTree = "<group>"; };
 		880845E51DE0CDF800EB7965 /* NoContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoContentViewController.swift; sourceTree = "<group>"; };
 		880846061DE0EB8000EB7965 /* sshelp */ = {isa = PBXFileReference; lastKnownFileType = folder; name = sshelp; path = stikz/sshelp; sourceTree = "<group>"; };
 		8808460B1DE0EBC800EB7965 /* LoadDocFilesIntoSheetCheats.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = LoadDocFilesIntoSheetCheats.md; path = stikz/LoadDocFilesIntoSheetCheats.md; sourceTree = "<group>"; };
@@ -323,6 +325,10 @@
 		883982A21DB2A14300B5A037 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		883982A41DB2B4F100B5A037 /* ImportMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportMenuViewController.swift; sourceTree = "<group>"; };
 		8862CE311DB0838500685CCA /* StartupHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupHelpViewController.swift; sourceTree = "<group>"; };
+		8865F1CE1DF7289E0099CD1D /* common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
+		8865F1CF1DF7289E0099CD1D /* SharedCaptionSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedCaptionSpace.swift; sourceTree = "<group>"; };
+		8865F1D01DF7289E0099CD1D /* StickerFileFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerFileFactory.swift; sourceTree = "<group>"; };
+		8865F1D11DF7289E0099CD1D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		886B4AC21D9CA4CB00581C9B /* MessagesTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableCell.swift; sourceTree = "<group>"; };
 		886B4AC71D9DDD5B00581C9B /* ReorderSharedCaptionSpaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReorderSharedCaptionSpaceViewController.swift; sourceTree = "<group>"; };
 		886B4ACC1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReorderCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -343,7 +349,7 @@
 		88AEA5C91D514B6A006E5C70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88AEA5CC1D514B6A006E5C70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88AEA5CE1D514B6A006E5C70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		88AEA5EC1D514BC3006E5C70 /* holidayz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = holidayz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		88AEA5EC1D514BC3006E5C70 /* holidaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = holidaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88AEA5F51D514BC3006E5C70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88AEA5F81D514BC3006E5C70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88AEA5FA1D514BC3006E5C70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -395,7 +401,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8806817B1DC900F100340D8A /* stikz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,22 +454,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				88AEA6451D514CC7006E5C70 /* Messages.framework in Frameworks */,
-				880681801DC9044E00340D8A /* stikz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		880681731DC900CD00340D8A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				880681781DC900CD00340D8A /* stikz.framework */,
-				8806817A1DC900CD00340D8A /* stikzTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		880846101DE0EBDB00EB7965 /* HelpAssets */ = {
 			isa = PBXGroup;
 			children = (
@@ -530,6 +525,18 @@
 			path = appcode;
 			sourceTree = "<group>";
 		};
+		8865F1D21DF7289E0099CD1D /* stikz */ = {
+			isa = PBXGroup;
+			children = (
+				8865F1CE1DF7289E0099CD1D /* common.swift */,
+				8865F1CF1DF7289E0099CD1D /* SharedCaptionSpace.swift */,
+				8865F1D01DF7289E0099CD1D /* StickerFileFactory.swift */,
+				8865F1D11DF7289E0099CD1D /* Info.plist */,
+			);
+			name = stikz;
+			path = stikz/stikz;
+			sourceTree = "<group>";
+		};
 		88722F661D522AAB00B2F85B /* appcode */ = {
 			isa = PBXGroup;
 			children = (
@@ -581,10 +588,10 @@
 		88AEA5881D514B29006E5C70 = {
 			isa = PBXGroup;
 			children = (
+				8865F1D21DF7289E0099CD1D /* stikz */,
 				880E6F611DEF43C0007D3631 /* README.md */,
 				880E6F5E1DEF4280007D3631 /* LICENSE.txt */,
 				880846101DE0EBDB00EB7965 /* HelpAssets */,
-				880681721DC900CD00340D8A /* stikz.xcodeproj */,
 				885BFE281DEDBCC8002DAE16 /* Help */,
 				88E95EA61DA27E9F007266CB /* app-images */,
 				88722F9E1D522ADF00B2F85B /* messagecode */,
@@ -609,7 +616,7 @@
 				88AEA5911D514B29006E5C70 /* kaptionator.app */,
 				88AEA5AA1D514B53006E5C70 /* candidatez.app */,
 				88AEA5C01D514B6A006E5C70 /* emogeez.app */,
-				88AEA5EC1D514BC3006E5C70 /* holidayz.app */,
+				88AEA5EC1D514BC3006E5C70 /* holidaze.app */,
 				88AEA6021D514C1F006E5C70 /* holidazeMessagesExtension.appex */,
 				88AEA61A1D514C5F006E5C70 /* emogeezMessagesExtension.appex */,
 				88AEA62F1D514C8D006E5C70 /* candidatezMessagesExtension.appex */,
@@ -747,7 +754,6 @@
 			);
 			dependencies = (
 				88AEA6501D514CC7006E5C70 /* PBXTargetDependency */,
-				8806817E1DC900F100340D8A /* PBXTargetDependency */,
 			);
 			name = kaptionator;
 			productName = kaptionator;
@@ -792,9 +798,9 @@
 			productReference = 88AEA5C01D514B6A006E5C70 /* emogeez.app */;
 			productType = "com.apple.product-type.application";
 		};
-		88AEA5EB1D514BC3006E5C70 /* holidayz */ = {
+		88AEA5EB1D514BC3006E5C70 /* holidaze */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 88AEA5FB1D514BC3006E5C70 /* Build configuration list for PBXNativeTarget "holidayz" */;
+			buildConfigurationList = 88AEA5FB1D514BC3006E5C70 /* Build configuration list for PBXNativeTarget "holidaze" */;
 			buildPhases = (
 				88AEA5E81D514BC3006E5C70 /* Sources */,
 				88AEA5E91D514BC3006E5C70 /* Frameworks */,
@@ -806,9 +812,9 @@
 			dependencies = (
 				88475BFD1D51609200FA7EC4 /* PBXTargetDependency */,
 			);
-			name = holidayz;
+			name = holidaze;
 			productName = holidayz;
-			productReference = 88AEA5EC1D514BC3006E5C70 /* holidayz.app */;
+			productReference = 88AEA5EC1D514BC3006E5C70 /* holidaze.app */;
 			productType = "com.apple.product-type.application";
 		};
 		88AEA6011D514C1F006E5C70 /* holidazeMessagesExtension */ = {
@@ -930,18 +936,21 @@
 					};
 					88AEA5EB1D514BC3006E5C70 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = X2PQYA6S48;
+						DevelopmentTeam = 922D9E65C8;
 						DevelopmentTeamName = "Bill Donner";
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.SafariKeychain = {
+								enabled = 0;
+							};
 						};
 					};
 					88AEA6011D514C1F006E5C70 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = X2PQYA6S48;
+						DevelopmentTeam = 922D9E65C8;
 						DevelopmentTeamName = "Bill Donner";
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -999,12 +1008,6 @@
 			mainGroup = 88AEA5881D514B29006E5C70;
 			productRefGroup = 88AEA5921D514B29006E5C70 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 880681731DC900CD00340D8A /* Products */;
-					ProjectRef = 880681721DC900CD00340D8A /* stikz.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				88AEA5901D514B29006E5C70 /* kaptionator */,
@@ -1013,28 +1016,11 @@
 				88AEA62E1D514C8D006E5C70 /* candidatezMessagesExtension */,
 				88AEA5BF1D514B6A006E5C70 /* emogeez */,
 				88AEA6191D514C5F006E5C70 /* emogeezMessagesExtension */,
-				88AEA5EB1D514BC3006E5C70 /* holidayz */,
+				88AEA5EB1D514BC3006E5C70 /* holidaze */,
 				88AEA6011D514C1F006E5C70 /* holidazeMessagesExtension */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		880681781DC900CD00340D8A /* stikz.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = stikz.framework;
-			remoteRef = 880681771DC900CD00340D8A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8806817A1DC900CD00340D8A /* stikzTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = stikzTests.xctest;
-			remoteRef = 880681791DC900CD00340D8A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		88AEA58F1D514B29006E5C70 /* Resources */ = {
@@ -1049,6 +1035,7 @@
 				8817590E1DC7F26900DB70C6 /* Help.storyboard in Resources */,
 				880846071DE0EB8000EB7965 /* sshelp in Resources */,
 				883982A01DB18C7600B5A037 /* theMidnightRambler-120.png in Resources */,
+				8865F1DF1DF7289E0099CD1D /* Info.plist in Resources */,
 				883982A31DB2A14300B5A037 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1059,6 +1046,7 @@
 			files = (
 				88AEA5B71D514B53006E5C70 /* LaunchScreen.storyboard in Resources */,
 				88B571A21DA71F4F00CD4058 /* candidates-stickerspackimages in Resources */,
+				8865F1E01DF7289E0099CD1D /* Info.plist in Resources */,
 				88AEA5B41D514B53006E5C70 /* Assets.xcassets in Resources */,
 				AD6CAF2A1DA19CF80062919B /* candidatesIconsCans-1024x768.png in Resources */,
 				88EBCE291DE1307900C77D8B /* Main.storyboard in Resources */,
@@ -1074,6 +1062,7 @@
 			files = (
 				88AEA5CD1D514B6A006E5C70 /* LaunchScreen.storyboard in Resources */,
 				88B571A41DA71F8200CD4058 /* emogeez-stickerspackimages in Resources */,
+				8865F1E11DF7289E0099CD1D /* Info.plist in Resources */,
 				AD6CAF2C1DA19D270062919B /* emoGeeStickerIcons-1024x768.png in Resources */,
 				AD6CAF301DA2FEE80062919B /* SharedAssets.xcassets in Resources */,
 				88EBCE2A1DE1307900C77D8B /* Main.storyboard in Resources */,
@@ -1089,6 +1078,7 @@
 			files = (
 				88AEA5F91D514BC3006E5C70 /* LaunchScreen.storyboard in Resources */,
 				887AEF871DF07BB500599D5B /* holidayz-stickerspackimages in Resources */,
+				8865F1E21DF7289E0099CD1D /* Info.plist in Resources */,
 				AD6CAF311DA2FEE80062919B /* SharedAssets.xcassets in Resources */,
 				887AEF3E1DF075AA00599D5B /* holidayStickerIcons-1024x768.png in Resources */,
 				881759111DC7F26900DB70C6 /* Help.storyboard in Resources */,
@@ -1151,6 +1141,7 @@
 				88B5718E1DA6FC8F00CD4058 /* ITunesDataCell.swift in Sources */,
 				88DD93011D88738200832564 /* WebHelpViewController.swift in Sources */,
 				88A6E50C1DCA4E3600E2D1B7 /* StickerAssetSpace.swift in Sources */,
+				8865F1D71DF7289E0099CD1D /* SharedCaptionSpace.swift in Sources */,
 				889FB7221D9438220064B4C9 /* CatalogRemoteViewController.swift in Sources */,
 				88DD92E91D88738200832564 /* AppDelegate.swift in Sources */,
 				883982A51DB2B4F100B5A037 /* ImportMenuViewController.swift in Sources */,
@@ -1164,9 +1155,11 @@
 				88DD92F91D88738200832564 /* AppCaptionSpaceViewController.swift in Sources */,
 				88DD92F51D88738200832564 /* AppSpaceMenuViewController.swift in Sources */,
 				88B571931DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */,
+				8865F1D31DF7289E0099CD1D /* common.swift in Sources */,
 				88B570EC1DA566B400CD4058 /* GetCaptionViewController.swift in Sources */,
 				886B4AC31D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */,
 				AD20A5FB1DA1946A00877ABF /* ITunesViewController.swift in Sources */,
+				8865F1DB1DF7289E0099CD1D /* StickerFileFactory.swift in Sources */,
 				8862CE321DB0838500685CCA /* StartupHelpViewController.swift in Sources */,
 				88A6E5071DCA4E1300E2D1B7 /* InfoDictIOS.swift in Sources */,
 				88DD930D1D88738200832564 /* CatalogDataCell.swift in Sources */,
@@ -1186,6 +1179,7 @@
 				88A6E50D1DCA4E3600E2D1B7 /* StickerAssetSpace.swift in Sources */,
 				88DD93021D88738200832564 /* WebHelpViewController.swift in Sources */,
 				88DD92EA1D88738200832564 /* AppDelegate.swift in Sources */,
+				8865F1D81DF7289E0099CD1D /* SharedCaptionSpace.swift in Sources */,
 				88A6E5031DCA4DDF00E2D1B7 /* AppCaptionSpace.swift in Sources */,
 				886B4ACE1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88DD92F21D88738200832564 /* CatalogMenuViewController.swift in Sources */,
@@ -1199,9 +1193,11 @@
 				88B571941DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */,
 				88B570ED1DA566B400CD4058 /* GetCaptionViewController.swift in Sources */,
 				88EBCE201DE12F4800C77D8B /* ITunesViewController.swift in Sources */,
+				8865F1D41DF7289E0099CD1D /* common.swift in Sources */,
 				886B4AC91D9DDD5B00581C9B /* ReorderSharedCaptionSpaceViewController.swift in Sources */,
 				88EBCE241DE12F6200C77D8B /* ITunesDataCell.swift in Sources */,
 				8862CE331DB0838500685CCA /* StartupHelpViewController.swift in Sources */,
+				8865F1DC1DF7289E0099CD1D /* StickerFileFactory.swift in Sources */,
 				88A6E4D81DCA38F800E2D1B7 /* SFViewController.swift in Sources */,
 				880845E71DE0CDF800EB7965 /* NoContentViewController.swift in Sources */,
 				88DD930E1D88738200832564 /* CatalogDataCell.swift in Sources */,
@@ -1221,6 +1217,7 @@
 				88A6E50E1DCA4E3600E2D1B7 /* StickerAssetSpace.swift in Sources */,
 				88DD93031D88738200832564 /* WebHelpViewController.swift in Sources */,
 				88DD92EB1D88738200832564 /* AppDelegate.swift in Sources */,
+				8865F1D91DF7289E0099CD1D /* SharedCaptionSpace.swift in Sources */,
 				88A6E5041DCA4DDF00E2D1B7 /* AppCaptionSpace.swift in Sources */,
 				886B4ACF1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88DD92F31D88738200832564 /* CatalogMenuViewController.swift in Sources */,
@@ -1234,9 +1231,11 @@
 				88B571951DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */,
 				88B570EE1DA566B400CD4058 /* GetCaptionViewController.swift in Sources */,
 				88EBCE221DE12F4A00C77D8B /* ITunesViewController.swift in Sources */,
+				8865F1D51DF7289E0099CD1D /* common.swift in Sources */,
 				886B4ACA1D9DDD5B00581C9B /* ReorderSharedCaptionSpaceViewController.swift in Sources */,
 				88EBCE251DE12F6300C77D8B /* ITunesDataCell.swift in Sources */,
 				8862CE341DB0838500685CCA /* StartupHelpViewController.swift in Sources */,
+				8865F1DD1DF7289E0099CD1D /* StickerFileFactory.swift in Sources */,
 				88A6E4D91DCA38F800E2D1B7 /* SFViewController.swift in Sources */,
 				880845E81DE0CDF800EB7965 /* NoContentViewController.swift in Sources */,
 				88DD930F1D88738200832564 /* CatalogDataCell.swift in Sources */,
@@ -1256,6 +1255,7 @@
 				88A6E50F1DCA4E3600E2D1B7 /* StickerAssetSpace.swift in Sources */,
 				88DD93041D88738200832564 /* WebHelpViewController.swift in Sources */,
 				88DD92EC1D88738200832564 /* AppDelegate.swift in Sources */,
+				8865F1DA1DF7289E0099CD1D /* SharedCaptionSpace.swift in Sources */,
 				88A6E5051DCA4DDF00E2D1B7 /* AppCaptionSpace.swift in Sources */,
 				886B4AD01D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88DD92F41D88738200832564 /* CatalogMenuViewController.swift in Sources */,
@@ -1269,9 +1269,11 @@
 				88B571961DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */,
 				88B570EF1DA566B400CD4058 /* GetCaptionViewController.swift in Sources */,
 				88EBCE231DE12F4B00C77D8B /* ITunesViewController.swift in Sources */,
+				8865F1D61DF7289E0099CD1D /* common.swift in Sources */,
 				886B4ACB1D9DDD5B00581C9B /* ReorderSharedCaptionSpaceViewController.swift in Sources */,
 				88EBCE261DE12F6400C77D8B /* ITunesDataCell.swift in Sources */,
 				8862CE351DB0838500685CCA /* StartupHelpViewController.swift in Sources */,
+				8865F1DE1DF7289E0099CD1D /* StickerFileFactory.swift in Sources */,
 				88A6E4DA1DCA38F800E2D1B7 /* SFViewController.swift in Sources */,
 				880845E91DE0CDF800EB7965 /* NoContentViewController.swift in Sources */,
 				88DD93101D88738200832564 /* CatalogDataCell.swift in Sources */,
@@ -1287,8 +1289,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8865F1ED1DF729170099CD1D /* StickerFileFactory.swift in Sources */,
 				88B54C9F1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */,
+				8865F1E91DF728CE0099CD1D /* SharedCaptionSpace.swift in Sources */,
 				88B54C9B1D886FBC0076942D /* MartoonerBrowserViewController.swift in Sources */,
+				8865F1EE1DF729580099CD1D /* common.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1296,8 +1301,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8865F1E81DF728CA0099CD1D /* SharedCaptionSpace.swift in Sources */,
 				88B54C9E1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */,
+				8865F1EC1DF729140099CD1D /* StickerFileFactory.swift in Sources */,
 				88B54C9A1D886FBC0076942D /* MartoonerBrowserViewController.swift in Sources */,
+				8865F1E51DF728C20099CD1D /* common.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1305,8 +1313,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8865F1E71DF728C80099CD1D /* SharedCaptionSpace.swift in Sources */,
 				88B54C9D1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */,
+				8865F1EB1DF729130099CD1D /* StickerFileFactory.swift in Sources */,
 				88B54C991D886FBC0076942D /* MartoonerBrowserViewController.swift in Sources */,
+				8865F1E41DF728C10099CD1D /* common.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1314,19 +1325,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8865F1E61DF728C70099CD1D /* SharedCaptionSpace.swift in Sources */,
 				88B54C9C1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */,
+				8865F1EA1DF729120099CD1D /* StickerFileFactory.swift in Sources */,
 				88B54C981D886FBC0076942D /* MartoonerBrowserViewController.swift in Sources */,
+				8865F1E31DF728C00099CD1D /* common.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8806817E1DC900F100340D8A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = stikz;
-			targetProxy = 8806817D1DC900F100340D8A /* PBXContainerItemProxy */;
-		};
 		88475BF91D51607000FA7EC4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 88AEA62E1D514C8D006E5C70 /* candidatezMessagesExtension */;
@@ -1591,10 +1600,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = holidayz/holidayz.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 922D9E65C8;
 				INFOPLIST_FILE = holidayz/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.holidayz;
+				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.holidaze;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1608,10 +1618,11 @@
 				CODE_SIGN_ENTITLEMENTS = holidayz/holidayz.entitlements;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 922D9E65C8;
 				INFOPLIST_FILE = holidayz/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.holidayz;
+				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.holidaze;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1622,9 +1633,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_ENTITLEMENTS = holidazeMessagesExtension/holidazeMessagesExtension.entitlements;
+				DEVELOPMENT_TEAM = 922D9E65C8;
 				INFOPLIST_FILE = holidazeMessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.holidayz.MessagesExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.holidaze.MessagesExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -1636,9 +1648,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_ENTITLEMENTS = holidazeMessagesExtension/holidazeMessagesExtension.entitlements;
+				DEVELOPMENT_TEAM = 922D9E65C8;
 				INFOPLIST_FILE = holidazeMessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.midnightrambler.holidayz.MessagesExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.holidaze.MessagesExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -1772,7 +1785,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		88AEA5FB1D514BC3006E5C70 /* Build configuration list for PBXNativeTarget "holidayz" */ = {
+		88AEA5FB1D514BC3006E5C70 /* Build configuration list for PBXNativeTarget "holidaze" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				88AEA5FC1D514BC3006E5C70 /* Debug */,

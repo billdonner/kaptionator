@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import stikz
+//import stikz
 
 /// AppCaptionSpace is a singleton global struct that is persisted
 //  every instance of a user captioning a particular element is here

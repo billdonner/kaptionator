@@ -7,7 +7,7 @@
 //
 import UIKit
 
-import stikz
+//import stikz
 
 // MARK: Show All Remote Catalog Entries in One Tab as Child ViewContoller
 //

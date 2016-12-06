@@ -8,7 +8,7 @@
 
 import UIKit
 
-import stikz
+//import stikz
 /// this delegate CAN NOT be weak because it must outlive the viewcontroller that spawned it
 protocol ChangeCaptionDelegate { //:  class {
     func captionWasChanged(caption:String)

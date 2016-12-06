@@ -2,14 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>APP-TITLE</key>
+	<string>Holidaze by Martoons</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>holidayz</string>
+	<string>holidaze</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.martoons.holidayz.MessagesExtension</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -19,7 +21,9 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>12</string>
+	<string>111</string>
+	<key>EXTENSION-SCHEME</key>
+	<string>Holidaze</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionMainStoryboard</key>
@@ -28,6 +32,6 @@
 		<string>com.apple.message-payload-provider</string>
 	</dict>
 	<key>SHARED-INTERAPP-DATA</key>
-	<string>group.com.martoons.holidayz</string>
+	<string>group.com.martoons.holidaze</string>
 </dict>
 </plist>

@@ -6,7 +6,7 @@
 //  Copyright © 2016 Bill Donner/midnightrambler. All rights reserved.
 //
 import UIKit
-import stikz
+//import stikz
 
 class MessagesTableCell: UITableViewCell {
     @IBOutlet  fileprivate weak var detailsImageView: UIImageView!

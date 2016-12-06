@@ -12,7 +12,7 @@
 
 
 import UIKit
-import stikz
+//import stikz
 
 
 /// StickerAsset represents one image in a "pack" in either the local or remote filesystem

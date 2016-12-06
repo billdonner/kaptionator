@@ -21,7 +21,7 @@
 
 
 import UIKit
-import stikz
+//import stikz
 
 enum BackTheme {
     case white

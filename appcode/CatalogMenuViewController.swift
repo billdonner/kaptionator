@@ -7,7 +7,7 @@
 //
 import UIKit
 
-import stikz
+//import stikz
 
 protocol CatalogMenuViewDelegate : class {
     func catUseAsIs(stickerAsset:StickerAsset)

@@ -8,7 +8,7 @@
 
 import UIKit
 import Messages
-import stikz
+//import stikz
 
 // creates a set of stickers first time up or when refreshed
 

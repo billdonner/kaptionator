@@ -7,7 +7,7 @@
 //
 import UIKit
 
-import stikz
+//import stikz
 
 protocol AppSpaceMenuDelegate : class {
     func movingtoIMessage(captionedEntry:inout AppCE)

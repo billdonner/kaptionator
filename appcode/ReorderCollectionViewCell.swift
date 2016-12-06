@@ -8,7 +8,7 @@
 
 import UIKit
 
-import stikz
+//import stikz
 
 /// The cell responsible for displaying item data.
 class ReorderCollectionViewCell: UICollectionViewCell {
