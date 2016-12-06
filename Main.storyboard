@@ -1026,8 +1026,8 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GEF-DG-ge6">
                                                     <rect key="frame" x="8" y="8" width="134" height="142"/>
                                                 </imageView>
-                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="AnimationOverlay" translatesAutoresizingMaskIntoConstraints="NO" id="qzk-fQ-cYm">
-                                                    <rect key="frame" x="8" y="162" width="134" height="19"/>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AnimationOverlay" translatesAutoresizingMaskIntoConstraints="NO" id="qzk-fQ-cYm">
+                                                    <rect key="frame" x="8" y="156" width="134" height="25"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aej-nA-v4t">
                                                     <rect key="frame" x="8" y="158" width="134" height="38"/>

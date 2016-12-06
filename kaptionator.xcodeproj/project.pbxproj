@@ -18,12 +18,7 @@
 		880846081DE0EB8000EB7965 /* sshelp in Resources */ = {isa = PBXBuildFile; fileRef = 880846061DE0EB8000EB7965 /* sshelp */; };
 		880846091DE0EB8000EB7965 /* sshelp in Resources */ = {isa = PBXBuildFile; fileRef = 880846061DE0EB8000EB7965 /* sshelp */; };
 		8808460A1DE0EB8000EB7965 /* sshelp in Resources */ = {isa = PBXBuildFile; fileRef = 880846061DE0EB8000EB7965 /* sshelp */; };
-		8808460C1DE0EBC800EB7965 /* LoadDocFilesIntoSheetCheats.md in Sources */ = {isa = PBXBuildFile; fileRef = 8808460B1DE0EBC800EB7965 /* LoadDocFilesIntoSheetCheats.md */; };
-		8808460D1DE0EBC800EB7965 /* LoadDocFilesIntoSheetCheats.md in Sources */ = {isa = PBXBuildFile; fileRef = 8808460B1DE0EBC800EB7965 /* LoadDocFilesIntoSheetCheats.md */; };
-		8808460E1DE0EBC800EB7965 /* LoadDocFilesIntoSheetCheats.md in Sources */ = {isa = PBXBuildFile; fileRef = 8808460B1DE0EBC800EB7965 /* LoadDocFilesIntoSheetCheats.md */; };
-		8808460F1DE0EBC800EB7965 /* LoadDocFilesIntoSheetCheats.md in Sources */ = {isa = PBXBuildFile; fileRef = 8808460B1DE0EBC800EB7965 /* LoadDocFilesIntoSheetCheats.md */; };
 		880E6F5F1DEF4280007D3631 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 880E6F5E1DEF4280007D3631 /* LICENSE.txt */; };
-		880E6F621DEF43C0007D3631 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 880E6F611DEF43C0007D3631 /* README.md */; };
 		8817590E1DC7F26900DB70C6 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8817590D1DC7F26900DB70C6 /* Help.storyboard */; };
 		8817590F1DC7F26900DB70C6 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8817590D1DC7F26900DB70C6 /* Help.storyboard */; };
 		881759101DC7F26900DB70C6 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8817590D1DC7F26900DB70C6 /* Help.storyboard */; };
@@ -1164,7 +1159,6 @@
 				88FA07D71DA402330063B483 /* ChangeCaptionViewController.swift in Sources */,
 				88DD92F11D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				88DD93111D88738200832564 /* CaptionedTableCell.swift in Sources */,
-				880E6F621DEF43C0007D3631 /* README.md in Sources */,
 				886B4ACD1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88A6E5021DCA4DDF00E2D1B7 /* AppCaptionSpace.swift in Sources */,
 				88DD92F91D88738200832564 /* AppCaptionSpaceViewController.swift in Sources */,
@@ -1181,7 +1175,6 @@
 				88DD93051D88738200832564 /* MasterViewController.swift in Sources */,
 				88A6E4D71DCA38F800E2D1B7 /* SFViewController.swift in Sources */,
 				88DD92FD1D88738200832564 /* SharedCaptionSpaceViewController.swift in Sources */,
-				8808460C1DE0EBC800EB7965 /* LoadDocFilesIntoSheetCheats.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1209,7 +1202,6 @@
 				886B4AC91D9DDD5B00581C9B /* ReorderSharedCaptionSpaceViewController.swift in Sources */,
 				88EBCE241DE12F6200C77D8B /* ITunesDataCell.swift in Sources */,
 				8862CE331DB0838500685CCA /* StartupHelpViewController.swift in Sources */,
-				8808460D1DE0EBC800EB7965 /* LoadDocFilesIntoSheetCheats.md in Sources */,
 				88A6E4D81DCA38F800E2D1B7 /* SFViewController.swift in Sources */,
 				880845E71DE0CDF800EB7965 /* NoContentViewController.swift in Sources */,
 				88DD930E1D88738200832564 /* CatalogDataCell.swift in Sources */,
@@ -1245,7 +1237,6 @@
 				886B4ACA1D9DDD5B00581C9B /* ReorderSharedCaptionSpaceViewController.swift in Sources */,
 				88EBCE251DE12F6300C77D8B /* ITunesDataCell.swift in Sources */,
 				8862CE341DB0838500685CCA /* StartupHelpViewController.swift in Sources */,
-				8808460E1DE0EBC800EB7965 /* LoadDocFilesIntoSheetCheats.md in Sources */,
 				88A6E4D91DCA38F800E2D1B7 /* SFViewController.swift in Sources */,
 				880845E81DE0CDF800EB7965 /* NoContentViewController.swift in Sources */,
 				88DD930F1D88738200832564 /* CatalogDataCell.swift in Sources */,
@@ -1281,7 +1272,6 @@
 				886B4ACB1D9DDD5B00581C9B /* ReorderSharedCaptionSpaceViewController.swift in Sources */,
 				88EBCE261DE12F6400C77D8B /* ITunesDataCell.swift in Sources */,
 				8862CE351DB0838500685CCA /* StartupHelpViewController.swift in Sources */,
-				8808460F1DE0EBC800EB7965 /* LoadDocFilesIntoSheetCheats.md in Sources */,
 				88A6E4DA1DCA38F800E2D1B7 /* SFViewController.swift in Sources */,
 				880845E91DE0CDF800EB7965 /* NoContentViewController.swift in Sources */,
 				88DD93101D88738200832564 /* CatalogDataCell.swift in Sources */,
