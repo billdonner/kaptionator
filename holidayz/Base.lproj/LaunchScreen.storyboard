@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowGlobeHoldUp-618x618.gif" translatesAutoresizingMaskIntoConstraints="NO" id="rLe-6y-8LM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="holidayStickerIcons-1024x768.png" translatesAutoresizingMaskIntoConstraints="NO" id="rLe-6y-8LM">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
@@ -40,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="snowGlobeHoldUp-618x618.gif" width="618" height="618"/>
+        <image name="holidayStickerIcons-1024x768.png" width="1024" height="768"/>
     </resources>
 </document>

@@ -1,0 +1,87 @@
+{
+    "pack": "Holidaze",
+    "description": "Stikerz Pack Manifest for Holidaze",
+    "generated": "2016-08-03 00:05:14 +0000",
+    "images": [{
+               "image": "images/furryChristmas-618.gif",
+               "title": "Furry Christmas",
+               "size": "M"
+               }, {
+               "image": "images/elfGlobeWave-618x618.gif",
+               "title": "Elfin Wave",
+               "animated": 1,
+               "size": "M"
+               }, {
+               "image": "images/elfJumpPlain-300x500.gif",
+               "title": "Elfin Jump",
+               "animated": 1,
+               "size": "M"
+               }, {
+               "image": "images/santaTree.gif",
+               "title": "Santa And Tree",
+               "size": "M"
+               }, {
+               "image": "images/santaDance2c-solo.gif",
+               "title": "Santa Dance",
+               "animated": 1,
+               "size": "M"
+               }, {
+               "image": "images/santaKidsGiftSilo-618x618.gif",
+               "title": "Happy Holidays Kids",
+               "size": "M"
+               }, {
+               "image": "images/SantaMiranda-animated-v3a.gif",
+               "title": "Santa Miranda Surprise",
+               "animated": 1,
+               "size": "M"
+               
+               }, {
+               "image": "images/santaMirandaText-618x618.gif",
+               "title": "Santa Miranda",
+               "size": "M"
+               }, {
+               "image": "images/snowGlobeHoldUp-618x618.gif",
+               "title": "Hold Up",
+               "size": "M"
+               }, {
+               "image": "images/murrayChristmas-300.gif",
+               "title": "Murray Christmas animated",
+               "animated": 1,
+               "size": "M"
+               }, {
+               "image": "images/murrayLarge-618x618.gif",
+               "title": "Murray Christmas",
+               "size": "M"
+               }, {
+               "image": "images/SantaMurray72-animated-v1a.gif",
+               "title": "Santa / Murray Animated",
+               "animated": 1,
+               "size": "M"
+               }, {
+               
+               "image": "images/santaMurrayMorph300-loop-2c.gif",
+               "title": "Santa Murray Morph",
+               "animated": 1,
+               "size": "M"
+               }, {
+               
+               "image": "images/onTheRoof-v1c.gif",
+               "title": "Up On The Rooftop",
+               "animated": 1,
+               "size": "M"
+               }, {
+               "image": "images/santa1Text-618x618.gif",
+               "title": "Happy Holidays",
+               "size": "M"
+               }, {
+               
+               "image": "images/murrayRoofText-618x618.gif",
+               "title": "Murray On The Roof",
+               "size": "M"		
+               }, {
+               
+               "image": "images/murrayRoofNoText-618x618.gif",
+               "title": "Murray On The Roof blank",
+               "size": "M"
+               }]
+}

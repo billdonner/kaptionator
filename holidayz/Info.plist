@@ -21,13 +21,13 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>111</string>
+	<string>119</string>
 	<key>EXTENSION-SCHEME</key>
 	<string>Holidaze</string>
 	<key>LEFT-BBI-NAME</key>
-	<string>Catalog</string>
+	<string>Stickers</string>
 	<key>LOCAL-RESOURCES-BASEDIR</key>
-	<string>holidayz-stickerspackimages</string>
+	<string>holidaze-stickerpack</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -36,11 +36,13 @@
 		<true/>
 	</dict>
 	<key>REMOTE-WEBSITE-URL</key>
-	<string>http://shtikerz.com/holidayz</string>
+	<string>http://shtikerz.com/holidaze/</string>
 	<key>SHARED-INTERAPP-DATA</key>
 	<string>group.com.martoons.holidaze</string>
 	<key>SHOW-HIDDEN-FUNCTIONS</key>
 	<false/>
+	<key>TAGLINE</key>
+	<string>Holidaze</string>
 	<key>TOP-BLURB</key>
 	<string>Choose stickers and add captions here</string>
 	<key>UIFileSharingEnabled</key>

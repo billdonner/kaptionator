@@ -23,13 +23,13 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.80</string>
 	<key>CFBundleVersion</key>
-	<string>107</string>
+	<string>119</string>
 	<key>EXTENSION-SCHEME</key>
 	<string>Candidatez</string>
 	<key>LEFT-BBI-NAME</key>
 	<string>Catalog</string>
 	<key>LOCAL-RESOURCES-BASEDIR</key>
-	<string>candidates-stickerspackimages</string>
+	<string>candidatez-stickerpack</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>

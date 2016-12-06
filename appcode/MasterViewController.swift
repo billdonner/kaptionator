@@ -466,8 +466,7 @@ private extension Manifest {
         }
     }
     
-    /// load a bunch of manifests as listed in a super-manifest
-    
+
     static func processOneLocal(_ url:URL,  completion:@escaping ((Int,String,[StickerAsset]) -> (Swift.Void))) {
         do {
             let data = try Data(contentsOf: url)
@@ -478,6 +477,7 @@ private extension Manifest {
             
         }
         catch let error {
+            print ("cant processOneLocal \(url) \(error)")
             completion((error as NSError).code,"", [] )
         }
         

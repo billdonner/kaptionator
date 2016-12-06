@@ -67,13 +67,13 @@ public struct StickerAsset {
         if let lp = localpath { // if localpath supplied use that else
             let local  = try StickerAssetSpace.copyURLtoURL(lp)
             self.localurl  = local
-            print("**** RA.INIT(..LOCALPATH) \(local )")
+           // print("**** RA.INIT(..LOCALPATH) \(local )")
         }
         else {
             // load file from remote location
             let local  = try StickerAssetSpace.copyURLtoURL(  self.remoteurl!)
             self.localurl  = local
-            print("**** RA.INIT(..IMAGEPATH) \(local )")
+            //print("**** RA.INIT(..IMAGEPATH) \(local )")
         }
         }
         catch {
