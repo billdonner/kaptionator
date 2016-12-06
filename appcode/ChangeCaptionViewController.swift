@@ -9,14 +9,18 @@
 import UIKit
 
 import stikz
-protocol ChangeCaptionDelegate : class{
-    func captionWasEntered(caption:String)
+/// this delegate CAN NOT be weak because it must outlive the viewcontroller that spawned it
+protocol ChangeCaptionDelegate { //:  class {
+    func captionWasChanged(caption:String)
 }
 final class ChangeCaptionViewController: UIViewController  {
-    weak var delegate: ChangeCaptionDelegate?     
+      var delegate: ChangeCaptionDelegate?     
     var unwinder: String! // unusual
     internal func dismisstapped(_ s: AnyObject) {
-        self.performSegue(withIdentifier: unwinder, sender: s)
+        
+        //delegate?.refreshLayout() //make this better
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        // self.performSegue(withIdentifier: unwinder, sender: nil)
     }
     
     @IBOutlet weak var theCaptionTextView: UITextView!
@@ -24,8 +28,6 @@ final class ChangeCaptionViewController: UIViewController  {
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         addDismissButtonToViewController(self , named:appTheme.dismissButtonAltImageName,#selector(dismisstapped))
@@ -54,7 +56,7 @@ extension ChangeCaptionViewController:  UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if (text == "\n") {
             
-            delegate?.captionWasEntered(  caption: textView.text ?? "")
+            delegate?.captionWasChanged(  caption: textView.text ?? "")
             textView.resignFirstResponder()
             
             

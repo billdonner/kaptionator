@@ -13,8 +13,8 @@ import stikz
 protocol ITunesMenuViewDelegate : class {
     func changedAnimationState(stickerAsset:StickerAsset)
     func deleteAsset(stickerAsset:StickerAsset)
-    func useAsIs(stickerAsset:StickerAsset)
-    func useWithCaption(stickerAsset:StickerAsset,caption:String)
+    func asIsUse(stickerAsset:StickerAsset)
+    func capUse(stickerAsset:StickerAsset,caption:String)
    // func xuseWithNoCaption(stickerAsset:StickerAsset)
     func refreshLayout() 
 }
@@ -64,7 +64,7 @@ final class ITunesMenuViewController: UIViewController,ModalOverCurrentContext {
     }
     @IBAction func useStickerNoCaptionPressed(_ sender: AnyObject) {
         pvc.dismiss(animated: true) {
-            self.delegate?.useAsIs(stickerAsset:self.stickerAsset) // elsewhere
+            self.delegate?.asIsUse(stickerAsset:self.stickerAsset) // elsewhere
         }
     }
     @IBAction func addCaptionToSticker(_ sender: AnyObject) {
@@ -151,7 +151,7 @@ private extension ITunesMenuViewController {
 //MARK:- CALLBACKS
 extension ITunesMenuViewController : GetCaptionDelegate {
     func captionWasEntered(caption: String) {
-        delegate?.useWithCaption(stickerAsset: stickerAsset, caption: caption )
+        delegate?.capUse(stickerAsset: stickerAsset, caption: caption )
         imageCaption.isEnabled  = false
     }
 }

@@ -1,100 +1,90 @@
 {
-	"pack": "EmoGees",
-	"description": "Stikerz Pack Manifest for EMOGEES",
-	"generated": "2016-08-03 00:51:14 +0000",
+	"pack": "Holidaze",
+	"description": "Stikerz Pack Manifest for Holidaze",
+	"generated": "2016-08-03 00:05:14 +0000",
 	"images": [{
-		"image": "images/happy-618.png",
-		"size": "S"
+		"image": "images/furryChristmas-618.gif",
+		"title": "Furry Christmas",
+		"size": "M"
+
 	}, {
-		"image": "images/happyGirl-618.png",
-		"size": "S"
+	 		"image": "images/elfGlobeWave-618x618.gif",
+		"title": "Elfin Wave",
+		"animated": 1,
+		"size": "M"	
+	}, {
+		"image": "images/elfJumpPlain-300x500.gif",
+		"title": "Elfin Jump",
+		"animated": 1,
+		"size": "M"		
 	}, {	
-
-		"image": "images/angry2-618.gif",
-		"size": "S"
+		"image": "images/santaTree.gif",
+		"title": "Santa And Tree",
+		"size": "M"
 	}, {
-		"image": "images/banjo-618.png",
-		"size": "S"
-	}, {
-		"image": "images/birthdayGift1-618.gif",
-		"size": "S"
-	}, {
-		"image": "images/crying-618.png",
-		"size": "S"
-	}, {
-		"image": "images/embarassed-618.png",	 
-		"size": "S"
-	}, {
-		"image": "images/peaceGirl-618.gif",
-		"size": "S"
-	}, {
-		"image": "images/shades-618.png",
-		"size": "S"
-	}, {
-		"image": "images/tongue-618.gif",		 
-		"size": "S"
-	}, {
-		"image": "images/rage1-618.gif",
+		"image": "images/santaDance2c-solo.gif",
+		"title": "Santa Dance",
 		"animated": 1,
-		"size": "S"
+		"size": "M"
 	}, {
-		"image": "images/hero-618.png",
-		"size": "S"
-	}, {
-		"image": "images/lampShade-618.png",
-		"size": "S"
-	}, {
-
-		"image": "images/squeezeBox-618.png",
-		"size": "S"
-	}, {
-		"image": "images/tweedleDee-300.gif",
+	"image": "images/santaKidsGiftSilo-618x618.gif",
+		"title": "Happy Holidays Kids",
 		"animated": 1,
-		"size": "S"
+		"size": "M"
 	}, {
-		"image": "images/guitar-618.png",
-		"size": "S"
+		"image": "images/SantaMiranda-animated-v3a.gif",
+		"title": "Santa Miranda Surprise",
+		"animated": 1,
+		"size": "M"
 		
 	}, {
-		"image": "images/fiddler-618.png",
-		"size": "S"
-		
+		"image": "images/santaMirandaText-618x618.gif",
+		"title": "Santa Miranda",
+		"size": "M"		
 	}, {
-		"image": "images/uke1-618.png",
-		"size": "S"
-		
-	}, {
-		"image": "images/uke2-618.png",
-		"size": "S"
-	}, {
-		"image": "images/wink1b-300.gif",
+		"image": "images/snowGlobeHoldUp-618x618.gif",
+		"title": "Hold Up",
 		"animated": 1,
-		"size": "S"
+		"size": "M"
 	}, {
-		"image": "images/newSurfer2-618.gif",
+			"image": "images/murrayChristmas-300.gif",
+		"title": "Murray Christmas animated",
 		"animated": 1,
-		"size": "S"
+		"size": "M"		
 	}, {
-		"image": "images/rage1-618.gif",
+		"image": "images/murrayLarge-618x618.gif",
+		"title": "Murray Christmas",
+		"size": "M"
+	}, {
+        "image": "images/SantaMurray72-animated-v1a.gif",
+		"title": "Santa / Murray Animated",
 		"animated": 1,
-		"size": "S"
+		"size": "M"
 	}, {
-		"image": "images/washTub-618.png",
-		"size": "S"
 
-	}, {
-	"thumb": "images/_thumbnails/haha-thumb.gif",
-			"image": "images/haHaFla-300.gif",
+		"image": "images/santaMurrayMorph300-loop-2c.gif",
+		"title": "Santa Murray Morph",
 		"animated": 1,
-		"size": "S"
+		"size": "M"
 	}, {
-	"thumb": "images/_thumbnails/lol-thumb.gif",
-		"image": "images/lol1b-300.gif",
+	
+		"image": "images/onTheRoof-v1c.gif",
+		"title": "Up On The Rooftop",
 		"animated": 1,
-		"size": "S"
+		"size": "M"
 	}, {
-		"image": "images/washBoard-618.png",	 
-		"size": "S"
+		"image": "images/santa1Text-618x618.gif",
+		"title": "Happy Holidays",
+		"size": "M"
+	}, {
+
+		"image": "images/murrayRoofText-618x618.gif",
+		"title": "Murray On The Roof",
+		"size": "M"		
+}, {
+	
+			"image": "images/murrayRoofNoText-618x618.gif",
+		"title": "Murray On The Roof blank",
+		"size": "M"
 	}]
-
 }

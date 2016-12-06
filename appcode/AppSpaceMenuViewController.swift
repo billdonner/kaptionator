@@ -105,9 +105,7 @@ private extension AppSpaceMenuViewController {
             }
         } else {
             ///  put up animated preview
-            self.menuImageView.isHidden = true
-          
-            
+            self.menuImageView.isHidden = true 
             if !setup {
                 IO.setupAnimationPreview(wv:webviewOverlay,imgurl:imgurl)
             }
@@ -120,7 +118,7 @@ private extension AppSpaceMenuViewController {
 }
 
 extension AppSpaceMenuViewController :ChangeCaptionDelegate {
-    func captionWasEntered(caption: String) {
+    func captionWasChanged(caption: String) {
        delegate?.cloneWithCaption(captionedEntry:self.captionedEntry, caption: caption )
         imageCaption.isEnabled  = false
     }

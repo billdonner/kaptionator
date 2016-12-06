@@ -13,7 +13,7 @@ import stikz
 //
 
 
-final class CatalogRemoteViewController:UIViewController,ControlledByMasterView, UserInteractionSignalDelegate,UICollectionViewDelegate, UICollectionViewDataSource  {
+final class CatalogRemoteViewController:UIViewController,ControlledByMasterView, UICollectionViewDelegate, UICollectionViewDataSource  {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -172,13 +172,13 @@ extension CatalogRemoteViewController {  //loading on first up - moved from mast
 }
 
 extension CatalogRemoteViewController : CatalogMenuViewDelegate {
-    func useAsIs(stickerAsset:StickerAsset) {
+    func catUseAsIs(stickerAsset:StickerAsset) {
         AppCE.makeNewCaptionAsIs(from: stickerAsset )    }
     //    func zuseWithNoCaption(stickerAsset:StickerAsset) {
     //        // make un captionated entry from remote asset
     //        AppCE.makeNewCaptionCat( from: stickerAsset, caption: "" )
     //    }
-    func useWithCaption(stickerAsset:StickerAsset,caption:String) {
+    func catUseWithCaption(stickerAsset:StickerAsset,caption:String) {
         // make un captionated entry from remote asset
         AppCE.makeNewCaptionCat( from: stickerAsset, caption: caption )
     }

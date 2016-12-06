@@ -13,7 +13,7 @@
  // MARK: Show All Captionated Entries in One Tab as Child ViewContoller
  //
  final class AppCaptionSpaceViewController: UIViewController,   ControlledByMasterView {
-   
+    
     fileprivate  var stickerz:[AppCE] = []
     fileprivate var theSelectedIndexPath:IndexPath?
     @IBOutlet internal  var tableView: UITableView!
@@ -26,7 +26,7 @@
     @IBAction func unwindToAppCaptionSpaceViewController(_ segue: UIStoryboardSegue)  {
         refreshFromCapSpace()
     }
- 
+    
     
     func refreshLayout() {
         self.tableView!.reloadData()
@@ -40,14 +40,14 @@
     }
     //MARK:- Dispatching to External ViewControllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-  guard segue.identifier ==  "CaptionedCellTapMenuID" ,
-    let indexPath = theSelectedIndexPath ,
-    let avc =  segue.destination as? AppSpaceMenuViewController  else {
-        return
+        guard segue.identifier ==  "CaptionedCellTapMenuID" ,
+            let indexPath = theSelectedIndexPath ,
+            let avc =  segue.destination as? AppSpaceMenuViewController  else {
+                return
         }
-                    avc.delegate = self
-                    avc.captionedEntry = stickerz [indexPath.row]               // pull image from cache and pass
-                    avc.pvc = self
+        avc.delegate = self
+        avc.captionedEntry = stickerz [indexPath.row]               // pull image from cache and pass
+        avc.pvc = self
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,18 +57,18 @@
         tableView.backgroundColor = appTheme.backgroundColor
         
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         refreshFromCapSpace()
         if AppCaptionSpace.itemCount() == 0 {
-        masterViewController?.performSegue(withIdentifier: "NoHistoryContentID", sender: self)
+            masterViewController?.performSegue(withIdentifier: "NoHistoryContentID", sender: self)
         }
     }
  }
  
-private  extension AppCaptionSpaceViewController {
-      func displayTapMenu () {
+ private  extension AppCaptionSpaceViewController {
+    func displayTapMenu () {
         // todo: analyze safety of passing indexpath thru, sees to work for now
         performSegue(withIdentifier: "CaptionedCellTapMenuID", sender: self)
     }
@@ -95,11 +95,11 @@ private  extension AppCaptionSpaceViewController {
         print("CapationatedEntriesViewController movingtoIMessage")
         captionedEntry.cemoveToIMessage()
     }
-//    func changingCaption( on captionedEntry:inout AppCE, caption:String){
-//        print("CapationatedEntriesViewController changingCaption")
-//        captionedEntry.changeCaptionForAppCE(to: caption)
-//        tableView.reloadData()
-//    }
+    //    func changingCaption( on captionedEntry:inout AppCE, caption:String){
+    //        print("CapationatedEntriesViewController changingCaption")
+    //        captionedEntry.changeCaptionForAppCE(to: caption)
+    //        tableView.reloadData()
+    //    }
  }
  extension AppCaptionSpaceViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -135,12 +135,11 @@ private  extension AppCaptionSpaceViewController {
         let cell  = tableView.dequeueReusableCell(withIdentifier: "CaptionedTableCell", for: indexPath  ) as! CaptionedTableCell // Create the cell from the storyboard cell
         let ce = stickerz [indexPath.row]
         //show the primitive title
-        let showname = ce.caption 
-        cell.paint(name:showname)
+        cell.paint(name:ce.caption)
         /// go get the image from our cache and then the net
         
-            cell.paintImageForCaptionedTableCell(url: ce.imageurl  )
-      
+        cell.paintImageForCaptionedTableCell(url: ce.imageurl  )
+        
         cell.colorFor(options: ce.stickerOptions)
         return cell // Return the cell
     }

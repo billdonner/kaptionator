@@ -144,7 +144,7 @@ extension ITunesViewController : ITunesMenuViewDelegate {
         // all the work has been done, just refresh
         self.collectionView.reloadData()
     }
-    func useAsIs(stickerAsset:StickerAsset) {
+    func asIsUse (stickerAsset:StickerAsset) {
         AppCE.makeNewCaptionAsIs(from: stickerAsset )
         MasterViewController.blurt(title: "Added one image to your catalog",mess: "as is")
     }
@@ -161,7 +161,7 @@ extension ITunesViewController : ITunesMenuViewDelegate {
     //        AppCE.makeNewCaptionCat( from: stickerAsset, caption: "" )
     //        MasterViewController.blurt(title: "Added one image to your catalog",mess: "no caption")
     //    }
-    func useWithCaption(stickerAsset:StickerAsset,caption:String) {
+    func capUse(stickerAsset:StickerAsset,caption:String) {
         // make un captionated entry from remote asset
         AppCE.makeNewCaptionCat( from: stickerAsset, caption: caption )
         MasterViewController.blurt(title: "Added one image to your catalog",mess: caption)

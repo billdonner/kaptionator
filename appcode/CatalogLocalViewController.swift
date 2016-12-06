@@ -11,16 +11,12 @@ import UIKit
 import stikz
 // MARK: Show All Remote Catalog Entries in One Tab as Child ViewContoller
 //
-
-
 final class CatalogViewController:UIViewController,ControlledByMasterView, UICollectionViewDelegate, UICollectionViewDataSource   {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func unwindToCatalogLocalItemsViewController(_ segue: UIStoryboardSegue)  {}
-    
-    
-    
+
     func refreshLayout() {
         self.collectionView!.reloadData()
     }
@@ -35,9 +31,6 @@ final class CatalogViewController:UIViewController,ControlledByMasterView, UICol
         super.viewWillAppear(animated)
         
         self.collectionView!.reloadData()
-//        if StickerAssetSpace.itemCount() == 0 {
-//            masterViewController?.performSegue(withIdentifier: "NoCatalogContentID", sender: self)
-//        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +62,6 @@ final class CatalogViewController:UIViewController,ControlledByMasterView, UICol
         func refreshPulled(_ x:AnyObject) {
             refreshControl.endRefreshing()
         }
-        
         
         func phase1() {
             // only read remote if we have a list
@@ -130,20 +122,16 @@ final class CatalogViewController:UIViewController,ControlledByMasterView, UICol
                     self.startupLogo.removeFromSuperview()
             }
             )
-            
-            
         }
-        
         //MARK: UICollectionViewDataSource
-        
-        
-        @objc(numberOfSectionsInCollectionView:) func numberOfSections(in collectionView: UICollectionView) -> Int { return 1 }
+        func numberOfSections(in collectionView: UICollectionView) -> Int { return 1 }
         
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             return StickerAssetSpace.itemCount()
         }
-        @objc(collectionView:cellForItemAtIndexPath:) func collectionView(_ collectionView: UICollectionView,
-                                                                          cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        func collectionView(_ collectionView: UICollectionView,
+                            cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "CatalogDataCell", for: indexPath  )
                 as! CatalogDataCell // Create the cell from the storyboard cell
             let ra = StickerAssetSpace.itemAt(indexPath.row)
@@ -169,7 +157,8 @@ final class CatalogViewController:UIViewController,ControlledByMasterView, UICol
             return cell // Return the cell
         }
         
-        @objc(collectionView:didSelectItemAtIndexPath:) func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+ 
+        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
             theSelectedIndexPath = indexPath
             // todo: analyze safety of passing indexpath thru, sees to work for now
             let cell = collectionView.cellForItem(at: indexPath)
@@ -177,20 +166,22 @@ final class CatalogViewController:UIViewController,ControlledByMasterView, UICol
             cell?.isHighlighted  = false
             performSegue(withIdentifier: "CatalogCellTapMenuID", sender: self)
         }
-        //
         
     }
     
     //MARK:- CALLBACKS
     extension CatalogViewController : CatalogMenuViewDelegate {
-        func useAsIs(stickerAsset:StickerAsset) {
-            AppCE.makeNewCaptionCat(from: stickerAsset, caption: stickerAsset.assetName )    }
-        //    func zuseWithNoCaption(stickerAsset:StickerAsset) {
-        //        // make un captionated entry from remote asset
-        //        AppCE.makeNewCaptionCat( from: stickerAsset, caption: "" )
-        //    }
-        func useWithCaption(stickerAsset:StickerAsset,caption:String) {
+        func catUseAsIs(stickerAsset:StickerAsset) {
+            AppCE.makeNewCaptionCat(from: stickerAsset , caption: stickerAsset.assetName)
+            MasterViewController.blurt(title: "Added one image to your catalog",mess: "as is")
+        }
+        func xuseAsIs(stickerAsset:StickerAsset) {
+            AppCE.makeNewCaptionCat(from: stickerAsset, caption: stickerAsset.assetName )
+        }
+ 
+        func catUseWithCaption(stickerAsset:StickerAsset,caption:String) {
             // make un captionated entry from remote asset
             AppCE.makeNewCaptionCat( from: stickerAsset, caption: caption )
+            MasterViewController.blurt(title: "Added one image to your catalog",mess: caption)
         }
 }

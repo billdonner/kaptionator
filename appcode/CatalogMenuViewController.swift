@@ -10,8 +10,8 @@ import UIKit
 import stikz
 
 protocol CatalogMenuViewDelegate : class {
-    func useAsIs(stickerAsset:StickerAsset)
-    func useWithCaption(stickerAsset:StickerAsset,caption:String)
+    func catUseAsIs(stickerAsset:StickerAsset)
+    func catUseWithCaption(stickerAsset:StickerAsset,caption:String)
    // func zuseWithNoCaption(stickerAsset:StickerAsset)
     func refreshLayout()
 }
@@ -22,6 +22,7 @@ final class CatalogMenuViewController: UIViewController,ModalOverCurrentContext 
     var pvc:UIViewController! // must be set
     //private var isAnimated  = false
     fileprivate var setup: Bool = false
+  
     
     @IBAction func unwindToCatalogMenuViewController(_ segue: UIStoryboardSegue)  {
     }
@@ -43,7 +44,10 @@ final class CatalogMenuViewController: UIViewController,ModalOverCurrentContext 
     @IBAction func useStickerNoCaptionPressed(_ sender: AnyObject) {
         
         pvc.dismiss(animated: true) {
-            AppCE.makeNewCaptionCat( from: self.stickerAsset, caption: "" )
+            
+                self.delegate?.catUseAsIs(stickerAsset:self.stickerAsset) // elsewhere
+            
+//            AppCE.makeNewCaptionCat( from: self.stickerAsset, caption: "" )
             
             // self.delegate?.useWithNoCaption (stickerAsset:self.stickerAsset) // elsewhere
         }
@@ -76,7 +80,9 @@ final class CatalogMenuViewController: UIViewController,ModalOverCurrentContext 
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
+    override func didMove(toParentViewController parent: UIViewController?) {
+        delegate?.refreshLayout()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         imageCaption.text = stickerAsset.assetName
@@ -135,7 +141,7 @@ private extension CatalogMenuViewController {
 
 extension CatalogMenuViewController : GetCaptionDelegate {
     func captionWasEntered(caption: String) {
-        delegate?.useWithCaption(stickerAsset: stickerAsset, caption: caption )
+        delegate?.catUseWithCaption(stickerAsset: stickerAsset, caption: caption )
         imageCaption.isEnabled  = false
     }
 }
