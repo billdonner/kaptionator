@@ -23,9 +23,7 @@ final class CatalogMenuViewController: UIViewController,ModalOverCurrentContext 
     //private var isAnimated  = false
     fileprivate var setup: Bool = false
   
-    
-    @IBAction func unwindToCatalogMenuViewController(_ segue: UIStoryboardSegue)  {
-    }
+ 
     @IBOutlet weak var outerView: UIView!
     @IBOutlet weak var webviewOverlay: UIWebView!
     @IBOutlet weak var menuImageView: UIImageView!
@@ -61,8 +59,7 @@ final class CatalogMenuViewController: UIViewController,ModalOverCurrentContext 
         if let vc = vc {
             vc.delegate = self
             
-            vc.backgroundImage = menuImageView.image
-            vc.unwinder = "UnwindToCatalogAppVC"
+            vc.backgroundImage = menuImageView.image 
             vc.modalPresentationStyle = .overCurrentContext
             vc.modalTransitionStyle = .crossDissolve
             pvc.dismiss(animated: false) {
@@ -73,8 +70,7 @@ final class CatalogMenuViewController: UIViewController,ModalOverCurrentContext 
     internal func dismisstapped(_ s: AnyObject) {
         
         delegate?.refreshLayout() //make this better
-        pvc.dismiss(animated: true, completion: nil)
-        //         self.performSegue(withIdentifier: "UnwindToCatalogAppVC", sender: s)
+        pvc.dismiss(animated: true, completion: nil) 
     }
     //MARK:- VC LIFECYLE
     override var prefersStatusBarHidden: Bool {

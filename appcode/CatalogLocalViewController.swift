@@ -23,7 +23,7 @@ final class CatalogViewController:UIViewController,ControlledByMasterView, UICol
     
     @IBOutlet weak var collectionView: CatalogLocalView!
     
-    @IBAction func unwindToCatalogLocalItemsViewController(_ segue: UIStoryboardSegue)  {}
+ 
 
     func refreshLayout() {
         self.collectionView!.reloadData()
@@ -189,7 +189,7 @@ final class CatalogViewController:UIViewController,ControlledByMasterView, UICol
         func catUseAsIs(stickerAsset:StickerAsset) {
           
             AppCE.makeNewCaptionCat(from: stickerAsset , caption: stickerAsset.assetName)
-            MasterViewController.blurt(title: "Added one image to your catalog",mess: "as is")
+            MasterViewController.blurt(title: "Added one sticker to Messages",mess: "")
             
         }
         func xuseAsIs(stickerAsset:StickerAsset) {
@@ -200,7 +200,7 @@ final class CatalogViewController:UIViewController,ControlledByMasterView, UICol
              if !stickerAsset.options.contains(.generateasis) {
             // make un captionated entry from remote asset
             AppCE.makeNewCaptionCat( from: stickerAsset, caption: caption )
-            MasterViewController.blurt(title: "Added one image to your catalog",mess: caption)
+            MasterViewController.blurt(title: "Added one sticker to Messages",mess: caption)
             }
         }
 }

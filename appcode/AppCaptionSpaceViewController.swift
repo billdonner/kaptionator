@@ -23,9 +23,7 @@
         super.init(coder: aDecoder)
         // self.showAll = true
     }
-    @IBAction func unwindToAppCaptionSpaceViewController(_ segue: UIStoryboardSegue)  {
-        refreshFromCapSpace()
-    }
+ 
     
     
     func refreshLayout() {
@@ -95,11 +93,7 @@
         print("CapationatedEntriesViewController movingtoIMessage")
         captionedEntry.cemoveToIMessage()
     }
-    //    func changingCaption( on captionedEntry:inout AppCE, caption:String){
-    //        print("CapationatedEntriesViewController changingCaption")
-    //        captionedEntry.changeCaptionForAppCE(to: caption)
-    //        tableView.reloadData()
-    //    }
+
  }
  extension AppCaptionSpaceViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {

@@ -336,7 +336,7 @@
 		88AEA5C91D514B6A006E5C70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88AEA5CC1D514B6A006E5C70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88AEA5CE1D514B6A006E5C70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		88AEA5EC1D514BC3006E5C70 /* holidaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = holidaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		88AEA5EC1D514BC3006E5C70 /* Holi-daze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Holi-daze.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88AEA5F51D514BC3006E5C70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88AEA5F81D514BC3006E5C70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88AEA5FA1D514BC3006E5C70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -600,7 +600,7 @@
 				88AEA5911D514B29006E5C70 /* kaptionator.app */,
 				88AEA5AA1D514B53006E5C70 /* candidatez.app */,
 				88AEA5C01D514B6A006E5C70 /* emogeez.app */,
-				88AEA5EC1D514BC3006E5C70 /* holidaze.app */,
+				88AEA5EC1D514BC3006E5C70 /* Holi-daze.app */,
 				88AEA6021D514C1F006E5C70 /* holidazeMessagesExtension.appex */,
 				88AEA61A1D514C5F006E5C70 /* emogeezMessagesExtension.appex */,
 				88AEA62F1D514C8D006E5C70 /* candidatezMessagesExtension.appex */,
@@ -794,7 +794,7 @@
 			);
 			name = holidaze;
 			productName = holidayz;
-			productReference = 88AEA5EC1D514BC3006E5C70 /* holidaze.app */;
+			productReference = 88AEA5EC1D514BC3006E5C70 /* Holi-daze.app */;
 			productType = "com.apple.product-type.application";
 		};
 		88AEA6011D514C1F006E5C70 /* holidazeMessagesExtension */ = {
@@ -1568,7 +1568,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.holidaze;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Holi-daze";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -1586,7 +1586,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.holidaze;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Holi-daze";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

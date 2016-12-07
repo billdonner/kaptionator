@@ -19,8 +19,7 @@ final class SharedSpaceMenuViewController: UIViewController ,ModalOverCurrentCon
     
     var captionedEntry:SharedCE! // must be set
     weak var delegate: SharedSpaceMenuDelegate?  // mig
-     
-    @IBAction func unwindToSharedSpaceMenuViewController(_ segue: UIStoryboardSegue)  {}
+      
     
     private var isAnimated  = false
     fileprivate var setup: Bool = false
@@ -50,13 +49,10 @@ final class SharedSpaceMenuViewController: UIViewController ,ModalOverCurrentCon
         let _ = SharedCaptionSpace.remove(id: id)
         }
     }
-    
-    /// go back with manual unwind so caller (MessageViewController) can repaint with new data model
+  
     internal func dismisstapped(_ s: AnyObject) {
         
-        delegate?.refreshLayout() //make this better
-       // self.performSegue(withIdentifier: "UnwindToMessagesAppVC", sender: s)
-        
+        delegate?.refreshLayout() //make this better 
         self.presentingViewController?.dismiss(animated:true) {
             
         }

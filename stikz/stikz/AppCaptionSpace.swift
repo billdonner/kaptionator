@@ -101,7 +101,7 @@ public struct AppCE {
             let alreadyIn = SharedCaptionSpace.findMatchingAssetInSharedSpace(url: ra.localurl!, caption: caption)
             if !alreadyIn {
                 let options = ra.options
-                if caption != "" {
+                if caption != "" && !options.contains(.generateasis) { // dont include animateds
                     let _ = AppCaptionSpace.make (pack: ra.packID, title: ra.assetName, imageurl: ra.localurl!,   caption: caption,  options: options)
                 }
                 // here make the largest sticker possible and add to shared space

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>APP-TITLE</key>
-	<string>Holidaze by Martoons</string>
+	<string>Holi-daze by Martoons</string>
 	<key>BACKGROUND-IMAGE</key>
 	<string>holidayStickerIcons-1024x768.png</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -21,9 +21,9 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>123</string>
+	<string>125</string>
 	<key>EXTENSION-SCHEME</key>
-	<string>Holidaze</string>
+	<string>Holi-daze</string>
 	<key>LEFT-BBI-NAME</key>
 	<string>Stickers</string>
 	<key>LOCAL-RESOURCES-BASEDIR</key>

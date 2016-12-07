@@ -27,9 +27,7 @@ protocol ReorderSharedCaptionSpaceDelegate:class {
 final class ReorderSharedCaptionSpaceViewController: UICollectionViewController,ModalOverCurrentContext{
    private var theSelectedIndexPath:IndexPath?
     var delegate: ReorderSharedCaptionSpaceDelegate!
-    internal func dismisstapped(_ s: AnyObject) {
-//        performSegue(withIdentifier: "unwindToSharedCaptionSpaceViewController", sender: self)
-            delegate?.refreshLayout()
+    internal func dismisstapped(_ s: AnyObject) {             delegate?.refreshLayout()
             dismiss(animated: true, completion: nil)
         
     }

@@ -18,7 +18,7 @@ var masterViewController : MasterViewController?
 final class MasterViewController: UIViewController,UserInteractionSignalDelegate {
     
     @IBOutlet weak var backgroundImageView: UIImageView!
-    @IBAction func unwindToMaster(_ segue: UIStoryboardSegue)  {}
+    
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var catb: UIBarButtonItem!

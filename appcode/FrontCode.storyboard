@@ -16,7 +16,7 @@
         <!--MASTER-->
         <scene sceneID="iI4-Bh-VoZ">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Tm1-Gg-mxO" userLabel="MASTER" customClass="MasterViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Tm1-Gg-mxO" userLabel="MASTER" customClass="MasterViewController" customModule="Holi_daze" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RDa-qn-fIJ"/>
                         <viewControllerLayoutGuide type="bottom" id="Mo6-3a-xLp"/>
@@ -124,7 +124,7 @@
         <!--Catalog Menu-->
         <scene sceneID="jYu-0a-m1Z">
             <objects>
-                <viewController storyboardIdentifier="CatalogCellTapMenuID" id="8NT-q7-zWI" userLabel="Catalog Menu" customClass="CatalogMenuViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CatalogCellTapMenuID" id="8NT-q7-zWI" userLabel="Catalog Menu" customClass="CatalogMenuViewController" customModule="Holi_daze" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dxW-lJ-Ifc"/>
                         <viewControllerLayoutGuide type="bottom" id="o6p-0W-fz3"/>
@@ -247,18 +247,16 @@
                         <outlet property="outerView" destination="zyh-fs-daL" id="Fce-GT-W94"/>
                         <outlet property="useasisnocaption" destination="SfP-iU-KS5" id="YIa-f7-u78"/>
                         <outlet property="webviewOverlay" destination="uMH-CP-lZu" id="zcm-NI-7nF"/>
-                        <segue destination="UwL-ns-SpK" kind="unwind" identifier="UnwindToCatalogAppVC" unwindAction="unwindToCatalogLocalItemsViewController:" id="AzC-Xt-L9v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ij-FW-62O" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="UwL-ns-SpK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1490" y="-6690"/>
         </scene>
         <!--Messaged Menu-->
         <scene sceneID="mcs-Nh-pSI">
             <objects>
-                <viewController storyboardIdentifier="MessagesAppCellTapMenuID" id="2yc-jg-Aom" userLabel="Messaged Menu" customClass="SharedSpaceMenuViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MessagesAppCellTapMenuID" id="2yc-jg-Aom" userLabel="Messaged Menu" customClass="SharedSpaceMenuViewController" customModule="Holi_daze" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4pF-Kf-uf7"/>
                         <viewControllerLayoutGuide type="bottom" id="uvE-Sc-Cjz"/>
@@ -423,7 +421,7 @@
         <!--Captioned Menu-->
         <scene sceneID="jCi-iC-0vi">
             <objects>
-                <viewController storyboardIdentifier="CaptionedCellTapMenuID" id="P8v-au-Qtf" userLabel="Captioned Menu" customClass="AppSpaceMenuViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CaptionedCellTapMenuID" id="P8v-au-Qtf" userLabel="Captioned Menu" customClass="AppSpaceMenuViewController" customModule="Holi_daze" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1FH-tS-SFO"/>
                         <viewControllerLayoutGuide type="bottom" id="EC1-Q6-orJ"/>
@@ -597,7 +595,7 @@
         <!--Get Caption View Controller-->
         <scene sceneID="14k-Fo-VPi">
             <objects>
-                <viewController storyboardIdentifier="GetCaptionViewControllerID" id="poP-dt-sx2" customClass="GetCaptionViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GetCaptionViewControllerID" id="poP-dt-sx2" customClass="GetCaptionViewController" customModule="Holi_daze" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uAQ-bN-Vo3"/>
                         <viewControllerLayoutGuide type="bottom" id="5iS-Cw-POu"/>
@@ -658,19 +656,16 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="L56-Ay-f9E" id="btP-YV-wvy"/>
                         <outlet property="theCaptionTextView" destination="yuO-lN-Z04" id="gO5-eV-Bnj"/>
-                        <segue destination="Ji9-dU-8KZ" kind="unwind" identifier="UnwindToCatalogAppVC" unwindAction="unwindToCatalogLocalItemsViewController:" id="AS5-sv-UcK"/>
-                        <segue destination="Ji9-dU-8KZ" kind="unwind" identifier="UnwindToITunesAppVC" unwindAction="unwindToITunesViewController:" id="Zkf-j0-69s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8X1-AI-M4v" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Ji9-dU-8KZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-4226" y="-4940"/>
         </scene>
         <!--Change Caption View Controller-->
         <scene sceneID="l6c-gT-5Ax">
             <objects>
-                <viewController storyboardIdentifier="ChangeCaptionViewControllerID" id="y8H-3q-Oj5" customClass="ChangeCaptionViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangeCaptionViewControllerID" id="y8H-3q-Oj5" customClass="ChangeCaptionViewController" customModule="Holi_daze" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bdi-tR-qzH"/>
                         <viewControllerLayoutGuide type="bottom" id="WTi-xY-ts2"/>
@@ -723,19 +718,17 @@
                     </view>
                     <connections>
                         <outlet property="theCaptionTextView" destination="tAb-9V-Nir" id="Y5t-FZ-6hw"/>
-                        <segue destination="MIT-B6-yNk" kind="unwind" identifier="UnwindToCaptionedAppVC" unwindAction="unwindToAppCaptionSpaceViewController:" id="se8-K0-Wrs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QfC-cc-gOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="MIT-B6-yNk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-4227" y="-4194"/>
         </scene>
         <!--Reorder Shared Caption Space View Controller-->
         <scene sceneID="qaM-we-gfF">
             <objects>
-                <collectionViewController storyboardIdentifier="ReorderMessagesID" id="vsv-jb-Nm1" customClass="ReorderSharedCaptionSpaceViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Tu9-ZF-rxs">
+                <collectionViewController storyboardIdentifier="ReorderMessagesID" id="vsv-jb-Nm1" customClass="ReorderSharedCaptionSpaceViewController" customModule="Holi_daze" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Tu9-ZF-rxs">
                         <rect key="frame" x="0.0" y="0.0" width="384" height="512"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -746,7 +739,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ReorderCollectionViewCell" id="xes-DZ-FuJ" customClass="ReorderCollectionViewCell" customModule="candidatez" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ReorderCollectionViewCell" id="xes-DZ-FuJ" customClass="ReorderCollectionViewCell" customModule="Holi_daze" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="150" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -780,7 +773,7 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="headerforreordercollection" id="cSg-Cw-EpW" customClass="ReorderMessagesReusableView" customModule="candidatez" customModuleProvider="target">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="headerforreordercollection" id="cSg-Cw-EpW" customClass="ReorderMessagesReusableView" customModule="Holi_daze" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="384" height="150"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
@@ -809,19 +802,15 @@
                     </collectionView>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="384" height="512"/>
-                    <connections>
-                        <segue destination="paF-Jo-U5k" kind="unwind" identifier="unwindToSharedCaptionSpaceViewController" unwindAction="unwindToSharedCaptionSpaceViewController:" id="cUC-pD-y3z"/>
-                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UAF-gJ-kGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="paF-Jo-U5k" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-4394" y="-5525"/>
         </scene>
         <!--itunes menu-->
         <scene sceneID="xNa-7K-cGf">
             <objects>
-                <viewController storyboardIdentifier="ITunesCellTapMenuID" title="ITunesMenuViewController" id="Urn-Mx-6JP" userLabel="itunes menu" customClass="ITunesMenuViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ITunesCellTapMenuID" title="ITunesMenuViewController" id="Urn-Mx-6JP" userLabel="itunes menu" customClass="ITunesMenuViewController" customModule="Holi_daze" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="00c-Bc-9dS"/>
                         <viewControllerLayoutGuide type="bottom" id="GKY-uX-YW3"/>
@@ -971,7 +960,7 @@
         <!--NoCatalogContentID-->
         <scene sceneID="Mud-32-gUz">
             <objects>
-                <viewController title="NoCatalogContentID" id="WhS-wv-aY4" customClass="NoCatalogContentViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="NoCatalogContentID" id="WhS-wv-aY4" customClass="NoCatalogContentViewController" customModule="Holi_daze" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="k1p-m6-kb2"/>
                         <viewControllerLayoutGuide type="bottom" id="1nV-r7-raa"/>
@@ -1039,7 +1028,7 @@
         <!--NoItunesContentID-->
         <scene sceneID="26H-Ma-KzU">
             <objects>
-                <viewController title="NoItunesContentID" id="xoQ-RO-VaX" customClass="NoITunesContentViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="NoItunesContentID" id="xoQ-RO-VaX" customClass="NoITunesContentViewController" customModule="Holi_daze" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="e5o-0P-xv1"/>
                         <viewControllerLayoutGuide type="bottom" id="lYV-gy-yMw"/>
@@ -1111,7 +1100,7 @@
         <!--NoHistoryContentID-->
         <scene sceneID="iin-EO-o4Q">
             <objects>
-                <viewController title="NoHistoryContentID" id="dIp-Si-2Il" customClass="NoHistoryContentViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="NoHistoryContentID" id="dIp-Si-2Il" customClass="NoHistoryContentViewController" customModule="Holi_daze" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zBs-dv-Gju"/>
                         <viewControllerLayoutGuide type="bottom" id="n0g-eT-xkZ"/>
@@ -1178,7 +1167,7 @@
         <!--NoMessagesContentID-->
         <scene sceneID="lsR-Ws-lH7">
             <objects>
-                <viewController title="NoMessagesContentID" id="MTI-wn-UAF" customClass="NoMessagesContentViewController" customModule="candidatez" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="NoMessagesContentID" id="MTI-wn-UAF" customClass="NoMessagesContentViewController" customModule="Holi_daze" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="I3R-JD-lgr"/>
                         <viewControllerLayoutGuide type="bottom" id="Bil-HP-LVX"/>
@@ -1374,6 +1363,6 @@
         <image name="Stickers" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="klH-0n-Hwv"/>
+        <segue reference="BGZ-J5-63z"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -16,8 +16,7 @@ import UIKit
 final class CatalogRemoteViewController:UIViewController,ControlledByMasterView, UICollectionViewDelegate, UICollectionViewDataSource  {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    @IBAction func unwindToCatalogItemsViewControlle(_ segue: UIStoryboardSegue)  {}
+     
     
     func backToCallerAndDismiss () {// can go directly back
         masterViewController?.dismiss(animated: true, completion: nil)

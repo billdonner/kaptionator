@@ -14,13 +14,11 @@ protocol ChangeCaptionDelegate { //:  class {
     func captionWasChanged(caption:String)
 }
 final class ChangeCaptionViewController: UIViewController  {
-      var delegate: ChangeCaptionDelegate?     
-    var unwinder: String! // unusual
+      var delegate: ChangeCaptionDelegate?    
     internal func dismisstapped(_ s: AnyObject) {
         
         //delegate?.refreshLayout() //make this better
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
-        // self.performSegue(withIdentifier: unwinder, sender: nil)
+        self.presentingViewController?.dismiss(animated: true, completion: nil) 
     }
     
     @IBOutlet weak var theCaptionTextView: UITextView!

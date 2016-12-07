@@ -15,10 +15,7 @@ import UIKit
 final class ITunesViewController :UIViewController,ControlledByMasterView, UICollectionViewDelegate, UICollectionViewDataSource   {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    @IBAction func unwindToITunesViewController(_ segue: UIStoryboardSegue)  {}
-    
-    
+     
     
     func refreshLayout() {
         self.collectionView!.reloadData()

@@ -23,9 +23,7 @@ final class ITunesMenuViewController: UIViewController,ModalOverCurrentContext {
     var stickerAsset:StickerAsset! // must be set
     weak var delegate: ITunesMenuViewDelegate?  // mig
     fileprivate var setup = false
-    
-    @IBAction func unwindToITunesMenuViewController(_ segue: UIStoryboardSegue)  {}
-    
+         
     @IBOutlet weak var outerView: UIView!
     @IBOutlet weak var webviewOverlay: UIWebView!
     @IBOutlet weak var menuImageView: UIImageView!
@@ -75,8 +73,7 @@ final class ITunesMenuViewController: UIViewController,ModalOverCurrentContext {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "GetCaptionViewControllerID" ) as? GetCaptionViewController
         if let vc = vc {
             vc.delegate = self
-            vc.backgroundImage = menuImageView.image
-            vc.unwinder = "UnwindToITunesAppVC"
+            vc.backgroundImage = menuImageView.image 
             vc.modalPresentationStyle = .overCurrentContext
             vc.modalTransitionStyle = .crossDissolve
             pvc.dismiss(animated: false) {

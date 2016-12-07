@@ -14,15 +14,13 @@ protocol GetCaptionDelegate { //:  class {
     func captionWasEntered(caption: String)
 }
 final class GetCaptionViewController: UIViewController  {
-      var delegate: GetCaptionDelegate! // why ant be weak?
-    var unwinder: String! // unusual
+      var delegate: GetCaptionDelegate! // why ant be weak? 
     var backgroundImage: UIImage!
     
     internal func dismisstapped(_ s: AnyObject) {
         
         //delegate?.refreshLayout() //make this better
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
-       // self.performSegue(withIdentifier: unwinder, sender: nil)
+        self.presentingViewController?.dismiss(animated: true, completion: nil) 
     }
     
     @IBOutlet weak var backgroundImageView: UIImageView!

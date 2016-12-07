@@ -20,9 +20,7 @@ final class AppSpaceMenuViewController: UIViewController, ModalOverCurrentContex
     weak var delegate: AppSpaceMenuDelegate?  // mig
     
     var pvc:UIViewController! // must be set
-    
-    @IBAction func unwindToAppSpaceMenuViewController(_ segue: UIStoryboardSegue)  {}
-    
+     
     @IBOutlet weak var isAnimatedSignifier: UIImageView!
     private var isAnimated  = false
     fileprivate var setup: Bool = false
@@ -43,8 +41,7 @@ final class AppSpaceMenuViewController: UIViewController, ModalOverCurrentContex
         imageCaption.becomeFirstResponder()
   
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "ChangeCaptionViewControllerID" ) as? ChangeCaptionViewController
-        if let vc = vc {
-            vc.unwinder = "UnwindToCaptionedAppVC"
+        if let vc = vc { 
             vc.delegate = self
             vc.modalPresentationStyle = .overCurrentContext
             vc.modalTransitionStyle = .crossDissolve
@@ -61,8 +58,7 @@ final class AppSpaceMenuViewController: UIViewController, ModalOverCurrentContex
     }
     internal func dismisstapped(_ s: AnyObject) {
         
-        delegate?.refreshLayout() //make this better
-        //self.performSegue(withIdentifier: "UnwindToCaptionedAppVC", sender: s)
+        delegate?.refreshLayout() //make this better 
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     

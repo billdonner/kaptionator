@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>APP-TITLE</key>
-	<string>Holidaze by Martoons</string>
+	<string>Holi-daze by Martoons</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -23,7 +23,7 @@
 	<key>CFBundleVersion</key>
 	<string>121</string>
 	<key>EXTENSION-SCHEME</key>
-	<string>Holidaze</string>
+	<string>Holi-daze</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionMainStoryboard</key>

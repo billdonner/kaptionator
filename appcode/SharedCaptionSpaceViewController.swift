@@ -19,10 +19,10 @@ final class SharedCaptionSpaceViewController: UIViewController,ControlledByMaste
     
     @IBOutlet internal  var tableView: UITableView!
     
-    @IBAction func unwindToSharedCaptionSpaceViewController(_ segue: UIStoryboardSegue)  {
-        refreshControl.endRefreshing()
-        refreshFromMemSpace()
-    }
+//    @IBAction func unwindToSharedCaptionSpaceViewController(_ segue: UIStoryboardSegue)  {
+//        refreshControl.endRefreshing()
+//        refreshFromMemSpace()
+//    }
     
     func refreshLayout() {
         self.tableView!.reloadData()
