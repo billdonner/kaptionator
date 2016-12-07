@@ -14,7 +14,7 @@
         <!--App Caption Space View Controller-->
         <scene sceneID="ZsO-pm-cbr">
             <objects>
-                <viewController storyboardIdentifier="CaptionedViewControllerID" id="CdQ-6l-2dP" customClass="AppCaptionSpaceViewController" customModule="holidaze" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CaptionedViewControllerID" id="CdQ-6l-2dP" customClass="AppCaptionSpaceViewController" customModule="Holi_daze" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SYn-g6-h9b"/>
                         <viewControllerLayoutGuide type="bottom" id="1BT-Ic-0oa"/>
@@ -24,18 +24,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Evp-s8-xrP">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="16" y="20" width="343" height="647"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CaptionedTableCell" id="JCj-Dg-Rge" customClass="CaptionedTableCell" customModule="holidaze" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CaptionedTableCell" id="JCj-Dg-Rge" customClass="CaptionedTableCell" customModule="Holi_daze" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JCj-Dg-Rge" id="HLq-aY-Omi">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Scx-pE-D4j">
-                                                    <rect key="frame" x="12" y="12" width="351" height="75"/>
+                                                    <rect key="frame" x="12" y="12" width="319" height="75"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E4r-uE-xoB">
                                                             <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
@@ -44,7 +44,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="Zxi-Rv-m1V">
-                                                            <rect key="frame" x="81" y="0.0" width="270" height="75"/>
+                                                            <rect key="frame" x="81" y="0.0" width="238" height="75"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -77,9 +77,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Evp-s8-xrP" firstAttribute="top" secondItem="SYn-g6-h9b" secondAttribute="bottom" id="bNa-2Z-BmP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Evp-s8-xrP" secondAttribute="trailing" constant="-16" id="txj-Q6-AB7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Evp-s8-xrP" secondAttribute="trailing" id="txj-Q6-AB7"/>
                             <constraint firstItem="1BT-Ic-0oa" firstAttribute="top" secondItem="Evp-s8-xrP" secondAttribute="bottom" id="v0f-b9-aut"/>
-                            <constraint firstItem="Evp-s8-xrP" firstAttribute="leading" secondItem="cs3-Bw-bFE" secondAttribute="leadingMargin" constant="-16" id="wgL-zL-sM8"/>
+                            <constraint firstItem="Evp-s8-xrP" firstAttribute="leading" secondItem="cs3-Bw-bFE" secondAttribute="leadingMargin" id="wgL-zL-sM8"/>
                         </constraints>
                     </view>
                     <connections>
@@ -102,7 +102,7 @@
         <!--Shared Caption Space View Controller-->
         <scene sceneID="w6t-DA-Xo7">
             <objects>
-                <viewController storyboardIdentifier="MessageViewControllerID" id="cxh-X5-x1i" customClass="SharedCaptionSpaceViewController" customModule="holidaze" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MessageViewControllerID" id="cxh-X5-x1i" customClass="SharedCaptionSpaceViewController" customModule="Holi_daze" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c86-Gv-Gnk"/>
                         <viewControllerLayoutGuide type="bottom" id="yWk-gc-1Fi"/>
@@ -112,18 +112,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d7D-GC-Scz">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="16" y="20" width="343" height="647"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MessagesTableCell" id="T4c-g1-0ka" customClass="MessagesTableCell" customModule="holidaze" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MessagesTableCell" id="T4c-g1-0ka" customClass="MessagesTableCell" customModule="Holi_daze" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T4c-g1-0ka" id="o4R-Qt-FEy">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Fb2-HT-rRi">
-                                                    <rect key="frame" x="12" y="12" width="351" height="75"/>
+                                                    <rect key="frame" x="12" y="12" width="319" height="75"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nPl-XJ-iJ6">
                                                             <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
@@ -132,14 +132,14 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="ivD-jo-ELj">
-                                                            <rect key="frame" x="81" y="0.0" width="220" height="75"/>
+                                                            <rect key="frame" x="81" y="0.0" width="188" height="75"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="line2" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CCe-Qu-rp9">
-                                                            <rect key="frame" x="307" y="0.0" width="44" height="75"/>
+                                                            <rect key="frame" x="275" y="0.0" width="44" height="75"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="44" id="eUN-G3-UKY"/>
                                                             </constraints>
@@ -173,9 +173,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="d7D-GC-Scz" firstAttribute="top" secondItem="c86-Gv-Gnk" secondAttribute="bottom" id="4M8-ov-b3o"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="d7D-GC-Scz" secondAttribute="trailing" constant="-16" id="Z7f-Fg-UwT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d7D-GC-Scz" secondAttribute="trailing" id="Z7f-Fg-UwT"/>
                             <constraint firstItem="yWk-gc-1Fi" firstAttribute="top" secondItem="d7D-GC-Scz" secondAttribute="bottom" id="a7f-5X-fep"/>
-                            <constraint firstItem="d7D-GC-Scz" firstAttribute="leading" secondItem="Hkq-py-Aqz" secondAttribute="leadingMargin" constant="-16" id="bkI-lT-CER"/>
+                            <constraint firstItem="d7D-GC-Scz" firstAttribute="leading" secondItem="Hkq-py-Aqz" secondAttribute="leadingMargin" id="bkI-lT-CER"/>
                         </constraints>
                     </view>
                     <connections>
@@ -280,7 +280,7 @@
         <!--CatalogView-->
         <scene sceneID="rp8-3S-m91">
             <objects>
-                <viewController storyboardIdentifier="ShowCatalogID" id="8IG-zt-efH" userLabel="CatalogView" customClass="CatalogViewController" customModule="holidaze" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShowCatalogID" id="8IG-zt-efH" userLabel="CatalogView" customClass="CatalogViewController" customModule="Holi_daze" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bNa-Sw-T0d"/>
                         <viewControllerLayoutGuide type="bottom" id="5Qk-HE-LJy"/>
@@ -292,7 +292,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xud-88-Owx">
                                 <rect key="frame" x="16" y="20" width="343" height="647"/>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kQx-Qo-Xrz" customClass="CatalogLocalView" customModule="holidaze" customModuleProvider="target">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kQx-Qo-Xrz" customClass="CatalogLocalView" customModule="Holi_daze" customModuleProvider="target">
                                 <rect key="frame" x="16" y="20" width="343" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jSX-yv-As8">
@@ -302,7 +302,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CatalogDataCell" id="wTw-No-xGG" customClass="CatalogDataCell" customModule="holidaze" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CatalogDataCell" id="wTw-No-xGG" customClass="CatalogDataCell" customModule="Holi_daze" customModuleProvider="target">
                                         <rect key="frame" x="72" y="0.0" width="200" height="250"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -310,13 +310,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bDa-l3-qne">
-                                                    <rect key="frame" x="8" y="8" width="184" height="142"/>
+                                                    <rect key="frame" x="8" y="8" width="184" height="192"/>
                                                 </imageView>
                                                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AnimationOverlay" translatesAutoresizingMaskIntoConstraints="NO" id="KAi-Z8-tfi">
-                                                    <rect key="frame" x="8" y="156" width="184" height="25"/>
+                                                    <rect key="frame" x="8" y="206" width="184" height="25"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTK-JE-j39">
-                                                    <rect key="frame" x="8" y="168" width="184" height="32"/>
+                                                    <rect key="frame" x="8" y="218" width="184" height="32"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>

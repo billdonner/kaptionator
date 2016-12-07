@@ -47,7 +47,9 @@ public struct StickerAsset {
         self.packID = ""
         self.thumburl = nil
         let none = title == ""
-        self.assetName = none ? "<no title>" : title
+        self.assetName = none ? ""//"<no title>"
+            
+            : title
         self.options = options
         self.remoteurl = nil
         self.localurl = byreference
@@ -59,7 +61,8 @@ public struct StickerAsset {
         self.packID = pack
         self.thumburl = thumburl
         let none = title == ""
-        self.assetName = none ? "<no title>" : title
+        self.assetName = none ? ""//"<no title>"
+            : title
         self.options = options
         self.remoteurl = remoteurl
         do {

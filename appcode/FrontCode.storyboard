@@ -1338,8 +1338,9 @@
         <!--Navigation Controller-->
         <scene sceneID="dET-Xw-OBI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rpM-c1-9VA" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsWhenVerticallyCompact="YES" id="rpM-c1-9VA" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jbs-zR-lqT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1363,6 +1364,6 @@
         <image name="Stickers" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BGZ-J5-63z"/>
+        <segue reference="klH-0n-Hwv"/>
     </inferredMetricsTieBreakers>
 </document>
