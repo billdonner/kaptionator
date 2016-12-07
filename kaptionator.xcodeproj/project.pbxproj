@@ -31,14 +31,10 @@
 		883416F01DF765F000FB1943 /* kaptionator-1024x768.png in Resources */ = {isa = PBXBuildFile; fileRef = 883416EF1DF765F000FB1943 /* kaptionator-1024x768.png */; };
 		883417351DF7678800FB1943 /* emogeez-stickerpack in Resources */ = {isa = PBXBuildFile; fileRef = 883417341DF7678800FB1943 /* emogeez-stickerpack */; };
 		883417371DF7682800FB1943 /* candidatez-stickerpack in Resources */ = {isa = PBXBuildFile; fileRef = 883417361DF7682800FB1943 /* candidatez-stickerpack */; };
-		883417391DF782D300FB1943 /* MainBack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883417381DF782D300FB1943 /* MainBack.storyboard */; };
 		8834173B1DF782EC00FB1943 /* FrontCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8834173A1DF782EC00FB1943 /* FrontCode.storyboard */; };
 		8834173D1DF7859500FB1943 /* FrontCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8834173A1DF782EC00FB1943 /* FrontCode.storyboard */; };
 		8834173E1DF7859600FB1943 /* FrontCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8834173A1DF782EC00FB1943 /* FrontCode.storyboard */; };
 		8834173F1DF7859900FB1943 /* FrontCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8834173A1DF782EC00FB1943 /* FrontCode.storyboard */; };
-		883417401DF7859E00FB1943 /* MainBack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883417381DF782D300FB1943 /* MainBack.storyboard */; };
-		883417411DF785A000FB1943 /* MainBack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883417381DF782D300FB1943 /* MainBack.storyboard */; };
-		883417421DF785A200FB1943 /* MainBack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883417381DF782D300FB1943 /* MainBack.storyboard */; };
 		883982971DB1421C00B5A037 /* InnerHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883982961DB1421C00B5A037 /* InnerHelpViewController.swift */; };
 		8839829C1DB1556800B5A037 /* InnerHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883982961DB1421C00B5A037 /* InnerHelpViewController.swift */; };
 		8839829D1DB1556B00B5A037 /* InnerHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883982961DB1421C00B5A037 /* InnerHelpViewController.swift */; };
@@ -187,6 +183,10 @@
 		88F4C1E21DF791CD00FE5821 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88AEA6491D514CC7006E5C70 /* MainInterface.storyboard */; };
 		88F4C1E31DF791DB00FE5821 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88AEA61F1D514C5F006E5C70 /* MainInterface.storyboard */; };
 		88F4C1E41DF791E400FE5821 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88AEA6091D514C1F006E5C70 /* MainInterface.storyboard */; };
+		88F4C1E71DF8366900FE5821 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88F4C1E61DF8366900FE5821 /* Main.storyboard */; };
+		88F4C1E91DF8368D00FE5821 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88F4C1E81DF8368D00FE5821 /* Main.storyboard */; };
+		88F4C1EB1DF836A400FE5821 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88F4C1EA1DF836A400FE5821 /* Main.storyboard */; };
+		88F4C1EE1DF8389500FE5821 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88F4C1EC1DF836C100FE5821 /* Main.storyboard */; };
 		88FA07D71DA402330063B483 /* ChangeCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FA07D61DA402330063B483 /* ChangeCaptionViewController.swift */; };
 		88FA07D81DA402330063B483 /* ChangeCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FA07D61DA402330063B483 /* ChangeCaptionViewController.swift */; };
 		88FA07D91DA402330063B483 /* ChangeCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FA07D61DA402330063B483 /* ChangeCaptionViewController.swift */; };
@@ -302,15 +302,14 @@
 		881758F91DC7B13B00DB70C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8817590D1DC7F26900DB70C6 /* Help.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Help.storyboard; sourceTree = SOURCE_ROOT; };
 		881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesViewController.swift; sourceTree = "<group>"; };
-		883416DC1DF75A6E00FB1943 /* holidaze-stickerpack */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "holidaze-stickerpack"; sourceTree = "<group>"; };
+		883416DC1DF75A6E00FB1943 /* holidaze-stickerpack */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "holidaze-stickerpack"; path = "../holidaze-stickerpack"; sourceTree = "<group>"; };
 		883416E21DF75D6800FB1943 /* SharedAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SharedAssets.xcassets; sourceTree = "<group>"; };
 		883416E71DF762DF00FB1943 /* holidayStickerIcons-1024x768.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "holidayStickerIcons-1024x768.png"; sourceTree = "<group>"; };
 		883416EB1DF765A200FB1943 /* emoGeeStickerIcons-1024x768.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emoGeeStickerIcons-1024x768.png"; sourceTree = "<group>"; };
 		883416ED1DF765CB00FB1943 /* candidatesIconsCans-1024x768.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "candidatesIconsCans-1024x768.png"; sourceTree = "<group>"; };
 		883416EF1DF765F000FB1943 /* kaptionator-1024x768.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kaptionator-1024x768.png"; sourceTree = "<group>"; };
-		883417341DF7678800FB1943 /* emogeez-stickerpack */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "emogeez-stickerpack"; sourceTree = "<group>"; };
-		883417361DF7682800FB1943 /* candidatez-stickerpack */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "candidatez-stickerpack"; sourceTree = "<group>"; };
-		883417381DF782D300FB1943 /* MainBack.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainBack.storyboard; sourceTree = SOURCE_ROOT; };
+		883417341DF7678800FB1943 /* emogeez-stickerpack */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "emogeez-stickerpack"; sourceTree = SOURCE_ROOT; };
+		883417361DF7682800FB1943 /* candidatez-stickerpack */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "candidatez-stickerpack"; sourceTree = SOURCE_ROOT; };
 		8834173A1DF782EC00FB1943 /* FrontCode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FrontCode.storyboard; sourceTree = "<group>"; };
 		883982961DB1421C00B5A037 /* InnerHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InnerHelpViewController.swift; sourceTree = "<group>"; };
 		883982A21DB2A14300B5A037 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -375,6 +374,10 @@
 		88DD92E71D88738200832564 /* CatalogDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogDataCell.swift; sourceTree = "<group>"; };
 		88DD92E81D88738200832564 /* CaptionedTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptionedTableCell.swift; sourceTree = "<group>"; };
 		88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesMenuViewController.swift; sourceTree = "<group>"; };
+		88F4C1E61DF8366900FE5821 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		88F4C1E81DF8368D00FE5821 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		88F4C1EA1DF836A400FE5821 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		88F4C1EC1DF836C100FE5821 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		88FA07D61DA402330063B483 /* ChangeCaptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeCaptionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -523,7 +526,6 @@
 			children = (
 				88A6E5131DCA500900E2D1B7 /* shared */,
 				88A6E4D61DCA38F800E2D1B7 /* SFViewController.swift */,
-				883417381DF782D300FB1943 /* MainBack.storyboard */,
 				8834173A1DF782EC00FB1943 /* FrontCode.storyboard */,
 				88DD92DE1D88738200832564 /* AppDelegate.swift */,
 				88DD92E51D88738200832564 /* MasterViewController.swift */,
@@ -571,9 +573,6 @@
 			isa = PBXGroup;
 			children = (
 				883416E21DF75D6800FB1943 /* SharedAssets.xcassets */,
-				883417361DF7682800FB1943 /* candidatez-stickerpack */,
-				883417341DF7678800FB1943 /* emogeez-stickerpack */,
-				883416DC1DF75A6E00FB1943 /* holidaze-stickerpack */,
 				880E6F611DEF43C0007D3631 /* README.md */,
 				880E6F5E1DEF4280007D3631 /* LICENSE.txt */,
 				880846101DE0EBDB00EB7965 /* HelpAssets */,
@@ -613,6 +612,7 @@
 		88AEA5931D514B29006E5C70 /* kaptionator */ = {
 			isa = PBXGroup;
 			children = (
+				88F4C1EA1DF836A400FE5821 /* Main.storyboard */,
 				883416EF1DF765F000FB1943 /* kaptionator-1024x768.png */,
 				88AEA59B1D514B29006E5C70 /* Assets.xcassets */,
 				8810D0011D53C510009BA9B3 /* kaptionator.entitlements */,
@@ -625,6 +625,8 @@
 		88AEA5AB1D514B53006E5C70 /* candidatez */ = {
 			isa = PBXGroup;
 			children = (
+				883417361DF7682800FB1943 /* candidatez-stickerpack */,
+				88F4C1E81DF8368D00FE5821 /* Main.storyboard */,
 				883416ED1DF765CB00FB1943 /* candidatesIconsCans-1024x768.png */,
 				8810CFFF1D53C4AB009BA9B3 /* candidatez.entitlements */,
 				88AEA5B31D514B53006E5C70 /* Assets.xcassets */,
@@ -637,6 +639,8 @@
 		88AEA5C11D514B6A006E5C70 /* emogeez */ = {
 			isa = PBXGroup;
 			children = (
+				883417341DF7678800FB1943 /* emogeez-stickerpack */,
+				88F4C1E61DF8366900FE5821 /* Main.storyboard */,
 				883416EB1DF765A200FB1943 /* emoGeeStickerIcons-1024x768.png */,
 				8810CFFD1D53C475009BA9B3 /* emogeez.entitlements */,
 				88AEA5C91D514B6A006E5C70 /* Assets.xcassets */,
@@ -649,6 +653,8 @@
 		88AEA5ED1D514BC3006E5C70 /* holidaze */ = {
 			isa = PBXGroup;
 			children = (
+				883416DC1DF75A6E00FB1943 /* holidaze-stickerpack */,
+				88F4C1EC1DF836C100FE5821 /* Main.storyboard */,
 				883416E71DF762DF00FB1943 /* holidayStickerIcons-1024x768.png */,
 				8810CFFB1D53C415009BA9B3 /* holidayz.entitlements */,
 				88AEA5F51D514BC3006E5C70 /* Assets.xcassets */,
@@ -1002,10 +1008,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				883416F01DF765F000FB1943 /* kaptionator-1024x768.png in Resources */,
+				88F4C1EB1DF836A400FE5821 /* Main.storyboard in Resources */,
 				8834173F1DF7859900FB1943 /* FrontCode.storyboard in Resources */,
 				88AEA59C1D514B29006E5C70 /* Assets.xcassets in Resources */,
 				880E6F5F1DEF4280007D3631 /* LICENSE.txt in Resources */,
-				883417401DF7859E00FB1943 /* MainBack.storyboard in Resources */,
 				8817590E1DC7F26900DB70C6 /* Help.storyboard in Resources */,
 				883416E31DF75D6800FB1943 /* SharedAssets.xcassets in Resources */,
 				880846071DE0EB8000EB7965 /* sshelp in Resources */,
@@ -1018,10 +1024,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				88AEA5B71D514B53006E5C70 /* LaunchScreen.storyboard in Resources */,
+				88F4C1E91DF8368D00FE5821 /* Main.storyboard in Resources */,
 				88AEA5B41D514B53006E5C70 /* Assets.xcassets in Resources */,
 				883416E41DF75D6800FB1943 /* SharedAssets.xcassets in Resources */,
 				8817590F1DC7F26900DB70C6 /* Help.storyboard in Resources */,
-				883417391DF782D300FB1943 /* MainBack.storyboard in Resources */,
 				883416EE1DF765CB00FB1943 /* candidatesIconsCans-1024x768.png in Resources */,
 				8834173B1DF782EC00FB1943 /* FrontCode.storyboard in Resources */,
 				883417371DF7682800FB1943 /* candidatez-stickerpack in Resources */,
@@ -1034,9 +1040,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				883417351DF7678800FB1943 /* emogeez-stickerpack in Resources */,
+				88F4C1E71DF8366900FE5821 /* Main.storyboard in Resources */,
 				8834173D1DF7859500FB1943 /* FrontCode.storyboard in Resources */,
 				88AEA5CD1D514B6A006E5C70 /* LaunchScreen.storyboard in Resources */,
-				883417411DF785A000FB1943 /* MainBack.storyboard in Resources */,
 				881759101DC7F26900DB70C6 /* Help.storyboard in Resources */,
 				883416E51DF75D6800FB1943 /* SharedAssets.xcassets in Resources */,
 				880846091DE0EB8000EB7965 /* sshelp in Resources */,
@@ -1053,9 +1059,9 @@
 				8834173E1DF7859600FB1943 /* FrontCode.storyboard in Resources */,
 				883416DD1DF75A6E00FB1943 /* holidaze-stickerpack in Resources */,
 				881759111DC7F26900DB70C6 /* Help.storyboard in Resources */,
-				883417421DF785A200FB1943 /* MainBack.storyboard in Resources */,
 				88AEA5F61D514BC3006E5C70 /* Assets.xcassets in Resources */,
 				883416E61DF75D6800FB1943 /* SharedAssets.xcassets in Resources */,
+				88F4C1EE1DF8389500FE5821 /* Main.storyboard in Resources */,
 				883416E81DF762DF00FB1943 /* holidayStickerIcons-1024x768.png in Resources */,
 				8808460A1DE0EB8000EB7965 /* sshelp in Resources */,
 			);

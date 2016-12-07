@@ -1502,11 +1502,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/CatalogLocalViewController.swift"
-            timestampString = "502774273.691823"
+            timestampString = "502807407.630152"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "phase1()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1754,11 +1754,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/CatalogLocalViewController.swift"
-            timestampString = "502774273.691823"
+            timestampString = "502807407.630152"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1818,11 +1818,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/CatalogLocalViewController.swift"
-            timestampString = "502774273.691823"
+            timestampString = "502807407.630152"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "didMove(toParentViewController:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2669,11 +2669,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/CatalogLocalViewController.swift"
-            timestampString = "502774273.691823"
+            timestampString = "502808106.477019"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2685,11 +2685,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/CatalogLocalViewController.swift"
-            timestampString = "502774273.691823"
+            timestampString = "502808106.477019"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "catUseAsIs(stickerAsset:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2717,11 +2717,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/CatalogLocalViewController.swift"
-            timestampString = "502774273.691823"
+            timestampString = "502808106.477019"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
             landmarkName = "catUseWithCaption(stickerAsset:caption:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2733,11 +2733,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/CatalogLocalViewController.swift"
-            timestampString = "502774273.691823"
+            timestampString = "502807407.630152"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2765,11 +2765,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/CatalogLocalViewController.swift"
-            timestampString = "502774273.691823"
+            timestampString = "502807407.630152"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3001,31 +3001,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "static kaptionator.Manifest.loadJSONFromURL (url : Swift.Optional&lt;Foundation.URL&gt;, completion : Swift.Optional&lt;(Swift.Int, Swift.String, Swift.Array&lt;kaptionator.StickerAsset&gt;) -&gt; ()&gt;) -&gt; ()"
-                  moduleName = "kaptionator"
+                  symbolName = "static holidaze.Manifest.loadJSONFromURL (url : Swift.Optional&lt;Foundation.URL&gt;, completion : Swift.Optional&lt;(Swift.Int, Swift.String, Swift.Array&lt;holidaze.StickerAsset&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "holidaze"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/billdonner/Documents/kaptionator/appcode/MasterViewController.swift"
-                  timestampString = "502776906.303043"
+                  timestampString = "502811247.503035"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "407"
                   endingLineNumber = "407"
-                  offsetFromSymbolStart = "76">
+                  offsetFromSymbolStart = "91">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "static kaptionator.Manifest.(loadJSONFromURL (url : Swift.Optional&lt;Foundation.URL&gt;, completion : Swift.Optional&lt;(Swift.Int, Swift.String, Swift.Array&lt;kaptionator.StickerAsset&gt;) -&gt; ()&gt;) -&gt; ()).(closure #1)"
-                  moduleName = "kaptionator"
+                  symbolName = "static holidaze.Manifest.(loadJSONFromURL (url : Swift.Optional&lt;Foundation.URL&gt;, completion : Swift.Optional&lt;(Swift.Int, Swift.String, Swift.Array&lt;holidaze.StickerAsset&gt;) -&gt; ()&gt;) -&gt; ()).(closure #1)"
+                  moduleName = "holidaze"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/billdonner/Documents/kaptionator/appcode/MasterViewController.swift"
-                  timestampString = "502776906.304385"
+                  timestampString = "502811247.504935"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "408"
                   endingLineNumber = "408"
-                  offsetFromSymbolStart = "40">
+                  offsetFromSymbolStart = "72">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -3085,11 +3085,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/CatalogLocalViewController.swift"
-            timestampString = "502774273.691823"
+            timestampString = "502807407.630152"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3101,11 +3101,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/CatalogLocalViewController.swift"
-            timestampString = "502774273.691823"
+            timestampString = "502807407.630152"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "phase1()"
             landmarkType = "7">
             <Locations>
@@ -3149,11 +3149,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/CatalogLocalViewController.swift"
-            timestampString = "502774273.691823"
+            timestampString = "502807407.630152"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "phase1()"
             landmarkType = "7">
             <Locations>
@@ -3197,11 +3197,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/CatalogLocalViewController.swift"
-            timestampString = "502774273.691823"
+            timestampString = "502807407.630152"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "phase1()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3213,11 +3213,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/CatalogLocalViewController.swift"
-            timestampString = "502774273.691823"
+            timestampString = "502807407.630152"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "phase3()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3229,11 +3229,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/CatalogLocalViewController.swift"
-            timestampString = "502774273.691823"
+            timestampString = "502807407.630152"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "phase3()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3245,7 +3245,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/CatalogLocalViewController.swift"
-            timestampString = "502774273.691823"
+            timestampString = "502807407.630152"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "phase3()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "appcode/CatalogLocalViewController.swift"
+            timestampString = "502807407.630152"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "130"
@@ -3261,27 +3277,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/CatalogLocalViewController.swift"
-            timestampString = "502774273.691823"
+            timestampString = "502807407.630152"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "phase3()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "appcode/CatalogLocalViewController.swift"
-            timestampString = "502774273.691823"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3293,11 +3293,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/CatalogLocalViewController.swift"
-            timestampString = "502774273.691823"
+            timestampString = "502807407.630152"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "collectionView(_:numberOfItemsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3309,11 +3309,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/CatalogLocalViewController.swift"
-            timestampString = "502774273.691823"
+            timestampString = "502807407.630152"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3331,6 +3331,38 @@
             startingLineNumber = "270"
             endingLineNumber = "270"
             landmarkName = "finishStartup()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "appcode/CatalogLocalViewController.swift"
+            timestampString = "502808082.051573"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
+            landmarkName = "collectionView(_:didHighlightItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "appcode/CatalogLocalViewController.swift"
+            timestampString = "502808084.541661"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
+            landmarkName = "collectionView(_:didUnhighlightItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

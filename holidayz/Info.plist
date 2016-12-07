@@ -21,7 +21,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>121</string>
+	<string>123</string>
 	<key>EXTENSION-SCHEME</key>
 	<string>Holidaze</string>
 	<key>LEFT-BBI-NAME</key>
@@ -55,6 +55,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIStatusBarHidden</key>
+	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

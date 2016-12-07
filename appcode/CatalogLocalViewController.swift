@@ -11,6 +11,7 @@ import UIKit
 //import stikz
 // MARK: Show All Remote Catalog Entries in One Tab as Child ViewContoller
 //
+
 final class CatalogLocalView: UICollectionView {
     
    override var intrinsicContentSize: CGSize {
@@ -164,12 +165,21 @@ final class CatalogViewController:UIViewController,ControlledByMasterView, UICol
         
  
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+             collectionView.deselectItem(at: indexPath, animated: true)
             theSelectedIndexPath = indexPath
             // todo: analyze safety of passing indexpath thru, sees to work for now
-            let cell = collectionView.cellForItem(at: indexPath)
-            cell?.isSelected  = false
-            cell?.isHighlighted  = false
+            //let cell = collectionView.cellForItem(at: indexPath)
+            //cell?.isSelected  = false
+            //cell?.isHighlighted  = false
             performSegue(withIdentifier: "CatalogCellTapMenuID", sender: self)
+        }
+        
+        // highlighting
+        func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath)   {
+            collectionView.selectItem(at: indexPath, animated: true, scrollPosition:[])
+        }
+        func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath)  {
+            collectionView.deselectItem(at: indexPath, animated: true)
         }
         
     }
