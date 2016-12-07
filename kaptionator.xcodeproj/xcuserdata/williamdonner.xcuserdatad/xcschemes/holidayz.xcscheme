@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "88AEA5EB1D514BC3006E5C70"
-               BuildableName = "holidayz.app"
-               BlueprintName = "holidayz"
+               BuildableName = "Holi-daze.app"
+               BlueprintName = "holidaze"
                ReferencedContainer = "container:kaptionator.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "88AEA5EB1D514BC3006E5C70"
-            BuildableName = "holidayz.app"
-            BlueprintName = "holidayz"
+            BuildableName = "Holi-daze.app"
+            BlueprintName = "holidaze"
             ReferencedContainer = "container:kaptionator.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -56,8 +56,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "88AEA5EB1D514BC3006E5C70"
-            BuildableName = "holidayz.app"
-            BlueprintName = "holidayz"
+            BuildableName = "Holi-daze.app"
+            BlueprintName = "holidaze"
             ReferencedContainer = "container:kaptionator.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -75,8 +75,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "88AEA5EB1D514BC3006E5C70"
-            BuildableName = "holidayz.app"
-            BlueprintName = "holidayz"
+            BuildableName = "Holi-daze.app"
+            BlueprintName = "holidaze"
             ReferencedContainer = "container:kaptionator.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

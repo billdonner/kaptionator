@@ -1567,7 +1567,7 @@
 				INFOPLIST_FILE = holidayz/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.holidaze;
+				PRODUCT_BUNDLE_IDENTIFIER = martoons.Holidaze;
 				PRODUCT_NAME = "Holi-daze";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1585,7 +1585,7 @@
 				INFOPLIST_FILE = holidayz/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.holidaze;
+				PRODUCT_BUNDLE_IDENTIFIER = martoons.Holidaze;
 				PRODUCT_NAME = "Holi-daze";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1599,7 +1599,7 @@
 				DEVELOPMENT_TEAM = 922D9E65C8;
 				INFOPLIST_FILE = holidazeMessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.holidaze.MessagesExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = martoons.Holidaze.MessagesExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -1614,7 +1614,7 @@
 				DEVELOPMENT_TEAM = 922D9E65C8;
 				INFOPLIST_FILE = holidazeMessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.martoons.holidaze.MessagesExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = martoons.Holidaze.MessagesExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
