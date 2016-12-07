@@ -31,6 +31,14 @@
 		883416F01DF765F000FB1943 /* kaptionator-1024x768.png in Resources */ = {isa = PBXBuildFile; fileRef = 883416EF1DF765F000FB1943 /* kaptionator-1024x768.png */; };
 		883417351DF7678800FB1943 /* emogeez-stickerpack in Resources */ = {isa = PBXBuildFile; fileRef = 883417341DF7678800FB1943 /* emogeez-stickerpack */; };
 		883417371DF7682800FB1943 /* candidatez-stickerpack in Resources */ = {isa = PBXBuildFile; fileRef = 883417361DF7682800FB1943 /* candidatez-stickerpack */; };
+		883417391DF782D300FB1943 /* MainBack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883417381DF782D300FB1943 /* MainBack.storyboard */; };
+		8834173B1DF782EC00FB1943 /* FrontCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8834173A1DF782EC00FB1943 /* FrontCode.storyboard */; };
+		8834173D1DF7859500FB1943 /* FrontCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8834173A1DF782EC00FB1943 /* FrontCode.storyboard */; };
+		8834173E1DF7859600FB1943 /* FrontCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8834173A1DF782EC00FB1943 /* FrontCode.storyboard */; };
+		8834173F1DF7859900FB1943 /* FrontCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8834173A1DF782EC00FB1943 /* FrontCode.storyboard */; };
+		883417401DF7859E00FB1943 /* MainBack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883417381DF782D300FB1943 /* MainBack.storyboard */; };
+		883417411DF785A000FB1943 /* MainBack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883417381DF782D300FB1943 /* MainBack.storyboard */; };
+		883417421DF785A200FB1943 /* MainBack.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883417381DF782D300FB1943 /* MainBack.storyboard */; };
 		883982971DB1421C00B5A037 /* InnerHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883982961DB1421C00B5A037 /* InnerHelpViewController.swift */; };
 		8839829C1DB1556800B5A037 /* InnerHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883982961DB1421C00B5A037 /* InnerHelpViewController.swift */; };
 		8839829D1DB1556B00B5A037 /* InnerHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883982961DB1421C00B5A037 /* InnerHelpViewController.swift */; };
@@ -83,7 +91,6 @@
 		886B4ACE1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4ACC1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift */; };
 		886B4ACF1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4ACC1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift */; };
 		886B4AD01D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886B4ACC1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift */; };
-		889FB7221D9438220064B4C9 /* CatalogRemoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92DF1D88738200832564 /* CatalogRemoteViewController.swift */; };
 		88A6E4D71DCA38F800E2D1B7 /* SFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6E4D61DCA38F800E2D1B7 /* SFViewController.swift */; };
 		88A6E4D81DCA38F800E2D1B7 /* SFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6E4D61DCA38F800E2D1B7 /* SFViewController.swift */; };
 		88A6E4D91DCA38F800E2D1B7 /* SFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6E4D61DCA38F800E2D1B7 /* SFViewController.swift */; };
@@ -108,15 +115,12 @@
 		88AEA5F61D514BC3006E5C70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88AEA5F51D514BC3006E5C70 /* Assets.xcassets */; };
 		88AEA5F91D514BC3006E5C70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88AEA5F71D514BC3006E5C70 /* LaunchScreen.storyboard */; };
 		88AEA6051D514C1F006E5C70 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AEA6041D514C1F006E5C70 /* Messages.framework */; };
-		88AEA60B1D514C1F006E5C70 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88AEA6091D514C1F006E5C70 /* MainInterface.storyboard */; };
 		88AEA60D1D514C1F006E5C70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88AEA60C1D514C1F006E5C70 /* Assets.xcassets */; };
 		88AEA61B1D514C5F006E5C70 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AEA6041D514C1F006E5C70 /* Messages.framework */; };
-		88AEA6211D514C5F006E5C70 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88AEA61F1D514C5F006E5C70 /* MainInterface.storyboard */; };
 		88AEA6231D514C5F006E5C70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88AEA6221D514C5F006E5C70 /* Assets.xcassets */; };
 		88AEA6301D514C8D006E5C70 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AEA6041D514C1F006E5C70 /* Messages.framework */; };
 		88AEA6381D514C8D006E5C70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88AEA6371D514C8D006E5C70 /* Assets.xcassets */; };
 		88AEA6451D514CC7006E5C70 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AEA6041D514C1F006E5C70 /* Messages.framework */; };
-		88AEA64B1D514CC7006E5C70 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88AEA6491D514CC7006E5C70 /* MainInterface.storyboard */; };
 		88AEA64D1D514CC7006E5C70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88AEA64C1D514CC7006E5C70 /* Assets.xcassets */; };
 		88AEA6511D514CC7006E5C70 /* kaptionatorMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 88AEA6441D514CC7006E5C70 /* kaptionatorMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		88B54C981D886FBC0076942D /* MartoonerBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54C961D886FBC0076942D /* MartoonerBrowserViewController.swift */; };
@@ -129,14 +133,12 @@
 		88B54C9F1D886FBC0076942D /* MessagesExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B54C971D886FBC0076942D /* MessagesExtensionViewController.swift */; };
 		88B54CFF1D8870F10076942D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88B54CFE1D8870F10076942D /* MainInterface.storyboard */; };
 		88B54D001D8870F10076942D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88B54CFE1D8870F10076942D /* MainInterface.storyboard */; };
-		88B54D011D8870F10076942D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88B54CFE1D8870F10076942D /* MainInterface.storyboard */; };
 		88B54D021D8870F10076942D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88B54CFE1D8870F10076942D /* MainInterface.storyboard */; };
 		88B570EC1DA566B400CD4058 /* GetCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B570EB1DA566B400CD4058 /* GetCaptionViewController.swift */; };
 		88B570ED1DA566B400CD4058 /* GetCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B570EB1DA566B400CD4058 /* GetCaptionViewController.swift */; };
 		88B570EE1DA566B400CD4058 /* GetCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B570EB1DA566B400CD4058 /* GetCaptionViewController.swift */; };
 		88B570EF1DA566B400CD4058 /* GetCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B570EB1DA566B400CD4058 /* GetCaptionViewController.swift */; };
 		88B5718E1DA6FC8F00CD4058 /* ITunesDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B5718D1DA6FC8F00CD4058 /* ITunesDataCell.swift */; };
-		88B571931DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B571921DA705AC00CD4058 /* CatalogLocalViewController.swift */; };
 		88B571941DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B571921DA705AC00CD4058 /* CatalogLocalViewController.swift */; };
 		88B571951DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B571921DA705AC00CD4058 /* CatalogLocalViewController.swift */; };
 		88B571961DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B571921DA705AC00CD4058 /* CatalogLocalViewController.swift */; };
@@ -144,10 +146,6 @@
 		88DD92EA1D88738200832564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92DE1D88738200832564 /* AppDelegate.swift */; };
 		88DD92EB1D88738200832564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92DE1D88738200832564 /* AppDelegate.swift */; };
 		88DD92EC1D88738200832564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92DE1D88738200832564 /* AppDelegate.swift */; };
-		88DD92EE1D88738200832564 /* CatalogRemoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92DF1D88738200832564 /* CatalogRemoteViewController.swift */; };
-		88DD92EF1D88738200832564 /* CatalogRemoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92DF1D88738200832564 /* CatalogRemoteViewController.swift */; };
-		88DD92F01D88738200832564 /* CatalogRemoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92DF1D88738200832564 /* CatalogRemoteViewController.swift */; };
-		88DD92F11D88738200832564 /* CatalogMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E01D88738200832564 /* CatalogMenuViewController.swift */; };
 		88DD92F21D88738200832564 /* CatalogMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E01D88738200832564 /* CatalogMenuViewController.swift */; };
 		88DD92F31D88738200832564 /* CatalogMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E01D88738200832564 /* CatalogMenuViewController.swift */; };
 		88DD92F41D88738200832564 /* CatalogMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E01D88738200832564 /* CatalogMenuViewController.swift */; };
@@ -183,25 +181,15 @@
 		88DD93121D88738200832564 /* CaptionedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E81D88738200832564 /* CaptionedTableCell.swift */; };
 		88DD93131D88738200832564 /* CaptionedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E81D88738200832564 /* CaptionedTableCell.swift */; };
 		88DD93141D88738200832564 /* CaptionedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD92E81D88738200832564 /* CaptionedTableCell.swift */; };
-		88EBCE201DE12F4800C77D8B /* ITunesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */; };
-		88EBCE221DE12F4A00C77D8B /* ITunesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */; };
-		88EBCE231DE12F4B00C77D8B /* ITunesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */; };
 		88EBCE241DE12F6200C77D8B /* ITunesDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B5718D1DA6FC8F00CD4058 /* ITunesDataCell.swift */; };
 		88EBCE251DE12F6300C77D8B /* ITunesDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B5718D1DA6FC8F00CD4058 /* ITunesDataCell.swift */; };
 		88EBCE261DE12F6400C77D8B /* ITunesDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B5718D1DA6FC8F00CD4058 /* ITunesDataCell.swift */; };
-		88EBCE281DE1307900C77D8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88EBCE271DE1307900C77D8B /* Main.storyboard */; };
-		88EBCE291DE1307900C77D8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88EBCE271DE1307900C77D8B /* Main.storyboard */; };
-		88EBCE2A1DE1307900C77D8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88EBCE271DE1307900C77D8B /* Main.storyboard */; };
-		88EBCE2B1DE1307900C77D8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88EBCE271DE1307900C77D8B /* Main.storyboard */; };
 		88FA07D71DA402330063B483 /* ChangeCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FA07D61DA402330063B483 /* ChangeCaptionViewController.swift */; };
 		88FA07D81DA402330063B483 /* ChangeCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FA07D61DA402330063B483 /* ChangeCaptionViewController.swift */; };
 		88FA07D91DA402330063B483 /* ChangeCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FA07D61DA402330063B483 /* ChangeCaptionViewController.swift */; };
 		88FA07DA1DA402330063B483 /* ChangeCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FA07D61DA402330063B483 /* ChangeCaptionViewController.swift */; };
 		AD20A5FA1DA1946600877ABF /* ITunesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */; };
 		AD20A5FB1DA1946A00877ABF /* ITunesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881A13E21D908F4B00D7A4EC /* ITunesViewController.swift */; };
-		AD20A5FF1DA1951000877ABF /* ITunesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */; };
-		AD20A6001DA1951100877ABF /* ITunesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */; };
-		AD20A6011DA1951200877ABF /* ITunesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E3B5D81D9156B60079E0CB /* ITunesMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -319,6 +307,8 @@
 		883416EF1DF765F000FB1943 /* kaptionator-1024x768.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kaptionator-1024x768.png"; sourceTree = "<group>"; };
 		883417341DF7678800FB1943 /* emogeez-stickerpack */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "emogeez-stickerpack"; sourceTree = "<group>"; };
 		883417361DF7682800FB1943 /* candidatez-stickerpack */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "candidatez-stickerpack"; sourceTree = "<group>"; };
+		883417381DF782D300FB1943 /* MainBack.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainBack.storyboard; sourceTree = SOURCE_ROOT; };
+		8834173A1DF782EC00FB1943 /* FrontCode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FrontCode.storyboard; sourceTree = "<group>"; };
 		883982961DB1421C00B5A037 /* InnerHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InnerHelpViewController.swift; sourceTree = "<group>"; };
 		883982A21DB2A14300B5A037 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		883982A41DB2B4F100B5A037 /* ImportMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportMenuViewController.swift; sourceTree = "<group>"; };
@@ -532,6 +522,8 @@
 				88A6E5131DCA500900E2D1B7 /* shared */,
 				88A6E4D61DCA38F800E2D1B7 /* SFViewController.swift */,
 				88EBCE271DE1307900C77D8B /* Main.storyboard */,
+				883417381DF782D300FB1943 /* MainBack.storyboard */,
+				8834173A1DF782EC00FB1943 /* FrontCode.storyboard */,
 				88DD92DE1D88738200832564 /* AppDelegate.swift */,
 				88DD92E51D88738200832564 /* MasterViewController.swift */,
 				880845E51DE0CDF800EB7965 /* NoContentViewController.swift */,
@@ -585,12 +577,13 @@
 				880E6F5E1DEF4280007D3631 /* LICENSE.txt */,
 				880846101DE0EBDB00EB7965 /* HelpAssets */,
 				885BFE281DEDBCC8002DAE16 /* Help */,
+				8865F1D21DF7289E0099CD1D /* stikz */,
 				88722F9E1D522ADF00B2F85B /* messagecode */,
 				88722F661D522AAB00B2F85B /* appcode */,
 				88AEA5C11D514B6A006E5C70 /* emogeez */,
 				88AEA5931D514B29006E5C70 /* kaptionator */,
 				88AEA5AB1D514B53006E5C70 /* candidatez */,
-				88AEA5ED1D514BC3006E5C70 /* holidayz */,
+				88AEA5ED1D514BC3006E5C70 /* holidaze */,
 				88AEA6061D514C1F006E5C70 /* holidazeMessagesExtension */,
 				88AEA61C1D514C5F006E5C70 /* emogeezMessagesExtension */,
 				88AEA6311D514C8D006E5C70 /* candidatezMessagesExtension */,
@@ -598,7 +591,6 @@
 				881758F61DC7B13B00DB70C6 /* kaptionatorTests */,
 				88AEA6031D514C1F006E5C70 /* Frameworks */,
 				88AEA5921D514B29006E5C70 /* Products */,
-				8865F1D21DF7289E0099CD1D /* stikz */,
 			);
 			sourceTree = "<group>";
 		};
@@ -653,7 +645,7 @@
 			path = emogeez;
 			sourceTree = "<group>";
 		};
-		88AEA5ED1D514BC3006E5C70 /* holidayz */ = {
+		88AEA5ED1D514BC3006E5C70 /* holidaze */ = {
 			isa = PBXGroup;
 			children = (
 				883416E71DF762DF00FB1943 /* holidayStickerIcons-1024x768.png */,
@@ -662,6 +654,7 @@
 				88AEA5F71D514BC3006E5C70 /* LaunchScreen.storyboard */,
 				88AEA5FA1D514BC3006E5C70 /* Info.plist */,
 			);
+			name = holidaze;
 			path = holidayz;
 			sourceTree = "<group>";
 		};
@@ -1008,9 +1001,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				883416F01DF765F000FB1943 /* kaptionator-1024x768.png in Resources */,
+				8834173F1DF7859900FB1943 /* FrontCode.storyboard in Resources */,
 				88AEA59C1D514B29006E5C70 /* Assets.xcassets in Resources */,
 				880E6F5F1DEF4280007D3631 /* LICENSE.txt in Resources */,
-				88EBCE281DE1307900C77D8B /* Main.storyboard in Resources */,
+				883417401DF7859E00FB1943 /* MainBack.storyboard in Resources */,
 				8817590E1DC7F26900DB70C6 /* Help.storyboard in Resources */,
 				883416E31DF75D6800FB1943 /* SharedAssets.xcassets in Resources */,
 				880846071DE0EB8000EB7965 /* sshelp in Resources */,
@@ -1024,10 +1018,11 @@
 			files = (
 				88AEA5B71D514B53006E5C70 /* LaunchScreen.storyboard in Resources */,
 				88AEA5B41D514B53006E5C70 /* Assets.xcassets in Resources */,
-				88EBCE291DE1307900C77D8B /* Main.storyboard in Resources */,
 				883416E41DF75D6800FB1943 /* SharedAssets.xcassets in Resources */,
 				8817590F1DC7F26900DB70C6 /* Help.storyboard in Resources */,
+				883417391DF782D300FB1943 /* MainBack.storyboard in Resources */,
 				883416EE1DF765CB00FB1943 /* candidatesIconsCans-1024x768.png in Resources */,
+				8834173B1DF782EC00FB1943 /* FrontCode.storyboard in Resources */,
 				883417371DF7682800FB1943 /* candidatez-stickerpack in Resources */,
 				880846081DE0EB8000EB7965 /* sshelp in Resources */,
 			);
@@ -1038,8 +1033,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				883417351DF7678800FB1943 /* emogeez-stickerpack in Resources */,
+				8834173D1DF7859500FB1943 /* FrontCode.storyboard in Resources */,
 				88AEA5CD1D514B6A006E5C70 /* LaunchScreen.storyboard in Resources */,
-				88EBCE2A1DE1307900C77D8B /* Main.storyboard in Resources */,
+				883417411DF785A000FB1943 /* MainBack.storyboard in Resources */,
 				881759101DC7F26900DB70C6 /* Help.storyboard in Resources */,
 				883416E51DF75D6800FB1943 /* SharedAssets.xcassets in Resources */,
 				880846091DE0EB8000EB7965 /* sshelp in Resources */,
@@ -1053,11 +1049,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				88AEA5F91D514BC3006E5C70 /* LaunchScreen.storyboard in Resources */,
+				8834173E1DF7859600FB1943 /* FrontCode.storyboard in Resources */,
 				883416DD1DF75A6E00FB1943 /* holidaze-stickerpack in Resources */,
 				881759111DC7F26900DB70C6 /* Help.storyboard in Resources */,
+				883417421DF785A200FB1943 /* MainBack.storyboard in Resources */,
 				88AEA5F61D514BC3006E5C70 /* Assets.xcassets in Resources */,
 				883416E61DF75D6800FB1943 /* SharedAssets.xcassets in Resources */,
-				88EBCE2B1DE1307900C77D8B /* Main.storyboard in Resources */,
 				883416E81DF762DF00FB1943 /* holidayStickerIcons-1024x768.png in Resources */,
 				8808460A1DE0EB8000EB7965 /* sshelp in Resources */,
 			);
@@ -1069,7 +1066,6 @@
 			files = (
 				88AEA60D1D514C1F006E5C70 /* Assets.xcassets in Resources */,
 				88B54D021D8870F10076942D /* MainInterface.storyboard in Resources */,
-				88AEA60B1D514C1F006E5C70 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1078,8 +1074,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				88AEA6231D514C5F006E5C70 /* Assets.xcassets in Resources */,
-				88B54D011D8870F10076942D /* MainInterface.storyboard in Resources */,
-				88AEA6211D514C5F006E5C70 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1098,7 +1092,6 @@
 			files = (
 				88AEA64D1D514CC7006E5C70 /* Assets.xcassets in Resources */,
 				88B54CFF1D8870F10076942D /* MainInterface.storyboard in Resources */,
-				88AEA64B1D514CC7006E5C70 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1114,19 +1107,16 @@
 				88DD93011D88738200832564 /* WebHelpViewController.swift in Sources */,
 				88A6E50C1DCA4E3600E2D1B7 /* StickerAssetSpace.swift in Sources */,
 				8865F1D71DF7289E0099CD1D /* SharedCaptionSpace.swift in Sources */,
-				889FB7221D9438220064B4C9 /* CatalogRemoteViewController.swift in Sources */,
 				88DD92E91D88738200832564 /* AppDelegate.swift in Sources */,
 				883982A51DB2B4F100B5A037 /* ImportMenuViewController.swift in Sources */,
 				880845E61DE0CDF800EB7965 /* NoContentViewController.swift in Sources */,
 				AD20A5FA1DA1946600877ABF /* ITunesMenuViewController.swift in Sources */,
 				88FA07D71DA402330063B483 /* ChangeCaptionViewController.swift in Sources */,
-				88DD92F11D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				88DD93111D88738200832564 /* CaptionedTableCell.swift in Sources */,
 				886B4ACD1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88A6E5021DCA4DDF00E2D1B7 /* AppCaptionSpace.swift in Sources */,
 				88DD92F91D88738200832564 /* AppCaptionSpaceViewController.swift in Sources */,
 				88DD92F51D88738200832564 /* AppSpaceMenuViewController.swift in Sources */,
-				88B571931DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */,
 				8865F1D31DF7289E0099CD1D /* common.swift in Sources */,
 				88B570EC1DA566B400CD4058 /* GetCaptionViewController.swift in Sources */,
 				886B4AC31D9CA4CB00581C9B /* MessagesTableCell.swift in Sources */,
@@ -1156,15 +1146,12 @@
 				886B4ACE1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88DD92F21D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				883982A61DB2BEEC00B5A037 /* ImportMenuViewController.swift in Sources */,
-				88DD92EE1D88738200832564 /* CatalogRemoteViewController.swift in Sources */,
 				88FA07D81DA402330063B483 /* ChangeCaptionViewController.swift in Sources */,
-				AD20A5FF1DA1951000877ABF /* ITunesMenuViewController.swift in Sources */,
 				88DD93121D88738200832564 /* CaptionedTableCell.swift in Sources */,
 				88DD92FA1D88738200832564 /* AppCaptionSpaceViewController.swift in Sources */,
 				88DD92F61D88738200832564 /* AppSpaceMenuViewController.swift in Sources */,
 				88B571941DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */,
 				88B570ED1DA566B400CD4058 /* GetCaptionViewController.swift in Sources */,
-				88EBCE201DE12F4800C77D8B /* ITunesViewController.swift in Sources */,
 				8865F1D41DF7289E0099CD1D /* common.swift in Sources */,
 				886B4AC91D9DDD5B00581C9B /* ReorderSharedCaptionSpaceViewController.swift in Sources */,
 				88EBCE241DE12F6200C77D8B /* ITunesDataCell.swift in Sources */,
@@ -1194,15 +1181,12 @@
 				886B4ACF1D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88DD92F31D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				883982A71DB2BEED00B5A037 /* ImportMenuViewController.swift in Sources */,
-				88DD92EF1D88738200832564 /* CatalogRemoteViewController.swift in Sources */,
 				88FA07D91DA402330063B483 /* ChangeCaptionViewController.swift in Sources */,
-				AD20A6001DA1951100877ABF /* ITunesMenuViewController.swift in Sources */,
 				88DD93131D88738200832564 /* CaptionedTableCell.swift in Sources */,
 				88DD92FB1D88738200832564 /* AppCaptionSpaceViewController.swift in Sources */,
 				88DD92F71D88738200832564 /* AppSpaceMenuViewController.swift in Sources */,
 				88B571951DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */,
 				88B570EE1DA566B400CD4058 /* GetCaptionViewController.swift in Sources */,
-				88EBCE221DE12F4A00C77D8B /* ITunesViewController.swift in Sources */,
 				8865F1D51DF7289E0099CD1D /* common.swift in Sources */,
 				886B4ACA1D9DDD5B00581C9B /* ReorderSharedCaptionSpaceViewController.swift in Sources */,
 				88EBCE251DE12F6300C77D8B /* ITunesDataCell.swift in Sources */,
@@ -1232,15 +1216,12 @@
 				886B4AD01D9DEEBD00581C9B /* ReorderCollectionViewCell.swift in Sources */,
 				88DD92F41D88738200832564 /* CatalogMenuViewController.swift in Sources */,
 				883982A81DB2BEEE00B5A037 /* ImportMenuViewController.swift in Sources */,
-				88DD92F01D88738200832564 /* CatalogRemoteViewController.swift in Sources */,
 				88FA07DA1DA402330063B483 /* ChangeCaptionViewController.swift in Sources */,
-				AD20A6011DA1951200877ABF /* ITunesMenuViewController.swift in Sources */,
 				88DD93141D88738200832564 /* CaptionedTableCell.swift in Sources */,
 				88DD92FC1D88738200832564 /* AppCaptionSpaceViewController.swift in Sources */,
 				88DD92F81D88738200832564 /* AppSpaceMenuViewController.swift in Sources */,
 				88B571961DA705AC00CD4058 /* CatalogLocalViewController.swift in Sources */,
 				88B570EF1DA566B400CD4058 /* GetCaptionViewController.swift in Sources */,
-				88EBCE231DE12F4B00C77D8B /* ITunesViewController.swift in Sources */,
 				8865F1D61DF7289E0099CD1D /* common.swift in Sources */,
 				886B4ACB1D9DDD5B00581C9B /* ReorderSharedCaptionSpaceViewController.swift in Sources */,
 				88EBCE261DE12F6400C77D8B /* ITunesDataCell.swift in Sources */,

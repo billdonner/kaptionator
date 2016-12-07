@@ -151,26 +151,41 @@ final class MasterViewController: UIViewController,UserInteractionSignalDelegate
 private extension MasterViewController {
     func refreshCurrentVC() {
         //TODO: - figure out how to do this generically
-        if currentViewController is ITunesViewController {
-            if let vc = currentViewController as? ITunesViewController {
-                vc.refreshLayout()
-            }
-        } else
-            if currentViewController is CatalogViewController {
-                if let vc = currentViewController as? CatalogViewController {
-                    vc.refreshLayout()
-                }
-            } else
-                if currentViewController is AppCaptionSpaceViewController {
-                    if let vc = currentViewController as? AppCaptionSpaceViewController {
-                        vc.refreshLayout()
-                    }
-                } else
-                    if currentViewController is SharedCaptionSpaceViewController {
-                        if let vc = currentViewController as? SharedCaptionSpaceViewController {
-                            vc.refreshLayout()
-                        }
+        
+        if let vc = currentViewController as? ControlledByMasterView {
+            vc.refreshLayout()
         }
+        
+//        
+//        if String(describing: type(of: currentViewController))  ==  "ITunesViewController" {
+//            
+//            if let vc = currentViewController as? ControlledByMasterView {
+//                vc.refreshLayout()
+//            }
+//            
+//        } else
+//            if String(describing: type(of: currentViewController))  ==  "CatalogViewController" {
+//                
+//                if let vc = currentViewController as? ControlledByMasterView {
+//                    vc.refreshLayout()
+//                }
+//            } else
+//                if String(describing: type(of: currentViewController))  ==  "AppCaptionSpaceViewController" {
+//                    if let vc = currentViewController as? ControlledByMasterView {
+//                        vc.refreshLayout()
+//                    }
+//              
+//            } else
+//                if currentViewController is AppCaptionSpaceViewController {
+//                    if let vc = currentViewController as? AppCaptionSpaceViewController {
+//                        vc.refreshLayout()
+//                    }
+//                } else
+//                    if currentViewController is SharedCaptionSpaceViewController {
+//                        if let vc = currentViewController as? SharedCaptionSpaceViewController {
+//                            vc.refreshLayout()
+//                        }
+//        }
     }
     func databaseStuff() {
         //

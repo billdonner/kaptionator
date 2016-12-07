@@ -1710,11 +1710,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/ITunesViewController.swift"
-            timestampString = "501514098.112282"
+            timestampString = "502761064.370022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170">
+            startingLineNumber = "165"
+            endingLineNumber = "165">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1724,11 +1724,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/ITunesViewController.swift"
-            timestampString = "501514098.112282"
+            timestampString = "502761064.370022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191">
+            startingLineNumber = "186"
+            endingLineNumber = "186">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1850,11 +1850,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/ITunesViewController.swift"
-            timestampString = "501514098.112282"
+            timestampString = "502761064.370022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175">
+            startingLineNumber = "170"
+            endingLineNumber = "170">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1944,11 +1944,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/MasterViewController.swift"
-            timestampString = "501514098.112282"
+            timestampString = "502761064.370022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "207"
-            endingLineNumber = "207"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
             landmarkName = "cycleaction(sender:id:vc:color:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1960,11 +1960,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/MasterViewController.swift"
-            timestampString = "501514098.112282"
+            timestampString = "502761064.370022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
             landmarkName = "cycleaction(sender:id:vc:color:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1976,11 +1976,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/MasterViewController.swift"
-            timestampString = "501514098.112282"
+            timestampString = "502761064.370022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
             landmarkName = "MasterViewController"
             landmarkType = "4">
          </BreakpointContent>
@@ -1992,11 +1992,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/ITunesViewController.swift"
-            timestampString = "501514098.112282"
+            timestampString = "502761064.370022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189">
+            startingLineNumber = "184"
+            endingLineNumber = "184">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2006,11 +2006,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/ITunesViewController.swift"
-            timestampString = "501514098.112282"
+            timestampString = "502761064.370022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183">
+            startingLineNumber = "178"
+            endingLineNumber = "178">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2020,11 +2020,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/ITunesViewController.swift"
-            timestampString = "501514098.112282"
+            timestampString = "502761064.370022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
             landmarkName = "capUse(stickerAsset:caption:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2431,11 +2431,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/MasterViewController.swift"
-            timestampString = "501514098.112282"
+            timestampString = "502761064.370022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "refreshCurrentVC()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2447,11 +2447,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/MasterViewController.swift"
-            timestampString = "501514098.112282"
+            timestampString = "502761064.370022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
             landmarkName = "cycleaction(sender:id:vc:color:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2469,22 +2469,6 @@
             startingLineNumber = "158"
             endingLineNumber = "158"
             landmarkName = "showImageFromSharedCE(ce:animate:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "appcode/ITunesViewController.swift"
-            timestampString = "501514098.112282"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2669,11 +2653,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/MasterViewController.swift"
-            timestampString = "502747942.376815"
+            timestampString = "502761064.370022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "472"
-            endingLineNumber = "472"
+            startingLineNumber = "487"
+            endingLineNumber = "487"
             landmarkName = "processOneLocal(_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2765,11 +2749,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/ITunesViewController.swift"
-            timestampString = "502673506.48631"
+            timestampString = "502761064.370022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "capUse(stickerAsset:caption:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2941,11 +2925,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/MasterViewController.swift"
-            timestampString = "502747942.376815"
+            timestampString = "502761064.370022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "480"
-            endingLineNumber = "480"
+            startingLineNumber = "495"
+            endingLineNumber = "495"
             landmarkName = "processOneLocal(_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2957,11 +2941,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/MasterViewController.swift"
-            timestampString = "502744188.398778"
+            timestampString = "502761064.370022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "379"
-            endingLineNumber = "379"
+            startingLineNumber = "394"
+            endingLineNumber = "394"
             landmarkName = "loadJSONFromLocal(url:completion:)"
             landmarkType = "7">
             <Locations>
@@ -3005,11 +2989,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appcode/MasterViewController.swift"
-            timestampString = "502744197.349171"
+            timestampString = "502761064.370022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "392"
-            endingLineNumber = "392"
+            startingLineNumber = "407"
+            endingLineNumber = "407"
             landmarkName = "loadJSONFromURL(url:completion:)"
             landmarkType = "7">
             <Locations>
@@ -3017,30 +3001,30 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "static candidatez.Manifest.loadJSONFromURL (url : Swift.Optional&lt;Foundation.URL&gt;, completion : Swift.Optional&lt;(Swift.Int, Swift.String, Swift.Array&lt;candidatez.StickerAsset&gt;) -&gt; ()&gt;) -&gt; ()"
-                  moduleName = "candidatez"
+                  symbolName = "static holidaze.Manifest.loadJSONFromURL (url : Swift.Optional&lt;Foundation.URL&gt;, completion : Swift.Optional&lt;(Swift.Int, Swift.String, Swift.Array&lt;holidaze.StickerAsset&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "holidaze"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/billdonner/Documents/kaptionator/appcode/MasterViewController.swift"
-                  timestampString = "502753630.323285"
+                  timestampString = "502763361.845024"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "392"
-                  endingLineNumber = "392"
+                  startingLineNumber = "407"
+                  endingLineNumber = "407"
                   offsetFromSymbolStart = "76">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "static candidatez.Manifest.(loadJSONFromURL (url : Swift.Optional&lt;Foundation.URL&gt;, completion : Swift.Optional&lt;(Swift.Int, Swift.String, Swift.Array&lt;candidatez.StickerAsset&gt;) -&gt; ()&gt;) -&gt; ()).(closure #1)"
-                  moduleName = "candidatez"
+                  symbolName = "static holidaze.Manifest.(loadJSONFromURL (url : Swift.Optional&lt;Foundation.URL&gt;, completion : Swift.Optional&lt;(Swift.Int, Swift.String, Swift.Array&lt;holidaze.StickerAsset&gt;) -&gt; ()&gt;) -&gt; ()).(closure #1)"
+                  moduleName = "holidaze"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/billdonner/Documents/kaptionator/appcode/MasterViewController.swift"
-                  timestampString = "502753630.324648"
+                  timestampString = "502763361.846469"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "393"
-                  endingLineNumber = "393"
+                  startingLineNumber = "408"
+                  endingLineNumber = "408"
                   offsetFromSymbolStart = "40">
                </Location>
             </Locations>
