@@ -55,7 +55,11 @@ final class SharedSpaceMenuViewController: UIViewController ,ModalOverCurrentCon
     internal func dismisstapped(_ s: AnyObject) {
         
         delegate?.refreshLayout() //make this better
-        self.performSegue(withIdentifier: "UnwindToMessagesAppVC", sender: s)
+       // self.performSegue(withIdentifier: "UnwindToMessagesAppVC", sender: s)
+        
+        self.presentingViewController?.dismiss(animated:true) {
+            
+        }
     }
 
         //MARK:- MENU TAP ACTIONS

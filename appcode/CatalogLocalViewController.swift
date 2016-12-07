@@ -11,9 +11,16 @@ import UIKit
 //import stikz
 // MARK: Show All Remote Catalog Entries in One Tab as Child ViewContoller
 //
+final class CatalogLocalView: UICollectionView {
+    
+   override var intrinsicContentSize: CGSize {
+        return self.collectionViewLayout.collectionViewContentSize
+    }
+  
+}
 final class CatalogViewController:UIViewController,ControlledByMasterView, UICollectionViewDelegate, UICollectionViewDataSource   {
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView: CatalogLocalView!
     
     @IBAction func unwindToCatalogLocalItemsViewController(_ segue: UIStoryboardSegue)  {}
 
@@ -29,13 +36,12 @@ final class CatalogViewController:UIViewController,ControlledByMasterView, UICol
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.collectionView!.reloadData()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        startupLogo.image = UIImage(named:backgroundImagePath)
+        startupLogo.isHidden = true //
+        //startupLogo.image = UIImage(named:backgroundImagePath)
         collectionView.dataSource = self
         collectionView.delegate = self
         StickerAssetSpace.reset(title:extensionScheme)
@@ -89,7 +95,7 @@ final class CatalogViewController:UIViewController,ControlledByMasterView, UICol
                         }
                         StickerAssetSpace.saveToDisk()
                         // if good, move on to phase 2 which happens in next view controller
-                        self.perform(#selector(self.phase2 ), with: nil, afterDelay: 2.0)
+                        self.perform(#selector(self.phase2 ), with: nil, afterDelay: 0.7)
                     }
                 }
             }
@@ -114,14 +120,14 @@ final class CatalogViewController:UIViewController,ControlledByMasterView, UICol
             
             // performSegue(withIdentifier: "CatalogTabHelpID", sender: nil)
             
-            UIView.animate(withDuration: 1.5, animations: {
+            UIView.animate(withDuration: 1.5,
+                           animations: {
                 self.startupLogo.alpha =  0.0
-                self.collectionView?.alpha = 1.0
-            }
-                , completion: { b in
+               // self.collectionView?.alpha = 1.0
+            },
+                           completion: { b in
                     self.startupLogo.removeFromSuperview()
-            }
-            )
+            } )
         }
         //MARK: UICollectionViewDataSource
         func numberOfSections(in collectionView: UICollectionView) -> Int { return 1 }
@@ -129,9 +135,8 @@ final class CatalogViewController:UIViewController,ControlledByMasterView, UICol
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             return StickerAssetSpace.itemCount()
         }
-        
-        func collectionView(_ collectionView: UICollectionView,
-                            cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+            
             let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "CatalogDataCell", for: indexPath  )
                 as! CatalogDataCell // Create the cell from the storyboard cell
             let ra = StickerAssetSpace.itemAt(indexPath.row)

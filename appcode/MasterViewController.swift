@@ -264,7 +264,7 @@ private extension MasterViewController {
     func finishStartup() {
         let dir = FileManager.default.urls (for: .documentDirectory, in : .userDomainMask)
         let documentsUrl =  dir.first!
-        print("-------Running from ",documentsUrl," ---------")
+        print("-------Running with sbid \(showCatalogID) from ",documentsUrl," ---------")
         
         showFirstViewController = self.storyboard?.instantiateViewController(withIdentifier: showCatalogID )
         currentViewController = showFirstViewController

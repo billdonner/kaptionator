@@ -62,7 +62,8 @@ final class AppSpaceMenuViewController: UIViewController, ModalOverCurrentContex
     internal func dismisstapped(_ s: AnyObject) {
         
         delegate?.refreshLayout() //make this better
-        self.performSegue(withIdentifier: "UnwindToCaptionedAppVC", sender: s)
+        //self.performSegue(withIdentifier: "UnwindToCaptionedAppVC", sender: s)
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     //MARK:- VC LIFECYLE
