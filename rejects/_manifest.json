@@ -1,0 +1,101 @@
+{
+    "pack": "reJectz",
+    "description": "Stikerz Pack Manifest for reJectz",
+    "generated": "2016-12-08",
+    "license": "use freely for testing Kaptionator",
+    "images": [{
+               "image": "images/1930Something-618x618.gif",
+               "size": "S"
+               }, {
+               "image": "images/42-beachBall-618x618.gif",
+               "size": "S"
+               }, {
+               
+               "image": "images/angry2-618.gif",
+               "size": "S"
+               }, {
+               "image": "images/banjo-618.png",
+               "size": "S"
+               }, {
+               "image": "images/birthdayGift1-618.gif",
+               "size": "S"
+               }, {
+               "image": "images/crying-618.png",
+               "size": "S"
+               }, {
+               "image": "images/embarassed-618.png",
+               "size": "S"
+               }, {
+               "image": "images/peaceGirl-618.gif",
+               "size": "S"
+               }, {
+               "image": "images/shades-618.png",
+               "size": "S"
+               }, {
+               "image": "images/tongue-618.gif",
+               "size": "S"
+               }, {
+               "image": "images/rage1-618.gif",
+               "animated": 1,
+               "size": "S"
+               }, {
+               "image": "images/hero-618.png",
+               "size": "S"
+               }, {
+               "image": "images/lampShade-618.png",
+               "size": "S"
+               }, {
+               
+               "image": "images/squeezeBox-618.png",
+               "size": "S"
+               }, {
+               "image": "images/tweedleDee-300.gif",
+               "animated": 1,
+               "size": "S"
+               }, {
+               "image": "images/guitar-618.png",
+               "size": "S"
+               
+               }, {
+               "image": "images/fiddler-618.png",
+               "size": "S"
+               
+               }, {
+               "image": "images/uke1-618.png",
+               "size": "S"
+               
+               }, {
+               "image": "images/uke2-618.png",
+               "size": "S"
+               }, {
+               "image": "images/wink1b-300.gif",
+               "animated": 1,
+               "size": "S"
+               }, {
+               "image": "images/newSurfer2-618.gif",
+               "animated": 1,
+               "size": "S"
+               }, {
+               "image": "images/rage1-618.gif",
+               "animated": 1,
+               "size": "S"
+               }, {
+               "image": "images/washTub-618.png",
+               "size": "S"
+               
+               }, {
+               "thumb": "images/_thumbnails/haha-thumb.gif",
+               "image": "images/haHaFla-300.gif",
+               "animated": 1,
+               "size": "S"
+               }, {
+               "thumb": "images/_thumbnails/lol-thumb.gif",
+               "image": "images/lol1b-300.gif",
+               "animated": 1,
+               "size": "S"
+               }, {
+               "image": "images/washBoard-618.png",	 
+               "size": "S"
+               }]
+    
+}

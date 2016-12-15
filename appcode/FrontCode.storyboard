@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11760" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rpM-c1-9VA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rpM-c1-9VA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11755"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -555,26 +555,10 @@
         <!--WebsiteOverlayViewController-->
         <scene sceneID="ffm-fn-IPh">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="WebsiteOverlayViewController" storyboardName="Help" referencedIdentifier="WebsiteOverlayViewController" id="tAq-2d-gXw" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="--WebsiteOverlayViewController" storyboardName="Help" referencedIdentifier="WebsiteOverlayViewController" id="tAq-2d-gXw" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bce-9D-JpA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="203.19999999999999" y="-9352.6236881559234"/>
-        </scene>
-        <!--AltWebHelpViewController-->
-        <scene sceneID="m2X-t2-JuS">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="AltWebHelpViewController" storyboardName="Help" referencedIdentifier="AltWebHelpViewController" id="PDe-ov-OuF" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uH0-AN-sPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-753" y="-9515"/>
-        </scene>
-        <!--WebHelpViewController-->
-        <scene sceneID="fFE-nb-wtg">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="WebHelpViewController" storyboardName="Help" referencedIdentifier="WebHelpViewController" id="Twd-PU-9b0" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rn6-I5-OX1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-754" y="-9455"/>
         </scene>
         <!--LoadDocHelpViewControllerID-->
         <scene sceneID="uKX-wx-O8T">
@@ -728,7 +712,7 @@
         <scene sceneID="qaM-we-gfF">
             <objects>
                 <collectionViewController storyboardIdentifier="ReorderMessagesID" id="vsv-jb-Nm1" customClass="ReorderSharedCaptionSpaceViewController" customModule="Holi_daze" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Tu9-ZF-rxs">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Tu9-ZF-rxs">
                         <rect key="frame" x="0.0" y="0.0" width="384" height="512"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1306,32 +1290,32 @@
         <!--ShowCatalogID-->
         <scene sceneID="2yv-7E-lqT">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="ShowCatalogID" storyboardName="Main" referencedIdentifier="ShowCatalogID" id="hBt-m1-SeV" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pod-ie-b2P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="ShowCatalogID" storyboardName="Main" referencedIdentifier="ShowCatalogID" id="hBt-m1-SeV" sceneMemberID="viewController"/>
             </objects>
             <point key="canvasLocation" x="-9206" y="-8897"/>
         </scene>
         <!--CaptionedViewControllerID-->
         <scene sceneID="ezn-is-fsO">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="CaptionedViewControllerID" storyboardName="Main" referencedIdentifier="CaptionedViewControllerID" id="zZC-sC-6Ro" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zu7-ZD-DH7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="CaptionedViewControllerID" storyboardName="Main" referencedIdentifier="CaptionedViewControllerID" id="zZC-sC-6Ro" sceneMemberID="viewController"/>
             </objects>
             <point key="canvasLocation" x="-9205" y="-8860"/>
         </scene>
         <!--MessageViewControllerID-->
         <scene sceneID="ym0-wu-UWM">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="MessageViewControllerID" storyboardName="Main" referencedIdentifier="MessageViewControllerID" id="BSa-AR-d9G" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4CP-F0-bz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="MessageViewControllerID" storyboardName="Main" referencedIdentifier="MessageViewControllerID" id="BSa-AR-d9G" sceneMemberID="viewController"/>
             </objects>
             <point key="canvasLocation" x="-9206" y="-8826"/>
         </scene>
         <!--ShowITunesID-->
         <scene sceneID="jGF-RW-8X7">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="ShowITunesID" storyboardName="Main" referencedIdentifier="ShowITunesID" id="30g-Z2-0VK" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mzd-Cz-Bko" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="ShowITunesID" storyboardName="Main" referencedIdentifier="ShowITunesID" id="30g-Z2-0VK" sceneMemberID="viewController"/>
             </objects>
             <point key="canvasLocation" x="-9206" y="-8787"/>
         </scene>

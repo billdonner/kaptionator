@@ -14,16 +14,6 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
-		<key>candyDates.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>9</integer>
-		</dict>
-		<key>candyDatesMessagesExtension.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>10</integer>
-		</dict>
 		<key>emogeez.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -138,6 +128,26 @@
 			<true/>
 		</dict>
 		<key>88AEA6431D514CC7006E5C70</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88B9DF231DF8BDD50037DD33</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88B9DF641DF8D4830037DD33</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88F848E01DF8DD4D0024159A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88F848F31DF8DDC00024159A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

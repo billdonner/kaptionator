@@ -3005,7 +3005,7 @@
                   moduleName = "emogeez"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/billdonner/Documents/kaptionator/appcode/MasterViewController.swift"
-                  timestampString = "502825456.429833"
+                  timestampString = "502995602.465933"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "407"
@@ -3020,7 +3020,7 @@
                   moduleName = "emogeez"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/billdonner/Documents/kaptionator/appcode/MasterViewController.swift"
-                  timestampString = "502825456.431238"
+                  timestampString = "502995602.467588"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "408"
@@ -3363,6 +3363,38 @@
             startingLineNumber = "182"
             endingLineNumber = "182"
             landmarkName = "collectionView(_:didUnhighlightItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "appcode/CatalogLocalViewController.swift"
+            timestampString = "502994921.636747"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "appcode/CatalogLocalViewController.swift"
+            timestampString = "502994943.849273"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

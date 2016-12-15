@@ -19,7 +19,7 @@ public  let kStickers = "stickers"
 public  let kTitle = "title"
 public  let kID = "id"
 public  let kRemoteURL = "remoteurl"
-public  let kThumbNail = "thumburl"
+public  let kThumbNail = "thumb"
 
 // captionated entries - are stashed in either of two places - in the app, or in the shared memory with iMessage
 

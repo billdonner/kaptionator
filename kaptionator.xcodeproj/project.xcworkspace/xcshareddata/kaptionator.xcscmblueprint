@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "74D77288A1D0666AF7C9C4CF3C2B10EE2F1E9633",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "74D77288A1D0666AF7C9C4CF3C2B10EE2F1E9633" : 9223372036854775807,
+    "B1D000F6EABD51D19E97307790E4039745D9687E" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "37225AB6-D3FD-4E48-A3DB-27EC2D68BA62",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "74D77288A1D0666AF7C9C4CF3C2B10EE2F1E9633" : "kaptionator\/",
+    "B1D000F6EABD51D19E97307790E4039745D9687E" : "sc9\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "kaptionator",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "kaptionator.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/billdonner\/kaptionator.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "74D77288A1D0666AF7C9C4CF3C2B10EE2F1E9633"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/billdonner\/sheetcheats9.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B1D000F6EABD51D19E97307790E4039745D9687E"
+    }
+  ]
+}

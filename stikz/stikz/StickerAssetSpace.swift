@@ -60,6 +60,9 @@ public struct StickerAsset {
     public init(pack:String,title:String,thumburl:URL?, remoteurl:URL?,localpath:URL?, options:StickerOptions) {
         self.packID = pack
         self.thumburl = thumburl
+        if thumburl != nil {
+            print("loading thumbs")
+        }
         let none = title == ""
         self.assetName = none ? ""//"<no title>"
             : title

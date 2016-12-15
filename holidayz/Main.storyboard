@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11760" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11755"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -187,14 +187,6 @@
             </objects>
             <point key="canvasLocation" x="-28456" y="-24651"/>
         </scene>
-        <!--StartupHelpID-->
-        <scene sceneID="RDg-KN-aW8">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="StartupHelpID" storyboardName="Help" referencedIdentifier="StartupHelpID" id="oCt-SS-lEW" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kBC-rL-aA2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-770" y="-9654"/>
-        </scene>
         <!--SecondaryHelpID-->
         <scene sceneID="7gv-J8-U6u">
             <objects>
@@ -202,46 +194,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DFT-dz-u7P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3992" y="-4133"/>
-        </scene>
-        <!--WebsiteOverlayViewController-->
-        <scene sceneID="ffm-fn-IPh">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="WebsiteOverlayViewController" storyboardName="Help" referencedIdentifier="WebsiteOverlayViewController" id="tAq-2d-gXw" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bce-9D-JpA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-736" y="-9352"/>
-        </scene>
-        <!--AltWebHelpViewController-->
-        <scene sceneID="m2X-t2-JuS">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="AltWebHelpViewController" storyboardName="Help" referencedIdentifier="AltWebHelpViewController" id="PDe-ov-OuF" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uH0-AN-sPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-753" y="-9515"/>
-        </scene>
-        <!--WebHelpViewController-->
-        <scene sceneID="fFE-nb-wtg">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="WebHelpViewController" storyboardName="Help" referencedIdentifier="WebHelpViewController" id="Twd-PU-9b0" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rn6-I5-OX1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-754" y="-9455"/>
-        </scene>
-        <!--LoadDocHelpViewControllerID-->
-        <scene sceneID="uKX-wx-O8T">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="LoadDocHelpViewControllerID" storyboardName="Help" referencedIdentifier="LoadDocHelpViewControllerID" id="pLR-7s-bb8" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nzp-dd-KM2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-770" y="-9608"/>
-        </scene>
-        <!--ImportMenuViewControllerID-->
-        <scene sceneID="9jG-wB-SFe">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="ImportMenuViewControllerID" storyboardName="Help" referencedIdentifier="ImportMenuViewControllerID" id="Zqb-xI-IZm" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bPZ-1u-TGd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-742" y="-9422"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hYX-jX-vsl">

@@ -1,0 +1,332 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		88F849441DF8DF900024159A /* StickerPackExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 88F849431DF8DF900024159A /* StickerPackExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		88F849481DF8DF900024159A /* Stickers.xcstickers in Resources */ = {isa = PBXBuildFile; fileRef = 88F849471DF8DF900024159A /* Stickers.xcstickers */; };
+		88F849491DF8DF900024159A /* Stickers.xcstickers in Resources */ = {isa = PBXBuildFile; fileRef = 88F849471DF8DF900024159A /* Stickers.xcstickers */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		88F849451DF8DF900024159A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88F849391DF8DF900024159A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88F849421DF8DF900024159A;
+			remoteInfo = StickerPackExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		88F8494F1DF8DF900024159A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				88F849441DF8DF900024159A /* StickerPackExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		88F8493F1DF8DF900024159A /* emogeez-pak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "emogeez-pak.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		88F849431DF8DF900024159A /* StickerPackExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StickerPackExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		88F849471DF8DF900024159A /* Stickers.xcstickers */ = {isa = PBXFileReference; lastKnownFileType = folder.stickers; name = Stickers.xcstickers; path = StickerPackExtension/Stickers.xcstickers; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		88F849381DF8DF900024159A = {
+			isa = PBXGroup;
+			children = (
+				88F849471DF8DF900024159A /* Stickers.xcstickers */,
+				88F849401DF8DF900024159A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		88F849401DF8DF900024159A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88F8493F1DF8DF900024159A /* emogeez-pak.app */,
+				88F849431DF8DF900024159A /* StickerPackExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		88F8493E1DF8DF900024159A /* emogeez-pak */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88F849501DF8DF900024159A /* Build configuration list for PBXNativeTarget "emogeez-pak" */;
+			buildPhases = (
+				88F8493D1DF8DF900024159A /* Resources */,
+				88F8494F1DF8DF900024159A /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				88F849461DF8DF900024159A /* PBXTargetDependency */,
+			);
+			name = "emogeez-pak";
+			productName = "emogeez-pak";
+			productReference = 88F8493F1DF8DF900024159A /* emogeez-pak.app */;
+			productType = "com.apple.product-type.application.messages";
+		};
+		88F849421DF8DF900024159A /* StickerPackExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88F8494C1DF8DF900024159A /* Build configuration list for PBXNativeTarget "StickerPackExtension" */;
+			buildPhases = (
+				88F849411DF8DF900024159A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StickerPackExtension;
+			productName = StickerPackExtension;
+			productReference = 88F849431DF8DF900024159A /* StickerPackExtension.appex */;
+			productType = "com.apple.product-type.app-extension.messages-sticker-pack";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		88F849391DF8DF900024159A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = martoons;
+				TargetAttributes = {
+					88F8493E1DF8DF900024159A = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 922D9E65C8;
+						ProvisioningStyle = Automatic;
+					};
+					88F849421DF8DF900024159A = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 922D9E65C8;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 88F8493C1DF8DF900024159A /* Build configuration list for PBXProject "emogeez-pak" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 88F849381DF8DF900024159A;
+			productRefGroup = 88F849401DF8DF900024159A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				88F8493E1DF8DF900024159A /* emogeez-pak */,
+				88F849421DF8DF900024159A /* StickerPackExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		88F8493D1DF8DF900024159A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88F849491DF8DF900024159A /* Stickers.xcstickers in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88F849411DF8DF900024159A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88F849481DF8DF900024159A /* Stickers.xcstickers in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		88F849461DF8DF900024159A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88F849421DF8DF900024159A /* StickerPackExtension */;
+			targetProxy = 88F849451DF8DF900024159A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		88F8494A1DF8DF900024159A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		88F8494B1DF8DF900024159A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		88F8494D1DF8DF900024159A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				DEVELOPMENT_TEAM = 922D9E65C8;
+				INFOPLIST_FILE = StickerPackExtension/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.martoons.emogeez-pak.StickerPackExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		88F8494E1DF8DF900024159A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				DEVELOPMENT_TEAM = 922D9E65C8;
+				INFOPLIST_FILE = StickerPackExtension/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.martoons.emogeez-pak.StickerPackExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		88F849511DF8DF900024159A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				DEVELOPMENT_TEAM = 922D9E65C8;
+				INFOPLIST_FILE = "emogeez-pak/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.martoons.emogeez-pak";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		88F849521DF8DF900024159A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				DEVELOPMENT_TEAM = 922D9E65C8;
+				INFOPLIST_FILE = "emogeez-pak/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.martoons.emogeez-pak";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		88F8493C1DF8DF900024159A /* Build configuration list for PBXProject "emogeez-pak" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88F8494A1DF8DF900024159A /* Debug */,
+				88F8494B1DF8DF900024159A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88F8494C1DF8DF900024159A /* Build configuration list for PBXNativeTarget "StickerPackExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88F8494D1DF8DF900024159A /* Debug */,
+				88F8494E1DF8DF900024159A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		88F849501DF8DF900024159A /* Build configuration list for PBXNativeTarget "emogeez-pak" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88F849511DF8DF900024159A /* Debug */,
+				88F849521DF8DF900024159A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 88F849391DF8DF900024159A /* Project object */;
+}

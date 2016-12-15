@@ -21,7 +21,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.80</string>
 	<key>CFBundleVersion</key>
-	<string>125</string>
+	<string>129</string>
 	<key>EXTENSION-SCHEME</key>
 	<string>EmoGeez</string>
 	<key>LEFT-BBI-NAME</key>
@@ -35,6 +35,8 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Accessing Library to use your own images</string>
 	<key>REMOTE-WEBSITE-URL</key>
 	<string>http://shtikerz.com/emogeez</string>
 	<key>SHARED-INTERAPP-DATA</key>
